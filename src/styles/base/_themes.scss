@@ -1,0 +1,110 @@
+// =============================================================================
+// THEME OVERRIDES — data-theme attribute on <html>
+// Each theme overrides only the CSS custom properties that differ.
+// Default (no attribute) = Nebula Dark
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// THEME 2: Carbon Pro — Vivid orange + violet on charcoal
+// Inspired by VS Code Dark+, JetBrains Darcula
+// -----------------------------------------------------------------------------
+[data-theme="carbon"] {
+  --color-primary:         #F97316;
+  --color-primary-dark:    #EA580C;
+  --color-primary-light:   #FED7AA;
+  --color-secondary:       #A78BFA;
+  --color-secondary-dark:  #7C3AED;
+  --color-secondary-light: #DDD6FE;
+  --color-accent:          #34D399;
+
+  --color-bg:              #0D0D0D;
+  --color-surface:         #161616;
+  --color-surface-alt:     #1E1E1E;
+  --color-surface-raised:  #252525;
+
+  --color-text:            #E4E4E7;
+  --color-text-secondary:  #A1A1AA;
+  --color-text-muted:      #71717A;
+
+  --color-border:          rgba(161, 161, 170, 0.10);
+  --color-border-light:    rgba(161, 161, 170, 0.05);
+
+  --color-dark:            #080808;
+  --color-dark-surface:    #111111;
+
+  --shadow-primary: 0 8px 32px rgba(249, 115, 22, 0.3);
+  --shadow-glow:    0 0 0 1px rgba(249, 115, 22, 0.15), 0 8px 32px rgba(249, 115, 22, 0.2);
+  --glow-primary:   0 0 24px rgba(249, 115, 22, 0.3);
+  --glow-secondary: 0 0 24px rgba(167, 139, 250, 0.25);
+  --glow-accent:    0 0 24px rgba(52, 211, 153, 0.25);
+}
+
+// -----------------------------------------------------------------------------
+// THEME 3: Aurora — Emerald + indigo on deep forest dark
+// Inspired by GitHub dark, open-source community
+// -----------------------------------------------------------------------------
+[data-theme="aurora"] {
+  --color-primary:         #10B981;
+  --color-primary-dark:    #059669;
+  --color-primary-light:   #6EE7B7;
+  --color-secondary:       #818CF8;
+  --color-secondary-dark:  #4F46E5;
+  --color-secondary-light: #C7D2FE;
+  --color-accent:          #F59E0B;
+
+  --color-bg:              #060C08;
+  --color-surface:         #0C1810;
+  --color-surface-alt:     #111F15;
+  --color-surface-raised:  #182B1E;
+
+  --color-text:            #ECFDF5;
+  --color-text-secondary:  #86EFAC;
+  --color-text-muted:      #4ADE80;
+
+  --color-border:          rgba(134, 239, 172, 0.10);
+  --color-border-light:    rgba(134, 239, 172, 0.05);
+
+  --color-dark:            #030806;
+  --color-dark-surface:    #09120B;
+
+  --shadow-primary: 0 8px 32px rgba(16, 185, 129, 0.3);
+  --shadow-glow:    0 0 0 1px rgba(16, 185, 129, 0.15), 0 8px 32px rgba(16, 185, 129, 0.2);
+  --glow-primary:   0 0 24px rgba(16, 185, 129, 0.3);
+  --glow-secondary: 0 0 24px rgba(129, 140, 248, 0.25);
+  --glow-accent:    0 0 24px rgba(245, 158, 11, 0.25);
+}
+
+// -----------------------------------------------------------------------------
+// THEME 4: Midnight Gold — Gold + rose on deep navy
+// Premium conference aesthetic — CppCon / professional summit
+// -----------------------------------------------------------------------------
+[data-theme="midnight"] {
+  --color-primary:         #F59E0B;
+  --color-primary-dark:    #D97706;
+  --color-primary-light:   #FDE68A;
+  --color-secondary:       #F472B6;
+  --color-secondary-dark:  #DB2777;
+  --color-secondary-light: #FBCFE8;
+  --color-accent:          #38BDF8;
+
+  --color-bg:              #06080F;
+  --color-surface:         #0A1020;
+  --color-surface-alt:     #0F1728;
+  --color-surface-raised:  #162035;
+
+  --color-text:            #F8FAFC;
+  --color-text-secondary:  #CBD5E1;
+  --color-text-muted:      #64748B;
+
+  --color-border:          rgba(203, 213, 225, 0.10);
+  --color-border-light:    rgba(203, 213, 225, 0.05);
+
+  --color-dark:            #03050C;
+  --color-dark-surface:    #080C18;
+
+  --shadow-primary: 0 8px 32px rgba(245, 158, 11, 0.3);
+  --shadow-glow:    0 0 0 1px rgba(245, 158, 11, 0.15), 0 8px 32px rgba(245, 158, 11, 0.2);
+  --glow-primary:   0 0 24px rgba(245, 158, 11, 0.35);
+  --glow-secondary: 0 0 24px rgba(244, 114, 182, 0.25);
+  --glow-accent:    0 0 24px rgba(56, 189, 248, 0.25);
+}

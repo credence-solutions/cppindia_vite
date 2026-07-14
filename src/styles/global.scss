@@ -1,0 +1,185 @@
+// =============================================================================
+// GLOBAL STYLES — Root-level stylesheet
+// Imports all SCSS partials in correct cascade order
+// =============================================================================
+
+// Base partials — using @import so all mixins/variables cascade to sub-partials
+@import './base/variables';
+@import './base/mixins';
+@import './base/typography';
+@import './base/animations';
+@import './base/utilities';
+@import './base/images';
+@import './base/themes';
+
+// =============================================================================
+// RESET & BASE
+// =============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+// Remove list styles for semantic list use
+ul, ol {
+  list-style: none;
+}
+
+// Images & media
+img,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+// Form elements
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+// =============================================================================
+// SCROLLBAR STYLING
+// =============================================================================
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 142, 247, 0.35);
+  border-radius: var(--radius-full);
+
+  &:hover {
+    background: rgba(79, 142, 247, 0.6);
+  }
+}
+
+// =============================================================================
+// SELECTION HIGHLIGHT
+// =============================================================================
+
+::selection {
+  background: $color-secondary;
+  color: #fff;
+}
+
+// =============================================================================
+// PAGE TRANSITIONS
+// =============================================================================
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+// =============================================================================
+// SECTION DIVIDERS
+// =============================================================================
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.divider--primary {
+  height: 3px;
+  width: 48px;
+  background: linear-gradient(90deg, $color-secondary, $color-accent);
+  border-radius: var(--radius-full);
+}
+
+// =============================================================================
+// HIGHLIGHT BAR (decorative accent used in section headers)
+// =============================================================================
+
+.accent-bar {
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  background: var(--color-secondary);
+  border-radius: var(--radius-full);
+  margin-right: var(--space-3);
+  vertical-align: middle;
+}
+
+// =============================================================================
+// LOADING STATE
+// =============================================================================
+
+#app {
+  min-height: 100vh;
+}
+
+// Global page loader (shown while Vue hydrates)
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease;
+
+  &.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,161 @@
+[
+  {
+    "year": 2024,
+    "name": "CppIndiaCon 2024",
+    "edition": 4,
+    "dates": "August 23–24, 2024",
+    "format": "Virtual (Zoom + Discord)",
+    "tagline": "The C++ Festival of India",
+    "description": "The fourth annual international C++ celebration brought together 8 global C++ experts for two days of inspiring talks, hands-on sessions, and community networking. Previous iterations featured speakers like Bjarne Stroustrup — father of C++ — and CppCon chair Jon Kalb.",
+    "banner": "/assets/images/conferences/2024/banner.jpg",
+    "registrationUrl": "https://konfhub.com/cppindiacon2024",
+    "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "speakers": [
+      { "name": "Alex Dathskovsky",       "role": "Keynote",  "topic": "C++ ♥ Python",                                       "image": "/assets/images/speakers/2024/alex.jpg" },
+      { "name": "Ankur Satle",            "role": "Keynote",  "topic": "Declarative C++",                                    "image": "/assets/images/speakers/2024/ankur.png" },
+      { "name": "John Stratton",          "role": "Speaker",  "topic": "Software Design and Performance in C++",             "image": "/assets/images/speakers/2024/john.jpg" },
+      { "name": "Jonathan Müller",        "role": "Speaker",  "topic": "An (In-)Complete Guide to C++ Object Lifetimes",     "image": "/assets/images/speakers/2024/jonathan.png" },
+      { "name": "Mahendra Bhagwan Garodi","role": "Speaker",  "topic": "Exploring Undefined Behaviour in C++",               "image": "/assets/images/speakers/2024/mahendra.jpg" },
+      { "name": "Mike Shah",              "role": "Speaker",  "topic": "Getting Started with Modern C++ — A Tour of Features","image": "/assets/images/speakers/2024/mike.jpg" },
+      { "name": "Pavithra Ashok Kumar",   "role": "Speaker",  "topic": "Art of Debugging",                                   "image": "/assets/images/speakers/2024/pavithra.jpg" },
+      { "name": "Šimon Tóth",            "role": "Speaker",  "topic": "What is a range?",                                   "image": "/assets/images/speakers/2024/simon.jpg" }
+    ],
+    "schedule": [
+      {
+        "day": 1,
+        "date": "August 23, 2024",
+        "sessions": [
+          { "time": "09:45–10:00", "title": "Introduction",                                          "speaker": "CppIndia Hosts",          "type": "intro" },
+          { "time": "10:00–11:00", "title": "Software Design and Performance in C++",                "speaker": "John Stratton",           "type": "talk",  "abstract": "How contemporary C++ enables well-organized software and efficient implementations through understanding compiler behaviour and design patterns." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "11:30–12:30", "title": "[Keynote] Declarative C++",                            "speaker": "Ankur Satle",             "type": "keynote", "abstract": "Expressing intent declaratively so the compiler writes the code — exploring how declarative style improves correctness and maintainability." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "13:00–14:00", "title": "Art of Debugging",                                     "speaker": "Pavithra Ashok Kumar",    "type": "talk",  "abstract": "A systematic approach for identifying bugs, with emphasis on debugging legacy code and preventive strategies." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "15:00–16:00", "title": "What is a range?",                                     "speaker": "Šimon Tóth",             "type": "talk",  "abstract": "C++20 range concepts including views, borrowed ranges, sized ranges, and their performance implications." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "16:30–17:30", "title": "Lightning Talks",                                      "speaker": "Multiple Speakers",       "type": "lightning" },
+          { "time": "17:30–17:45", "title": "Day 1 Closure",                                        "speaker": "CppIndia Hosts",          "type": "outro" }
+        ]
+      },
+      {
+        "day": 2,
+        "date": "August 24, 2024",
+        "sessions": [
+          { "time": "09:45–10:00", "title": "Introduction",                                          "speaker": "CppIndia Hosts",          "type": "intro" },
+          { "time": "10:00–11:00", "title": "Getting Started with Modern C++ — A Tour of Features", "speaker": "Mike Shah",               "type": "talk",  "abstract": "Modern C++ ecosystem fundamentals: arrays, spans, smart pointers, ranges, concepts, and threading." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "11:30–12:30", "title": "Exploring Undefined Behaviour in C++",                 "speaker": "Mahendra Bhagwan Garodi", "type": "talk",  "abstract": "Defined vs undefined behaviour categories, demonstrating common UB scenarios and diagnostic tools to detect them." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "13:00–14:00", "title": "An (In-)Complete Guide to C++ Object Lifetimes",      "speaker": "Jonathan Müller",         "type": "talk",  "abstract": "Object lifecycle — construction, destruction, temporary lifetime extension, storage aliasing, and related utilities." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "15:00–16:00", "title": "[Keynote] C++ ♥ Python",                              "speaker": "Alex Dathskovsky",        "type": "keynote", "abstract": "C++/Python symbiosis using binding tools to accelerate Python workloads, exploring GIL limitations and binding tool comparisons." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
+          { "time": "16:30–17:30", "title": "Quiz Competition",                                     "speaker": "",                        "type": "activity" },
+          { "time": "17:30–17:45", "title": "Conference Closing",                                   "speaker": "CppIndia Hosts",          "type": "outro" }
+        ]
+      }
+    ],
+    "sponsors": {
+      "gold": [
+        { "name": "MulticoreWare", "logo": "/assets/images/sponsors/gold/multicoreware.png", "description": "AI & multimedia tech company, creators of x265/x266. CTO Dr. John Stratton is a keynote speaker.", "website": "https://multicorewareinc.com" },
+        { "name": "think-cell",    "logo": "/assets/images/sponsors/gold/think-cell.png",    "description": "Berlin-based C++ software company building PowerPoint automation tools used by 1M+ professionals.", "website": "https://www.think-cell.com" },
+        { "name": "Bloomberg LP",  "logo": "/assets/images/sponsors/gold/bloomberg.png",     "description": "Building the world's most trusted information network for financial professionals with 9,000+ engineers.", "website": "https://www.bloomberg.com/company/values/tech-at-bloomberg/cplusplus/" }
+      ],
+      "community": [
+        { "name": "Meeting C++",    "logo": "/assets/images/sponsors/community/meeting_cpp.png", "website": "https://meetingcpp.com" },
+        { "name": "SwedenCpp",      "logo": "/assets/images/sponsors/community/sweden_cpp.png",  "website": "https://swedencpp.se" },
+        { "name": "#include <C++>", "logo": "/assets/images/sponsors/community/include_cpp.png", "website": "https://www.includecpp.org" }
+      ]
+    }
+  },
+  {
+    "year": 2023,
+    "name": "CppIndiaCon 2023",
+    "edition": 3,
+    "dates": "August 4–5, 2023",
+    "format": "Virtual (Zoom + Discord)",
+    "tagline": "The C++ Festival of India",
+    "description": "The 3rd edition of CppIndiaCon was a spectacular success with 577 registrations, 20+ talk proposals, and 22 volunteers. Two days of expert sessions covering AI-assisted programming, coroutines, value-oriented design, concurrency, and more.",
+    "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "stats": {
+      "registrations": 577,
+      "day1Attendees": 423,
+      "day2Attendees": 194,
+      "talkProposals": 20,
+      "volunteers": 22
+    },
+    "speakers": [
+      { "name": "Mike Shah",                    "role": "Speaker", "topic": "Optimization Design Patterns",                          "rating": 4.62 },
+      { "name": "Kiran Kannappan",              "role": "Speaker", "topic": "Introduction to Intel oneAPI",                          "rating": 4.17 },
+      { "name": "Jonathan Müller",              "role": "Speaker", "topic": "C++ Features You Might Not Know",                       "rating": 4.14 },
+      { "name": "Venkata Naga Ravikiran Bulusu","role": "Speaker", "topic": "Understanding Common Concurrency Patterns",             "rating": 4.22 },
+      { "name": "Bryce Adelstein Lelbach",      "role": "Keynote", "topic": "AI-Assisted Programming (ChatGPT, etc)",               "rating": 4.36 },
+      { "name": "Ankur Satle",                  "role": "Speaker", "topic": "Value-Oriented Design — by example",                   "rating": 4.43 },
+      { "name": "Andreas Fertig",               "role": "Speaker", "topic": "C++ Coroutines from Scratch",                          "rating": 4.42 },
+      { "name": "Kushashwa Ravi Shrimali",      "role": "Speaker", "topic": "Using C++ for Your Artificial Intelligence Solution",   "rating": 4.52 },
+      { "name": "Selvakumar Jawahar",           "role": "Speaker", "topic": "Why 5G is Fast? and C++ in 5G Open Source",            "rating": 4.15 }
+    ],
+    "lightningTalks": [
+      { "speaker": "Prince Gupta",             "topic": "Taking Advantage of Auto Vectorization" },
+      { "speaker": "Emmanuel Danso Nyarko",    "topic": "Understanding Dynamic Allocators for Optimization in Containers" },
+      { "speaker": "Mahendra Garodi",          "topic": "Standard C++ Attributes" }
+    ],
+    "sponsors": {
+      "gold": [
+        { "name": "Intel Software",  "website": "https://www.intel.com/content/www/us/en/developer/overview.html" },
+        { "name": "Qube Cinema",     "website": "https://www.qubecinema.com" },
+        { "name": "think-cell",      "website": "https://www.think-cell.com" },
+        { "name": "Bloomberg LP",    "website": "https://www.bloomberg.com/company/values/tech-at-bloomberg/cplusplus/" }
+      ],
+      "community": [
+        { "name": "Meeting C++",    "website": "https://meetingcpp.com" },
+        { "name": "SwedenCpp",      "website": "https://swedencpp.se" },
+        { "name": "#include <C++>", "website": "https://www.includecpp.org" }
+      ]
+    },
+    "schedule": [],
+    "registrationUrl": null
+  },
+  {
+    "year": 2022,
+    "name": "CppIndiaCon 2022",
+    "edition": 2,
+    "dates": "2022",
+    "format": "Virtual",
+    "tagline": "Growing India's C++ Ecosystem",
+    "description": "The 2nd edition of CppIndiaCon featured a lineup of distinguished C++ experts and practitioners from around the world, covering debugging, concurrency, language design, and library development.",
+    "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "speakers": [
+      { "name": "Inbal Levi",          "role": "Speaker", "topic": "" },
+      { "name": "Hemil Ruparel",       "role": "Speaker", "topic": "" },
+      { "name": "Selvakumar Jawahar",  "role": "Speaker", "topic": "" },
+      { "name": "Dr. Greg Law",        "role": "Speaker", "topic": "" },
+      { "name": "Ankur M Satle",       "role": "Speaker", "topic": "" }
+    ],
+    "sponsors": { "gold": [], "community": [] },
+    "schedule": [],
+    "registrationUrl": null
+  },
+  {
+    "year": 2021,
+    "name": "CppIndiaCon 2021",
+    "edition": 1,
+    "dates": "2021",
+    "format": "Virtual",
+    "tagline": "The Inaugural C++ Conference of India",
+    "description": "The first-ever CppIndiaCon kicked off in grand style, featuring C++ creator Bjarne Stroustrup, CppCon conference chair Jon Kalb, and other distinguished speakers from the global C++ community.",
+    "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "speakers": [
+      { "name": "Bjarne Stroustrup",          "role": "Keynote", "topic": "Creator of C++" },
+      { "name": "Jon Kalb",                   "role": "Speaker", "topic": "CppCon Conference Chair" },
+      { "name": "Bryce Adelstein Lelbach",    "role": "Speaker", "topic": "" },
+      { "name": "Ankur M Satle",              "role": "Speaker", "topic": "" },
+      { "name": "Harishankar Singh",          "role": "Speaker", "topic": "" },
+      { "name": "Saurabh Joshi",             "role": "Speaker", "topic": "" }
+    ],
+    "sponsors": { "gold": [], "community": [] },
+    "schedule": [],
+    "registrationUrl": null
+  }
+]

@@ -1,0 +1,139 @@
+// =============================================================================
+// ANIMATIONS — Keyframes & animation utility classes
+// GSAP handles most JS-driven animations; this file handles CSS-only ones
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// KEYFRAMES
+// -----------------------------------------------------------------------------
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes counterPulse {
+  0%  { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+// -----------------------------------------------------------------------------
+// UTILITY CLASSES
+// -----------------------------------------------------------------------------
+
+.animate-fade-in   { animation: fadeIn   0.4s ease both; }
+.animate-fade-up   { animation: fadeUp   0.5s ease both; }
+.animate-fade-down { animation: fadeDown 0.5s ease both; }
+.animate-slide-left  { animation: slideInLeft  0.5s ease both; }
+.animate-slide-right { animation: slideInRight 0.5s ease both; }
+.animate-scale-in  { animation: scaleIn  0.4s ease both; }
+.animate-float     { animation: float    3s ease-in-out infinite; }
+.animate-pulse     { animation: pulse    2s ease-in-out infinite; }
+.animate-spin      { animation: spin     1s linear infinite; }
+
+// Delay helpers
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+// Skeleton loading shimmer
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-border-light) 25%,
+    #e8ecf0 50%,
+    var(--color-border-light) 75%
+  );
+  background-size: 200% auto;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: var(--radius-md);
+}
+
+// GSAP reveal class — elements start hidden, GSAP animates them in
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.gsap-reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+}
+
+.gsap-reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+}
+
+// Reduce motion preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .gsap-reveal,
+  .gsap-reveal-left,
+  .gsap-reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "multicoreware",
+    "name": "MulticoreWare",
+    "type": "gold",
+    "conference": 2024,
+    "url": "https://multicorewareinc.com",
+    "logo": "/assets/images/sponsors/gold/multicoreware.png",
+    "description": "MulticoreWare is a global software engineering company specializing in high-performance computing."
+  },
+  {
+    "id": "think-cell",
+    "name": "think-cell",
+    "type": "gold",
+    "conference": 2024,
+    "url": "https://www.think-cell.com",
+    "logo": "/assets/images/sponsors/gold/think-cell.png",
+    "description": "think-cell creates powerful charting and layout software for PowerPoint using modern C++."
+  },
+  {
+    "id": "bloomberg",
+    "name": "Bloomberg LP",
+    "type": "gold",
+    "conference": 2024,
+    "url": "https://www.bloomberg.com/company/values/tech-at-bloomberg/cplusplus/",
+    "logo": "/assets/images/sponsors/gold/bloomberg.png",
+    "description": "Bloomberg's engineering team is one of the world's largest users of modern C++."
+  },
+  {
+    "id": "meeting-cpp",
+    "name": "Meeting C++",
+    "type": "community",
+    "conference": 2024,
+    "url": "https://meetingcpp.com",
+    "logo": "/assets/images/sponsors/community/meeting_cpp.png",
+    "description": "Europe's largest C++ conference and online community."
+  },
+  {
+    "id": "swedencpp",
+    "name": "SwedenCpp",
+    "type": "community",
+    "conference": 2024,
+    "url": "https://swedencpp.se",
+    "logo": "/assets/images/sponsors/community/sweden_cpp.png",
+    "description": "C++ user group based in Sweden."
+  },
+  {
+    "id": "includecpp",
+    "name": "#include <C++>",
+    "type": "community",
+    "conference": 2024,
+    "url": "https://www.includecpp.org",
+    "logo": "/assets/images/sponsors/community/include_cpp.png",
+    "description": "A global, inclusive community for people who code in C++."
+  }
+]

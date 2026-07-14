@@ -1,0 +1,67 @@
+[
+  {
+    "id": "dheeraj-jha",
+    "name": "Dheeraj Jha",
+    "role": "Founder",
+    "photo": "/assets/images/team/dheeraj.png",
+    "bio": "Founder of CppIndia and passionate C++ developer. Dheeraj started the community to create a welcoming space for C++ developers across India.",
+    "links": {
+      "website": "https://www.jhadheeraj.com",
+      "linkedin": null,
+      "github": null,
+      "twitter": null
+    }
+  },
+  {
+    "id": "ankur-satle",
+    "name": "Ankur M Satle",
+    "role": "Founder Member",
+    "photo": "/assets/images/team/ankur.jpg",
+    "bio": "Founder member and frequent speaker at CppIndia tech talks. Ankur brings deep expertise in modern C++ techniques and design patterns.",
+    "links": {
+      "website": "https://ankursatle.wordpress.com",
+      "linkedin": null,
+      "github": null,
+      "twitter": null
+    }
+  },
+  {
+    "id": "mahendra-garodi",
+    "name": "Mahendra Garodi",
+    "role": "Founder Member",
+    "photo": "/assets/images/team/mahendra.png",
+    "bio": "Founder member with a passion for performance engineering, SIMD, and modern C++ features. A regular contributor to CppIndia's tech talks.",
+    "links": {
+      "website": null,
+      "linkedin": "https://www.linkedin.com/in/garodimahendra",
+      "github": null,
+      "twitter": null
+    }
+  },
+  {
+    "id": "kashish-nagpal",
+    "name": "Kashish Nagpal",
+    "role": "Moderator",
+    "photo": "/assets/images/team/kashish.png",
+    "bio": "Community moderator and speaker who helped shape CppIndia's inclusive culture. Known for talks on C++20 Concepts and developer tooling.",
+    "links": {
+      "website": null,
+      "linkedin": "https://www.linkedin.com/in/mr-k",
+      "github": null,
+      "twitter": null
+    }
+  },
+  {
+    "id": "hemil-ruparel",
+    "name": "Hemil Ruparel",
+    "role": "Moderator",
+    "photo": "/assets/images/team/hemil.png",
+    "bio": "Community moderator and enthusiastic speaker. Hemil's talks on testing, compiler internals, and programming language design are fan favourites.",
+    "links": {
+      "website": null,
+      "linkedin": "https://www.linkedin.com/in/hemil-ruparel-2aa513166/",
+      "github": null,
+      "twitter": null
+    }
+  }
+]

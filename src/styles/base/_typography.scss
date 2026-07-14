@@ -1,0 +1,93 @@
+// =============================================================================
+// TYPOGRAPHY — Global type system
+// =============================================================================
+
+// Heading reset & defaults
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  margin-block: 0;
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); font-weight: var(--weight-semibold); }
+
+p {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+  margin-block: 0;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+
+  &:hover { color: var(--color-secondary-dark); }
+  &:focus-visible { @include focus-ring; }
+}
+
+strong, b { font-weight: var(--weight-semibold); }
+em, i      { font-style: italic; }
+
+small { font-size: var(--text-xs); }
+
+// Overline label (e.g., above section headings)
+.overline {
+  @include label;
+  color: var(--color-secondary);
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+// Section heading group
+.section-heading {
+  margin-bottom: var(--space-12);
+
+  &__overline { @extend .overline; }
+
+  &__title {
+    font-size: var(--text-4xl);
+    font-family: var(--font-secondary);
+    font-weight: var(--weight-extrabold);
+    color: var(--color-text);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    margin-bottom: var(--space-4);
+  }
+
+  &__subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 640px;
+    line-height: var(--leading-relaxed);
+  }
+
+  &--center {
+    text-align: center;
+    .section-heading__subtitle { margin-inline: auto; }
+  }
+}
+
+// Gradient text utility
+.text-gradient {
+  @include text-gradient;
+}
+
+// Utility classes for quick use in templates
+.text-primary   { color: var(--color-primary) !important; }
+.text-secondary { color: var(--color-secondary) !important; }
+.text-muted     { color: var(--color-text-muted) !important; }
+.text-white     { color: #fff !important; }
+
+.font-primary   { font-family: var(--font-primary) !important; }
+.font-secondary { font-family: var(--font-secondary) !important; }

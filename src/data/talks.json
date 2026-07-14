@@ -1,0 +1,498 @@
+{
+  "2024": [
+    {
+      "id": "2024-05-11",
+      "date": "2024-05-11",
+      "speaker": "Ankur Satle",
+      "title": "Recursive Static Types for Expression Evaluation",
+      "video": "https://youtu.be/1zCulJpKUqA",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/05-11/",
+      "tags": ["Templates", "Metaprogramming"]
+    },
+    {
+      "id": "2024-02-03",
+      "date": "2024-02-03",
+      "speaker": "Karan Banthia",
+      "title": "Modern C++ Design Patterns for Embedded Firmware",
+      "video": "https://youtu.be/zJ5qAE3t_DM",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/02-05/",
+      "tags": ["Embedded", "Design Patterns", "Modern C++"]
+    },
+    {
+      "id": "2024-01-06",
+      "date": "2024-01-06",
+      "speaker": "Dheeraj Jha",
+      "title": "Beyond Breakpoints: Navigating the Depths of GDB",
+      "video": "https://youtu.be/We-w_mT8EsY",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/01-06/",
+      "tags": ["Debugging", "Tools", "GDB"]
+    }
+  ],
+  "2023": [
+    {
+      "id": "2023-09-02",
+      "date": "2023-09-02",
+      "speaker": "Mahendra Garodi",
+      "title": "Beyond Union: Exploring Practical Applications of std::variant and std::any",
+      "video": null,
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Modern C++", "C++17", "std::variant"]
+    },
+    {
+      "id": "2023-03-25",
+      "date": "2023-03-25",
+      "speaker": "Ankur Satle",
+      "title": "P.3 Express Intent — 2 of N",
+      "video": "https://youtu.be/2dE-lYWac1I",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/03-25/",
+      "tags": ["Design Patterns", "Modern C++", "Best Practices"]
+    },
+    {
+      "id": "2023-03-11",
+      "date": "2023-03-11",
+      "speaker": "Mahendra Garodi",
+      "title": "C++ Constants: The 'const'ly Evolving Story",
+      "video": "https://www.youtube.com/@CppIndiaUG",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/03-11",
+      "tags": ["Modern C++", "C++20", "const"]
+    },
+    {
+      "id": "2023-02-04",
+      "date": "2023-02-04",
+      "speaker": "CppIndia",
+      "title": "Fireside Chat",
+      "video": null,
+      "slides": null,
+      "tags": ["Community"]
+    },
+    {
+      "id": "2023-01-21",
+      "date": "2023-01-21",
+      "speaker": "Dheeraj Jha",
+      "title": "Concurrency in C++",
+      "video": "https://youtu.be/1zCulJpKUqA",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/01-21/",
+      "tags": ["Concurrency", "Modern C++", "Threads"]
+    },
+    {
+      "id": "2023-01-07",
+      "date": "2023-01-07",
+      "speaker": "Selvakumar Jawahar",
+      "title": "Architectural Concurrency Pattern — Active Object",
+      "video": "https://youtu.be/We-w_mT8EsY",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/01-07/",
+      "tags": ["Concurrency", "Design Patterns", "Architecture"]
+    }
+  ],
+  "2022": [
+    {
+      "id": "2022-12-10",
+      "date": "2022-12-10",
+      "speaker": "Ankur Satle",
+      "title": "Concise C++: Generic Programming without Explicit Templates",
+      "video": "https://youtu.be/4-cv9fbziOs",
+      "slides": null,
+      "tags": ["Templates", "Generic Programming", "Modern C++"]
+    },
+    {
+      "id": "2022-11-26",
+      "date": "2022-11-26",
+      "speaker": "Mahendra Garodi",
+      "title": "Spaceship Operator",
+      "video": null,
+      "slides": null,
+      "tags": ["C++20", "Comparisons", "Modern C++"]
+    },
+    {
+      "id": "2022-11-12",
+      "date": "2022-11-12",
+      "speaker": "Ratnesh Tiwari",
+      "title": "C++, A Compiler's Perspective",
+      "video": "https://youtu.be/qyfRb_4My7w",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/11-12",
+      "tags": ["Compiler", "Performance", "Internals"]
+    },
+    {
+      "id": "2022-10-15",
+      "date": "2022-10-15",
+      "speaker": "Darshan Bhat",
+      "title": "C++, A Compiler's Perspective",
+      "video": "https://youtu.be/pUpPVPnF5Ik",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/10-15",
+      "tags": ["Compiler", "Performance", "Internals"]
+    },
+    {
+      "id": "2022-10-01",
+      "date": "2022-10-01",
+      "speaker": "Dheeraj Jha",
+      "title": "Thinking in Classes",
+      "video": "https://youtu.be/6kfR4DDCMpg",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/10-01",
+      "tags": ["OOP", "Design Patterns", "Classes"]
+    },
+    {
+      "id": "2022-09-17",
+      "date": "2022-09-17",
+      "speaker": "Hemil Ruparel",
+      "title": "How to Create Your Own Programming Language",
+      "video": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/09-17",
+      "tags": ["Compiler", "Language Design", "Lexer"]
+    },
+    {
+      "id": "2022-06-18",
+      "date": "2022-06-18",
+      "speaker": "Ankur Satle",
+      "title": "Unix-style | Composable | Operations | in | C++",
+      "video": "https://www.youtube.com/watch?v=WX9DjeCWDbs",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/06-18",
+      "tags": ["Design Patterns", "Functional", "Modern C++"]
+    },
+    {
+      "id": "2022-06-04",
+      "date": "2022-06-04",
+      "speaker": "CppIndia",
+      "title": "Fireside Chat: Tricky Interview Questions — 2",
+      "video": "https://www.youtube.com/watch?v=sbAX-zx4flw",
+      "slides": null,
+      "tags": ["Community", "Interview"]
+    },
+    {
+      "id": "2022-05-21a",
+      "date": "2022-05-21",
+      "speaker": "Hemil Ruparel",
+      "title": "N-Lighting Talk: TDD — The Bad Parts",
+      "video": "https://www.youtube.com/watch?v=C0cViWm4Wjs",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-21",
+      "tags": ["Testing", "TDD"]
+    },
+    {
+      "id": "2022-05-21b",
+      "date": "2022-05-21",
+      "speaker": "Kashish Nagpal",
+      "title": "N-Lighting Talk: Exploring the Compiler Explorer",
+      "video": "https://www.youtube.com/watch?v=b49WNBwaDas",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-21",
+      "tags": ["Tools", "Compiler Explorer", "Godbolt"]
+    },
+    {
+      "id": "2022-05-21c",
+      "date": "2022-05-21",
+      "speaker": "Shivam Prasad",
+      "title": "N-Lighting Talk: Tips for C++ Development",
+      "video": "https://www.youtube.com/watch?v=8q42RTzL48k",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-21",
+      "tags": ["Best Practices", "Tips", "Modern C++"]
+    },
+    {
+      "id": "2022-05-07",
+      "date": "2022-05-07",
+      "speaker": "Hemil Ruparel",
+      "title": "The Tragedy of Testing",
+      "video": "https://www.youtube.com/watch?v=0cLLkP_MC0Q",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-07",
+      "tags": ["Testing", "Best Practices"]
+    },
+    {
+      "id": "2022-04-23a",
+      "date": "2022-04-23",
+      "speaker": "Dheeraj Jha",
+      "title": "N-Lighting Talk: What Do I Think While Designing an API/Function?",
+      "video": "https://youtu.be/25bFsPV6IGw",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/04-23",
+      "tags": ["API Design", "Best Practices"]
+    },
+    {
+      "id": "2022-04-23b",
+      "date": "2022-04-23",
+      "speaker": "Mahendra Garodi",
+      "title": "N-Lighting Talk: Performance Analysis Using Flamegraph",
+      "video": "https://youtu.be/Ipc602i_rKo",
+      "slides": null,
+      "tags": ["Performance", "Profiling", "Flamegraph"]
+    },
+    {
+      "id": "2022-03-26",
+      "date": "2022-03-26",
+      "speaker": "CppIndia",
+      "title": "Fireside Chat: Tricky Interview Questions",
+      "video": "https://youtu.be/fotN5WSa7Y8",
+      "slides": null,
+      "tags": ["Community", "Interview"]
+    },
+    {
+      "id": "2022-03-12",
+      "date": "2022-03-12",
+      "speaker": "John McFarlane",
+      "title": "The Secret Life of Numbers",
+      "video": "https://youtu.be/WgKQhhhsOgo",
+      "slides": "https://johnmcfarlane.github.io/slides/2022-cppindia/",
+      "tags": ["Numerics", "Performance", "Fixed-Point"]
+    },
+    {
+      "id": "2022-02-26",
+      "date": "2022-02-26",
+      "speaker": "Honey Sukesan",
+      "title": "Let's Have a SOLID Start: SOLID Principles Unleashed",
+      "video": "https://youtu.be/TtGqJ20_cuw",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/5474ba791af84ee2b5abcd955849cb01cc91c0fb/2022/02-26/Lets_have_a_SOLID_start_HoneySukesan_CppIndia_26Feb2022.pdf",
+      "tags": ["Design Patterns", "SOLID", "Best Practices"]
+    },
+    {
+      "id": "2022-02-12",
+      "date": "2022-02-12",
+      "speaker": "Oliver Esser",
+      "title": "Async in C++",
+      "video": "https://youtu.be/MFpWGC7AAO0",
+      "slides": null,
+      "tags": ["Async", "Concurrency", "Modern C++"]
+    },
+    {
+      "id": "2022-01-29",
+      "date": "2022-01-29",
+      "speaker": "Slobodan Dmitrovic",
+      "title": "How to Approach Learning C++?",
+      "video": "https://youtu.be/gF2_cSNKjmQ",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2022/01-29/LearningCPP_SDmitrovic.pdf",
+      "tags": ["Learning", "Community", "Best Practices"]
+    },
+    {
+      "id": "2022-01-15",
+      "date": "2022-01-15",
+      "speaker": "Ivica Bogosavljević",
+      "title": "The Performance Price of Virtual Functions in C++",
+      "video": "https://youtu.be/MPAve0s5zXA",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2022/01-15/CppIndia_The_Performance_Price_of_Virtual_Functions.pdf",
+      "tags": ["Performance", "Virtual Functions", "OOP"]
+    }
+  ],
+  "2021": [
+    {
+      "id": "2021-12-04",
+      "date": "2021-12-04",
+      "speaker": "Sabariesh Ganesan",
+      "title": "Secure C++ Practices from the Automotive Industry",
+      "video": "https://youtu.be/zULfe3N7Q00",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Embedded", "Security", "Automotive"]
+    },
+    {
+      "id": "2021-11-06",
+      "date": "2021-11-06",
+      "speaker": "Sebastian Theophil",
+      "title": "Windows, MacOS and the Web: Lessons from Cross-Platform Development",
+      "video": "https://youtu.be/DyQcX5UmTFo",
+      "slides": null,
+      "tags": ["Cross-Platform", "Best Practices"]
+    },
+    {
+      "id": "2021-09-11",
+      "date": "2021-09-11",
+      "speaker": "Kashish Nagpal",
+      "title": "Easing into Concepts",
+      "video": "https://youtu.be/OCxPCnw7N5I",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["C++20", "Concepts", "Templates"]
+    },
+    {
+      "id": "2021-08-28",
+      "date": "2021-08-28",
+      "speaker": "Ankur Satle",
+      "title": "P.3 Express Intent (1 of N)",
+      "video": "https://youtu.be/BED-4jLqbL0",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Design Patterns", "Modern C++", "Best Practices"]
+    },
+    {
+      "id": "2021-07-03",
+      "date": "2021-07-03",
+      "speaker": "Bryce Adelstein Lelbach",
+      "title": "AMA with Bryce Adelstein Lelbach",
+      "video": "https://youtu.be/LsNRdkTZWG4",
+      "slides": null,
+      "tags": ["Community", "C++23", "Standards"]
+    },
+    {
+      "id": "2021-06-19",
+      "date": "2021-06-19",
+      "speaker": "Vishal Chovatiya",
+      "title": "Writing Better C++",
+      "video": "https://youtu.be/ao1e4NcwAJQ",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Best Practices", "Modern C++", "Code Quality"]
+    },
+    {
+      "id": "2021-06-05",
+      "date": "2021-06-05",
+      "speaker": "Matt Godbolt",
+      "title": "Cool Compiler Tidbits — Clever Things Your Compiler Does For You",
+      "video": "https://youtu.be/9Zjgcnskwlc",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Compiler", "Performance", "Optimization"]
+    },
+    {
+      "id": "2021-05-22",
+      "date": "2021-05-22",
+      "speaker": "Mahendra Garodi",
+      "title": "SIMD and Auto-Vectorization",
+      "video": "https://youtu.be/Fuy5o0JUc9Y",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["SIMD", "Performance", "Vectorization"]
+    },
+    {
+      "id": "2021-05-08",
+      "date": "2021-05-08",
+      "speaker": "Nikunj Gupta",
+      "title": "HPX For Dummies",
+      "video": "https://youtu.be/ojVL7E7VsJ4",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Concurrency", "Parallelism", "HPX"]
+    },
+    {
+      "id": "2021-04-24",
+      "date": "2021-04-24",
+      "speaker": "Guy Davidson",
+      "title": "Memory Management and File IO",
+      "video": "https://youtu.be/p46PlKyMDhs",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Memory Management", "File IO"]
+    },
+    {
+      "id": "2021-02-27",
+      "date": "2021-02-27",
+      "speaker": "Hemil Ruparel",
+      "title": "Overview of Asynchronous Programming",
+      "video": "https://youtu.be/wEs-oiG0brk",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Async", "Concurrency", "Modern C++"]
+    },
+    {
+      "id": "2021-02-13",
+      "date": "2021-02-13",
+      "speaker": "Ankur Satle",
+      "title": "Love-Hate Relationships in C++",
+      "video": "https://youtu.be/2MFWOAptijU",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["Modern C++", "Community", "Language Features"]
+    },
+    {
+      "id": "2021-01-16",
+      "date": "2021-01-16",
+      "speaker": "Kunal Sharma",
+      "title": "Dependency Management for C++ Applications Using CMake & Conan — Part 2",
+      "video": "https://youtu.be/vVtXqeOrizY",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "tags": ["CMake", "Build Systems", "Conan"]
+    }
+  ],
+  "2020": [
+    {
+      "id": "2020-12-19",
+      "date": "2020-12-19",
+      "speaker": "Kunal Sharma",
+      "title": "Dependency Management for C++ Applications Using CMake & Conan — Part 1",
+      "video": "https://youtu.be/cwg886syRcU",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/19-12-2020",
+      "tags": ["CMake", "Build Systems", "Conan"]
+    },
+    {
+      "id": "2020-12-05",
+      "date": "2020-12-05",
+      "speaker": "Ankur Satle",
+      "title": "Easing into C++ Templates — Part 2",
+      "video": "https://youtu.be/nPzAETndc6s",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/05-12-2020",
+      "tags": ["Templates", "Metaprogramming"]
+    },
+    {
+      "id": "2020-11-21",
+      "date": "2020-11-21",
+      "speaker": "Ankur Satle",
+      "title": "Easing into C++ Templates — Part 1",
+      "video": "https://youtu.be/70j-F20W6Mo",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/21-11-2020",
+      "tags": ["Templates", "Metaprogramming"]
+    },
+    {
+      "id": "2020-11-07",
+      "date": "2020-11-07",
+      "speaker": "Shilpa Dodeja",
+      "title": "Smart Pointers — Part 2 (std::shared_ptr & std::weak_ptr)",
+      "video": "https://youtu.be/NrGrIAOg3Kk",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/07-11-2020",
+      "tags": ["Memory Management", "Smart Pointers", "Modern C++"]
+    },
+    {
+      "id": "2020-10-24",
+      "date": "2020-10-24",
+      "speaker": "Shilpa Dodeja",
+      "title": "Smart Pointers — Part 1 (std::unique_ptr)",
+      "video": "https://youtu.be/BZQX0vW3It4",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/24-10-2020",
+      "tags": ["Memory Management", "Smart Pointers", "Modern C++"]
+    },
+    {
+      "id": "2020-10-10",
+      "date": "2020-10-10",
+      "speaker": "Tsung-Wei Huang",
+      "title": "Parallel Programming in Modern C++ (Taskflow)",
+      "video": "https://youtu.be/BRt3KQTCA2w",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/10-10-2020",
+      "tags": ["Parallelism", "Taskflow", "Modern C++"]
+    },
+    {
+      "id": "2020-09-26",
+      "date": "2020-09-26",
+      "speaker": "Mahendra Garodi",
+      "title": "std::string_view",
+      "video": "https://youtu.be/xJ7Y5zdBi8U",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/26-09-2020",
+      "tags": ["Modern C++", "C++17", "Strings"]
+    },
+    {
+      "id": "2020-09-12",
+      "date": "2020-09-12",
+      "speaker": "Harishankar Singh",
+      "title": "SOLID Principles",
+      "video": "https://youtu.be/fda77bHlOmk",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/12-09-2020",
+      "tags": ["Design Patterns", "SOLID", "Best Practices"]
+    },
+    {
+      "id": "2020-08-29",
+      "date": "2020-08-29",
+      "speaker": "Vishal Chovatiya",
+      "title": "Regex with Modern C++",
+      "video": "https://youtu.be/OXPALxWVbCA",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/29-08-2020",
+      "tags": ["Regex", "Modern C++", "std::regex"]
+    },
+    {
+      "id": "2020-08-15",
+      "date": "2020-08-15",
+      "speaker": "Dheeraj Jha",
+      "title": "Move Semantics — 0 to 1",
+      "video": "https://youtu.be/QH_9CBKoDTA",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/15-08-2020",
+      "tags": ["Move Semantics", "Modern C++", "C++11"]
+    },
+    {
+      "id": "2020-08-01",
+      "date": "2020-08-01",
+      "speaker": "Vishal Chovatiya",
+      "title": "Demystifying C++",
+      "video": "https://youtu.be/Ev65lLpns7I",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/01-08-2020",
+      "tags": ["Modern C++", "Best Practices", "Fundamentals"]
+    },
+    {
+      "id": "2020-07-17",
+      "date": "2020-07-17",
+      "speaker": "Shilpa Dodeja",
+      "title": "Lambda Expression",
+      "video": "https://youtu.be/p6nCp-mx3Lk",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/17-07-2020",
+      "tags": ["Lambda", "Modern C++", "C++11"]
+    }
+  ]
+}

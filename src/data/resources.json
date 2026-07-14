@@ -1,0 +1,71 @@
+{
+  "references": [
+    {
+      "id": "cpp23-draft",
+      "title": "C++23 Standard Draft",
+      "description": "The latest ISO C++23 Standard Draft, available on GitHub.",
+      "url": "https://github.com/cplusplus/draft",
+      "type": "Standard",
+      "free": true
+    },
+    {
+      "id": "cpp20-standard",
+      "title": "C++20 Official Standard (ISO)",
+      "description": "The official ISO C++20 Standard document.",
+      "url": "https://www.iso.org/standard/79358.html",
+      "type": "Standard",
+      "free": false
+    },
+    {
+      "id": "core-guidelines",
+      "title": "C++ Core Guidelines",
+      "description": "Collaborative effort led by Bjarne Stroustrup to help people use C++ effectively.",
+      "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines",
+      "type": "Guidelines",
+      "free": true
+    },
+    {
+      "id": "cppreference",
+      "title": "cppreference.com",
+      "description": "The de-facto reference for C++ — standard library, language features, and more.",
+      "url": "https://en.cppreference.com",
+      "type": "Reference",
+      "free": true
+    },
+    {
+      "id": "compiler-support",
+      "title": "C++ Compiler Support Table",
+      "description": "Cross-compiler C++ feature support matrix on cppreference.",
+      "url": "https://en.cppreference.com/w/cpp/compiler_support",
+      "type": "Reference",
+      "free": true
+    },
+    {
+      "id": "gcc-status",
+      "title": "GCC C++ Support Status",
+      "description": "Official GCC project page tracking C++ standard implementation status.",
+      "url": "https://gcc.gnu.org/projects/cxx-status.html",
+      "type": "Reference",
+      "free": true
+    },
+    {
+      "id": "clang-status",
+      "title": "Clang C++ Support Status",
+      "description": "Official Clang project page tracking C++ standard implementation status.",
+      "url": "https://clang.llvm.org/cxx_status.html",
+      "type": "Reference",
+      "free": true
+    }
+  ],
+  "articles": [
+    {
+      "id": "isocpp-survey-2022",
+      "title": "2022 C++ Developer Survey Results",
+      "description": "Annual developer survey results from isocpp.org — insights on how C++ developers work.",
+      "url": "https://isocpp.org/blog/2022/06/2022-annual-cpp-developer-survey-lite-results",
+      "type": "Survey",
+      "free": true
+    }
+  ],
+  "monthly": []
+}

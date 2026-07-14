@@ -1,0 +1,189 @@
+<!--
+  FloatingJoin — Quick Discord/community join widget (fixed bottom-right)
+-->
+<template>
+  <div class="float-join" :class="{ 'float-join--open': open }">
+    <!-- Popup -->
+    <Transition name="float-popup">
+      <div v-if="open" class="float-join__popup" role="dialog" aria-label="Join CppIndia">
+        <div class="float-join__popup-header">
+          <span class="float-join__popup-title">Join CppIndia</span>
+          <button class="float-join__close" aria-label="Close" @click="open = false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <p class="float-join__popup-text">Connect with India's C++ community</p>
+        <div class="float-join__options">
+          <a
+            :href="SITE.discordInvite"
+            class="float-join__option float-join__option--discord"
+            target="_blank"
+            rel="noopener noreferrer"
+            @click="open = false"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            Join Discord
+          </a>
+          <RouterLink
+            to="/tech-talks"
+            class="float-join__option"
+            @click="open = false"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Watch Talks
+          </RouterLink>
+          <RouterLink
+            to="/call-for-speakers"
+            class="float-join__option"
+            @click="open = false"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 003-3v-4a3 3 0 00-6 0V4a3 3 0 003 3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
+            Speak at CppIndia
+          </RouterLink>
+        </div>
+      </div>
+    </Transition>
+
+    <!-- Toggle button -->
+    <button
+      class="float-join__toggle"
+      :aria-label="open ? 'Close community menu' : 'Join CppIndia'"
+      :aria-expanded="open"
+      @click="open = !open"
+    >
+      <Transition name="icon-swap" mode="out-in">
+        <svg v-if="!open" key="cpp" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+        </svg>
+        <svg v-else key="close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </Transition>
+      <span v-if="!open" class="float-join__badge" aria-hidden="true">Join</span>
+    </button>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { SITE } from '@/constants'
+
+const open = ref(false)
+</script>
+
+<style lang="scss" scoped>
+.float-join {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-floating);
+
+  @include below(sm) {
+    bottom: var(--space-4);
+    right: var(--space-4);
+  }
+
+  &__toggle {
+    width: 52px; height: 52px;
+    background: $color-secondary;
+    color: white;
+    border-radius: 50%;
+    @include flex(center, center);
+    cursor: pointer;
+    box-shadow: $glow-secondary;
+    transition: all var(--transition-base);
+    position: relative;
+
+    &:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(155, 116, 245, 0.45); }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -4px; right: -4px;
+    background: #5865F2;
+    color: white;
+    border-radius: var(--radius-full);
+    font-size: 9px;
+    font-weight: var(--weight-bold);
+    padding: 2px 5px;
+    letter-spacing: 0.04em;
+  }
+
+  &__popup {
+    position: absolute;
+    bottom: calc(100% + var(--space-3));
+    right: 0;
+    width: 260px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+
+    &-header {
+      @include flex(center, space-between);
+      padding: var(--space-4) var(--space-5);
+      background: linear-gradient(135deg, $color-primary, $color-secondary);
+    }
+
+    &-title {
+      font-family: var(--font-secondary);
+      font-weight: var(--weight-bold);
+      font-size: var(--text-sm);
+      color: white;
+    }
+
+    &-text {
+      padding: var(--space-3) var(--space-5);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+  }
+
+  &__close {
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    &:hover { color: white; }
+  }
+
+  &__options {
+    padding: 0 var(--space-3) var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  &__option {
+    @include flex(center, flex-start, var(--space-3));
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text);
+    background: var(--color-surface-alt);
+    transition: all var(--transition-fast);
+
+    &:hover { background: rgba(155, 116, 245, 0.1); color: $color-secondary; }
+
+    &--discord {
+      background: rgba(88,101,242,0.1);
+      color: #5865F2;
+      &:hover { background: rgba(88,101,242,0.18); }
+    }
+  }
+}
+
+// Transitions
+.float-popup-enter-active,
+.float-popup-leave-active { transition: all var(--transition-base); }
+.float-popup-enter-from,
+.float-popup-leave-to { opacity: 0; transform: translateY(8px) scale(0.96); }
+
+.icon-swap-enter-active,
+.icon-swap-leave-active { transition: all 0.15s; }
+.icon-swap-enter-from,
+.icon-swap-leave-to { opacity: 0; transform: rotate(45deg) scale(0.7); }
+</style>
