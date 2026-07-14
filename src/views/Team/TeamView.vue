@@ -1,5 +1,5 @@
 <template>
-  <div class="team-page">
+  <div>
     <PageHero
       overline="The People Behind CppIndia"
       title="Our Team"
@@ -7,13 +7,14 @@
       :breadcrumb="[{ label: 'About', path: '/about' }, { label: 'Team', path: '/team' }]"
     />
 
-    <section class="section team-page__body">
+    <section class="section">
       <div class="container">
-        <div class="team-page__grid">
+        <!-- Team grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           <div
             v-for="member in team"
             :key="member.id"
-            class="team-card"
+            class="bg-surface border border-wire-light rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/20 group"
           >
             <div class="team-photo-wrap">
               <img
@@ -23,19 +24,22 @@
                 class="team-photo-img"
                 loading="lazy"
               />
-              <span v-else class="team-card__avatar-initial">{{ member.name.charAt(0) }}</span>
+              <span
+                v-else
+                class="absolute inset-0 flex items-center justify-center font-display text-[5rem] font-extrabold text-white/30"
+              >{{ member.name.charAt(0) }}</span>
             </div>
 
-            <div class="team-card__info">
-              <p class="team-card__role">{{ member.role }}</p>
-              <h2 class="team-card__name">{{ member.name }}</h2>
-              <p class="team-card__bio">{{ member.bio }}</p>
+            <div class="p-6">
+              <p class="text-xs font-semibold text-secondary uppercase tracking-widest mb-1">{{ member.role }}</p>
+              <h2 class="font-display text-xl font-bold text-ink mb-3">{{ member.name }}</h2>
+              <p class="text-sm text-ink-2 leading-relaxed mb-4">{{ member.bio }}</p>
 
-              <div class="team-card__links">
+              <div class="flex items-center gap-3">
                 <a
                   v-if="member.links.website"
                   :href="member.links.website"
-                  class="team-card__link"
+                  class="w-8 h-8 flex items-center justify-center bg-surface-alt rounded-md text-ink-2 hover:bg-secondary hover:text-white transition-all duration-150"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Website"
@@ -45,7 +49,7 @@
                 <a
                   v-if="member.links.linkedin"
                   :href="member.links.linkedin"
-                  class="team-card__link"
+                  class="w-8 h-8 flex items-center justify-center bg-surface-alt rounded-md text-ink-2 hover:bg-secondary hover:text-white transition-all duration-150"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -57,9 +61,10 @@
           </div>
         </div>
 
-        <div class="team-page__volunteer">
-          <h2 class="team-page__volunteer-title">Want to help run CppIndia?</h2>
-          <p class="team-page__volunteer-body">
+        <!-- Volunteer CTA -->
+        <div class="text-center p-12 bg-surface-alt border border-wire-light rounded-2xl max-w-[600px] mx-auto">
+          <h2 class="font-display text-2xl font-bold text-ink mb-3">Want to help run CppIndia?</h2>
+          <p class="text-base text-ink-2 leading-relaxed mb-6">
             We're always looking for enthusiastic volunteers — whether you want to help
             organise events, moderate Discord, curate resources, or bring in speakers.
           </p>
@@ -82,107 +87,3 @@ useHead({
 
 const team = teamData
 </script>
-
-<style lang="scss" scoped>
-.team-page {
-  &__body { background: var(--color-bg); }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-6);
-    margin-bottom: var(--space-16);
-  }
-
-  &__volunteer {
-    text-align: center;
-    padding: var(--space-12);
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-    max-width: 600px;
-    margin: 0 auto;
-
-    &-title {
-      font-family: var(--font-secondary);
-      font-size: var(--text-2xl);
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-3);
-    }
-
-    &-body {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-      margin-bottom: var(--space-6);
-    }
-  }
-}
-
-.team-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-2xl);
-  overflow: hidden;
-  transition: all var(--transition-base);
-
-  &:hover {
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
-  }
-
-  &__avatar-initial {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-secondary);
-    font-size: 5rem;
-    font-weight: var(--weight-extrabold);
-    color: rgba(255, 255, 255, 0.35);
-  }
-
-  &__info { padding: var(--space-6); }
-
-  &__role {
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    color: $color-secondary;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: var(--space-1);
-  }
-
-  &__name {
-    font-family: var(--font-secondary);
-    font-size: var(--text-xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-  }
-
-  &__bio {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-4);
-  }
-
-  &__links {
-    @include flex(center, flex-start, var(--space-3));
-  }
-
-  &__link {
-    width: 32px; height: 32px;
-    @include flex(center, center);
-    background: var(--color-surface-alt);
-    border-radius: var(--radius-md);
-    color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
-
-    &:hover { background: $color-secondary; color: white; }
-  }
-}
-</style>

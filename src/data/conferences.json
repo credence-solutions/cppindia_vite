@@ -114,7 +114,42 @@
         { "name": "#include <C++>", "website": "https://www.includecpp.org" }
       ]
     },
-    "schedule": [],
+    "schedule": [
+      {
+        "day": 1,
+        "date": "August 4, 2023",
+        "sessions": [
+          { "time": "09:45–10:00", "title": "Introduction",                                              "speaker": "CppIndia Hosts",                    "type": "intro" },
+          { "time": "10:00–11:00", "title": "Using C++ for Your Artificial Intelligence Solution",       "speaker": "Kushashwa Ravi Shrimali",           "type": "talk",    "abstract": "Practical use of C++ in AI/ML pipelines — from inference frameworks to binding Python AI libraries with high-performance C++ backends." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "11:30–12:30", "title": "[Keynote] AI-Assisted Programming (ChatGPT, etc)",         "speaker": "Bryce Adelstein Lelbach",            "type": "keynote", "abstract": "How AI coding assistants like ChatGPT are changing software development workflows — opportunities, pitfalls, and what it means for C++ developers." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "13:00–14:00", "title": "C++ Coroutines from Scratch",                              "speaker": "Andreas Fertig",                    "type": "talk",    "abstract": "A ground-up introduction to C++20 coroutines — demystifying co_await, co_yield, and co_return with practical, runnable examples." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "15:00–16:00", "title": "Introduction to Intel oneAPI",                             "speaker": "Kiran Kannappan",                   "type": "talk",    "abstract": "Intel's unified programming model for heterogeneous computing — targeting CPUs, GPUs, and FPGAs with a single C++ codebase using SYCL." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "16:30–17:30", "title": "Lightning Talks",                                          "speaker": "Prince Gupta · Emmanuel Danso Nyarko · Mahendra Garodi", "type": "lightning" },
+          { "time": "17:30–17:45", "title": "Day 1 Closure",                                            "speaker": "CppIndia Hosts",                    "type": "outro" }
+        ]
+      },
+      {
+        "day": 2,
+        "date": "August 5, 2023",
+        "sessions": [
+          { "time": "09:45–10:00", "title": "Introduction",                                              "speaker": "CppIndia Hosts",                    "type": "intro" },
+          { "time": "10:00–11:00", "title": "Optimization Design Patterns",                             "speaker": "Mike Shah",                         "type": "talk",    "abstract": "Identifying and applying proven patterns for writing performant C++ — profiling-driven techniques for cache efficiency, branching, and data layout." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "11:30–12:30", "title": "C++ Features You Might Not Know",                         "speaker": "Jonathan Müller",                   "type": "talk",    "abstract": "A tour of lesser-known but powerful C++ language features and standard library facilities that can dramatically improve everyday code." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "13:00–14:00", "title": "Understanding Common Concurrency Patterns",                "speaker": "Venkata Naga Ravikiran Bulusu",      "type": "talk",    "abstract": "Practical concurrency patterns in C++ — thread pools, producer-consumer, readers-writer locks, and when to reach for each one." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "15:00–16:00", "title": "Value-Oriented Design — by example",                      "speaker": "Ankur Satle",                       "type": "talk",    "abstract": "Designing software around values rather than entities — improving testability, reasoning, and correctness through immutability and value semantics." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
+          { "time": "16:30–17:30", "title": "Why 5G is Fast? and C++ in 5G Open Source",              "speaker": "Selvakumar Jawahar",                "type": "talk",    "abstract": "The role of C++ in 5G open-source stacks — architecture, latency requirements, and real-world deployment experiences." },
+          { "time": "17:30–17:45", "title": "Conference Closing",                                        "speaker": "CppIndia Hosts",                    "type": "outro" }
+        ]
+      }
+    ],
     "registrationUrl": null
   },
   {

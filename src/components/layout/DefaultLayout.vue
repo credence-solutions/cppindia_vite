@@ -40,14 +40,7 @@ onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 </script>
 
-<style lang="scss" scoped>
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  &__main {
-    flex: 1;
-  }
-}
+<style scoped>
+.layout { display: flex; flex-direction: column; min-height: 100vh; }
+.layout__main { flex: 1; }
 </style>

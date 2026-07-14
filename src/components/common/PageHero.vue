@@ -1,26 +1,37 @@
 <template>
-  <section class="page-hero" :style="bgStyle" :aria-label="`${title} page hero`">
-    <div class="page-hero__overlay" aria-hidden="true" />
-    <div class="container page-hero__inner">
+  <section
+    class="relative py-20 pb-16 overflow-hidden bg-cover bg-center"
+    :style="bgStyle"
+    :aria-label="`${title} page hero`"
+  >
+    <!-- Overlay -->
+    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(135deg, rgba(6,9,15,0.8) 0%, rgba(13,26,53,0.7) 100%);" />
+
+    <!-- Decorative grid -->
+    <div class="absolute inset-0 pointer-events-none opacity-30"
+      style="background-image: linear-gradient(rgba(79,142,247,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(79,142,247,0.07) 1px, transparent 1px); background-size: 48px 48px;" />
+
+    <div class="container relative z-[1]">
       <!-- Breadcrumb -->
-      <nav v-if="breadcrumb?.length" class="page-hero__breadcrumb" aria-label="Breadcrumb">
-        <ol class="page-hero__crumbs" role="list">
-          <li>
-            <RouterLink to="/">Home</RouterLink>
-          </li>
-          <li v-for="crumb in breadcrumb" :key="crumb.path">
-            <span class="page-hero__crumb-sep" aria-hidden="true">/</span>
-            <RouterLink v-if="crumb.path" :to="crumb.path">{{ crumb.label }}</RouterLink>
+      <nav v-if="breadcrumb?.length" class="mb-6" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-2 text-xs text-white/50" role="list">
+          <li><RouterLink to="/" class="text-white/65 hover:text-white transition-colors duration-fast">Home</RouterLink></li>
+          <li v-for="crumb in breadcrumb" :key="crumb.path" class="flex items-center gap-2">
+            <span class="text-white/30" aria-hidden="true">/</span>
+            <RouterLink v-if="crumb.path" :to="crumb.path" class="text-white/65 hover:text-white transition-colors duration-fast">{{ crumb.label }}</RouterLink>
             <span v-else>{{ crumb.label }}</span>
           </li>
         </ol>
       </nav>
 
       <!-- Content -->
-      <div class="page-hero__content">
-        <p v-if="overline" class="overline page-hero__overline">{{ overline }}</p>
-        <h1 class="page-hero__title">{{ title }}</h1>
-        <p v-if="subtitle" class="page-hero__subtitle">{{ subtitle }}</p>
+      <div>
+        <p v-if="overline" class="text-xs font-semibold text-white/65 uppercase tracking-widest mb-3">{{ overline }}</p>
+        <h1
+          class="font-display font-extrabold text-white leading-tight tracking-tight mb-4"
+          style="font-size: clamp(2rem, 4vw, 3.5rem);"
+        >{{ title }}</h1>
+        <p v-if="subtitle" class="text-lg text-white/70 max-w-[560px] leading-relaxed">{{ subtitle }}</p>
         <slot />
       </div>
     </div>
@@ -35,7 +46,7 @@ const props = defineProps({
   overline:   { type: String, default: '' },
   subtitle:   { type: String, default: '' },
   image:      { type: String, default: '' },
-  breadcrumb: { type: Array, default: () => [] },
+  breadcrumb: { type: Array,  default: () => [] },
 })
 
 const bgStyle = computed(() => ({
@@ -44,60 +55,3 @@ const bgStyle = computed(() => ({
     : 'linear-gradient(135deg, #060B1A 0%, #0D1A35 60%, #061020 100%)',
 }))
 </script>
-
-<style lang="scss" scoped>
-.page-hero {
-  position: relative;
-  padding-block: var(--space-20) var(--space-16);
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-
-  &__overlay {
-    @include overlay;
-    background: linear-gradient(135deg, rgba(6,9,15,0.75) 0%, rgba(13,26,53,0.65) 100%);
-  }
-
-  &__inner {
-    position: relative;
-    z-index: 1;
-  }
-
-  &__breadcrumb { margin-bottom: var(--space-6); }
-
-  &__crumbs {
-    @include flex(center, flex-start, var(--space-2));
-    flex-wrap: wrap;
-    font-size: var(--text-xs);
-    color: rgba(255,255,255,0.5);
-
-    a {
-      color: rgba(255,255,255,0.65);
-      transition: color var(--transition-fast);
-      &:hover { color: white; }
-    }
-  }
-
-  &__crumb-sep { color: rgba(255,255,255,0.3); }
-
-  &__overline { color: rgba(255,255,255,0.65) !important; }
-
-  &__title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-family: var(--font-secondary);
-    font-weight: var(--weight-extrabold);
-    color: white;
-    line-height: var(--leading-snug);
-    letter-spacing: var(--tracking-tight);
-    max-width: 720px;
-    margin-bottom: var(--space-4);
-  }
-
-  &__subtitle {
-    font-size: var(--text-lg);
-    color: rgba(255,255,255,0.7);
-    max-width: 560px;
-    line-height: var(--leading-relaxed);
-  }
-}
-</style>

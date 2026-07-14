@@ -1,5 +1,5 @@
 <template>
-  <div class="talks-page">
+  <div>
     <PageHero
       overline="Community Tech Talks"
       title="Learn. Share. Grow."
@@ -7,59 +7,74 @@
       :breadcrumb="[{ label: 'Tech Talks', path: '/tech-talks' }]"
     />
 
-    <section class="section talks-page__body">
+    <section class="section">
       <div class="container">
+
         <!-- Year tabs -->
-        <div class="talks-page__year-tabs" role="tablist" aria-label="Select year">
+        <div
+          class="flex items-center flex-wrap gap-2 mb-8 pb-4 border-b border-wire-light"
+          role="tablist"
+          aria-label="Select year"
+        >
           <button
             v-for="yr in years"
             :key="yr"
             role="tab"
-            class="talks-page__year-tab"
-            :class="{ 'talks-page__year-tab--active': activeYear === yr }"
+            class="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 cursor-pointer"
+            :class="activeYear === yr
+              ? 'bg-secondary text-white hover:bg-secondary-dark'
+              : 'text-ink-2 hover:text-secondary hover:bg-[rgba(79,142,247,0.06)]'"
             :aria-selected="activeYear === yr"
             @click="setYear(yr)"
           >
             {{ yr }}
-            <span class="talks-page__year-count">{{ talksByYear[yr]?.length ?? 0 }}</span>
+            <span
+              class="px-1.5 py-px rounded-full text-[10px] font-bold"
+              :class="activeYear === yr ? 'bg-white/20 text-white' : 'bg-surface-alt text-ink-3'"
+            >{{ talksByYear[yr]?.length ?? 0 }}</span>
           </button>
         </div>
 
-        <!-- Loading -->
-        <div v-if="loading" class="talks-page__skeleton">
-          <div v-for="n in 6" :key="n" class="skeleton talks-page__skeleton-card" />
+        <!-- Loading skeleton -->
+        <div v-if="loading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div v-for="n in 6" :key="n" class="skeleton h-[200px] rounded-xl" />
         </div>
 
         <!-- Empty -->
-        <div v-else-if="!talks.length" class="talks-page__empty">
+        <div v-else-if="!talks.length" class="text-center py-16 text-ink-3">
           <p>No talks found for {{ activeYear }}.</p>
         </div>
 
         <!-- Talks grid -->
-        <div v-else class="talks-page__grid">
+        <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <article
             v-for="talk in talks"
             :key="talk.id"
-            class="talk-card"
+            class="flex flex-col gap-3 p-6 bg-surface border border-wire-light rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
           >
-            <div class="talk-card__meta">
-              <time class="talk-card__date" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
-              <div class="talk-card__tags">
-                <span v-for="tag in talk.tags.slice(0, 2)" :key="tag" class="talk-card__tag">{{ tag }}</span>
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
+              <div class="flex items-center gap-1">
+                <span
+                  v-for="tag in talk.tags.slice(0, 2)"
+                  :key="tag"
+                  class="px-2 py-0.5 bg-[rgba(79,142,247,0.10)] text-secondary rounded text-[10px] font-semibold"
+                >{{ tag }}</span>
               </div>
             </div>
 
-            <h2 class="talk-card__title">{{ talk.title }}</h2>
-            <p class="talk-card__speaker">
+            <h2 class="font-display text-base font-bold text-ink leading-[1.35] flex-1">{{ talk.title }}</h2>
+
+            <p class="flex items-center gap-2 text-sm text-ink-2 font-medium">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
               {{ talk.speaker }}
             </p>
 
-            <div class="talk-card__actions">
+            <div class="flex items-center flex-wrap gap-2 mt-auto">
               <a
                 v-if="talk.video"
                 :href="talk.video"
-                class="talk-card__btn"
+                class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-secondary text-white hover:bg-secondary-dark transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -69,7 +84,7 @@
               <a
                 v-if="talk.slides"
                 :href="talk.slides"
-                class="talk-card__btn talk-card__btn--ghost"
+                class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-transparent border border-wire text-ink-2 hover:border-secondary hover:text-secondary transition-all"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -79,17 +94,18 @@
             </div>
           </article>
         </div>
+
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="talks-page__cta section--sm">
-      <div class="container talks-page__cta-inner">
+    <!-- CTA strip -->
+    <section class="section--sm bg-surface-alt border-t border-wire-light">
+      <div class="container flex items-center justify-between gap-8 flex-wrap">
         <div>
-          <h3 class="talks-page__cta-title">Want to give a talk?</h3>
-          <p class="talks-page__cta-body">Share your C++ knowledge with the community. All experience levels welcome.</p>
+          <h3 class="font-display text-2xl font-bold text-ink mb-2">Want to give a talk?</h3>
+          <p class="text-base text-ink-2">Share your C++ knowledge with the community. All experience levels welcome.</p>
         </div>
-        <RouterLink to="/call-for-speakers" class="btn btn--primary">Submit a Talk Proposal</RouterLink>
+        <RouterLink to="/call-for-speakers" class="btn btn--primary flex-shrink-0">Submit a Talk Proposal</RouterLink>
       </div>
     </section>
   </div>
@@ -140,184 +156,3 @@ watch(() => route.query.year, (yr) => {
 
 onMounted(loadTalks)
 </script>
-
-<style lang="scss" scoped>
-.talks-page {
-  &__body { background: var(--color-bg); }
-
-  &__year-tabs {
-    @include flex(center, flex-start, var(--space-2));
-    flex-wrap: wrap;
-    margin-bottom: var(--space-8);
-    border-bottom: 1px solid var(--color-border-light);
-    padding-bottom: var(--space-4);
-  }
-
-  &__year-tab {
-    @include flex(center, flex-start, var(--space-2));
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius-md);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    color: var(--color-text-secondary);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-
-    &:hover { color: $color-secondary; background: rgba(79, 142, 247, 0.06); }
-
-    &--active {
-      background: $color-secondary;
-      color: white;
-      &:hover { color: white; background: $color-secondary-dark; }
-    }
-  }
-
-  &__year-count {
-    padding: 1px 6px;
-    background: rgba(255,255,255,0.2);
-    border-radius: var(--radius-full);
-    font-size: 10px;
-    font-weight: var(--weight-bold);
-
-    .talks-page__year-tab:not(.talks-page__year-tab--active) & {
-      background: var(--color-surface-alt);
-      color: var(--color-text-muted);
-    }
-  }
-
-  &__skeleton {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
-    @include below(lg) { grid-template-columns: repeat(2, 1fr); }
-    @include below(sm) { grid-template-columns: 1fr; }
-
-    &-card {
-      height: 200px;
-      border-radius: var(--radius-xl);
-    }
-  }
-
-  &__empty {
-    text-align: center;
-    padding: var(--space-16) 0;
-    color: var(--color-text-muted);
-  }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
-    @include below(lg) { grid-template-columns: repeat(2, 1fr); }
-    @include below(sm) { grid-template-columns: 1fr; }
-  }
-
-  &__cta {
-    background: var(--color-surface-alt);
-    border-top: 1px solid var(--color-border-light);
-
-    &-inner {
-      @include flex(center, space-between);
-      gap: var(--space-8);
-      flex-wrap: wrap;
-    }
-
-    &-title {
-      font-family: var(--font-secondary);
-      font-size: var(--text-2xl);
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
-
-    &-body {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-    }
-  }
-}
-
-.talk-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  transition: all var(--transition-base);
-
-  &:hover {
-    border-color: rgba(79, 142, 247, 0.25);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-  }
-
-  &__meta {
-    @include flex(center, space-between);
-    gap: var(--space-2);
-    flex-wrap: wrap;
-  }
-
-  &__date {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    font-family: var(--font-mono);
-  }
-
-  &__tags {
-    @include flex(center, flex-start, var(--space-1));
-  }
-
-  &__tag {
-    padding: 2px var(--space-2);
-    background: rgba(79, 142, 247, 0.10);
-    color: $color-secondary;
-    border-radius: var(--radius-sm);
-    font-size: 10px;
-    font-weight: var(--weight-semibold);
-  }
-
-  &__title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-base);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    line-height: 1.35;
-    flex: 1;
-  }
-
-  &__speaker {
-    @include flex(center, flex-start, var(--space-2));
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    font-weight: var(--weight-medium);
-  }
-
-  &__actions {
-    @include flex(center, flex-start, var(--space-2));
-    margin-top: auto;
-    flex-wrap: wrap;
-  }
-
-  &__btn {
-    @include flex(center, flex-start, var(--space-1));
-    padding: var(--space-2) var(--space-3);
-    border-radius: var(--radius-md);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    background: $color-secondary;
-    color: white;
-    transition: all var(--transition-fast);
-
-    &:hover { background: $color-secondary-dark; }
-
-    &--ghost {
-      background: transparent;
-      border: 1px solid var(--color-border);
-      color: var(--color-text-secondary);
-      &:hover { border-color: $color-secondary; color: $color-secondary; }
-    }
-  }
-}
-</style>

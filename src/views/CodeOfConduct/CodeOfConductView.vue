@@ -1,5 +1,5 @@
 <template>
-  <div class="coc-page">
+  <div>
     <PageHero
       overline="Community Standards"
       title="Code of Conduct"
@@ -7,12 +7,14 @@
       :breadcrumb="[{ label: 'Code of Conduct', path: '/code-of-conduct' }]"
     />
 
-    <section class="section coc-page__body">
-      <div class="container coc-page__content">
-        <div class="coc-page__card">
-          <div class="coc-page__intro">
-            <h2 class="coc-page__section-title">Our Commitment</h2>
-            <p>
+    <section class="section">
+      <div class="container max-w-[800px] mx-auto">
+        <div class="bg-surface border border-wire-light rounded-2xl overflow-hidden">
+
+          <!-- Our Commitment -->
+          <div class="px-8 lg:px-12 py-10 border-b border-wire-light">
+            <h2 class="font-display text-xl font-bold text-ink mb-4">Our Commitment</h2>
+            <p class="text-base text-ink-2 leading-relaxed">
               CppIndia events and spaces are open, inclusive, and positive environments.
               We want everyone — regardless of gender, gender identity and expression, sexual orientation,
               disability, physical appearance, body size, race, age, religion, or programming background —
@@ -20,18 +22,22 @@
             </p>
           </div>
 
-          <div class="coc-page__berlin">
-            <h2 class="coc-page__section-title">Berlin Code of Conduct</h2>
-            <p>
+          <!-- Berlin Code of Conduct -->
+          <div class="px-8 lg:px-12 py-10 border-b border-wire-light">
+            <h2 class="font-display text-xl font-bold text-ink mb-4">Berlin Code of Conduct</h2>
+            <p class="text-base text-ink-2 leading-relaxed">
               We apply the
-              <a href="https://berlincodeofconduct.org/" class="coc-page__link" target="_blank" rel="noopener noreferrer">
-                Berlin Code of Conduct
-              </a>
+              <a
+                href="https://berlincodeofconduct.org/"
+                class="text-secondary underline hover:text-primary transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Berlin Code of Conduct</a>
               to all CppIndia events, tech talks, online spaces, and community interactions.
             </p>
             <a
               href="https://berlincodeofconduct.org/"
-              class="btn btn--outline coc-page__berlin-btn"
+              class="btn btn--outline flex items-center gap-2 w-fit mt-5"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,25 +46,38 @@
             </a>
           </div>
 
-          <div class="coc-page__principles">
-            <h2 class="coc-page__section-title">Core Principles</h2>
-            <div class="coc-page__principle-grid">
-              <div v-for="p in principles" :key="p.title" class="coc-page__principle">
-                <div class="coc-page__principle-icon" v-html="p.icon" />
-                <h3>{{ p.title }}</h3>
-                <p>{{ p.body }}</p>
+          <!-- Core Principles -->
+          <div class="px-8 lg:px-12 py-10 border-b border-wire-light">
+            <h2 class="font-display text-xl font-bold text-ink mb-4">Core Principles</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
+              <div
+                v-for="p in principles"
+                :key="p.title"
+                class="p-5 bg-surface-alt rounded-xl"
+              >
+                <div
+                  class="w-11 h-11 flex items-center justify-center bg-[rgba(79,142,247,0.10)] rounded-lg text-secondary mb-3"
+                  v-html="p.icon"
+                />
+                <h3 class="font-display text-base font-bold text-ink mb-2">{{ p.title }}</h3>
+                <p class="text-sm text-ink-2 leading-relaxed">{{ p.body }}</p>
               </div>
             </div>
           </div>
 
-          <div class="coc-page__reporting">
-            <h2 class="coc-page__section-title">Reporting Issues</h2>
-            <p>
+          <!-- Reporting -->
+          <div class="px-8 lg:px-12 py-10">
+            <h2 class="font-display text-xl font-bold text-ink mb-4">Reporting Issues</h2>
+            <p class="text-base text-ink-2 leading-relaxed">
               If you experience or witness behaviour that violates this code of conduct,
               please reach out to the CppIndia team:
             </p>
-            <a :href="`mailto:${SITE.email}`" class="coc-page__email">{{ SITE.email }}</a>
+            <a
+              :href="`mailto:${SITE.email}`"
+              class="inline-block mt-4 text-base font-semibold text-secondary underline hover:text-primary transition-colors"
+            >{{ SITE.email }}</a>
           </div>
+
         </div>
       </div>
     </section>
@@ -98,102 +117,3 @@ const principles = [
   },
 ]
 </script>
-
-<style lang="scss" scoped>
-.coc-page {
-  &__body { background: var(--color-bg); }
-
-  &__content { max-width: 800px; margin: 0 auto; }
-
-  &__card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-
-    > div {
-      padding: var(--space-10) var(--space-12);
-      border-bottom: 1px solid var(--color-border-light);
-
-      &:last-child { border-bottom: none; }
-
-      @include below(md) { padding: var(--space-7) var(--space-6); }
-    }
-
-    p {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-    }
-  }
-
-  &__section-title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-4);
-  }
-
-  &__link {
-    color: $color-secondary;
-    text-decoration: underline;
-    &:hover { color: $color-primary; }
-  }
-
-  &__berlin-btn {
-    @include flex(center, flex-start, var(--space-2));
-    margin-top: var(--space-5);
-    width: fit-content;
-  }
-
-  &__principle-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-5);
-    margin-top: var(--space-5);
-
-    @include below(sm) { grid-template-columns: 1fr; }
-  }
-
-  &__principle {
-    padding: var(--space-5);
-    background: var(--color-surface-alt);
-    border-radius: var(--radius-xl);
-
-    &-icon {
-      width: 44px; height: 44px;
-      @include flex(center, center);
-      background: rgba(79, 142, 247, 0.10);
-      border-radius: var(--radius-lg);
-      color: $color-secondary;
-      margin-bottom: var(--space-3);
-    }
-
-    h3 {
-      font-family: var(--font-secondary);
-      font-size: var(--text-base);
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
-
-    p {
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-    }
-  }
-
-  &__email {
-    display: inline-block;
-    margin-top: var(--space-4);
-    color: $color-secondary;
-    font-weight: var(--weight-semibold);
-    font-size: var(--text-base);
-    text-decoration: underline;
-    transition: color var(--transition-fast);
-    &:hover { color: $color-primary; }
-  }
-}
-</style>

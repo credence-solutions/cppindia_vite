@@ -2,37 +2,46 @@
   CommunityAbout — Brief about section on homepage
 -->
 <template>
-  <section class="section about-strip">
+  <section class="section bg-canvas">
     <div class="container">
-      <div class="about-strip__inner">
-        <div class="about-strip__text gsap-reveal">
-          <p class="about-strip__overline">About CppIndia</p>
-          <h2 class="about-strip__title">
+      <div class="grid grid-cols-1 gap-10 items-center lg:grid-cols-2 lg:gap-16">
+
+        <!-- Left: text -->
+        <div class="gsap-reveal">
+          <p class="overline mb-3">About CppIndia</p>
+          <h2 class="font-display font-bold text-ink leading-[1.2] mb-5"
+            style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
             A community for C++ developers — at every stage of their journey
           </h2>
-          <p class="about-strip__body">
+          <p class="text-base text-ink-2 leading-relaxed mb-7">
             CppIndia was founded to create a common platform that brings together
             people from all walks of life — students, fresh graduates, and experienced
             engineers — united by a mutual interest in C++. We run meetups on alternate
             Saturdays, mentor junior programmers, and connect companies with talented developers.
           </p>
-          <div class="about-strip__actions">
+          <div class="flex flex-wrap items-center gap-4">
             <RouterLink to="/about" class="btn btn--primary">Learn More</RouterLink>
-            <RouterLink to="/join" class="btn btn--outline">Join the Community</RouterLink>
+            <RouterLink to="/join"  class="btn btn--outline">Join the Community</RouterLink>
           </div>
         </div>
 
-        <div class="about-strip__pillars gsap-reveal">
+        <!-- Right: pillars grid -->
+        <div class="gsap-reveal grid grid-cols-2 gap-5">
           <div
             v-for="pillar in pillars"
             :key="pillar.title"
-            class="about-strip__pillar"
+            class="pillar-card group p-6 bg-surface border border-wire-light rounded-xl transition-all duration-base
+                   hover:border-[rgba(79,142,247,0.25)] hover:shadow-glow-primary hover:-translate-y-[2px]"
           >
-            <div class="about-strip__pillar-icon" v-html="pillar.icon" />
-            <h3 class="about-strip__pillar-title">{{ pillar.title }}</h3>
-            <p class="about-strip__pillar-body">{{ pillar.body }}</p>
+            <div class="w-[52px] h-[52px] flex items-center justify-center rounded-lg mb-4 text-primary"
+              style="background:rgba(79,142,247,0.08);"
+              v-html="pillar.icon"
+            />
+            <h3 class="font-display font-bold text-base text-ink mb-2">{{ pillar.title }}</h3>
+            <p class="text-sm text-ink-2 leading-relaxed">{{ pillar.body }}</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -68,91 +77,3 @@ const pillars = [
   },
 ]
 </script>
-
-<style lang="scss" scoped>
-.about-strip {
-  background: var(--color-bg);
-
-  &__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-16);
-    align-items: center;
-
-    @include below(lg) { grid-template-columns: 1fr; gap: var(--space-10); }
-  }
-
-  &__overline {
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    color: $color-secondary;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--space-3);
-  }
-
-  &__title {
-    font-family: var(--font-secondary);
-    font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    line-height: 1.2;
-    margin-bottom: var(--space-5);
-  }
-
-  &__body {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-7);
-  }
-
-  &__actions {
-    @include flex(center, flex-start, var(--space-4));
-    flex-wrap: wrap;
-  }
-
-  &__pillars {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-5);
-  }
-
-  &__pillar {
-    padding: var(--space-6);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-xl);
-    transition: all var(--transition-base);
-
-    &:hover {
-      border-color: rgba(79, 142, 247, 0.25);
-      box-shadow: $glow-primary;
-      transform: translateY(-2px);
-    }
-
-    &-icon {
-      width: 52px; height: 52px;
-      @include flex(center, center);
-      background: rgba(79, 142, 247, 0.08);
-      border-radius: var(--radius-lg);
-      color: $color-primary;
-      margin-bottom: var(--space-4);
-    }
-
-    &-title {
-      font-family: var(--font-secondary);
-      font-size: var(--text-base);
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
-
-    &-body {
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-    }
-  }
-}
-</style>

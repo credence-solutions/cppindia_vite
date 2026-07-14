@@ -2,7 +2,7 @@
   <Transition name="btt">
     <button
       v-if="visible"
-      class="back-to-top"
+      class="fixed bottom-8 right-8 w-11 h-11 flex items-center justify-center rounded-full bg-primary text-white shadow-card-lg z-dropdown cursor-pointer transition-all duration-base hover:bg-primary-dark hover:-translate-y-[3px] hover:shadow-brand"
       aria-label="Back to top"
       @click="scrollToTop"
     >
@@ -18,50 +18,14 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const visible = ref(false)
 
-function onScroll() {
-  visible.value = window.scrollY > 400
-}
+function onScroll()   { visible.value = window.scrollY > 400 }
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }) }
 
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-}
-
-onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
+onMounted(()   => window.addEventListener('scroll', onScroll, { passive: true }))
 onUnmounted(() => window.removeEventListener('scroll', onScroll))
 </script>
 
-<style lang="scss" scoped>
-.back-to-top {
-  position: fixed;
-  bottom: var(--space-8);
-  right: var(--space-8);
-  width: 44px;
-  height: 44px;
-  background: var(--color-primary);
-  color: white;
-  border-radius: var(--radius-full);
-  @include flex(center, center);
-  box-shadow: var(--shadow-lg);
-  z-index: var(--z-dropdown);
-  cursor: pointer;
-  transition: all var(--transition-base);
-
-  &:hover {
-    background: var(--color-primary-dark);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-xl);
-  }
-
-  &:focus-visible { @include focus-ring; }
-}
-
-.btt-enter-active,
-.btt-leave-active {
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-.btt-enter-from,
-.btt-leave-to {
-  opacity: 0;
-  transform: translateY(12px);
-}
+<style scoped>
+.btt-enter-active, .btt-leave-active { transition: opacity 0.25s ease, transform 0.25s ease; }
+.btt-enter-from, .btt-leave-to { opacity: 0; transform: translateY(12px); }
 </style>

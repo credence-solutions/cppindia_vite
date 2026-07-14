@@ -1,5 +1,5 @@
 <template>
-  <div class="conf-page">
+  <div>
     <PageHero
       overline="Annual C++ Conference"
       title="CppIndiaCon"
@@ -7,55 +7,63 @@
       :breadcrumb="[{ label: 'CppIndiaCon', path: '/conference' }]"
     />
 
-    <section class="section conf-page__body">
+    <section class="section">
       <div class="container">
 
         <!-- Year tabs -->
-        <div class="conf-page__year-tabs" role="tablist">
+        <div
+          class="flex items-center flex-wrap gap-2 mb-10 pb-4 border-b border-wire-light"
+          role="tablist"
+        >
           <button
             v-for="yr in years"
             :key="yr"
             role="tab"
-            class="conf-page__year-tab"
-            :class="{ 'conf-page__year-tab--active': activeYear === yr }"
+            class="flex items-center gap-2 px-5 py-2 rounded-md text-sm font-medium border border-transparent cursor-pointer transition-all duration-150"
+            :class="activeYear === yr
+              ? 'bg-secondary text-white border-secondary'
+              : 'text-ink-2 hover:text-secondary hover:bg-secondary/[0.08]'"
             :aria-selected="activeYear === yr"
             @click="setYear(yr)"
           >
             {{ yr }}
-            <span v-if="yr === latestYear" class="conf-page__year-badge">Latest</span>
+            <span
+              v-if="yr === latestYear"
+              class="px-1.5 py-px bg-white/20 rounded-full text-[10px] font-bold"
+            >Latest</span>
           </button>
         </div>
 
         <!-- Loading -->
-        <div v-if="loading" class="skeleton conf-page__skeleton" />
+        <div v-if="loading" class="skeleton h-[500px] rounded-xl" />
 
         <!-- Conference content -->
         <template v-else-if="conf">
 
           <!-- Header -->
-          <div class="conf-header">
-            <div class="conf-header__text">
-              <h2 class="conf-header__title">{{ conf.name }}</h2>
-              <p class="conf-header__meta">
+          <div class="flex items-start justify-between gap-8 flex-wrap mb-5">
+            <div>
+              <h2 class="font-display text-3xl lg:text-5xl font-extrabold text-ink mb-2">{{ conf.name }}</h2>
+              <p class="font-mono text-sm text-ink-3 mb-3">
                 <span>{{ conf.dates }}</span>
-                <span class="conf-header__dot" aria-hidden="true">·</span>
+                <span class="mx-2 opacity-40">·</span>
                 <span>{{ conf.format }}</span>
-                <span class="conf-header__dot" aria-hidden="true">·</span>
+                <span class="mx-2 opacity-40">·</span>
                 <span>Edition {{ conf.edition }}</span>
               </p>
-              <p class="conf-header__tagline">{{ conf.tagline }}</p>
+              <p class="font-display text-lg font-semibold text-secondary">{{ conf.tagline }}</p>
             </div>
-            <div class="conf-header__actions">
+            <div class="flex items-center flex-wrap gap-3 flex-shrink-0">
               <a
                 v-if="conf.registrationUrl"
                 :href="conf.registrationUrl"
-                class="btn btn--primary"
+                class="btn btn--primary flex items-center gap-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >Register Now</a>
               <a
                 :href="conf.videosUrl"
-                class="btn btn--outline"
+                class="btn btn--outline flex items-center gap-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -70,68 +78,77 @@
             <img :src="conf.banner" :alt="conf.name + ' banner'" class="conf-banner-img" />
           </div>
 
-          <p class="conf-desc">{{ conf.description }}</p>
+          <p class="text-base text-ink-2 leading-relaxed max-w-[780px] mb-10">{{ conf.description }}</p>
 
-          <!-- 2023 Stats strip -->
-          <div v-if="conf.stats" class="conf-stats">
-            <div class="conf-stats__item">
-              <span class="conf-stats__value">{{ conf.stats.registrations }}</span>
-              <span class="conf-stats__label">Registrations</span>
+          <!-- Stats strip -->
+          <div
+            v-if="conf.stats"
+            class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-12 p-6 bg-surface border border-wire-light rounded-2xl"
+          >
+            <div class="text-center p-4 rounded-lg bg-surface-alt">
+              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.registrations }}</span>
+              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Registrations</span>
             </div>
-            <div class="conf-stats__item">
-              <span class="conf-stats__value">{{ conf.stats.day1Attendees }}</span>
-              <span class="conf-stats__label">Day 1 Attendees</span>
+            <div class="text-center p-4 rounded-lg bg-surface-alt">
+              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.day1Attendees }}</span>
+              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Day 1 Attendees</span>
             </div>
-            <div class="conf-stats__item">
-              <span class="conf-stats__value">{{ conf.stats.day2Attendees }}</span>
-              <span class="conf-stats__label">Day 2 Attendees</span>
+            <div class="text-center p-4 rounded-lg bg-surface-alt">
+              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.day2Attendees }}</span>
+              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Day 2 Attendees</span>
             </div>
-            <div class="conf-stats__item">
-              <span class="conf-stats__value">{{ conf.stats.talkProposals }}+</span>
-              <span class="conf-stats__label">Talk Proposals</span>
+            <div class="text-center p-4 rounded-lg bg-surface-alt">
+              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.talkProposals }}+</span>
+              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Talk Proposals</span>
             </div>
-            <div class="conf-stats__item">
-              <span class="conf-stats__value">{{ conf.stats.volunteers }}</span>
-              <span class="conf-stats__label">Volunteers</span>
+            <div class="text-center p-4 rounded-lg bg-surface-alt">
+              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.volunteers }}</span>
+              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Volunteers</span>
             </div>
           </div>
 
-          <!-- Schedule (2024) -->
-          <div v-if="conf.schedule?.length" class="conf-schedule">
-            <h3 class="conf-section-title">Conference Schedule</h3>
-            <div class="conf-schedule__days">
+          <!-- Schedule -->
+          <div v-if="conf.schedule?.length" class="mb-12">
+            <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Conference Schedule</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div
                 v-for="day in conf.schedule"
                 :key="day.day"
-                class="conf-schedule__day"
+                class="bg-surface border border-wire-light rounded-2xl overflow-hidden"
               >
-                <div class="conf-schedule__day-header">
-                  <span class="conf-schedule__day-num">Day {{ day.day }}</span>
-                  <span class="conf-schedule__day-date">{{ day.date }}</span>
+                <div class="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[rgba(79,142,247,0.12)] to-[rgba(155,116,245,0.12)] border-b border-wire-light">
+                  <span class="font-display font-bold text-base text-ink">Day {{ day.day }}</span>
+                  <span class="font-mono text-xs text-ink-3">{{ day.date }}</span>
                 </div>
 
-                <div class="conf-schedule__sessions">
+                <div class="p-3">
                   <div
                     v-for="session in day.sessions"
                     :key="session.time + session.title"
-                    class="conf-session"
-                    :class="`conf-session--${session.type}`"
+                    class="flex items-start gap-4 px-3 py-3 rounded-lg mb-1 transition-colors"
+                    :class="{
+                      'opacity-55': ['break','intro','outro','activity'].includes(session.type),
+                      'bg-surface-alt hover:bg-surface-raised': ['talk','keynote','lightning'].includes(session.type),
+                      'border-l-[3px] border-secondary bg-secondary/[0.06]': session.type === 'keynote',
+                    }"
                   >
-                    <div class="conf-session__time">{{ session.time }}</div>
-                    <div class="conf-session__content">
-                      <div class="conf-session__header">
-                        <p class="conf-session__title">{{ session.title }}</p>
+                    <div class="font-mono text-[10px] text-ink-3 whitespace-nowrap min-w-[92px] pt-0.5 flex-shrink-0">
+                      {{ session.time }}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-start justify-between gap-2">
+                        <p class="text-sm font-semibold text-ink leading-snug flex-1">{{ session.title }}</p>
                         <span
                           v-if="session.type === 'keynote'"
-                          class="conf-session__badge conf-session__badge--keynote"
+                          class="flex-shrink-0 px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-secondary text-white"
                         >Keynote</span>
                         <span
                           v-else-if="session.type === 'lightning'"
-                          class="conf-session__badge conf-session__badge--lightning"
+                          class="flex-shrink-0 px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-accent text-black"
                         >Lightning</span>
                       </div>
-                      <p v-if="session.speaker" class="conf-session__speaker">{{ session.speaker }}</p>
-                      <p v-if="session.abstract" class="conf-session__abstract">{{ session.abstract }}</p>
+                      <p v-if="session.speaker" class="text-xs text-primary font-medium mt-1">{{ session.speaker }}</p>
+                      <p v-if="session.abstract" class="text-xs text-ink-3 leading-relaxed mt-2">{{ session.abstract }}</p>
                     </div>
                   </div>
                 </div>
@@ -140,27 +157,30 @@
           </div>
 
           <!-- Speakers -->
-          <div v-if="conf.speakers.length" class="conf-speakers">
-            <h3 class="conf-section-title">Speakers</h3>
-            <div class="conf-speakers__grid">
+          <div v-if="conf.speakers.length" class="mb-12">
+            <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Speakers</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
               <div
                 v-for="s in conf.speakers"
                 :key="s.name"
-                class="speaker-card"
-                :class="{ 'speaker-card--keynote': s.role === 'Keynote' }"
+                class="flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+                :class="{ 'border-secondary/35': s.role === 'Keynote' }"
               >
                 <div class="speaker-photo-wrap">
                   <span class="speaker-photo-wrap__initial">{{ s.name.charAt(0) }}</span>
                   <img v-if="s.image" :src="s.image" :alt="s.name" class="speaker-photo" />
                 </div>
-                <div class="speaker-card__body">
-                  <div class="speaker-card__name-row">
-                    <p class="speaker-card__name">{{ s.name }}</p>
-                    <span v-if="s.role === 'Keynote'" class="speaker-card__badge">Keynote</span>
+                <div class="p-4 flex-1">
+                  <div class="flex items-start justify-between gap-2 flex-wrap mb-1">
+                    <p class="font-bold text-sm text-ink leading-snug">{{ s.name }}</p>
+                    <span
+                      v-if="s.role === 'Keynote'"
+                      class="px-[7px] py-px bg-secondary text-white rounded-full text-[9px] font-bold uppercase tracking-[0.04em] flex-shrink-0 mt-0.5 self-start"
+                    >Keynote</span>
                   </div>
-                  <p v-if="s.topic" class="speaker-card__topic">"{{ s.topic }}"</p>
-                  <div v-if="s.rating" class="speaker-card__rating">
-                    <span class="speaker-card__star">★</span>
+                  <p v-if="s.topic" class="text-xs text-ink-2 leading-[1.5] italic">"{{ s.topic }}"</p>
+                  <div v-if="s.rating" class="flex items-center gap-[3px] mt-2 text-xs text-yellow-400 font-semibold">
+                    <span class="text-[12px]">★</span>
                     <span>{{ s.rating.toFixed(2) }} / 5</span>
                   </div>
                 </div>
@@ -168,37 +188,37 @@
             </div>
           </div>
 
-          <!-- Lightning Talks (2023) -->
-          <div v-if="conf.lightningTalks?.length" class="conf-lightning">
-            <h3 class="conf-section-title">Lightning Talks</h3>
-            <div class="conf-lightning__grid">
+          <!-- Lightning Talks -->
+          <div v-if="conf.lightningTalks?.length" class="mb-12">
+            <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Lightning Talks</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div
                 v-for="lt in conf.lightningTalks"
                 :key="lt.speaker"
-                class="conf-lightning__item"
+                class="px-5 py-4 bg-surface border border-wire-light border-l-[3px] border-l-accent rounded-lg"
               >
-                <p class="conf-lightning__speaker">{{ lt.speaker }}</p>
-                <p class="conf-lightning__topic">{{ lt.topic }}</p>
+                <p class="text-sm font-bold text-ink mb-1">{{ lt.speaker }}</p>
+                <p class="text-xs text-ink-2 leading-[1.4]">{{ lt.topic }}</p>
               </div>
             </div>
           </div>
 
           <!-- Sponsors -->
-          <div class="conf-sponsors">
+          <div class="mb-12">
             <template v-if="conf.sponsors.gold.length">
-              <h3 class="conf-section-title">Gold Sponsors</h3>
-              <div class="conf-sponsors__grid">
+              <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Gold Sponsors</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                 <div
                   v-for="s in conf.sponsors.gold"
                   :key="s.name"
-                  class="conf-sponsors__card conf-sponsors__card--gold"
+                  class="p-6 bg-surface border border-wire-light rounded-xl border-[rgba(251,191,36,0.3)] bg-[rgba(251,191,36,0.04)]"
                 >
-                  <p class="conf-sponsors__name">{{ s.name }}</p>
-                  <p v-if="s.description" class="conf-sponsors__desc">{{ s.description }}</p>
+                  <p class="font-display text-lg font-bold text-ink mb-3">{{ s.name }}</p>
+                  <p v-if="s.description" class="text-sm text-ink-2 leading-relaxed mb-4">{{ s.description }}</p>
                   <a
                     v-if="s.website"
                     :href="s.website"
-                    class="conf-sponsors__link"
+                    class="text-xs font-semibold text-primary hover:text-secondary transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >Visit Website →</a>
@@ -207,13 +227,13 @@
             </template>
 
             <template v-if="conf.sponsors.community.length">
-              <h3 class="conf-section-title conf-section-title--sm">Community Sponsors</h3>
-              <div class="conf-sponsors__community">
+              <h3 class="font-display text-base font-bold text-ink mt-8 mb-4 pb-3 border-b border-wire-light">Community Sponsors</h3>
+              <div class="flex flex-wrap items-center gap-3">
                 <a
                   v-for="s in conf.sponsors.community"
                   :key="s.name"
                   :href="s.website"
-                  class="conf-sponsors__pill"
+                  class="px-5 py-2 bg-surface border border-wire-light rounded-full text-sm font-medium text-ink-2 hover:border-secondary hover:text-secondary transition-all"
                   target="_blank"
                   rel="noopener noreferrer"
                 >{{ s.name }}</a>
@@ -222,11 +242,11 @@
           </div>
 
           <!-- Watch CTA -->
-          <div class="conf-watch-cta">
-            <p class="conf-watch-cta__label">All sessions recorded and available on YouTube</p>
+          <div class="flex flex-col items-center gap-4 p-10 bg-surface-alt border border-wire-light rounded-2xl text-center">
+            <p class="text-sm text-ink-3">All sessions recorded and available on YouTube</p>
             <a
               :href="conf.videosUrl"
-              class="btn btn--primary"
+              class="btn btn--primary flex items-center gap-2"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -237,7 +257,7 @@
 
         </template>
 
-        <div v-else class="conf-page__empty">
+        <div v-else class="text-center py-16 text-ink-3">
           No conference data found for {{ activeYear }}.
         </div>
 
@@ -282,478 +302,3 @@ function setYear(yr) {
 watch(activeYear, loadConference)
 onMounted(() => loadConference(activeYear.value))
 </script>
-
-<style lang="scss" scoped>
-.conf-page {
-  &__body { background: var(--color-bg); }
-
-  &__year-tabs {
-    @include flex(center, flex-start, var(--space-2));
-    flex-wrap: wrap;
-    margin-bottom: var(--space-10);
-    border-bottom: 1px solid var(--color-border-light);
-    padding-bottom: var(--space-4);
-    gap: var(--space-2);
-  }
-
-  &__year-tab {
-    @include flex(center, flex-start, var(--space-2));
-    padding: var(--space-2) var(--space-5);
-    border-radius: var(--radius-md);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    color: var(--color-text-secondary);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    border: 1px solid transparent;
-
-    &:hover {
-      color: $color-secondary;
-      background: rgba(155, 116, 245, 0.08);
-    }
-
-    &--active {
-      background: $color-secondary;
-      color: white;
-      border-color: $color-secondary;
-    }
-  }
-
-  &__year-badge {
-    padding: 1px 6px;
-    background: rgba(255,255,255,0.2);
-    border-radius: var(--radius-full);
-    font-size: 10px;
-    font-weight: var(--weight-bold);
-  }
-
-  &__skeleton { height: 500px; border-radius: var(--radius-xl); }
-
-  &__empty {
-    text-align: center;
-    padding: var(--space-16) 0;
-    color: var(--color-text-muted);
-  }
-}
-
-// Header
-.conf-header {
-  @include flex(flex-start, space-between);
-  gap: var(--space-8);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-5);
-
-  &__title {
-    font-family: var(--font-secondary);
-    font-size: clamp(var(--text-2xl), 4vw, var(--text-5xl));
-    font-weight: var(--weight-extrabold);
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
-  }
-
-  &__meta {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    font-family: var(--font-mono);
-    margin-bottom: var(--space-3);
-  }
-
-  &__dot { margin: 0 var(--space-2); opacity: 0.4; }
-
-  &__tagline {
-    font-family: var(--font-secondary);
-    font-size: var(--text-lg);
-    font-weight: var(--weight-semibold);
-    color: $color-secondary;
-  }
-
-  &__actions {
-    @include flex(center, flex-start, var(--space-3));
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    .btn { @include flex(center, flex-start, var(--space-2)); }
-  }
-}
-
-
-.conf-desc {
-  font-size: var(--text-base);
-  color: var(--color-text-secondary);
-  line-height: var(--leading-relaxed);
-  max-width: 780px;
-  margin-bottom: var(--space-10);
-}
-
-// Stats (2023)
-.conf-stats {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-4);
-  margin-bottom: var(--space-12);
-  padding: var(--space-6);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-2xl);
-
-  @include below(lg) { grid-template-columns: repeat(3, 1fr); }
-  @include below(sm) { grid-template-columns: repeat(2, 1fr); }
-
-  &__item {
-    text-align: center;
-    padding: var(--space-4);
-    border-radius: var(--radius-lg);
-    background: var(--color-surface-alt);
-  }
-
-  &__value {
-    display: block;
-    font-family: var(--font-secondary);
-    font-size: var(--text-3xl);
-    font-weight: var(--weight-extrabold);
-    color: $color-primary;
-    line-height: 1;
-    margin-bottom: var(--space-2);
-  }
-
-  &__label {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-}
-
-// Section title
-.conf-section-title {
-  font-family: var(--font-secondary);
-  font-size: var(--text-xl);
-  font-weight: var(--weight-bold);
-  color: var(--color-text);
-  margin-bottom: var(--space-6);
-  padding-bottom: var(--space-3);
-  border-bottom: 2px solid var(--color-border-light);
-
-  &--sm {
-    font-size: var(--text-base);
-    margin-top: var(--space-8);
-    border-bottom: 1px solid var(--color-border-light);
-  }
-}
-
-// Schedule
-.conf-schedule {
-  margin-bottom: var(--space-12);
-
-  &__days {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-6);
-
-    @include below(lg) { grid-template-columns: 1fr; }
-  }
-
-  &__day {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-  }
-
-  &__day-header {
-    @include flex(center, space-between);
-    padding: var(--space-4) var(--space-6);
-    background: linear-gradient(135deg, rgba(79,142,247,0.12), rgba(155,116,245,0.12));
-    border-bottom: 1px solid var(--color-border-light);
-  }
-
-  &__day-num {
-    font-family: var(--font-secondary);
-    font-weight: var(--weight-bold);
-    font-size: var(--text-base);
-    color: var(--color-text);
-  }
-
-  &__day-date {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    font-family: var(--font-mono);
-  }
-
-  &__sessions { padding: var(--space-3); }
-}
-
-.conf-session {
-  @include flex(flex-start, flex-start, var(--space-4));
-  padding: var(--space-3) var(--space-3);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-1);
-
-  &--break, &--intro, &--outro, &--activity {
-    opacity: 0.55;
-    .conf-session__time { color: var(--color-text-muted); }
-  }
-
-  &--talk, &--keynote, &--lightning {
-    background: var(--color-surface-alt);
-
-    &:hover { background: var(--color-surface-raised); }
-  }
-
-  &--keynote {
-    border-left: 3px solid $color-secondary;
-    background: rgba(155,116,245,0.06);
-  }
-
-  &__time {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--color-text-muted);
-    white-space: nowrap;
-    min-width: 92px;
-    padding-top: 2px;
-    flex-shrink: 0;
-  }
-
-  &__content { flex: 1; min-width: 0; }
-
-  &__header {
-    @include flex(flex-start, space-between, var(--space-2));
-  }
-
-  &__title {
-    font-size: var(--text-sm);
-    font-weight: var(--weight-semibold);
-    color: var(--color-text);
-    line-height: 1.3;
-    flex: 1;
-  }
-
-  &__badge {
-    flex-shrink: 0;
-    padding: 2px 7px;
-    border-radius: var(--radius-full);
-    font-size: 9px;
-    font-weight: var(--weight-bold);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-
-    &--keynote { background: $color-secondary; color: white; }
-    &--lightning { background: $color-accent; color: #000; }
-  }
-
-  &__speaker {
-    font-size: var(--text-xs);
-    color: $color-primary;
-    margin-top: var(--space-1);
-    font-weight: var(--weight-medium);
-  }
-
-  &__abstract {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    line-height: var(--leading-relaxed);
-    margin-top: var(--space-2);
-  }
-}
-
-// Speakers
-.conf-speakers {
-  margin-bottom: var(--space-12);
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--space-5);
-  }
-}
-
-.speaker-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  transition: all var(--transition-base);
-
-  &:hover {
-    border-color: rgba(79,142,247,0.3);
-    box-shadow: $glow-primary;
-    transform: translateY(-3px);
-  }
-
-  &--keynote {
-    border-color: rgba(155,116,245,0.35);
-    background: var(--color-surface);
-  }
-
-  &__body {
-    padding: var(--space-4);
-    flex: 1;
-  }
-
-  &__name-row {
-    @include flex(flex-start, space-between, var(--space-2));
-    margin-bottom: var(--space-1);
-    flex-wrap: wrap;
-    gap: var(--space-1);
-  }
-
-  &__name {
-    font-weight: var(--weight-bold);
-    font-size: var(--text-sm);
-    color: var(--color-text);
-    line-height: 1.3;
-  }
-
-  &__badge {
-    padding: 2px 7px;
-    background: $color-secondary;
-    color: white;
-    border-radius: var(--radius-full);
-    font-size: 9px;
-    font-weight: var(--weight-bold);
-    flex-shrink: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    align-self: flex-start;
-    margin-top: 2px;
-  }
-
-  &__topic {
-    font-size: var(--text-xs);
-    color: var(--color-text-secondary);
-    line-height: 1.5;
-    font-style: italic;
-  }
-
-  &__rating {
-    @include flex(center, flex-start, 3px);
-    margin-top: var(--space-2);
-    font-size: var(--text-xs);
-    color: $color-warning;
-    font-weight: var(--weight-semibold);
-  }
-
-  &__star { font-size: 12px; }
-}
-
-// Lightning talks
-.conf-lightning {
-  margin-bottom: var(--space-12);
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: var(--space-4);
-  }
-
-  &__item {
-    padding: var(--space-4) var(--space-5);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-left: 3px solid $color-accent;
-    border-radius: var(--radius-lg);
-  }
-
-  &__speaker {
-    font-size: var(--text-sm);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-1);
-  }
-
-  &__topic {
-    font-size: var(--text-xs);
-    color: var(--color-text-secondary);
-    line-height: 1.4;
-  }
-}
-
-// Sponsors
-.conf-sponsors {
-  margin-bottom: var(--space-12);
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
-  }
-
-  &__card {
-    padding: var(--space-6);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-xl);
-
-    &--gold {
-      border-color: rgba(251,191,36,0.3);
-      background: rgba(251,191,36,0.04);
-    }
-  }
-
-  &__name {
-    font-family: var(--font-secondary);
-    font-size: var(--text-lg);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-3);
-  }
-
-  &__desc {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-4);
-  }
-
-  &__link {
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    color: $color-primary;
-    transition: color var(--transition-fast);
-    &:hover { color: $color-secondary; }
-  }
-
-  &__community {
-    @include flex(center, flex-start, var(--space-3));
-    flex-wrap: wrap;
-  }
-
-  &__pill {
-    padding: var(--space-2) var(--space-5);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-full);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    color: var(--color-text-secondary);
-    transition: all var(--transition-fast);
-
-    &:hover {
-      border-color: $color-secondary;
-      color: $color-secondary;
-    }
-  }
-}
-
-// Watch CTA
-.conf-watch-cta {
-  @include flex(center, center);
-  flex-direction: column;
-  gap: var(--space-4);
-  padding: var(--space-10);
-  background: var(--color-surface-alt);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-2xl);
-  text-align: center;
-
-  &__label {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-  }
-
-  .btn { @include flex(center, flex-start, var(--space-2)); }
-}
-</style>

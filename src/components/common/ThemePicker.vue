@@ -1,8 +1,9 @@
 <template>
-  <div class="theme-picker" :class="{ 'theme-picker--open': open }">
+  <div class="fixed z-floating" style="bottom: calc(1.5rem + 72px); right: 1.5rem;">
     <!-- Toggle -->
     <button
-      class="theme-picker__toggle"
+      class="w-11 h-11 rounded-full flex items-center justify-center bg-surface-raised border border-wire text-ink-2 shadow-card cursor-pointer transition-all duration-fast"
+      :class="open ? 'text-primary border-primary shadow-glow-primary' : 'hover:text-primary hover:border-primary hover:shadow-glow-primary'"
       :title="open ? 'Close theme picker' : 'Change theme'"
       aria-label="Toggle theme picker"
       @click="open = !open"
@@ -15,30 +16,45 @@
 
     <!-- Panel -->
     <Transition name="theme-panel">
-      <div v-if="open" class="theme-picker__panel" role="listbox" aria-label="Select theme">
-        <p class="theme-picker__label">Theme</p>
+      <div
+        v-if="open"
+        class="absolute right-0 w-60 bg-surface-raised border border-wire rounded-xl p-3 shadow-card-lg backdrop-glass"
+        style="bottom: calc(100% + 12px);"
+        role="listbox"
+        aria-label="Select theme"
+      >
+        <p class="text-[10px] font-semibold text-ink-3 uppercase tracking-[0.08em] px-2 mb-2">Theme</p>
         <div
           v-for="t in THEMES"
           :key="t.id"
-          class="theme-picker__option"
-          :class="{ 'theme-picker__option--active': theme.active === t.id }"
+          class="flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-colors duration-fast hover:bg-surface-alt"
+          :class="theme.active === t.id ? 'bg-[rgba(79,142,247,0.08)]' : ''"
           role="option"
           :aria-selected="theme.active === t.id"
           @click="select(t.id)"
         >
-          <div class="theme-picker__swatches">
+          <!-- Swatches -->
+          <div class="flex items-center gap-[3px] flex-shrink-0">
             <span
-              v-for="color in t.preview"
+              v-for="(color, ci) in t.preview"
               :key="color"
-              class="theme-picker__swatch"
-              :style="{ background: color }"
+              class="rounded-full border border-white/15"
+              :style="{
+                background: color,
+                width: ci === 2 ? '16px' : '12px',
+                height: ci === 2 ? '16px' : '12px',
+                borderRadius: ci === 2 ? '4px' : '50%',
+                marginLeft: ci === 2 ? '2px' : '0',
+              }"
             />
           </div>
-          <div class="theme-picker__meta">
-            <span class="theme-picker__name">{{ t.name }}</span>
-            <span class="theme-picker__desc">{{ t.description }}</span>
+          <!-- Meta -->
+          <div class="flex-1 flex flex-col gap-[2px] min-w-0">
+            <span class="text-sm font-semibold text-ink whitespace-nowrap">{{ t.name }}</span>
+            <span class="text-[10px] text-ink-3 whitespace-nowrap overflow-hidden text-ellipsis">{{ t.description }}</span>
           </div>
-          <svg v-if="theme.active === t.id" class="theme-picker__check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <!-- Check -->
+          <svg v-if="theme.active === t.id" class="text-primary flex-shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
             <polyline points="20 6 9 17 4 12"/>
           </svg>
         </div>
@@ -52,138 +68,10 @@ import { ref } from 'vue'
 import { useThemeStore, THEMES } from '@/stores/theme'
 
 const theme = useThemeStore()
-const open = ref(false)
+const open  = ref(false)
 
 function select(id) {
   theme.setTheme(id)
   open.value = false
 }
 </script>
-
-<style lang="scss" scoped>
-.theme-picker {
-  position: fixed;
-  bottom: calc(var(--space-6) + 72px); // above FloatingContact
-  right: var(--space-6);
-  z-index: var(--z-floating);
-
-  &__toggle {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-full);
-    background: var(--color-surface-raised);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    @include flex(center, center);
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    box-shadow: var(--shadow-md);
-
-    &:hover {
-      color: var(--color-primary);
-      border-color: var(--color-primary);
-      box-shadow: var(--shadow-primary);
-    }
-
-    .theme-picker--open & {
-      color: var(--color-primary);
-      border-color: var(--color-primary);
-      background: var(--color-surface-raised);
-    }
-  }
-
-  &__panel {
-    position: absolute;
-    bottom: calc(100% + var(--space-3));
-    right: 0;
-    width: 240px;
-    background: var(--color-surface-raised);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    padding: var(--space-3);
-    box-shadow: var(--shadow-xl);
-    backdrop-filter: blur(16px);
-  }
-
-  &__label {
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: var(--space-1) var(--space-2);
-    margin-bottom: var(--space-2);
-  }
-
-  &__option {
-    @include flex(center, flex-start, var(--space-3));
-    padding: var(--space-2) var(--space-2);
-    border-radius: var(--radius-lg);
-    cursor: pointer;
-    transition: background var(--transition-fast);
-
-    &:hover { background: var(--color-surface-alt); }
-
-    &--active { background: rgba(79, 142, 247, 0.08); }
-  }
-
-  &__swatches {
-    @include flex(center, flex-start);
-    gap: 3px;
-    flex-shrink: 0;
-  }
-
-  &__swatch {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.15);
-
-    &:last-child {
-      width: 16px;
-      height: 16px;
-      border-radius: var(--radius-sm);
-      margin-left: 2px;
-    }
-  }
-
-  &__meta {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    min-width: 0;
-  }
-
-  &__name {
-    font-size: var(--text-sm);
-    font-weight: var(--weight-semibold);
-    color: var(--color-text);
-    white-space: nowrap;
-  }
-
-  &__desc {
-    font-size: 10px;
-    color: var(--color-text-muted);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  &__check {
-    color: var(--color-primary);
-    flex-shrink: 0;
-  }
-}
-
-// Transition
-.theme-panel-enter-active,
-.theme-panel-leave-active {
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-.theme-panel-enter-from,
-.theme-panel-leave-to {
-  opacity: 0;
-  transform: translateY(8px);
-}
-</style>

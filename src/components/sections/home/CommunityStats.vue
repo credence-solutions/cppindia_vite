@@ -2,16 +2,28 @@
   CommunityStats — Community numbers strip
 -->
 <template>
-  <section class="stats-strip" aria-label="Community statistics">
-    <div class="container stats-strip__inner">
-      <div
-        v-for="(stat, i) in STATS"
-        :key="stat.label"
-        class="stats-strip__item"
-        :class="{ 'stats-strip__item--divided': i > 0 }"
-      >
-        <span ref="counters" class="stats-strip__value">{{ stat.value }}{{ stat.suffix }}</span>
-        <span class="stats-strip__label">{{ stat.label }}</span>
+  <section
+    class="py-12 border-t border-wire-light border-b"
+    style="background: linear-gradient(135deg, rgba(79,142,247,0.15) 0%, rgba(155,116,245,0.15) 100%), var(--color-surface-alt);"
+    aria-label="Community statistics"
+  >
+    <div class="container">
+      <div class="flex flex-wrap justify-around items-center gap-8">
+        <div
+          v-for="(stat, i) in STATS"
+          :key="stat.label"
+          class="text-center relative flex-1"
+          style="min-width: 140px;"
+        >
+          <!-- Vertical divider -->
+          <div v-if="i > 0" class="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-wire hidden md:block" />
+
+          <span ref="counters" class="block font-display font-extrabold text-ink leading-none mb-2"
+            style="font-size: clamp(1.875rem, 4vw, 3rem);">
+            {{ stat.value }}{{ stat.suffix }}
+          </span>
+          <span class="text-sm text-ink-2 uppercase tracking-[0.07em]">{{ stat.label }}</span>
+        </div>
       </div>
     </div>
   </section>
@@ -33,56 +45,3 @@ onMounted(() => {
   })
 })
 </script>
-
-<style lang="scss" scoped>
-.stats-strip {
-  background:
-    linear-gradient(135deg, rgba(79, 142, 247, 0.15) 0%, rgba(155, 116, 245, 0.15) 100%),
-    var(--color-surface-alt);
-  border-top: 1px solid var(--color-border-light);
-  border-bottom: 1px solid var(--color-border-light);
-  padding: var(--space-12) 0;
-
-  &__inner {
-    @include flex(center, space-around);
-    flex-wrap: wrap;
-    gap: var(--space-8);
-  }
-
-  &__item {
-    text-align: center;
-    position: relative;
-    flex: 1;
-    min-width: 140px;
-
-    &--divided::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 50%;
-      transform: translateY(-50%);
-      width: 1px;
-      height: 40px;
-      background: var(--color-border);
-
-      @include below(md) { display: none; }
-    }
-  }
-
-  &__value {
-    display: block;
-    font-family: var(--font-secondary);
-    font-size: clamp(var(--text-3xl), 4vw, 3rem);
-    font-weight: var(--weight-extrabold);
-    color: var(--color-text);
-    line-height: 1;
-    margin-bottom: var(--space-2);
-  }
-
-  &__label {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-  }
-}
-</style>

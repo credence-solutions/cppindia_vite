@@ -27,12 +27,6 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Auto-import SCSS variables & mixins in every component
-        // Using @import (legacy but simpler cascade — avoids @use module scoping issues)
-        additionalData: `
-          @import "@/styles/base/variables";
-          @import "@/styles/base/mixins";
-        `,
         silenceDeprecations: ['legacy-js-api', 'import'],
       },
     },

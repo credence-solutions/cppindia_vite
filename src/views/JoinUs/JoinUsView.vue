@@ -1,5 +1,5 @@
 <template>
-  <div class="join-page">
+  <div>
     <PageHero
       overline="Become Part of the Community"
       title="Join CppIndia"
@@ -7,17 +7,18 @@
       :breadcrumb="[{ label: 'Join Us', path: '/join' }]"
     />
 
-    <section class="section join-page__body">
+    <section class="section">
       <div class="container">
+
         <!-- Primary CTA — Discord -->
-        <div class="join-page__discord-card">
-          <div class="join-page__discord-content">
-            <div class="join-page__discord-icon">
+        <div class="flex items-center justify-between gap-8 flex-wrap p-8 lg:p-10 bg-[rgba(88,101,242,0.06)] border-2 border-[rgba(88,101,242,0.25)] rounded-2xl mb-12">
+          <div class="flex items-start gap-5 flex-1">
+            <div class="w-16 h-16 bg-[#5865F2] rounded-xl flex items-center justify-center text-white flex-shrink-0">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
             </div>
             <div>
-              <h2 class="join-page__discord-title">Join our Discord Server</h2>
-              <p class="join-page__discord-body">
+              <h2 class="font-display text-2xl font-bold text-ink mb-2">Join our Discord Server</h2>
+              <p class="text-base text-ink-2 leading-relaxed">
                 The heart of the CppIndia community. Chat about C++, ask questions, share resources,
                 and stay updated on upcoming sessions — all in real time.
               </p>
@@ -25,7 +26,7 @@
           </div>
           <a
             :href="SITE.discordInvite"
-            class="btn btn--lg join-page__discord-btn"
+            class="btn btn--lg flex-shrink-0 font-bold text-white bg-[#5865F2] hover:bg-[#4752C4] transition-colors border-transparent"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -34,40 +35,51 @@
         </div>
 
         <!-- Ways to engage -->
-        <h2 class="join-page__section-title">More ways to stay connected</h2>
-        <div class="join-page__platforms">
+        <h2 class="font-display text-2xl font-bold text-ink mb-6">More ways to stay connected</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <a
             v-for="p in platforms"
             :key="p.label"
             :href="p.url"
-            class="join-page__platform"
+            class="flex items-start gap-4 p-5 bg-surface border border-wire-light rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="join-page__platform-icon" v-html="p.icon" />
+            <div
+              class="w-11 h-11 flex items-center justify-center bg-[rgba(79,142,247,0.08)] rounded-lg text-secondary flex-shrink-0"
+              v-html="p.icon"
+            />
             <div>
-              <p class="join-page__platform-name">{{ p.label }}</p>
-              <p class="join-page__platform-desc">{{ p.desc }}</p>
+              <p class="font-bold text-ink mb-1">{{ p.label }}</p>
+              <p class="text-sm text-ink-2 leading-relaxed">{{ p.desc }}</p>
             </div>
           </a>
         </div>
 
         <!-- What you get -->
-        <h2 class="join-page__section-title">What you get as a member</h2>
-        <div class="join-page__benefits">
-          <div v-for="b in benefits" :key="b.title" class="join-page__benefit">
-            <div class="join-page__benefit-icon" v-html="b.icon" />
-            <h3 class="join-page__benefit-title">{{ b.title }}</h3>
-            <p class="join-page__benefit-body">{{ b.body }}</p>
+        <h2 class="font-display text-2xl font-bold text-ink mb-6">What you get as a member</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+          <div
+            v-for="b in benefits"
+            :key="b.title"
+            class="p-6 bg-surface border border-wire-light rounded-xl transition-all duration-200 hover:border-primary/25 hover:shadow-sm"
+          >
+            <div
+              class="w-[52px] h-[52px] flex items-center justify-center bg-[rgba(79,142,247,0.08)] rounded-lg text-secondary mb-4"
+              v-html="b.icon"
+            />
+            <h3 class="font-display text-base font-bold text-ink mb-2">{{ b.title }}</h3>
+            <p class="text-sm text-ink-2 leading-relaxed">{{ b.body }}</p>
           </div>
         </div>
 
         <!-- Speak CTA -->
-        <div class="join-page__speak-cta">
-          <h2>Want to give a talk?</h2>
-          <p>All experience levels welcome — from your first lightning talk to a full 60-minute session.</p>
+        <div class="text-center p-12 bg-surface-alt border border-wire-light rounded-2xl">
+          <h2 class="font-display text-2xl font-bold text-ink mb-3">Want to give a talk?</h2>
+          <p class="text-base text-ink-2 mb-6">All experience levels welcome — from your first lightning talk to a full 60-minute session.</p>
           <RouterLink to="/call-for-speakers" class="btn btn--outline">Submit a Talk Proposal</RouterLink>
         </div>
+
       </div>
     </section>
   </div>
@@ -143,177 +155,3 @@ const benefits = [
   },
 ]
 </script>
-
-<style lang="scss" scoped>
-.join-page {
-  &__body { background: var(--color-bg); }
-
-  &__discord-card {
-    @include flex(center, space-between);
-    gap: var(--space-8);
-    flex-wrap: wrap;
-    padding: var(--space-8) var(--space-10);
-    background: rgba(88,101,242,0.06);
-    border: 2px solid rgba(88,101,242,0.25);
-    border-radius: var(--radius-2xl);
-    margin-bottom: var(--space-12);
-
-    @include below(md) { padding: var(--space-6); }
-  }
-
-  &__discord-content {
-    @include flex(flex-start, flex-start, var(--space-5));
-    flex: 1;
-  }
-
-  &__discord-icon {
-    width: 64px; height: 64px;
-    background: #5865F2;
-    border-radius: var(--radius-xl);
-    @include flex(center, center);
-    color: white;
-    flex-shrink: 0;
-  }
-
-  &__discord-title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-2xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
-  }
-
-  &__discord-body {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-  }
-
-  &__discord-btn {
-    background: #5865F2;
-    color: white;
-    flex-shrink: 0;
-    font-weight: var(--weight-bold);
-    &:hover { background: #4752C4; }
-  }
-
-  &__section-title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-2xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
-  }
-
-  &__platforms {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: var(--space-4);
-    margin-bottom: var(--space-12);
-  }
-
-  &__platform {
-    @include flex(flex-start, flex-start, var(--space-4));
-    padding: var(--space-5);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-xl);
-    transition: all var(--transition-base);
-
-    &:hover {
-      border-color: rgba(79, 142, 247, 0.25);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    &-icon {
-      width: 44px; height: 44px;
-      @include flex(center, center);
-      background: rgba(79, 142, 247, 0.08);
-      border-radius: var(--radius-lg);
-      color: $color-secondary;
-      flex-shrink: 0;
-    }
-
-    &-name {
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-1);
-    }
-
-    &-desc {
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-    }
-  }
-
-  &__benefits {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
-    margin-bottom: var(--space-12);
-
-    @include below(lg) { grid-template-columns: repeat(2, 1fr); }
-    @include below(sm) { grid-template-columns: 1fr; }
-  }
-
-  &__benefit {
-    padding: var(--space-6);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-xl);
-    transition: all var(--transition-base);
-
-    &:hover {
-      border-color: rgba(79, 142, 247, 0.25);
-      box-shadow: var(--shadow-sm);
-    }
-
-    &-icon {
-      width: 52px; height: 52px;
-      @include flex(center, center);
-      background: rgba(79, 142, 247, 0.08);
-      border-radius: var(--radius-lg);
-      color: $color-secondary;
-      margin-bottom: var(--space-4);
-    }
-
-    &-title {
-      font-family: var(--font-secondary);
-      font-size: var(--text-base);
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
-
-    &-body {
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-    }
-  }
-
-  &__speak-cta {
-    text-align: center;
-    padding: var(--space-12);
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-
-    h2 {
-      font-family: var(--font-secondary);
-      font-size: var(--text-2xl);
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-3);
-    }
-
-    p {
-      font-size: var(--text-base);
-      color: var(--color-text-secondary);
-      margin-bottom: var(--space-6);
-    }
-  }
-}
-</style>

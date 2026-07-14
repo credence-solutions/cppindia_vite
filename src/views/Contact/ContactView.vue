@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-page">
+  <div>
     <PageHero
       overline="Get in Touch"
       title="Contact Us"
@@ -7,123 +7,155 @@
       :breadcrumb="[{ label: 'Contact', path: '/contact' }]"
     />
 
-    <section class="section contact-page__body">
-      <div class="container contact-page__layout">
+    <section class="section">
+      <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
         <!-- Left: contact channels -->
-        <div class="contact-page__channels">
-          <h2 class="contact-page__heading">Reach Us Directly</h2>
+        <div class="flex flex-col">
+          <h2 class="font-display text-xl font-bold text-ink mb-6">Reach Us Directly</h2>
 
-          <div class="contact-channel">
-            <div class="contact-channel__icon contact-channel__icon--email">
+          <!-- Email -->
+          <div class="flex items-start gap-5 p-5 bg-surface border border-wire-light rounded-xl mb-4 transition-all duration-200 hover:border-primary/25 hover:shadow-md">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-gradient-to-br from-primary to-secondary">
               <IconMail />
             </div>
             <div>
-              <p class="contact-channel__label">Email</p>
-              <a :href="`mailto:${SITE.email}`" class="contact-channel__value">
+              <p class="text-xs font-semibold text-ink-3 uppercase tracking-[0.06em] mb-1">Email</p>
+              <a :href="`mailto:${SITE.email}`" class="font-mono text-sm font-semibold text-primary hover:text-secondary transition-colors">
                 {{ SITE.email }}
               </a>
-              <p class="contact-channel__note">We typically reply within 24–48 hours.</p>
+              <p class="text-xs text-ink-3 mt-1">We typically reply within 24–48 hours.</p>
             </div>
           </div>
 
-          <div class="contact-channel">
-            <div class="contact-channel__icon contact-channel__icon--discord">
+          <!-- Discord -->
+          <div class="flex items-start gap-5 p-5 bg-surface border border-wire-light rounded-xl mb-8 transition-all duration-200 hover:border-primary/25 hover:shadow-md">
+            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-[#5865F2]">
               <IconDiscord />
             </div>
             <div>
-              <p class="contact-channel__label">Discord Community</p>
-              <a :href="SITE.discordInvite" class="contact-channel__value" target="_blank" rel="noopener noreferrer">
+              <p class="text-xs font-semibold text-ink-3 uppercase tracking-[0.06em] mb-1">Discord Community</p>
+              <a :href="SITE.discordInvite" class="font-mono text-sm font-semibold text-primary hover:text-secondary transition-colors" target="_blank" rel="noopener noreferrer">
                 discord.gg/Wz42tX5
               </a>
-              <p class="contact-channel__note">Chat with members and moderators in real time.</p>
+              <p class="text-xs text-ink-3 mt-1">Chat with members and moderators in real time.</p>
             </div>
           </div>
 
           <!-- Social links -->
-          <h2 class="contact-page__heading">Follow Us</h2>
-          <div class="contact-socials">
+          <h2 class="font-display text-xl font-bold text-ink mb-6">Follow Us</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
             <a
               v-for="link in socialLinks"
               :key="link.label"
               :href="link.url"
-              class="contact-social"
+              class="flex items-center gap-3 px-4 py-3 bg-surface border border-wire-light rounded-lg transition-all duration-150 hover:border-secondary/30 hover:bg-secondary/[0.06]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <component :is="link.icon" class="contact-social__icon" />
+              <component :is="link.icon" class="text-secondary flex-shrink-0" />
               <div>
-                <p class="contact-social__label">{{ link.label }}</p>
-                <p class="contact-social__handle">{{ link.handle }}</p>
+                <p class="text-xs font-semibold text-ink">{{ link.label }}</p>
+                <p class="text-[10px] text-ink-3 mt-px">{{ link.handle }}</p>
               </div>
             </a>
           </div>
 
           <!-- Team card -->
-          <div class="contact-team-card">
-            <p class="contact-team-card__text">
-              Want to meet the people behind CppIndia?
-            </p>
-            <RouterLink to="/team" class="btn btn--outline">
-              Meet the Team →
-            </RouterLink>
+          <div class="flex items-center justify-between gap-4 flex-wrap p-5 px-6 bg-surface-alt border border-wire-light rounded-xl">
+            <p class="text-sm text-ink-2">Want to meet the people behind CppIndia?</p>
+            <RouterLink to="/team" class="btn btn--outline">Meet the Team →</RouterLink>
           </div>
         </div>
 
         <!-- Right: contact form -->
-        <div class="contact-page__form-wrap">
-          <div class="contact-form-card">
-            <h2 class="contact-form-card__title">Send a Message</h2>
-            <p class="contact-form-card__note">
-              For talk proposals, use the
-              <RouterLink to="/call-for-speakers" class="contact-form-card__link">Call for Speakers</RouterLink>
-              form instead.
-            </p>
+        <div class="bg-surface border border-wire-light rounded-2xl p-8 sticky top-[calc(var(--navbar-height,64px)+1.5rem)]">
+          <h2 class="font-display text-2xl font-bold text-ink mb-2">Send a Message</h2>
+          <p class="text-sm text-ink-3 mb-6">
+            For talk proposals, use the
+            <RouterLink to="/call-for-speakers" class="text-secondary underline">Call for Speakers</RouterLink>
+            form instead.
+          </p>
 
-            <form class="contact-form" @submit.prevent="handleSubmit">
-              <div class="contact-form__field">
-                <label for="cf-name">Your Name *</label>
-                <input id="cf-name" v-model="form.name" type="text" required placeholder="e.g. Priya Sharma" />
+          <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
+            <div class="flex flex-col gap-2">
+              <label for="cf-name" class="text-sm font-medium text-ink">Your Name *</label>
+              <input
+                id="cf-name"
+                v-model="form.name"
+                type="text"
+                required
+                placeholder="e.g. Priya Sharma"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-colors resize-y"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="cf-email" class="text-sm font-medium text-ink">Email Address *</label>
+              <input
+                id="cf-email"
+                v-model="form.email"
+                type="email"
+                required
+                placeholder="you@example.com"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-colors"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="cf-subject" class="text-sm font-medium text-ink">Subject *</label>
+              <select
+                id="cf-subject"
+                v-model="form.subject"
+                required
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-colors"
+              >
+                <option value="">Select a topic</option>
+                <option value="General Question">General Question</option>
+                <option value="Sponsorship Inquiry">Sponsorship Inquiry</option>
+                <option value="Media / Press">Media / Press</option>
+                <option value="Community Collaboration">Community Collaboration</option>
+                <option value="Report a Code of Conduct Issue">Report a Code of Conduct Issue</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="cf-message" class="text-sm font-medium text-ink">Message *</label>
+              <textarea
+                id="cf-message"
+                v-model="form.message"
+                required
+                rows="5"
+                placeholder="What's on your mind?"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/10 transition-colors resize-y min-h-[120px]"
+              />
+            </div>
+
+            <Transition name="fade-msg">
+              <div
+                v-if="status === 'success'"
+                class="p-4 rounded-md text-sm font-medium bg-[rgba(74,222,128,0.08)] border border-[rgba(74,222,128,0.25)] text-green-400"
+              >
+                ✓ Message sent! We'll get back to you soon.
               </div>
-
-              <div class="contact-form__field">
-                <label for="cf-email">Email Address *</label>
-                <input id="cf-email" v-model="form.email" type="email" required placeholder="you@example.com" />
+              <div
+                v-else-if="status === 'error'"
+                class="p-4 rounded-md text-sm font-medium bg-[rgba(248,113,113,0.08)] border border-[rgba(248,113,113,0.25)] text-red-400"
+              >
+                ✗ Something went wrong. Please email us at
+                <a :href="`mailto:${SITE.email}`" class="text-primary">{{ SITE.email }}</a>
               </div>
+            </Transition>
 
-              <div class="contact-form__field">
-                <label for="cf-subject">Subject *</label>
-                <select id="cf-subject" v-model="form.subject" required>
-                  <option value="">Select a topic</option>
-                  <option value="General Question">General Question</option>
-                  <option value="Sponsorship Inquiry">Sponsorship Inquiry</option>
-                  <option value="Media / Press">Media / Press</option>
-                  <option value="Community Collaboration">Community Collaboration</option>
-                  <option value="Report a Code of Conduct Issue">Report a Code of Conduct Issue</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div class="contact-form__field">
-                <label for="cf-message">Message *</label>
-                <textarea id="cf-message" v-model="form.message" required rows="5" placeholder="What's on your mind?" />
-              </div>
-
-              <Transition name="fade-msg">
-                <div v-if="status === 'success'" class="contact-form__alert contact-form__alert--success">
-                  ✓ Message sent! We'll get back to you soon.
-                </div>
-                <div v-else-if="status === 'error'" class="contact-form__alert contact-form__alert--error">
-                  ✗ Something went wrong. Please email us at
-                  <a :href="`mailto:${SITE.email}`">{{ SITE.email }}</a>
-                </div>
-              </Transition>
-
-              <button type="submit" class="btn btn--primary contact-form__submit" :disabled="submitting">
-                {{ submitting ? 'Sending…' : 'Send Message' }}
-              </button>
-            </form>
-          </div>
+            <button
+              type="submit"
+              class="btn btn--primary w-full justify-center"
+              :disabled="submitting"
+            >
+              {{ submitting ? 'Sending…' : 'Send Message' }}
+            </button>
+          </form>
         </div>
 
       </div>
@@ -197,232 +229,7 @@ async function handleSubmit() {
 }
 </script>
 
-<style lang="scss" scoped>
-.contact-page {
-  &__body { background: var(--color-bg); }
-
-  &__layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
-    align-items: flex-start;
-
-    @include below(lg) { grid-template-columns: 1fr; }
-  }
-
-  &__heading {
-    font-family: var(--font-secondary);
-    font-size: var(--text-xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-6);
-    margin-top: var(--space-8);
-
-    &:first-child { margin-top: 0; }
-  }
-
-  &__channels { display: flex; flex-direction: column; }
-}
-
-// Channel rows
-.contact-channel {
-  @include flex(flex-start, flex-start, var(--space-5));
-  padding: var(--space-5);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--space-4);
-  transition: all var(--transition-base);
-
-  &:hover {
-    border-color: rgba(79,142,247,0.25);
-    box-shadow: $glow-primary;
-  }
-
-  &__icon {
-    width: 48px; height: 48px;
-    border-radius: var(--radius-lg);
-    @include flex(center, center);
-    flex-shrink: 0;
-    color: white;
-
-    &--email   { background: linear-gradient(135deg, $color-primary, $color-secondary); }
-    &--discord { background: #5865F2; }
-  }
-
-  &__label {
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: var(--space-1);
-  }
-
-  &__value {
-    font-family: var(--font-mono);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-semibold);
-    color: $color-primary;
-    transition: color var(--transition-fast);
-    &:hover { color: $color-secondary; }
-  }
-
-  &__note {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    margin-top: var(--space-1);
-  }
-}
-
-// Social grid
-.contact-socials {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3);
-  margin-bottom: var(--space-8);
-
-  @include below(sm) { grid-template-columns: 1fr; }
-}
-
-.contact-social {
-  @include flex(center, flex-start, var(--space-3));
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  transition: all var(--transition-fast);
-
-  &:hover {
-    border-color: rgba(155,116,245,0.3);
-    background: rgba(155,116,245,0.06);
-  }
-
-  &__icon { color: $color-secondary; flex-shrink: 0; }
-
-  &__label {
-    font-size: var(--text-xs);
-    font-weight: var(--weight-semibold);
-    color: var(--color-text);
-  }
-
-  &__handle {
-    font-size: 10px;
-    color: var(--color-text-muted);
-    margin-top: 1px;
-  }
-}
-
-// Team card
-.contact-team-card {
-  @include flex(center, space-between);
-  gap: var(--space-4);
-  padding: var(--space-5) var(--space-6);
-  background: var(--color-surface-alt);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-xl);
-  flex-wrap: wrap;
-
-  &__text {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-  }
-}
-
-// Form card
-.contact-form-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-8);
-  position: sticky;
-  top: calc(var(--navbar-height) + var(--space-6));
-
-  &__title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-2xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
-  }
-
-  &__note {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-6);
-  }
-
-  &__link {
-    color: $color-secondary;
-    text-decoration: underline;
-  }
-}
-
-// Form
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-
-  &__field {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-
-    label {
-      font-size: var(--text-sm);
-      font-weight: var(--weight-medium);
-      color: var(--color-text);
-    }
-
-    input, select, textarea {
-      padding: var(--space-3) var(--space-4);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      font-family: var(--font-primary);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      background: var(--color-bg);
-      transition: border-color var(--transition-fast);
-      resize: vertical;
-
-      option { background: var(--color-surface); }
-
-      &:focus {
-        outline: none;
-        border-color: $color-secondary;
-        box-shadow: 0 0 0 3px rgba(155, 116, 245, 0.12);
-      }
-
-      &::placeholder { color: var(--color-text-muted); }
-    }
-
-    textarea { min-height: 120px; }
-  }
-
-  &__alert {
-    padding: var(--space-4);
-    border-radius: var(--radius-md);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-
-    &--success {
-      background: rgba(74, 222, 128, 0.08);
-      border: 1px solid rgba(74, 222, 128, 0.25);
-      color: $color-success;
-    }
-
-    &--error {
-      background: rgba(248, 113, 113, 0.08);
-      border: 1px solid rgba(248, 113, 113, 0.25);
-      color: $color-error;
-      a { color: $color-primary; }
-    }
-  }
-
-  &__submit { width: 100%; justify-content: center; }
-}
-
+<style scoped>
 .fade-msg-enter-active, .fade-msg-leave-active { transition: opacity 0.25s; }
 .fade-msg-enter-from, .fade-msg-leave-to { opacity: 0; }
 </style>

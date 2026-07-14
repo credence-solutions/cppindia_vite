@@ -1,185 +1,313 @@
 // =============================================================================
-// GLOBAL STYLES — Root-level stylesheet
-// Imports all SCSS partials in correct cascade order
+// GLOBAL STYLES — CppIndia Design System
 // =============================================================================
 
-// Base partials — using @import so all mixins/variables cascade to sub-partials
-@import './base/variables';
-@import './base/mixins';
-@import './base/typography';
-@import './base/animations';
-@import './base/utilities';
-@import './base/images';
-@import './base/themes';
+@import './base/variables';   // CSS custom-property declarations
+@import './base/mixins';      // SCSS helpers (still used for transitions/keyframes)
+@import './base/themes';      // [data-theme="..."] overrides
+
+// Tailwind layers — AFTER variables/themes so our CSS vars are available
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 // =============================================================================
-// RESET & BASE
+// COMPONENT LAYER — Reusable class patterns that @apply Tailwind utilities
 // =============================================================================
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@layer components {
+  // Container
+  .container {
+    @apply w-full mx-auto px-6;
+    max-width: var(--container-max);
+  }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
+  .container--wide   { max-width: var(--container-wide); }
+  .container--narrow { max-width: var(--container-narrow); }
 
-body {
-  font-family: var(--font-primary);
-  font-size: var(--text-base);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-normal);
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
+  // Sections
+  .section    { @apply py-20; }
+  .section--sm { @apply py-12; }
+  .section--lg { @apply py-32; }
 
-// Remove list styles for semantic list use
-ul, ol {
-  list-style: none;
-}
+  // Buttons
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-md font-sans text-sm font-semibold
+           leading-none cursor-pointer border-2 border-transparent no-underline whitespace-nowrap
+           transition-all duration-[250ms];
+    padding: 0.75rem 1.5rem;
+  }
 
-// Images & media
-img,
-video,
-svg {
-  max-width: 100%;
-  display: block;
-}
+  .btn--primary {
+    @apply bg-primary text-white border-primary;
+    &:hover {
+      background: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      @apply -translate-y-px shadow-brand;
+    }
+  }
 
-// Form elements
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font: inherit;
-}
+  .btn--secondary {
+    @apply bg-secondary text-white border-secondary;
+    &:hover {
+      background: var(--color-secondary-dark);
+      border-color: var(--color-secondary-dark);
+      @apply -translate-y-px;
+    }
+  }
 
-input,
-textarea,
-select {
-  font: inherit;
-  border: none;
-  background: none;
-  outline: none;
-}
+  .btn--outline {
+    @apply bg-transparent text-primary border-primary;
+    &:hover { @apply bg-primary text-white; }
+  }
 
-// Tables
-table {
-  border-collapse: collapse;
-  width: 100%;
+  .btn--outline-white {
+    @apply bg-transparent text-white;
+    border-color: rgba(255,255,255,0.6);
+    &:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+    }
+  }
+
+  .btn--sm  { @apply text-xs; padding: 0.5rem 1rem; }
+  .btn--lg  { @apply text-base; padding: 1rem 2.5rem; }
+
+  // Overline label
+  .overline {
+    @apply text-xs font-semibold uppercase tracking-widest;
+    color: var(--color-secondary);
+  }
+
+  // Image utilities
+  .site-logo-img {
+    width: 44px; height: 44px;
+    @apply object-contain rounded-md flex-shrink-0;
+  }
+  .site-logo-img--sm { width: 36px; height: 36px; }
+
+  // Sponsor logo cards
+  .sponsor-logo-card {
+    @apply flex items-center justify-center rounded-lg transition-all duration-[250ms];
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    &:hover { @apply shadow-card -translate-y-0.5; }
+  }
+  .sponsor-logo-card--gold      { height: 72px; @apply px-4; }
+  .sponsor-logo-card--community { height: 52px; @apply px-3; }
+
+  .sponsor-logo-img { @apply object-contain; }
+  .sponsor-logo-img--gold      { max-width: 140px; max-height: 40px; }
+  .sponsor-logo-img--community { max-width: 88px;  max-height: 28px; }
+
+  // Speaker / Team photo wrappers
+  .speaker-photo-wrap {
+    @apply relative overflow-hidden;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(155,116,245,0.08) 100%);
+    &__initial {
+      @apply absolute inset-0 flex items-center justify-center font-display font-extrabold;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.2);
+      z-index: 0;
+    }
+  }
+  .speaker-photo {
+    @apply absolute inset-0 w-full h-full object-cover;
+    object-position: top center;
+    z-index: 1;
+  }
+
+  .team-photo-wrap {
+    @apply relative overflow-hidden;
+    height: 240px;
+    background: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(155,116,245,0.08) 100%);
+  }
+  .team-photo-img {
+    @apply absolute inset-0 w-full h-full object-cover;
+    object-position: top center;
+  }
+
+  .conf-banner-wrap { @apply relative overflow-hidden rounded-xl; }
+  .conf-banner-img  { @apply w-full object-cover; max-height: 360px; }
 }
 
 // =============================================================================
-// SCROLLBAR STYLING
+// BASE LAYER — Resets, scrollbar, selection, global states
 // =============================================================================
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
 
-::-webkit-scrollbar-track {
-  background: var(--color-surface-alt);
-}
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(79, 142, 247, 0.35);
-  border-radius: var(--radius-full);
+  body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
 
-  &:hover {
-    background: rgba(79, 142, 247, 0.6);
+  ul, ol { list-style: none; }
+  img, video, svg { max-width: 100%; display: block; }
+  button { cursor: pointer; border: none; background: none; font: inherit; }
+  input, textarea, select { font: inherit; border: none; background: none; outline: none; }
+  table { border-collapse: collapse; width: 100%; }
+
+  ::selection { background: #9B74F5; color: #fff; }
+
+  ::-webkit-scrollbar       { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: var(--color-surface-alt); }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(79,142,247,0.35);
+    border-radius: 9999px;
+    &:hover { background: rgba(79,142,247,0.6); }
   }
 }
 
 // =============================================================================
-// SELECTION HIGHLIGHT
+// UTILITIES LAYER — Misc one-off helpers that must override components
 // =============================================================================
 
-::selection {
-  background: $color-secondary;
-  color: #fff;
+@layer utilities {
+  .text-gradient-brand {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .backdrop-glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  .w-fit { width: fit-content; }
 }
 
 // =============================================================================
-// PAGE TRANSITIONS
+// GLOBAL ANIMATIONS (used by GSAP + CSS)
 // =============================================================================
 
-.page-enter-active,
-.page-leave-active {
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.15); opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes fadeScrollLine {
+  0%   { opacity: 0.6; transform: translateY(-8px); }
+  100% { opacity: 0;   transform: translateY(8px); }
+}
+
+// GSAP reveal initial states — GSAP animates them in
+.gsap-reveal       { opacity: 0; transform: translateY(32px); }
+.gsap-reveal-left  { opacity: 0; transform: translateX(-32px); }
+.gsap-reveal-right { opacity: 0; transform: translateX(32px); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .gsap-reveal, .gsap-reveal-left, .gsap-reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+// Page transitions
+.page-enter-active, .page-leave-active {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+.page-enter-from { opacity: 0; transform: translateY(12px); }
+.page-leave-to   { opacity: 0; transform: translateY(-8px); }
 
-.page-enter-from {
+// Vue accordion transition (used in MobileMenu)
+.accordion-enter-active, .accordion-leave-active {
+  transition: max-height 0.3s ease, opacity 0.2s ease;
+  max-height: 600px;
+  overflow: hidden;
+}
+.accordion-enter-from, .accordion-leave-to { max-height: 0; opacity: 0; }
+
+// MegaMenu transitions
+.megamenu-enter-active, .megamenu-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.megamenu-enter-from, .megamenu-leave-to {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateX(-50%) translateY(-8px);
 }
 
-.page-leave-to {
+// Theme picker panel
+.theme-panel-enter-active, .theme-panel-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.theme-panel-enter-from, .theme-panel-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(8px);
 }
 
-// =============================================================================
-// SECTION DIVIDERS
-// =============================================================================
+// Backdrop + drawer (MobileMenu)
+.backdrop-enter-active, .backdrop-leave-active { transition: opacity 0.25s ease; }
+.backdrop-enter-from,  .backdrop-leave-to   { opacity: 0; }
+.drawer-enter-active,  .drawer-leave-active  { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.drawer-enter-from,    .drawer-leave-to      { transform: translateX(100%); }
 
-.divider {
-  width: 100%;
-  height: 1px;
-  background: var(--color-border);
+// Animate-pulse for badge dot
+.animate-pulse-dot { animation: pulse 2s ease-in-out infinite; }
+.animate-scroll-line { animation: fadeScrollLine 2s ease-in-out infinite; }
+
+// Skeleton shimmer
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-border-light) 25%,
+    rgba(139,153,187,0.12) 50%,
+    var(--color-border-light) 75%
+  );
+  background-size: 200% auto;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 8px;
 }
 
-.divider--primary {
-  height: 3px;
-  width: 48px;
-  background: linear-gradient(90deg, $color-secondary, $color-accent);
-  border-radius: var(--radius-full);
-}
-
-// =============================================================================
-// HIGHLIGHT BAR (decorative accent used in section headers)
-// =============================================================================
-
-.accent-bar {
-  display: inline-block;
-  width: 3px;
-  height: 1.2em;
-  background: var(--color-secondary);
-  border-radius: var(--radius-full);
-  margin-right: var(--space-3);
-  vertical-align: middle;
-}
-
-// =============================================================================
-// LOADING STATE
-// =============================================================================
-
-#app {
-  min-height: 100vh;
-}
-
-// Global page loader (shown while Vue hydrates)
-.page-loader {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: var(--color-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.4s ease;
-
-  &.fade-out {
-    opacity: 0;
-    pointer-events: none;
-  }
-}
+#app { min-height: 100vh; }

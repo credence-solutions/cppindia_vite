@@ -286,6 +286,24 @@
       "tags": ["Cross-Platform", "Best Practices"]
     },
     {
+      "id": "2021-10-09",
+      "date": "2021-10-09",
+      "speaker": "CppIndia Community",
+      "title": "Royal Code Roast — Session 3",
+      "video": "https://youtu.be/JCzxuZvHHs8",
+      "slides": null,
+      "tags": ["Community", "Code Review"]
+    },
+    {
+      "id": "2021-09-25",
+      "date": "2021-09-25",
+      "speaker": "CppIndia Community",
+      "title": "Royal Code Roast — Session 2",
+      "video": "https://youtu.be/defMpg69hLs",
+      "slides": null,
+      "tags": ["Community", "Code Review"]
+    },
+    {
       "id": "2021-09-11",
       "date": "2021-09-11",
       "speaker": "Kashish Nagpal",

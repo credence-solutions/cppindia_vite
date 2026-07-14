@@ -1,5 +1,5 @@
 <template>
-  <div class="cfs-page">
+  <div>
     <PageHero
       overline="Share Your Knowledge"
       title="Call for Speakers"
@@ -7,90 +7,137 @@
       :breadcrumb="[{ label: 'Call for Speakers', path: '/call-for-speakers' }]"
     />
 
-    <section class="section cfs-page__body">
-      <div class="container cfs-page__layout">
+    <section class="section">
+      <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
         <!-- Left: what to expect -->
-        <div class="cfs-page__info">
-          <h2 class="cfs-page__section-title">What we're looking for</h2>
-          <p class="cfs-page__body-text">
+        <div>
+          <h2 class="font-display text-xl font-bold text-ink mb-4">What we're looking for</h2>
+          <p class="text-base text-ink-2 leading-relaxed mb-7">
             CppIndia welcomes talks on any C++-related topic — language features, tools, libraries,
             real-world experiences, debugging stories, performance wins, and more.
             Talks run approximately 60 minutes with a 15-minute Q&amp;A.
           </p>
 
-          <div class="cfs-page__topics">
-            <p class="cfs-page__topics-label">Popular topics include:</p>
-            <div class="cfs-page__topic-grid">
-              <span v-for="topic in topics" :key="topic" class="cfs-page__topic">{{ topic }}</span>
+          <!-- Topics -->
+          <div class="mb-10">
+            <p class="text-sm font-medium text-ink-2 mb-3">Popular topics include:</p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="topic in topics"
+                :key="topic"
+                class="px-3 py-1 bg-[rgba(79,142,247,0.08)] border border-[rgba(79,142,247,0.20)] rounded-full text-xs font-medium text-secondary"
+              >{{ topic }}</span>
             </div>
           </div>
 
-          <div class="cfs-page__faqs">
-            <h2 class="cfs-page__section-title">FAQs</h2>
-            <div v-for="faq in faqs" :key="faq.q" class="cfs-page__faq">
-              <h3 class="cfs-page__faq-q">{{ faq.q }}</h3>
-              <p class="cfs-page__faq-a">{{ faq.a }}</p>
+          <!-- FAQs -->
+          <div>
+            <h2 class="font-display text-xl font-bold text-ink mb-4">FAQs</h2>
+            <div class="flex flex-col gap-5">
+              <div
+                v-for="faq in faqs"
+                :key="faq.q"
+                class="p-5 bg-surface border border-wire-light rounded-xl"
+              >
+                <h3 class="font-display text-base font-bold text-ink mb-2">{{ faq.q }}</h3>
+                <p class="text-sm text-ink-2 leading-relaxed">{{ faq.a }}</p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Right: submit form -->
-        <div class="cfs-page__form-wrap">
-          <div class="cfs-page__form-card">
-            <h2 class="cfs-page__form-title">Submit a Talk Proposal</h2>
-            <p class="cfs-page__form-note">
-              Fill out this form and we'll get back to you within a week.
-            </p>
+        <div class="bg-surface border border-wire-light rounded-2xl p-8 sticky top-[calc(var(--navbar-height,64px)+1.5rem)]">
+          <h2 class="font-display text-xl font-bold text-ink mb-2">Submit a Talk Proposal</h2>
+          <p class="text-sm text-ink-3 mb-6">Fill out this form and we'll get back to you within a week.</p>
 
-            <form class="cfs-page__form" @submit.prevent="submit">
-              <div class="cfs-page__field">
-                <label for="name">Your Name *</label>
-                <input id="name" v-model="form.name" type="text" required placeholder="Ankur Satle" />
-              </div>
-              <div class="cfs-page__field">
-                <label for="email">Email Address *</label>
-                <input id="email" v-model="form.email" type="email" required placeholder="you@example.com" />
-              </div>
-              <div class="cfs-page__field">
-                <label for="title">Talk Title *</label>
-                <input id="title" v-model="form.title" type="text" required placeholder="e.g. Concepts in Practice" />
-              </div>
-              <div class="cfs-page__field">
-                <label for="abstract">Abstract *</label>
-                <textarea
-                  id="abstract"
-                  v-model="form.abstract"
-                  required
-                  rows="5"
-                  placeholder="Brief description of your talk — what will attendees learn?"
-                />
-              </div>
-              <div class="cfs-page__field">
-                <label for="bio">Short Bio</label>
-                <textarea
-                  id="bio"
-                  v-model="form.bio"
-                  rows="3"
-                  placeholder="A few sentences about yourself"
-                />
-              </div>
+          <form class="flex flex-col gap-4" @submit.prevent="submit">
+            <div class="flex flex-col gap-2">
+              <label for="name" class="text-sm font-medium text-ink">Your Name *</label>
+              <input
+                id="name"
+                v-model="form.name"
+                type="text"
+                required
+                placeholder="Ankur Satle"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-primary/10 transition-colors"
+              />
+            </div>
 
-              <div v-if="submitted" class="cfs-page__success">
-                Thank you! We'll be in touch soon.
-              </div>
-              <div v-else-if="error" class="cfs-page__error">{{ error }}</div>
+            <div class="flex flex-col gap-2">
+              <label for="email" class="text-sm font-medium text-ink">Email Address *</label>
+              <input
+                id="email"
+                v-model="form.email"
+                type="email"
+                required
+                placeholder="you@example.com"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-primary/10 transition-colors"
+              />
+            </div>
 
-              <button type="submit" class="btn btn--primary cfs-page__submit" :disabled="submitting">
-                {{ submitting ? 'Submitting...' : 'Submit Proposal' }}
-              </button>
-            </form>
+            <div class="flex flex-col gap-2">
+              <label for="title" class="text-sm font-medium text-ink">Talk Title *</label>
+              <input
+                id="title"
+                v-model="form.title"
+                type="text"
+                required
+                placeholder="e.g. Concepts in Practice"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-primary/10 transition-colors"
+              />
+            </div>
 
-            <p class="cfs-page__or">
-              Or email us directly at
-              <a :href="`mailto:${SITE.email}`" class="cfs-page__email-link">{{ SITE.email }}</a>
-            </p>
-          </div>
+            <div class="flex flex-col gap-2">
+              <label for="abstract" class="text-sm font-medium text-ink">Abstract *</label>
+              <textarea
+                id="abstract"
+                v-model="form.abstract"
+                required
+                rows="5"
+                placeholder="Brief description of your talk — what will attendees learn?"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-primary/10 transition-colors resize-y"
+              />
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="bio" class="text-sm font-medium text-ink">Short Bio</label>
+              <textarea
+                id="bio"
+                v-model="form.bio"
+                rows="3"
+                placeholder="A few sentences about yourself"
+                class="px-4 py-3 border border-wire rounded-md font-sans text-sm text-ink bg-canvas placeholder:text-ink-3 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-primary/10 transition-colors resize-y"
+              />
+            </div>
+
+            <div
+              v-if="submitted"
+              class="p-4 bg-[rgba(46,125,50,0.1)] border border-[rgba(46,125,50,0.3)] rounded-md text-sm font-medium text-green-400"
+            >
+              Thank you! We'll be in touch soon.
+            </div>
+            <div
+              v-else-if="error"
+              class="p-4 bg-[rgba(211,47,47,0.08)] border border-[rgba(211,47,47,0.25)] rounded-md text-sm text-red-400"
+            >{{ error }}</div>
+
+            <button
+              type="submit"
+              class="btn btn--primary w-full justify-center"
+              :disabled="submitting"
+            >
+              {{ submitting ? 'Submitting...' : 'Submit Proposal' }}
+            </button>
+          </form>
+
+          <p class="mt-4 text-center text-xs text-ink-3">
+            Or email us directly at
+            <a :href="`mailto:${SITE.email}`" class="text-secondary underline">{{ SITE.email }}</a>
+          </p>
         </div>
+
       </div>
     </section>
   </div>
@@ -141,171 +188,3 @@ const faqs = [
   { q: 'Can I talk about my company\'s product?', a: 'Talks should be educational, not promotional. Sharing learnings from building something is fine; sales pitches are not.' },
 ]
 </script>
-
-<style lang="scss" scoped>
-.cfs-page {
-  &__body { background: var(--color-bg); }
-
-  &__layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
-    align-items: flex-start;
-
-    @include below(lg) { grid-template-columns: 1fr; }
-  }
-
-  &__section-title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-4);
-  }
-
-  &__body-text {
-    font-size: var(--text-base);
-    color: var(--color-text-secondary);
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-7);
-  }
-
-  &__topics { margin-bottom: var(--space-10); }
-
-  &__topics-label {
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-3);
-  }
-
-  &__topic-grid {
-    @include flex(flex-start, flex-start, var(--space-2));
-    flex-wrap: wrap;
-  }
-
-  &__topic {
-    padding: var(--space-1) var(--space-3);
-    background: rgba(79, 142, 247, 0.08);
-    border: 1px solid rgba(79, 142, 247, 0.20);
-    border-radius: var(--radius-full);
-    font-size: var(--text-xs);
-    font-weight: var(--weight-medium);
-    color: $color-secondary;
-  }
-
-  &__faqs { display: flex; flex-direction: column; gap: var(--space-5); }
-
-  &__faq {
-    padding: var(--space-5);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-xl);
-
-    &-q {
-      font-family: var(--font-secondary);
-      font-size: var(--text-base);
-      font-weight: var(--weight-bold);
-      color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
-
-    &-a {
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      line-height: var(--leading-relaxed);
-    }
-  }
-
-  // Form
-  &__form-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border-light);
-    border-radius: var(--radius-2xl);
-    padding: var(--space-8);
-    position: sticky;
-    top: calc(var(--navbar-height) + var(--space-6));
-  }
-
-  &__form-title {
-    font-family: var(--font-secondary);
-    font-size: var(--text-xl);
-    font-weight: var(--weight-bold);
-    color: var(--color-text);
-    margin-bottom: var(--space-2);
-  }
-
-  &__form-note {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-6);
-  }
-
-  &__form { display: flex; flex-direction: column; gap: var(--space-4); }
-
-  &__field {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-
-    label {
-      font-size: var(--text-sm);
-      font-weight: var(--weight-medium);
-      color: var(--color-text);
-    }
-
-    input, textarea {
-      padding: var(--space-3) var(--space-4);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      font-family: var(--font-primary);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      background: var(--color-bg);
-      transition: border-color var(--transition-fast);
-      resize: vertical;
-
-      &:focus {
-        outline: none;
-        border-color: $color-secondary;
-        box-shadow: 0 0 0 3px rgba(79, 142, 247, 0.10);
-      }
-
-      &::placeholder { color: var(--color-text-muted); }
-    }
-  }
-
-  &__success {
-    padding: var(--space-4);
-    background: rgba(46,125,50,0.1);
-    border: 1px solid rgba(46,125,50,0.3);
-    border-radius: var(--radius-md);
-    color: var(--color-success);
-    font-size: var(--text-sm);
-    font-weight: var(--weight-medium);
-  }
-
-  &__error {
-    padding: var(--space-4);
-    background: rgba(211,47,47,0.08);
-    border: 1px solid rgba(211,47,47,0.25);
-    border-radius: var(--radius-md);
-    color: var(--color-error);
-    font-size: var(--text-sm);
-  }
-
-  &__submit { width: 100%; justify-content: center; }
-
-  &__or {
-    margin-top: var(--space-4);
-    text-align: center;
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-  }
-
-  &__email-link {
-    color: $color-secondary;
-    text-decoration: underline;
-  }
-}
-</style>
