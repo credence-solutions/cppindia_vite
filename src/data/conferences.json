@@ -156,41 +156,99 @@
     "year": 2022,
     "name": "CppIndiaCon 2022",
     "edition": 2,
-    "dates": "2022",
+    "dates": "August 6, 2022",
     "format": "Virtual",
     "tagline": "Growing India's C++ Ecosystem",
-    "description": "The 2nd edition of CppIndiaCon featured a lineup of distinguished C++ experts and practitioners from around the world, covering debugging, concurrency, language design, and library development.",
+    "description": "The 2nd edition of CppIndiaCon was a one-day virtual conference featuring five expert talks on customization methods, comparisons, concurrency patterns, debugging, and memory management. The event included networking breaks via Discord and a C++ trivia competition.",
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
     "speakers": [
-      { "name": "Inbal Levi",          "role": "Speaker", "topic": "" },
-      { "name": "Hemil Ruparel",       "role": "Speaker", "topic": "" },
-      { "name": "Selvakumar Jawahar",  "role": "Speaker", "topic": "" },
-      { "name": "Dr. Greg Law",        "role": "Speaker", "topic": "" },
-      { "name": "Ankur M Satle",       "role": "Speaker", "topic": "" }
+      { "name": "Inbal Levi",         "role": "Speaker", "topic": "Customization Methods: Connecting User And Library Code" },
+      { "name": "Hemil Ruparel",      "role": "Speaker", "topic": "Default Generated Comparison for Your Data Types" },
+      { "name": "Selvakumar Jawahar", "role": "Speaker", "topic": "Concurrency with Reactor Pattern" },
+      { "name": "Dr. Greg Law",       "role": "Speaker", "topic": "Getting the Most Out of GDB" },
+      { "name": "Ankur M Satle",      "role": "Speaker", "topic": "How C++ Eliminated Memory Issues" }
     ],
-    "sponsors": { "gold": [], "community": [] },
-    "schedule": [],
+    "sponsors": {
+      "gold": [
+        { "name": "think-cell",    "website": "https://www.think-cell.com" },
+        { "name": "Undo",          "website": "https://undo.io" },
+        { "name": "CircuitSutra",  "website": "https://www.circuitsutra.com" }
+      ],
+      "community": [
+        { "name": "Meeting C++",    "website": "https://meetingcpp.com" },
+        { "name": "SwedenCpp",      "website": "https://swedencpp.se" },
+        { "name": "#include <C++>", "website": "https://www.includecpp.org" }
+      ]
+    },
+    "schedule": [
+      {
+        "day": 1,
+        "date": "August 6, 2022",
+        "sessions": [
+          { "time": "09:30–09:45", "title": "Welcome & Conference Setup",                                 "speaker": "CppIndia Hosts",       "type": "intro" },
+          { "time": "09:45–10:45", "title": "Customization Methods: Connecting User And Library Code",    "speaker": "Inbal Levi",            "type": "talk",    "abstract": "Exploring the different ways C++ enables customization points — ADL, virtual dispatch, tag dispatch, CPOs — and how to choose the right one for your library." },
+          { "time": "10:45–11:15", "title": "Break & Networking",                                         "speaker": "",                      "type": "break" },
+          { "time": "11:15–12:15", "title": "Default Generated Comparison for Your Data Types",           "speaker": "Hemil Ruparel",         "type": "talk",    "abstract": "Deep dive into C++20's spaceship operator and defaulted comparisons — how the compiler generates them, edge cases, and practical usage patterns." },
+          { "time": "12:15–13:15", "title": "Lunch & Networking",                                         "speaker": "",                      "type": "break" },
+          { "time": "13:15–14:15", "title": "Concurrency with Reactor Pattern",                          "speaker": "Selvakumar Jawahar",    "type": "talk",    "abstract": "Implementing event-driven concurrency in C++ using the Reactor design pattern — ideal for I/O-heavy and embedded applications." },
+          { "time": "14:15–14:45", "title": "Break & Networking",                                         "speaker": "",                      "type": "break" },
+          { "time": "14:45–15:45", "title": "Getting the Most Out of GDB",                               "speaker": "Dr. Greg Law",          "type": "talk",    "abstract": "Advanced GDB techniques including rr (record and replay), conditional breakpoints, scripting, and debugging multi-threaded programs." },
+          { "time": "15:45–16:15", "title": "Break & Networking",                                         "speaker": "",                      "type": "break" },
+          { "time": "16:15–17:15", "title": "How C++ Eliminated Memory Issues",                          "speaker": "Ankur M Satle",         "type": "talk",    "abstract": "A survey of C++ mechanisms — RAII, smart pointers, moves, and modern guidelines — that make manual memory management largely unnecessary." },
+          { "time": "17:15–17:30", "title": "Conference Closing",                                         "speaker": "CppIndia Hosts",        "type": "outro" }
+        ]
+      }
+    ],
     "registrationUrl": null
   },
   {
     "year": 2021,
     "name": "CppIndiaCon 2021",
     "edition": 1,
-    "dates": "2021",
+    "dates": "August 15, 2021",
     "format": "Virtual",
     "tagline": "The Inaugural C++ Conference of India",
-    "description": "The first-ever CppIndiaCon kicked off in grand style, featuring C++ creator Bjarne Stroustrup, CppCon conference chair Jon Kalb, and other distinguished speakers from the global C++ community.",
+    "description": "The inaugural CppIndiaCon kicked off in grand style — a single-day virtual conference featuring C++ creator Bjarne Stroustrup, CppCon chair Jon Kalb, and four more distinguished speakers. Six inspiring talks covered C++ today, standard library design, ranges, concepts, contracts, and an unforgettable AMA with Bjarne.",
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
     "speakers": [
-      { "name": "Bjarne Stroustrup",          "role": "Keynote", "topic": "Creator of C++" },
-      { "name": "Jon Kalb",                   "role": "Speaker", "topic": "CppCon Conference Chair" },
-      { "name": "Bryce Adelstein Lelbach",    "role": "Speaker", "topic": "" },
-      { "name": "Ankur M Satle",              "role": "Speaker", "topic": "" },
-      { "name": "Harishankar Singh",          "role": "Speaker", "topic": "" },
-      { "name": "Saurabh Joshi",             "role": "Speaker", "topic": "" }
+      { "name": "Jon Kalb",                   "role": "Keynote", "topic": "C++ Today: The Beast is Back" },
+      { "name": "Bryce Adelstein Lelbach",    "role": "Speaker", "topic": "What Belongs in the C++ Standard Library" },
+      { "name": "Harishankar Singh",          "role": "Speaker", "topic": "C++20 Ranges: Code Expressively with Ranges" },
+      { "name": "Ankur M Satle",              "role": "Speaker", "topic": "C++20 Concepts — The Base Classes of Generic Programming?" },
+      { "name": "Saurabh Joshi",             "role": "Speaker", "topic": "Contract Programming: What, Why, and How?" },
+      { "name": "Bjarne Stroustrup",          "role": "Special", "topic": "AMA with Bjarne Stroustrup" }
     ],
-    "sponsors": { "gold": [], "community": [] },
-    "schedule": [],
+    "sponsors": {
+      "gold": [
+        { "name": "CircuitSutra", "website": "https://www.circuitsutra.com" }
+      ],
+      "community": [
+        { "name": "Meeting C++",    "website": "https://meetingcpp.com" },
+        { "name": "SwedenCpp",      "website": "https://swedencpp.se" },
+        { "name": "#include <C++>", "website": "https://www.includecpp.org" }
+      ]
+    },
+    "schedule": [
+      {
+        "day": 1,
+        "date": "August 15, 2021",
+        "sessions": [
+          { "time": "10:00–10:30", "title": "Introduction & Welcome",                                              "speaker": "CppIndia Hosts",            "type": "intro" },
+          { "time": "10:30–11:30", "title": "[Keynote] C++ Today: The Beast is Back",                             "speaker": "Jon Kalb",                  "type": "keynote", "abstract": "An energetic tour of the C++ landscape — why C++ is thriving, where the language is headed with C++20/23, and why now is the best time to be a C++ developer." },
+          { "time": "11:30–11:45", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
+          { "time": "11:45–12:45", "title": "What Belongs in the C++ Standard Library",                           "speaker": "Bryce Adelstein Lelbach",    "type": "talk",    "abstract": "A principled look at what should and shouldn't be standardised — the criteria, trade-offs, and process behind adding to the C++ standard library." },
+          { "time": "12:45–13:00", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
+          { "time": "13:00–14:00", "title": "C++20 Ranges: Code Expressively with Ranges",                        "speaker": "Harishankar Singh",          "type": "talk",    "abstract": "Practical introduction to C++20 Ranges — views, adaptors, pipelines — and how they make algorithm composition readable and composable." },
+          { "time": "14:00–14:45", "title": "Lunch & Networking",                                                  "speaker": "",                          "type": "break" },
+          { "time": "14:45–15:45", "title": "C++20 Concepts — The Base Classes of Generic Programming?",          "speaker": "Ankur M Satle",              "type": "talk",    "abstract": "Concepts as a mechanism for generic programming — how they compare to inheritance for defining constraints, and whether they can replace traditional OOP hierarchies." },
+          { "time": "15:45–16:00", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
+          { "time": "16:00–17:00", "title": "Contract Programming: What, Why, and How?",                          "speaker": "Saurabh Joshi",             "type": "talk",    "abstract": "Design by contract in C++ — preconditions, postconditions, invariants — and how contracts improve correctness and serve as living documentation." },
+          { "time": "17:00–17:15", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
+          { "time": "17:15–18:15", "title": "AMA with Bjarne Stroustrup",                                         "speaker": "Bjarne Stroustrup",          "type": "special", "abstract": "An open Q&A with C++ creator Bjarne Stroustrup — covering the past, present, and future of C++, design decisions, and advice for the community." },
+          { "time": "18:15–18:30", "title": "Conference Closing",                                                  "speaker": "CppIndia Hosts",            "type": "outro" }
+        ]
+      }
+    ],
     "registrationUrl": null
   }
 ]

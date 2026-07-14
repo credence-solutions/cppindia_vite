@@ -1,28 +1,32 @@
 <!--
-  CommunityStats — Community numbers strip
+  CommunityStats — Community numbers strip with animated count-up
 -->
 <template>
   <section
-    class="py-12 border-t border-wire-light border-b"
-    style="background: linear-gradient(135deg, rgba(79,142,247,0.15) 0%, rgba(155,116,245,0.15) 100%), var(--color-surface-alt);"
+    class="section"
+    style="background: linear-gradient(135deg, #060B1A 0%, #0D1A35 50%, #061020 100%);"
     aria-label="Community statistics"
   >
     <div class="container">
-      <div class="flex flex-wrap justify-around items-center gap-8">
+      <p class="text-center text-xs font-semibold text-white/40 uppercase tracking-[0.12em] mb-10">
+        Trusted by developers across India
+      </p>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-y divide-white/10 lg:divide-y-0 lg:divide-x lg:divide-white/10">
         <div
-          v-for="(stat, i) in STATS"
+          v-for="stat in displayStats"
           :key="stat.label"
-          class="text-center relative flex-1"
-          style="min-width: 140px;"
+          class="flex flex-col items-center text-center px-6 py-8"
         >
-          <!-- Vertical divider -->
-          <div v-if="i > 0" class="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-10 bg-wire hidden md:block" />
-
-          <span ref="counters" class="block font-display font-extrabold text-ink leading-none mb-2"
-            style="font-size: clamp(1.875rem, 4vw, 3rem);">
-            {{ stat.value }}{{ stat.suffix }}
-          </span>
-          <span class="text-sm text-ink-2 uppercase tracking-[0.07em]">{{ stat.label }}</span>
+          <div
+            class="font-display font-extrabold leading-none mb-3"
+            style="font-size: clamp(2.5rem, 5vw, 4rem); text-shadow: 0 0 40px rgba(79,142,247,0.5), 0 0 80px rgba(79,142,247,0.2);"
+          >
+            <span class="text-gradient-brand">{{ stat.displayed }}</span><span
+              class="text-gradient-brand"
+              style="font-size: 0.55em; opacity: 0.75; vertical-align: super;"
+            >{{ stat.suffix }}</span>
+          </div>
+          <span class="text-xs text-white/55 uppercase tracking-[0.1em] font-medium">{{ stat.label }}</span>
         </div>
       </div>
     </div>
@@ -32,16 +36,20 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { STATS } from '@/constants'
-import { useGsap } from '@/composables/useGsap'
 
-const counters = ref([])
-const { counter } = useGsap()
+const displayStats = ref(STATS.map(s => ({ ...s, displayed: 0 })))
 
 onMounted(() => {
   STATS.forEach((stat, i) => {
-    if (counters.value[i]) {
-      counter(counters.value[i], { end: stat.value, suffix: stat.suffix })
-    }
+    const duration = 1800
+    const steps = 60
+    const increment = stat.value / steps
+    let count = 0
+    const timer = setInterval(() => {
+      count++
+      displayStats.value[i].displayed = Math.min(Math.round(increment * count), stat.value)
+      if (count >= steps) clearInterval(timer)
+    }, duration / steps)
   })
 })
 </script>
