@@ -1,8 +1,5 @@
 <template>
   <div class="layout">
-    <!-- Announcement banner -->
-    <AnnouncementBanner />
-
     <!-- Sticky site header -->
     <SiteHeader />
 
@@ -27,7 +24,6 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useNavigationStore } from '@/stores/navigation'
-import AnnouncementBanner from './AnnouncementBanner.vue'
 import SiteHeader from './SiteHeader.vue'
 import SiteFooter from './SiteFooter.vue'
 import FloatingContact from './FloatingContact.vue'

@@ -3,6 +3,9 @@
     class="fixed top-0 left-0 right-0 z-sticky transition-[box-shadow,background] duration-base"
     role="banner"
   >
+    <!-- Announcement banner -->
+    <AnnouncementBanner />
+
     <!-- Nav bar -->
     <div
       class="transition-all duration-base"
@@ -82,12 +85,13 @@
     <MobileMenu :open="nav.mobileMenuOpen" @close="nav.closeMobileMenu" />
   </header>
 
-  <!-- Spacer -->
-  <div class="h-navbar" aria-hidden="true" />
+  <!-- Spacer — accounts for banner + navbar height -->
+  <div style="height: calc(var(--navbar-height) + 42px);" aria-hidden="true" />
 </template>
 
 <script setup>
 import { useRoute } from 'vue-router'
+import AnnouncementBanner from './AnnouncementBanner.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { NAV_LINKS } from '@/constants'
 import MegaMenu from '@/components/navigation/MegaMenu.vue'

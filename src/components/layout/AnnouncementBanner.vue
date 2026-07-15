@@ -10,7 +10,7 @@
     </span>
 
     <span style="color:#fff;">
-      🎉 <strong>CppIndiaCon 2026</strong> is happening — <strong>November 21, 2026</strong> · Online · Free to attend
+      🎉 <strong>CppIndiaCon 2026</strong> — Upcoming Conference · <strong>November 2026</strong> · Online · Free to attend
     </span>
 
     <a
