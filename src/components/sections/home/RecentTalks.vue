@@ -27,40 +27,63 @@
         <article
           v-for="talk in recentTalks"
           :key="talk.id"
-          class="group relative flex flex-col bg-surface border border-wire-light rounded-2xl overflow-hidden
+          class="group flex flex-col bg-surface border border-wire-light rounded-2xl overflow-hidden
                  hover:border-primary/30 hover:shadow-glow-primary hover:-translate-y-1 transition-all duration-200"
         >
-          <!-- Card header bar -->
-          <div
-            class="flex items-center justify-between px-5 py-3 border-b border-wire-light"
-            style="background: linear-gradient(90deg, rgba(79,142,247,0.06) 0%, rgba(155,116,245,0.06) 100%);"
+          <!-- YouTube thumbnail -->
+          <a
+            v-if="ytId(talk.video)"
+            :href="talk.video"
+            class="block relative aspect-video overflow-hidden bg-black"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`Watch: ${talk.title}`"
           >
-            <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
-            <div class="flex items-center gap-1 flex-wrap justify-end">
-              <span
-                v-for="tag in talk.tags.slice(0, 2)"
-                :key="tag"
-                class="px-2 py-[2px] rounded-full bg-[rgba(79,142,247,0.1)] text-primary text-[10px] font-semibold border border-[rgba(79,142,247,0.2)]"
-              >{{ tag }}</span>
+            <img
+              :src="`https://img.youtube.com/vi/${ytId(talk.video)}/mqdefault.jpg`"
+              :alt="talk.title"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+              <div class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
             </div>
+          </a>
+          <!-- No-video placeholder -->
+          <div v-else class="aspect-video bg-surface-alt flex items-center justify-center"
+            style="background: linear-gradient(90deg, rgba(79,142,247,0.06) 0%, rgba(155,116,245,0.06) 100%);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-ink-3 opacity-40"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
           </div>
 
           <!-- Content -->
           <div class="flex flex-col flex-1 gap-3 p-5">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
+              <div class="flex items-center gap-1 flex-wrap justify-end">
+                <span
+                  v-for="tag in talk.tags.slice(0, 2)"
+                  :key="tag"
+                  class="px-2 py-[2px] rounded-full bg-[rgba(79,142,247,0.1)] text-primary text-[10px] font-semibold border border-[rgba(79,142,247,0.2)]"
+                >{{ tag }}</span>
+              </div>
+            </div>
+
             <h3 class="font-display font-bold text-base text-ink leading-snug flex-1">{{ talk.title }}</h3>
             <p class="text-sm text-ink-2 font-medium">{{ talk.speaker }}</p>
 
             <!-- Actions -->
             <div class="flex flex-wrap items-center gap-2 mt-auto pt-3">
               <a
-                v-if="talk.video"
+                v-if="ytId(talk.video)"
                 :href="talk.video"
                 class="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-[#FF0000] text-white text-xs font-semibold transition-all duration-200 hover:bg-[#cc0000] hover:shadow-[0_0_12px_rgba(255,0,0,0.4)]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                Watch Talk
+                Watch on YouTube
               </a>
               <a
                 v-if="talk.slides"
@@ -72,18 +95,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
                 Slides
               </a>
-            </div>
-          </div>
-
-          <!-- Play overlay on hover for video talks -->
-          <div
-            v-if="talk.video"
-            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
-            style="background: rgba(6,11,26,0.45);"
-          >
-            <div class="w-14 h-14 rounded-full flex items-center justify-center"
-              style="background: rgba(255,0,0,0.85); box-shadow: 0 0 30px rgba(255,0,0,0.5);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" style="margin-left: 3px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
           </div>
         </article>
@@ -115,5 +126,14 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('en-IN', {
     year: 'numeric', month: 'short', day: 'numeric',
   })
+}
+
+function ytId(url) {
+  if (!url) return null
+  let m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)
+  if (m) return m[1]
+  m = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/)
+  if (m) return m[1]
+  return null
 }
 </script>

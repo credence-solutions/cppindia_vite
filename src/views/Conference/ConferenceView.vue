@@ -138,14 +138,27 @@
                     <div class="flex-1 min-w-0">
                       <div class="flex items-start justify-between gap-2">
                         <p class="text-sm font-semibold text-ink leading-snug flex-1">{{ session.title }}</p>
-                        <span
-                          v-if="session.type === 'keynote'"
-                          class="flex-shrink-0 px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-secondary text-white"
-                        >Keynote</span>
-                        <span
-                          v-else-if="session.type === 'lightning'"
-                          class="flex-shrink-0 px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-accent text-black"
-                        >Lightning</span>
+                        <div class="flex items-center gap-1 flex-shrink-0">
+                          <a
+                            v-if="session.videoUrl"
+                            :href="session.videoUrl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-1 px-2 py-px rounded text-[10px] font-bold bg-[#FF0000] text-white hover:bg-[#cc0000] transition-colors"
+                            :aria-label="`Watch: ${session.title}`"
+                          >
+                            <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            Video
+                          </a>
+                          <span
+                            v-if="session.type === 'keynote'"
+                            class="px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-secondary text-white"
+                          >Keynote</span>
+                          <span
+                            v-else-if="session.type === 'lightning'"
+                            class="px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-accent text-black"
+                          >Lightning</span>
+                        </div>
                       </div>
                       <p v-if="session.speaker" class="text-xs text-primary font-medium mt-1">{{ session.speaker }}</p>
                       <p v-if="session.abstract" class="text-xs text-ink-3 leading-relaxed mt-2">{{ session.abstract }}</p>
@@ -153,6 +166,40 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <!-- Session Videos -->
+          <div v-if="sessionVideos.length" class="mb-12">
+            <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Session Videos</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <a
+                v-for="sv in sessionVideos"
+                :key="sv.videoUrl"
+                :href="sv.videoUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              >
+                <div class="relative aspect-video overflow-hidden bg-black">
+                  <img
+                    :src="`https://img.youtube.com/vi/${ytId(sv.videoUrl)}/mqdefault.jpg`"
+                    :alt="sv.title"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
+                    <div class="w-11 h-11 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                  </div>
+                  <span v-if="sv.type === 'keynote'" class="absolute top-2 left-2 px-2 py-0.5 bg-secondary text-white text-[10px] font-bold rounded uppercase">Keynote</span>
+                </div>
+                <div class="p-4">
+                  <p class="text-sm font-semibold text-ink leading-snug mb-1">{{ sv.title }}</p>
+                  <p class="text-xs text-ink-3">{{ sv.speaker }}</p>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -267,7 +314,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
@@ -287,6 +334,22 @@ const latestYear = 2024
 const activeYear = ref(Number(route.query.year) || 2024)
 const conf       = ref(null)
 const loading    = ref(true)
+
+const sessionVideos = computed(() => {
+  if (!conf.value?.schedule) return []
+  return conf.value.schedule
+    .flatMap(day => day.sessions)
+    .filter(s => s.videoUrl && ytId(s.videoUrl))
+})
+
+function ytId(url) {
+  if (!url) return null
+  let m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)
+  if (m) return m[1]
+  m = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/)
+  if (m) return m[1]
+  return null
+}
 
 async function loadConference(year) {
   loading.value = true

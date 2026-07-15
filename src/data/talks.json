@@ -23,7 +23,7 @@
       "date": "2024-01-06",
       "speaker": "Dheeraj Jha",
       "title": "Beyond Breakpoints: Navigating the Depths of GDB",
-      "video": "https://youtu.be/We-w_mT8EsY",
+      "video": "https://www.youtube.com/watch?v=zvvJi5yY0IU",
       "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/01-06/",
       "tags": ["Debugging", "Tools", "GDB"]
     }
@@ -282,7 +282,7 @@
       "speaker": "Sebastian Theophil",
       "title": "Windows, MacOS and the Web: Lessons from Cross-Platform Development",
       "video": "https://youtu.be/DyQcX5UmTFo",
-      "slides": null,
+      "slides": "https://www.think-cell.com/en/career/talks/cross-platform/#1",
       "tags": ["Cross-Platform", "Best Practices"]
     },
     {

@@ -50,47 +50,77 @@
           <article
             v-for="talk in talks"
             :key="talk.id"
-            class="flex flex-col gap-3 p-6 bg-surface border border-wire-light rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
+            class="flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
           >
-            <div class="flex items-center justify-between gap-2 flex-wrap">
-              <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
-              <div class="flex items-center gap-1">
-                <span
-                  v-for="tag in talk.tags.slice(0, 2)"
-                  :key="tag"
-                  class="px-2 py-0.5 bg-[rgba(79,142,247,0.10)] text-secondary rounded text-[10px] font-semibold"
-                >{{ tag }}</span>
+            <!-- YouTube thumbnail -->
+            <a
+              v-if="ytId(talk.video)"
+              :href="talk.video"
+              class="block relative aspect-video overflow-hidden bg-black group"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="`Watch: ${talk.title}`"
+            >
+              <img
+                :src="`https://img.youtube.com/vi/${ytId(talk.video)}/mqdefault.jpg`"
+                :alt="talk.title"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <!-- Play overlay -->
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+                <div class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
               </div>
+            </a>
+            <!-- No-video placeholder -->
+            <div v-else class="aspect-video bg-surface-alt flex items-center justify-center">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-ink-3 opacity-40"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
             </div>
 
-            <h2 class="font-display text-base font-bold text-ink leading-[1.35] flex-1">{{ talk.title }}</h2>
+            <!-- Card body -->
+            <div class="flex flex-col gap-3 p-5 flex-1">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
+                <div class="flex items-center gap-1">
+                  <span
+                    v-for="tag in talk.tags.slice(0, 2)"
+                    :key="tag"
+                    class="px-2 py-0.5 bg-[rgba(79,142,247,0.10)] text-secondary rounded text-[10px] font-semibold"
+                  >{{ tag }}</span>
+                </div>
+              </div>
 
-            <p class="flex items-center gap-2 text-sm text-ink-2 font-medium">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
-              {{ talk.speaker }}
-            </p>
+              <h2 class="font-display text-base font-bold text-ink leading-[1.35] flex-1">{{ talk.title }}</h2>
 
-            <div class="flex items-center flex-wrap gap-2 mt-auto">
-              <a
-                v-if="talk.video"
-                :href="talk.video"
-                class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-secondary text-white hover:bg-secondary-dark transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                Watch
-              </a>
-              <a
-                v-if="talk.slides"
-                :href="talk.slides"
-                class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-transparent border border-wire text-ink-2 hover:border-secondary hover:text-secondary transition-all"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                Slides
-              </a>
+              <p class="flex items-center gap-2 text-sm text-ink-2 font-medium">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+                {{ talk.speaker }}
+              </p>
+
+              <div class="flex items-center flex-wrap gap-2 mt-auto">
+                <a
+                  v-if="talk.video && ytId(talk.video)"
+                  :href="talk.video"
+                  class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-[#FF0000] text-white hover:bg-[#cc0000] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  Watch on YouTube
+                </a>
+                <a
+                  v-if="talk.slides"
+                  :href="talk.slides"
+                  class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-transparent border border-wire text-ink-2 hover:border-secondary hover:text-secondary transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                  Slides
+                </a>
+              </div>
             </div>
           </article>
         </div>
@@ -148,6 +178,17 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('en-IN', {
     year: 'numeric', month: 'short', day: 'numeric',
   })
+}
+
+function ytId(url) {
+  if (!url) return null
+  // youtu.be/ID
+  let m = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/)
+  if (m) return m[1]
+  // youtube.com/watch?v=ID
+  m = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/)
+  if (m) return m[1]
+  return null
 }
 
 watch(() => route.query.year, (yr) => {
