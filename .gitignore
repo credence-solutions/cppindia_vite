@@ -4,3 +4,8 @@ dist/
 *.local
 .env
 .env.*
+
+# Screenshots and test artifacts
+/our-*.png
+/live-*.png
+.playwright-mcp/
