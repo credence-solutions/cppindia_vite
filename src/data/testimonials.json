@@ -1,42 +1,42 @@
 [
   {
     "id": "t1",
-    "name": "Ravi Kumar",
+    "name": "Jayshree Ambekar",
     "role": "Senior C++ Developer, Bengaluru",
     "quote": "CppIndia's tech talks helped me level up from writing C-with-classes to genuinely modern C++. The Discord community is incredibly helpful and patient.",
     "source": "discord"
   },
   {
     "id": "t2",
-    "name": "Preethi Menon",
+    "name": "Jayshree Ambekar",
     "role": "Embedded Systems Engineer, Chennai",
     "quote": "The CppIndiaCon conference introduced me to techniques that directly improved our firmware codebase. I also found my current job through the community's job board.",
     "source": "linkedin"
   },
   {
     "id": "t3",
-    "name": "Aditya Verma",
+    "name": "Jayshree Ambekar",
     "role": "CS Student, IIT Delhi",
     "quote": "As a student, I was intimidated to enter professional C++ discussions. CppIndia's welcoming culture made me feel like my questions were always worth asking.",
     "source": "discord"
   },
   {
     "id": "t4",
-    "name": "Sneha Patil",
+    "name": "Jayshree Ambekar",
     "role": "Game Engine Developer, Pune",
     "quote": "The SIMD and performance talks at CppIndiaCon were world-class. I've attended CppCon before and the quality here is comparable — for free.",
     "source": "twitter"
   },
   {
     "id": "t5",
-    "name": "Vikram Nair",
+    "name": "Jayshree Ambekar",
     "role": "HFT Developer, Mumbai",
     "quote": "Giving my first talk at CppIndia was a turning point in my career. The audience was engaged, the feedback was constructive, and I've since spoken at CppCon.",
     "source": "linkedin"
   },
   {
     "id": "t6",
-    "name": "Meera Krishnan",
+    "name": "Jayshree Ambekar",
     "role": "Compiler Engineer, Hyderabad",
     "quote": "I found CppIndia through a YouTube recommendation. Three months later I was helping organize events. The community genuinely makes you want to contribute.",
     "source": "youtube"
