@@ -41,9 +41,6 @@ export default defineConfig({
         manualChunks: {
           'vendor-vue': ['vue', 'vue-router', 'pinia'],
           'vendor-gsap': ['gsap'],
-          'vendor-swiper': ['swiper'],
-          'vendor-vueuse': ['@vueuse/core'],
-          'vendor-axios': ['axios'],
         },
       },
     },
