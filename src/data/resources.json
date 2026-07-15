@@ -94,7 +94,7 @@
       "id": "isocpp-survey-2022",
       "title": "2022 Annual C++ Developer Survey Results",
       "description": "Annual developer survey from isocpp.org — insights on compiler usage, libraries, language features, and community priorities.",
-      "url": "https://isocpp.org/blog/2022/06/2022-annual-cpp-developer-survey-lite-results",
+      "url": "https://isocpp.org/files/papers/CppDevSurvey-2022-summary.pdf",
       "type": "Survey",
       "free": true
     },

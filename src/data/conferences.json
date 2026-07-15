@@ -6,7 +6,7 @@
     "dates": "August 23–24, 2024",
     "format": "Virtual (Zoom + Discord)",
     "tagline": "The C++ Festival of India",
-    "description": "The fourth annual international C++ celebration brought together 8 global C++ experts for two days of inspiring talks, hands-on sessions, and community networking. Previous iterations featured speakers like Bjarne Stroustrup — father of C++ — and CppCon chair Jon Kalb.",
+    "description": "The fourth annual international C++ festival celebration brought together 8 global C++ experts for two days of inspiring talks, hands-on sessions, and community networking. Previous iterations featured speakers like Bjarne Stroustrup — father of C++ — and CppCon chair Jon Kalb.",
     "banner": "/assets/images/conferences/2024/banner.jpg",
     "registrationUrl": "https://konfhub.com/cppindiacon2024",
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
@@ -25,34 +25,34 @@
         "day": 1,
         "date": "August 23, 2024",
         "sessions": [
-          { "time": "09:45–10:00", "title": "Introduction",                                          "speaker": "CppIndia Hosts",          "type": "intro" },
-          { "time": "10:00–11:00", "title": "Software Design and Performance in C++",                "speaker": "John Stratton",           "type": "talk",  "abstract": "How contemporary C++ enables well-organized software and efficient implementations through understanding compiler behaviour and design patterns." },
-          { "time": "11:00–11:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "11:30–12:30", "title": "[Keynote] Declarative C++",                            "speaker": "Ankur Satle",             "type": "keynote", "abstract": "Expressing intent declaratively so the compiler writes the code — exploring how declarative style improves correctness and maintainability." },
-          { "time": "12:30–13:00", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "13:00–14:00", "title": "Art of Debugging",                                     "speaker": "Pavithra Ashok Kumar",    "type": "talk",  "abstract": "A systematic approach for identifying bugs, with emphasis on debugging legacy code and preventive strategies." },
-          { "time": "14:00–15:00", "title": "Lunch & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "15:00–16:00", "title": "What is a range?",                                     "speaker": "Šimon Tóth",             "type": "talk",  "abstract": "C++20 range concepts including views, borrowed ranges, sized ranges, and their performance implications." },
-          { "time": "16:00–16:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "16:30–17:30", "title": "Lightning Talks",                                      "speaker": "Multiple Speakers",       "type": "lightning" },
-          { "time": "17:30–17:45", "title": "Day 1 Closure",                                        "speaker": "CppIndia Hosts",          "type": "outro" }
+          { "time": "09:45–10:00", "title": "Introduction",                                          "speaker": "CppIndia Hosts",          "type": "intro",    "videoUrl": null },
+          { "time": "10:00–11:00", "title": "Software Design and Performance in C++",                "speaker": "John Stratton",           "type": "talk",     "videoUrl": null, "abstract": "How contemporary C++ enables well-organized software and efficient implementations through understanding compiler behaviour and design patterns." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "11:30–12:30", "title": "[Keynote] Declarative C++",                            "speaker": "Ankur Satle",             "type": "keynote",  "videoUrl": null, "abstract": "Expressing intent declaratively so the compiler writes the code — exploring how declarative style improves correctness and maintainability." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "13:00–14:00", "title": "Art of Debugging",                                     "speaker": "Pavithra Ashok Kumar",    "type": "talk",     "videoUrl": null, "abstract": "A systematic approach for identifying bugs, with emphasis on debugging legacy code and preventive strategies." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "15:00–16:00", "title": "What is a range?",                                     "speaker": "Šimon Tóth",             "type": "talk",     "videoUrl": null, "abstract": "C++20 range concepts including views, borrowed ranges, sized ranges, and their performance implications." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "16:30–17:30", "title": "Lightning Talks",                                      "speaker": "Multiple Speakers",       "type": "lightning","videoUrl": null },
+          { "time": "17:30–17:45", "title": "Day 1 Closure",                                        "speaker": "CppIndia Hosts",          "type": "outro",    "videoUrl": null }
         ]
       },
       {
         "day": 2,
         "date": "August 24, 2024",
         "sessions": [
-          { "time": "09:45–10:00", "title": "Introduction",                                          "speaker": "CppIndia Hosts",          "type": "intro" },
-          { "time": "10:00–11:00", "title": "Getting Started with Modern C++ — A Tour of Features", "speaker": "Mike Shah",               "type": "talk",  "abstract": "Modern C++ ecosystem fundamentals: arrays, spans, smart pointers, ranges, concepts, and threading." },
-          { "time": "11:00–11:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "11:30–12:30", "title": "Exploring Undefined Behaviour in C++",                 "speaker": "Mahendra Bhagwan Garodi", "type": "talk",  "abstract": "Defined vs undefined behaviour categories, demonstrating common UB scenarios and diagnostic tools to detect them." },
-          { "time": "12:30–13:00", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "13:00–14:00", "title": "An (In-)Complete Guide to C++ Object Lifetimes",      "speaker": "Jonathan Müller",         "type": "talk",  "abstract": "Object lifecycle — construction, destruction, temporary lifetime extension, storage aliasing, and related utilities." },
-          { "time": "14:00–15:00", "title": "Lunch & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "15:00–16:00", "title": "[Keynote] C++ ♥ Python",                              "speaker": "Alex Dathskovsky",        "type": "keynote", "abstract": "C++/Python symbiosis using binding tools to accelerate Python workloads, exploring GIL limitations and binding tool comparisons." },
-          { "time": "16:00–16:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break" },
-          { "time": "16:30–17:30", "title": "Quiz Competition",                                     "speaker": "",                        "type": "activity" },
-          { "time": "17:30–17:45", "title": "Conference Closing",                                   "speaker": "CppIndia Hosts",          "type": "outro" }
+          { "time": "09:45–10:00", "title": "Introduction",                                          "speaker": "CppIndia Hosts",          "type": "intro",    "videoUrl": null },
+          { "time": "10:00–11:00", "title": "Getting Started with Modern C++ — A Tour of Features", "speaker": "Mike Shah",               "type": "talk",     "videoUrl": null, "abstract": "Modern C++ ecosystem fundamentals: arrays, spans, smart pointers, ranges, concepts, and threading." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "11:30–12:30", "title": "Exploring Undefined Behaviour in C++",                 "speaker": "Mahendra Bhagwan Garodi", "type": "talk",     "videoUrl": null, "abstract": "Defined vs undefined behaviour categories, demonstrating common UB scenarios and diagnostic tools to detect them." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "13:00–14:00", "title": "An (In-)Complete Guide to C++ Object Lifetimes",      "speaker": "Jonathan Müller",         "type": "talk",     "videoUrl": null, "abstract": "Object lifecycle — construction, destruction, temporary lifetime extension, storage aliasing, and related utilities." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "15:00–16:00", "title": "[Keynote] C++ ♥ Python",                              "speaker": "Alex Dathskovsky",        "type": "keynote",  "videoUrl": null, "abstract": "C++/Python symbiosis using binding tools to accelerate Python workloads, exploring GIL limitations and binding tool comparisons." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                   "speaker": "",                        "type": "break",    "videoUrl": null },
+          { "time": "16:30–17:30", "title": "Quiz Competition",                                     "speaker": "",                        "type": "activity", "videoUrl": null },
+          { "time": "17:30–17:45", "title": "Conference Closing",                                   "speaker": "CppIndia Hosts",          "type": "outro",    "videoUrl": null }
         ]
       }
     ],
@@ -103,15 +103,15 @@
     ],
     "sponsors": {
       "gold": [
-        { "name": "Intel Software",  "website": "https://www.intel.com/content/www/us/en/developer/overview.html" },
-        { "name": "Qube Cinema",     "website": "https://www.qubecinema.com" },
-        { "name": "think-cell",      "website": "https://www.think-cell.com" },
-        { "name": "Bloomberg LP",    "website": "https://www.bloomberg.com/company/values/tech-at-bloomberg/cplusplus/" }
+        { "name": "Intel Software",  "logo": "/assets/images/sponsors/gold/intel.png",       "website": "https://www.intel.com/content/www/us/en/developer/overview.html" },
+        { "name": "Qube Cinema",     "logo": "/assets/images/sponsors/gold/qube_cinema.png", "website": "https://www.qubecinema.com" },
+        { "name": "think-cell",      "logo": "/assets/images/sponsors/gold/think-cell.png",  "website": "https://www.think-cell.com" },
+        { "name": "Bloomberg LP",    "logo": "/assets/images/sponsors/gold/bloomberg.png",   "website": "https://www.bloomberg.com/company/values/tech-at-bloomberg/cplusplus/" }
       ],
       "community": [
-        { "name": "Meeting C++",    "website": "https://meetingcpp.com" },
-        { "name": "SwedenCpp",      "website": "https://swedencpp.se" },
-        { "name": "#include <C++>", "website": "https://www.includecpp.org" }
+        { "name": "Meeting C++",    "logo": "/assets/images/sponsors/community/meeting_cpp.png", "website": "https://meetingcpp.com" },
+        { "name": "SwedenCpp",      "logo": "/assets/images/sponsors/community/sweden_cpp.png",  "website": "https://swedencpp.se" },
+        { "name": "#include <C++>", "logo": "/assets/images/sponsors/community/include_cpp.png", "website": "https://www.includecpp.org" }
       ]
     },
     "schedule": [
@@ -119,34 +119,34 @@
         "day": 1,
         "date": "August 4, 2023",
         "sessions": [
-          { "time": "09:45–10:00", "title": "Introduction",                                              "speaker": "CppIndia Hosts",                    "type": "intro" },
-          { "time": "10:00–11:00", "title": "Using C++ for Your Artificial Intelligence Solution",       "speaker": "Kushashwa Ravi Shrimali",           "type": "talk",    "abstract": "Practical use of C++ in AI/ML pipelines — from inference frameworks to binding Python AI libraries with high-performance C++ backends." },
-          { "time": "11:00–11:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "11:30–12:30", "title": "[Keynote] AI-Assisted Programming (ChatGPT, etc)",         "speaker": "Bryce Adelstein Lelbach",            "type": "keynote", "abstract": "How AI coding assistants like ChatGPT are changing software development workflows — opportunities, pitfalls, and what it means for C++ developers." },
-          { "time": "12:30–13:00", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "13:00–14:00", "title": "C++ Coroutines from Scratch",                              "speaker": "Andreas Fertig",                    "type": "talk",    "abstract": "A ground-up introduction to C++20 coroutines — demystifying co_await, co_yield, and co_return with practical, runnable examples." },
-          { "time": "14:00–15:00", "title": "Lunch & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "15:00–16:00", "title": "Introduction to Intel oneAPI",                             "speaker": "Kiran Kannappan",                   "type": "talk",    "abstract": "Intel's unified programming model for heterogeneous computing — targeting CPUs, GPUs, and FPGAs with a single C++ codebase using SYCL." },
-          { "time": "16:00–16:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "16:30–17:30", "title": "Lightning Talks",                                          "speaker": "Prince Gupta · Emmanuel Danso Nyarko · Mahendra Garodi", "type": "lightning" },
-          { "time": "17:30–17:45", "title": "Day 1 Closure",                                            "speaker": "CppIndia Hosts",                    "type": "outro" }
+          { "time": "09:45–10:00", "title": "Introduction",                                              "speaker": "CppIndia Hosts",                    "type": "intro",    "videoUrl": null },
+          { "time": "10:00–11:00", "title": "Using C++ for Your Artificial Intelligence Solution",       "speaker": "Kushashwa Ravi Shrimali",           "type": "talk",     "videoUrl": "https://www.youtube.com/watch?v=imWFuiFCJ_4", "abstract": "Practical use of C++ in AI/ML pipelines — from inference frameworks to binding Python AI libraries with high-performance C++ backends." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "11:30–12:30", "title": "[Keynote] AI-Assisted Programming (ChatGPT, etc)",         "speaker": "Bryce Adelstein Lelbach",            "type": "keynote",  "videoUrl": "https://www.youtube.com/watch?v=gdLpHM2J7Gk", "abstract": "How AI coding assistants like ChatGPT are changing software development workflows — opportunities, pitfalls, and what it means for C++ developers." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "13:00–14:00", "title": "C++ Coroutines from Scratch",                              "speaker": "Andreas Fertig",                    "type": "talk",     "videoUrl": "https://www.youtube.com/watch?v=geU-gBxDSCA", "abstract": "A ground-up introduction to C++20 coroutines — demystifying co_await, co_yield, and co_return with practical, runnable examples." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "15:00–16:00", "title": "Introduction to Intel oneAPI",                             "speaker": "Kiran Kannappan",                   "type": "talk",     "videoUrl": "https://www.youtube.com/watch?v=qKAssLqR2Wk", "abstract": "Intel's unified programming model for heterogeneous computing — targeting CPUs, GPUs, and FPGAs with a single C++ codebase using SYCL." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "16:30–17:30", "title": "Lightning Talks",                                          "speaker": "Prince Gupta · Emmanuel Danso Nyarko · Mahendra Garodi", "type": "lightning", "videoUrl": null },
+          { "time": "17:30–17:45", "title": "Day 1 Closure",                                            "speaker": "CppIndia Hosts",                    "type": "outro",    "videoUrl": null }
         ]
       },
       {
         "day": 2,
         "date": "August 5, 2023",
         "sessions": [
-          { "time": "09:45–10:00", "title": "Introduction",                                              "speaker": "CppIndia Hosts",                    "type": "intro" },
-          { "time": "10:00–11:00", "title": "Optimization Design Patterns",                             "speaker": "Mike Shah",                         "type": "talk",    "abstract": "Identifying and applying proven patterns for writing performant C++ — profiling-driven techniques for cache efficiency, branching, and data layout." },
-          { "time": "11:00–11:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "11:30–12:30", "title": "C++ Features You Might Not Know",                         "speaker": "Jonathan Müller",                   "type": "talk",    "abstract": "A tour of lesser-known but powerful C++ language features and standard library facilities that can dramatically improve everyday code." },
-          { "time": "12:30–13:00", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "13:00–14:00", "title": "Understanding Common Concurrency Patterns",                "speaker": "Venkata Naga Ravikiran Bulusu",      "type": "talk",    "abstract": "Practical concurrency patterns in C++ — thread pools, producer-consumer, readers-writer locks, and when to reach for each one." },
-          { "time": "14:00–15:00", "title": "Lunch & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "15:00–16:00", "title": "Value-Oriented Design — by example",                      "speaker": "Ankur Satle",                       "type": "talk",    "abstract": "Designing software around values rather than entities — improving testability, reasoning, and correctness through immutability and value semantics." },
-          { "time": "16:00–16:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break" },
-          { "time": "16:30–17:30", "title": "Why 5G is Fast? and C++ in 5G Open Source",              "speaker": "Selvakumar Jawahar",                "type": "talk",    "abstract": "The role of C++ in 5G open-source stacks — architecture, latency requirements, and real-world deployment experiences." },
-          { "time": "17:30–17:45", "title": "Conference Closing",                                        "speaker": "CppIndia Hosts",                    "type": "outro" }
+          { "time": "09:45–10:00", "title": "Introduction",                                              "speaker": "CppIndia Hosts",                    "type": "intro",    "videoUrl": null },
+          { "time": "10:00–11:00", "title": "Optimization Design Patterns",                             "speaker": "Mike Shah",                         "type": "talk",     "videoUrl": "https://www.youtube.com/watch?v=Y5trtb5TGpg", "abstract": "Identifying and applying proven patterns for writing performant C++ — profiling-driven techniques for cache efficiency, branching, and data layout." },
+          { "time": "11:00–11:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "11:30–12:30", "title": "C++ Features You Might Not Know",                         "speaker": "Jonathan Müller",                   "type": "talk",     "videoUrl": "https://www.youtube.com/watch?v=2Qi-wfMM-EA", "abstract": "A tour of lesser-known but powerful C++ language features and standard library facilities that can dramatically improve everyday code." },
+          { "time": "12:30–13:00", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "13:00–14:00", "title": "Understanding Common Concurrency Patterns",                "speaker": "Venkata Naga Ravikiran Bulusu",      "type": "talk",     "videoUrl": "https://www.youtube.com/watch?v=MH-e1Js3sFE", "abstract": "Practical concurrency patterns in C++ — thread pools, producer-consumer, readers-writer locks, and when to reach for each one." },
+          { "time": "14:00–15:00", "title": "Lunch & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "15:00–16:00", "title": "Value-Oriented Design — by example",                      "speaker": "Ankur Satle",                       "type": "talk",     "videoUrl": "https://www.youtube.com/watch?v=EuXOsim94dc", "abstract": "Designing software around values rather than entities — improving testability, reasoning, and correctness through immutability and value semantics." },
+          { "time": "16:00–16:30", "title": "Break & Networking",                                        "speaker": "",                                  "type": "break",    "videoUrl": null },
+          { "time": "16:30–17:30", "title": "Why 5G is Fast? and C++ in 5G Open Source",              "speaker": "Selvakumar Jawahar",                "type": "talk",     "videoUrl": null, "abstract": "The role of C++ in 5G open-source stacks — architecture, latency requirements, and real-world deployment experiences." },
+          { "time": "17:30–17:45", "title": "Conference Closing",                                        "speaker": "CppIndia Hosts",                    "type": "outro",    "videoUrl": null }
         ]
       }
     ],
@@ -170,14 +170,14 @@
     ],
     "sponsors": {
       "gold": [
-        { "name": "think-cell",    "website": "https://www.think-cell.com" },
-        { "name": "Undo",          "website": "https://undo.io" },
-        { "name": "CircuitSutra",  "website": "https://www.circuitsutra.com" }
+        { "name": "think-cell",    "logo": "/assets/images/sponsors/gold/think-cell.png",   "website": "https://www.think-cell.com" },
+        { "name": "Undo",          "logo": "/assets/images/sponsors/gold/undo.png",          "website": "https://undo.io" },
+        { "name": "CircuitSutra",  "logo": "/assets/images/sponsors/gold/circuitsutra.png", "website": "https://www.circuitsutra.com" }
       ],
       "community": [
-        { "name": "Meeting C++",    "website": "https://meetingcpp.com" },
-        { "name": "SwedenCpp",      "website": "https://swedencpp.se" },
-        { "name": "#include <C++>", "website": "https://www.includecpp.org" }
+        { "name": "Meeting C++",    "logo": "/assets/images/sponsors/community/meeting_cpp.png", "website": "https://meetingcpp.com" },
+        { "name": "SwedenCpp",      "logo": "/assets/images/sponsors/community/sweden_cpp.png",  "website": "https://swedencpp.se" },
+        { "name": "#include <C++>", "logo": "/assets/images/sponsors/community/include_cpp.png", "website": "https://www.includecpp.org" }
       ]
     },
     "schedule": [
@@ -185,17 +185,17 @@
         "day": 1,
         "date": "August 6, 2022",
         "sessions": [
-          { "time": "09:30–09:45", "title": "Welcome & Conference Setup",                                 "speaker": "CppIndia Hosts",       "type": "intro" },
-          { "time": "09:45–10:45", "title": "Customization Methods: Connecting User And Library Code",    "speaker": "Inbal Levi",            "type": "talk",    "abstract": "Exploring the different ways C++ enables customization points — ADL, virtual dispatch, tag dispatch, CPOs — and how to choose the right one for your library." },
-          { "time": "10:45–11:15", "title": "Break & Networking",                                         "speaker": "",                      "type": "break" },
-          { "time": "11:15–12:15", "title": "Default Generated Comparison for Your Data Types",           "speaker": "Hemil Ruparel",         "type": "talk",    "abstract": "Deep dive into C++20's spaceship operator and defaulted comparisons — how the compiler generates them, edge cases, and practical usage patterns." },
-          { "time": "12:15–13:15", "title": "Lunch & Networking",                                         "speaker": "",                      "type": "break" },
-          { "time": "13:15–14:15", "title": "Concurrency with Reactor Pattern",                          "speaker": "Selvakumar Jawahar",    "type": "talk",    "abstract": "Implementing event-driven concurrency in C++ using the Reactor design pattern — ideal for I/O-heavy and embedded applications." },
-          { "time": "14:15–14:45", "title": "Break & Networking",                                         "speaker": "",                      "type": "break" },
-          { "time": "14:45–15:45", "title": "Getting the Most Out of GDB",                               "speaker": "Dr. Greg Law",          "type": "talk",    "abstract": "Advanced GDB techniques including rr (record and replay), conditional breakpoints, scripting, and debugging multi-threaded programs." },
-          { "time": "15:45–16:15", "title": "Break & Networking",                                         "speaker": "",                      "type": "break" },
-          { "time": "16:15–17:15", "title": "How C++ Eliminated Memory Issues",                          "speaker": "Ankur M Satle",         "type": "talk",    "abstract": "A survey of C++ mechanisms — RAII, smart pointers, moves, and modern guidelines — that make manual memory management largely unnecessary." },
-          { "time": "17:15–17:30", "title": "Conference Closing",                                         "speaker": "CppIndia Hosts",        "type": "outro" }
+          { "time": "09:30–09:45", "title": "Welcome & Conference Setup",                                 "speaker": "CppIndia Hosts",       "type": "intro",   "videoUrl": null },
+          { "time": "09:45–10:45", "title": "Customization Methods: Connecting User And Library Code",    "speaker": "Inbal Levi",            "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=Yz572HZOF5g", "abstract": "Exploring the different ways C++ enables customization points — ADL, virtual dispatch, tag dispatch, CPOs — and how to choose the right one for your library." },
+          { "time": "10:45–11:15", "title": "Break & Networking",                                         "speaker": "",                      "type": "break",   "videoUrl": null },
+          { "time": "11:15–12:15", "title": "Default Generated Comparison for Your Data Types",           "speaker": "Hemil Ruparel",         "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=gZ6htjPMJCk", "abstract": "Deep dive into C++20's spaceship operator and defaulted comparisons — how the compiler generates them, edge cases, and practical usage patterns." },
+          { "time": "12:15–13:15", "title": "Lunch & Networking",                                         "speaker": "",                      "type": "break",   "videoUrl": null },
+          { "time": "13:15–14:15", "title": "Concurrency with Reactor Pattern",                          "speaker": "Selvakumar Jawahar",    "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=HAy6W0UdPqw", "abstract": "Implementing event-driven concurrency in C++ using the Reactor design pattern — ideal for I/O-heavy and embedded applications." },
+          { "time": "14:15–14:45", "title": "Break & Networking",                                         "speaker": "",                      "type": "break",   "videoUrl": null },
+          { "time": "14:45–15:45", "title": "Getting the Most Out of GDB",                               "speaker": "Dr. Greg Law",          "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=1YH0Jxg60Ow", "abstract": "Advanced GDB techniques including rr (record and replay), conditional breakpoints, scripting, and debugging multi-threaded programs." },
+          { "time": "15:45–16:15", "title": "Break & Networking",                                         "speaker": "",                      "type": "break",   "videoUrl": null },
+          { "time": "16:15–17:15", "title": "How C++ Eliminated Memory Issues",                          "speaker": "Ankur M Satle",         "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=jJ63MexJY1s", "abstract": "A survey of C++ mechanisms — RAII, smart pointers, moves, and modern guidelines — that make manual memory management largely unnecessary." },
+          { "time": "17:15–17:30", "title": "Conference Closing",                                         "speaker": "CppIndia Hosts",        "type": "outro",   "videoUrl": null }
         ]
       }
     ],
@@ -220,12 +220,12 @@
     ],
     "sponsors": {
       "gold": [
-        { "name": "CircuitSutra", "website": "https://www.circuitsutra.com" }
+        { "name": "CircuitSutra", "logo": "/assets/images/sponsors/gold/circuitsutra.png", "website": "https://www.circuitsutra.com" }
       ],
       "community": [
-        { "name": "Meeting C++",    "website": "https://meetingcpp.com" },
-        { "name": "SwedenCpp",      "website": "https://swedencpp.se" },
-        { "name": "#include <C++>", "website": "https://www.includecpp.org" }
+        { "name": "Meeting C++",    "logo": "/assets/images/sponsors/community/meeting_cpp.png", "website": "https://meetingcpp.com" },
+        { "name": "SwedenCpp",      "logo": "/assets/images/sponsors/community/sweden_cpp.png",  "website": "https://swedencpp.se" },
+        { "name": "#include <C++>", "logo": "/assets/images/sponsors/community/include_cpp.png", "website": "https://www.includecpp.org" }
       ]
     },
     "schedule": [
@@ -233,19 +233,19 @@
         "day": 1,
         "date": "August 15, 2021",
         "sessions": [
-          { "time": "10:00–10:30", "title": "Introduction & Welcome",                                              "speaker": "CppIndia Hosts",            "type": "intro" },
-          { "time": "10:30–11:30", "title": "[Keynote] C++ Today: The Beast is Back",                             "speaker": "Jon Kalb",                  "type": "keynote", "abstract": "An energetic tour of the C++ landscape — why C++ is thriving, where the language is headed with C++20/23, and why now is the best time to be a C++ developer." },
-          { "time": "11:30–11:45", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
-          { "time": "11:45–12:45", "title": "What Belongs in the C++ Standard Library",                           "speaker": "Bryce Adelstein Lelbach",    "type": "talk",    "abstract": "A principled look at what should and shouldn't be standardised — the criteria, trade-offs, and process behind adding to the C++ standard library." },
-          { "time": "12:45–13:00", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
-          { "time": "13:00–14:00", "title": "C++20 Ranges: Code Expressively with Ranges",                        "speaker": "Harishankar Singh",          "type": "talk",    "abstract": "Practical introduction to C++20 Ranges — views, adaptors, pipelines — and how they make algorithm composition readable and composable." },
-          { "time": "14:00–14:45", "title": "Lunch & Networking",                                                  "speaker": "",                          "type": "break" },
-          { "time": "14:45–15:45", "title": "C++20 Concepts — The Base Classes of Generic Programming?",          "speaker": "Ankur M Satle",              "type": "talk",    "abstract": "Concepts as a mechanism for generic programming — how they compare to inheritance for defining constraints, and whether they can replace traditional OOP hierarchies." },
-          { "time": "15:45–16:00", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
-          { "time": "16:00–17:00", "title": "Contract Programming: What, Why, and How?",                          "speaker": "Saurabh Joshi",             "type": "talk",    "abstract": "Design by contract in C++ — preconditions, postconditions, invariants — and how contracts improve correctness and serve as living documentation." },
-          { "time": "17:00–17:15", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break" },
-          { "time": "17:15–18:15", "title": "AMA with Bjarne Stroustrup",                                         "speaker": "Bjarne Stroustrup",          "type": "special", "abstract": "An open Q&A with C++ creator Bjarne Stroustrup — covering the past, present, and future of C++, design decisions, and advice for the community." },
-          { "time": "18:15–18:30", "title": "Conference Closing",                                                  "speaker": "CppIndia Hosts",            "type": "outro" }
+          { "time": "10:00–10:30", "title": "Introduction & Welcome",                                              "speaker": "CppIndia Hosts",            "type": "intro",   "videoUrl": null },
+          { "time": "10:30–11:30", "title": "[Keynote] C++ Today: The Beast is Back",                             "speaker": "Jon Kalb",                  "type": "keynote", "videoUrl": "https://www.youtube.com/watch?v=FlJh5KvatSA", "abstract": "An energetic tour of the C++ landscape — why C++ is thriving, where the language is headed with C++20/23, and why now is the best time to be a C++ developer." },
+          { "time": "11:30–11:45", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break",   "videoUrl": null },
+          { "time": "11:45–12:45", "title": "What Belongs in the C++ Standard Library",                           "speaker": "Bryce Adelstein Lelbach",    "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=0RfDhejjXKk", "abstract": "A principled look at what should and shouldn't be standardised — the criteria, trade-offs, and process behind adding to the C++ standard library." },
+          { "time": "12:45–13:00", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break",   "videoUrl": null },
+          { "time": "13:00–14:00", "title": "C++20 Ranges: Code Expressively with Ranges",                        "speaker": "Harishankar Singh",          "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=WF9ZmDcjAmU", "abstract": "Practical introduction to C++20 Ranges — views, adaptors, and how they make algorithm composition readable and composable." },
+          { "time": "14:00–14:45", "title": "Lunch & Networking",                                                  "speaker": "",                          "type": "break",   "videoUrl": null },
+          { "time": "14:45–15:45", "title": "C++20 Concepts — The Base Classes of Generic Programming?",          "speaker": "Ankur M Satle",              "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=r3V8k58mE6w", "abstract": "Concepts as a mechanism for generic programming — how they compare to inheritance for defining constraints, and whether they can replace traditional OOP hierarchies." },
+          { "time": "15:45–16:00", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break",   "videoUrl": null },
+          { "time": "16:00–17:00", "title": "Contract Programming: What, Why, and How?",                          "speaker": "Saurabh Joshi",             "type": "talk",    "videoUrl": "https://www.youtube.com/watch?v=_eoZ4OfHypU", "abstract": "Design by contract in C++ — preconditions, postconditions, invariants — and how contracts improve correctness and serve as living documentation." },
+          { "time": "17:00–17:15", "title": "Break & Networking",                                                  "speaker": "",                          "type": "break",   "videoUrl": null },
+          { "time": "17:15–18:15", "title": "AMA with Bjarne Stroustrup",                                         "speaker": "Bjarne Stroustrup",          "type": "special", "videoUrl": "https://www.youtube.com/watch?v=vi6YuItuKeQ", "abstract": "An open Q&A with C++ creator Bjarne Stroustrup — covering the past, present, and future of C++, design decisions, and advice for the community." },
+          { "time": "18:15–18:30", "title": "Conference Closing",                                                  "speaker": "CppIndia Hosts",            "type": "outro",   "videoUrl": null }
         ]
       }
     ],

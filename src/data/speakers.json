@@ -5,11 +5,12 @@
     "role": "Keynote Speaker",
     "conference": 2024,
     "topic": "C++ ♥ Python",
-    "bio": "17+ years of software development experience across embedded systems, big data, and high-performance computing. Currently Group/Technical Manager at Speedata.io. Previously held roles at Abbott Israel, Axxana (Technical Leader), Rafael (Senior SW Developer), and Elbit Systems.",
+    "bio": "Group Manager and Technical Manager at Speedata.io with 17+ years of software development experience across embedded systems, big data, and high-performance computing. Previous roles include Technical Leader at Axxana, Software Manager at Abbott Israel, Senior SW Developer at Rafael, and integration developer at Elbit. Expert in C++20, massive template metaprogramming, and LLVM development. Also teaches a modern C++ features course.",
     "expertise": ["C++20", "LLVM", "Template Metaprogramming", "Python Bindings", "Big Data"],
     "website": "https://www.cppnext.com/",
     "linkedin": "https://www.linkedin.com/in/alexdathskovsky/",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2024/alex.jpg"
   },
   {
@@ -18,11 +19,12 @@
     "role": "Keynote Speaker",
     "conference": 2024,
     "topic": "Declarative C++",
-    "bio": "Architect at EXFO working on telecom products (3G/4G/5G/IMS/VoIP, Network Monitoring, OSS/BSS) with 20 years of experience. Passionate about code that is easy-to-use-correctly, correct-by-construction, and minimalistic. Has spoken at CppCon 2020, 2021, and 2022. Active CppIndia organiser and presenter.",
+    "bio": "Architect at EXFO working on telecom products (3G/4G/5G/IMS/VoIP, Network Monitoring, OSS/BSS) with two decades of experience. B.Tech in Electronics and Telecom with a Post-graduate Diploma in Software Technology. Passionate about code that is easy-to-use-correctly, correct-by-construction, and minimalistic. Has presented at CppCon 2020, 2021, and 2022. Active CppIndia organiser, presenter, and maintainer.",
     "expertise": ["Modern C++", "Architecture", "Telecom", "Value-Oriented Design", "Declarative Programming"],
     "website": "https://ankursatle.wordpress.com",
     "linkedin": "https://www.linkedin.com/in/ankursatle/",
     "twitter": "https://twitter.com/AnkurSatle",
+    "github": "https://github.com/sankurm",
     "image": "/assets/images/speakers/2024/ankur.png"
   },
   {
@@ -31,11 +33,12 @@
     "role": "Speaker",
     "conference": 2024,
     "topic": "Software Design and Performance in C++",
-    "bio": "CTO of MulticoreWare and Associate Professor of Computer Science at Whitman College. Holds a Ph.D. in Electrical & Computer Engineering from the University of Illinois Urbana-Champaign (2013). Designed MxPA — the first licensable implementation of OpenCL. Published research on Halide and OpenCL compilers for DSP and scientific computing.",
+    "bio": "CTO of MulticoreWare (since 2010) and Associate Professor of Computer Science at Whitman College. Ph.D. in Electrical and Computer Engineering from the University of Illinois Urbana-Champaign (2013). Designed and developed MxPA — the first licensable OpenCL implementation. Published research on Halide and OpenCL compilers for DSPs, and advanced scientific computing through stochastic simulation and image analysis.",
     "expertise": ["Compilers", "OpenCL", "HPC", "Software Performance", "DSP"],
     "website": "https://www.whitman.edu/academics/majors-and-programs/computer-science/faculty-and-staff/john-stratton",
     "linkedin": "https://www.linkedin.com/in/john-stratton-ba37719/",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2024/john.jpg"
   },
   {
@@ -44,11 +47,12 @@
     "role": "Speaker",
     "conference": 2024,
     "topic": "An (In-)Complete Guide to C++ Object Lifetimes",
-    "bio": "Software Engineer at think-cell maintaining core libraries. Creator of several popular open-source C++ projects: type_safe, foonathan/memory, lexy (parser combinator), and lauf (bytecode interpreter). Member of the C++ standardization committee — assistant chair for std::ranges.",
+    "bio": "Software Engineer at think-cell maintaining core libraries. Creator of several popular open-source C++ projects: type_safe, foonathan/memory (memory allocator library), lexy (parser library), and lauf (bytecode interpreter). Blogs at foonathan.net. C++ standardization committee member — assistant chair for std::ranges.",
     "expertise": ["Library Design", "C++ Standards", "Ranges", "Object Lifetimes", "Parser Combinators"],
     "website": "https://www.jonathanmueller.dev/",
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/in/foonathan/",
     "twitter": "https://twitter.com/foonathan",
+    "github": null,
     "image": "/assets/images/speakers/2024/jonathan.png"
   },
   {
@@ -57,11 +61,12 @@
     "role": "Speaker",
     "conference": 2024,
     "topic": "Exploring Undefined Behaviour in C++",
-    "bio": "10+ years developing virtual platforms in the semiconductor industry, focusing on CPU/memory/peripheral modeling in SoCs — both functional and microarchitectural. Active CppIndia contributor presenting on SIMD, performance evaluation, and modern C++. Also teaches C, C++, Python, Data Structures, and Mathematics.",
+    "bio": "10+ years developing virtual platforms in the semiconductor industry, focusing on functional and microarchitectural modelling of CPUs, memories, and peripheral components in SoCs. Active CppIndia community member and regular presenter — covering SIMD, performance evaluation, undefined behaviour, and modern C++ features. Also teaches C, C++, Python, Data Structures, and Mathematics.",
     "expertise": ["Semiconductor", "Virtual Platforms", "SoC Modelling", "SIMD", "Undefined Behaviour"],
     "website": null,
     "linkedin": "https://www.linkedin.com/in/garodimahendra",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2024/mahendra.jpg"
   },
   {
@@ -70,11 +75,13 @@
     "role": "Speaker",
     "conference": 2024,
     "topic": "Getting Started with Modern C++ — A Tour of Features",
-    "bio": "Teaching Professor focusing on computer systems, graphics, and software engineering. Research areas include performance engineering (dynamic analysis), software visualization, and computer graphics. Also works as a 3D Senior Graphics Engineer in C++. Active educator with a popular YouTube channel.",
+    "bio": "Associate Teaching Professor at Northeastern University, Khoury College of Computer Sciences. Teaching interests: computer systems, graphics, and software engineering. Research interests: performance engineering (dynamic analysis), software visualization, and computer graphics. Occasional consulting work as a 3D Senior Graphics Engineer in C++. Runs a popular C++ YouTube channel.",
     "expertise": ["Computer Graphics", "Performance Engineering", "Modern C++", "Teaching", "Systems Programming"],
     "website": "https://mshah.io",
     "linkedin": null,
     "twitter": "https://twitter.com/MichaelShah",
+    "github": null,
+    "youtube": "https://youtube.com/c/MikeShah",
     "image": "/assets/images/speakers/2024/mike.jpg"
   },
   {
@@ -88,6 +95,7 @@
     "website": null,
     "linkedin": "https://www.linkedin.com/in/pavithra-ashok-kumar-78976330/",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2024/pavithra.jpg"
   },
   {
@@ -96,11 +104,12 @@
     "role": "Speaker",
     "conference": 2024,
     "topic": "What is a range?",
-    "bio": "Ex-software engineer and researcher with 20 years of industry experience. Author of the 'Daily bit(e) of C++' series, 'A Complete Guide to Standard C++ Algorithms' book, and 'Surviving the C++ Coding Interview'. Focused on making modern C++ features accessible to all developers.",
+    "bio": "Ex-software engineer and researcher sharing 20 years of industry experience with the world. Author of the 'Daily bit(e) of C++' series, 'A Complete Guide to Standard C++ Algorithms' book, and 'Surviving the C++ Coding Interview'. Focused on making modern C++ features accessible to all developers.",
     "expertise": ["C++20 Ranges", "Algorithms", "Modern C++", "Technical Writing", "C++ Standards"],
     "website": null,
     "linkedin": "https://www.linkedin.com/in/simontoth",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2024/simon.jpg"
   },
 
@@ -110,12 +119,13 @@
     "role": "Keynote Speaker",
     "conference": 2023,
     "topic": "AI-Assisted Programming (ChatGPT, etc)",
-    "bio": "Principal Engineer at NVIDIA and Chair of the ISO C++ Library Evolution Working Group. One of the most active contributors to the C++ standardization process. Co-chair of the C++ Standard Library working group and a frequent keynote speaker at CppCon and other major C++ conferences.",
+    "bio": "HPC Programming Models Architect at NVIDIA. Leads programming language standardization and drives the technical roadmap for NVIDIA's HPC compilers and libraries. Chairs INCITS/PL22 (the US standards committee for programming languages) and the Standard C++ Library Evolution working group. Editor for INCITS Inclusive Terminology Guidelines. Program chair for C++Now and CppCon conferences. C++ Committee contributor for concurrency primitives, parallel algorithms, executors, and multidimensional arrays. Initial developer of the HPX parallel runtime system.",
     "expertise": ["C++ Standards", "Concurrency", "HPC", "GPU Programming", "Standard Library"],
     "website": null,
-    "linkedin": "https://www.linkedin.com/in/blelbach/",
+    "linkedin": "https://www.linkedin.com/in/brycelelbach/",
     "twitter": "https://twitter.com/blelbach",
-    "image": "/assets/images/speakers/2023/bryce.jpg"
+    "github": null,
+    "image": "/assets/images/speakers/2023/bryce.png"
   },
   {
     "id": "mike-shah-2023",
@@ -123,12 +133,14 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "Optimization Design Patterns",
-    "bio": "Teaching Professor focusing on computer systems, graphics, and software engineering. Research areas include performance engineering (dynamic analysis), software visualization, and computer graphics. Popular C++ educator with a YouTube channel reaching thousands of developers.",
+    "bio": "Associate Teaching Professor at Northeastern University, Khoury College of Computer Sciences. Research focuses on performance engineering (dynamic analysis), software visualization, and computer graphics. Occasional consulting as a 3D Senior Graphics Engineer in C++. Popular C++ educator on YouTube.",
     "expertise": ["Performance Engineering", "Design Patterns", "Computer Graphics", "Modern C++", "Teaching"],
     "website": "https://mshah.io",
     "linkedin": null,
     "twitter": "https://twitter.com/MichaelShah",
-    "image": "/assets/images/speakers/2023/mike.jpg"
+    "github": null,
+    "youtube": "https://youtube.com/c/MikeShah",
+    "image": "/assets/images/speakers/2023/mike.png"
   },
   {
     "id": "kiran-kannappan",
@@ -136,12 +148,13 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "Introduction to Intel oneAPI",
-    "bio": "Software engineer at Intel specializing in heterogeneous computing and the oneAPI unified programming model. Works on enabling developers to write high-performance C++ code targeting CPUs, GPUs, and FPGAs using SYCL and the Intel oneAPI toolkit.",
-    "expertise": ["Intel oneAPI", "SYCL", "Heterogeneous Computing", "HPC", "GPU Programming"],
+    "bio": "25 years of experience in the Chip Design Industry. Masters from the Indian Institute of Science. Since returning to India approximately a decade ago, focused on building AI Applications and enhancing performance for HPC applications using Intel's oneAPI toolkit.",
+    "expertise": ["Intel oneAPI", "SYCL", "Heterogeneous Computing", "HPC", "Chip Design"],
     "website": null,
-    "linkedin": null,
+    "linkedin": "https://in.linkedin.com/in/kirankannappan",
     "twitter": null,
-    "image": "/assets/images/speakers/2023/kiran.jpg"
+    "github": null,
+    "image": "/assets/images/speakers/2023/kiran.png"
   },
   {
     "id": "jonathan-muller-2023",
@@ -149,12 +162,13 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "C++ Features You Might Not Know",
-    "bio": "Software Engineer at think-cell. Creator of popular open-source C++ libraries including type_safe, foonathan/memory, and lexy. Active C++ standardization committee member and technical writer covering modern C++ features.",
+    "bio": "Library developer at think-cell. Creator of open-source C++ projects covering memory allocation, cache-friendly containers, and parsing. Blogs at foonathan.net. Active C++ standardization committee member.",
     "expertise": ["Library Design", "C++ Features", "Open Source", "C++ Standards", "Ranges"],
     "website": "https://www.jonathanmueller.dev/",
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/in/foonathan/",
     "twitter": "https://twitter.com/foonathan",
-    "image": "/assets/images/speakers/2023/jonathan.jpg"
+    "github": null,
+    "image": "/assets/images/speakers/2023/jonathan.png"
   },
   {
     "id": "venkata-bulusu",
@@ -162,12 +176,13 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "Understanding Common Concurrency Patterns",
-    "bio": "Software engineer with deep expertise in concurrent and parallel programming in C++. Focused on practical concurrency patterns — thread pools, producer-consumer models, readers-writer locks — and making multi-threaded C++ accessible and correct.",
-    "expertise": ["Concurrency", "Multithreading", "C++", "Design Patterns", "Systems Programming"],
+    "bio": "C/C++ Embedded Developer with 6 years of experience in Embedded Systems. Currently at VITES GmbH, Munich, Germany, developing C/C++17 software for Embedded Linux systems for ground station terminals communicating with commercial satellites. Masters in Microsystems from Hochschule Bremen, Germany. Active in the CppCon and ISO C++ standards community.",
+    "expertise": ["Concurrency", "Embedded Systems", "C++17", "Embedded Linux", "Design Patterns"],
     "website": null,
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/in/venkata-naga-ravikiran-b-0b479b25/",
     "twitter": null,
-    "image": "/assets/images/speakers/2023/venkata.jpg"
+    "github": "https://github.com/ravikiranbvn",
+    "image": "/assets/images/speakers/2023/ravikiran.png"
   },
   {
     "id": "ankur-satle-2023",
@@ -175,12 +190,13 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "Value-Oriented Design — by example",
-    "bio": "Architect at EXFO with 20 years of experience in telecom software. Passionate advocate for value semantics and declarative C++. Regular speaker at CppCon and CppIndia, and an active organiser of CppIndia events.",
+    "bio": "Architect at EXFO working on 5G/4G/3G Service Assurance and Network Monitoring with two decades of experience. B.Tech in Electronics and Telecom; PG Diploma in Software Technology. Active CppIndia organiser, presenter, and maintainer. Personal interests include natural languages (Indian + French), outdoor activities, drawing, cosmology, football, and thriller/mystery films.",
     "expertise": ["Value Semantics", "Software Architecture", "Modern C++", "Telecom", "Design Patterns"],
     "website": "https://ankursatle.wordpress.com",
     "linkedin": "https://www.linkedin.com/in/ankursatle/",
     "twitter": "https://twitter.com/AnkurSatle",
-    "image": "/assets/images/speakers/2023/ankur.jpg"
+    "github": "https://github.com/sankurm",
+    "image": "/assets/images/speakers/2023/ankur.png"
   },
   {
     "id": "andreas-fertig",
@@ -188,12 +204,13 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "C++ Coroutines from Scratch",
-    "bio": "Independent C++ trainer, consultant, and author based in Germany. Author of 'Programming with C++20' and creator of C++ Insights — a tool that shows how the compiler transforms your C++ source. Specializes in making complex modern C++ features understandable through concrete examples.",
+    "bio": "CEO of Unique Code GmbH. Trainer and lecturer for C++ (standards 11 to 20) and participant in C++ standardization. Creator of 'C++ Insights' — an internationally recognized tool that enables users to look behind the scenes of C++. Previously spent a decade at Philips Medical Systems as a C++ developer in embedded architecture. Publishes in iX magazine and has authored multiple C++ textbooks.",
     "expertise": ["C++20 Coroutines", "C++ Insights", "Training", "Templates", "Modern C++"],
     "website": "https://andreasfertig.com",
-    "linkedin": "https://www.linkedin.com/in/andreasfertig/",
-    "twitter": "https://twitter.com/andreasfertig",
-    "image": "/assets/images/speakers/2023/andreas.jpg"
+    "linkedin": "https://de.linkedin.com/in/andreasfertig",
+    "twitter": "https://twitter.com/Andreas__Fertig",
+    "github": "https://github.com/andreasfertig",
+    "image": "/assets/images/speakers/2023/andreas.png"
   },
   {
     "id": "kushashwa-ravi-shrimali",
@@ -201,12 +218,13 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "Using C++ for Your Artificial Intelligence Solution",
-    "bio": "ML/AI software engineer passionate about high-performance computing and the intersection of C++ and machine learning. Contributes to open-source ML frameworks and writes about practical C++ for AI/ML workloads. Author of various C++ and OpenCV tutorials.",
-    "expertise": ["AI/ML", "C++ for ML", "OpenCV", "Performance", "Python Bindings"],
-    "website": null,
-    "linkedin": "https://www.linkedin.com/in/kushashwa-ravi-shrimali/",
-    "twitter": null,
-    "image": "/assets/images/speakers/2023/kushashwa.jpg"
+    "bio": "CSE Graduate ('20) from IIIT NR, India (Gold Medalist, Transformational Leadership). Currently Backend Engineer at Abnormal Security. Past: Lead contributor to Lightning Flash; contributed to PyTorch and OpenCV with C++; Research Engineer at Lightning AI; SDE at Quansight (PyTorch/Meta); SDE intern at NVIDIA (Santa Clara); AI Engineer at CareAI; R&D Intern at ROSE Labs NTU Singapore.",
+    "expertise": ["AI/ML", "C++ for ML", "OpenCV", "PyTorch", "Python Bindings"],
+    "website": "http://krshrimali.github.io/",
+    "linkedin": "https://www.linkedin.com/in/kushashwa-ravi-shrimali-b6780152/",
+    "twitter": "https://twitter.com/kushashwa",
+    "github": "https://github.com/krshrimali",
+    "image": "/assets/images/speakers/2023/ravi.png"
   },
   {
     "id": "selvakumar-jawahar-2023",
@@ -214,12 +232,13 @@
     "role": "Speaker",
     "conference": 2023,
     "topic": "Why 5G is Fast? and C++ in 5G Open Source",
-    "bio": "Software engineer working in the telecommunications domain with hands-on experience in 5G open-source stacks. Uses C++ extensively for building low-latency, high-throughput radio access network components. Active contributor to open-source 5G projects.",
-    "expertise": ["5G", "Telecommunications", "C++", "Open Source", "Real-time Systems"],
+    "bio": "Senior Engineer at Juniper Networks with 20+ years of experience building complex, high-quality software and embedded systems. Specializes in architecting next-generation QA solutions for cloud, datacenter, and 5G networks.",
+    "expertise": ["5G", "Telecommunications", "C++", "Embedded Systems", "Cloud Networking"],
     "website": null,
-    "linkedin": null,
-    "twitter": null,
-    "image": "/assets/images/speakers/2023/selvakumar.jpg"
+    "linkedin": "https://www.linkedin.com/in/selvakumarjawahar/",
+    "twitter": "https://twitter.com/selvakumarjawa1",
+    "github": "https://github.com/selvakumarjawahar",
+    "image": "/assets/images/speakers/2023/selvakumar.png"
   },
   {
     "id": "prince-gupta",
@@ -227,11 +246,12 @@
     "role": "Lightning Talk Speaker",
     "conference": 2023,
     "topic": "Taking Advantage of Auto Vectorization",
-    "bio": "Software engineer interested in compiler optimizations and low-level performance tuning in C++. Presented a lightning talk at CppIndiaCon 2023 on writing code that lets the compiler automatically vectorize loops using SIMD instructions.",
+    "bio": "Software engineer interested in compiler optimizations and low-level performance tuning in C++. Presented a lightning talk at CppIndiaCon 2023 on writing code that allows the compiler to automatically vectorize loops using SIMD instructions.",
     "expertise": ["SIMD", "Auto Vectorization", "Compiler Optimization", "Performance", "C++"],
     "website": null,
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/in/prince776/",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2023/prince.jpg"
   },
   {
@@ -243,8 +263,9 @@
     "bio": "Software engineer focused on memory management and performance optimization in C++. Delivered a lightning talk at CppIndiaCon 2023 on custom allocators and how they can dramatically improve container performance in real-world applications.",
     "expertise": ["Memory Allocators", "Containers", "Performance", "C++", "Systems Programming"],
     "website": null,
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/in/emmanuel-nyarko-79b15719a/",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2023/emmanuel.jpg"
   },
   {
@@ -253,11 +274,12 @@
     "role": "Lightning Talk Speaker",
     "conference": 2023,
     "topic": "Standard C++ Attributes",
-    "bio": "Software engineer in the semiconductor industry with 10+ years of experience. Active CppIndia community member and contributor who has delivered talks and lightning talks at multiple CppIndiaCon editions.",
+    "bio": "Software engineer in the semiconductor industry with 10+ years of experience modelling SoCs. Active CppIndia community member who has delivered talks and lightning talks at multiple CppIndiaCon editions.",
     "expertise": ["C++ Attributes", "Semiconductor", "SoC Modelling", "Modern C++", "SIMD"],
     "website": null,
     "linkedin": "https://www.linkedin.com/in/garodimahendra",
     "twitter": null,
+    "github": null,
     "image": "/assets/images/speakers/2023/mahendra.jpg"
   },
 
@@ -267,12 +289,13 @@
     "role": "Speaker",
     "conference": 2022,
     "topic": "Customization Methods: Connecting User And Library Code",
-    "bio": "Software engineer and active ISO C++ standardization committee member. Chair of the C++ Israel local chapter and an organiser of CoreCpp Conference. Focuses on library design, customization points, and making the C++ standard library easier to extend correctly.",
-    "expertise": ["C++ Standards", "Library Design", "Customization Points", "Ranges", "ADL"],
+    "bio": "Embedded software engineer with a passion for high performance. Director at the ISO C++ Foundation. Co-chair of Library Evolution and Chair of SG9 (Ranges group) of the C++ Standards Committee. Chair of the ISO C++ Israeli National Body. Organizer of the CoreCpp conference and user group.",
+    "expertise": ["C++ Standards", "Library Design", "Customization Points", "Ranges", "Embedded Systems"],
     "website": null,
-    "linkedin": "https://www.linkedin.com/in/inbal-levi/",
-    "twitter": "https://twitter.com/InbalLevi3",
-    "image": "/assets/images/speakers/2022/inbal.jpg"
+    "linkedin": null,
+    "twitter": null,
+    "github": null,
+    "image": "/assets/images/speakers/2022/inbal.png"
   },
   {
     "id": "hemil-ruparel",
@@ -280,12 +303,13 @@
     "role": "Speaker",
     "conference": 2022,
     "topic": "Default Generated Comparison for Your Data Types",
-    "bio": "Software engineer and CppIndia community moderator. Deep interest in C++20 features and library design. Presented at CppIndiaCon 2022 on the C++20 spaceship operator and compiler-generated comparison operators.",
-    "expertise": ["C++20", "Comparisons", "Spaceship Operator", "Modern C++", "Library Design"],
+    "bio": "Independent Contractor and Freelancer who helps people build apps. C++ was his first programming language. Interests span OS, distributed computing, compilers/interpreters, programming language design, and hardware. Was in 3rd year B.Tech Computer Engineering at Bharati Vidyapeeth, Pune at the time of speaking. Also a CppIndia community moderator.",
+    "expertise": ["C++20", "Comparisons", "Spaceship Operator", "Compilers", "Language Design"],
     "website": null,
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/in/hemil-ruparel-2aa513166/",
     "twitter": null,
-    "image": "/assets/images/speakers/2022/hemil.jpg"
+    "github": null,
+    "image": "/assets/images/speakers/2022/hemil.png"
   },
   {
     "id": "selvakumar-jawahar-2022",
@@ -293,12 +317,13 @@
     "role": "Speaker",
     "conference": 2022,
     "topic": "Concurrency with Reactor Pattern",
-    "bio": "Software engineer in the telecommunications domain with deep expertise in event-driven concurrency. Presented at both CppIndiaCon 2022 and 2023, covering the Reactor pattern and 5G open-source stacks.",
-    "expertise": ["Concurrency", "Design Patterns", "Reactor Pattern", "C++", "Telecommunications"],
+    "bio": "Senior Software Engineer at Juniper Networks with 19+ years of experience building high-performance embedded systems, large-scale enterprise software, and real-time web applications.",
+    "expertise": ["Concurrency", "Design Patterns", "Reactor Pattern", "C++", "Embedded Systems"],
     "website": null,
-    "linkedin": null,
-    "twitter": null,
-    "image": "/assets/images/speakers/2022/selvakumar.jpg"
+    "linkedin": "https://www.linkedin.com/in/selvakumarjawahar/",
+    "twitter": "https://twitter.com/selvakumarjawa1",
+    "github": "https://github.com/selvakumarjawahar",
+    "image": "/assets/images/speakers/2022/selvakumar.png"
   },
   {
     "id": "greg-law",
@@ -306,12 +331,13 @@
     "role": "Speaker",
     "conference": 2022,
     "topic": "Getting the Most Out of GDB",
-    "bio": "Co-founder and CTO of Undo — creators of the UDB time-travel debugger for Linux C/C++ applications. An authority on debugging technology with decades of experience building tools that let developers record and replay program execution. Frequent speaker at CppCon and other conferences.",
+    "bio": "Founder of Undo — the time travel debugging company for Linux software development. 20+ years in the software industry with previous roles in development and management at Acorn (the British computer firm), NexWave, and Solarflare. Founded Undo from his garden shed in 2012.",
     "expertise": ["Debugging", "GDB", "Time-Travel Debugging", "rr", "Linux Systems"],
     "website": "https://undo.io",
     "linkedin": "https://www.linkedin.com/in/greg-law-b10a8b2/",
     "twitter": "https://twitter.com/gregthelaw",
-    "image": "/assets/images/speakers/2022/greg.jpg"
+    "github": null,
+    "image": "/assets/images/speakers/2022/greg.png"
   },
   {
     "id": "ankur-satle-2022",
@@ -319,12 +345,13 @@
     "role": "Speaker",
     "conference": 2022,
     "topic": "How C++ Eliminated Memory Issues",
-    "bio": "Architect at EXFO with 20 years of experience in telecom software. Active CppIndia organiser who has presented at three consecutive CppIndiaCon editions (2021, 2022, 2023). Advocates for modern C++ idioms that make manual memory management unnecessary.",
+    "bio": "Architect at EXFO with 19+ years of experience. Active CppIndia organiser, presenter, and maintainer. Has also presented at CppCon 2020 and 2021.",
     "expertise": ["RAII", "Smart Pointers", "Memory Management", "Modern C++", "C++ Best Practices"],
     "website": "https://ankursatle.wordpress.com",
     "linkedin": "https://www.linkedin.com/in/ankursatle/",
     "twitter": "https://twitter.com/AnkurSatle",
-    "image": "/assets/images/speakers/2022/ankur.jpg"
+    "github": "https://github.com/sankurm",
+    "image": "/assets/images/speakers/2022/ankur.png"
   },
 
   {
@@ -333,11 +360,12 @@
     "role": "Special Guest",
     "conference": 2021,
     "topic": "AMA with Bjarne Stroustrup",
-    "bio": "Creator of C++ and author of 'The C++ Programming Language'. Currently a Technical Fellow at Morgan Stanley and a Visiting Professor at Columbia University. Has shaped the C++ language for over 40 years, leading its design and standardization through C++11, C++14, C++17, C++20, and beyond.",
+    "bio": "Creator of C++ (began development in 1979). Invented C++, wrote its early definitions, and produced its first implementation. Designed all major language facilities and managed extension proposals through the C++ standards committee. Awards: Draper Award, Faraday Medal. Current roles: Technical Fellow and Managing Director at Morgan Stanley (NYC); Visiting Professor in Computer Science at Columbia University.",
     "expertise": ["C++ Language Design", "Programming Languages", "C++ History", "Standardization", "Systems Programming"],
-    "website": "https://www.stroustrup.com",
-    "linkedin": null,
+    "website": "https://stroustrup.com/",
+    "linkedin": "https://www.linkedin.com/in/bjarnestroustrup/",
     "twitter": "https://twitter.com/stroustrup",
+    "github": null,
     "image": "/assets/images/speakers/2021/bjarne.jpg"
   },
   {
@@ -346,12 +374,13 @@
     "role": "Keynote Speaker",
     "conference": 2021,
     "topic": "C++ Today: The Beast is Back",
-    "bio": "Chair of CppCon — the world's largest C++ conference. Long-time C++ trainer and author. Has given the opening keynote at CppCon multiple times and is known for his ability to convey the energy and momentum of the modern C++ ecosystem to developers worldwide.",
+    "bio": "Decades of software engineering experience. Uses his knowledge to make other people better software engineers — conducts training for experienced developers, presents at technical conferences, and helps manage user groups. Focused on quality code and modern C++ practices.",
     "expertise": ["C++ Training", "Conference Organisation", "Modern C++", "C++ Community", "Teaching"],
     "website": null,
     "linkedin": "https://www.linkedin.com/in/jonkalb/",
-    "twitter": "https://twitter.com/jon_kalb",
-    "image": "/assets/images/speakers/2021/jon.jpg"
+    "twitter": "https://twitter.com/_JonKalb",
+    "github": null,
+    "image": "/assets/images/speakers/2021/jonkalb.jpg"
   },
   {
     "id": "bryce-lelbach-2021",
@@ -359,11 +388,12 @@
     "role": "Speaker",
     "conference": 2021,
     "topic": "What Belongs in the C++ Standard Library",
-    "bio": "Principal Engineer at NVIDIA and Chair of the ISO C++ Library Evolution Working Group (LEWG). One of the most prolific contributors to the C++ standard, responsible for features in C++14, C++17, C++20, and beyond. Also co-chairs the C++ committee's concurrency study group.",
+    "bio": "HPC Programming Models Architect at NVIDIA. Leads programming language standardization and drives the technical roadmap for NVIDIA's HPC compilers and libraries. Chairs INCITS/PL22 and the Standard C++ Library Evolution working group. Program chair for C++Now and CppCon. Initial developer of the HPX parallel runtime system.",
     "expertise": ["C++ Standards", "Standard Library", "Concurrency", "NVIDIA", "C++ Committee"],
     "website": null,
-    "linkedin": "https://www.linkedin.com/in/blelbach/",
+    "linkedin": "https://www.linkedin.com/in/brycelelbach/",
     "twitter": "https://twitter.com/blelbach",
+    "github": null,
     "image": "/assets/images/speakers/2021/bryce.jpg"
   },
   {
@@ -372,12 +402,13 @@
     "role": "Speaker",
     "conference": 2021,
     "topic": "C++20 Ranges: Code Expressively with Ranges",
-    "bio": "C++ developer and community member passionate about modern C++ features. Presented at the inaugural CppIndiaCon 2021 on C++20 Ranges — covering views, adaptors, and how the ranges library makes algorithm composition more readable and composable.",
-    "expertise": ["C++20 Ranges", "Algorithms", "Modern C++", "STL", "Functional Programming"],
+    "bio": "15 years in the software industry across domains including Avionics, Media, AI, Speech Recognition, and ML. Independent Trainer and Mentor for C++ since April 2020, focused on training professionals and students in sustainable, clean code practices.",
+    "expertise": ["C++20 Ranges", "Algorithms", "Modern C++", "STL", "Training"],
     "website": null,
-    "linkedin": null,
-    "twitter": null,
-    "image": "/assets/images/speakers/2021/harishankar.jpg"
+    "linkedin": "https://www.linkedin.com/in/harishankarsinghyadav/",
+    "twitter": "https://twitter.com/HarishankarSY",
+    "github": null,
+    "image": "/assets/images/speakers/2021/hari.jpg"
   },
   {
     "id": "ankur-satle-2021",
@@ -385,11 +416,12 @@
     "role": "Speaker",
     "conference": 2021,
     "topic": "C++20 Concepts — The Base Classes of Generic Programming?",
-    "bio": "Architect at EXFO and a founding member of CppIndia. Presented at all four editions of CppIndiaCon (2021–2024). Has also spoken at CppCon on related topics in modern C++ and generic programming.",
+    "bio": "Architect at EXFO with 18+ years of experience in VoIP, 3G/4G/IMS protocols, Network Monitoring, and OSS/BSS. Active CppIndia founder and presenter who has spoken at all four editions of CppIndiaCon.",
     "expertise": ["C++20 Concepts", "Generic Programming", "Templates", "Modern C++", "Architecture"],
     "website": "https://ankursatle.wordpress.com",
     "linkedin": "https://www.linkedin.com/in/ankursatle/",
     "twitter": "https://twitter.com/AnkurSatle",
+    "github": "https://github.com/sankurm",
     "image": "/assets/images/speakers/2021/ankur.jpg"
   },
   {
@@ -398,11 +430,12 @@
     "role": "Speaker",
     "conference": 2021,
     "topic": "Contract Programming: What, Why, and How?",
-    "bio": "C++ developer and educator with a background in formal methods and software correctness. Presented at CppIndiaCon 2021 on Design by Contract in C++ — covering preconditions, postconditions, and invariants as a means of writing more correct and self-documenting code.",
-    "expertise": ["Design by Contract", "Formal Methods", "C++", "Software Correctness", "C++ Contracts"],
-    "website": null,
-    "linkedin": null,
-    "twitter": null,
-    "image": "/assets/images/speakers/2021/saurabh.jpg"
+    "bio": "Assistant Professor in the CSE Department at IIT Hyderabad. Previous positions include IIT Guwahati, University of Oxford, Microsoft Research, and IBM India Research Lab. Masters from IIT Bombay; Doctorate from IIT Kanpur. Research areas: Formal Verification, Static Program Analysis, and Constraint Programming. Creator of Pinaka (symbolic execution engine — awarded at SVCOMP 2019, 2020, 2021) and OpenWBO/OpenWBO-Inc (MaxSAT solvers, winners in MaxSAT Evaluations 2014–2019).",
+    "expertise": ["Formal Verification", "Design by Contract", "Static Analysis", "C++", "Constraint Programming"],
+    "website": "https://sbjoshi.github.io/",
+    "linkedin": "https://www.linkedin.com/in/sbjoshi0001/",
+    "twitter": "https://twitter.com/sbjoshi",
+    "github": null,
+    "image": "/assets/images/speakers/2021/saurabhjoshi.jpg"
   }
 ]
