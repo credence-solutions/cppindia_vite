@@ -79,6 +79,14 @@
       "url": "https://quick-bench.com",
       "type": "Tool",
       "free": true
+    },
+    {
+      "id": "cppindia-github",
+      "title": "CppIndia Session Documents",
+      "description": "Official CppIndia GitHub repository — slides, code samples, and session materials from all our tech talks and conferences.",
+      "url": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+      "type": "Community",
+      "free": true
     }
   ],
   "articles": [

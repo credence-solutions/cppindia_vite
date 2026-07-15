@@ -9,7 +9,7 @@
     "description": "MulticoreWare is a global software engineering company specializing in high-performance computing."
   },
   {
-    "id": "think-cell",
+    "id": "think-cell-2024",
     "name": "think-cell",
     "type": "gold",
     "conference": 2024,
@@ -18,7 +18,7 @@
     "description": "think-cell creates powerful charting and layout software for PowerPoint using modern C++."
   },
   {
-    "id": "bloomberg",
+    "id": "bloomberg-2024",
     "name": "Bloomberg LP",
     "type": "gold",
     "conference": 2024,
@@ -27,7 +27,7 @@
     "description": "Bloomberg's engineering team is one of the world's largest users of modern C++."
   },
   {
-    "id": "meeting-cpp",
+    "id": "meeting-cpp-2024",
     "name": "Meeting C++",
     "type": "community",
     "conference": 2024,
@@ -36,7 +36,7 @@
     "description": "Europe's largest C++ conference and online community."
   },
   {
-    "id": "swedencpp",
+    "id": "swedencpp-2024",
     "name": "SwedenCpp",
     "type": "community",
     "conference": 2024,
@@ -45,10 +45,166 @@
     "description": "C++ user group based in Sweden."
   },
   {
-    "id": "includecpp",
+    "id": "includecpp-2024",
     "name": "#include <C++>",
     "type": "community",
     "conference": 2024,
+    "url": "https://www.includecpp.org",
+    "logo": "/assets/images/sponsors/community/include_cpp.png",
+    "description": "A global, inclusive community for people who code in C++."
+  },
+
+  {
+    "id": "intel-software-2023",
+    "name": "Intel Software",
+    "type": "gold",
+    "conference": 2023,
+    "url": "https://www.intel.com/content/www/us/en/developer/overview.html",
+    "logo": "/assets/images/sponsors/gold/intel.png",
+    "description": "Intel's developer tools division — creators of oneAPI, the unified programming model for heterogeneous computing."
+  },
+  {
+    "id": "qube-cinema-2023",
+    "name": "Qube Cinema",
+    "type": "gold",
+    "conference": 2023,
+    "url": "https://www.qubecinema.com",
+    "logo": "/assets/images/sponsors/gold/qube_cinema.png",
+    "description": "India's leading digital cinema technology company, building high-performance media systems in C++."
+  },
+  {
+    "id": "think-cell-2023",
+    "name": "think-cell",
+    "type": "gold",
+    "conference": 2023,
+    "url": "https://www.think-cell.com",
+    "logo": "/assets/images/sponsors/gold/think-cell.png",
+    "description": "think-cell creates powerful charting and layout software for PowerPoint using modern C++."
+  },
+  {
+    "id": "bloomberg-2023",
+    "name": "Bloomberg LP",
+    "type": "gold",
+    "conference": 2023,
+    "url": "https://www.bloomberg.com/company/values/tech-at-bloomberg/cplusplus/",
+    "logo": "/assets/images/sponsors/gold/bloomberg.png",
+    "description": "Bloomberg's engineering team is one of the world's largest users of modern C++."
+  },
+  {
+    "id": "meeting-cpp-2023",
+    "name": "Meeting C++",
+    "type": "community",
+    "conference": 2023,
+    "url": "https://meetingcpp.com",
+    "logo": "/assets/images/sponsors/community/meeting_cpp.png",
+    "description": "Europe's largest C++ conference and online community."
+  },
+  {
+    "id": "swedencpp-2023",
+    "name": "SwedenCpp",
+    "type": "community",
+    "conference": 2023,
+    "url": "https://swedencpp.se",
+    "logo": "/assets/images/sponsors/community/sweden_cpp.png",
+    "description": "C++ user group based in Sweden."
+  },
+  {
+    "id": "includecpp-2023",
+    "name": "#include <C++>",
+    "type": "community",
+    "conference": 2023,
+    "url": "https://www.includecpp.org",
+    "logo": "/assets/images/sponsors/community/include_cpp.png",
+    "description": "A global, inclusive community for people who code in C++."
+  },
+
+  {
+    "id": "think-cell-2022",
+    "name": "think-cell",
+    "type": "gold",
+    "conference": 2022,
+    "url": "https://www.think-cell.com",
+    "logo": "/assets/images/sponsors/gold/think-cell.png",
+    "description": "think-cell creates powerful charting and layout software for PowerPoint using modern C++."
+  },
+  {
+    "id": "undo-2022",
+    "name": "Undo",
+    "type": "gold",
+    "conference": 2022,
+    "url": "https://undo.io",
+    "logo": "/assets/images/sponsors/gold/undo.png",
+    "description": "Undo builds time-travel debugging tools for Linux C/C++ — record any bug and replay it perfectly."
+  },
+  {
+    "id": "circuitsutra-2022",
+    "name": "CircuitSutra",
+    "type": "gold",
+    "conference": 2022,
+    "url": "https://www.circuitsutra.com",
+    "logo": "/assets/images/sponsors/gold/circuitsutra.png",
+    "description": "CircuitSutra provides SystemC/TLM-based design and verification services for the semiconductor industry."
+  },
+  {
+    "id": "meeting-cpp-2022",
+    "name": "Meeting C++",
+    "type": "community",
+    "conference": 2022,
+    "url": "https://meetingcpp.com",
+    "logo": "/assets/images/sponsors/community/meeting_cpp.png",
+    "description": "Europe's largest C++ conference and online community."
+  },
+  {
+    "id": "swedencpp-2022",
+    "name": "SwedenCpp",
+    "type": "community",
+    "conference": 2022,
+    "url": "https://swedencpp.se",
+    "logo": "/assets/images/sponsors/community/sweden_cpp.png",
+    "description": "C++ user group based in Sweden."
+  },
+  {
+    "id": "includecpp-2022",
+    "name": "#include <C++>",
+    "type": "community",
+    "conference": 2022,
+    "url": "https://www.includecpp.org",
+    "logo": "/assets/images/sponsors/community/include_cpp.png",
+    "description": "A global, inclusive community for people who code in C++."
+  },
+
+  {
+    "id": "circuitsutra-2021",
+    "name": "CircuitSutra",
+    "type": "gold",
+    "conference": 2021,
+    "url": "https://www.circuitsutra.com",
+    "logo": "/assets/images/sponsors/gold/circuitsutra.png",
+    "description": "CircuitSutra provides SystemC/TLM-based design and verification services for the semiconductor industry."
+  },
+  {
+    "id": "meeting-cpp-2021",
+    "name": "Meeting C++",
+    "type": "community",
+    "conference": 2021,
+    "url": "https://meetingcpp.com",
+    "logo": "/assets/images/sponsors/community/meeting_cpp.png",
+    "description": "Europe's largest C++ conference and online community."
+  },
+  {
+    "id": "swedencpp-2021",
+    "name": "SwedenCpp",
+    "type": "community",
+    "conference": 2021,
+    "url": "https://swedencpp.se",
+    "logo": "/assets/images/sponsors/community/sweden_cpp.png",
+    "description": "C++ user group based in Sweden."
+  },
+  {
+    "id": "includecpp-2021",
+    "name": "#include <C++>",
+    "type": "community",
+    "conference": 2021,
     "url": "https://www.includecpp.org",
     "logo": "/assets/images/sponsors/community/include_cpp.png",
     "description": "A global, inclusive community for people who code in C++."
