@@ -29,9 +29,14 @@
           onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.15)'; this.style.transform='translateY(-3px)'"
           onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >
-          <!-- Avatar placeholder -->
+          <!-- Avatar -->
           <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 font-display font-bold text-lg"
+            <img v-if="member.avatar" :src="member.avatar" :alt="member.name"
+              class="w-14 h-14 rounded-full object-cover flex-shrink-0"
+              :style="`border: 2px solid ${badgeMap[member.badge].border};`"
+              @error="e => e.target.style.display='none'"
+            />
+            <div v-else class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 font-display font-bold text-lg"
               :style="`background: ${badgeMap[member.badge].avatarBg}; color: ${badgeMap[member.badge].color};`">
               {{ member.name.split(' ').map(n => n[0]).join('') }}
             </div>
@@ -60,6 +65,9 @@
 
           <!-- Links -->
           <div class="flex items-center gap-3 mt-auto pt-2">
+            <a v-if="member.website" :href="member.website" target="_blank" rel="noopener noreferrer"
+              class="text-xs font-semibold transition-colors duration-150" style="color:rgba(148,163,184,0.55);"
+              onmouseover="this.style.color='#22D3EE'" onmouseout="this.style.color='rgba(148,163,184,0.55)'">Website</a>
             <a v-if="member.github" :href="member.github" target="_blank" rel="noopener noreferrer"
               class="text-xs font-semibold transition-colors duration-150" style="color:rgba(148,163,184,0.55);"
               onmouseover="this.style.color='#E2E8F5'" onmouseout="this.style.color='rgba(148,163,184,0.55)'">GitHub</a>

@@ -127,6 +127,15 @@ const routes = [
         },
       },
       {
+        path: 'blog/:slug',
+        name: 'BlogDetail',
+        component: () => import('@/views/Blog/BlogDetailView.vue'),
+        meta: {
+          title: 'Blog | CppIndia',
+          breadcrumb: [{ label: 'Blog', path: '/blog' }],
+        },
+      },
+      {
         path: 'events',
         name: 'Events',
         component: () => import('@/views/Events/EventsView.vue'),
@@ -194,16 +203,6 @@ const routes = [
           title: 'C++ Playground | CppIndia',
           description: 'Curated C++17/20/23 code snippets with live Compiler Explorer integration.',
           breadcrumb: [{ label: 'Playground', path: '/playground' }],
-        },
-      },
-      {
-        path: 'cfp',
-        name: 'CFP',
-        component: () => import('@/views/CFP/CFPView.vue'),
-        meta: {
-          title: 'CFP Tracker | CppIndia',
-          description: 'Open Calls for Proposals at C++ conferences worldwide — deadlines and submission links.',
-          breadcrumb: [{ label: 'CFP Tracker', path: '/cfp' }],
         },
       },
       {

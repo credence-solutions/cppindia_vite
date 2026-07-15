@@ -24,10 +24,11 @@
         <article
           v-for="post in filtered"
           :key="post.slug"
-          class="rounded-2xl overflow-hidden flex flex-col transition-all duration-200"
+          class="rounded-2xl overflow-hidden flex flex-col transition-all duration-200 cursor-pointer"
           style="background: rgba(15,17,45,0.85); border: 1px solid rgba(99,102,241,0.18);"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.15)'; this.style.transform='translateY(-3px)'"
           onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+          @click="$router.push(`/blog/${post.slug}`)"
         >
           <!-- Cover placeholder -->
           <div class="aspect-video flex items-center justify-center"
@@ -51,7 +52,7 @@
                 <span class="font-medium" style="color:rgba(148,163,184,0.75);">{{ post.author }}</span>
                 &middot; {{ post.readingTime }} min read
               </div>
-              <span class="text-xs font-semibold" style="color:#818CF8;">Read →</span>
+              <RouterLink :to="`/blog/${post.slug}`" class="text-xs font-semibold" style="color:#818CF8;">Read →</RouterLink>
             </div>
           </div>
         </article>

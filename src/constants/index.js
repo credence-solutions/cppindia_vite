@@ -63,7 +63,6 @@ export const NAV_LINKS = [
       { label: 'Events',                  path: '/events' },
       { label: 'Projects Showcase',       path: '/projects' },
       { label: 'Jobs Board',              path: '/jobs' },
-      { label: 'CFP Tracker',             path: '/cfp' },
       { label: 'Sponsors',                path: '/sponsors' },
     ],
   },
