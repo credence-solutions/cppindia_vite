@@ -4,8 +4,8 @@
     <CommunityAbout />
     <RecentTalks />
     <ConferenceHighlight />
-    <SponsorsSection />
-    <TestimonialsSection />
+    <!-- <SponsorsSection /> -->
+    <!-- <TestimonialsSection /> -->
     <JoinCta />
   </div>
 </template>

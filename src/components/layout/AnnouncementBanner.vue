@@ -41,13 +41,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useBannerState } from '@/composables/useBannerState'
 
-const STORAGE_KEY = 'cppindia-banner-cppindiacon2026'
-const visible = ref(sessionStorage.getItem(STORAGE_KEY) !== 'dismissed')
-
-function dismiss() {
-  sessionStorage.setItem(STORAGE_KEY, 'dismissed')
-  visible.value = false
-}
+const { visible, dismiss } = useBannerState()
 </script>

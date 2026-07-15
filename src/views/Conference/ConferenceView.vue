@@ -251,41 +251,78 @@
           </div>
 
           <!-- Sponsors -->
-          <div class="mb-12">
+          <div
+            v-if="conf.sponsors.gold.length || conf.sponsors.community.length"
+            class="mb-12 rounded-2xl py-10 px-6"
+            style="background: #0F1135; border: 1px solid rgba(99,102,241,0.15);"
+          >
+            <!-- Label -->
+            <p class="text-center text-xs font-semibold uppercase tracking-[0.12em] mb-8" style="color: rgba(148,163,184,0.5);">
+              Supported by leading companies &amp; communities
+            </p>
+
+            <!-- Gold Sponsors -->
             <template v-if="conf.sponsors.gold.length">
-              <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Gold Sponsors</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                <div
-                  v-for="s in conf.sponsors.gold"
-                  :key="s.name"
-                  class="p-6 bg-surface border border-wire-light rounded-xl border-[rgba(251,191,36,0.3)] bg-[rgba(251,191,36,0.04)]"
-                >
-                  <p class="font-display text-lg font-bold text-ink mb-3">{{ s.name }}</p>
-                  <p v-if="s.description" class="text-sm text-ink-2 leading-relaxed mb-4">{{ s.description }}</p>
+              <div class="mb-6">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(234,179,8,0.2);" />
+                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: rgba(234,179,8,0.65);">Gold Sponsors {{ activeYear }}</span>
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(234,179,8,0.2);" />
+                </div>
+                <div class="flex flex-wrap justify-center items-stretch gap-4">
                   <a
-                    v-if="s.website"
+                    v-for="s in conf.sponsors.gold"
+                    :key="s.name"
                     :href="s.website"
-                    class="text-xs font-semibold text-primary hover:text-secondary transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
-                  >Visit Website →</a>
+                    class="group flex flex-col items-center justify-center gap-1 px-6 py-4 rounded-xl transition-all duration-200 min-w-[160px]"
+                    style="border: 1px solid rgba(234,179,8,0.25); background: rgba(234,179,8,0.05);"
+                    onmouseover="this.style.borderColor='rgba(234,179,8,0.55)'; this.style.background='rgba(234,179,8,0.1)'"
+                    onmouseout="this.style.borderColor='rgba(234,179,8,0.25)'; this.style.background='rgba(234,179,8,0.05)'"
+                  >
+                    <span class="font-display font-bold text-base" style="color: #E2E8F5;">{{ s.name }}</span>
+                    <span v-if="s.description" class="text-[10px] text-center leading-snug" style="color: rgba(148,163,184,0.55);">{{ s.description }}</span>
+                  </a>
                 </div>
               </div>
             </template>
 
+            <!-- Community Sponsors -->
             <template v-if="conf.sponsors.community.length">
-              <h3 class="font-display text-base font-bold text-ink mt-8 mb-4 pb-3 border-b border-wire-light">Community Sponsors</h3>
-              <div class="flex flex-wrap items-center gap-3">
-                <a
-                  v-for="s in conf.sponsors.community"
-                  :key="s.name"
-                  :href="s.website"
-                  class="px-5 py-2 bg-surface border border-wire-light rounded-full text-sm font-medium text-ink-2 hover:border-secondary hover:text-secondary transition-all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >{{ s.name }}</a>
+              <div class="mt-7">
+                <div class="flex items-center justify-center gap-2 mb-5">
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
+                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: rgba(148,163,184,0.5);">Community Sponsors</span>
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
+                </div>
+                <div class="flex flex-wrap justify-center items-center gap-3">
+                  <a
+                    v-for="s in conf.sponsors.community"
+                    :key="s.name"
+                    :href="s.website"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+                    style="border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.7);"
+                    onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='#818CF8'; this.style.background='rgba(99,102,241,0.07)'"
+                    onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.color='rgba(148,163,184,0.7)'; this.style.background='transparent'"
+                  >{{ s.name }}</a>
+                </div>
               </div>
             </template>
+
+            <!-- Become a sponsor CTA -->
+            <p class="text-center text-sm mt-8" style="color: rgba(148,163,184,0.55);">
+              Want to support India's C++ community?
+              <RouterLink
+                to="/contact"
+                class="underline ml-1 transition-colors duration-150"
+                style="color: #A78BFA;"
+                onmouseover="this.style.color='#818CF8'"
+                onmouseout="this.style.color='#A78BFA'"
+              >Become a sponsor</RouterLink>
+            </p>
           </div>
 
           <!-- Watch CTA -->
@@ -363,5 +400,8 @@ function setYear(yr) {
 }
 
 watch(activeYear, loadConference)
+watch(() => route.query.year, (yr) => {
+  if (yr) activeYear.value = Number(yr)
+})
 onMounted(() => loadConference(activeYear.value))
 </script>

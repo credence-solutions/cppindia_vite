@@ -41,19 +41,26 @@
       <!-- Links -->
       <div class="flex-1 py-4 overflow-y-auto">
         <div v-for="link in NAV_LINKS" :key="link.path" class="border-b border-wire-light">
-          <button
-            v-if="link.children"
-            class="flex items-center justify-between w-full px-6 py-4 text-base font-medium text-ink hover:text-primary hover:bg-surface-alt transition-all duration-fast cursor-pointer"
-            :class="expanded === link.path ? 'text-primary' : ''"
-            @click="toggle(link.path)"
-          >
-            {{ link.label }}
-            <svg
-              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              class="transition-transform duration-base"
-              :class="expanded === link.path ? 'rotate-180' : ''"
-            ><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
+          <div v-if="link.children" class="flex items-center">
+            <RouterLink
+              :to="link.path"
+              class="flex-1 px-6 py-4 text-base font-medium text-ink no-underline hover:text-primary hover:bg-surface-alt transition-all duration-fast"
+              :class="expanded === link.path ? 'text-primary' : ''"
+              @click="$emit('close')"
+            >{{ link.label }}</RouterLink>
+            <button
+              class="px-4 py-4 text-ink hover:text-primary hover:bg-surface-alt transition-all duration-fast cursor-pointer border-l border-wire-light"
+              :class="expanded === link.path ? 'text-primary' : ''"
+              :aria-label="`Toggle ${link.label} submenu`"
+              @click="toggle(link.path)"
+            >
+              <svg
+                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                class="transition-transform duration-base"
+                :class="expanded === link.path ? 'rotate-180' : ''"
+              ><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
           <RouterLink
             v-else
             :to="link.path"

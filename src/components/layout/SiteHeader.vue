@@ -85,8 +85,8 @@
     <MobileMenu :open="nav.mobileMenuOpen" @close="nav.closeMobileMenu" />
   </header>
 
-  <!-- Spacer — accounts for banner + navbar height -->
-  <div style="height: calc(var(--navbar-height) + 42px);" aria-hidden="true" />
+  <!-- Spacer — accounts for banner (when visible) + navbar height -->
+  <div :style="{ height: bannerVisible ? 'calc(var(--navbar-height) + 42px)' : 'var(--navbar-height)' }" aria-hidden="true" />
 </template>
 
 <script setup>
@@ -97,9 +97,11 @@ import { NAV_LINKS } from '@/constants'
 import MegaMenu from '@/components/navigation/MegaMenu.vue'
 import SimpleDropdown from '@/components/navigation/SimpleDropdown.vue'
 import MobileMenu from '@/components/navigation/MobileMenu.vue'
+import { useBannerState } from '@/composables/useBannerState'
 
 const route = useRoute()
 const nav   = useNavigationStore()
+const { visible: bannerVisible } = useBannerState()
 
 function isActive(path) {
   if (path === '/') return route.path === '/'
