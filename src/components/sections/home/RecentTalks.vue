@@ -2,21 +2,27 @@
   RecentTalks — Recent tech talks on homepage
 -->
 <template>
-  <section class="section bg-surface-alt">
+  <section class="section" style="background: #07091C;">
     <div class="container">
 
       <!-- Header -->
       <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
         <div>
-          <p class="overline mb-2">Community</p>
-          <h2 class="font-display font-bold text-ink" style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
-            Recent <span class="text-gradient-brand">Tech Talks</span>
+          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: #A78BFA;">Community</p>
+          <h2 class="font-display font-bold" style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
+            <span style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Recent Tech Talks</span>
           </h2>
-          <p class="text-sm text-ink-3 mt-2">
+          <p class="text-sm mt-2" style="color: rgba(148,163,184,0.55);">
             {{ totalTalks }} sessions recorded &amp; available for free
           </p>
         </div>
-        <RouterLink to="/tech-talks" class="btn btn--outline flex items-center gap-1 flex-shrink-0">
+        <RouterLink
+          to="/tech-talks"
+          class="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 flex-shrink-0"
+          style="border: 1px solid rgba(99,102,241,0.3); color: #818CF8; background: transparent;"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.background='rgba(99,102,241,0.08)'"
+          onmouseout="this.style.borderColor='rgba(99,102,241,0.3)'; this.style.background='transparent'"
+        >
           View All Talks
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </RouterLink>
@@ -27,14 +33,17 @@
         <article
           v-for="talk in recentTalks"
           :key="talk.id"
-          class="group flex flex-col bg-surface border border-wire-light rounded-2xl overflow-hidden
-                 hover:border-primary/30 hover:shadow-glow-primary hover:-translate-y-1 transition-all duration-200"
+          class="group flex flex-col rounded-2xl overflow-hidden transition-all duration-200"
+          style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 28px rgba(99,102,241,0.2)'; this.style.transform='translateY(-4px)'"
+          onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >
           <!-- YouTube thumbnail -->
           <a
             v-if="ytId(talk.video)"
             :href="talk.video"
-            class="block relative aspect-video overflow-hidden bg-black"
+            class="block relative aspect-video overflow-hidden"
+            style="background: #07091C;"
             target="_blank"
             rel="noopener noreferrer"
             :aria-label="`Watch: ${talk.title}`"
@@ -45,40 +54,44 @@
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
-            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" style="background: rgba(7,9,28,0.45);">
               <div class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
             </div>
           </a>
           <!-- No-video placeholder -->
-          <div v-else class="aspect-video bg-surface-alt flex items-center justify-center"
-            style="background: linear-gradient(90deg, rgba(79,142,247,0.06) 0%, rgba(155,116,245,0.06) 100%);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-ink-3 opacity-40"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
+          <div v-else class="aspect-video flex items-center justify-center"
+            style="background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(139,92,246,0.06) 100%);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: rgba(129,140,248,0.3);"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
           </div>
 
           <!-- Content -->
           <div class="flex flex-col flex-1 gap-3 p-5">
             <div class="flex items-center justify-between gap-2 flex-wrap">
-              <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
+              <time class="font-mono text-xs" style="color: rgba(148,163,184,0.55);" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
               <div class="flex items-center gap-1 flex-wrap justify-end">
                 <span
                   v-for="tag in talk.tags.slice(0, 2)"
                   :key="tag"
-                  class="px-2 py-[2px] rounded-full bg-[rgba(79,142,247,0.1)] text-primary text-[10px] font-semibold border border-[rgba(79,142,247,0.2)]"
+                  class="px-2 py-[2px] rounded-full text-[10px] font-semibold"
+                  style="background: rgba(99,102,241,0.12); color: #818CF8; border: 1px solid rgba(99,102,241,0.25);"
                 >{{ tag }}</span>
               </div>
             </div>
 
-            <h3 class="font-display font-bold text-base text-ink leading-snug flex-1">{{ talk.title }}</h3>
-            <p class="text-sm text-ink-2 font-medium">{{ talk.speaker }}</p>
+            <h3 class="font-display font-bold text-base leading-snug flex-1" style="color: #E2E8F5;">{{ talk.title }}</h3>
+            <p class="text-sm font-medium" style="color: rgba(148,163,184,0.7);">{{ talk.speaker }}</p>
 
             <!-- Actions -->
             <div class="flex flex-wrap items-center gap-2 mt-auto pt-3">
               <a
                 v-if="ytId(talk.video)"
                 :href="talk.video"
-                class="inline-flex items-center gap-2 px-3 py-2 rounded-md bg-[#FF0000] text-white text-xs font-semibold transition-all duration-200 hover:bg-[#cc0000] hover:shadow-[0_0_12px_rgba(255,0,0,0.4)]"
+                class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-white text-xs font-semibold transition-all duration-200"
+                style="background: #FF0000;"
+                onmouseover="this.style.background='#cc0000'; this.style.boxShadow='0 0 12px rgba(255,0,0,0.4)'"
+                onmouseout="this.style.background='#FF0000'; this.style.boxShadow='none'"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -88,7 +101,10 @@
               <a
                 v-if="talk.slides"
                 :href="talk.slides"
-                class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-semibold transition-all duration-200 border border-wire text-ink-2 hover:border-secondary hover:text-secondary"
+                class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-semibold transition-all duration-200"
+                style="border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.7);"
+                onmouseover="this.style.borderColor='rgba(139,92,246,0.45)'; this.style.color='#A78BFA'"
+                onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.color='rgba(148,163,184,0.7)'"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -102,7 +118,13 @@
 
       <!-- Bottom CTA -->
       <div class="text-center mt-10">
-        <RouterLink to="/tech-talks" class="btn btn--outline">
+        <RouterLink
+          to="/tech-talks"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
+          style="border: 1px solid rgba(99,102,241,0.3); color: #818CF8; background: transparent;"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.background='rgba(99,102,241,0.08)'"
+          onmouseout="this.style.borderColor='rgba(99,102,241,0.3)'; this.style.background='transparent'"
+        >
           View All {{ totalTalks }} Talks
         </RouterLink>
       </div>

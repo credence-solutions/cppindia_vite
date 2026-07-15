@@ -2,13 +2,20 @@
   JoinCta — Join the community CTA section
 -->
 <template>
-  <section class="section border-t border-wire-light" style="background: linear-gradient(135deg, #0D1A35 0%, #0A1228 50%, #0C1630 100%);">
-    <div class="container">
+  <section class="section relative overflow-hidden" style="background: linear-gradient(135deg, #07091C 0%, #0B0D2E 50%, #07091C 100%); border-top: 1px solid rgba(99,102,241,0.15);">
+
+    <!-- Background glow -->
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,0.18) 0%, transparent 70%);" />
+    <!-- Dot grid -->
+    <div class="absolute inset-0 pointer-events-none opacity-30"
+      style="background-image: radial-gradient(circle, rgba(99,102,241,0.3) 1px, transparent 1px); background-size: 32px 32px;" />
+
+    <div class="container relative z-[1]">
       <div class="gsap-reveal text-center max-w-[720px] mx-auto">
-        <h2 class="font-display font-bold text-white mb-4" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem);">
+        <h2 class="font-display font-bold mb-4" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
           Ready to level up your C++?
         </h2>
-        <p class="text-lg text-white/75 leading-relaxed mb-8">
+        <p class="text-lg leading-relaxed mb-8" style="color: rgba(226,232,245,0.75);">
           Join hundreds of C++ developers across India. Attend free tech talks, participate
           in CppIndiaCon, get mentored, and be part of a community that loves C++.
         </p>
@@ -17,24 +24,35 @@
         <div class="flex flex-wrap justify-center items-center gap-4 mb-8">
           <a
             :href="SITE.discordInvite"
-            class="btn btn--lg inline-flex items-center gap-2"
-            style="background:#5865F2;color:white;border-color:#5865F2;"
+            class="btn btn--lg inline-flex items-center gap-2 font-semibold text-white transition-all duration-200"
+            style="background: #5865F2; border-color: #5865F2; box-shadow: 0 0 20px rgba(88,101,242,0.4);"
+            onmouseover="this.style.boxShadow='0 0 30px rgba(88,101,242,0.65)'"
+            onmouseout="this.style.boxShadow='0 0 20px rgba(88,101,242,0.4)'"
             target="_blank"
             rel="noopener noreferrer"
           >
             <IconDiscord />
             Join Discord Server
           </a>
-          <RouterLink to="/join" class="btn btn--outline-white btn--lg">Learn More</RouterLink>
+          <RouterLink
+            to="/join"
+            class="btn btn--lg inline-flex items-center gap-2 font-semibold transition-all duration-200"
+            style="border: 1px solid rgba(99,102,241,0.4); color: #818CF8; background: transparent;"
+            onmouseover="this.style.borderColor='rgba(99,102,241,0.65)'; this.style.background='rgba(99,102,241,0.08)'"
+            onmouseout="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.background='transparent'"
+          >Learn More</RouterLink>
         </div>
 
         <!-- Platform links -->
-        <div class="flex flex-wrap justify-center items-center gap-6 pt-6 border-t border-wire">
+        <div class="flex flex-wrap justify-center items-center gap-6 pt-6" style="border-top: 1px solid rgba(99,102,241,0.15);">
           <a
             v-for="platform in platforms"
             :key="platform.label"
             :href="platform.url"
-            class="flex items-center gap-2 text-xs text-ink-3 hover:text-ink transition-colors duration-fast"
+            class="flex items-center gap-2 text-xs transition-colors duration-fast"
+            style="color: rgba(148,163,184,0.55);"
+            onmouseover="this.style.color='rgba(226,232,245,0.9)'"
+            onmouseout="this.style.color='rgba(148,163,184,0.55)'"
             target="_blank"
             rel="noopener noreferrer"
             :aria-label="platform.label"

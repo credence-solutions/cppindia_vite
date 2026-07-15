@@ -7,18 +7,20 @@
       :breadcrumb="[{ label: 'Join Us', path: '/join' }]"
     />
 
-    <section class="section">
+    <section class="section" style="background: #07091C;">
       <div class="container">
 
         <!-- Primary CTA — Discord -->
-        <div class="flex items-center justify-between gap-8 flex-wrap p-8 lg:p-10 bg-[rgba(88,101,242,0.06)] border-2 border-[rgba(88,101,242,0.25)] rounded-2xl mb-12">
+        <div class="flex items-center justify-between gap-8 flex-wrap p-8 lg:p-10 rounded-2xl mb-12"
+          style="background: rgba(88,101,242,0.07); border: 2px solid rgba(88,101,242,0.3);">
           <div class="flex items-start gap-5 flex-1">
-            <div class="w-16 h-16 bg-[#5865F2] rounded-xl flex items-center justify-center text-white flex-shrink-0">
+            <div class="w-16 h-16 rounded-xl flex items-center justify-center text-white flex-shrink-0"
+              style="background: #5865F2; box-shadow: 0 0 20px rgba(88,101,242,0.4);">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
             </div>
             <div>
-              <h2 class="font-display text-2xl font-bold text-ink mb-2">Join our Discord Server</h2>
-              <p class="text-base text-ink-2 leading-relaxed">
+              <h2 class="font-display text-2xl font-bold mb-2" style="color: #E2E8F5;">Join our Discord Server</h2>
+              <p class="text-base leading-relaxed" style="color: rgba(148,163,184,0.8);">
                 The heart of the CppIndia community. Chat about C++, ask questions, share resources,
                 and stay updated on upcoming sessions — all in real time.
               </p>
@@ -26,7 +28,10 @@
           </div>
           <a
             :href="SITE.discordInvite"
-            class="btn btn--lg flex-shrink-0 font-bold text-white bg-[#5865F2] hover:bg-[#4752C4] transition-colors border-transparent"
+            class="btn btn--lg flex-shrink-0 font-bold text-white transition-all duration-200"
+            style="background: #5865F2; border-color: #5865F2; box-shadow: 0 0 18px rgba(88,101,242,0.4);"
+            onmouseover="this.style.background='#4752C4'; this.style.boxShadow='0 0 28px rgba(88,101,242,0.6)'"
+            onmouseout="this.style.background='#5865F2'; this.style.boxShadow='0 0 18px rgba(88,101,242,0.4)'"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -35,49 +40,73 @@
         </div>
 
         <!-- Ways to engage -->
-        <h2 class="font-display text-2xl font-bold text-ink mb-6">More ways to stay connected</h2>
+        <h2 class="font-display text-2xl font-bold mb-6"
+          style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 60%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          More ways to stay connected
+        </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <a
             v-for="p in platforms"
             :key="p.label"
             :href="p.url"
-            class="flex items-start gap-4 p-5 bg-surface border border-wire-light rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
+            class="flex items-start gap-4 p-5 rounded-xl transition-all duration-200"
+            style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+            onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
+            onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
             target="_blank"
             rel="noopener noreferrer"
           >
             <div
-              class="w-11 h-11 flex items-center justify-center bg-[rgba(79,142,247,0.08)] rounded-lg text-secondary flex-shrink-0"
+              class="w-11 h-11 flex items-center justify-center rounded-lg flex-shrink-0"
+              style="background: rgba(99,102,241,0.1); color: #A78BFA;"
               v-html="p.icon"
             />
             <div>
-              <p class="font-bold text-ink mb-1">{{ p.label }}</p>
-              <p class="text-sm text-ink-2 leading-relaxed">{{ p.desc }}</p>
+              <p class="font-bold mb-1" style="color: #E2E8F5;">{{ p.label }}</p>
+              <p class="text-sm leading-relaxed" style="color: rgba(148,163,184,0.7);">{{ p.desc }}</p>
             </div>
           </a>
         </div>
 
         <!-- What you get -->
-        <h2 class="font-display text-2xl font-bold text-ink mb-6">What you get as a member</h2>
+        <h2 class="font-display text-2xl font-bold mb-6"
+          style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 60%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          What you get as a member
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           <div
             v-for="b in benefits"
             :key="b.title"
-            class="p-6 bg-surface border border-wire-light rounded-xl transition-all duration-200 hover:border-primary/25 hover:shadow-sm"
+            class="p-6 rounded-xl transition-all duration-200"
+            style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+            onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 16px rgba(99,102,241,0.12)'"
+            onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
           >
             <div
-              class="w-[52px] h-[52px] flex items-center justify-center bg-[rgba(79,142,247,0.08)] rounded-lg text-secondary mb-4"
+              class="w-[52px] h-[52px] flex items-center justify-center rounded-lg mb-4"
+              style="background: rgba(99,102,241,0.1); color: #818CF8;"
               v-html="b.icon"
             />
-            <h3 class="font-display text-base font-bold text-ink mb-2">{{ b.title }}</h3>
-            <p class="text-sm text-ink-2 leading-relaxed">{{ b.body }}</p>
+            <h3 class="font-display text-base font-bold mb-2" style="color: #E2E8F5;">{{ b.title }}</h3>
+            <p class="text-sm leading-relaxed" style="color: rgba(148,163,184,0.75);">{{ b.body }}</p>
           </div>
         </div>
 
         <!-- Speak CTA -->
-        <div class="text-center p-12 bg-surface-alt border border-wire-light rounded-2xl">
-          <h2 class="font-display text-2xl font-bold text-ink mb-3">Want to give a talk?</h2>
-          <p class="text-base text-ink-2 mb-6">All experience levels welcome — from your first lightning talk to a full 60-minute session.</p>
-          <RouterLink to="/call-for-speakers" class="btn btn--outline">Submit a Talk Proposal</RouterLink>
+        <div class="text-center p-12 rounded-2xl"
+          style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);">
+          <h2 class="font-display text-2xl font-bold mb-3"
+            style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Want to give a talk?
+          </h2>
+          <p class="text-base mb-6" style="color: rgba(148,163,184,0.75);">All experience levels welcome — from your first lightning talk to a full 60-minute session.</p>
+          <RouterLink
+            to="/call-for-speakers"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
+            style="border: 1px solid rgba(99,102,241,0.35); color: #818CF8; background: transparent;"
+            onmouseover="this.style.borderColor='rgba(99,102,241,0.6)'; this.style.background='rgba(99,102,241,0.08)'"
+            onmouseout="this.style.borderColor='rgba(99,102,241,0.35)'; this.style.background='transparent'"
+          >Submit a Talk Proposal</RouterLink>
         </div>
 
       </div>

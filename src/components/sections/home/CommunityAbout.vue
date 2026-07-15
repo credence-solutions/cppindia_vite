@@ -2,26 +2,38 @@
   CommunityAbout — Brief about section on homepage
 -->
 <template>
-  <section class="section bg-canvas">
+  <section class="section" style="background: #07091C;">
     <div class="container">
       <div class="grid grid-cols-1 gap-10 items-center lg:grid-cols-2 lg:gap-16">
 
         <!-- Left: text -->
         <div class="gsap-reveal">
-          <p class="overline mb-3">About CppIndia</p>
-          <h2 class="font-display font-bold text-ink leading-[1.2] mb-5"
-            style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-3" style="color: #A78BFA;">About CppIndia</p>
+          <h2 class="font-display font-bold leading-[1.2] mb-5"
+            style="font-size: clamp(1.5rem, 3vw, 2.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
             A community for C++ developers — at every stage of their journey
           </h2>
-          <p class="text-base text-ink-2 leading-relaxed mb-7">
+          <p class="text-base leading-relaxed mb-7" style="color: rgba(148,163,184,0.8);">
             CppIndia was founded to create a common platform that brings together
             people from all walks of life — students, fresh graduates, and experienced
             engineers — united by a mutual interest in C++. We run meetups on alternate
             Saturdays, mentor junior programmers, and connect companies with talented developers.
           </p>
           <div class="flex flex-wrap items-center gap-4">
-            <RouterLink to="/about" class="btn btn--primary">Learn More</RouterLink>
-            <RouterLink to="/join"  class="btn btn--outline">Join the Community</RouterLink>
+            <RouterLink
+              to="/about"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
+              style="background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); box-shadow: 0 0 20px rgba(99,102,241,0.35);"
+              onmouseover="this.style.boxShadow='0 0 30px rgba(99,102,241,0.55)'"
+              onmouseout="this.style.boxShadow='0 0 20px rgba(99,102,241,0.35)'"
+            >Learn More</RouterLink>
+            <RouterLink
+              to="/join"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
+              style="border: 1px solid rgba(99,102,241,0.35); color: #818CF8; background: transparent;"
+              onmouseover="this.style.borderColor='rgba(99,102,241,0.6)'; this.style.background='rgba(99,102,241,0.08)'"
+              onmouseout="this.style.borderColor='rgba(99,102,241,0.35)'; this.style.background='transparent'"
+            >Join the Community</RouterLink>
           </div>
         </div>
 
@@ -30,15 +42,17 @@
           <div
             v-for="pillar in pillars"
             :key="pillar.title"
-            class="pillar-card group p-6 bg-surface border border-wire-light rounded-xl transition-all duration-base
-                   hover:border-[rgba(79,142,247,0.25)] hover:shadow-glow-primary hover:-translate-y-[2px]"
+            class="pillar-card group p-6 rounded-xl transition-all duration-200 cursor-default"
+            style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+            onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.2)'; this.style.transform='translateY(-2px)'"
+            onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
           >
-            <div class="w-[52px] h-[52px] flex items-center justify-center rounded-lg mb-4 text-primary"
-              style="background:rgba(79,142,247,0.08);"
+            <div class="w-[52px] h-[52px] flex items-center justify-center rounded-lg mb-4"
+              style="background: rgba(99,102,241,0.12); color: #818CF8;"
               v-html="pillar.icon"
             />
-            <h3 class="font-display font-bold text-base text-ink mb-2">{{ pillar.title }}</h3>
-            <p class="text-sm text-ink-2 leading-relaxed">{{ pillar.body }}</p>
+            <h3 class="font-display font-bold text-base mb-2" style="color: #E2E8F5;">{{ pillar.title }}</h3>
+            <p class="text-sm leading-relaxed" style="color: rgba(148,163,184,0.75);">{{ pillar.body }}</p>
           </div>
         </div>
 
