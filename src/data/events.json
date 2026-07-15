@@ -1,12 +1,12 @@
 [
   {
-    "id": "monthly-talk-2025-08",
-    "title": "CppIndia Monthly Talk — August 2025",
+    "id": "monthly-talk-2026-08",
+    "title": "CppIndia Monthly Talk — August 2026",
     "type": "talk",
     "status": "upcoming",
-    "date": "2025-08-16",
+    "date": "2026-08-15",
     "time": "18:00 IST",
-    "speaker": "Karan Banthia",
+    "speaker": "Ankur M Satle",
     "topic": "Memory Safety in Modern C++",
     "registrationUrl": "https://discord.gg/Wz42tX5",
     "recordingUrl": null,
@@ -14,13 +14,13 @@
     "description": "A deep dive into RAII, smart pointers, and the upcoming safety proposals for C++26."
   },
   {
-    "id": "monthly-talk-2025-09",
-    "title": "CppIndia Monthly Talk — September 2025",
+    "id": "monthly-talk-2026-09",
+    "title": "CppIndia Monthly Talk — September 2026",
     "type": "talk",
     "status": "upcoming",
-    "date": "2025-09-20",
+    "date": "2026-09-19",
     "time": "18:00 IST",
-    "speaker": "TBA",
+    "speaker": "Mahendra Garodi",
     "topic": "C++26 Reflection Deep Dive",
     "registrationUrl": "https://discord.gg/Wz42tX5",
     "recordingUrl": null,
@@ -28,32 +28,74 @@
     "description": "An exploration of the upcoming static reflection feature in C++26 — one of the most anticipated proposals."
   },
   {
-    "id": "cppindiacon-2025",
-    "title": "CppIndiaCon 2025",
+    "id": "monthly-talk-2026-10",
+    "title": "CppIndia Monthly Talk — October 2026",
+    "type": "talk",
+    "status": "upcoming",
+    "date": "2026-10-17",
+    "time": "18:00 IST",
+    "speaker": "Hemil Ruparel",
+    "topic": "Compiler Internals: How Clang Parses C++",
+    "registrationUrl": "https://discord.gg/Wz42tX5",
+    "recordingUrl": null,
+    "location": "Online (Discord)",
+    "description": "A look inside the Clang compiler — how C++ source goes from text to AST to machine code."
+  },
+  {
+    "id": "cppindiacon-2026",
+    "title": "CppIndiaCon 2026",
     "type": "conference",
     "status": "upcoming",
-    "date": "2025-11-15",
+    "date": "2026-11-21",
     "time": "09:00 IST",
     "speaker": null,
     "topic": null,
     "registrationUrl": "https://discord.gg/Wz42tX5",
     "recordingUrl": null,
     "location": "Online",
-    "description": "India's 5th annual C++ conference. International speakers, workshops, and the best of the C++ community."
+    "description": "India's 6th annual C++ conference. International speakers, live Q&A, and the best of the Indian C++ community."
   },
   {
-    "id": "monthly-talk-2025-07",
-    "title": "CppIndia Monthly Talk — July 2025",
+    "id": "monthly-talk-2026-07",
+    "title": "CppIndia Monthly Talk — July 2026",
     "type": "talk",
     "status": "past",
-    "date": "2025-07-19",
+    "date": "2026-07-05",
     "time": "18:00 IST",
-    "speaker": "Sandesh Chitguppe",
-    "topic": "Coroutines in Practice",
+    "speaker": "Kashish Nagpal",
+    "topic": "C++20 Concepts in Practice",
     "registrationUrl": null,
     "recordingUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
     "location": "Online (Discord)",
-    "description": "Practical patterns for using C++20 coroutines in production code."
+    "description": "Real-world patterns for constraining templates with C++20 Concepts — cleaner than SFINAE, safer than unconstrained templates."
+  },
+  {
+    "id": "cppindiacon-2025",
+    "title": "CppIndiaCon 2025",
+    "type": "conference",
+    "status": "past",
+    "date": "2025-11-15",
+    "time": "09:00 IST",
+    "speaker": null,
+    "topic": null,
+    "registrationUrl": null,
+    "recordingUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "location": "Online",
+    "description": "India's 5th annual C++ conference with international speakers and workshops."
+  },
+  {
+    "id": "monthly-talk-2026-06",
+    "title": "CppIndia Monthly Talk — June 2026",
+    "type": "talk",
+    "status": "past",
+    "date": "2026-06-20",
+    "time": "18:00 IST",
+    "speaker": "Dheeraj Jha",
+    "topic": "Coroutines: From Generator to Async I/O",
+    "registrationUrl": null,
+    "recordingUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "location": "Online (Discord)",
+    "description": "Building on C++20 coroutines to write practical async I/O code without callback hell."
   },
   {
     "id": "cppindiacon-2024",
@@ -67,20 +109,6 @@
     "registrationUrl": null,
     "recordingUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
     "location": "Online",
-    "description": "India's 4th annual C++ conference with 8 international speakers."
-  },
-  {
-    "id": "monthly-talk-2025-06",
-    "title": "CppIndia Monthly Talk — June 2025",
-    "type": "talk",
-    "status": "past",
-    "date": "2025-06-21",
-    "time": "18:00 IST",
-    "speaker": "Ankur Satle",
-    "topic": "Deducing `this` in C++23",
-    "registrationUrl": null,
-    "recordingUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
-    "location": "Online (Discord)",
-    "description": "How deducing this simplifies CRTP patterns and enables new design possibilities."
+    "description": "India's 4th annual C++ conference with 8 international speakers including experts from think-cell."
   }
 ]
