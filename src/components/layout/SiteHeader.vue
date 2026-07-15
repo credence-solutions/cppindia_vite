@@ -5,7 +5,7 @@
   >
     <!-- Nav bar -->
     <div
-      class="border-b border-wire-light transition-all duration-base"
+      class="transition-all duration-base"
       :class="nav.isScrolled
         ? 'bg-[rgba(6,9,15,0.97)] backdrop-glass shadow-[0_1px_0_rgba(139,153,187,0.08),0_4px_12px_rgba(0,0,0,0.4)]'
         : 'bg-[rgba(6,9,15,0.88)] backdrop-glass'"
