@@ -8,7 +8,7 @@
     "time": "18:00 IST",
     "speaker": "Ankur M Satle",
     "topic": "Memory Safety in Modern C++",
-    "registrationUrl": "https://discord.gg/Wz42tX5",
+    "registrationUrl": "https://discord.com/invite/Wz42tX5",
     "recordingUrl": null,
     "location": "Online (Discord)",
     "description": "A deep dive into RAII, smart pointers, and the upcoming safety proposals for C++26."
@@ -22,7 +22,7 @@
     "time": "18:00 IST",
     "speaker": "Mahendra Garodi",
     "topic": "C++26 Reflection Deep Dive",
-    "registrationUrl": "https://discord.gg/Wz42tX5",
+    "registrationUrl": "https://discord.com/invite/Wz42tX5",
     "recordingUrl": null,
     "location": "Online (Discord)",
     "description": "An exploration of the upcoming static reflection feature in C++26 — one of the most anticipated proposals."
@@ -36,7 +36,7 @@
     "time": "18:00 IST",
     "speaker": "Hemil Ruparel",
     "topic": "Compiler Internals: How Clang Parses C++",
-    "registrationUrl": "https://discord.gg/Wz42tX5",
+    "registrationUrl": "https://discord.com/invite/Wz42tX5",
     "recordingUrl": null,
     "location": "Online (Discord)",
     "description": "A look inside the Clang compiler — how C++ source goes from text to AST to machine code."
@@ -50,7 +50,7 @@
     "time": "09:00 IST",
     "speaker": null,
     "topic": null,
-    "registrationUrl": "https://discord.gg/Wz42tX5",
+    "registrationUrl": "https://discord.com/invite/Wz42tX5",
     "recordingUrl": null,
     "location": "Online",
     "description": "India's 6th annual C++ conference. International speakers, live Q&A, and the best of the Indian C++ community."
