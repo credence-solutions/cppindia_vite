@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "cpp23-deducing-this",
+    "title": "Deducing `this` in C++23 — A Complete Guide",
+    "author": "Ankur Satle",
+    "date": "2025-06-10",
+    "tags": ["C++23", "Templates"],
+    "excerpt": "C++23's deducing this finally eliminates the need for CRTP in many patterns. Here's how it works and when to use it.",
+    "readingTime": 8,
+    "coverImage": ""
+  },
+  {
+    "slug": "modern-cpp-ranges",
+    "title": "Ranges in C++20: A Practical Introduction",
+    "author": "Karan Banthia",
+    "date": "2025-04-22",
+    "tags": ["C++20", "Ranges", "Modern C++"],
+    "excerpt": "std::ranges transforms the way we write algorithms. This guide walks through filter, transform, and custom views with real examples.",
+    "readingTime": 10,
+    "coverImage": ""
+  },
+  {
+    "slug": "trip-report-cppcon-2024",
+    "title": "Trip Report: CppCon 2024",
+    "author": "Jayshree Ambekar",
+    "date": "2024-10-05",
+    "tags": ["Conference", "CppCon", "Community"],
+    "excerpt": "A first-hand account of CppCon 2024 — highlights, key talks, hallway conversations, and what the C++ community is excited about.",
+    "readingTime": 6,
+    "coverImage": ""
+  },
+  {
+    "slug": "coroutines-cpp20-deep-dive",
+    "title": "C++20 Coroutines: From Zero to Generator",
+    "author": "Sandesh Chitguppe",
+    "date": "2024-08-14",
+    "tags": ["C++20", "Coroutines", "Async"],
+    "excerpt": "Coroutines are the most complex C++20 feature. This post builds intuition from first principles and shows how to write a reusable generator.",
+    "readingTime": 15,
+    "coverImage": ""
+  },
+  {
+    "slug": "cmake-modern-best-practices",
+    "title": "Modern CMake: Stop Writing Terrible Build Files",
+    "author": "Ankur Satle",
+    "date": "2024-06-01",
+    "tags": ["CMake", "Build Systems", "Tooling"],
+    "excerpt": "A guide to target-based CMake — why you should never use include_directories() again and how to structure projects that actually work.",
+    "readingTime": 12,
+    "coverImage": ""
+  },
+  {
+    "slug": "cpp-safety-2025",
+    "title": "Memory Safety in C++ — The 2025 State of Affairs",
+    "author": "Karan Banthia",
+    "date": "2025-01-20",
+    "tags": ["Safety", "Modern C++", "C++26"],
+    "excerpt": "With Rust's rise and the White House memo, memory safety is the hottest topic in C++. Here's where we actually stand.",
+    "readingTime": 9,
+    "coverImage": ""
+  }
+]

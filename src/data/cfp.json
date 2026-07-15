@@ -1,0 +1,68 @@
+[
+  {
+    "id": "cppcon-2025",
+    "conference": "CppCon 2025",
+    "location": "Aurora, CO, USA",
+    "cfpDeadline": "2025-05-15",
+    "eventDates": "2025-09-14",
+    "url": "https://cppcon.org/call-for-submissions/",
+    "status": "closed",
+    "remote": false,
+    "tags": ["International", "In-Person", "Major"]
+  },
+  {
+    "id": "meeting-cpp-2025",
+    "conference": "Meeting C++ 2025",
+    "location": "Berlin, Germany",
+    "cfpDeadline": "2025-08-01",
+    "eventDates": "2025-11-13",
+    "url": "https://meetingcpp.com/mcpp/cfp/",
+    "status": "open",
+    "remote": false,
+    "tags": ["International", "In-Person", "Major"]
+  },
+  {
+    "id": "accu-2026",
+    "conference": "ACCU 2026",
+    "location": "Bristol, UK",
+    "cfpDeadline": "2025-12-01",
+    "eventDates": "2026-04-22",
+    "url": "https://accu.org/conf/home/",
+    "status": "open",
+    "remote": false,
+    "tags": ["International", "In-Person"]
+  },
+  {
+    "id": "cppindiacon-2025",
+    "conference": "CppIndiaCon 2025",
+    "location": "Online",
+    "cfpDeadline": "2025-09-30",
+    "eventDates": "2025-11-15",
+    "url": "/call-for-speakers",
+    "status": "open",
+    "remote": true,
+    "tags": ["India", "Online", "CppIndia"]
+  },
+  {
+    "id": "itcpp-2025",
+    "conference": "Italian C++ Conference 2025",
+    "location": "Milan, Italy",
+    "cfpDeadline": "2025-03-15",
+    "eventDates": "2025-06-14",
+    "url": "https://italiancpp.org/",
+    "status": "closed",
+    "remote": false,
+    "tags": ["International", "In-Person"]
+  },
+  {
+    "id": "ndc-techtown-2025",
+    "conference": "NDC TechTown 2025",
+    "location": "Kongsberg, Norway",
+    "cfpDeadline": "2025-04-30",
+    "eventDates": "2025-08-25",
+    "url": "https://ndctechtown.com/",
+    "status": "closed",
+    "remote": false,
+    "tags": ["International", "In-Person", "Embedded"]
+  }
+]

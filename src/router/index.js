@@ -116,6 +116,126 @@ const routes = [
           breadcrumb: [{ label: 'Contact', path: '/contact' }],
         },
       },
+      {
+        path: 'blog',
+        name: 'Blog',
+        component: () => import('@/views/Blog/BlogView.vue'),
+        meta: {
+          title: 'Blog & Articles | CppIndia',
+          description: 'C++ tutorials, trip reports, and community articles from CppIndia members.',
+          breadcrumb: [{ label: 'Blog', path: '/blog' }],
+        },
+      },
+      {
+        path: 'events',
+        name: 'Events',
+        component: () => import('@/views/Events/EventsView.vue'),
+        meta: {
+          title: 'Events | CppIndia',
+          description: 'Upcoming and past CppIndia meetups, talks, and conferences.',
+          breadcrumb: [{ label: 'Events', path: '/events' }],
+        },
+      },
+      {
+        path: 'newsletter',
+        name: 'Newsletter',
+        component: () => import('@/views/Newsletter/NewsletterView.vue'),
+        meta: {
+          title: 'Newsletter Archive | CppIndia',
+          description: 'Archive of CppIndia community newsletters.',
+          breadcrumb: [{ label: 'Newsletter', path: '/newsletter' }],
+        },
+      },
+      {
+        path: 'jobs',
+        name: 'Jobs',
+        component: () => import('@/views/Jobs/JobsView.vue'),
+        meta: {
+          title: 'C++ Jobs Board | CppIndia',
+          description: 'C++ job listings curated for the Indian developer community.',
+          breadcrumb: [{ label: 'Jobs', path: '/jobs' }],
+        },
+      },
+      {
+        path: 'members',
+        name: 'Members',
+        component: () => import('@/views/Members/MembersView.vue'),
+        meta: {
+          title: 'Members & Hall of Fame | CppIndia',
+          description: 'Spotlight on active contributors, speakers, and top helpers in the CppIndia community.',
+          breadcrumb: [{ label: 'Members', path: '/members' }],
+        },
+      },
+      {
+        path: 'roadmap',
+        name: 'Roadmap',
+        component: () => import('@/views/Roadmap/RoadmapView.vue'),
+        meta: {
+          title: 'C++ Learning Roadmap | CppIndia',
+          description: 'A curated path from C++ beginner to expert — resources, milestones, and community guidance.',
+          breadcrumb: [{ label: 'Roadmap', path: '/roadmap' }],
+        },
+      },
+      {
+        path: 'projects',
+        name: 'Projects',
+        component: () => import('@/views/Projects/ProjectsView.vue'),
+        meta: {
+          title: 'Community Projects | CppIndia',
+          description: 'Open-source C++ projects built and maintained by CppIndia community members.',
+          breadcrumb: [{ label: 'Projects', path: '/projects' }],
+        },
+      },
+      {
+        path: 'playground',
+        name: 'Playground',
+        component: () => import('@/views/Playground/PlaygroundView.vue'),
+        meta: {
+          title: 'C++ Playground | CppIndia',
+          description: 'Curated C++17/20/23 code snippets with live Compiler Explorer integration.',
+          breadcrumb: [{ label: 'Playground', path: '/playground' }],
+        },
+      },
+      {
+        path: 'cfp',
+        name: 'CFP',
+        component: () => import('@/views/CFP/CFPView.vue'),
+        meta: {
+          title: 'CFP Tracker | CppIndia',
+          description: 'Open Calls for Proposals at C++ conferences worldwide — deadlines and submission links.',
+          breadcrumb: [{ label: 'CFP Tracker', path: '/cfp' }],
+        },
+      },
+      {
+        path: 'faq',
+        name: 'FAQ',
+        component: () => import('@/views/FAQ/FAQView.vue'),
+        meta: {
+          title: 'FAQ | CppIndia',
+          description: 'Frequently asked questions about CppIndia, C++ learning, speaking, and sponsorship.',
+          breadcrumb: [{ label: 'FAQ', path: '/faq' }],
+        },
+      },
+      {
+        path: 'impact',
+        name: 'Impact',
+        component: () => import('@/views/Impact/ImpactView.vue'),
+        meta: {
+          title: 'Community Impact | CppIndia',
+          description: 'The numbers behind CppIndia — members, talks, cities, and years of community building.',
+          breadcrumb: [{ label: 'Impact', path: '/impact' }],
+        },
+      },
+      {
+        path: 'sponsors',
+        name: 'Sponsors',
+        component: () => import('@/views/Sponsors/SponsorsView.vue'),
+        meta: {
+          title: 'Sponsors | CppIndia',
+          description: 'Support India\'s C++ community. View sponsorship tiers and benefits.',
+          breadcrumb: [{ label: 'Sponsors', path: '/sponsors' }],
+        },
+      },
     ],
   },
   {

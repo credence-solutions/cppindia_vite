@@ -5,6 +5,7 @@
     <RecentTalks />
     <ConferenceHighlight />
     <SponsorsSection />
+    <TestimonialsSection />
     <JoinCta />
   </div>
 </template>
@@ -25,5 +26,6 @@ const CommunityAbout      = defineAsyncComponent(() => import('@/components/sect
 const RecentTalks         = defineAsyncComponent(() => import('@/components/sections/home/RecentTalks.vue'))
 const ConferenceHighlight = defineAsyncComponent(() => import('@/components/sections/home/ConferenceHighlight.vue'))
 const SponsorsSection     = defineAsyncComponent(() => import('@/components/sections/home/SponsorsSection.vue'))
+const TestimonialsSection = defineAsyncComponent(() => import('@/components/sections/home/TestimonialsSection.vue'))
 const JoinCta             = defineAsyncComponent(() => import('@/components/sections/home/JoinCta.vue'))
 </script>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "what-is-cppindia",
+    "category": "General",
+    "question": "What is CppIndia?",
+    "answer": "CppIndia is India's C++ user group, founded in 2020. We run bi-monthly tech talks, an annual conference (CppIndiaCon), and maintain a welcoming Discord community for C++ developers at all levels."
+  },
+  {
+    "id": "who-can-join",
+    "category": "General",
+    "question": "Who can join CppIndia?",
+    "answer": "Anyone interested in C++ is welcome — from students writing their first program to senior engineers with decades of experience. We're inclusive, beginner-friendly, and free to join."
+  },
+  {
+    "id": "how-to-join",
+    "category": "General",
+    "question": "How do I join the community?",
+    "answer": "The quickest way is to join our Discord server at discord.gg/Wz42tX5. You can also follow us on LinkedIn, YouTube, and Twitter to stay updated on talks and events."
+  },
+  {
+    "id": "why-cpp-2026",
+    "category": "C++ Language",
+    "question": "Why learn C++ in 2026?",
+    "answer": "C++ remains the language of choice for performance-critical systems — game engines, operating systems, embedded firmware, financial trading, compilers, and more. Modern C++ (C++17/20/23) is significantly safer and more expressive than older dialects. C++26 brings reflection, contracts, and further safety improvements."
+  },
+  {
+    "id": "cpp-vs-rust",
+    "category": "C++ Language",
+    "question": "Should I learn C++ or Rust?",
+    "answer": "Both are excellent systems languages. C++ has a 40-year ecosystem, billions of lines of deployed code, and unmatched library support. Rust offers stronger memory safety guarantees by default. If you're starting fresh on a new systems project, both are valid choices. If you're working with existing C++ codebases, C++ is the pragmatic choice. Many developers learn both."
+  },
+  {
+    "id": "cpp-beginner",
+    "category": "C++ Language",
+    "question": "I'm a beginner. Where do I start with C++?",
+    "answer": "Check our Learning Roadmap page for a curated path. Short answer: start with a good book (A Tour of C++ by Bjarne Stroustrup is excellent), set up a modern toolchain (Clang or GCC + CMake), and join our Discord where beginners get patient, friendly help."
+  },
+  {
+    "id": "can-i-speak",
+    "category": "Speaking & Events",
+    "question": "Can I give a talk at CppIndia?",
+    "answer": "Absolutely! We actively encourage first-time speakers. You don't need to be an expert — a 20-minute talk on something you learned recently is valuable. Visit our Call for Speakers page to submit a proposal."
+  },
+  {
+    "id": "talk-format",
+    "category": "Speaking & Events",
+    "question": "What's the format for tech talks?",
+    "answer": "Monthly talks are typically 30–45 minutes online via Discord/YouTube Live, followed by a Q&A. CppIndiaCon sessions are 20–45 minutes. All talks are recorded and published on our YouTube channel for free."
+  },
+  {
+    "id": "sponsor",
+    "category": "Sponsorship",
+    "question": "How can my company sponsor CppIndia?",
+    "answer": "We offer Gold, Silver, and Bronze sponsorship tiers with different visibility and benefits. Sponsors get logo placement on the website, mentions in newsletters, and featured job listings. Contact us at info@cppindia.co.in or visit our Sponsors page."
+  },
+  {
+    "id": "free",
+    "category": "General",
+    "question": "Is everything free?",
+    "answer": "Yes! All tech talks, conference recordings, resources, and community access are completely free. We're a volunteer-run community funded by our generous sponsors."
+  }
+]

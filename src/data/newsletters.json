@@ -1,0 +1,56 @@
+[
+  {
+    "id": "nl-2025-06",
+    "title": "CppIndia Newsletter — June 2025",
+    "date": "2025-06-30",
+    "issueNumber": 18,
+    "summary": "This month: C++26 reflection proposal update, new job listings from think-cell, recap of June's talk on deducing this, and upcoming CppIndiaCon 2025 announcements.",
+    "url": "https://discord.gg/Wz42tX5",
+    "highlights": ["C++26 Reflection Update", "think-cell Job Listings", "Talk Recap: Deducing this", "CppIndiaCon 2025 Preview"]
+  },
+  {
+    "id": "nl-2025-05",
+    "title": "CppIndia Newsletter — May 2025",
+    "date": "2025-05-31",
+    "issueNumber": 17,
+    "summary": "May edition: Meeting C++ 2025 CFP open, community spotlight on Sandesh Chitguppe, new C++ safety proposals roundup, and free book of the month.",
+    "url": "https://discord.gg/Wz42tX5",
+    "highlights": ["Meeting C++ 2025 CFP", "Community Spotlight", "Safety Proposals Roundup", "Free Book of the Month"]
+  },
+  {
+    "id": "nl-2025-04",
+    "title": "CppIndia Newsletter — April 2025",
+    "date": "2025-04-30",
+    "issueNumber": 16,
+    "summary": "April: Ranges deep dive blog post, CppCon 2025 call for submissions open, community Discord hits 1000 members, curated C++20 learning path.",
+    "url": "https://discord.gg/Wz42tX5",
+    "highlights": ["Ranges Deep Dive", "CppCon 2025 CFP Open", "Discord hits 1000 Members", "C++20 Learning Path"]
+  },
+  {
+    "id": "nl-2025-03",
+    "title": "CppIndia Newsletter — March 2025",
+    "date": "2025-03-31",
+    "issueNumber": 15,
+    "summary": "March: Trip report from ACCU 2025, new contributor spotlight, C++23 compiler support matrix updated, community project showcase launch.",
+    "url": "https://discord.gg/Wz42tX5",
+    "highlights": ["ACCU 2025 Trip Report", "Contributor Spotlight", "C++23 Compiler Support", "Project Showcase Launch"]
+  },
+  {
+    "id": "nl-2025-02",
+    "title": "CppIndia Newsletter — February 2025",
+    "date": "2025-02-28",
+    "issueNumber": 14,
+    "summary": "February: Valentine's edition for C++ lovers, Clang 19 deep dive, community hall of fame nominations open, upcoming talk on coroutines.",
+    "url": "https://discord.gg/Wz42tX5",
+    "highlights": ["Clang 19 Deep Dive", "Hall of Fame Nominations", "Coroutines Talk Preview", "C++26 WG21 Update"]
+  },
+  {
+    "id": "nl-2025-01",
+    "title": "CppIndia Newsletter — January 2025",
+    "date": "2025-01-31",
+    "issueNumber": 13,
+    "summary": "New year edition: 2024 community year in review, 5 years of CppIndia milestone, goals for 2025, and a special retrospective on CppIndiaCon 2024.",
+    "url": "https://discord.gg/Wz42tX5",
+    "highlights": ["2024 Year in Review", "5 Years of CppIndia", "Goals for 2025", "CppIndiaCon 2024 Retrospective"]
+  }
+]

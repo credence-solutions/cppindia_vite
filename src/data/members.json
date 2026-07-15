@@ -1,0 +1,80 @@
+[
+  {
+    "id": "ankur-satle",
+    "name": "Ankur Satle",
+    "role": "Founder & Organiser",
+    "bio": "10+ years of C++ experience. Passionate about templates, type systems, and building the Indian C++ community from the ground up.",
+    "avatar": "",
+    "github": "https://github.com/CppIndia-UserGroup",
+    "linkedin": "https://www.linkedin.com/company/cppindia/",
+    "talks": 5,
+    "joinedYear": 2020,
+    "badge": "founder",
+    "city": "Pune"
+  },
+  {
+    "id": "karan-banthia",
+    "name": "Karan Banthia",
+    "role": "Co-Founder & Speaker",
+    "bio": "Passionate about modern C++ concurrency, performance, and helping developers write safer, faster code.",
+    "avatar": "",
+    "github": "https://github.com/CppIndia-UserGroup",
+    "linkedin": "https://www.linkedin.com/company/cppindia/",
+    "talks": 4,
+    "joinedYear": 2020,
+    "badge": "founder",
+    "city": "Mumbai"
+  },
+  {
+    "id": "sandesh-chitguppe",
+    "name": "Sandesh Chitguppe",
+    "role": "Organiser & Speaker",
+    "bio": "Systems programmer specializing in coroutines, async I/O, and embedded C++. Conference speaker at CppIndiaCon 2022 and 2023.",
+    "avatar": "",
+    "github": "https://github.com/CppIndia-UserGroup",
+    "linkedin": "https://www.linkedin.com/company/cppindia/",
+    "talks": 3,
+    "joinedYear": 2021,
+    "badge": "speaker",
+    "city": "Bengaluru"
+  },
+  {
+    "id": "jayshree-ambekar",
+    "name": "Jayshree Ambekar",
+    "role": "Community Manager",
+    "bio": "Manages the CppIndia community, coordinates events, and ensures every member feels welcome and heard.",
+    "avatar": "",
+    "github": "https://github.com/CppIndia-UserGroup",
+    "linkedin": "https://www.linkedin.com/company/cppindia/",
+    "talks": 2,
+    "joinedYear": 2021,
+    "badge": "moderator",
+    "city": "Pune"
+  },
+  {
+    "id": "priya-nair",
+    "name": "Priya Nair",
+    "role": "Top Contributor",
+    "bio": "Active Discord helper and resource curator. Has answered over 300 questions in #cpp-help. Works on embedded systems at a leading automotive company.",
+    "avatar": "",
+    "github": "https://github.com/CppIndia-UserGroup",
+    "linkedin": "https://www.linkedin.com/company/cppindia/",
+    "talks": 1,
+    "joinedYear": 2022,
+    "badge": "contributor",
+    "city": "Chennai"
+  },
+  {
+    "id": "rahul-sharma",
+    "name": "Rahul Sharma",
+    "role": "Speaker",
+    "bio": "Game engine developer and Unreal Engine expert. Gave an acclaimed talk on SIMD optimizations for game physics at CppIndiaCon 2023.",
+    "avatar": "",
+    "github": "https://github.com/CppIndia-UserGroup",
+    "linkedin": "https://www.linkedin.com/company/cppindia/",
+    "talks": 2,
+    "joinedYear": 2022,
+    "badge": "speaker",
+    "city": "Hyderabad"
+  }
+]

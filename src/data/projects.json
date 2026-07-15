@@ -1,0 +1,62 @@
+[
+  {
+    "id": "cppindia-session-docs",
+    "name": "CppIndia Session Documents",
+    "description": "Slides, notes, and code samples from all CppIndia tech talks and CppIndiaCon conferences. The central knowledge repository for the community.",
+    "repoUrl": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+    "starCount": 48,
+    "language": "Markdown",
+    "tags": ["Resources", "Community", "Documentation"],
+    "owner": "CppIndia",
+    "lastUpdated": "2025-07-01",
+    "featured": true
+  },
+  {
+    "id": "cpp-ranges-demo",
+    "name": "C++20 Ranges Demo Collection",
+    "description": "A curated collection of C++20 ranges examples — from basic filter/transform to custom range adaptors. Great for learning and reference.",
+    "repoUrl": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+    "starCount": 31,
+    "language": "C++",
+    "tags": ["C++20", "Ranges", "Learning"],
+    "owner": "Sandesh Chitguppe",
+    "lastUpdated": "2025-04-15",
+    "featured": true
+  },
+  {
+    "id": "coroutine-generator",
+    "name": "coro-gen",
+    "description": "A header-only C++20 coroutine generator implementation. Provides a Python-style generator that works with range-based for loops.",
+    "repoUrl": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+    "starCount": 22,
+    "language": "C++",
+    "tags": ["C++20", "Coroutines", "Header-only"],
+    "owner": "Karan Banthia",
+    "lastUpdated": "2025-03-10",
+    "featured": false
+  },
+  {
+    "id": "cmake-starter",
+    "name": "modern-cmake-starter",
+    "description": "A modern CMake project template following best practices — target-based design, CPM for dependencies, clang-tidy and clang-format integration.",
+    "repoUrl": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+    "starCount": 55,
+    "language": "CMake",
+    "tags": ["CMake", "Build Systems", "Tooling", "Template"],
+    "owner": "Ankur Satle",
+    "lastUpdated": "2025-05-20",
+    "featured": true
+  },
+  {
+    "id": "simd-playground",
+    "name": "simd-experiments",
+    "description": "Benchmark-driven experiments with AVX2/NEON SIMD intrinsics. Includes matrix ops, string processing, and image filter kernels.",
+    "repoUrl": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
+    "starCount": 18,
+    "language": "C++",
+    "tags": ["SIMD", "Performance", "AVX2", "NEON"],
+    "owner": "Rahul Sharma",
+    "lastUpdated": "2025-02-01",
+    "featured": false
+  }
+]
