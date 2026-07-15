@@ -149,7 +149,7 @@
 }
 
 /// Section padding rhythm
-@mixin section-padding($y: var(--space-24), $x: 0) {
+@mixin section-padding($y: var(--space-16), $x: 0) {
   padding-block: $y;
   padding-inline: $x;
 }

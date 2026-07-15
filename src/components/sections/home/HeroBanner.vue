@@ -15,7 +15,7 @@
     <div class="absolute inset-0 pointer-events-none"
       style="background-image:linear-gradient(rgba(79,142,247,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,0.05) 1px,transparent 1px);background-size:48px 48px;" />
 
-    <div class="container relative z-[1] py-8" style="padding-top: calc(68px + 3rem); padding-bottom: 4rem;">
+    <div class="container relative z-[1]" style="padding-top: calc(68px + 2rem); padding-bottom: 3rem;">
       <div class="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16">
 
         <!-- Left: content -->
@@ -125,9 +125,8 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-white/40 text-xs tracking-[0.1em] uppercase">
-      <span>Scroll</span>
-      <div class="w-[1px] h-10 animate-scroll-line" style="background:linear-gradient(to bottom,rgba(255,255,255,0.4),transparent);" />
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center">
+      <div class="w-[1px] h-10 animate-scroll-line" style="background:linear-gradient(to bottom,rgba(255,255,255,0.35),transparent);" />
     </div>
   </section>
 </template>

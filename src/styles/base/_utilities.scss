@@ -34,8 +34,8 @@
 .container--narrow { @include container(var(--container-narrow)); }
 
 .section      { @include section-padding; }
-.section--sm  { @include section-padding(var(--space-16)); }
-.section--lg  { @include section-padding(var(--space-32)); }
+.section--sm  { @include section-padding(var(--space-10)); }
+.section--lg  { @include section-padding(var(--space-24)); }
 
 // -----------------------------------------------------------------------------
 // FLEX HELPERS

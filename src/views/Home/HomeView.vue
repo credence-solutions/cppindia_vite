@@ -2,7 +2,6 @@
   <div class="home">
     <HeroBanner />
     <CommunityAbout />
-    <CommunityStats />
     <RecentTalks />
     <ConferenceHighlight />
     <SponsorsSection />
@@ -23,7 +22,6 @@ useHead({
 import HeroBanner from '@/components/sections/home/HeroBanner.vue'
 
 const CommunityAbout      = defineAsyncComponent(() => import('@/components/sections/home/CommunityAbout.vue'))
-const CommunityStats      = defineAsyncComponent(() => import('@/components/sections/home/CommunityStats.vue'))
 const RecentTalks         = defineAsyncComponent(() => import('@/components/sections/home/RecentTalks.vue'))
 const ConferenceHighlight = defineAsyncComponent(() => import('@/components/sections/home/ConferenceHighlight.vue'))
 const SponsorsSection     = defineAsyncComponent(() => import('@/components/sections/home/SponsorsSection.vue'))
