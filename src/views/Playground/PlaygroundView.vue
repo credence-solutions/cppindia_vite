@@ -74,21 +74,27 @@
               <pre class="p-5 overflow-x-auto text-sm font-mono leading-relaxed" style="color:#E2E8F5; margin:0;">{{ active.code }}</pre>
             </div>
 
-            <!-- Godbolt embed -->
-            <div class="rounded-2xl overflow-hidden flex-1" style="min-height:320px; border: 1px solid rgba(99,102,241,0.2);">
-              <div class="flex items-center gap-2 px-4 py-2.5" style="background:rgba(15,17,45,0.95); border-bottom:1px solid rgba(99,102,241,0.15);">
-                <span class="w-2 h-2 rounded-full" style="background:#34D399;"></span>
-                <span class="text-xs font-mono" style="color:rgba(148,163,184,0.55);">Compiler Explorer — godbolt.org</span>
+            <!-- Run in Godbolt CTA -->
+            <a
+              :href="active.godboltUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-center justify-between gap-6 px-6 py-5 rounded-2xl transition-all duration-200"
+              style="background: rgba(99,102,241,0.07); border: 1px solid rgba(99,102,241,0.25);"
+              onmouseover="this.style.borderColor='rgba(99,102,241,0.5)'; this.style.background='rgba(99,102,241,0.12)'"
+              onmouseout="this.style.borderColor='rgba(99,102,241,0.25)'; this.style.background='rgba(99,102,241,0.07)'"
+            >
+              <div class="flex items-center gap-4">
+                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(99,102,241,0.15);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold" style="color:#E2E8F5;">Run in Compiler Explorer</p>
+                  <p class="text-xs mt-0.5" style="color:rgba(148,163,184,0.6);">Opens godbolt.org — compile and run live with GCC, Clang, or MSVC</p>
+                </div>
               </div>
-              <iframe
-                :key="active.id"
-                :src="`${active.godboltUrl}#embed`"
-                allow="clipboard-write"
-                class="w-full h-full"
-                style="min-height:300px; border:none; background:#0D1117;"
-                title="Compiler Explorer"
-              ></iframe>
-            </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2" style="flex-shrink:0;opacity:0.7;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
 
             <p class="text-xs" style="color:rgba(148,163,184,0.4);">by {{ active.author }}</p>
           </div>

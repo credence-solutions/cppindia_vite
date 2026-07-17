@@ -59,8 +59,8 @@
 
           <!-- Stats -->
           <div class="flex items-center gap-4 text-xs" style="color:rgba(148,163,184,0.55);">
-            <span>🎤 {{ member.talks }} talks</span>
-            <span>📅 Since {{ member.joinedYear }}</span>
+            <span>{{ member.talks }} talk{{ member.talks !== 1 ? 's' : '' }}</span>
+            <span>Since {{ member.joinedYear }}</span>
           </div>
 
           <!-- Links -->
