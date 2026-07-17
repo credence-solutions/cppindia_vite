@@ -97,6 +97,16 @@ const routes = [
         },
       },
       {
+        path: 'join-us',
+        name: 'JoinUs',
+        component: () => import('@/views/JoinUs/JoinUsView.vue'),
+        meta: {
+          title: 'Join CppIndia | India\'s C++ Community',
+          description: 'Join CppIndia — India\'s C++ user group. Register to stay connected, get event updates, and be part of the community.',
+          breadcrumb: [{ label: 'Join Us', path: '/join-us' }],
+        },
+      },
+      {
         path: 'contact',
         name: 'Contact',
         component: () => import('@/views/Contact/ContactView.vue'),

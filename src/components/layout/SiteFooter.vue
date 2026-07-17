@@ -62,7 +62,7 @@
               <li><RouterLink to="/about"              class="footer-link">About CppIndia</RouterLink></li>
               <li><RouterLink to="/team"               class="footer-link">Our Team</RouterLink></li>
               <li><RouterLink to="/call-for-speakers"  class="footer-link">Call for Speakers</RouterLink></li>
-              <li><a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer" class="footer-link">Join the Community</a></li>
+              <li><RouterLink to="/join-us" class="footer-link">Join CppIndia</RouterLink></li>
               <li><RouterLink to="/contact"            class="footer-link">Contact Us</RouterLink></li>
             </ul>
           </div>

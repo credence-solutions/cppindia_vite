@@ -71,6 +71,7 @@ export const NAV_LINKS = [
     children: [
       { label: 'About Us',          path: '/about' },
       { label: 'Our Team',          path: '/team' },
+      { label: 'Join Us',           path: '/join-us' },
       { label: 'FAQ',               path: '/faq' },
       { label: 'Code of Conduct',   path: '/code-of-conduct' },
       { label: 'Call for Speakers', path: '/call-for-speakers' },

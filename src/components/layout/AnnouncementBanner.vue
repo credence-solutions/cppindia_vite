@@ -13,10 +13,8 @@
       <strong>CppIndiaCon 2026</strong> — Upcoming Conference · <strong>November 2026</strong> · Online · Free to attend
     </span>
 
-    <a
-      href="https://discord.com/invite/Wz42tX5"
-      target="_blank"
-      rel="noopener noreferrer"
+    <RouterLink
+      to="/join-us"
       class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold transition-all duration-150 flex-shrink-0"
       style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid rgba(255,255,255,0.4);"
       onmouseover="this.style.background='rgba(255,255,255,0.35)'"
@@ -24,7 +22,7 @@
     >
       Register Free
       <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-    </a>
+    </RouterLink>
 
     <!-- Dismiss -->
     <button
