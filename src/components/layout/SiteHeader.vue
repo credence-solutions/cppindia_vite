@@ -63,9 +63,9 @@
 
         <!-- Actions -->
         <div class="flex items-center gap-3 flex-shrink-0">
-          <RouterLink to="/join" class="btn btn--primary btn--sm hidden lg:inline-flex">
+          <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm hidden lg:inline-flex">
             Join Community
-          </RouterLink>
+          </a>
 
           <!-- Hamburger -->
           <button
@@ -93,7 +93,7 @@
 import { useRoute } from 'vue-router'
 import AnnouncementBanner from './AnnouncementBanner.vue'
 import { useNavigationStore } from '@/stores/navigation'
-import { NAV_LINKS } from '@/constants'
+import { NAV_LINKS, SITE } from '@/constants'
 import MegaMenu from '@/components/navigation/MegaMenu.vue'
 import SimpleDropdown from '@/components/navigation/SimpleDropdown.vue'
 import MobileMenu from '@/components/navigation/MobileMenu.vue'

@@ -82,8 +82,8 @@
       <div class="mt-14 text-center rounded-2xl p-8" style="background: rgba(15,17,45,0.6); border: 1px solid rgba(99,102,241,0.2);">
         <p class="font-semibold mb-1" style="color:#E2E8F5;">Want to be featured here?</p>
         <p class="text-sm mb-5" style="color:rgba(148,163,184,0.6);">Contribute to the community — give a talk, help others on Discord, or maintain a project.</p>
-        <RouterLink to="/join" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-          style="background: linear-gradient(135deg,#6366F1,#818CF8);">Join the Community</RouterLink>
+        <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
+          style="background: linear-gradient(135deg,#6366F1,#818CF8);">Join the Community</a>
       </div>
 
     </div>

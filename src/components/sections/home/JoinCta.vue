@@ -35,7 +35,7 @@
             Join Discord Server
           </a>
           <RouterLink
-            to="/join"
+            to="/about"
             class="btn btn--lg inline-flex items-center gap-2 font-semibold transition-all duration-200"
             style="border: 1px solid rgba(99,102,241,0.4); color: #818CF8; background: transparent;"
             onmouseover="this.style.borderColor='rgba(99,102,241,0.65)'; this.style.background='rgba(99,102,241,0.08)'"

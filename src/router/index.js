@@ -87,16 +87,6 @@ const routes = [
         },
       },
       {
-        path: 'join',
-        name: 'Join',
-        component: () => import('@/views/JoinUs/JoinUsView.vue'),
-        meta: {
-          title: 'Join CppIndia | India\'s C++ Community',
-          description: 'Join CppIndia on Discord, LinkedIn, YouTube and more. Attend our tech talks and annual conference.',
-          breadcrumb: [{ label: 'Join Us', path: '/join' }],
-        },
-      },
-      {
         path: 'call-for-speakers',
         name: 'CallForSpeakers',
         component: () => import('@/views/CallForSpeakers/CallForSpeakersView.vue'),
@@ -143,16 +133,6 @@ const routes = [
           title: 'Events | CppIndia',
           description: 'Upcoming and past CppIndia meetups, talks, and conferences.',
           breadcrumb: [{ label: 'Events', path: '/events' }],
-        },
-      },
-      {
-        path: 'newsletter',
-        name: 'Newsletter',
-        component: () => import('@/views/Newsletter/NewsletterView.vue'),
-        meta: {
-          title: 'Newsletter Archive | CppIndia',
-          description: 'Archive of CppIndia community newsletters.',
-          breadcrumb: [{ label: 'Newsletter', path: '/newsletter' }],
         },
       },
       {
@@ -213,16 +193,6 @@ const routes = [
           title: 'FAQ | CppIndia',
           description: 'Frequently asked questions about CppIndia, C++ learning, speaking, and sponsorship.',
           breadcrumb: [{ label: 'FAQ', path: '/faq' }],
-        },
-      },
-      {
-        path: 'impact',
-        name: 'Impact',
-        component: () => import('@/views/Impact/ImpactView.vue'),
-        meta: {
-          title: 'Community Impact | CppIndia',
-          description: 'The numbers behind CppIndia — members, talks, cities, and years of community building.',
-          breadcrumb: [{ label: 'Impact', path: '/impact' }],
         },
       },
       {

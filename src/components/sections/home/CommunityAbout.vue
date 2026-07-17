@@ -27,13 +27,15 @@
               onmouseover="this.style.boxShadow='0 0 30px rgba(99,102,241,0.55)'"
               onmouseout="this.style.boxShadow='0 0 20px rgba(99,102,241,0.35)'"
             >Learn More</RouterLink>
-            <RouterLink
-              to="/join"
+            <a
+              :href="SITE.discordInvite"
+              target="_blank"
+              rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
               style="border: 1px solid rgba(99,102,241,0.35); color: #818CF8; background: transparent;"
               onmouseover="this.style.borderColor='rgba(99,102,241,0.6)'; this.style.background='rgba(99,102,241,0.08)'"
               onmouseout="this.style.borderColor='rgba(99,102,241,0.35)'; this.style.background='transparent'"
-            >Join the Community</RouterLink>
+            >Join the Community</a>
           </div>
         </div>
 
@@ -64,6 +66,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useGsap } from '@/composables/useGsap'
+import { SITE } from '@/constants'
 
 const { staggerReveal } = useGsap()
 onMounted(() => staggerReveal('.gsap-reveal', { y: 30 }))

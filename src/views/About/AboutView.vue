@@ -92,15 +92,17 @@
                   </RouterLink>
                 </li>
                 <li>
-                  <RouterLink
-                    to="/join"
+                  <a
+                    :href="SITE.discordInvite"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="text-sm transition-colors flex items-center gap-2"
                     style="color: rgba(148,163,184,0.7);"
                     onmouseover="this.style.color='#A78BFA'"
                     onmouseout="this.style.color='rgba(148,163,184,0.7)'"
                   >
                     <span style="color: #A78BFA;">→</span> Join CppIndia
-                  </RouterLink>
+                  </a>
                 </li>
                 <li>
                   <RouterLink

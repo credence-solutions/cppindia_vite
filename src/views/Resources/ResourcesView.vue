@@ -86,6 +86,58 @@
           </div>
         </div>
 
+        <!-- Newsletter Archive -->
+        <div id="newsletter" class="mb-14">
+          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
+            style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
+            Newsletter Archive
+          </h2>
+          <!-- Subscribe CTA -->
+          <div class="rounded-xl p-5 mb-6 flex flex-wrap items-center justify-between gap-4"
+            style="background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,211,238,0.05)); border: 1px solid rgba(99,102,241,0.2);">
+            <div>
+              <p class="font-semibold text-sm" style="color:#E2E8F5;">Get the next issue in your inbox</p>
+              <p class="text-xs mt-0.5" style="color:rgba(148,163,184,0.65);">Monthly newsletter — no spam, unsubscribe anytime.</p>
+            </div>
+            <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm text-white flex-shrink-0"
+              style="background: linear-gradient(135deg, #6366F1, #818CF8);">
+              Join Discord to Subscribe
+            </a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <a
+              v-for="nl in newsletters"
+              :key="nl.id"
+              :href="nl.url"
+              class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
+              style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono px-2 py-0.5 rounded" style="background:rgba(99,102,241,0.12); color:#818CF8;">#{{ nl.issueNumber }}</span>
+                <time class="text-xs font-mono" style="color:rgba(148,163,184,0.5);">{{ formatDate(nl.date) }}</time>
+              </div>
+              <h3 class="font-display font-bold text-sm leading-snug" style="color:#E2E8F5;">{{ nl.title }}</h3>
+              <p class="text-xs flex-1" style="color:rgba(148,163,184,0.7);">{{ nl.summary }}</p>
+              <div class="flex flex-wrap gap-1.5">
+                <span v-for="h in nl.highlights" :key="h"
+                  class="text-[10px] font-semibold px-2 py-[2px] rounded-full"
+                  style="background:rgba(34,211,238,0.08); color:#22D3EE; border:1px solid rgba(34,211,238,0.2);">
+                  {{ h }}
+                </span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold mt-auto" style="color:#818CF8;">
+                Read Issue
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
         <!-- Monthly picks -->
         <div id="monthly">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
@@ -122,6 +174,7 @@
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import resourcesData from '@/data/resources.json'
+import newsletters from '@/data/newsletters.json'
 import { SITE } from '@/constants'
 
 useHead({
@@ -130,4 +183,8 @@ useHead({
 })
 
 const resources = resourcesData
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-IN', { year: 'numeric', month: 'long' })
+}
 </script>

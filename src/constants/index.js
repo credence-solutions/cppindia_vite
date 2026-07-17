@@ -52,7 +52,6 @@ export const NAV_LINKS = [
       { label: 'Blog & Articles',    path: '/blog' },
       { label: 'Learning Roadmap',   path: '/roadmap' },
       { label: 'Code Playground',    path: '/playground' },
-      { label: 'Newsletter Archive', path: '/newsletter' },
     ],
   },
   {
@@ -72,11 +71,9 @@ export const NAV_LINKS = [
     children: [
       { label: 'About Us',          path: '/about' },
       { label: 'Our Team',          path: '/team' },
-      { label: 'Impact & Stats',    path: '/impact' },
       { label: 'FAQ',               path: '/faq' },
       { label: 'Code of Conduct',   path: '/code-of-conduct' },
       { label: 'Call for Speakers', path: '/call-for-speakers' },
-      { label: 'Join CppIndia',     path: '/join' },
     ],
   },
   { label: 'Contact', path: '/contact' },
