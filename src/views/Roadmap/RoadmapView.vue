@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Get Started"
     title="C++ Learning Roadmap"
@@ -78,6 +79,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Opportunities"
     title="C++ Jobs Board"
@@ -96,6 +97,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

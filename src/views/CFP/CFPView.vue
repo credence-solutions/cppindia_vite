@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Aspiring Speakers"
     title="CFP Tracker"
@@ -93,6 +94,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

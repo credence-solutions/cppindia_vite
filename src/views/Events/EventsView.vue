@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Calendar"
     title="Events"
@@ -80,6 +81,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Hall of Fame"
     title="Community Members"
@@ -88,6 +89,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

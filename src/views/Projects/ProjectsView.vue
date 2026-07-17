@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Open Source"
     title="Community Projects"
@@ -79,6 +80,7 @@
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

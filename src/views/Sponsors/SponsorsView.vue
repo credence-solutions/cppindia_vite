@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Support CppIndia"
     title="Become a Sponsor"
@@ -81,6 +82,7 @@
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

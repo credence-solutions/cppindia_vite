@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Community"
     title="Frequently Asked Questions"
@@ -65,6 +66,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>
