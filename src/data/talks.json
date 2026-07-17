@@ -135,7 +135,7 @@
       "date": "2022-09-17",
       "speaker": "Hemil Ruparel",
       "title": "How to Create Your Own Programming Language",
-      "video": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+      "video": null,
       "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/09-17",
       "tags": ["Compiler", "Language Design", "Lexer"]
     },
