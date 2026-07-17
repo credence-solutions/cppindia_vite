@@ -52,7 +52,7 @@
       "date": "2023-03-11",
       "speaker": "Mahendra Garodi",
       "title": "C++ Constants: The 'const'ly Evolving Story",
-      "video": "https://www.youtube.com/@CppIndiaUG",
+      "video": null,
       "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/03-11",
       "tags": ["Modern C++", "C++20", "const"]
     },
