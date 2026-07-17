@@ -3,7 +3,7 @@
 -->
 <template>
   <section
-    class="relative min-h-screen flex items-center overflow-hidden"
+    class="relative flex items-center overflow-hidden"
     aria-label="Hero banner"
   >
 
@@ -47,7 +47,7 @@
       style="background: linear-gradient(to bottom, transparent, #07091C);" />
 
     <div class="container relative z-[1]"
-      style="padding-top: calc(68px + 2.5rem); padding-bottom: 3.5rem;">
+      style="padding-top: calc(68px + 1.5rem); padding-bottom: 2rem;">
       <div class="grid grid-cols-1 gap-10 items-center lg:grid-cols-[1fr_440px] xl:grid-cols-[1fr_480px] lg:gap-14">
 
         <!-- ── Left: content ── -->
