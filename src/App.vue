@@ -12,15 +12,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { useHead } from '@/composables/useHead'
 import ThemePicker from '@/components/common/ThemePicker.vue'
-
-// Set default document head
-useHead({
-  title: 'CppIndia | India\'s C++ Community',
-  description:
-    'CppIndia is India\'s premier C++ user group — hosting tech talks, the annual CppIndiaCon conference, and a thriving developer community.',
-})
 
 onMounted(() => {
   // Remove static loader if present
