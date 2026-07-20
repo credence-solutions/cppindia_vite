@@ -4,14 +4,14 @@
 <template>
   <section
     class="section"
-    style="background: linear-gradient(135deg, #060B1A 0%, #0D1A35 50%, #061020 100%);"
+    style="background: var(--emphasis-bg);"
     aria-label="Community statistics"
   >
     <div class="container">
-      <p class="text-center text-xs font-semibold text-white/40 uppercase tracking-[0.12em] mb-10">
+      <p class="text-center text-xs font-semibold uppercase tracking-[0.12em] mb-10" style="color: var(--color-text-muted);">
         Trusted by developers across India
       </p>
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-y divide-white/10 lg:divide-y-0 lg:divide-x lg:divide-white/10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-y divide-wire lg:divide-y-0 lg:divide-x lg:divide-wire">
         <div
           v-for="stat in displayStats"
           :key="stat.label"
@@ -26,7 +26,7 @@
               style="font-size: 0.55em; opacity: 0.75; vertical-align: super;"
             >{{ stat.suffix }}</span>
           </div>
-          <span class="text-xs text-white/55 uppercase tracking-[0.1em] font-medium">{{ stat.label }}</span>
+          <span class="text-xs uppercase tracking-[0.1em] font-medium" style="color: var(--color-text-muted);">{{ stat.label }}</span>
         </div>
       </div>
     </div>

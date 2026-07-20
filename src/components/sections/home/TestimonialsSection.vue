@@ -1,5 +1,5 @@
 <template>
-  <section class="section" style="background: #0B0D2E;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
       <div class="text-center mb-10">
         <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: #A78BFA;">Community Voices</p>
@@ -33,7 +33,7 @@
             </div>
             <div>
               <p class="text-sm font-semibold" style="color:#E2E8F5;">{{ t.name }}</p>
-              <p class="text-xs" style="color:rgba(148,163,184,0.55);">{{ t.role }}</p>
+              <p class="text-xs" style="color:var(--color-text-muted);">{{ t.role }}</p>
             </div>
             <!-- Source badge -->
             <span class="ml-auto text-[10px] font-semibold px-2 py-0.5 rounded-full" :style="sourceStyle(t.source)">

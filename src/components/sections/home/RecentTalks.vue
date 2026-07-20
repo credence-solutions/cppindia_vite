@@ -2,7 +2,7 @@
   RecentTalks — Recent tech talks on homepage
 -->
 <template>
-  <section class="section" style="background: #07091C;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Header -->
@@ -12,7 +12,7 @@
           <h2 class="font-display font-bold" style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
             <span style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Recent Tech Talks</span>
           </h2>
-          <p class="text-sm mt-2" style="color: rgba(148,163,184,0.55);">
+          <p class="text-sm mt-2" style="color: var(--color-text-muted);">
             {{ totalTalks }} sessions recorded &amp; available for free
           </p>
         </div>
@@ -34,7 +34,7 @@
           v-for="talk in recentTalks"
           :key="talk.id"
           class="group flex flex-col rounded-2xl overflow-hidden transition-all duration-200"
-          style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+          style=\"background: var(--card-bg); border: 1px solid var(--card-border);\"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 28px rgba(99,102,241,0.2)'; this.style.transform='translateY(-4px)'"
           onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >
@@ -43,7 +43,7 @@
             v-if="ytId(talk.video)"
             :href="talk.video"
             class="block relative aspect-video overflow-hidden"
-            style="background: #07091C;"
+            style="background: var(--emphasis-bg);"
             target="_blank"
             rel="noopener noreferrer"
             :aria-label="`Watch: ${talk.title}`"
@@ -69,7 +69,7 @@
           <!-- Content -->
           <div class="flex flex-col flex-1 gap-3 p-5">
             <div class="flex items-center justify-between gap-2 flex-wrap">
-              <time class="font-mono text-xs" style="color: rgba(148,163,184,0.55);" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
+              <time class="font-mono text-xs" style="color: var(--color-text-muted);" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
               <div class="flex items-center gap-1 flex-wrap justify-end">
                 <span
                   v-for="tag in talk.tags.slice(0, 2)"
@@ -80,8 +80,8 @@
               </div>
             </div>
 
-            <h3 class="font-display font-bold text-base leading-snug flex-1" style="color: #E2E8F5;">{{ talk.title }}</h3>
-            <p class="text-sm font-medium" style="color: rgba(148,163,184,0.7);">{{ talk.speaker }}</p>
+            <h3 class="font-display font-bold text-base leading-snug flex-1" style="color: var(--color-text);">{{ talk.title }}</h3>
+            <p class="text-sm font-medium" style="color: var(--color-text-secondary);">{{ talk.speaker }}</p>
 
             <!-- Actions -->
             <div class="flex flex-wrap items-center gap-2 mt-auto pt-3">
@@ -102,9 +102,9 @@
                 v-if="talk.slides"
                 :href="talk.slides"
                 class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-semibold transition-all duration-200"
-                style="border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.7);"
+                style="border: 1px solid var(--card-border); color: var(--color-text-secondary);"
                 onmouseover="this.style.borderColor='rgba(139,92,246,0.45)'; this.style.color='#A78BFA'"
-                onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.color='rgba(148,163,184,0.7)'"
+                onmouseout="this.style.borderColor='var(--card-border)'; this.style.color='var(--color-text-secondary)'"
                 target="_blank"
                 rel="noopener noreferrer"
               >

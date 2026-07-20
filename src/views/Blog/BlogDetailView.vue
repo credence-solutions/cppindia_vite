@@ -6,7 +6,7 @@
       :subtitle="`By ${post.author} · ${formatDate(post.date)} · ${post.readingTime} min read`"
     />
 
-    <section class="section" style="background: #07091C;">
+    <section class="section" style="background: var(--emphasis-bg);">
       <div class="container" style="max-width: 760px;">
 
         <!-- Tags -->
@@ -29,8 +29,8 @@
               {{ post.author.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>
-              <p class="text-sm font-semibold" style="color:#E2E8F5;">{{ post.author }}</p>
-              <p class="text-xs" style="color:rgba(148,163,184,0.5);">CppIndia Community</p>
+              <p class="text-sm font-semibold" style="color:var(--color-text);">{{ post.author }}</p>
+              <p class="text-xs" style="color:var(--color-text-muted);">CppIndia Community</p>
             </div>
           </div>
           <RouterLink to="/blog"
@@ -45,9 +45,9 @@
   </div>
 
   <!-- 404 -->
-  <div v-else class="section text-center" style="background:#07091C;">
+  <div v-else class="section text-center" style="background: var(--emphasis-bg);">
     <div class="container">
-      <p class="text-lg font-semibold mb-4" style="color:#E2E8F5;">Post not found.</p>
+      <p class="text-lg font-semibold mb-4" style="color:var(--color-text);">Post not found.</p>
       <RouterLink to="/blog" class="text-sm font-semibold" style="color:#818CF8;">← Back to Blog</RouterLink>
     </div>
   </div>

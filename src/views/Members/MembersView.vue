@@ -6,15 +6,15 @@
     subtitle="The founders, moderators, and speakers who make CppIndia what it is."
   />
 
-  <section class="section" style="background: #07091C;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Search -->
       <div class="mb-8">
-        <SearchBar v-model="query" placeholder="Search by name, role, city…" :dark="true" />
-        <p v-if="query" class="text-xs mt-2" style="color:rgba(148,163,184,0.5);">
+        <SearchBar v-model="query" placeholder="Search by name, role, city…" />
+        <p v-if="query" class="text-xs mt-2" style="color: var(--card-text-muted);">
           <span v-if="displayMembers.length">{{ displayMembers.length }} result{{ displayMembers.length !== 1 ? 's' : '' }}</span>
-          <span v-else>No members match "<span style="color:#E2E8F5;">{{ query }}</span>"</span>
+          <span v-else>No members match "<span style="color: var(--card-text);">{{ query }}</span>"</span>
         </p>
       </div>
 
@@ -24,9 +24,9 @@
           v-for="member in displayMembers"
           :key="member.id"
           class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200"
-          style="background: rgba(15,17,45,0.85); border: 1px solid rgba(99,102,241,0.18);"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.15)'; this.style.transform='translateY(-3px)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+          style="background: var(--card-bg); border: 1px solid var(--card-border);"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.12)'; this.style.transform='translateY(-3px)'"
+          onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >
           <!-- Avatar -->
           <div class="flex items-center gap-4">
@@ -40,8 +40,8 @@
               {{ member.emoji || member.name.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>
-              <h3 class="font-display font-bold text-base" style="color:#E2E8F5;">{{ member.name }}</h3>
-              <p class="text-xs" style="color:rgba(148,163,184,0.6);">{{ member.city }}</p>
+              <h3 class="font-display font-bold text-base" style="color: var(--card-text);">{{ member.name }}</h3>
+              <p class="text-xs" style="color: var(--card-text-muted);">{{ member.city }}</p>
             </div>
           </div>
 
@@ -55,14 +55,14 @@
             >{{ b }}</span>
           </div>
 
-          <p class="text-sm flex-1" style="color:rgba(148,163,184,0.75);">{{ member.bio }}</p>
+          <p class="text-sm flex-1" style="color: var(--card-text-muted);">{{ member.bio }}</p>
 
           <!-- Stats + talks button -->
-          <div class="flex items-center gap-4 text-xs" style="color:rgba(148,163,184,0.55);">
+          <div class="flex items-center gap-4 text-xs" style="color: var(--card-text-muted);">
             <button
               v-if="member.talks > 0"
               class="underline underline-offset-2 cursor-pointer transition-colors duration-150 hover:text-[#22D3EE]"
-              style="color:rgba(148,163,184,0.55);"
+              style="color: var(--card-text-muted);"
               @click="openPopup(member)"
             >{{ member.talks }} talk{{ member.talks !== 1 ? 's' : '' }}</button>
             <span>Since {{ member.joinedYear }}</span>
@@ -76,9 +76,9 @@
               target="_blank" rel="noopener noreferrer"
               aria-label="Website"
               class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-              style="background:rgba(99,102,241,0.1); color:rgba(148,163,184,0.7);"
+              style="background: rgba(99,102,241,0.08); color: var(--color-text-muted);"
               onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-              onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='rgba(148,163,184,0.7)'"
+              onmouseout="this.style.background='rgba(99,102,241,0.08)'; this.style.color='var(--color-text-muted)'"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
             </a>
@@ -88,9 +88,9 @@
               target="_blank" rel="noopener noreferrer"
               aria-label="GitHub"
               class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-              style="background:rgba(99,102,241,0.1); color:rgba(148,163,184,0.7);"
+              style="background: rgba(99,102,241,0.08); color: var(--color-text-muted);"
               onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-              onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='rgba(148,163,184,0.7)'"
+              onmouseout="this.style.background='rgba(99,102,241,0.08)'; this.style.color='var(--color-text-muted)'"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
@@ -100,9 +100,9 @@
               target="_blank" rel="noopener noreferrer"
               aria-label="LinkedIn"
               class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-              style="background:rgba(99,102,241,0.1); color:rgba(148,163,184,0.7);"
+              style="background: rgba(99,102,241,0.08); color: var(--color-text-muted);"
               onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-              onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='rgba(148,163,184,0.7)'"
+              onmouseout="this.style.background='rgba(99,102,241,0.08)'; this.style.color='var(--color-text-muted)'"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
@@ -111,9 +111,9 @@
       </div>
 
       <!-- Join CTA -->
-      <div class="mt-14 text-center rounded-2xl p-8" style="background: rgba(15,17,45,0.6); border: 1px solid rgba(99,102,241,0.2);">
-        <p class="font-semibold mb-1" style="color:#E2E8F5;">Want to be featured here?</p>
-        <p class="text-sm mb-5" style="color:rgba(148,163,184,0.6);">Give a talk at CppIndia — tech talk or CppIndiaCon — and join the hall of fame.</p>
+      <div class="mt-14 text-center rounded-2xl p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+        <p class="font-semibold mb-1" style="color: var(--card-text);">Want to be featured here?</p>
+        <p class="text-sm mb-5" style="color: var(--card-text-muted);">Give a talk at CppIndia — tech talk or CppIndiaCon — and join the hall of fame.</p>
         <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
           style="background: linear-gradient(135deg,#6366F1,#818CF8);">Join the Community</a>
       </div>
@@ -132,19 +132,19 @@
       >
         <div
           class="w-full max-w-lg rounded-2xl overflow-hidden flex flex-col"
-          style="background: #0F1135; border: 1px solid rgba(99,102,241,0.3); box-shadow: 0 24px 80px rgba(0,0,0,0.6); max-height: 80vh;"
+          style="background: var(--color-surface); border: 1px solid var(--card-border); box-shadow: 0 24px 80px rgba(0,0,0,0.3); max-height: 80vh;"
         >
           <!-- Header -->
-          <div class="flex items-center justify-between px-6 py-4 border-b" style="border-color: rgba(99,102,241,0.2);">
+          <div class="flex items-center justify-between px-6 py-4 border-b" style="border-color: var(--color-border);">
             <div>
-              <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color:#A78BFA;">Talks</p>
-              <h3 class="font-display font-bold text-lg" style="color:#E2E8F5;">{{ popup.member.name }}</h3>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color: var(--color-secondary);">Talks</p>
+              <h3 class="font-display font-bold text-lg" style="color: var(--color-text);">{{ popup.member.name }}</h3>
             </div>
             <button
               class="w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-150 cursor-pointer"
-              style="color:rgba(148,163,184,0.6);"
-              onmouseover="this.style.background='rgba(99,102,241,0.15)'; this.style.color='#E2E8F5'"
-              onmouseout="this.style.background='transparent'; this.style.color='rgba(148,163,184,0.6)'"
+              style="color: var(--color-text-muted);"
+              onmouseover="this.style.background='rgba(99,102,241,0.10)'; this.style.color='var(--color-text)'"
+              onmouseout="this.style.background='transparent'; this.style.color='var(--color-text-muted)'"
               @click="closePopup"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -177,8 +177,8 @@
                   <svg v-else width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(148,163,184,0.4)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </div>
                 <div class="flex-1 min-w-0">
-                  <p class="text-sm font-medium leading-snug" style="color:#E2E8F5;">{{ talk.title }}</p>
-                  <p class="text-[11px] mt-1" style="color:rgba(148,163,184,0.5);">
+                  <p class="text-sm font-medium leading-snug" style="color: var(--color-text);">{{ talk.title }}</p>
+                  <p class="text-[11px] mt-1" style="color: var(--color-text-muted);">
                     {{ talk.source }} · {{ talk.year }}
                     <span v-if="!talk.video" class="ml-2 italic">No recording available</span>
                   </p>
@@ -189,7 +189,7 @@
                 ><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </template>
-            <p v-else class="text-sm text-center py-6" style="color:rgba(148,163,184,0.4);">No talks found.</p>
+            <p v-else class="text-sm text-center py-6" style="color: var(--color-text-muted);">No talks found.</p>
           </div>
         </div>
       </div>

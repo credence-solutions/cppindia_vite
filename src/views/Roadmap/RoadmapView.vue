@@ -6,7 +6,7 @@
     subtitle="A curated path from absolute beginner to modern C++ expert. Free resources, clear milestones, community support."
   />
 
-  <section class="section" style="background: #07091C;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container" style="max-width: 900px;">
 
       <!-- Level selector -->
@@ -16,7 +16,7 @@
           class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
           :style="activeLevel === level.id
             ? `background:${level.bg}; color:${level.color}; border:1px solid ${level.border};`
-            : 'background:transparent; color:rgba(148,163,184,0.6); border:1px solid rgba(99,102,241,0.18);'"
+            : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ level.label }}</button>
       </div>
 
@@ -39,18 +39,18 @@
 
             <!-- Card -->
             <div class="flex-1 rounded-2xl p-5 transition-all duration-200 mb-2"
-              style="background: rgba(15,17,45,0.85); border: 1px solid rgba(99,102,241,0.18);"
+              style="background: var(--card-bg); border: 1px solid var(--card-border);"
               onmouseover="this.style.borderColor='rgba(99,102,241,0.38)'; this.style.transform='translateX(4px)'"
               onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.transform='translateX(0)'"
             >
               <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                <h3 class="font-display font-bold text-base" style="color:#E2E8F5;">{{ step.title }}</h3>
+                <h3 class="font-display font-bold text-base" style="color:var(--color-text);">{{ step.title }}</h3>
                 <span class="text-xs font-semibold px-2 py-0.5 rounded-full flex-shrink-0"
                   :style="`background:${activeColor.bg}; color:${activeColor.color}; border:1px solid ${activeColor.border};`">
                   {{ step.timeframe }}
                 </span>
               </div>
-              <p class="text-sm mb-3" style="color:rgba(148,163,184,0.7);">{{ step.description }}</p>
+              <p class="text-sm mb-3" style="color:var(--color-text-secondary);">{{ step.description }}</p>
               <div class="flex flex-wrap gap-2">
                 <a v-for="res in step.resources" :key="res.name"
                   :href="res.url" target="_blank" rel="noopener noreferrer"
@@ -69,9 +69,9 @@
       </div>
 
       <!-- Community CTA -->
-      <div class="mt-14 text-center rounded-2xl p-8" style="background: rgba(15,17,45,0.6); border: 1px solid rgba(99,102,241,0.2);">
-        <p class="font-semibold mb-1" style="color:#E2E8F5;">Stuck anywhere on the roadmap?</p>
-        <p class="text-sm mb-5" style="color:rgba(148,163,184,0.6);">Ask in our Discord — the community is here to help, from absolute beginners to experts.</p>
+      <div class="mt-14 text-center rounded-2xl p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+        <p class="font-semibold mb-1" style="color:var(--color-text);">Stuck anywhere on the roadmap?</p>
+        <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Ask in our Discord — the community is here to help, from absolute beginners to experts.</p>
         <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
           style="background:#5865F2;">Get Help on Discord</a>

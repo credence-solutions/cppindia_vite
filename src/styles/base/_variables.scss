@@ -1,49 +1,49 @@
 // =============================================================================
-// DESIGN TOKENS — CppIndia "Nebula Dark" Design System (2026)
-// Dark-first developer community palette
+// DESIGN TOKENS — CppIndia "Butter Light" Design System (2026)
+// Light-first warm developer community palette
 // =============================================================================
 
 // -----------------------------------------------------------------------------
-// COLOR PALETTE — Nebula Dark
+// COLOR PALETTE — Butter Light (default)
 // -----------------------------------------------------------------------------
 
-// Brand primaries — vibrant on dark backgrounds
+// Brand primaries — vibrant on light backgrounds
 $color-primary:        #4F8EF7;   // Electric blue — trust, innovation
 $color-primary-dark:   #2563EB;   // Darker for hover
 $color-primary-light:  #93C5FD;   // Light tint
 
-$color-secondary:      #9B74F5;   // Soft violet — creativity
-$color-secondary-dark: #7C3AED;
+$color-secondary:      #7C5CDB;   // Deeper violet for light bg
+$color-secondary-dark: #5E3FC0;
 $color-secondary-light:#C4B5FD;
 
-$color-accent:         #2DD4BF;   // Teal/cyan — code, precision
-$color-accent-dark:    #0D9488;
+$color-accent:         #0D9488;   // Deeper teal for light bg
+$color-accent-dark:    #0F766E;
 $color-accent-light:   #99F6E4;
 
 // Functional
-$color-success:        #4ADE80;   // Bright green (code-like)
-$color-warning:        #FBBF24;   // Amber
-$color-error:          #F87171;   // Soft red
-$color-info:           #38BDF8;   // Sky blue
+$color-success:        #16A34A;   // Vivid green on light bg
+$color-warning:        #D97706;   // Amber
+$color-error:          #DC2626;   // Red
+$color-info:           #0284C7;   // Sky blue
 
-// Dark backgrounds
-$color-bg:             #06090F;   // Near black, deep space
-$color-surface:        #0C1220;   // Card surface
-$color-surface-alt:    #111927;   // Section alt
-$color-surface-raised: #162236;   // Elevated panels
+// Light / warm backgrounds
+$color-bg:             #FAF8F4;   // Warm cream
+$color-surface:        #FFFFFF;   // Clean white cards
+$color-surface-alt:    #F3EFE8;   // Warm off-white section
+$color-surface-raised: #EDE8DE;   // Warm elevated panels
 
 // Text
-$color-text:           #E2E8F5;   // Off-white blue tint
-$color-text-secondary: #8899BB;   // Muted blue-grey
-$color-text-muted:     #536080;   // Very muted
+$color-text:           #1C1815;   // Warm near-black
+$color-text-secondary: #5A4C3C;   // Warm brown-grey
+$color-text-muted:     #897868;   // Warm muted
 
 // Borders
-$color-border:         rgba(139, 153, 187, 0.12);
-$color-border-light:   rgba(139, 153, 187, 0.06);
+$color-border:         rgba(120, 100, 75, 0.14);
+$color-border-light:   rgba(120, 100, 75, 0.07);
 
-// Dark section backgrounds (footer etc)
-$color-dark:           #030610;
-$color-dark-surface:   #0A1020;
+// Dark section backgrounds (footer always stays dark)
+$color-dark:           #1A1714;
+$color-dark-surface:   #252019;
 
 // Glow variables — also exposed as CSS vars for theme overriding
 $glow-primary:         var(--glow-primary);
@@ -172,15 +172,33 @@ $bp-2xl: 1440px;
   --radius-3xl:  32px;
   --radius-full: 9999px;
 
-  // --- Shadows (adapted for dark backgrounds) ---
-  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-lg:  0 10px 30px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
-  --shadow-xl:  0 20px 40px rgba(0, 0, 0, 0.6), 0 8px 16px rgba(0, 0, 0, 0.4);
-  --shadow-2xl: 0 32px 64px rgba(0, 0, 0, 0.7);
-  --shadow-primary: 0 8px 32px rgba(79, 142, 247, 0.3);
-  --shadow-glow:    0 0 0 1px rgba(79, 142, 247, 0.15), 0 8px 32px rgba(79, 142, 247, 0.2);
+  // --- Component-specific theme vars ---
+  // Navigation
+  --nav-bg:              rgba(250, 248, 244, 0.88);
+  --nav-bg-scrolled:     rgba(250, 248, 244, 0.97);
+  --nav-shadow:          0 1px 0 rgba(120, 100, 75, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  // Hero section
+  --hero-bg:             linear-gradient(135deg, #F5F2FF 0%, #EEF5FF 60%, #EDFAF8 100%);
+  --hero-fade:           rgba(250, 248, 244, 0.6);
+  --hero-subtitle:       rgba(90, 76, 60, 0.85);
+
+  // Emphasis / "dark section" backgrounds — ResourcesView, MembersView, ConferenceView
+  --emphasis-bg:         #F3EFE8;
+  --card-bg:             #FFFFFF;
+  --card-border:         rgba(99, 102, 241, 0.15);
+  --card-text:           #1C1815;
+  --card-text-muted:     rgba(90, 76, 60, 0.75);
+
+  // --- Shadows (adapted for light backgrounds) ---
+  --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md:  0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-lg:  0 10px 30px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-xl:  0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-2xl: 0 32px 64px rgba(0, 0, 0, 0.16);
+  --shadow-primary: 0 8px 32px rgba(79, 142, 247, 0.25);
+  --shadow-glow:    0 0 0 1px rgba(79, 142, 247, 0.12), 0 8px 32px rgba(79, 142, 247, 0.18);
 
   // --- Transitions ---
   --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);

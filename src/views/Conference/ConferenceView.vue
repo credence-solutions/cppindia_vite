@@ -266,10 +266,10 @@
           <div
             v-if="conf.sponsors.gold.length || conf.sponsors.community.length"
             class="mb-12 rounded-2xl py-10 px-6"
-            style="background: #0F1135; border: 1px solid rgba(99,102,241,0.15);"
+            style="background: var(--card-bg); border: 1px solid var(--card-border);"
           >
             <!-- Label -->
-            <p class="text-center text-xs font-semibold uppercase tracking-[0.12em] mb-8" style="color: rgba(148,163,184,0.5);">
+            <p class="text-center text-xs font-semibold uppercase tracking-[0.12em] mb-8" style="color: var(--card-text-muted);">
               Supported by leading companies &amp; communities
             </p>
 
@@ -293,8 +293,8 @@
                     onmouseover="this.style.borderColor='rgba(234,179,8,0.55)'; this.style.background='rgba(234,179,8,0.1)'"
                     onmouseout="this.style.borderColor='rgba(234,179,8,0.25)'; this.style.background='rgba(234,179,8,0.05)'"
                   >
-                    <span class="font-display font-bold text-base" style="color: #E2E8F5;">{{ s.name }}</span>
-                    <span v-if="s.description" class="text-[10px] text-center leading-snug" style="color: rgba(148,163,184,0.55);">{{ s.description }}</span>
+                    <span class="font-display font-bold text-base" style="color: var(--card-text);">{{ s.name }}</span>
+                    <span v-if="s.description" class="text-[10px] text-center leading-snug" style="color: var(--card-text-muted);">{{ s.description }}</span>
                   </a>
                 </div>
               </div>
@@ -305,7 +305,7 @@
               <div class="mt-7">
                 <div class="flex items-center justify-center gap-2 mb-5">
                   <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
-                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: rgba(148,163,184,0.5);">Community Sponsors</span>
+                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: var(--card-text-muted);">Community Sponsors</span>
                   <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
                 </div>
                 <div class="flex flex-wrap justify-center items-center gap-3">
@@ -316,16 +316,16 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
-                    style="border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.7);"
+                    style="border: 1px solid var(--card-border); color: var(--card-text-muted);"
                     onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='#818CF8'; this.style.background='rgba(99,102,241,0.07)'"
-                    onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.color='rgba(148,163,184,0.7)'; this.style.background='transparent'"
+                    onmouseout="this.style.borderColor='var(--card-border)'; this.style.color='var(--card-text-muted)'; this.style.background='transparent'"
                   >{{ s.name }}</a>
                 </div>
               </div>
             </template>
 
             <!-- Become a sponsor CTA -->
-            <p class="text-center text-sm mt-8" style="color: rgba(148,163,184,0.55);">
+            <p class="text-center text-sm mt-8" style="color: var(--card-text-muted);">
               Want to support India's C++ community?
               <RouterLink
                 to="/contact"

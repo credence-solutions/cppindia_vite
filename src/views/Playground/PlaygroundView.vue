@@ -5,7 +5,7 @@
     subtitle="Curated C++17/20/23 code snippets with live Compiler Explorer integration. Click, explore, experiment."
   />
 
-  <section class="section" style="background: #07091C; min-height: 70vh;">
+  <section class="section" style="background: var(--emphasis-bg); min-height: 70vh;">
     <div class="container">
       <div class="flex flex-col lg:flex-row gap-6" style="min-height: 600px;">
 
@@ -19,7 +19,7 @@
                 class="px-2.5 py-1 rounded-md text-xs font-bold transition-all duration-150"
                 :style="activeStd === std
                   ? 'background:rgba(99,102,241,0.25); color:#818CF8;'
-                  : 'background:transparent; color:rgba(148,163,184,0.5);'"
+                  : 'background:transparent; color:var(--color-text-muted);'"
               >{{ std }}</button>
             </div>
 
@@ -68,7 +68,7 @@
                 <span class="w-3 h-3 rounded-full" style="background:#FF5F56;"></span>
                 <span class="w-3 h-3 rounded-full" style="background:#FFBD2E;"></span>
                 <span class="w-3 h-3 rounded-full" style="background:#27C93F;"></span>
-                <span class="ml-3 text-xs font-mono" style="color:rgba(148,163,184,0.4);">{{ active.id }}.cpp</span>
+                <span class="ml-3 text-xs font-mono" style="color:var(--color-text-muted);">{{ active.id }}.cpp</span>
                 <span class="ml-auto text-[10px] font-bold px-2 py-[1px] rounded" :style="stdColor(active.standard)">{{ active.standard }}</span>
               </div>
               <pre class="p-5 overflow-x-auto text-sm font-mono leading-relaxed" style="color:#E2E8F5; margin:0;">{{ active.code }}</pre>
@@ -90,20 +90,20 @@
                 </div>
                 <div>
                   <p class="text-sm font-semibold" style="color:#E2E8F5;">Run in Compiler Explorer</p>
-                  <p class="text-xs mt-0.5" style="color:rgba(148,163,184,0.6);">Opens godbolt.org — compile and run live with GCC, Clang, or MSVC</p>
+                  <p class="text-xs mt-0.5" style="color:var(--color-text-secondary);">Opens godbolt.org — compile and run live with GCC, Clang, or MSVC</p>
                 </div>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2" style="flex-shrink:0;opacity:0.7;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             </a>
 
-            <p class="text-xs" style="color:rgba(148,163,184,0.4);">by {{ active.author }}</p>
+            <p class="text-xs" style="color:var(--color-text-muted);">by {{ active.author }}</p>
           </div>
 
           <!-- Empty state -->
           <div v-else class="flex-1 flex items-center justify-center rounded-2xl" style="border: 1px dashed rgba(99,102,241,0.25);">
             <div class="text-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto mb-3" style="color:rgba(99,102,241,0.3);"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              <p class="font-semibold" style="color:rgba(148,163,184,0.5);">Select a snippet to explore</p>
+              <p class="font-semibold" style="color:var(--color-text-muted);">Select a snippet to explore</p>
             </div>
           </div>
         </div>

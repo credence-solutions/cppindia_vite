@@ -6,7 +6,7 @@
     subtitle="Everything you need to know about CppIndia — from joining to speaking to sponsoring."
   />
 
-  <section class="section" style="background: #07091C;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container" style="max-width: 860px;">
 
       <!-- Category filter -->
@@ -18,7 +18,7 @@
           class="px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
           :style="activeCategory === cat
             ? 'background: rgba(99,102,241,0.25); color: #818CF8; border: 1px solid rgba(99,102,241,0.5);'
-            : 'background: transparent; color: rgba(148,163,184,0.6); border: 1px solid rgba(99,102,241,0.15);'"
+            : 'background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border);'"
         >{{ cat }}</button>
       </div>
 
@@ -28,13 +28,13 @@
           v-for="item in filtered"
           :key="item.id"
           class="rounded-xl overflow-hidden transition-all duration-200"
-          style="border: 1px solid rgba(99,102,241,0.18); background: rgba(15,17,45,0.8);"
+          style="border: 1px solid var(--card-border); background: var(--card-bg);"
         >
           <button
             class="w-full flex items-center justify-between gap-4 px-6 py-4 text-left"
             @click="toggle(item.id)"
           >
-            <span class="font-semibold text-base" style="color: #E2E8F5;">{{ item.question }}</span>
+            <span class="font-semibold text-base" style="color: var(--color-text);">{{ item.question }}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2.5"
@@ -45,15 +45,15 @@
             </svg>
           </button>
           <div v-if="open === item.id" class="px-6 pb-5">
-            <p class="text-sm leading-relaxed" style="color: rgba(148,163,184,0.8);">{{ item.answer }}</p>
+            <p class="text-sm leading-relaxed" style="color: var(--color-text-secondary);">{{ item.answer }}</p>
           </div>
         </div>
       </div>
 
       <!-- Bottom CTA -->
-      <div class="mt-14 text-center rounded-2xl p-8" style="background: rgba(15,17,45,0.6); border: 1px solid rgba(99,102,241,0.2);">
-        <p class="font-semibold mb-1" style="color: #E2E8F5;">Still have questions?</p>
-        <p class="text-sm mb-5" style="color: rgba(148,163,184,0.6);">Ask the community on Discord or reach out to us directly.</p>
+      <div class="mt-14 text-center rounded-2xl p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+        <p class="font-semibold mb-1" style="color: var(--color-text);">Still have questions?</p>
+        <p class="text-sm mb-5" style="color: var(--color-text-secondary);">Ask the community on Discord or reach out to us directly.</p>
         <div class="flex flex-wrap gap-3 justify-center">
           <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white transition-all duration-200"

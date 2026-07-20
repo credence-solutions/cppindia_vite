@@ -7,7 +7,7 @@
       :breadcrumb="[{ label: 'About', path: '/about' }, { label: 'Team', path: '/team' }]"
     />
 
-    <section class="section" style="background: #07091C;">
+    <section class="section" style="background: var(--emphasis-bg);">
       <div class="container">
         <!-- Team grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -36,7 +36,7 @@
 
             <div class="p-6">
               <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: #A78BFA;">{{ member.role }}</p>
-              <h2 class="font-display text-xl font-bold mb-3" style="color: #E2E8F5;">{{ member.name }}</h2>
+              <h2 class="font-display text-xl font-bold mb-3" style=\"color: var(--color-text);\">{{ member.name }}</h2>
               <p class="text-sm leading-relaxed mb-4" style="color: rgba(148,163,184,0.75);">{{ member.bio }}</p>
 
               <div class="flex items-center gap-3">

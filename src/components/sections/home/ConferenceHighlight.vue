@@ -2,7 +2,7 @@
   ConferenceHighlight — CppIndiaCon promo section
 -->
 <template>
-  <section class="section" style="background: #0B0D2E;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
       <div class="grid grid-cols-1 gap-10 items-center lg:grid-cols-2 lg:gap-16">
 
@@ -12,11 +12,11 @@
           <h2 class="font-display font-extrabold leading-none mb-1"
             style="font-size: clamp(1.875rem, 4vw, 3.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CppIndiaCon</h2>
           <p class="font-display text-lg font-medium mb-5" style="color: #A78BFA;">The C++ Festival of India</p>
-          <p class="text-base leading-relaxed mb-7" style="color: rgba(148,163,184,0.8);">
+          <p class="text-base leading-relaxed mb-7" style=\"color: var(--color-text-secondary);\">
             Every year, CppIndia brings together C++ experts from India and around the world
             for two days of inspiring talks, hands-on sessions, and community networking.
-            Past speakers include <strong style="color: #E2E8F5;">Bjarne Stroustrup</strong> (creator of C++),
-            <strong style="color: #E2E8F5;">Jon Kalb</strong>, <strong style="color: #E2E8F5;">Andreas Fertig</strong>, and many more.
+            Past speakers include <strong style="color: var(--color-text);">Bjarne Stroustrup</strong> (creator of C++),
+            <strong style="color: var(--color-text);">Jon Kalb</strong>, <strong style="color: var(--color-text);">Andreas Fertig</strong>, and many more.
           </p>
 
           <!-- Edition pills -->
@@ -28,7 +28,7 @@
               class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
               :style="year === 2024
                 ? 'background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.4); color: #A78BFA;'
-                : 'border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.7);'"
+                : 'border: 1px solid var(--color-border); color: var(--color-text-secondary);'"
             >
               <span class="font-bold">{{ year }}</span>
               <span v-if="year === 2024"
@@ -50,7 +50,7 @@
 
         <!-- Right: conference highlight card -->
         <div class="gsap-reveal-right p-8 rounded-2xl flex flex-col gap-6"
-          style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.25);">
+          style="background: var(--card-bg); border: 1px solid var(--card-border);">
 
           <!-- Edition + dates -->
           <div>
@@ -59,12 +59,12 @@
               <span class="w-2 h-2 rounded-full animate-pulse" style="background: #A78BFA;" />
               <span class="text-xs font-bold uppercase tracking-widest" style="color: #A78BFA;">4th Edition</span>
             </div>
-            <h3 class="font-display font-extrabold text-xl mb-1" style="color: #E2E8F5;">CppIndiaCon 2024</h3>
-            <p class="text-sm mb-1" style="color: rgba(148,163,184,0.7);">
+            <h3 class="font-display font-extrabold text-xl mb-1" style="color: var(--color-text);">CppIndiaCon 2024</h3>
+            <p class="text-sm mb-1" style="color: var(--color-text-secondary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1 -mt-px"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               August 23–24, 2024
             </p>
-            <p class="text-sm" style="color: rgba(148,163,184,0.55);">
+            <p class="text-sm" style="color: var(--color-text-muted);">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1 -mt-px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               Online · Free to Attend
             </p>
@@ -72,7 +72,7 @@
 
           <!-- Featured speakers -->
           <div>
-            <p class="text-[10px] font-bold uppercase tracking-[0.12em] mb-3" style="color: rgba(148,163,184,0.5);">Featured Speakers</p>
+            <p class="text-[10px] font-bold uppercase tracking-[0.12em] mb-3" style="color: var(--color-text-muted);">Featured Speakers</p>
             <div class="flex flex-col gap-3">
               <div
                 v-for="speaker in featuredSpeakers"
@@ -86,8 +86,8 @@
                   {{ speaker.name.charAt(0) }}
                 </div>
                 <div class="min-w-0">
-                  <p class="text-sm font-semibold leading-none truncate" style="color: #E2E8F5;">{{ speaker.name }}</p>
-                  <p class="text-[11px] mt-0.5 truncate" style="color: rgba(148,163,184,0.6);">{{ speaker.topic }}</p>
+                  <p class="text-sm font-semibold leading-none truncate" style="color: var(--color-text);">{{ speaker.name }}</p>
+                  <p class="text-[11px] mt-0.5 truncate" style="color: var(--color-text-secondary);">{{ speaker.topic }}</p>
                 </div>
               </div>
             </div>
@@ -95,13 +95,13 @@
 
           <!-- Sponsors row -->
           <div>
-            <p class="text-[10px] font-bold uppercase tracking-[0.12em] mb-2" style="color: rgba(148,163,184,0.5);">Gold Sponsors</p>
+            <p class="text-[10px] font-bold uppercase tracking-[0.12em] mb-2" style="color: var(--color-text-muted);">Gold Sponsors</p>
             <div class="flex flex-wrap gap-2">
               <span
                 v-for="sp in conferenceSponsors"
                 :key="sp"
                 class="px-2.5 py-1 rounded-md text-xs font-semibold"
-                style="border: 1px solid rgba(234,179,8,0.25); background: rgba(234,179,8,0.06); color: #E2E8F5;"
+                style="border: 1px solid rgba(234,179,8,0.25); background: rgba(234,179,8,0.06); color: var(--color-text);"
               >{{ sp }}</span>
             </div>
           </div>

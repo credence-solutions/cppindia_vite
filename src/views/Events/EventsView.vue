@@ -6,18 +6,18 @@
     subtitle="Upcoming meetups, webinars, and conferences from the CppIndia community."
   />
 
-  <section class="section" style="background: #07091C;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Tabs -->
-      <div class="flex gap-1 p-1 rounded-xl mb-10 w-fit" style="background: rgba(15,17,45,0.8); border: 1px solid rgba(99,102,241,0.18);">
+      <div class="flex gap-1 p-1 rounded-xl mb-10 w-fit" style="background: var(--card-bg); border: 1px solid var(--card-border);">
         <button
           v-for="tab in ['Upcoming', 'Past']" :key="tab"
           @click="activeTab = tab"
           class="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
           :style="activeTab === tab
             ? 'background: rgba(99,102,241,0.25); color: #818CF8;'
-            : 'background: transparent; color: rgba(148,163,184,0.55);'"
+            : 'background: transparent; color: var(--color-text-muted);'"
         >{{ tab }}</button>
       </div>
 
@@ -27,16 +27,16 @@
           v-for="event in filtered"
           :key="event.id"
           class="rounded-2xl p-6 flex flex-wrap md:flex-nowrap gap-5 transition-all duration-200"
-          style="background: rgba(15,17,45,0.85); border: 1px solid rgba(99,102,241,0.18);"
+          style="background: var(--card-bg); border: 1px solid var(--card-border);"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.transform='translateY(-2px)'"
           onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.transform='translateY(0)'"
         >
           <!-- Date block -->
           <div class="flex-shrink-0 flex flex-col items-center justify-center rounded-xl p-4 w-20 text-center"
             style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25);">
-            <span class="text-xs font-mono uppercase" style="color:rgba(148,163,184,0.55);">{{ monthStr(event.date) }}</span>
+            <span class="text-xs font-mono uppercase" style="color:var(--color-text-muted);">{{ monthStr(event.date) }}</span>
             <span class="text-3xl font-display font-bold" style="color:#818CF8;">{{ dayStr(event.date) }}</span>
-            <span class="text-xs font-mono" style="color:rgba(148,163,184,0.55);">{{ yearStr(event.date) }}</span>
+            <span class="text-xs font-mono" style="color:var(--color-text-muted);">{{ yearStr(event.date) }}</span>
           </div>
 
           <!-- Content -->
@@ -48,12 +48,12 @@
                   : 'background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.25);'">
                 {{ event.type }}
               </span>
-              <span v-if="event.time" class="text-xs font-mono" style="color:rgba(148,163,184,0.5);">{{ event.time }}</span>
+              <span v-if="event.time" class="text-xs font-mono" style="color:var(--color-text-muted);">{{ event.time }}</span>
             </div>
-            <h3 class="font-display font-bold text-base" style="color:#E2E8F5;">{{ event.title }}</h3>
+            <h3 class="font-display font-bold text-base" style="color:var(--color-text);">{{ event.title }}</h3>
             <p v-if="event.speaker" class="text-sm font-medium" style="color:#818CF8;">{{ event.speaker }} — {{ event.topic }}</p>
-            <p class="text-sm" style="color:rgba(148,163,184,0.7);">{{ event.description }}</p>
-            <div class="flex items-center gap-1.5 text-xs mt-1" style="color:rgba(148,163,184,0.5);">
+            <p class="text-sm" style="color:var(--color-text-secondary);">{{ event.description }}</p>
+            <div class="flex items-center gap-1.5 text-xs mt-1" style="color:var(--color-text-muted);">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               {{ event.location }}
             </div>
@@ -69,11 +69,11 @@
               style="background:#FF0000; color:white;">Watch Recording</a>
             <a v-if="event.registrationUrl" :href="calendarUrl(event)" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 whitespace-nowrap"
-              style="border:1px solid rgba(99,102,241,0.25); color:rgba(148,163,184,0.65);">+ Add to Calendar</a>
+              style="border:1px solid rgba(99,102,241,0.25); color:var(--color-text-secondary);">+ Add to Calendar</a>
           </div>
         </article>
 
-        <div v-if="filtered.length === 0" class="text-center py-16" style="color:rgba(148,163,184,0.4);">
+        <div v-if="filtered.length === 0" class="text-center py-16" style="color:var(--color-text-muted);">
           <p class="text-lg font-semibold">No {{ activeTab.toLowerCase() }} events</p>
           <p class="text-sm mt-1">Check back soon or join Discord for announcements.</p>
         </div>

@@ -6,7 +6,7 @@
     subtitle="Open Calls for Proposals at C++ conferences worldwide — deadlines, links, and everything you need to submit."
   />
 
-  <section class="section" style="background: #07091C;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Status filter -->
@@ -16,7 +16,7 @@
           class="px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
           :style="activeStatus === s.value
             ? `background:${s.bg}; color:${s.color}; border:1px solid ${s.border};`
-            : 'background:transparent; color:rgba(148,163,184,0.6); border:1px solid rgba(99,102,241,0.15);'"
+            : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ s.label }}</button>
       </div>
 
@@ -25,12 +25,12 @@
         <div class="overflow-x-auto">
           <table class="w-full text-sm">
             <thead>
-              <tr style="background: rgba(15,17,45,0.95); border-bottom: 1px solid rgba(99,102,241,0.18);">
-                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:rgba(148,163,184,0.55);">Conference</th>
-                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:rgba(148,163,184,0.55);">CFP Deadline</th>
-                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider hidden md:table-cell" style="color:rgba(148,163,184,0.55);">Event Date</th>
-                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider hidden sm:table-cell" style="color:rgba(148,163,184,0.55);">Location</th>
-                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:rgba(148,163,184,0.55);">Status</th>
+              <tr style="background: var(--color-surface-alt); border-bottom: 1px solid var(--color-border);">
+                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:var(--color-text-muted);">Conference</th>
+                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:var(--color-text-muted);">CFP Deadline</th>
+                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider hidden md:table-cell" style="color:var(--color-text-muted);">Event Date</th>
+                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider hidden sm:table-cell" style="color:var(--color-text-muted);">Location</th>
+                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:var(--color-text-muted);">Status</th>
                 <th class="px-5 py-3"></th>
               </tr>
             </thead>
@@ -43,7 +43,7 @@
                 onmouseout="this.style.background='transparent'"
               >
                 <td class="px-5 py-4">
-                  <div class="font-semibold" style="color:#E2E8F5;">{{ cfp.conference }}</div>
+                  <div class="font-semibold" style="color:var(--color-text);">{{ cfp.conference }}</div>
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span v-for="tag in cfp.tags" :key="tag"
                       class="text-[10px] font-semibold px-1.5 py-[1px] rounded"
@@ -54,8 +54,8 @@
                   {{ formatDate(cfp.cfpDeadline) }}
                   <span v-if="isUrgent(cfp.cfpDeadline) && cfp.status === 'open'" class="ml-1 text-[10px] font-bold" style="color:#F87171;">Soon!</span>
                 </td>
-                <td class="px-5 py-4 font-mono text-xs hidden md:table-cell" style="color:rgba(148,163,184,0.7);">{{ formatDate(cfp.eventDates) }}</td>
-                <td class="px-5 py-4 text-xs hidden sm:table-cell" style="color:rgba(148,163,184,0.7);">
+                <td class="px-5 py-4 font-mono text-xs hidden md:table-cell" style="color:var(--color-text-secondary);">{{ formatDate(cfp.eventDates) }}</td>
+                <td class="px-5 py-4 text-xs hidden sm:table-cell" style="color:var(--color-text-secondary);">
                   <span v-if="cfp.remote" class="flex items-center gap-1">
                     <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:#34D399;"></span>
                     {{ cfp.location }}
@@ -84,8 +84,8 @@
       <div class="mt-12 rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4"
         style="background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(52,211,153,0.06)); border: 1px solid rgba(99,102,241,0.25);">
         <div>
-          <p class="font-semibold" style="color:#E2E8F5;">Start with CppIndia</p>
-          <p class="text-sm mt-0.5" style="color:rgba(148,163,184,0.65);">First-time speaker? Give your talk at CppIndia before submitting to larger conferences.</p>
+          <p class="font-semibold" style="color:var(--color-text);">Start with CppIndia</p>
+          <p class="text-sm mt-0.5" style="color:var(--color-text-secondary);">First-time speaker? Give your talk at CppIndia before submitting to larger conferences.</p>
         </div>
         <RouterLink to="/call-for-speakers"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex-shrink-0"

@@ -7,7 +7,7 @@
       :breadcrumb="[{ label: 'About', path: '/about' }]"
     />
 
-    <section class="section" style="background: #0B0D2E;">
+    <section class="section" style="background: var(--emphasis-bg);">
       <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 items-start">
 
@@ -17,12 +17,12 @@
               style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
               Our Story
             </h2>
-            <p class="text-base leading-relaxed mb-5" style="color: rgba(148,163,184,0.8);">
+            <p class="text-base leading-relaxed mb-5" style="color: var(--color-text-secondary);">
               CppIndia started with a simple idea: India has a huge developer community, but C++ developers
               lacked a dedicated platform to connect, learn from each other, and grow together.
               We wanted to fix that.
             </p>
-            <p class="text-base leading-relaxed mb-5" style="color: rgba(148,163,184,0.8);">
+            <p class="text-base leading-relaxed mb-5" style="color: var(--color-text-secondary);">
               What began as a small group of enthusiasts has grown into a thriving community of over
               a thousand C++ developers — students, fresh graduates, and seasoned engineers —
               united by their love for C++.
@@ -33,25 +33,25 @@
               What We Do
             </h2>
             <ul class="flex flex-col gap-4 pl-6 list-disc">
-              <li class="text-base leading-relaxed" style="color: rgba(148,163,184,0.8);">
-                <strong style="color: #E2E8F5;">Tech Talks</strong> — Regular sessions on alternate Saturdays.
+              <li class="text-base leading-relaxed" style="color: var(--color-text-secondary);">
+                <strong style="color: var(--color-text);">Tech Talks</strong> — Regular sessions on alternate Saturdays.
                 60-minute talks followed by Q&amp;A, covering everything from Modern C++ features
                 to real-world engineering challenges.
               </li>
-              <li class="text-base leading-relaxed" style="color: rgba(148,163,184,0.8);">
-                <strong style="color: #E2E8F5;">CppIndiaCon</strong> — Our annual conference, now in its 4th edition.
+              <li class="text-base leading-relaxed" style="color: var(--color-text-secondary);">
+                <strong style="color: var(--color-text);">CppIndiaCon</strong> — Our annual conference, now in its 4th edition.
                 Two days of talks, workshops, and networking with global C++ experts.
               </li>
-              <li class="text-base leading-relaxed" style="color: rgba(148,163,184,0.8);">
-                <strong style="color: #E2E8F5;">Mentorship</strong> — Connecting junior developers with experienced
+              <li class="text-base leading-relaxed" style="color: var(--color-text-secondary);">
+                <strong style="color: var(--color-text);">Mentorship</strong> — Connecting junior developers with experienced
                 engineers for guidance and career support.
               </li>
-              <li class="text-base leading-relaxed" style="color: rgba(148,163,184,0.8);">
-                <strong style="color: #E2E8F5;">Job Board</strong> — Helping companies find great C++ talent, and
+              <li class="text-base leading-relaxed" style="color: var(--color-text-secondary);">
+                <strong style="color: var(--color-text);">Job Board</strong> — Helping companies find great C++ talent, and
                 developers find meaningful opportunities.
               </li>
-              <li class="text-base leading-relaxed" style="color: rgba(148,163,184,0.8);">
-                <strong style="color: #E2E8F5;">Resources</strong> — Curating the best C++ learning materials —
+              <li class="text-base leading-relaxed" style="color: var(--color-text-secondary);">
+                <strong style="color: var(--color-text);">Resources</strong> — Curating the best C++ learning materials —
                 standards, references, articles, and monthly community picks.
               </li>
             </ul>
@@ -65,28 +65,28 @@
                 v-for="value in values"
                 :key="value.title"
                 class="p-5 rounded-xl transition-all duration-200"
-                style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+                style="background: var(--card-bg); border: 1px solid var(--card-border);"
                 onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 16px rgba(99,102,241,0.15)'"
-                onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
+                onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               >
                 <h3 class="font-display text-base font-bold mb-2" style="color: #A78BFA;">{{ value.title }}</h3>
-                <p class="text-sm leading-relaxed" style="color: rgba(148,163,184,0.75);">{{ value.body }}</p>
+                <p class="text-sm leading-relaxed" style="color: var(--color-text-secondary);">{{ value.body }}</p>
               </div>
             </div>
           </div>
 
           <!-- Sidebar quick links -->
           <div class="sticky top-[calc(var(--navbar-height,64px)+1.5rem)] flex flex-col gap-4">
-            <div class="rounded-xl p-6" style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);">
-              <h3 class="font-display text-base font-bold mb-4" style="color: #E2E8F5;">Quick Links</h3>
+            <div class="rounded-xl p-6" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+              <h3 class="font-display text-base font-bold mb-4" style="color: var(--color-text);">Quick Links</h3>
               <ul class="flex flex-col gap-3">
                 <li>
                   <RouterLink
                     to="/team"
                     class="text-sm transition-colors flex items-center gap-2 group"
-                    style="color: rgba(148,163,184,0.7);"
+                    style="color: var(--color-text-secondary);"
                     onmouseover="this.style.color='#A78BFA'"
-                    onmouseout="this.style.color='rgba(148,163,184,0.7)'"
+                    onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
                     <span style="color: #A78BFA;">→</span> Meet the Team
                   </RouterLink>
@@ -97,9 +97,9 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-sm transition-colors flex items-center gap-2"
-                    style="color: rgba(148,163,184,0.7);"
+                    style="color: var(--color-text-secondary);"
                     onmouseover="this.style.color='#A78BFA'"
-                    onmouseout="this.style.color='rgba(148,163,184,0.7)'"
+                    onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
                     <span style="color: #A78BFA;">→</span> Join CppIndia
                   </a>
@@ -108,9 +108,9 @@
                   <RouterLink
                     to="/code-of-conduct"
                     class="text-sm transition-colors flex items-center gap-2"
-                    style="color: rgba(148,163,184,0.7);"
+                    style="color: var(--color-text-secondary);"
                     onmouseover="this.style.color='#A78BFA'"
-                    onmouseout="this.style.color='rgba(148,163,184,0.7)'"
+                    onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
                     <span style="color: #A78BFA;">→</span> Code of Conduct
                   </RouterLink>
@@ -119,9 +119,9 @@
                   <RouterLink
                     to="/call-for-speakers"
                     class="text-sm transition-colors flex items-center gap-2"
-                    style="color: rgba(148,163,184,0.7);"
+                    style="color: var(--color-text-secondary);"
                     onmouseover="this.style.color='#A78BFA'"
-                    onmouseout="this.style.color='rgba(148,163,184,0.7)'"
+                    onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
                     <span style="color: #A78BFA;">→</span> Call for Speakers
                   </RouterLink>
@@ -130,9 +130,9 @@
                   <RouterLink
                     to="/contact"
                     class="text-sm transition-colors flex items-center gap-2"
-                    style="color: rgba(148,163,184,0.7);"
+                    style="color: var(--color-text-secondary);"
                     onmouseover="this.style.color='#A78BFA'"
-                    onmouseout="this.style.color='rgba(148,163,184,0.7)'"
+                    onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
                     <span style="color: #A78BFA;">→</span> Contact Us
                   </RouterLink>

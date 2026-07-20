@@ -6,7 +6,7 @@
     subtitle="Curated C++ job listings for the Indian developer community — remote, hybrid, and onsite."
   />
 
-  <section class="section" style="background: #07091C;">
+  <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Filters -->
@@ -17,7 +17,7 @@
             class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
             :style="locFilter === f.value
               ? 'background:rgba(99,102,241,0.2); color:#818CF8; border:1px solid rgba(99,102,241,0.45);'
-              : 'background:transparent; color:rgba(148,163,184,0.6); border:1px solid rgba(99,102,241,0.15);'"
+              : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
           >{{ f.label }}</button>
         </div>
         <div class="flex flex-wrap gap-2">
@@ -26,7 +26,7 @@
             class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
             :style="levelFilter === f.value
               ? 'background:rgba(52,211,153,0.15); color:#34D399; border:1px solid rgba(52,211,153,0.4);'
-              : 'background:transparent; color:rgba(148,163,184,0.6); border:1px solid rgba(99,102,241,0.15);'"
+              : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
           >{{ f.label }}</button>
         </div>
       </div>
@@ -37,7 +37,7 @@
           v-for="job in filtered"
           :key="job.id"
           class="rounded-2xl p-6 transition-all duration-200"
-          :style="`background: rgba(15,17,45,0.85); border: 1px solid ${job.featured ? 'rgba(234,179,8,0.3)' : 'rgba(99,102,241,0.18)'};`"
+          :style="`background: var(--card-bg); border: 1px solid ${job.featured ? 'rgba(234,179,8,0.3)' : 'rgba(99,102,241,0.18)'};`"
           onmouseover="this.style.transform='translateY(-2px)'"
           onmouseout="this.style.transform='translateY(0)'"
         >
@@ -51,7 +51,7 @@
                 <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full"
                   style="background:rgba(52,211,153,0.1); color:#34D399; border:1px solid rgba(52,211,153,0.25);">{{ job.level }}</span>
               </div>
-              <h3 class="font-display font-bold text-base mb-0.5" style="color:#E2E8F5;">{{ job.role }}</h3>
+              <h3 class="font-display font-bold text-base mb-0.5" style="color:var(--color-text);">{{ job.role }}</h3>
               <p class="text-sm font-semibold" style="color:#818CF8;">{{ job.company }}</p>
             </div>
             <a :href="job.url" target="_blank" rel="noopener noreferrer"
@@ -59,14 +59,14 @@
               style="background: linear-gradient(135deg, #6366F1, #818CF8);">Apply Now</a>
           </div>
 
-          <p class="text-sm mb-4" style="color:rgba(148,163,184,0.7);">{{ job.description }}</p>
+          <p class="text-sm mb-4" style="color:var(--color-text-secondary);">{{ job.description }}</p>
 
           <div class="flex flex-wrap items-center gap-3">
-            <div class="flex items-center gap-1.5 text-xs" style="color:rgba(148,163,184,0.55);">
+            <div class="flex items-center gap-1.5 text-xs" style="color:var(--color-text-muted);">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               {{ job.location }}
             </div>
-            <div class="flex items-center gap-1.5 text-xs" style="color:rgba(148,163,184,0.55);">
+            <div class="flex items-center gap-1.5 text-xs" style="color:var(--color-text-muted);">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Posted {{ formatDate(job.posted) }}
             </div>
@@ -78,7 +78,7 @@
           </div>
         </article>
 
-        <div v-if="filtered.length === 0" class="text-center py-16" style="color:rgba(148,163,184,0.4);">
+        <div v-if="filtered.length === 0" class="text-center py-16" style="color:var(--color-text-muted);">
           <p class="text-lg font-semibold">No jobs match your filters</p>
         </div>
       </div>
@@ -87,8 +87,8 @@
       <div class="mt-12 rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4"
         style="background: rgba(15,17,45,0.6); border: 1px solid rgba(234,179,8,0.2);">
         <div>
-          <p class="font-semibold" style="color:#E2E8F5;">Hiring C++ engineers?</p>
-          <p class="text-sm mt-0.5" style="color:rgba(148,163,184,0.65);">Reach 1,000+ C++ developers in India. Post a job or become a sponsor.</p>
+          <p class="font-semibold" style="color:var(--color-text);">Hiring C++ engineers?</p>
+          <p class="text-sm mt-0.5" style="color:var(--color-text-secondary);">Reach 1,000+ C++ developers in India. Post a job or become a sponsor.</p>
         </div>
         <a href="mailto:info@cppindia.co.in"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm flex-shrink-0"

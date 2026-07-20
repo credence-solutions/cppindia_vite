@@ -7,7 +7,7 @@
     aria-label="Hero banner"
   >
 
-    <!-- ── Rich indigo/cosmic background ── -->
+    <!-- ── Rich indigo/cosmic background (always dark for homepage impact) ── -->
     <div class="absolute inset-0" style="
       background: radial-gradient(ellipse 120% 80% at 20% 10%, #1A1060 0%, #0B0D2E 45%, #07091C 100%);
     " />
@@ -44,7 +44,7 @@
 
     <!-- Bottom fade -->
     <div class="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-      style="background: linear-gradient(to bottom, transparent, #07091C);" />
+      style="background: linear-gradient(to bottom, transparent, var(--color-bg));" />
 
     <div class="container relative z-[1]"
       style="padding-top: calc(68px + 1.5rem); padding-bottom: 2rem;">

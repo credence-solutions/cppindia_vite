@@ -7,15 +7,15 @@
       :breadcrumb="[{ label: 'Resources', path: '/resources' }]"
     />
 
-    <section class="section" style="background: #0B0D2E;">
+    <section class="section" style="background: var(--emphasis-bg);">
       <div class="container">
 
         <!-- Search -->
         <div class="mb-10">
-          <SearchBar v-model="query" placeholder="Search resources, articles, newsletters…" :dark="true" />
-          <p v-if="query" class="text-xs mt-2" style="color:rgba(148,163,184,0.5);">
-            <span v-if="totalResults > 0">{{ totalResults }} result{{ totalResults !== 1 ? 's' : '' }} for "<span style="color:#E2E8F5;">{{ query }}</span>"</span>
-            <span v-else>No results for "<span style="color:#E2E8F5;">{{ query }}</span>"</span>
+          <SearchBar v-model="query" placeholder="Search resources, articles, newsletters…" />
+          <p v-if="query" class="text-xs mt-2" style="color: var(--card-text-muted);">
+            <span v-if="totalResults > 0">{{ totalResults }} result{{ totalResults !== 1 ? 's' : '' }} for "<span style="color: var(--card-text);">{{ query }}</span>"</span>
+            <span v-else>No results for "<span style="color: var(--card-text);">{{ query }}</span>"</span>
           </p>
         </div>
 
@@ -31,20 +31,20 @@
               :key="r.id"
               :href="r.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
-              style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+              style="background: var(--card-bg); border: 1px solid var(--card-border);"
               onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
-              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div class="flex items-center justify-between gap-2">
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
-                  style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.65);">{{ r.type }}</span>
+                  style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
                 <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
                   style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #34D399;">Free</span>
               </div>
-              <h3 class="font-display text-base font-bold leading-snug" style="color: #E2E8F5;">{{ r.title }}</h3>
-              <p class="text-sm leading-relaxed flex-1" style="color: rgba(148,163,184,0.75);">{{ r.description }}</p>
+              <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
+              <p class="text-sm leading-relaxed flex-1" style="color: var(--card-text-muted);">{{ r.description }}</p>
               <span class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color: #A78BFA;">
                 Open resource
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -65,24 +65,24 @@
               :key="r.id"
               :href="r.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
-              style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+              style="background: var(--card-bg); border: 1px solid var(--card-border);"
               onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
-              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div class="flex items-center justify-between gap-2">
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
-                  style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.65);">{{ r.type }}</span>
+                  style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
                 <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
                   style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #34D399;">Free</span>
               </div>
-              <h3 class="font-display text-base font-bold leading-snug" style="color: #E2E8F5;">{{ r.title }}</h3>
-              <p class="text-sm leading-relaxed flex-1" style="color: rgba(148,163,184,0.75);">{{ r.description }}</p>
+              <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
+              <p class="text-sm leading-relaxed flex-1" style="color: var(--card-text-muted);">{{ r.description }}</p>
             </a>
           </div>
           <div v-else class="p-8 rounded-xl text-base leading-relaxed"
-            style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.75);">
+            style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--card-text-muted);">
             <p>Community-curated articles coming soon. Check out the
               <a :href="SITE.social.github" target="_blank" rel="noopener noreferrer"
                 style="color: #A78BFA;"
@@ -105,8 +105,8 @@
           <div class="rounded-xl p-5 mb-6 flex flex-wrap items-center justify-between gap-4"
             style="background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,211,238,0.05)); border: 1px solid rgba(99,102,241,0.2);">
             <div>
-              <p class="font-semibold text-sm" style="color:#E2E8F5;">Get the next issue in your inbox</p>
-              <p class="text-xs mt-0.5" style="color:rgba(148,163,184,0.65);">Monthly newsletter — no spam, unsubscribe anytime.</p>
+              <p class="font-semibold text-sm" style="color: var(--card-text);">Get the next issue in your inbox</p>
+              <p class="text-xs mt-0.5" style="color: var(--card-text-muted);">Monthly newsletter — no spam, unsubscribe anytime.</p>
             </div>
             <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm text-white flex-shrink-0"
@@ -120,18 +120,18 @@
               :key="nl.id"
               :href="nl.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
-              style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
+              style="background: var(--card-bg); border: 1px solid var(--card-border);"
               onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
-              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div class="flex items-center justify-between">
                 <span class="text-xs font-mono px-2 py-0.5 rounded" style="background:rgba(99,102,241,0.12); color:#818CF8;">#{{ nl.issueNumber }}</span>
-                <time class="text-xs font-mono" style="color:rgba(148,163,184,0.5);">{{ formatDate(nl.date) }}</time>
+                <time class="text-xs font-mono" style="color: var(--card-text-muted);">{{ formatDate(nl.date) }}</time>
               </div>
-              <h3 class="font-display font-bold text-sm leading-snug" style="color:#E2E8F5;">{{ nl.title }}</h3>
-              <p class="text-xs flex-1" style="color:rgba(148,163,184,0.7);">{{ nl.summary }}</p>
+              <h3 class="font-display font-bold text-sm leading-snug" style="color: var(--card-text);">{{ nl.title }}</h3>
+              <p class="text-xs flex-1" style="color: var(--card-text-muted);">{{ nl.summary }}</p>
               <div class="flex flex-wrap gap-1.5">
                 <span v-for="h in nl.highlights" :key="h"
                   class="text-[10px] font-semibold px-2 py-[2px] rounded-full"
@@ -154,7 +154,7 @@
             Book / Blog / Video of the Month
           </h2>
           <div class="p-8 rounded-xl text-base leading-relaxed"
-            style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2); color: rgba(148,163,184,0.75);">
+            style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--card-text-muted);">
             <p>Monthly community picks are shared on our
               <a :href="SITE.social.discord" target="_blank" rel="noopener noreferrer"
                 style="color: #A78BFA;"

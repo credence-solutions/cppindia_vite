@@ -3,6 +3,12 @@ import { ref, watch } from 'vue'
 
 export const THEMES = [
   {
+    id: 'butter',
+    name: 'Butter Light',
+    description: 'Warm cream — clean and bright',
+    preview: ['#4F8EF7', '#7C5CDB', '#FAF8F4'],
+  },
+  {
     id: 'nebula',
     name: 'Nebula Dark',
     description: 'Electric blue + violet — deep space',
@@ -29,14 +35,18 @@ export const THEMES = [
 ]
 
 export const useThemeStore = defineStore('theme', () => {
-  const active = ref(localStorage.getItem('cppindia-theme') || 'nebula')
+  const active = ref(localStorage.getItem('cppindia-theme') || 'butter')
 
   function setTheme(id) {
     active.value = id
   }
 
   watch(active, (id) => {
-    document.documentElement.setAttribute('data-theme', id)
+    if (id === 'butter') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', id)
+    }
     localStorage.setItem('cppindia-theme', id)
   }, { immediate: true })
 

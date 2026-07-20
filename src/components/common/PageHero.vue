@@ -18,7 +18,7 @@
 
     <!-- Bottom gradient fade -->
     <div class="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-      style="background: linear-gradient(to bottom, transparent, rgba(7,9,28,0.6));" />
+      style="background: linear-gradient(to bottom, transparent, var(--hero-fade));" />
 
     <div class="container relative z-[1]">
       <!-- Breadcrumb -->
@@ -57,7 +57,7 @@
           class="font-display font-extrabold leading-tight tracking-tight mb-4"
           style="font-size: clamp(2rem, 4vw, 3.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
         >{{ title }}</h1>
-        <p v-if="subtitle" class="text-lg max-w-[560px] leading-relaxed" style="color: rgba(148,163,184,0.85);">{{ subtitle }}</p>
+        <p v-if="subtitle" class="text-lg max-w-[560px] leading-relaxed" style="color: var(--hero-subtitle);">{{ subtitle }}</p>
         <slot />
       </div>
     </div>
@@ -83,8 +83,6 @@ const bgStyle = computed(() => {
       backgroundPosition: 'center',
     }
   }
-  return {
-    background: 'linear-gradient(135deg, #07091C 0%, #0B0D2E 60%, #0A0C28 100%)',
-  }
+  return { background: 'var(--hero-bg)' }
 })
 </script>
