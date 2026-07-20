@@ -114,21 +114,16 @@
 
             <div
               v-if="submitted"
-              class="p-4 bg-[rgba(46,125,50,0.1)] border border-[rgba(46,125,50,0.3)] rounded-md text-sm font-medium text-green-400"
+              class="p-4 bg-[rgba(46,125,50,0.1)] border border-[rgba(46,125,50,0.3)] rounded-md text-sm font-medium text-green-600"
             >
-              Thank you! We'll be in touch soon.
+              ✓ Your email client should be opening — send the pre-filled email to complete your proposal.
             </div>
-            <div
-              v-else-if="error"
-              class="p-4 bg-[rgba(211,47,47,0.08)] border border-[rgba(211,47,47,0.25)] rounded-md text-sm text-red-400"
-            >{{ error }}</div>
 
             <button
               type="submit"
               class="btn btn--primary w-full justify-center"
-              :disabled="submitting"
             >
-              {{ submitting ? 'Submitting...' : 'Submit Proposal' }}
+              Submit Proposal
             </button>
           </form>
 
@@ -145,6 +140,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+// mailto: opens the user's default mail client with proposal data pre-filled
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import { SITE } from '@/constants'
@@ -154,24 +150,17 @@ useHead({
   description: 'Submit a talk proposal for CppIndia tech talks or CppIndiaCon. All C++ topics and experience levels welcome.',
 })
 
-const form = reactive({ name: '', email: '', title: '', abstract: '', bio: '' })
-const submitting = ref(false)
-const submitted  = ref(false)
-const error      = ref('')
+const form      = reactive({ name: '', email: '', title: '', abstract: '', bio: '' })
+const submitted = ref(false)
 
-async function submit() {
-  submitting.value = true
-  error.value = ''
-  try {
-    // TODO: wire to backend / formspree / etc.
-    await new Promise((r) => setTimeout(r, 800))
-    submitted.value = true
-    Object.keys(form).forEach((k) => { form[k] = '' })
-  } catch {
-    error.value = 'Something went wrong. Please email us directly.'
-  } finally {
-    submitting.value = false
-  }
+function submit() {
+  const subject = encodeURIComponent(`[CppIndia CFP] ${form.title}`)
+  const body    = encodeURIComponent(
+    `Talk Proposal\n${'─'.repeat(40)}\nName:     ${form.name}\nEmail:    ${form.email}\nTitle:    ${form.title}\n\nAbstract:\n${form.abstract}${form.bio ? `\n\nBio:\n${form.bio}` : ''}`
+  )
+  window.location.href = `mailto:info@cppindia.co.in?subject=${subject}&body=${body}`
+  submitted.value = true
+  Object.keys(form).forEach((k) => { form[k] = '' })
 }
 
 const topics = [

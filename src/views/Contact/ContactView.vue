@@ -133,7 +133,7 @@
                 v-if="status === 'success'"
                 class="p-4 rounded-md text-sm font-medium bg-[rgba(74,222,128,0.08)] border border-[rgba(74,222,128,0.25)] text-green-400"
               >
-                ✓ Message sent! We'll get back to you soon.
+                ✓ Your email client should be opening. Complete and send the email to reach us.
               </div>
               <div
                 v-else-if="status === 'error'"
@@ -147,9 +147,8 @@
             <button
               type="submit"
               class="btn btn--primary w-full justify-center"
-              :disabled="submitting"
             >
-              {{ submitting ? 'Sending…' : 'Send Message' }}
+              Send Message
             </button>
           </form>
         </div>
@@ -161,6 +160,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+// mailto: opens the user's default mail client with form data pre-filled
 import { useHead } from '@/composables/useHead'
 import { SITE } from '@/constants'
 import PageHero from '@/components/common/PageHero.vue'
@@ -206,22 +206,17 @@ const socialLinks = [
   },
 ]
 
-const form       = reactive({ name: '', email: '', subject: '', message: '' })
-const submitting = ref(false)
-const status     = ref(null)
+const form   = reactive({ name: '', email: '', subject: '', message: '' })
+const status = ref(null)
 
-async function handleSubmit() {
-  submitting.value = true
-  status.value = null
-  try {
-    await new Promise((r) => setTimeout(r, 800))
-    status.value = 'success'
-    Object.keys(form).forEach((k) => { form[k] = '' })
-  } catch {
-    status.value = 'error'
-  } finally {
-    submitting.value = false
-  }
+function handleSubmit() {
+  const subject = encodeURIComponent(`[CppIndia Contact] ${form.subject}`)
+  const body    = encodeURIComponent(
+    `Name: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`
+  )
+  window.location.href = `mailto:info@cppindia.co.in?subject=${subject}&body=${body}`
+  status.value = 'success'
+  Object.keys(form).forEach((k) => { form[k] = '' })
 }
 </script>
 
