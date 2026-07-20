@@ -83,7 +83,7 @@
             <img :src="conf.banner" :alt="conf.name + ' banner'" class="conf-banner-img" />
           </div>
 
-          <p class="text-base text-ink-2 leading-relaxed max-w-[780px] mb-10">{{ conf.description }}</p>
+          <p class="text-base text-ink-2 leading-relaxed mb-10">{{ conf.description }}</p>
 
           <!-- Stats strip -->
           <div
