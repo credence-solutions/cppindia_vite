@@ -31,7 +31,7 @@
                 v-else
                 class="absolute inset-0 flex items-center justify-center font-display text-[5rem] font-extrabold"
                 style="color: rgba(129,140,248,0.25);"
-              >{{ member.name.charAt(0) }}</span>
+              >{{ member.emoji || member.name.charAt(0) }}</span>
             </div>
 
             <div class="p-6">

@@ -58,7 +58,7 @@ export const NAV_LINKS = [
     label: 'Community',
     path: '/members',
     children: [
-      { label: 'Members & Hall of Fame', path: '/members' },
+      { label: 'Hall of Fame', path: '/members' },
       { label: 'Events',                  path: '/events' },
       { label: 'Projects Showcase',       path: '/projects' },
       { label: 'Jobs Board',              path: '/jobs' },

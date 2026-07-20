@@ -52,14 +52,15 @@
     }
   },
   {
-    "id": "hemil-ruparel",
-    "name": "Hemil Ruparel",
+    "id": "niket-kumar",
+    "name": "Niket Kumar",
     "role": "Moderator",
-    "photo": "/assets/images/team/hemil.png",
-    "bio": "Community moderator and enthusiastic speaker. Hemil's talks on testing, compiler internals, and programming language design are fan favourites.",
+    "photo": null,
+    "emoji": "👤",
+    "bio": "Community moderator and C++ enthusiast, passionate about bringing together developers and fostering knowledge sharing within the CppIndia community.",
     "links": {
       "website": null,
-      "linkedin": "https://www.linkedin.com/in/hemil-ruparel-2aa513166/",
+      "linkedin": null,
       "github": null,
       "twitter": null
     }
