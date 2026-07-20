@@ -104,7 +104,7 @@ import cfpData from '@/data/cfp.json'
 
 const statuses = [
   { value: 'all',       label: 'All',      bg: 'rgba(8,145,178,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.45)' },
-  { value: 'open',      label: 'Open',     bg: 'rgba(52,211,153,0.15)', color: '#34D399', border: 'rgba(52,211,153,0.4)'  },
+  { value: 'open',      label: 'Open',     bg: 'rgba(52,211,153,0.15)', color: '#059669', border: 'rgba(52,211,153,0.4)'  },
   { value: 'closed',    label: 'Closed',   bg: 'rgba(148,163,184,0.1)', color: '#94A3B8', border: 'rgba(148,163,184,0.3)' },
 ]
 
@@ -126,7 +126,7 @@ function isUrgent(deadline) {
 }
 
 function statusStyle(status) {
-  if (status === 'open')   return 'background:rgba(52,211,153,0.15); color:#34D399; border:1px solid rgba(52,211,153,0.35);'
+  if (status === 'open')   return 'background:rgba(52,211,153,0.15); color:#059669; border:1px solid rgba(52,211,153,0.35);'
   if (status === 'closed') return 'background:rgba(148,163,184,0.1); color:#94A3B8; border:1px solid rgba(148,163,184,0.25);'
   return 'background:rgba(251,191,36,0.12); color:#FBBF24; border:1px solid rgba(251,191,36,0.3);'
 }

@@ -130,6 +130,6 @@ const filteredSnippets = computed(() =>
 function stdColor(std) {
   if (std === 'C++23') return 'background:rgba(8,145,178,0.15); color:var(--color-secondary-mid); border:1px solid rgba(8,145,178,0.3);'
   if (std === 'C++20') return 'background:rgba(34,211,238,0.12); color:#22D3EE; border:1px solid rgba(34,211,238,0.3);'
-  return 'background:rgba(52,211,153,0.12); color:#34D399; border:1px solid rgba(52,211,153,0.3);'
+  return 'background:rgba(52,211,153,0.12); color:#059669; border:1px solid rgba(52,211,153,0.3);'
 }
 </script>

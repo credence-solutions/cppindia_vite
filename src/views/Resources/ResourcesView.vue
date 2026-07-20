@@ -21,8 +21,7 @@
 
         <!-- References -->
         <div v-if="!query || filteredReferences.length" id="references" class="mb-14">
-          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
+          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4 text-gradient-heading border-b-2 border-wire-light">
             C++ Language &amp; References
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -41,7 +40,7 @@
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
                   style="background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
                 <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
-                  style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #34D399;">Free</span>
+                  style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
               </div>
               <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
               <p class="text-sm leading-relaxed flex-1" style="color: var(--card-text-muted);">{{ r.description }}</p>
@@ -55,8 +54,7 @@
 
         <!-- Articles -->
         <div v-if="!query || filteredArticles.length" id="articles" class="mb-14">
-          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
+          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4 text-gradient-heading border-b-2 border-wire-light">
             Articles &amp; Blogs
           </h2>
           <div v-if="filteredArticles.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -75,7 +73,7 @@
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
                   style="background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
                 <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
-                  style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #34D399;">Free</span>
+                  style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
               </div>
               <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
               <p class="text-sm leading-relaxed flex-1" style="color: var(--card-text-muted);">{{ r.description }}</p>
@@ -97,8 +95,7 @@
 
         <!-- Newsletter Archive -->
         <div v-if="!query || filteredNewsletters.length" id="newsletter" class="mb-14">
-          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
+          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4 text-gradient-heading border-b-2 border-wire-light">
             Newsletter Archive
           </h2>
           <!-- Subscribe CTA -->
@@ -149,8 +146,7 @@
 
         <!-- Monthly picks -->
         <div id="monthly">
-          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
+          <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4 text-gradient-heading border-b-2 border-wire-light">
             Book / Blog / Video of the Month
           </h2>
           <div class="p-8 rounded-xl text-base leading-relaxed"

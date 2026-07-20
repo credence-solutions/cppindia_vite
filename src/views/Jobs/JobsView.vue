@@ -25,7 +25,7 @@
             @click="levelFilter = f.value"
             class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
             :style="levelFilter === f.value
-              ? 'background:rgba(52,211,153,0.15); color:#34D399; border:1px solid rgba(52,211,153,0.4);'
+              ? 'background:rgba(52,211,153,0.15); color:#059669; border:1px solid rgba(52,211,153,0.4);'
               : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
           >{{ f.label }}</button>
         </div>
@@ -49,7 +49,7 @@
                 <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full"
                   :style="locationTypeStyle(job.locationType)">{{ job.locationType }}</span>
                 <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full"
-                  style="background:rgba(52,211,153,0.1); color:#34D399; border:1px solid rgba(52,211,153,0.25);">{{ job.level }}</span>
+                  style="background:rgba(52,211,153,0.1); color:#059669; border:1px solid rgba(52,211,153,0.25);">{{ job.level }}</span>
               </div>
               <h3 class="font-display font-bold text-base mb-0.5" style="color:var(--color-text);">{{ job.role }}</h3>
               <p class="text-sm font-semibold" style="color:var(--color-primary-soft);">{{ job.company }}</p>
@@ -133,7 +133,7 @@ function formatDate(d) {
 }
 
 function locationTypeStyle(t) {
-  if (t === 'remote') return 'background:rgba(52,211,153,0.12); color:#34D399; border:1px solid rgba(52,211,153,0.3);'
+  if (t === 'remote') return 'background:rgba(52,211,153,0.12); color:#059669; border:1px solid rgba(52,211,153,0.3);'
   if (t === 'hybrid') return 'background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.25);'
   return 'background:rgba(8,145,178,0.12); color:var(--color-primary-soft); border:1px solid rgba(8,145,178,0.25);'
 }

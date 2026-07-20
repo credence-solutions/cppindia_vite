@@ -11,7 +11,7 @@
     <div class="container">
       <div class="text-center mb-12">
         <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: var(--color-secondary-mid);">Why It Matters</p>
-        <h2 class="font-display font-bold mb-3" class="text-gradient-heading" style="font-size: clamp(1.4rem,3vw,2rem);">Reach India's Top C++ Talent</h2>
+        <h2 class="font-display font-bold mb-3 text-gradient-heading" style="font-size: clamp(1.4rem,3vw,2rem);">Reach India's Top C++ Talent</h2>
         <p class="text-sm mx-auto" style="max-width:600px; color:var(--color-text-secondary);">CppIndia connects you with senior engineers, students, and decision-makers who live and breathe C++. Your sponsorship keeps the community free for everyone.</p>
       </div>
 

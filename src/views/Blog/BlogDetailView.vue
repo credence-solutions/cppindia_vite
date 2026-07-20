@@ -127,7 +127,7 @@ const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body)
 .prose-cpp strong { color: var(--color-text); }
 .prose-cpp code {
   background: rgba(8,145,178,0.12);
-  color: #22D3EE;
+  color: var(--color-secondary-mid);
   padding: 0.15em 0.4em;
   border-radius: 4px;
   font-size: 0.875em;

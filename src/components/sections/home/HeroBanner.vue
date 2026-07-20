@@ -138,7 +138,7 @@
                 <pre class="flex-1 m-0 p-0 bg-transparent overflow-x-auto"
                   style="font-family:inherit;"><code
 ><span style="color:#C084FC">template</span><span style="color:rgba(203,213,225,0.35)">&lt;</span><span style="color:#C084FC">typename</span> <span style="color:#93C5FD">T</span><span style="color:rgba(203,213,225,0.35)">&gt;</span>
-<span style="color:#C084FC">concept</span> <span style="color:#34D399">CppDeveloper</span> <span style="color:rgba(203,213,225,0.4)">=</span>
+<span style="color:#C084FC">concept</span> <span style="color:#059669">CppDeveloper</span> <span style="color:rgba(203,213,225,0.4)">=</span>
   <span style="color:#93C5FD">std</span><span style="color:rgba(203,213,225,0.35)">::</span><span style="color:#FCD34D">curious_about_cpp</span><span style="color:rgba(203,213,225,0.35)">&lt;</span><span style="color:#93C5FD">T</span><span style="color:rgba(203,213,225,0.35)">&gt;</span> <span style="color:#22D3EE">&amp;&amp;</span>
   <span style="color:#93C5FD">std</span><span style="color:rgba(203,213,225,0.35)">::</span><span style="color:#FCD34D">loves_to_learn</span><span style="color:rgba(203,213,225,0.35)">&lt;</span><span style="color:#93C5FD">T</span><span style="color:rgba(203,213,225,0.35)">&gt;</span> <span style="color:#22D3EE">&amp;&amp;</span>
   <span style="color:#93C5FD">std</span><span style="color:rgba(203,213,225,0.35)">::</span><span style="color:#FCD34D">part_of_community</span><span style="color:rgba(203,213,225,0.35)">&lt;</span><span style="color:#93C5FD">T</span><span style="color:rgba(203,213,225,0.35)">&gt;</span><span style="color:rgba(203,213,225,0.35)">;</span>

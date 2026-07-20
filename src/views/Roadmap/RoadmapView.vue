@@ -87,7 +87,7 @@ import { ref, computed } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
 
 const levels = [
-  { id: 'beginner',     label: '🌱 Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#34D399', border: 'rgba(52,211,153,0.4)' },
+  { id: 'beginner',     label: '🌱 Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#059669', border: 'rgba(52,211,153,0.4)' },
   { id: 'intermediate', label: '⚡ Intermediate',  bg: 'rgba(34,211,238,0.12)', color: '#22D3EE', border: 'rgba(34,211,238,0.4)' },
   { id: 'advanced',     label: '🚀 Advanced',      bg: 'rgba(8,145,178,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.45)' },
 ]

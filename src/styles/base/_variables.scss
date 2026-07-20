@@ -38,8 +38,8 @@ $color-text-secondary: #3D4255;   // Dark grey-blue
 $color-text-muted:     #6B7280;   // Medium grey
 
 // Borders — cyan-tinted for Ocean Blue + Teal palette
-$color-border:         rgba(8, 145, 178, 0.50);
-$color-border-light:   rgba(8, 145, 178, 0.28);
+$color-border:         rgba(8, 145, 178, 0.55);
+$color-border-light:   rgba(8, 145, 178, 0.35);
 
 // Dark section backgrounds (footer always stays dark)
 $color-dark:           #1A1714;
@@ -97,23 +97,23 @@ $bp-2xl: 1440px;
   // --- Borders ---
   --color-border:          #{$color-border};
   --color-border-light:    #{$color-border-light};
-  --color-border-hover:    rgba(8, 145, 178, 0.50);
+  --color-border-hover:    rgba(8, 145, 178, 0.65);
 
   // --- Dark sections ---
   --color-dark:            #{$color-dark};
   --color-dark-surface:    #{$color-dark-surface};
 
   // --- Palette soft tones (used for badge text, labels, arrows) ---
-  --color-primary-soft:   #60A5FA;   // blue-400 — badge text, tag links
-  --color-secondary-mid:  #22D3EE;   // cyan-400 — section labels, arrows
+  --color-primary-soft:   #2563EB;   // blue-600 — badge text, tag links (WCAG AA)
+  --color-secondary-mid:  #0E7490;   // cyan-700 — section labels, arrows (WCAG AA)
 
   // --- Semantic badge backgrounds ---
   --badge-bg:        rgba(8, 145, 178, 0.10);
   --badge-bg-strong: rgba(8, 145, 178, 0.15);
-  --badge-text:      var(--color-secondary);
+  --badge-text:      var(--color-secondary-mid);
 
   // --- Reusable gradients ---
-  --gradient-heading: linear-gradient(100deg, #2563EB 0%, #0891B2 50%, #059669 100%);
+  --gradient-heading: linear-gradient(100deg, #1D4ED8 0%, #0891B2 50%, #059669 100%);
   --gradient-btn:     linear-gradient(135deg, #2563EB 0%, #0891B2 100%);
 
   // --- Glow effects ---
@@ -200,8 +200,8 @@ $bp-2xl: 1440px;
   // Emphasis / "dark section" backgrounds — ResourcesView, MembersView, ConferenceView
   --emphasis-bg:         #ECEEF5;
   --card-bg:             #FFFFFF;
-  --card-border:         rgba(8, 145, 178, 0.28);
-  --card-border-hover:   rgba(8, 145, 178, 0.55);
+  --card-border:         rgba(8, 145, 178, 0.35);
+  --card-border-hover:   rgba(8, 145, 178, 0.65);
   --card-text:           #111218;
   --card-text-muted:     rgba(61, 66, 85, 0.75);
 
