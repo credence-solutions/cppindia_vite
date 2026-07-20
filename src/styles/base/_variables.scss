@@ -26,20 +26,20 @@ $color-warning:        #D97706;   // Amber
 $color-error:          #DC2626;   // Red
 $color-info:           #0284C7;   // Sky blue
 
-// Light / warm backgrounds
-$color-bg:             #FAF8F4;   // Warm cream
+// Light backgrounds
+$color-bg:             #F5F6FA;   // Off-white with slight cool tint
 $color-surface:        #FFFFFF;   // Clean white cards
-$color-surface-alt:    #F3EFE8;   // Warm off-white section
-$color-surface-raised: #EDE8DE;   // Warm elevated panels
+$color-surface-alt:    #ECEEF5;   // Light grey-blue section alt
+$color-surface-raised: #E4E6F0;   // Slightly elevated panels
 
 // Text
-$color-text:           #1C1815;   // Warm near-black
-$color-text-secondary: #5A4C3C;   // Warm brown-grey
-$color-text-muted:     #897868;   // Warm muted
+$color-text:           #111218;   // Near-black
+$color-text-secondary: #3D4255;   // Dark grey-blue
+$color-text-muted:     #6B7280;   // Medium grey
 
 // Borders
-$color-border:         rgba(120, 100, 75, 0.14);
-$color-border-light:   rgba(120, 100, 75, 0.07);
+$color-border:         rgba(60, 65, 90, 0.12);
+$color-border-light:   rgba(60, 65, 90, 0.06);
 
 // Dark section backgrounds (footer always stays dark)
 $color-dark:           #1A1714;
@@ -174,21 +174,21 @@ $bp-2xl: 1440px;
 
   // --- Component-specific theme vars ---
   // Navigation
-  --nav-bg:              rgba(250, 248, 244, 0.88);
-  --nav-bg-scrolled:     rgba(250, 248, 244, 0.97);
-  --nav-shadow:          0 1px 0 rgba(120, 100, 75, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --nav-bg:              rgba(245, 246, 250, 0.88);
+  --nav-bg-scrolled:     rgba(245, 246, 250, 0.97);
+  --nav-shadow:          0 1px 0 rgba(60, 65, 90, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
 
   // Hero section
-  --hero-bg:             linear-gradient(135deg, #F5F2FF 0%, #EEF5FF 60%, #EDFAF8 100%);
-  --hero-fade:           rgba(250, 248, 244, 0.6);
-  --hero-subtitle:       rgba(90, 76, 60, 0.85);
+  --hero-bg:             linear-gradient(135deg, #EEEEFF 0%, #EEF3FF 60%, #EEF9FA 100%);
+  --hero-fade:           rgba(245, 246, 250, 0.6);
+  --hero-subtitle:       rgba(61, 66, 85, 0.85);
 
   // Emphasis / "dark section" backgrounds — ResourcesView, MembersView, ConferenceView
-  --emphasis-bg:         #F3EFE8;
+  --emphasis-bg:         #ECEEF5;
   --card-bg:             #FFFFFF;
   --card-border:         rgba(99, 102, 241, 0.15);
-  --card-text:           #1C1815;
-  --card-text-muted:     rgba(90, 76, 60, 0.75);
+  --card-text:           #111218;
+  --card-text-muted:     rgba(61, 66, 85, 0.75);
 
   // --- Shadows (adapted for light backgrounds) ---
   --shadow-xs:  0 1px 2px rgba(0, 0, 0, 0.06);
