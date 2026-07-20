@@ -13,7 +13,7 @@
             style="font-size: clamp(1.5rem, 3vw, 2.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
             A community for C++ developers — at every stage of their journey
           </h2>
-          <p class="text-base leading-relaxed mb-7" style=\"color: var(--color-text-secondary);\">
+          <p class="text-base leading-relaxed mb-7" style="color: var(--color-text-secondary);">
             CppIndia was founded to create a common platform that brings together
             people from all walks of life — students, fresh graduates, and experienced
             engineers — united by a mutual interest in C++. We run meetups on alternate

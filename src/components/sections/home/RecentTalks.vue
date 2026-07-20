@@ -34,7 +34,7 @@
           v-for="talk in recentTalks"
           :key="talk.id"
           class="group flex flex-col rounded-2xl overflow-hidden transition-all duration-200"
-          style=\"background: var(--card-bg); border: 1px solid var(--card-border);\"
+          style="background: var(--card-bg); border: 1px solid var(--card-border);"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 28px rgba(99,102,241,0.2)'; this.style.transform='translateY(-4px)'"
           onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >

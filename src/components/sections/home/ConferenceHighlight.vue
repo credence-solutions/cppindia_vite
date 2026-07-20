@@ -12,7 +12,7 @@
           <h2 class="font-display font-extrabold leading-none mb-1"
             style="font-size: clamp(1.875rem, 4vw, 3.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CppIndiaCon</h2>
           <p class="font-display text-lg font-medium mb-5" style="color: #A78BFA;">The C++ Festival of India</p>
-          <p class="text-base leading-relaxed mb-7" style=\"color: var(--color-text-secondary);\">
+          <p class="text-base leading-relaxed mb-7" style="color: var(--color-text-secondary);">
             Every year, CppIndia brings together C++ experts from India and around the world
             for two days of inspiring talks, hands-on sessions, and community networking.
             Past speakers include <strong style="color: var(--color-text);">Bjarne Stroustrup</strong> (creator of C++),

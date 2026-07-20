@@ -36,7 +36,7 @@
 
             <div class="p-6">
               <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: #A78BFA;">{{ member.role }}</p>
-              <h2 class="font-display text-xl font-bold mb-3" style=\"color: var(--color-text);\">{{ member.name }}</h2>
+              <h2 class="font-display text-xl font-bold mb-3" style="color: var(--color-text);">{{ member.name }}</h2>
               <p class="text-sm leading-relaxed mb-4" style="color: rgba(148,163,184,0.75);">{{ member.bio }}</p>
 
               <div class="flex items-center gap-3">
