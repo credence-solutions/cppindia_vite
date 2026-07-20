@@ -15,9 +15,9 @@
             v-for="member in team"
             :key="member.id"
             class="rounded-2xl overflow-hidden transition-all duration-300 group"
-            style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);"
-            onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 28px rgba(99,102,241,0.2)'"
-            onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'"
+            style="background: var(--card-bg); border: 1px solid var(--card-border);"
+            onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 28px rgba(99,102,241,0.15)'"
+            onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
           >
             <div class="team-photo-wrap">
               <img
@@ -37,16 +37,16 @@
             <div class="p-6">
               <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: #A78BFA;">{{ member.role }}</p>
               <h2 class="font-display text-xl font-bold mb-3" style="color: var(--color-text);">{{ member.name }}</h2>
-              <p class="text-sm leading-relaxed mb-4" style="color: rgba(148,163,184,0.75);">{{ member.bio }}</p>
+              <p class="text-sm leading-relaxed mb-4" style="color: var(--card-text-muted);">{{ member.bio }}</p>
 
               <div class="flex items-center gap-3">
                 <a
                   v-if="member.links.website"
                   :href="member.links.website"
                   class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-                  style="background: rgba(99,102,241,0.1); color: rgba(148,163,184,0.7);"
+                  style="background: rgba(99,102,241,0.1); color: var(--color-text-muted);"
                   onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-                  onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='rgba(148,163,184,0.7)'"
+                  onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='var(--color-text-muted)'"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Website"
@@ -57,9 +57,9 @@
                   v-if="member.links.linkedin"
                   :href="member.links.linkedin"
                   class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-                  style="background: rgba(99,102,241,0.1); color: rgba(148,163,184,0.7);"
+                  style="background: rgba(99,102,241,0.1); color: var(--color-text-muted);"
                   onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-                  onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='rgba(148,163,184,0.7)'"
+                  onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='var(--color-text-muted)'"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -73,12 +73,12 @@
 
         <!-- Volunteer CTA -->
         <div class="text-center p-12 rounded-2xl max-w-[600px] mx-auto"
-          style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);">
+          style="background: var(--card-bg); border: 1px solid var(--card-border);">
           <h2 class="font-display text-2xl font-bold mb-3"
             style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
             Want to help run CppIndia?
           </h2>
-          <p class="text-base leading-relaxed mb-6" style="color: rgba(148,163,184,0.75);">
+          <p class="text-base leading-relaxed mb-6" style="color: var(--card-text-muted);">
             We're always looking for enthusiastic volunteers — whether you want to help
             organise events, moderate Discord, curate resources, or bring in speakers.
           </p>

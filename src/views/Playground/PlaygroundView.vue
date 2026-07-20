@@ -11,9 +11,9 @@
 
         <!-- Snippet sidebar -->
         <aside class="lg:w-72 flex-shrink-0">
-          <div class="rounded-2xl overflow-hidden" style="background: rgba(15,17,45,0.9); border: 1px solid rgba(99,102,241,0.2);">
+          <div class="rounded-2xl overflow-hidden" style="background: var(--card-bg); border: 1px solid var(--card-border);">
             <!-- Standard filter -->
-            <div class="flex gap-1 p-2 flex-wrap" style="border-bottom: 1px solid rgba(99,102,241,0.15);">
+            <div class="flex gap-1 p-2 flex-wrap" style="border-bottom: 1px solid var(--color-border);">
               <button v-for="std in standards" :key="std"
                 @click="activeStd = std"
                 class="px-2.5 py-1 rounded-md text-xs font-bold transition-all duration-150"
@@ -36,7 +36,7 @@
                 onmouseover="if(!this.classList.contains('active')) this.style.background='rgba(99,102,241,0.06)'"
                 onmouseout="if(!this.classList.contains('active')) this.style.background='transparent'"
               >
-                <span class="text-sm font-semibold" style="color:#E2E8F5;">{{ s.title }}</span>
+                <span class="text-sm font-semibold" style="color: var(--color-text);">{{ s.title }}</span>
                 <span class="text-[10px] font-bold px-1.5 py-[1px] rounded w-fit"
                   :style="stdColor(s.standard)">{{ s.standard }}</span>
               </li>
@@ -50,8 +50,8 @@
             <!-- Snippet header -->
             <div class="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <h2 class="font-display font-bold text-lg" style="color:#E2E8F5;">{{ active.title }}</h2>
-                <p class="text-sm mt-1" style="color:rgba(148,163,184,0.7);">{{ active.description }}</p>
+                <h2 class="font-display font-bold text-lg" style="color: var(--color-text);">{{ active.title }}</h2>
+                <p class="text-sm mt-1" style="color: var(--color-text-muted);">{{ active.description }}</p>
               </div>
               <a :href="active.godboltUrl" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white flex-shrink-0"
@@ -89,7 +89,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                 </div>
                 <div>
-                  <p class="text-sm font-semibold" style="color:#E2E8F5;">Run in Compiler Explorer</p>
+                  <p class="text-sm font-semibold" style="color: var(--color-text);">Run in Compiler Explorer</p>
                   <p class="text-xs mt-0.5" style="color:var(--color-text-secondary);">Opens godbolt.org — compile and run live with GCC, Clang, or MSVC</p>
                 </div>
               </div>

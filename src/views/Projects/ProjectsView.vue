@@ -47,7 +47,7 @@
             </div>
           </div>
 
-          <p class="text-sm flex-1" style="color:rgba(148,163,184,0.75);">{{ proj.description }}</p>
+          <p class="text-sm flex-1" style="color: var(--card-text-muted);">{{ proj.description }}</p>
 
           <!-- Tags -->
           <div class="flex flex-wrap gap-1.5">

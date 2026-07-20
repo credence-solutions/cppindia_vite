@@ -50,7 +50,7 @@
                       style="background:rgba(99,102,241,0.12); color:#818CF8;">{{ tag }}</span>
                   </div>
                 </td>
-                <td class="px-5 py-4 font-mono text-xs" :style="`color:${isUrgent(cfp.cfpDeadline) ? '#F87171' : 'rgba(148,163,184,0.7)'};`">
+                <td class="px-5 py-4 font-mono text-xs" :style="`color:${isUrgent(cfp.cfpDeadline) ? '#DC2626' : 'var(--color-text-muted)'};`">
                   {{ formatDate(cfp.cfpDeadline) }}
                   <span v-if="isUrgent(cfp.cfpDeadline) && cfp.status === 'open'" class="ml-1 text-[10px] font-bold" style="color:#F87171;">Soon!</span>
                 </td>

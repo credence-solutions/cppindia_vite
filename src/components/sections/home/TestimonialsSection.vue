@@ -13,9 +13,9 @@
           v-for="t in testimonials"
           :key="t.id"
           class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200"
-          style="background: rgba(15,17,45,0.85); border: 1px solid rgba(99,102,241,0.18);"
+          style="background: var(--card-bg); border: 1px solid var(--card-border);"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.transform='translateY(-3px)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.transform='translateY(0)'"
+          onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateY(0)'"
         >
           <!-- Quote mark -->
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:rgba(99,102,241,0.35);">
@@ -23,16 +23,16 @@
             <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="currentColor"/>
           </svg>
 
-          <p class="text-sm leading-relaxed flex-1 italic" style="color:rgba(203,213,225,0.85);">{{ t.quote }}</p>
+          <p class="text-sm leading-relaxed flex-1 italic" style="color: var(--color-text-secondary);">{{ t.quote }}</p>
 
-          <div class="flex items-center gap-3 mt-auto pt-2" style="border-top: 1px solid rgba(99,102,241,0.12);">
+          <div class="flex items-center gap-3 mt-auto pt-2" style="border-top: 1px solid var(--color-border);">
             <!-- Avatar initials -->
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xs"
-              style="background:rgba(99,102,241,0.2); color:#818CF8;">
+              style="background:rgba(99,102,241,0.15); color:#6366F1;">
               {{ t.name.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>
-              <p class="text-sm font-semibold" style="color:#E2E8F5;">{{ t.name }}</p>
+              <p class="text-sm font-semibold" style="color: var(--color-text);">{{ t.name }}</p>
               <p class="text-xs" style="color:var(--color-text-muted);">{{ t.role }}</p>
             </div>
             <!-- Source badge -->

@@ -39,7 +39,7 @@
               xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" stroke-width="2.5"
               class="flex-shrink-0 transition-transform duration-200"
-              :style="open === item.id ? 'color:#818CF8; transform:rotate(180deg)' : 'color:rgba(148,163,184,0.5)'"
+              :style="open === item.id ? 'color:#818CF8; transform:rotate(180deg)' : 'color:var(--color-text-muted)'"
             >
               <polyline points="6 9 12 15 18 9"/>
             </svg>

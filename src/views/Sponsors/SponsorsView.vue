@@ -41,7 +41,7 @@
           <div class="font-display font-bold text-2xl" :style="`color: ${tier.badgeColor};`">{{ tier.price }}</div>
           <p class="text-sm" style="color:var(--color-text-secondary);">{{ tier.description }}</p>
           <ul class="flex flex-col gap-2 flex-1">
-            <li v-for="benefit in tier.benefits" :key="benefit" class="flex items-start gap-2 text-sm" style="color:rgba(203,213,225,0.85);">
+            <li v-for="benefit in tier.benefits" :key="benefit" class="flex items-start gap-2 text-sm" style="color: var(--color-text-secondary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 mt-0.5" :style="`color:${tier.badgeColor};`"><polyline points="20 6 9 17 4 12"/></svg>
               {{ benefit }}
             </li>
@@ -58,8 +58,8 @@
       <div class="mt-16 text-center">
         <p class="text-xs font-bold uppercase tracking-[0.14em] mb-6" style="color: #A78BFA;">Our Current Sponsors</p>
         <div class="flex flex-wrap items-center justify-center gap-8">
-          <div class="flex items-center justify-center rounded-xl px-6 py-4" style="background:rgba(15,17,45,0.6); border:1px solid rgba(234,179,8,0.2);">
-            <span class="font-bold text-lg" style="color:rgba(234,179,8,0.9);">Meeting C++</span>
+          <div class="flex items-center justify-center rounded-xl px-6 py-4" style="background: var(--card-bg); border:1px solid rgba(234,179,8,0.35);">
+            <span class="font-bold text-lg" style="color:#B45309;">Meeting C++</span>
           </div>
           <div class="flex items-center justify-center rounded-xl px-6 py-4" style="background:var(--card-bg); border:1px solid var(--card-border);">
             <span class="font-bold text-lg" style="color:var(--color-text-secondary);">think-cell</span>
@@ -101,9 +101,9 @@ const tiers = [
     description: 'Ideal for startups and small companies wanting to support the community.',
     borderColor: 'rgba(180,83,9,0.4)',
     badgeBg: 'rgba(180,83,9,0.15)',
-    badgeColor: '#D97706',
+    badgeColor: '#B45309',
     btnBg: 'transparent',
-    btnColor: '#D97706',
+    btnColor: '#B45309',
     featured: false,
     benefits: [
       'Logo on website footer',
@@ -118,9 +118,9 @@ const tiers = [
     description: 'Great visibility for mid-sized companies hiring C++ engineers.',
     borderColor: 'rgba(148,163,184,0.4)',
     badgeBg: 'rgba(148,163,184,0.12)',
-    badgeColor: '#94A3B8',
+    badgeColor: '#475569',
     btnBg: 'transparent',
-    btnColor: '#94A3B8',
+    btnColor: '#475569',
     featured: false,
     benefits: [
       'Logo on website header & footer',
@@ -136,9 +136,9 @@ const tiers = [
     description: 'Maximum brand presence — be seen as a core pillar of the community.',
     borderColor: 'rgba(234,179,8,0.45)',
     badgeBg: 'rgba(234,179,8,0.15)',
-    badgeColor: '#EAB308',
-    btnBg: 'rgba(234,179,8,0.12)',
-    btnColor: '#EAB308',
+    badgeColor: '#92400E',
+    btnBg: 'rgba(234,179,8,0.15)',
+    btnColor: '#92400E',
     featured: true,
     benefits: [
       'Prominent logo everywhere',

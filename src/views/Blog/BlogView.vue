@@ -49,7 +49,7 @@
             <p class="text-sm" style="color:var(--color-text-secondary);">{{ post.excerpt }}</p>
             <div class="flex items-center justify-between mt-auto pt-2">
               <div class="text-xs" style="color:var(--color-text-muted);">
-                <span class="font-medium" style="color:rgba(148,163,184,0.75);">{{ post.author }}</span>
+                <span class="font-medium" style="color: var(--color-text-secondary);">{{ post.author }}</span>
                 &middot; {{ post.readingTime }} min read
               </div>
               <RouterLink :to="`/blog/${post.slug}`" class="text-xs font-semibold" style="color:#818CF8;">Read →</RouterLink>

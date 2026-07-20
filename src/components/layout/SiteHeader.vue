@@ -79,7 +79,7 @@
 
           <!-- Hamburger -->
           <button
-            class="hamburger lg:hidden"
+            class="hamburger"
             :class="{ 'hamburger--open': nav.mobileMenuOpen }"
             aria-label="Toggle mobile menu"
             :aria-expanded="nav.mobileMenuOpen"
@@ -150,4 +150,5 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside, true
 .hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (min-width: 1024px) { .hamburger { display: none !important; } }
 </style>

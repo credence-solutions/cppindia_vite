@@ -85,7 +85,7 @@
 
       <!-- Post a job CTA -->
       <div class="mt-12 rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4"
-        style="background: rgba(15,17,45,0.6); border: 1px solid rgba(234,179,8,0.2);">
+        style="background: var(--card-bg); border: 1px solid rgba(234,179,8,0.35);">
         <div>
           <p class="font-semibold" style="color:var(--color-text);">Hiring C++ engineers?</p>
           <p class="text-sm mt-0.5" style="color:var(--color-text-secondary);">Reach 1,000+ C++ developers in India. Post a job or become a sponsor.</p>

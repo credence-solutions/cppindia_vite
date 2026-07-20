@@ -113,18 +113,18 @@ const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body)
 </script>
 
 <style>
-.prose-cpp { color: rgba(203,213,225,0.9); line-height: 1.8; }
+.prose-cpp { color: var(--color-text-secondary); line-height: 1.8; }
 .prose-cpp h1, .prose-cpp h2, .prose-cpp h3 {
-  color: #E2E8F5;
+  color: var(--color-text);
   font-family: var(--font-secondary);
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
-.prose-cpp h2 { font-size: 1.35rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(99,102,241,0.18); }
-.prose-cpp h3 { font-size: 1.1rem; color: #A78BFA; }
+.prose-cpp h2 { font-size: 1.35rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--color-border); }
+.prose-cpp h3 { font-size: 1.1rem; color: #6366F1; }
 .prose-cpp p  { margin-bottom: 1.25rem; }
-.prose-cpp strong { color: #E2E8F5; }
+.prose-cpp strong { color: var(--color-text); }
 .prose-cpp code {
   background: rgba(99,102,241,0.12);
   color: #22D3EE;
@@ -166,8 +166,8 @@ const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body)
 }
 .prose-cpp td {
   padding: 0.55rem 1rem;
-  border-bottom: 1px solid rgba(99,102,241,0.1);
-  color: rgba(203,213,225,0.8);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
 }
 .prose-cpp hr { border: none; border-top: 1px solid rgba(99,102,241,0.18); margin: 2rem 0; }
 .prose-cpp a  { color: #818CF8; text-decoration: underline; }
