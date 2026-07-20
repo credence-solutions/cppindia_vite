@@ -13,11 +13,11 @@
       style="background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%); filter: blur(40px);" />
 
     <!-- Dot grid with indigo dots -->
-    <div class="absolute inset-0 pointer-events-none opacity-40"
+    <div class="absolute inset-0 pointer-events-none opacity-[0.12]"
       style="background-image: radial-gradient(circle, rgba(99,102,241,0.35) 1px, transparent 1px); background-size: 32px 32px;" />
 
-    <!-- Bottom gradient fade -->
-    <div class="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+    <!-- Bottom gradient fade — full page-bg colour so no seam with the next section -->
+    <div class="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
       style="background: linear-gradient(to bottom, transparent, var(--hero-fade));" />
 
     <div class="container relative z-[1]">
