@@ -1,10 +1,5 @@
 <template>
-  <!-- Root transition wrapper — applies page transitions -->
-  <RouterView v-slot="{ Component, route }">
-    <Transition name="page" mode="out-in">
-      <component :is="Component" :key="route.path" />
-    </Transition>
-  </RouterView>
+  <RouterView />
 
   <!-- Global floating UI -->
   <ThemePicker />

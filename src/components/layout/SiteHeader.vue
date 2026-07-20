@@ -25,26 +25,35 @@
         </RouterLink>
 
         <!-- Desktop nav -->
-        <nav class="flex-1 hidden lg:block" aria-label="Main navigation">
+        <nav ref="navRef" class="flex-1 hidden lg:block" aria-label="Main navigation">
           <ul class="flex items-center justify-end gap-0" role="list">
             <li
               v-for="link in NAV_LINKS"
               :key="link.path"
               class="relative"
-              @mouseenter="link.children && nav.setMegaMenu(link.path)"
-              @mouseleave="nav.closeMegaMenu()"
             >
-              <RouterLink
-                :to="link.path"
-                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink rounded-md transition-colors duration-fast whitespace-nowrap hover:text-primary"
-                :class="isActive(link.path) ? 'text-primary font-semibold' : ''"
+              <!-- Items with children: button toggle only, no page navigation -->
+              <button
+                v-if="link.children"
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-md transition-colors duration-fast whitespace-nowrap cursor-pointer"
+                :class="isActive(link.path) ? 'text-primary font-semibold' : 'text-ink hover:text-primary'"
+                :aria-expanded="nav.activeMegaMenu === link.path"
+                @click.stop="nav.setMegaMenu(link.path)"
               >
                 {{ link.label }}
-                <svg v-if="link.children" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                   class="transition-transform duration-fast"
                   :class="nav.activeMegaMenu === link.path ? 'rotate-180' : ''"
                 ><polyline points="6 9 12 15 18 9"/></svg>
-              </RouterLink>
+              </button>
+
+              <!-- Leaf links: navigate normally -->
+              <RouterLink
+                v-else
+                :to="link.path"
+                class="flex items-center px-4 py-2 text-sm font-medium text-ink rounded-md transition-colors duration-fast whitespace-nowrap hover:text-primary"
+                :class="isActive(link.path) ? 'text-primary font-semibold' : ''"
+              >{{ link.label }}</RouterLink>
 
               <MegaMenu
                 v-if="link.mega && link.children"
@@ -56,6 +65,7 @@
                 v-else-if="link.children"
                 :items="link.children"
                 :visible="nav.activeMegaMenu === link.path"
+                @close="nav.closeMegaMenu"
               />
             </li>
           </ul>
@@ -90,6 +100,7 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import AnnouncementBanner from './AnnouncementBanner.vue'
 import { useNavigationStore } from '@/stores/navigation'
@@ -99,14 +110,24 @@ import SimpleDropdown from '@/components/navigation/SimpleDropdown.vue'
 import MobileMenu from '@/components/navigation/MobileMenu.vue'
 import { useBannerState } from '@/composables/useBannerState'
 
-const route = useRoute()
-const nav   = useNavigationStore()
+const route  = useRoute()
+const nav    = useNavigationStore()
+const navRef = ref(null)
 const { visible: bannerVisible } = useBannerState()
 
 function isActive(path) {
   if (path === '/') return route.path === '/'
   return route.path.startsWith(path)
 }
+
+function handleClickOutside(e) {
+  if (navRef.value && !navRef.value.contains(e.target)) {
+    nav.closeMegaMenu()
+  }
+}
+
+onMounted(() => document.addEventListener('click', handleClickOutside, true))
+onUnmounted(() => document.removeEventListener('click', handleClickOutside, true))
 </script>
 
 <style scoped>

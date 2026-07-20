@@ -10,6 +10,7 @@
           :to="item.path"
           class="dropdown-link"
           role="menuitem"
+          @click="$emit('close')"
         >{{ item.label }}</RouterLink>
       </li>
     </ul>
@@ -21,6 +22,7 @@ defineProps({
   items:   { type: Array,   required: true },
   visible: { type: Boolean, default: false },
 })
+defineEmits(['close'])
 </script>
 
 <style scoped>
