@@ -7,7 +7,7 @@
     "format": "Virtual (Zoom + Discord)",
     "tagline": "The C++ Festival of India",
     "description": "The fourth annual international C++ festival celebration brought together 8 global C++ experts for two days of inspiring talks, hands-on sessions, and community networking. Previous iterations featured speakers like Bjarne Stroustrup — father of C++ — and CppCon chair Jon Kalb.",
-    "registrationUrl": "https://konfhub.com/cppindiacon2024",
+    "registrationUrl": null,
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
     "speakers": [
       { "name": "Alex Dathskovsky",       "role": "Keynote",  "topic": "C++ ♥ Python",                                       "image": "/assets/images/speakers/2024/alex.jpg" },
