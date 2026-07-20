@@ -10,9 +10,10 @@
     <section class="section">
       <div class="container">
 
-        <!-- Year tabs -->
+        <!-- Year tabs + search -->
+        <div class="flex items-start justify-between gap-4 flex-wrap mb-10 pb-4 border-b border-wire-light">
         <div
-          class="flex items-center flex-wrap gap-2 mb-10 pb-4 border-b border-wire-light"
+          class="flex items-center flex-wrap gap-2"
           role="tablist"
         >
           <button
@@ -32,6 +33,10 @@
               class="px-1.5 py-px bg-white/20 rounded-full text-[10px] font-bold"
             >Latest</span>
           </button>
+        </div>
+          <div class="w-full sm:w-72">
+            <SearchBar v-model="scheduleQuery" placeholder="Search sessions, speakers…" />
+          </div>
         </div>
 
         <!-- Loading -->
@@ -109,10 +114,16 @@
 
           <!-- Schedule -->
           <div v-if="conf.schedule?.length" class="mb-12">
-            <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Conference Schedule</h3>
+            <div class="flex items-center justify-between gap-4 mb-6 pb-3 border-b-2 border-wire-light flex-wrap">
+              <h3 class="font-display text-xl font-bold text-ink">Conference Schedule</h3>
+              <p v-if="scheduleQuery" class="text-xs text-ink-3">
+                {{ filteredSessionCount }} session{{ filteredSessionCount !== 1 ? 's' : '' }} match
+                "<span class="text-ink font-medium">{{ scheduleQuery }}</span>"
+              </p>
+            </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div
-                v-for="day in conf.schedule"
+                v-for="day in filteredSchedule"
                 :key="day.day"
                 class="bg-surface border border-wire-light rounded-2xl overflow-hidden"
               >
@@ -125,6 +136,7 @@
                   <div
                     v-for="session in day.sessions"
                     :key="session.time + session.title"
+                    v-show="!scheduleQuery || sessionMatchesQuery(session)"
                     class="flex items-start gap-4 px-3 py-3 rounded-lg mb-1 transition-colors"
                     :class="{
                       'opacity-55': ['break','intro','outro','activity'].includes(session.type),
@@ -355,6 +367,7 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
+import SearchBar from '@/components/common/SearchBar.vue'
 import { fetchConferenceByYear } from '@/services/api/conferences'
 
 
@@ -363,13 +376,39 @@ useHead({
   description: "CppIndiaCon is India's premier annual C++ conference featuring international speakers, talks, workshops, and networking.",
 })
 
-const route      = useRoute()
-const router     = useRouter()
-const years      = [2024, 2023, 2022, 2021]
-const latestYear = 2024
-const activeYear = ref(Number(route.query.year) || 2024)
-const conf       = ref(null)
-const loading    = ref(true)
+const route         = useRoute()
+const router        = useRouter()
+const years         = [2024, 2023, 2022, 2021]
+const latestYear    = 2024
+const activeYear    = ref(Number(route.query.year) || 2024)
+const conf          = ref(null)
+const loading       = ref(true)
+const scheduleQuery = ref('')
+
+function sessionMatchesQuery(session) {
+  const q = scheduleQuery.value.trim().toLowerCase()
+  if (!q) return true
+  return (
+    session.title?.toLowerCase().includes(q) ||
+    session.speaker?.toLowerCase().includes(q) ||
+    session.abstract?.toLowerCase().includes(q)
+  )
+}
+
+const filteredSchedule = computed(() => {
+  if (!conf.value?.schedule) return []
+  if (!scheduleQuery.value.trim()) return conf.value.schedule
+  return conf.value.schedule.map(day => ({
+    ...day,
+    sessions: day.sessions.filter(s => sessionMatchesQuery(s)),
+  })).filter(day => day.sessions.length > 0)
+})
+
+const filteredSessionCount = computed(() =>
+  filteredSchedule.value.reduce((n, day) => n + day.sessions.filter(s =>
+    ['talk', 'keynote', 'special', 'lightning'].includes(s.type)
+  ).length, 0)
+)
 
 const sessionVideos = computed(() => {
   if (!conf.value?.schedule) return []
@@ -395,6 +434,7 @@ async function loadConference(year) {
 
 function setYear(yr) {
   activeYear.value = yr
+  scheduleQuery.value = ''
   router.replace({ query: { year: yr } })
 }
 

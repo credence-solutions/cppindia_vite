@@ -10,30 +10,41 @@
     <section class="section">
       <div class="container">
 
-        <!-- Year tabs -->
-        <div
-          class="flex items-center flex-wrap gap-2 mb-8 pb-4 border-b border-wire-light"
-          role="tablist"
-          aria-label="Select year"
-        >
-          <button
-            v-for="yr in years"
-            :key="yr"
-            role="tab"
-            class="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 cursor-pointer"
-            :class="activeYear === yr
-              ? 'bg-secondary text-white hover:bg-secondary-dark'
-              : 'text-ink-2 hover:text-secondary hover:bg-[rgba(79,142,247,0.06)]'"
-            :aria-selected="activeYear === yr"
-            @click="setYear(yr)"
+        <!-- Year tabs + search -->
+        <div class="flex items-start justify-between gap-4 flex-wrap mb-8 pb-4 border-b border-wire-light">
+          <div
+            class="flex items-center flex-wrap gap-2"
+            role="tablist"
+            aria-label="Select year"
           >
-            {{ yr }}
-            <span
-              class="px-1.5 py-px rounded-full text-[10px] font-bold"
-              :class="activeYear === yr ? 'bg-white/20 text-white' : 'bg-surface-alt text-ink-3'"
-            >{{ talksByYear[yr]?.length ?? 0 }}</span>
-          </button>
+            <button
+              v-for="yr in years"
+              :key="yr"
+              role="tab"
+              class="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 cursor-pointer"
+              :class="activeYear === yr
+                ? 'bg-secondary text-white hover:bg-secondary-dark'
+                : 'text-ink-2 hover:text-secondary hover:bg-[rgba(79,142,247,0.06)]'"
+              :aria-selected="activeYear === yr"
+              @click="setYear(yr)"
+            >
+              {{ yr }}
+              <span
+                class="px-1.5 py-px rounded-full text-[10px] font-bold"
+                :class="activeYear === yr ? 'bg-white/20 text-white' : 'bg-surface-alt text-ink-3'"
+              >{{ talksByYear[yr]?.length ?? 0 }}</span>
+            </button>
+          </div>
+          <div class="w-full sm:w-72">
+            <SearchBar v-model="query" placeholder="Search talks, speakers, tags…" />
+          </div>
         </div>
+
+        <!-- Search results info -->
+        <p v-if="query" class="text-sm text-ink-3 mb-5">
+          <span v-if="displayTalks.length">{{ displayTalks.length }} result{{ displayTalks.length !== 1 ? 's' : '' }} for "<span class="text-ink font-medium">{{ query }}</span>"</span>
+          <span v-else>No results for "<span class="text-ink font-medium">{{ query }}</span>"</span>
+        </p>
 
         <!-- Loading skeleton -->
         <div v-if="loading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -41,14 +52,14 @@
         </div>
 
         <!-- Empty -->
-        <div v-else-if="!talks.length" class="text-center py-16 text-ink-3">
-          <p>No talks found for {{ activeYear }}.</p>
+        <div v-else-if="!displayTalks.length" class="text-center py-16 text-ink-3">
+          <p>{{ query ? 'No talks match your search.' : `No talks found for ${activeYear}.` }}</p>
         </div>
 
         <!-- Talks grid -->
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <article
-            v-for="talk in talks"
+            v-for="talk in displayTalks"
             :key="talk.id"
             class="flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
           >
@@ -82,7 +93,10 @@
             <!-- Card body -->
             <div class="flex flex-col gap-3 p-5 flex-1">
               <div class="flex items-center justify-between gap-2 flex-wrap">
-                <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
+                <div class="flex items-center gap-2">
+                  <time class="font-mono text-xs text-ink-3" :datetime="talk.date">{{ formatDate(talk.date) }}</time>
+                  <span v-if="query" class="px-1.5 py-px bg-surface-alt text-ink-3 rounded text-[10px] font-bold">{{ talk.date?.slice(0, 4) }}</span>
+                </div>
                 <div class="flex items-center gap-1">
                   <span
                     v-for="tag in talk.tags.slice(0, 2)"
@@ -146,6 +160,7 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
+import SearchBar from '@/components/common/SearchBar.vue'
 import { fetchTalks } from '@/services/api/talks'
 
 useHead({
@@ -160,8 +175,21 @@ const years       = [2024, 2023, 2022, 2021, 2020]
 const activeYear  = ref(Number(route.query.year) || 2024)
 const talksByYear = ref({})
 const loading     = ref(true)
+const query       = ref('')
 
 const talks = computed(() => talksByYear.value[activeYear.value] ?? [])
+
+// When searching: across all years. Otherwise: active year only.
+const displayTalks = computed(() => {
+  const q = query.value.trim().toLowerCase()
+  if (!q) return talks.value
+  const all = Object.values(talksByYear.value).flat()
+  return all.filter(t =>
+    t.title?.toLowerCase().includes(q) ||
+    t.speaker?.toLowerCase().includes(q) ||
+    t.tags?.some(tag => tag.toLowerCase().includes(q))
+  )
+})
 
 async function loadTalks() {
   loading.value = true
@@ -171,6 +199,7 @@ async function loadTalks() {
 
 function setYear(yr) {
   activeYear.value = yr
+  query.value = ''
   router.replace({ query: { year: yr } })
 }
 

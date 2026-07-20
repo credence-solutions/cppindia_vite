@@ -10,15 +10,24 @@
     <section class="section" style="background: #0B0D2E;">
       <div class="container">
 
+        <!-- Search -->
+        <div class="mb-10">
+          <SearchBar v-model="query" placeholder="Search resources, articles, newsletters…" :dark="true" />
+          <p v-if="query" class="text-xs mt-2" style="color:rgba(148,163,184,0.5);">
+            <span v-if="totalResults > 0">{{ totalResults }} result{{ totalResults !== 1 ? 's' : '' }} for "<span style="color:#E2E8F5;">{{ query }}</span>"</span>
+            <span v-else>No results for "<span style="color:#E2E8F5;">{{ query }}</span>"</span>
+          </p>
+        </div>
+
         <!-- References -->
-        <div id="references" class="mb-14">
+        <div v-if="!query || filteredReferences.length" id="references" class="mb-14">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
             style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
             C++ Language &amp; References
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <a
-              v-for="r in resources.references"
+              v-for="r in filteredReferences"
               :key="r.id"
               :href="r.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
@@ -45,14 +54,14 @@
         </div>
 
         <!-- Articles -->
-        <div id="articles" class="mb-14">
+        <div v-if="!query || filteredArticles.length" id="articles" class="mb-14">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
             style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
             Articles &amp; Blogs
           </h2>
-          <div v-if="resources.articles.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div v-if="filteredArticles.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <a
-              v-for="r in resources.articles"
+              v-for="r in filteredArticles"
               :key="r.id"
               :href="r.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
@@ -87,7 +96,7 @@
         </div>
 
         <!-- Newsletter Archive -->
-        <div id="newsletter" class="mb-14">
+        <div v-if="!query || filteredNewsletters.length" id="newsletter" class="mb-14">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
             style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
             Newsletter Archive
@@ -107,7 +116,7 @@
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <a
-              v-for="nl in newsletters"
+              v-for="nl in filteredNewsletters"
               :key="nl.id"
               :href="nl.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
@@ -171,8 +180,10 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
+import SearchBar from '@/components/common/SearchBar.vue'
 import resourcesData from '@/data/resources.json'
 import newsletters from '@/data/newsletters.json'
 import { SITE } from '@/constants'
@@ -183,6 +194,26 @@ useHead({
 })
 
 const resources = resourcesData
+const query     = ref('')
+
+function matches(item) {
+  const q = query.value.trim().toLowerCase()
+  if (!q) return true
+  return (
+    item.title?.toLowerCase().includes(q) ||
+    item.description?.toLowerCase().includes(q) ||
+    item.summary?.toLowerCase().includes(q) ||
+    item.type?.toLowerCase().includes(q) ||
+    item.highlights?.some(h => h.toLowerCase().includes(q))
+  )
+}
+
+const filteredReferences  = computed(() => resources.references.filter(matches))
+const filteredArticles    = computed(() => resources.articles.filter(matches))
+const filteredNewsletters = computed(() => newsletters.filter(matches))
+const totalResults        = computed(() =>
+  filteredReferences.value.length + filteredArticles.value.length + filteredNewsletters.value.length
+)
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString('en-IN', { year: 'numeric', month: 'long' })

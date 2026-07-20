@@ -9,10 +9,19 @@
   <section class="section" style="background: #07091C;">
     <div class="container">
 
+      <!-- Search -->
+      <div class="mb-8">
+        <SearchBar v-model="query" placeholder="Search by name, role, city…" :dark="true" />
+        <p v-if="query" class="text-xs mt-2" style="color:rgba(148,163,184,0.5);">
+          <span v-if="displayMembers.length">{{ displayMembers.length }} result{{ displayMembers.length !== 1 ? 's' : '' }}</span>
+          <span v-else>No members match "<span style="color:#E2E8F5;">{{ query }}</span>"</span>
+        </p>
+      </div>
+
       <!-- Grid -->
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <article
-          v-for="member in members"
+          v-for="member in displayMembers"
           :key="member.id"
           class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200"
           style="background: rgba(15,17,45,0.85); border: 1px solid rgba(99,102,241,0.18);"
@@ -192,6 +201,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
+import SearchBar from '@/components/common/SearchBar.vue'
 import membersData from '@/data/members.json'
 import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'
@@ -202,10 +212,24 @@ const badgeMap = {
   moderator: { bg: 'rgba(167,139,250,0.12)', color: '#A78BFA', border: 'rgba(167,139,250,0.35)',avatarBg: 'rgba(167,139,250,0.15)' },
 }
 
+const query = ref('')
+
 // Show only founders, moderators, and speakers — no contributors
 const members = computed(() =>
   membersData.filter(m => m.badge !== 'contributor')
 )
+
+const displayMembers = computed(() => {
+  const q = query.value.trim().toLowerCase()
+  if (!q) return members.value
+  return members.value.filter(m =>
+    m.name?.toLowerCase().includes(q) ||
+    m.role?.toLowerCase().includes(q) ||
+    m.city?.toLowerCase().includes(q) ||
+    m.bio?.toLowerCase().includes(q) ||
+    m.badge?.toLowerCase().includes(q)
+  )
+})
 
 // If a founder/moderator has given talks, they're also a speaker — show both badges.
 function getBadges(member) {
