@@ -66,7 +66,7 @@
                 :key="value.title"
                 class="p-5 rounded-xl transition-all duration-200"
                 style="background: var(--card-bg); border: 1px solid var(--card-border);"
-                onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 16px rgba(99,102,241,0.15)'"
+                onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.boxShadow='0 0 16px rgba(8,145,178,0.15)'"
                 onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               >
                 <h3 class="font-display text-base font-bold mb-2" style="color: var(--color-secondary-mid);">{{ value.title }}</h3>
@@ -140,7 +140,7 @@
               </ul>
             </div>
 
-            <div class="rounded-xl p-6" style="background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); box-shadow: 0 0 24px rgba(99,102,241,0.3);">
+            <div class="rounded-xl p-6" style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 24px rgba(8,145,178,0.3);">
               <h3 class="font-display text-base font-bold text-white mb-4">Join the Community</h3>
               <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.75);">Chat with fellow C++ developers on Discord.</p>
               <a

@@ -16,7 +16,7 @@
             :key="member.id"
             class="rounded-2xl overflow-hidden transition-all duration-300 group"
             style="background: var(--card-bg); border: 1px solid var(--card-border);"
-            onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 28px rgba(99,102,241,0.15)'"
+            onmouseover="this.style.transform='translateY(-4px)'; this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 28px rgba(8,145,178,0.15)'"
             onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
           >
             <div class="team-photo-wrap">
@@ -44,9 +44,9 @@
                   v-if="member.links.website"
                   :href="member.links.website"
                   class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-                  style="background: rgba(99,102,241,0.1); color: var(--color-text-muted);"
-                  onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-                  onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='var(--color-text-muted)'"
+                  style="background: rgba(8,145,178,0.1); color: var(--color-text-muted);"
+                  onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                  onmouseout="this.style.background='rgba(8,145,178,0.1)'; this.style.color='var(--color-text-muted)'"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Website"
@@ -57,9 +57,9 @@
                   v-if="member.links.linkedin"
                   :href="member.links.linkedin"
                   class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-                  style="background: rgba(99,102,241,0.1); color: var(--color-text-muted);"
-                  onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-                  onmouseout="this.style.background='rgba(99,102,241,0.1)'; this.style.color='var(--color-text-muted)'"
+                  style="background: rgba(8,145,178,0.1); color: var(--color-text-muted);"
+                  onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                  onmouseout="this.style.background='rgba(8,145,178,0.1)'; this.style.color='var(--color-text-muted)'"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
@@ -84,9 +84,9 @@
           <RouterLink
             to="/contact"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-            style="background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); box-shadow: 0 0 20px rgba(99,102,241,0.35);"
-            onmouseover="this.style.boxShadow='0 0 30px rgba(99,102,241,0.55)'"
-            onmouseout="this.style.boxShadow='0 0 20px rgba(99,102,241,0.35)'"
+            style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
+            onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
+            onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
           >Get in Touch</RouterLink>
         </div>
       </div>

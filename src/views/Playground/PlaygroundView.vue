@@ -18,7 +18,7 @@
                 @click="activeStd = std"
                 class="px-2.5 py-1 rounded-md text-xs font-bold transition-all duration-150"
                 :style="activeStd === std
-                  ? 'background:rgba(99,102,241,0.25); color:var(--color-primary-soft);'
+                  ? 'background:rgba(8,145,178,0.25); color:var(--color-primary-soft);'
                   : 'background:transparent; color:var(--color-text-muted);'"
               >{{ std }}</button>
             </div>
@@ -33,7 +33,7 @@
                 :style="active?.id === s.id
                   ? 'background:var(--badge-bg-strong); border-left:2px solid var(--color-primary-soft);'
                   : 'border-left:2px solid transparent;'"
-                onmouseover="if(!this.classList.contains('active')) this.style.background='rgba(99,102,241,0.06)'"
+                onmouseover="if(!this.classList.contains('active')) this.style.background='rgba(8,145,178,0.06)'"
                 onmouseout="if(!this.classList.contains('active')) this.style.background='transparent'"
               >
                 <span class="text-sm font-semibold" style="color: var(--color-text);">{{ s.title }}</span>
@@ -62,9 +62,9 @@
             </div>
 
             <!-- Code block -->
-            <div class="rounded-2xl overflow-hidden flex-shrink-0" style="background: #0D1117; border: 1px solid rgba(99,102,241,0.2);">
+            <div class="rounded-2xl overflow-hidden flex-shrink-0" style="background: #0D1117; border: 1px solid rgba(8,145,178,0.2);">
               <!-- macOS titlebar -->
-              <div class="flex items-center gap-2 px-4 py-3" style="background:#161B22; border-bottom:1px solid rgba(99,102,241,0.1);">
+              <div class="flex items-center gap-2 px-4 py-3" style="background:#161B22; border-bottom:1px solid rgba(8,145,178,0.1);">
                 <span class="w-3 h-3 rounded-full" style="background:#FF5F56;"></span>
                 <span class="w-3 h-3 rounded-full" style="background:#FFBD2E;"></span>
                 <span class="w-3 h-3 rounded-full" style="background:#27C93F;"></span>
@@ -80,12 +80,12 @@
               target="_blank"
               rel="noopener noreferrer"
               class="group flex items-center justify-between gap-6 px-6 py-5 rounded-2xl transition-all duration-200"
-              style="background: rgba(99,102,241,0.07); border: 1px solid rgba(99,102,241,0.25);"
-              onmouseover="this.style.borderColor='rgba(99,102,241,0.5)'; this.style.background='rgba(99,102,241,0.12)'"
-              onmouseout="this.style.borderColor='rgba(99,102,241,0.25)'; this.style.background='rgba(99,102,241,0.07)'"
+              style="background: rgba(8,145,178,0.07); border: 1px solid rgba(8,145,178,0.25);"
+              onmouseover="this.style.borderColor='rgba(8,145,178,0.5)'; this.style.background='rgba(8,145,178,0.12)'"
+              onmouseout="this.style.borderColor='rgba(8,145,178,0.25)'; this.style.background='rgba(8,145,178,0.07)'"
             >
               <div class="flex items-center gap-4">
-                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(99,102,241,0.15);">
+                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(8,145,178,0.15);">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-soft)" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
                 </div>
                 <div>
@@ -100,9 +100,9 @@
           </div>
 
           <!-- Empty state -->
-          <div v-else class="flex-1 flex items-center justify-center rounded-2xl" style="border: 1px dashed rgba(99,102,241,0.25);">
+          <div v-else class="flex-1 flex items-center justify-center rounded-2xl" style="border: 1px dashed rgba(8,145,178,0.25);">
             <div class="text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto mb-3" style="color:rgba(99,102,241,0.3);"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="mx-auto mb-3" style="color:rgba(8,145,178,0.3);"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               <p class="font-semibold" style="color:var(--color-text-muted);">Select a snippet to explore</p>
             </div>
           </div>
@@ -128,7 +128,7 @@ const filteredSnippets = computed(() =>
 )
 
 function stdColor(std) {
-  if (std === 'C++23') return 'background:rgba(167,139,250,0.15); color:var(--color-secondary-mid); border:1px solid rgba(167,139,250,0.3);'
+  if (std === 'C++23') return 'background:rgba(8,145,178,0.15); color:var(--color-secondary-mid); border:1px solid rgba(8,145,178,0.3);'
   if (std === 'C++20') return 'background:rgba(34,211,238,0.12); color:#22D3EE; border:1px solid rgba(34,211,238,0.3);'
   return 'background:rgba(52,211,153,0.12); color:#34D399; border:1px solid rgba(52,211,153,0.3);'
 }

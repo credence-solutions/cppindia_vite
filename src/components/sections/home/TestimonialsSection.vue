@@ -14,11 +14,11 @@
           :key="t.id"
           class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.transform='translateY(-3px)'"
+          onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.transform='translateY(-3px)'"
           onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateY(0)'"
         >
           <!-- Quote mark -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:rgba(99,102,241,0.35);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:rgba(8,145,178,0.35);">
             <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" fill="currentColor"/>
             <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" fill="currentColor"/>
           </svg>
@@ -28,7 +28,7 @@
           <div class="flex items-center gap-3 mt-auto pt-2" style="border-top: 1px solid var(--color-border);">
             <!-- Avatar initials -->
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xs"
-              style="background:rgba(99,102,241,0.15); color:#6366F1;">
+              style="background:rgba(8,145,178,0.15); color:#2563EB;">
               {{ t.name.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>
@@ -46,9 +46,9 @@
       <div class="text-center mt-10">
         <RouterLink to="/join"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
-          style="border: 1px solid rgba(99,102,241,0.3); color: var(--color-primary-soft);"
-          onmouseover="this.style.background='rgba(99,102,241,0.08)'; this.style.borderColor='rgba(99,102,241,0.55)'"
-          onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(99,102,241,0.3)'"
+          style="border: 1px solid rgba(8,145,178,0.3); color: var(--color-primary-soft);"
+          onmouseover="this.style.background='rgba(8,145,178,0.08)'; this.style.borderColor='rgba(8,145,178,0.55)'"
+          onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(8,145,178,0.3)'"
         >Join the Community</RouterLink>
       </div>
     </div>
@@ -67,6 +67,6 @@ function sourceStyle(source) {
     twitter:  'background:rgba(29,161,242,0.1);  color:#38BDF8; border:1px solid rgba(29,161,242,0.25);',
     youtube:  'background:rgba(255,0,0,0.1);      color:#F87171; border:1px solid rgba(255,0,0,0.25);',
   }
-  return map[source] || 'background:rgba(99,102,241,0.12); color:var(--color-primary-soft);'
+  return map[source] || 'background:rgba(8,145,178,0.12); color:var(--color-primary-soft);'
 }
 </script>

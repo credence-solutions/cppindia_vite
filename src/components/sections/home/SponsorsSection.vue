@@ -39,9 +39,9 @@
       <!-- Community Sponsors -->
       <div class="mt-7 mb-6">
         <div class="flex items-center justify-center gap-2 mb-5">
-          <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
+          <span class="h-px flex-1 max-w-[60px]" style="background: rgba(8,145,178,0.2);" />
           <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: var(--color-text-muted);">Community Sponsors</span>
-          <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
+          <span class="h-px flex-1 max-w-[60px]" style="background: rgba(8,145,178,0.2);" />
         </div>
         <div class="flex flex-wrap justify-center items-center gap-3">
           <a
@@ -52,7 +52,7 @@
             rel="noopener noreferrer"
             class="group inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
             style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
-            onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='var(--color-primary-soft)'; this.style.background='rgba(99,102,241,0.07)'"
+            onmouseover="this.style.borderColor='rgba(8,145,178,0.45)'; this.style.color='var(--color-primary-soft)'; this.style.background='rgba(8,145,178,0.07)'"
             onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-text-secondary)'; this.style.background='transparent'"
             :title="sponsor.name"
           >

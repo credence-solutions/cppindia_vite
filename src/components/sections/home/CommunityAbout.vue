@@ -23,18 +23,18 @@
             <RouterLink
               to="/about"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-              style="background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); box-shadow: 0 0 20px rgba(99,102,241,0.35);"
-              onmouseover="this.style.boxShadow='0 0 30px rgba(99,102,241,0.55)'"
-              onmouseout="this.style.boxShadow='0 0 20px rgba(99,102,241,0.35)'"
+              style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
+              onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
+              onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
             >Learn More</RouterLink>
             <a
               :href="SITE.discordInvite"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
-              style="border: 1px solid rgba(99,102,241,0.35); color: var(--color-primary-soft); background: transparent;"
-              onmouseover="this.style.borderColor='rgba(99,102,241,0.6)'; this.style.background='rgba(99,102,241,0.08)'"
-              onmouseout="this.style.borderColor='rgba(99,102,241,0.35)'; this.style.background='transparent'"
+              style="border: 1px solid rgba(8,145,178,0.35); color: var(--color-primary-soft); background: transparent;"
+              onmouseover="this.style.borderColor='rgba(8,145,178,0.6)'; this.style.background='rgba(8,145,178,0.08)'"
+              onmouseout="this.style.borderColor='rgba(8,145,178,0.35)'; this.style.background='transparent'"
             >Join the Community</a>
           </div>
         </div>
@@ -46,11 +46,11 @@
             :key="pillar.title"
             class="pillar-card group p-6 rounded-xl transition-all duration-200 cursor-default"
             style="background: var(--card-bg); border: 1px solid var(--card-border);"
-            onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.2)'; this.style.transform='translateY(-2px)'"
+            onmouseover="this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 24px rgba(8,145,178,0.2)'; this.style.transform='translateY(-2px)'"
             onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
           >
             <div class="w-[52px] h-[52px] flex items-center justify-center rounded-lg mb-4"
-              style="background: rgba(99,102,241,0.12); color: var(--color-primary-soft);"
+              style="background: rgba(8,145,178,0.12); color: var(--color-primary-soft);"
               v-html="pillar.icon"
             />
             <h3 class="font-display font-bold text-base mb-2" style="color: var(--color-text);">{{ pillar.title }}</h3>

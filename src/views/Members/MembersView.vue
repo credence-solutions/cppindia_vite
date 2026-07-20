@@ -25,7 +25,7 @@
           :key="member.id"
           class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.12)'; this.style.transform='translateY(-3px)'"
+          onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.boxShadow='0 0 24px rgba(8,145,178,0.12)'; this.style.transform='translateY(-3px)'"
           onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >
           <!-- Avatar -->
@@ -76,9 +76,9 @@
               target="_blank" rel="noopener noreferrer"
               aria-label="Website"
               class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-              style="background: rgba(99,102,241,0.08); color: var(--color-text-muted);"
-              onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-              onmouseout="this.style.background='rgba(99,102,241,0.08)'; this.style.color='var(--color-text-muted)'"
+              style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
+              onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+              onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
             </a>
@@ -88,9 +88,9 @@
               target="_blank" rel="noopener noreferrer"
               aria-label="GitHub"
               class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-              style="background: rgba(99,102,241,0.08); color: var(--color-text-muted);"
-              onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-              onmouseout="this.style.background='rgba(99,102,241,0.08)'; this.style.color='var(--color-text-muted)'"
+              style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
+              onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+              onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
@@ -100,9 +100,9 @@
               target="_blank" rel="noopener noreferrer"
               aria-label="LinkedIn"
               class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
-              style="background: rgba(99,102,241,0.08); color: var(--color-text-muted);"
-              onmouseover="this.style.background='linear-gradient(135deg,#6366F1,#8B5CF6)'; this.style.color='white'"
-              onmouseout="this.style.background='rgba(99,102,241,0.08)'; this.style.color='var(--color-text-muted)'"
+              style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
+              onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+              onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
@@ -143,7 +143,7 @@
             <button
               class="w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-150 cursor-pointer"
               style="color: var(--color-text-muted);"
-              onmouseover="this.style.background='rgba(99,102,241,0.10)'; this.style.color='var(--color-text)'"
+              onmouseover="this.style.background='rgba(8,145,178,0.10)'; this.style.color='var(--color-text)'"
               onmouseout="this.style.background='transparent'; this.style.color='var(--color-text-muted)'"
               @click="closePopup"
             >
@@ -163,10 +163,10 @@
                 class="flex items-start gap-3 p-3 rounded-xl transition-all duration-150 group"
                 :class="talk.video ? 'cursor-pointer' : 'cursor-default opacity-50'"
                 :style="talk.video
-                  ? 'background:rgba(99,102,241,0.06); border:1px solid rgba(99,102,241,0.12);'
+                  ? 'background:rgba(8,145,178,0.06); border:1px solid rgba(8,145,178,0.12);'
                   : 'background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05);'"
-                @mouseover="talk.video && ($event.currentTarget.style.background='rgba(99,102,241,0.14)', $event.currentTarget.style.borderColor='rgba(99,102,241,0.3)')"
-                @mouseout="talk.video && ($event.currentTarget.style.background='rgba(99,102,241,0.06)', $event.currentTarget.style.borderColor='rgba(99,102,241,0.12)')"
+                @mouseover="talk.video && ($event.currentTarget.style.background='rgba(8,145,178,0.14)', $event.currentTarget.style.borderColor='rgba(8,145,178,0.3)')"
+                @mouseout="talk.video && ($event.currentTarget.style.background='rgba(8,145,178,0.06)', $event.currentTarget.style.borderColor='rgba(8,145,178,0.12)')"
               >
                 <!-- Play / no-video icon -->
                 <div
@@ -207,9 +207,9 @@ import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'
 
 const badgeMap = {
-  founder:   { bg: 'rgba(99,102,241,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(99,102,241,0.4)',  avatarBg: 'rgba(99,102,241,0.2)'  },
+  founder:   { bg: 'rgba(8,145,178,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.4)',  avatarBg: 'rgba(8,145,178,0.2)'  },
   speaker:   { bg: 'rgba(34,211,238,0.12)',  color: '#22D3EE', border: 'rgba(34,211,238,0.35)', avatarBg: 'rgba(34,211,238,0.15)' },
-  moderator: { bg: 'rgba(167,139,250,0.12)', color: 'var(--color-secondary-mid)', border: 'rgba(167,139,250,0.35)',avatarBg: 'rgba(167,139,250,0.15)' },
+  moderator: { bg: 'rgba(8,145,178,0.12)', color: 'var(--color-secondary-mid)', border: 'rgba(8,145,178,0.35)',avatarBg: 'rgba(8,145,178,0.15)' },
 }
 
 const query = ref('')

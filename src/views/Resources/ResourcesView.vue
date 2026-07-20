@@ -32,14 +32,14 @@
               :href="r.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
               style="background: var(--card-bg); border: 1px solid var(--card-border);"
-              onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 20px rgba(8,145,178,0.15)'"
               onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div class="flex items-center justify-between gap-2">
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
-                  style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
+                  style="background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
                 <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
                   style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #34D399;">Free</span>
               </div>
@@ -66,14 +66,14 @@
               :href="r.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
               style="background: var(--card-bg); border: 1px solid var(--card-border);"
-              onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 20px rgba(8,145,178,0.15)'"
               onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div class="flex items-center justify-between gap-2">
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
-                  style="background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
+                  style="background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
                 <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
                   style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #34D399;">Free</span>
               </div>
@@ -103,7 +103,7 @@
           </h2>
           <!-- Subscribe CTA -->
           <div class="rounded-xl p-5 mb-6 flex flex-wrap items-center justify-between gap-4"
-            style="background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,211,238,0.05)); border: 1px solid rgba(99,102,241,0.2);">
+            style="background: linear-gradient(135deg, rgba(8,145,178,0.08), rgba(34,211,238,0.05)); border: 1px solid rgba(8,145,178,0.2);">
             <div>
               <p class="font-semibold text-sm" style="color: var(--card-text);">Get the next issue in your inbox</p>
               <p class="text-xs mt-0.5" style="color: var(--card-text-muted);">Monthly newsletter — no spam, unsubscribe anytime.</p>
@@ -121,13 +121,13 @@
               :href="nl.url"
               class="flex flex-col gap-3 p-6 rounded-xl transition-all duration-200"
               style="background: var(--card-bg); border: 1px solid var(--card-border);"
-              onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 20px rgba(99,102,241,0.15)'"
+              onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 20px rgba(8,145,178,0.15)'"
               onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               target="_blank"
               rel="noopener noreferrer"
             >
               <div class="flex items-center justify-between">
-                <span class="text-xs font-mono px-2 py-0.5 rounded" style="background:rgba(99,102,241,0.12); color:var(--color-primary-soft);">#{{ nl.issueNumber }}</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded" style="background:rgba(8,145,178,0.12); color:var(--color-primary-soft);">#{{ nl.issueNumber }}</span>
                 <time class="text-xs font-mono" style="color: var(--card-text-muted);">{{ formatDate(nl.date) }}</time>
               </div>
               <h3 class="font-display font-bold text-sm leading-snug" style="color: var(--card-text);">{{ nl.title }}</h3>

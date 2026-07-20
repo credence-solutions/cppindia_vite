@@ -2,13 +2,13 @@
   JoinCta — Join the community CTA section
 -->
 <template>
-  <section class="section relative overflow-hidden" style="background: linear-gradient(135deg, #07091C 0%, #0B0D2E 50%, #07091C 100%); border-top: 1px solid rgba(99,102,241,0.15);">
+  <section class="section relative overflow-hidden" style="background: linear-gradient(135deg, #07091C 0%, #0B0D2E 50%, #07091C 100%); border-top: 1px solid rgba(8,145,178,0.15);">
 
     <!-- Background glow -->
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,0.18) 0%, transparent 70%);" />
+    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(8,145,178,0.18) 0%, transparent 70%);" />
     <!-- Dot grid -->
     <div class="absolute inset-0 pointer-events-none opacity-30"
-      style="background-image: radial-gradient(circle, rgba(99,102,241,0.3) 1px, transparent 1px); background-size: 32px 32px;" />
+      style="background-image: radial-gradient(circle, rgba(8,145,178,0.3) 1px, transparent 1px); background-size: 32px 32px;" />
 
     <div class="container relative z-[1]">
       <div class="gsap-reveal text-center max-w-[720px] mx-auto">
@@ -37,14 +37,14 @@
           <RouterLink
             to="/about"
             class="btn btn--lg inline-flex items-center gap-2 font-semibold transition-all duration-200"
-            style="border: 1px solid rgba(99,102,241,0.4); color: var(--color-primary-soft); background: transparent;"
-            onmouseover="this.style.borderColor='rgba(99,102,241,0.65)'; this.style.background='rgba(99,102,241,0.08)'"
-            onmouseout="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.background='transparent'"
+            style="border: 1px solid rgba(8,145,178,0.4); color: var(--color-primary-soft); background: transparent;"
+            onmouseover="this.style.borderColor='rgba(8,145,178,0.65)'; this.style.background='rgba(8,145,178,0.08)'"
+            onmouseout="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.background='transparent'"
           >Learn More</RouterLink>
         </div>
 
         <!-- Platform links -->
-        <div class="flex flex-wrap justify-center items-center gap-6 pt-6" style="border-top: 1px solid rgba(99,102,241,0.15);">
+        <div class="flex flex-wrap justify-center items-center gap-6 pt-6" style="border-top: 1px solid rgba(8,145,178,0.15);">
           <a
             v-for="platform in platforms"
             :key="platform.label"

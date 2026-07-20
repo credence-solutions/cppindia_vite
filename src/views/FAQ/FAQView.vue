@@ -17,7 +17,7 @@
           @click="activeCategory = cat"
           class="px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
           :style="activeCategory === cat
-            ? 'background: rgba(99,102,241,0.25); color: var(--color-primary-soft); border: 1px solid rgba(99,102,241,0.5);'
+            ? 'background: rgba(8,145,178,0.25); color: var(--color-primary-soft); border: 1px solid rgba(8,145,178,0.5);'
             : 'background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border);'"
         >{{ cat }}</button>
       </div>
@@ -60,7 +60,7 @@
             style="background: #5865F2;">Join Discord</a>
           <RouterLink to="/contact"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200"
-            style="border: 1px solid rgba(99,102,241,0.3); color: var(--color-primary-soft);">Contact Us</RouterLink>
+            style="border: 1px solid rgba(8,145,178,0.3); color: var(--color-primary-soft);">Contact Us</RouterLink>
         </div>
       </div>
 

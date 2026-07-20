@@ -19,9 +19,9 @@
         <RouterLink
           to="/tech-talks"
           class="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 flex-shrink-0"
-          style="border: 1px solid rgba(99,102,241,0.3); color: var(--color-primary-soft); background: transparent;"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.background='rgba(99,102,241,0.08)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.3)'; this.style.background='transparent'"
+          style="border: 1px solid rgba(8,145,178,0.3); color: var(--color-primary-soft); background: transparent;"
+          onmouseover="this.style.borderColor='rgba(8,145,178,0.55)'; this.style.background='rgba(8,145,178,0.08)'"
+          onmouseout="this.style.borderColor='rgba(8,145,178,0.3)'; this.style.background='transparent'"
         >
           View All Talks
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
@@ -35,8 +35,8 @@
           :key="talk.id"
           class="group flex flex-col rounded-2xl overflow-hidden transition-all duration-200"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 28px rgba(99,102,241,0.2)'; this.style.transform='translateY(-4px)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.2)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+          onmouseover="this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 28px rgba(8,145,178,0.2)'; this.style.transform='translateY(-4px)'"
+          onmouseout="this.style.borderColor='rgba(8,145,178,0.2)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >
           <!-- YouTube thumbnail -->
           <a
@@ -62,7 +62,7 @@
           </a>
           <!-- No-video placeholder -->
           <div v-else class="aspect-video flex items-center justify-center"
-            style="background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(139,92,246,0.06) 100%);">
+            style="background: linear-gradient(135deg, rgba(8,145,178,0.08) 0%, rgba(8,145,178,0.06) 100%);">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: rgba(129,140,248,0.3);"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
           </div>
 
@@ -75,7 +75,7 @@
                   v-for="tag in talk.tags.slice(0, 2)"
                   :key="tag"
                   class="px-2 py-[2px] rounded-full text-[10px] font-semibold"
-                  style="background: rgba(99,102,241,0.12); color: var(--color-primary-soft); border: 1px solid rgba(99,102,241,0.25);"
+                  style="background: rgba(8,145,178,0.12); color: var(--color-primary-soft); border: 1px solid rgba(8,145,178,0.25);"
                 >{{ tag }}</span>
               </div>
             </div>
@@ -103,7 +103,7 @@
                 :href="talk.slides"
                 class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-semibold transition-all duration-200"
                 style="border: 1px solid var(--card-border); color: var(--color-text-secondary);"
-                onmouseover="this.style.borderColor='rgba(139,92,246,0.45)'; this.style.color='var(--color-secondary-mid)'"
+                onmouseover="this.style.borderColor='rgba(8,145,178,0.45)'; this.style.color='var(--color-secondary-mid)'"
                 onmouseout="this.style.borderColor='var(--card-border)'; this.style.color='var(--color-text-secondary)'"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -121,9 +121,9 @@
         <RouterLink
           to="/tech-talks"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
-          style="border: 1px solid rgba(99,102,241,0.3); color: var(--color-primary-soft); background: transparent;"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.background='rgba(99,102,241,0.08)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.3)'; this.style.background='transparent'"
+          style="border: 1px solid rgba(8,145,178,0.3); color: var(--color-primary-soft); background: transparent;"
+          onmouseover="this.style.borderColor='rgba(8,145,178,0.55)'; this.style.background='rgba(8,145,178,0.08)'"
+          onmouseout="this.style.borderColor='rgba(8,145,178,0.3)'; this.style.background='transparent'"
         >
           View All {{ totalTalks }} Talks
         </RouterLink>

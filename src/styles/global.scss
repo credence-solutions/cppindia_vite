@@ -164,7 +164,7 @@
   input, textarea, select { font: inherit; background: none; outline: none; }
   table { border-collapse: collapse; width: 100%; }
 
-  ::selection { background: #9B74F5; color: #fff; }
+  ::selection { background: #0891B2; color: #fff; }
 
   ::-webkit-scrollbar       { width: 5px; height: 5px; }
   ::-webkit-scrollbar-track { background: var(--color-surface-alt); }
@@ -287,7 +287,7 @@
 }
 [style*="var(--card-border)"]:hover {
   border-color: var(--card-border-hover) !important;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.12);
 }
 
 // Case 2 — Tailwind border-wire-light / border-wire on rounded card elements
@@ -301,7 +301,7 @@ article.rounded-xl:hover,  article.rounded-2xl:hover,  article.rounded-lg:hover,
 div.rounded-xl:hover,      div.rounded-2xl:hover,      div.rounded-lg:hover,
 a.rounded-xl:hover,        a.rounded-2xl:hover,        a.rounded-lg:hover {
   border-color: var(--color-border-hover) !important;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.10);
+  box-shadow: 0 4px 20px rgba(8, 145, 178, 0.10);
 }
 
 // Vue accordion transition (used in MobileMenu)

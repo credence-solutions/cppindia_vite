@@ -3,7 +3,7 @@
     <div
       v-if="visible"
       class="absolute top-full left-1/2 -translate-x-1/2 w-screen max-w-container bg-surface-raised backdrop-glass z-dropdown overflow-hidden rounded-b-xl"
-      style="border-top: 2px solid rgba(155,116,245,0.5); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(79,142,247,0.08);"
+      style="border-top: 2px solid rgba(8,145,178,0.5); box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(79,142,247,0.08);"
       role="menu"
     >
       <div class="container grid gap-0 py-8" style="grid-template-columns: repeat(3, 1fr) 280px;">
@@ -34,12 +34,12 @@
 
         <!-- Featured panel -->
         <div
-          class="px-8 py-8 flex items-center relative overflow-hidden border-l border-[rgba(155,116,245,0.2)]"
-          style="background: linear-gradient(135deg, rgba(79,142,247,0.12) 0%, rgba(155,116,245,0.18) 100%);"
+          class="px-8 py-8 flex items-center relative overflow-hidden border-l border-[rgba(8,145,178,0.2)]"
+          style="background: linear-gradient(135deg, rgba(79,142,247,0.12) 0%, rgba(8,145,178,0.18) 100%);"
         >
           <!-- Ambient glow blob -->
           <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full pointer-events-none"
-            style="background: radial-gradient(circle, rgba(155,116,245,0.15), transparent 70%);" />
+            style="background: radial-gradient(circle, rgba(8,145,178,0.15), transparent 70%);" />
 
           <div class="flex flex-col gap-4 relative">
             <p class="text-xs font-semibold text-secondary uppercase tracking-[0.08em]">Community</p>

@@ -38,8 +38,8 @@
               <tr
                 v-for="cfp in filtered"
                 :key="cfp.id"
-                style="border-bottom: 1px solid rgba(99,102,241,0.1);"
-                onmouseover="this.style.background='rgba(99,102,241,0.05)'"
+                style="border-bottom: 1px solid rgba(8,145,178,0.1);"
+                onmouseover="this.style.background='rgba(8,145,178,0.05)'"
                 onmouseout="this.style.background='transparent'"
               >
                 <td class="px-5 py-4">
@@ -47,7 +47,7 @@
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span v-for="tag in cfp.tags" :key="tag"
                       class="text-[10px] font-semibold px-1.5 py-[1px] rounded"
-                      style="background:rgba(99,102,241,0.12); color:var(--color-primary-soft);">{{ tag }}</span>
+                      style="background:rgba(8,145,178,0.12); color:var(--color-primary-soft);">{{ tag }}</span>
                   </div>
                 </td>
                 <td class="px-5 py-4 font-mono text-xs" :style="`color:${isUrgent(cfp.cfpDeadline) ? '#DC2626' : 'var(--color-text-muted)'};`">
@@ -82,7 +82,7 @@
 
       <!-- Speak at CppIndia CTA -->
       <div class="mt-12 rounded-2xl p-6 flex flex-wrap items-center justify-between gap-4"
-        style="background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(52,211,153,0.06)); border: 1px solid rgba(99,102,241,0.25);">
+        style="background: linear-gradient(135deg, rgba(8,145,178,0.1), rgba(52,211,153,0.06)); border: 1px solid rgba(8,145,178,0.25);">
         <div>
           <p class="font-semibold" style="color:var(--color-text);">Start with CppIndia</p>
           <p class="text-sm mt-0.5" style="color:var(--color-text-secondary);">First-time speaker? Give your talk at CppIndia before submitting to larger conferences.</p>
@@ -103,7 +103,7 @@ import PageHero from '@/components/common/PageHero.vue'
 import cfpData from '@/data/cfp.json'
 
 const statuses = [
-  { value: 'all',       label: 'All',      bg: 'rgba(99,102,241,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(99,102,241,0.45)' },
+  { value: 'all',       label: 'All',      bg: 'rgba(8,145,178,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.45)' },
   { value: 'open',      label: 'Open',     bg: 'rgba(52,211,153,0.15)', color: '#34D399', border: 'rgba(52,211,153,0.4)'  },
   { value: 'closed',    label: 'Closed',   bg: 'rgba(148,163,184,0.1)', color: '#94A3B8', border: 'rgba(148,163,184,0.3)' },
 ]

@@ -23,7 +23,7 @@
       <!-- Track -->
       <div class="relative">
         <!-- Vertical line -->
-        <div class="absolute left-6 top-0 bottom-0 w-px hidden sm:block" style="background: linear-gradient(to bottom, rgba(99,102,241,0.5), rgba(99,102,241,0.05));"></div>
+        <div class="absolute left-6 top-0 bottom-0 w-px hidden sm:block" style="background: linear-gradient(to bottom, rgba(8,145,178,0.5), rgba(8,145,178,0.05));"></div>
 
         <div class="flex flex-col gap-6">
           <div
@@ -40,7 +40,7 @@
             <!-- Card -->
             <div class="flex-1 rounded-2xl p-5 transition-all duration-200 mb-2"
               style="background: var(--card-bg); border: 1px solid var(--card-border);"
-              onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.transform='translateX(4px)'"
+              onmouseover="this.style.borderColor='rgba(8,145,178,0.55)'; this.style.transform='translateX(4px)'"
               onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateX(0)'"
             >
               <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
@@ -55,9 +55,9 @@
                 <a v-for="res in step.resources" :key="res.name"
                   :href="res.url" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md transition-all duration-150"
-                  style="background:rgba(99,102,241,0.1); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.2);"
-                  onmouseover="this.style.background='rgba(99,102,241,0.2)'"
-                  onmouseout="this.style.background='rgba(99,102,241,0.1)'"
+                  style="background:rgba(8,145,178,0.1); color:var(--color-primary-soft); border:1px solid rgba(8,145,178,0.2);"
+                  onmouseover="this.style.background='rgba(8,145,178,0.2)'"
+                  onmouseout="this.style.background='rgba(8,145,178,0.1)'"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                   {{ res.name }}
@@ -89,7 +89,7 @@ import PageHero from '@/components/common/PageHero.vue'
 const levels = [
   { id: 'beginner',     label: '🌱 Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#34D399', border: 'rgba(52,211,153,0.4)' },
   { id: 'intermediate', label: '⚡ Intermediate',  bg: 'rgba(34,211,238,0.12)', color: '#22D3EE', border: 'rgba(34,211,238,0.4)' },
-  { id: 'advanced',     label: '🚀 Advanced',      bg: 'rgba(99,102,241,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(99,102,241,0.45)' },
+  { id: 'advanced',     label: '🚀 Advanced',      bg: 'rgba(8,145,178,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.45)' },
 ]
 
 const activeLevel = ref('beginner')

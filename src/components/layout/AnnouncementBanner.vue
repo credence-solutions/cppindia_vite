@@ -1,7 +1,7 @@
 <template>
   <div v-if="visible"
     class="relative z-50 flex items-center justify-center gap-3 px-4 py-2.5 text-sm font-semibold text-center flex-wrap"
-    style="background: linear-gradient(90deg, #4338CA 0%, #6366F1 40%, #22D3EE 100%); min-height: 42px;"
+    style="background: linear-gradient(90deg, #2563EB 0%, #2563EB 40%, #22D3EE 100%); min-height: 42px;"
   >
     <!-- Animated pulse dot -->
     <span class="relative flex-shrink-0 hidden sm:flex items-center">

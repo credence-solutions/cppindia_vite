@@ -16,7 +16,7 @@
           @click="activeTab = tab"
           class="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
           :style="activeTab === tab
-            ? 'background: rgba(99,102,241,0.25); color: var(--color-primary-soft);'
+            ? 'background: rgba(8,145,178,0.25); color: var(--color-primary-soft);'
             : 'background: transparent; color: var(--color-text-muted);'"
         >{{ tab }}</button>
       </div>
@@ -28,12 +28,12 @@
           :key="event.id"
           class="rounded-2xl p-6 flex flex-wrap md:flex-nowrap gap-5 transition-all duration-200"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.transform='translateY(-2px)'"
+          onmouseover="this.style.borderColor='rgba(8,145,178,0.55)'; this.style.transform='translateY(-2px)'"
           onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateY(0)'"
         >
           <!-- Date block -->
           <div class="flex-shrink-0 flex flex-col items-center justify-center rounded-xl p-4 w-20 text-center"
-            style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25);">
+            style="background: rgba(8,145,178,0.12); border: 1px solid rgba(8,145,178,0.25);">
             <span class="text-xs font-mono uppercase" style="color:var(--color-text-muted);">{{ monthStr(event.date) }}</span>
             <span class="text-3xl font-display font-bold" style="color:var(--color-primary-soft);">{{ dayStr(event.date) }}</span>
             <span class="text-xs font-mono" style="color:var(--color-text-muted);">{{ yearStr(event.date) }}</span>
@@ -44,7 +44,7 @@
             <div class="flex items-center gap-2 flex-wrap">
               <span class="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
                 :style="event.type === 'conference'
-                  ? 'background:rgba(167,139,250,0.12); color:var(--color-secondary-mid); border:1px solid rgba(167,139,250,0.3);'
+                  ? 'background:rgba(8,145,178,0.12); color:var(--color-secondary-mid); border:1px solid rgba(8,145,178,0.3);'
                   : 'background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.25);'">
                 {{ event.type }}
               </span>
@@ -69,7 +69,7 @@
               style="background:#FF0000; color:white;">Watch Recording</a>
             <a v-if="event.registrationUrl" :href="calendarUrl(event)" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 whitespace-nowrap"
-              style="border:1px solid rgba(99,102,241,0.25); color:var(--color-text-secondary);">+ Add to Calendar</a>
+              style="border:1px solid rgba(8,145,178,0.25); color:var(--color-text-secondary);">+ Add to Calendar</a>
           </div>
         </article>
 

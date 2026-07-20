@@ -27,13 +27,13 @@
               :to="`/conference?year=${year}`"
               class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
               :style="year === 2024
-                ? 'background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.4); color: var(--color-secondary-mid);'
+                ? 'background: rgba(8,145,178,0.12); border: 1px solid rgba(8,145,178,0.4); color: var(--color-secondary-mid);'
                 : 'border: 1px solid var(--color-border); color: var(--color-text-secondary);'"
             >
               <span class="font-bold">{{ year }}</span>
               <span v-if="year === 2024"
                 class="px-1.5 py-[1px] rounded-full text-white text-[10px] font-bold"
-                style="background: linear-gradient(135deg, #6366F1, #8B5CF6);">
+                style="background: linear-gradient(135deg, #2563EB, #0891B2);">
                 Latest
               </span>
             </RouterLink>
@@ -42,9 +42,9 @@
           <RouterLink
             to="/conference?year=2024"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-            style="background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); box-shadow: 0 0 20px rgba(99,102,241,0.35);"
-            onmouseover="this.style.boxShadow='0 0 30px rgba(99,102,241,0.55)'"
-            onmouseout="this.style.boxShadow='0 0 20px rgba(99,102,241,0.35)'"
+            style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
+            onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
+            onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
           >View CppIndiaCon 2024</RouterLink>
         </div>
 
@@ -55,7 +55,7 @@
           <!-- Edition + dates -->
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
-              style="border: 1px solid rgba(139,92,246,0.4); background: rgba(139,92,246,0.1);">
+              style="border: 1px solid rgba(8,145,178,0.4); background: rgba(8,145,178,0.1);">
               <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--color-secondary-mid);" />
               <span class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-secondary-mid);">4th Edition</span>
             </div>
@@ -112,9 +112,9 @@
             target="_blank"
             rel="noopener noreferrer"
             class="w-full text-center justify-center inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-            style="background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%); box-shadow: 0 0 20px rgba(99,102,241,0.35);"
-            onmouseover="this.style.boxShadow='0 0 30px rgba(99,102,241,0.55)'"
-            onmouseout="this.style.boxShadow='0 0 20px rgba(99,102,241,0.35)'"
+            style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
+            onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
+            onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
           >
             Watch Recordings
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>

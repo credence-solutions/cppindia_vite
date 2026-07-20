@@ -6,7 +6,7 @@
   >
     <!-- Subtle dot grid -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.08]"
-      style="background-image: radial-gradient(circle, rgba(99,102,241,0.4) 1px, transparent 1px); background-size: 32px 32px;" />
+      style="background-image: radial-gradient(circle, rgba(8,145,178,0.4) 1px, transparent 1px); background-size: 32px 32px;" />
 
     <div class="container relative z-[1]">
       <!-- Breadcrumb -->
@@ -21,7 +21,7 @@
             >Home</RouterLink>
           </li>
           <li v-for="crumb in breadcrumb" :key="crumb.path" class="flex items-center gap-2">
-            <span style="color: rgba(99,102,241,0.3);" aria-hidden="true">/</span>
+            <span style="color: rgba(8,145,178,0.3);" aria-hidden="true">/</span>
             <RouterLink
               v-if="crumb.path"
               :to="crumb.path"

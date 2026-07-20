@@ -51,7 +51,7 @@ export default {
       },
       boxShadow: {
         'glow-primary':   '0 0 24px rgba(79, 142, 247, 0.25)',
-        'glow-secondary': '0 0 24px rgba(155, 116, 245, 0.25)',
+        'glow-secondary': '0 0 24px rgba(8, 145, 178, 0.25)',
         'glow-accent':    '0 0 24px rgba(45, 212, 191, 0.25)',
         'brand':          '0 8px 32px rgba(79, 142, 247, 0.3)',
         'card':           '0 4px 24px rgba(0,0,0,0.4)',

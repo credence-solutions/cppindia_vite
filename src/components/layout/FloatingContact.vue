@@ -37,13 +37,13 @@
             Join Discord
           </a>
           <RouterLink to="/tech-talks"
-            class="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-ink bg-surface-alt hover:bg-[rgba(155,116,245,0.1)] hover:text-secondary transition-all duration-fast"
+            class="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-ink bg-surface-alt hover:bg-[rgba(8,145,178,0.1)] hover:text-secondary transition-all duration-fast"
             @click="open = false">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             Watch Talks
           </RouterLink>
           <RouterLink to="/call-for-speakers"
-            class="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-ink bg-surface-alt hover:bg-[rgba(155,116,245,0.1)] hover:text-secondary transition-all duration-fast"
+            class="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-ink bg-surface-alt hover:bg-[rgba(8,145,178,0.1)] hover:text-secondary transition-all duration-fast"
             @click="open = false">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 003-3v-4a3 3 0 00-6 0V4a3 3 0 003 3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
             Speak at CppIndia

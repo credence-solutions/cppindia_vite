@@ -23,7 +23,7 @@
             class="flex items-center gap-2 px-5 py-2 rounded-md text-sm font-medium cursor-pointer transition-all duration-150"
             :class="activeYear === yr
               ? 'bg-secondary text-white border border-secondary'
-              : 'text-ink-2 border border-[rgba(99,102,241,0.22)] hover:border-[rgba(99,102,241,0.55)] hover:text-secondary hover:bg-secondary/[0.06]'"
+              : 'text-ink-2 border border-[rgba(8,145,178,0.22)] hover:border-[rgba(8,145,178,0.55)] hover:text-secondary hover:bg-secondary/[0.06]'"
             :aria-selected="activeYear === yr"
             @click="setYear(yr)"
           >
@@ -127,7 +127,7 @@
                 :key="day.day"
                 class="bg-surface border border-wire-light rounded-2xl overflow-hidden"
               >
-                <div class="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[rgba(79,142,247,0.12)] to-[rgba(155,116,245,0.12)] border-b border-wire-light">
+                <div class="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-[rgba(79,142,247,0.12)] to-[rgba(8,145,178,0.12)] border-b border-wire-light">
                   <span class="font-display font-bold text-base text-ink">Day {{ day.day }}</span>
                   <span class="font-mono text-xs text-ink-3">{{ day.date }}</span>
                 </div>
@@ -304,9 +304,9 @@
             <template v-if="conf.sponsors.community.length">
               <div class="mt-7">
                 <div class="flex items-center justify-center gap-2 mb-5">
-                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(8,145,178,0.2);" />
                   <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: var(--card-text-muted);">Community Sponsors</span>
-                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(99,102,241,0.2);" />
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(8,145,178,0.2);" />
                 </div>
                 <div class="flex flex-wrap justify-center items-center gap-3">
                   <a
@@ -317,7 +317,7 @@
                     rel="noopener noreferrer"
                     class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
                     style="border: 1px solid var(--card-border); color: var(--card-text-muted);"
-                    onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='var(--color-primary-soft)'; this.style.background='rgba(99,102,241,0.07)'"
+                    onmouseover="this.style.borderColor='rgba(8,145,178,0.45)'; this.style.color='var(--color-primary-soft)'; this.style.background='rgba(8,145,178,0.07)'"
                     onmouseout="this.style.borderColor='var(--card-border)'; this.style.color='var(--card-text-muted)'; this.style.background='transparent'"
                   >{{ s.name }}</a>
                 </div>

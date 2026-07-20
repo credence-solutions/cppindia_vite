@@ -12,9 +12,9 @@ $color-primary:        #4F8EF7;   // Electric blue — trust, innovation
 $color-primary-dark:   #2563EB;   // Darker for hover
 $color-primary-light:  #93C5FD;   // Light tint
 
-$color-secondary:      #7C5CDB;   // Deeper violet for light bg
-$color-secondary-dark: #5E3FC0;
-$color-secondary-light:#C4B5FD;
+$color-secondary:      #0891B2;   // Cyan-600 — Ocean Blue + Teal palette
+$color-secondary-dark: #0E7490;   // Cyan-700
+$color-secondary-light:#A5F3FC;   // Cyan-200
 
 $color-accent:         #0D9488;   // Deeper teal for light bg
 $color-accent-dark:    #0F766E;
@@ -37,9 +37,9 @@ $color-text:           #111218;   // Near-black
 $color-text-secondary: #3D4255;   // Dark grey-blue
 $color-text-muted:     #6B7280;   // Medium grey
 
-// Borders — indigo-tinted so all wire / wire-light elements are visible in light theme
-$color-border:         rgba(99, 102, 241, 0.50);
-$color-border-light:   rgba(99, 102, 241, 0.28);
+// Borders — cyan-tinted for Ocean Blue + Teal palette
+$color-border:         rgba(8, 145, 178, 0.50);
+$color-border-light:   rgba(8, 145, 178, 0.28);
 
 // Dark section backgrounds (footer always stays dark)
 $color-dark:           #1A1714;
@@ -97,28 +97,28 @@ $bp-2xl: 1440px;
   // --- Borders ---
   --color-border:          #{$color-border};
   --color-border-light:    #{$color-border-light};
-  --color-border-hover:    rgba(99, 102, 241, 0.50);
+  --color-border-hover:    rgba(8, 145, 178, 0.50);
 
   // --- Dark sections ---
   --color-dark:            #{$color-dark};
   --color-dark-surface:    #{$color-dark-surface};
 
   // --- Palette soft tones (used for badge text, labels, arrows) ---
-  --color-primary-soft:   #818CF8;   // indigo-400 — badge text, tag links
-  --color-secondary-mid:  #A78BFA;   // violet-400 — section labels, arrows
+  --color-primary-soft:   #60A5FA;   // blue-400 — badge text, tag links
+  --color-secondary-mid:  #22D3EE;   // cyan-400 — section labels, arrows
 
   // --- Semantic badge backgrounds ---
-  --badge-bg:        rgba(99, 102, 241, 0.10);
-  --badge-bg-strong: rgba(99, 102, 241, 0.15);
-  --badge-text:      var(--color-primary-soft);
+  --badge-bg:        rgba(8, 145, 178, 0.10);
+  --badge-bg-strong: rgba(8, 145, 178, 0.15);
+  --badge-text:      var(--color-secondary);
 
   // --- Reusable gradients ---
-  --gradient-heading: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%);
-  --gradient-btn:     linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  --gradient-heading: linear-gradient(100deg, #2563EB 0%, #0891B2 50%, #059669 100%);
+  --gradient-btn:     linear-gradient(135deg, #2563EB 0%, #0891B2 100%);
 
   // --- Glow effects ---
   --glow-primary:   0 0 24px rgba(79, 142, 247, 0.25);
-  --glow-secondary: 0 0 24px rgba(155, 116, 245, 0.25);
+  --glow-secondary: 0 0 24px rgba(8, 145, 178, 0.25);
   --glow-accent:    0 0 24px rgba(45, 212, 191, 0.25);
 
   // --- Typography ---
@@ -200,8 +200,8 @@ $bp-2xl: 1440px;
   // Emphasis / "dark section" backgrounds — ResourcesView, MembersView, ConferenceView
   --emphasis-bg:         #ECEEF5;
   --card-bg:             #FFFFFF;
-  --card-border:         rgba(99, 102, 241, 0.28);
-  --card-border-hover:   rgba(99, 102, 241, 0.55);
+  --card-border:         rgba(8, 145, 178, 0.28);
+  --card-border-hover:   rgba(8, 145, 178, 0.55);
   --card-text:           #111218;
   --card-text-muted:     rgba(61, 66, 85, 0.75);
 

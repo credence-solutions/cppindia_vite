@@ -13,7 +13,7 @@
     <!-- Soft indigo glow top-left -->
     <div class="absolute pointer-events-none" style="
       width:700px; height:500px;
-      background: radial-gradient(ellipse, rgba(99,102,241,0.10) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(8,145,178,0.10) 0%, transparent 65%);
       top:-120px; left:-80px;
     "/>
     <!-- Soft cyan glow bottom-right -->
@@ -25,7 +25,7 @@
 
     <!-- Dot grid -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.10]" style="
-      background-image: radial-gradient(circle, rgba(99,102,241,0.5) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(8,145,178,0.5) 1px, transparent 1px);
       background-size: 36px 36px;
     "/>
 
@@ -38,11 +38,11 @@
 
           <!-- Live badge -->
           <div class="gsap-reveal inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-7"
-            style="border:1px solid rgba(99,102,241,0.35);background:rgba(99,102,241,0.08);">
+            style="border:1px solid rgba(8,145,178,0.35);background:rgba(8,145,178,0.08);">
             <span class="w-2 h-2 rounded-full animate-pulse-dot flex-shrink-0"
               style="background:#16A34A;" />
             <span class="text-xs font-semibold tracking-[0.05em]"
-              style="color:#6366F1;">
+              style="color:#2563EB;">
               India's C++ User Group &nbsp;·&nbsp; Est. {{ SITE.founded }}
             </span>
           </div>
@@ -52,7 +52,7 @@
             style="font-size: clamp(2.6rem, 5.5vw, 4.5rem); color: var(--color-text);">
             India's very own<br />
             <span style="
-              background: linear-gradient(100deg, #6366F1 0%, #06B6D4 50%, #10B981 100%);
+              background: linear-gradient(100deg, #2563EB 0%, #06B6D4 50%, #10B981 100%);
               -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
             ">C++ Community</span>
           </h1>
@@ -77,7 +77,7 @@
             </a>
             <RouterLink to="/tech-talks"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold transition-all duration-200 hover:-translate-y-px"
-              style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.35);color:#6366F1;"
+              style="background:rgba(8,145,178,0.08);border:1px solid rgba(8,145,178,0.35);color:#2563EB;"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               Watch Tech Talks
@@ -90,7 +90,7 @@
             <div v-for="(stat, i) in STATS" :key="stat.label" class="flex items-baseline gap-1.5">
               <span class="font-display font-extrabold"
                 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing:-0.02em;
-                  background:linear-gradient(135deg,#6366F1,#06B6D4);
+                  background:linear-gradient(135deg,#2563EB,#06B6D4);
                   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
                 {{ stat.value }}{{ stat.suffix }}
               </span>
@@ -107,15 +107,15 @@
         <div class="gsap-reveal-right">
           <div class="rounded-2xl overflow-hidden" style="
             background: rgba(15,17,45,0.9);
-            border:1px solid rgba(99,102,241,0.25);
+            border:1px solid rgba(8,145,178,0.25);
             backdrop-filter:blur(24px);
-            box-shadow: 0 0 0 1px rgba(99,102,241,0.1), 0 28px 72px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+            box-shadow: 0 0 0 1px rgba(8,145,178,0.1), 0 28px 72px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
           ">
 
             <!-- Editor titlebar -->
             <div class="flex items-center gap-2 px-4 py-3" style="
-              background:rgba(99,102,241,0.06);
-              border-bottom:1px solid rgba(99,102,241,0.15);
+              background:rgba(8,145,178,0.06);
+              border-bottom:1px solid rgba(8,145,178,0.15);
             ">
               <span class="w-3 h-3 rounded-full" style="background:#FF5F57;" />
               <span class="w-3 h-3 rounded-full" style="background:#FFBD2E;" />
@@ -132,7 +132,7 @@
             <div class="px-5 py-5 font-mono text-[13px] leading-[1.85]">
               <div class="flex gap-4">
                 <div class="select-none text-right text-[11px] leading-[1.85] w-4 flex-shrink-0"
-                  style="color:rgba(99,102,241,0.3);">
+                  style="color:rgba(8,145,178,0.3);">
                   <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
                 </div>
                 <pre class="flex-1 m-0 p-0 bg-transparent overflow-x-auto"
@@ -147,7 +147,7 @@
             </div>
 
             <!-- Conference strip -->
-            <div class="px-5 pb-5" style="border-top:1px solid rgba(99,102,241,0.15);padding-top:1rem;">
+            <div class="px-5 pb-5" style="border-top:1px solid rgba(8,145,178,0.15);padding-top:1rem;">
               <div class="flex items-center justify-between mb-3">
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold"
                   style="background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);color:#D8B4FE;">
@@ -178,13 +178,13 @@
               <div class="flex items-center gap-2">
                 <RouterLink to="/conference?year=2024"
                   class="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg text-xs font-bold text-white transition-all duration-200 hover:brightness-110 hover:-translate-y-px"
-                  style="background:linear-gradient(135deg,#6366F1,#8B5CF6);box-shadow:0 4px 16px rgba(99,102,241,0.4);">
+                  style="background:linear-gradient(135deg,#2563EB,#0891B2);box-shadow:0 4px 16px rgba(8,145,178,0.4);">
                   Conference Highlights
                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                 </RouterLink>
                 <RouterLink to="/tech-talks"
                   class="flex items-center justify-center px-3.5 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200"
-                  style="border:1px solid rgba(99,102,241,0.3);color:rgba(165,180,252,0.7);background:rgba(99,102,241,0.08);">
+                  style="border:1px solid rgba(8,145,178,0.3);color:rgba(165,180,252,0.7);background:rgba(8,145,178,0.08);">
                   All Talks
                 </RouterLink>
               </div>
@@ -221,7 +221,7 @@
     <!-- Scroll indicator -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center">
       <div class="w-[1px] h-8 animate-scroll-line"
-        style="background:linear-gradient(to bottom,rgba(99,102,241,0.4),transparent);" />
+        style="background:linear-gradient(to bottom,rgba(8,145,178,0.4),transparent);" />
     </div>
   </section>
 </template>
