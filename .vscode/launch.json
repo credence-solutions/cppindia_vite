@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "CppIndia Website Dev Server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev -- --host 0.0.0.0",
+      "cwd": "${workspaceFolder}/frontend",
+      "preLaunchTask": "Install Dependencies"
+    }
+  ]
+}

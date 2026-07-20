@@ -1,0 +1,2 @@
+# Include paths (relative to project root)
+frontend/dist/

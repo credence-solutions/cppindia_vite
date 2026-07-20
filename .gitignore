@@ -4,8 +4,12 @@ dist/
 *.local
 .env
 .env.*
+!docker/.env
 
 # Screenshots and test artifacts
 /our-*.png
 /live-*.png
 .playwright-mcp/
+
+# Release artifacts
+release/output/

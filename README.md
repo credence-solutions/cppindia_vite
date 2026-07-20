@@ -72,6 +72,9 @@ public/
 ## Getting Started
 
 ```bash
+# All commands run from the frontend/ directory
+cd frontend
+
 # Install dependencies
 npm install
 
