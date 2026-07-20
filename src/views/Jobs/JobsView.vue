@@ -37,7 +37,7 @@
           v-for="job in filtered"
           :key="job.id"
           class="rounded-2xl p-6 transition-all duration-200"
-          :style="`background: var(--card-bg); border: 1px solid ${job.featured ? 'rgba(234,179,8,0.3)' : 'rgba(99,102,241,0.18)'};`"
+          :style="`background: var(--card-bg); border: 1px solid ${job.featured ? 'rgba(234,179,8,0.3)' : 'var(--card-border)'};`"
           onmouseover="this.style.transform='translateY(-2px)'"
           onmouseout="this.style.transform='translateY(0)'"
         >

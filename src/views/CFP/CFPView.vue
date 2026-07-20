@@ -21,7 +21,7 @@
       </div>
 
       <!-- Table -->
-      <div class="rounded-2xl overflow-hidden" style="border: 1px solid rgba(99,102,241,0.18);">
+      <div class="rounded-2xl overflow-hidden" style="border: 1px solid var(--card-border);">
         <div class="overflow-x-auto">
           <table class="w-full text-sm">
             <thead>

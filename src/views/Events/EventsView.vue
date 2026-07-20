@@ -28,8 +28,8 @@
           :key="event.id"
           class="rounded-2xl p-6 flex flex-wrap md:flex-nowrap gap-5 transition-all duration-200"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.transform='translateY(-2px)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.transform='translateY(0)'"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateY(0)'"
         >
           <!-- Date block -->
           <div class="flex-shrink-0 flex flex-col items-center justify-center rounded-xl p-4 w-20 text-center"

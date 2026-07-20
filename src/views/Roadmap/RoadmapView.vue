@@ -40,8 +40,8 @@
             <!-- Card -->
             <div class="flex-1 rounded-2xl p-5 transition-all duration-200 mb-2"
               style="background: var(--card-bg); border: 1px solid var(--card-border);"
-              onmouseover="this.style.borderColor='rgba(99,102,241,0.38)'; this.style.transform='translateX(4px)'"
-              onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.transform='translateX(0)'"
+              onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.transform='translateX(4px)'"
+              onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateX(0)'"
             >
               <div class="flex items-start justify-between gap-3 mb-2 flex-wrap">
                 <h3 class="font-display font-bold text-base" style="color:var(--color-text);">{{ step.title }}</h3>

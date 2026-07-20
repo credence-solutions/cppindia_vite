@@ -26,9 +26,9 @@
           v-for="proj in filtered"
           :key="proj.id"
           class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200"
-          :style="`background: var(--card-bg); border: 1px solid ${proj.featured ? 'rgba(99,102,241,0.35)' : 'rgba(99,102,241,0.18)'};`"
-          onmouseover="this.style.borderColor='rgba(99,102,241,0.5)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.15)'; this.style.transform='translateY(-3px)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+          :style="`background: var(--card-bg); border: 1px solid ${proj.featured ? 'rgba(99,102,241,0.45)' : 'var(--card-border)'};`"
+          onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.15)'; this.style.transform='translateY(-3px)'"
+          onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
         >
           <!-- Header -->
           <div class="flex items-start justify-between gap-2">

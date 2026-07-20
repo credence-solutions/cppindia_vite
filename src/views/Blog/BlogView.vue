@@ -27,7 +27,7 @@
           class="rounded-2xl overflow-hidden flex flex-col transition-all duration-200 cursor-pointer"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.boxShadow='0 0 24px rgba(99,102,241,0.15)'; this.style.transform='translateY(-3px)'"
-          onmouseout="this.style.borderColor='rgba(99,102,241,0.18)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+          onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
           @click="$router.push(`/blog/${post.slug}`)"
         >
           <!-- Cover placeholder -->
