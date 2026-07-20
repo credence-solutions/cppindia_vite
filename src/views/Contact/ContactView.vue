@@ -12,48 +12,41 @@
 
         <!-- Left: contact channels -->
         <div class="flex flex-col">
-          <h2 class="font-display text-xl font-bold text-ink mb-6">Reach Us Directly</h2>
+          <h2 class="font-display text-xl font-bold text-ink mb-4">Reach Us</h2>
 
-          <!-- Email -->
-          <div class="flex items-start gap-5 p-5 bg-surface border border-wire-light rounded-xl mb-4 transition-all duration-200 hover:border-primary/25 hover:shadow-md">
-            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-gradient-to-br from-primary to-secondary" v-html="IconMailSvg" />
-            <div>
-              <p class="text-xs font-semibold text-ink-3 uppercase tracking-[0.06em] mb-1">Email</p>
-              <a :href="`mailto:${SITE.email}`" class="font-mono text-sm font-semibold text-primary hover:text-secondary transition-colors">
-                {{ SITE.email }}
-              </a>
-              <p class="text-xs text-ink-3 mt-1">We typically reply within 24–48 hours.</p>
-            </div>
+          <!-- Email + Discord compact row -->
+          <div class="flex flex-col gap-3 mb-8">
+            <a :href="`mailto:${SITE.email}`"
+              class="flex items-center gap-3 px-4 py-3 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-primary/30 hover:shadow-sm">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-gradient-to-br from-primary to-secondary" v-html="IconMailSvg" />
+              <div class="min-w-0">
+                <p class="text-sm font-semibold text-ink truncate">{{ SITE.email }}</p>
+                <p class="text-xs text-ink-3">Reply within 24–48 hrs</p>
+              </div>
+            </a>
+            <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-3 px-4 py-3 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-[#5865F2]/30 hover:shadow-sm">
+              <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-[#5865F2]" v-html="IconDiscordSvg" />
+              <div>
+                <p class="text-sm font-semibold text-ink">Discord</p>
+                <p class="text-xs text-ink-3">Chat in real time</p>
+              </div>
+            </a>
           </div>
 
-          <!-- Discord -->
-          <div class="flex items-start gap-5 p-5 bg-surface border border-wire-light rounded-xl mb-8 transition-all duration-200 hover:border-primary/25 hover:shadow-md">
-            <div class="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-[#5865F2]" v-html="IconDiscordSvg" />
-            <div>
-              <p class="text-xs font-semibold text-ink-3 uppercase tracking-[0.06em] mb-1">Discord Community</p>
-              <a :href="SITE.discordInvite" class="font-mono text-sm font-semibold text-primary hover:text-secondary transition-colors" target="_blank" rel="noopener noreferrer">
-                discord.gg/Wz42tX5
-              </a>
-              <p class="text-xs text-ink-3 mt-1">Chat with members and moderators in real time.</p>
-            </div>
-          </div>
-
-          <!-- Social links -->
-          <h2 class="font-display text-xl font-bold text-ink mb-6">Follow Us</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+          <!-- Social links — icons only -->
+          <h2 class="font-display text-base font-bold text-ink mb-3">Follow Us</h2>
+          <div class="flex flex-wrap gap-2 mb-8">
             <a
               v-for="link in socialLinks"
               :key="link.label"
               :href="link.url"
-              class="flex items-center gap-3 px-4 py-3 bg-surface border border-wire-light rounded-lg transition-all duration-150 hover:border-secondary/30 hover:bg-secondary/[0.06]"
+              :title="link.label"
+              class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface border border-wire-light transition-all duration-150 hover:border-secondary/40 hover:bg-secondary/[0.06] hover:-translate-y-px"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="text-secondary flex-shrink-0" v-html="link.iconSvg" />
-              <div>
-                <p class="text-xs font-semibold text-ink">{{ link.label }}</p>
-                <p class="text-[10px] text-ink-3 mt-px">{{ link.handle }}</p>
-              </div>
+              <span class="text-secondary" v-html="link.iconSvg" />
             </a>
           </div>
 
