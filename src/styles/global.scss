@@ -282,7 +282,7 @@ a.rounded-xl,        a.rounded-2xl,        a.rounded-lg {
 article.rounded-xl:hover,  article.rounded-2xl:hover,  article.rounded-lg:hover,
 div.rounded-xl:hover,      div.rounded-2xl:hover,      div.rounded-lg:hover,
 a.rounded-xl:hover,        a.rounded-2xl:hover,        a.rounded-lg:hover {
-  border-color: rgba(99, 102, 241, 0.5) !important;
+  border-color: var(--color-border-hover) !important;
   box-shadow: 0 4px 20px rgba(99, 102, 241, 0.10);
 }
 

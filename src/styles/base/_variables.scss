@@ -37,9 +37,9 @@ $color-text:           #111218;   // Near-black
 $color-text-secondary: #3D4255;   // Dark grey-blue
 $color-text-muted:     #6B7280;   // Medium grey
 
-// Borders
-$color-border:         rgba(60, 65, 90, 0.20);
-$color-border-light:   rgba(60, 65, 90, 0.12);
+// Borders — indigo-tinted so all wire / wire-light elements are visible in light theme
+$color-border:         rgba(99, 102, 241, 0.30);
+$color-border-light:   rgba(99, 102, 241, 0.20);
 
 // Dark section backgrounds (footer always stays dark)
 $color-dark:           #1A1714;
