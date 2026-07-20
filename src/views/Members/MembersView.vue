@@ -6,7 +6,7 @@
     subtitle="The founders, moderators, and speakers who make CppIndia what it is."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Search -->

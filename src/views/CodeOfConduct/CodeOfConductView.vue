@@ -7,7 +7,7 @@
       :breadcrumb="[{ label: 'Code of Conduct', path: '/code-of-conduct' }]"
     />
 
-    <section class="section">
+    <section class="section--sm">
       <div class="container max-w-[800px] mx-auto">
         <div class="bg-surface border border-wire-light rounded-2xl overflow-hidden">
 

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative py-20 pb-16 overflow-hidden"
+    class="relative pt-14 pb-10 overflow-hidden"
     :style="bgStyle"
     :aria-label="`${title} page hero`"
   >
@@ -45,7 +45,7 @@
           class="font-display font-extrabold leading-tight tracking-tight mb-4"
           style="font-size: clamp(2rem, 4vw, 3.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
         >{{ title }}</h1>
-        <p v-if="subtitle" class="text-lg max-w-[560px] leading-relaxed" style="color: var(--hero-subtitle);">{{ subtitle }}</p>
+        <p v-if="subtitle" class="text-lg leading-relaxed" style="color: var(--hero-subtitle);">{{ subtitle }}</p>
         <slot />
       </div>
     </div>

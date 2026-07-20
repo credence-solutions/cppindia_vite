@@ -6,7 +6,7 @@
     subtitle="Everything you need to know about CppIndia — from joining to speaking to sponsoring."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container" style="max-width: 860px;">
 
       <!-- Category filter -->

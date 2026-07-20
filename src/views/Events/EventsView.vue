@@ -6,7 +6,7 @@
     subtitle="Upcoming meetups, webinars, and conferences from the CppIndia community."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Tabs -->

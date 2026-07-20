@@ -7,7 +7,7 @@
   />
 
   <!-- Why Sponsor -->
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
       <div class="text-center mb-12">
         <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: #A78BFA;">Why It Matters</p>

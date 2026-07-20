@@ -5,7 +5,7 @@
     subtitle="Tutorials, trip reports, and C++ insights from community members."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Tag filter -->

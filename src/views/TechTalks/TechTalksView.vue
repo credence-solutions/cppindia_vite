@@ -7,7 +7,7 @@
       :breadcrumb="[{ label: 'Tech Talks', path: '/tech-talks' }]"
     />
 
-    <section class="section">
+    <section class="section--sm">
       <div class="container">
 
         <!-- Year tabs + search -->

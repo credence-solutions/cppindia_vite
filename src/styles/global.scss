@@ -73,10 +73,13 @@
   .btn--sm  { @apply text-xs; padding: 0.5rem 1rem; }
   .btn--lg  { @apply text-base; padding: 1rem 2.5rem; }
 
-  // Overline label
+  // Overline label — note: avoid using class="overline" in HTML as it conflicts
+  // with Tailwind's overline utility (text-decoration-line: overline).
+  // Use explicit classes instead: text-xs font-semibold uppercase tracking-widest
   .overline {
     @apply text-xs font-semibold uppercase tracking-widest;
     color: var(--color-secondary);
+    text-decoration: none !important;
   }
 
   // Image utilities

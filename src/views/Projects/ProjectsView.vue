@@ -6,7 +6,7 @@
     subtitle="Open-source C++ projects built and maintained by CppIndia members. Fork, contribute, and build."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Tag filter -->

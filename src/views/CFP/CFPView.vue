@@ -6,7 +6,7 @@
     subtitle="Open Calls for Proposals at C++ conferences worldwide — deadlines, links, and everything you need to submit."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Status filter -->

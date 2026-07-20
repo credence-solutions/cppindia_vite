@@ -7,58 +7,71 @@
       :breadcrumb="[{ label: 'Contact', path: '/contact' }]"
     />
 
-    <section class="section">
-      <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <section class="section--sm">
+      <div class="container grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-10 items-start">
 
         <!-- Left: contact channels -->
-        <div class="flex flex-col">
-          <h2 class="font-display text-xl font-bold text-ink mb-4">Reach Us</h2>
+        <div class="flex flex-col gap-6">
 
-          <!-- Email + Discord compact row -->
-          <div class="flex flex-col gap-3 mb-8">
-            <a :href="`mailto:${SITE.email}`"
-              class="flex items-center gap-3 px-4 py-3 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-primary/30 hover:shadow-sm">
-              <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-gradient-to-br from-primary to-secondary" v-html="IconMailSvg" />
-              <div class="min-w-0">
-                <p class="text-sm font-semibold text-ink truncate">{{ SITE.email }}</p>
-                <p class="text-xs text-ink-3">Reply within 24–48 hrs</p>
-              </div>
-            </a>
-            <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
-              class="flex items-center gap-3 px-4 py-3 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-[#5865F2]/30 hover:shadow-sm">
-              <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 text-white bg-[#5865F2]" v-html="IconDiscordSvg" />
-              <div>
-                <p class="text-sm font-semibold text-ink">Discord</p>
-                <p class="text-xs text-ink-3">Chat in real time</p>
-              </div>
-            </a>
+          <!-- Direct contact -->
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color: var(--color-secondary)">Direct Contact</p>
+            <div class="flex flex-col gap-3">
+              <a :href="`mailto:${SITE.email}`"
+                class="flex items-center gap-4 px-5 py-4 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-primary/40 hover:shadow-sm group">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-gradient-to-br from-primary to-secondary shadow-sm" v-html="IconMailSvg" />
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-wide text-ink-3 mb-0.5">Email Us</p>
+                  <p class="text-sm font-semibold text-ink truncate group-hover:text-primary transition-colors">{{ SITE.email }}</p>
+                  <p class="text-xs text-ink-3 mt-0.5">Reply within 24–48 hrs</p>
+                </div>
+              </a>
+              <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-4 px-5 py-4 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-[#5865F2]/40 hover:shadow-sm group">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[#5865F2] shadow-sm" v-html="IconDiscordSvg" />
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-ink-3 mb-0.5">Discord Community</p>
+                  <p class="text-sm font-semibold text-ink group-hover:text-[#5865F2] transition-colors">Join our server</p>
+                  <p class="text-xs text-ink-3 mt-0.5">Chat with the community in real time</p>
+                </div>
+              </a>
+            </div>
           </div>
 
-          <!-- Social links — icons only -->
-          <h2 class="font-display text-base font-bold text-ink mb-3">Follow Us</h2>
-          <div class="flex flex-wrap gap-2 mb-8">
-            <a
-              v-for="link in socialLinks"
-              :key="link.label"
-              :href="link.url"
-              :title="link.label"
-              class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface border border-wire-light transition-all duration-150 hover:border-secondary/40 hover:bg-secondary/[0.06] hover:-translate-y-px"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="text-secondary" v-html="link.iconSvg" />
-            </a>
+          <!-- Social links -->
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color: var(--color-secondary)">Follow Us</p>
+            <div class="flex flex-col gap-2">
+              <a
+                v-for="link in socialLinks"
+                :key="link.label"
+                :href="link.url"
+                class="flex items-center gap-3 px-4 py-3 bg-surface border border-wire-light rounded-lg transition-all duration-150 hover:border-secondary/40 hover:bg-secondary/[0.04] group"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="w-8 h-8 flex items-center justify-center rounded-md bg-secondary/[0.08] text-secondary flex-shrink-0" v-html="link.iconSvg" />
+                <div class="min-w-0">
+                  <p class="text-sm font-semibold text-ink group-hover:text-secondary transition-colors">{{ link.label }}</p>
+                  <p class="text-xs text-ink-3 truncate">{{ link.handle }}</p>
+                </div>
+                <span class="ml-auto text-ink-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </span>
+              </a>
+            </div>
           </div>
 
           <!-- Team card -->
-          <div class="flex items-center justify-between gap-4 flex-wrap p-5 px-6 bg-surface-alt border border-wire-light rounded-xl">
-            <p class="text-sm text-ink-2">Want to meet the people behind CppIndia?</p>
-            <RouterLink to="/team" class="btn btn--outline">Meet the Team →</RouterLink>
+          <div class="p-5 bg-surface-alt border border-wire-light rounded-xl">
+            <p class="text-sm font-semibold text-ink mb-1">Meet the Team</p>
+            <p class="text-xs text-ink-3 mb-4">Want to see who's behind CppIndia?</p>
+            <RouterLink to="/team" class="btn btn--outline btn--sm w-full justify-center">View Team →</RouterLink>
           </div>
         </div>
 
         <!-- Right: contact form -->
-        <div class="bg-surface border border-wire-light rounded-2xl p-8 sticky top-[calc(var(--navbar-height,64px)+1.5rem)]">
+        <div class="bg-surface border border-wire-light rounded-2xl p-8 lg:p-10 sticky top-[calc(var(--navbar-height,64px)+1.5rem)]">
           <h2 class="font-display text-2xl font-bold text-ink mb-2">Send a Message</h2>
           <p class="text-sm text-ink-3 mb-6">
             For talk proposals, use the
@@ -171,31 +184,31 @@ const socialLinks = [
     label: 'YouTube',
     handle: '@CppIndiaUG',
     url: SITE.social.youtube,
-    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>`,
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>`,
   },
   {
     label: 'LinkedIn',
     handle: 'linkedin.com/company/cppindia',
     url: SITE.social.linkedin,
-    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>`,
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>`,
   },
   {
     label: 'Twitter / X',
     handle: '@CppIndiaUG',
     url: SITE.social.twitter,
-    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
   },
   {
     label: 'GitHub',
     handle: 'CppIndia-UserGroup',
     url: SITE.social.github,
-    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>`,
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>`,
   },
   {
     label: 'Facebook',
     handle: 'CppIndiaUG',
     url: SITE.social.facebook,
-    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>`,
+    iconSvg: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>`,
   },
 ]
 

@@ -7,7 +7,7 @@
       :breadcrumb="[{ label: 'Resources', path: '/resources' }]"
     />
 
-    <section class="section" style="background: var(--emphasis-bg);">
+    <section class="section--sm" style="background: var(--emphasis-bg);">
       <div class="container">
 
         <!-- Search -->

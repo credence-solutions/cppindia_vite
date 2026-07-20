@@ -6,7 +6,7 @@
       :subtitle="`By ${post.author} · ${formatDate(post.date)} · ${post.readingTime} min read`"
     />
 
-    <section class="section" style="background: var(--emphasis-bg);">
+    <section class="section--sm" style="background: var(--emphasis-bg);">
       <div class="container" style="max-width: 760px;">
 
         <!-- Tags -->

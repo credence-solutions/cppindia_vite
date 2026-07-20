@@ -7,7 +7,7 @@
       :breadcrumb="[{ label: 'CppIndiaCon', path: '/conference' }]"
     />
 
-    <section class="section">
+    <section class="section--sm">
       <div class="container">
 
         <!-- Year tabs + search -->

@@ -6,7 +6,7 @@
     subtitle="A curated path from absolute beginner to modern C++ expert. Free resources, clear milestones, community support."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container" style="max-width: 900px;">
 
       <!-- Level selector -->

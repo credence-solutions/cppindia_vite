@@ -5,7 +5,7 @@
     subtitle="Curated C++17/20/23 code snippets with live Compiler Explorer integration. Click, explore, experiment."
   />
 
-  <section class="section" style="background: var(--emphasis-bg); min-height: 70vh;">
+  <section class="section--sm" style="background: var(--emphasis-bg); min-height: 70vh;">
     <div class="container">
       <div class="flex flex-col lg:flex-row gap-6" style="min-height: 600px;">
 

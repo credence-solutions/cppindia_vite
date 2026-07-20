@@ -6,7 +6,7 @@
     subtitle="Curated C++ job listings for the Indian developer community — remote, hybrid, and onsite."
   />
 
-  <section class="section" style="background: var(--emphasis-bg);">
+  <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
 
       <!-- Filters -->
