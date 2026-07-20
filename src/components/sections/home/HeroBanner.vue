@@ -7,44 +7,27 @@
     aria-label="Hero banner"
   >
 
-    <!-- ── Rich indigo/cosmic background (always dark for homepage impact) ── -->
-    <div class="absolute inset-0" style="
-      background: radial-gradient(ellipse 120% 80% at 20% 10%, #1A1060 0%, #0B0D2E 45%, #07091C 100%);
-    " />
+    <!-- Light background -->
+    <div class="absolute inset-0" style="background: var(--color-bg);" />
 
-    <!-- Large vibrant glows -->
+    <!-- Soft indigo glow top-left -->
     <div class="absolute pointer-events-none" style="
-      width:900px; height:700px;
-      background: radial-gradient(ellipse, rgba(99,102,241,0.22) 0%, transparent 65%);
-      top:-180px; left:-100px;
+      width:700px; height:500px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.10) 0%, transparent 65%);
+      top:-120px; left:-80px;
     "/>
-    <div class="absolute pointer-events-none" style="
-      width:700px; height:600px;
-      background: radial-gradient(ellipse, rgba(6,182,212,0.18) 0%, transparent 65%);
-      bottom:-100px; right:-80px;
-    "/>
+    <!-- Soft cyan glow bottom-right -->
     <div class="absolute pointer-events-none" style="
       width:500px; height:400px;
-      background: radial-gradient(ellipse, rgba(168,85,247,0.14) 0%, transparent 70%);
-      top:30%; right:15%;
+      background: radial-gradient(ellipse, rgba(6,182,212,0.08) 0%, transparent 65%);
+      bottom:-60px; right:-40px;
     "/>
 
     <!-- Dot grid -->
-    <div class="absolute inset-0 pointer-events-none" style="
-      background-image: radial-gradient(circle, rgba(129,140,248,0.15) 1px, transparent 1px);
+    <div class="absolute inset-0 pointer-events-none opacity-[0.10]" style="
+      background-image: radial-gradient(circle, rgba(99,102,241,0.5) 1px, transparent 1px);
       background-size: 36px 36px;
-      mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 100%);
     "/>
-
-    <!-- Subtle horizontal highlight lines -->
-    <div class="absolute pointer-events-none" style="
-      top:45%; left:0; right:0; height:1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(99,102,241,0.25) 30%, rgba(6,182,212,0.3) 60%, transparent 100%);
-    "/>
-
-    <!-- Bottom fade -->
-    <div class="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-      style="background: linear-gradient(to bottom, transparent, var(--color-bg));" />
 
     <div class="container relative z-[1]"
       style="padding-top: calc(68px + 1.5rem); padding-bottom: 2rem;">
@@ -55,31 +38,31 @@
 
           <!-- Live badge -->
           <div class="gsap-reveal inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-7"
-            style="border:1px solid rgba(99,102,241,0.4);background:rgba(99,102,241,0.12);">
+            style="border:1px solid rgba(99,102,241,0.35);background:rgba(99,102,241,0.08);">
             <span class="w-2 h-2 rounded-full animate-pulse-dot flex-shrink-0"
-              style="background:#34D399;" />
+              style="background:#16A34A;" />
             <span class="text-xs font-semibold tracking-[0.05em]"
-              style="color:#A5B4FC;">
+              style="color:#6366F1;">
               India's C++ User Group &nbsp;·&nbsp; Est. {{ SITE.founded }}
             </span>
           </div>
 
           <!-- Headline -->
-          <h1 class="gsap-reveal font-display font-extrabold text-white tracking-tight leading-[1.06] mb-5"
-            style="font-size: clamp(2.6rem, 5.5vw, 4.5rem);">
+          <h1 class="gsap-reveal font-display font-extrabold tracking-tight leading-[1.06] mb-5"
+            style="font-size: clamp(2.6rem, 5.5vw, 4.5rem); color: var(--color-text);">
             India's very own<br />
             <span style="
-              background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%);
+              background: linear-gradient(100deg, #6366F1 0%, #06B6D4 50%, #10B981 100%);
               -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
             ">C++ Community</span>
           </h1>
 
           <!-- Subtitle -->
           <p class="gsap-reveal leading-[1.75] mb-8 max-w-[500px]"
-            style="color:rgba(203,213,225,0.75); font-size: clamp(1rem, 1.6vw, 1.15rem);">
+            style="color: var(--color-text-secondary); font-size: clamp(1rem, 1.6vw, 1.15rem);">
             A welcoming space for C++ developers — from students to seasoned engineers —
             to connect, learn, and grow through regular tech talks and our
-            annual conference, <strong style="color:rgba(255,255,255,0.9);font-weight:600;">CppIndiaCon</strong>.
+            annual conference, <strong style="color: var(--color-text); font-weight:600;">CppIndiaCon</strong>.
           </p>
 
           <!-- CTAs -->
@@ -94,7 +77,7 @@
             </a>
             <RouterLink to="/tech-talks"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold transition-all duration-200 hover:-translate-y-px"
-              style="background:rgba(129,140,248,0.12);border:1px solid rgba(129,140,248,0.35);color:#C7D2FE;backdrop-filter:blur(8px);"
+              style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.35);color:#6366F1;"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               Watch Tech Talks
@@ -103,18 +86,18 @@
 
           <!-- Stats row -->
           <div class="gsap-reveal flex flex-wrap items-center gap-x-8 gap-y-4 pt-5"
-            style="border-top:1px solid rgba(129,140,248,0.15);">
+            style="border-top:1px solid var(--color-border-light);">
             <div v-for="(stat, i) in STATS" :key="stat.label" class="flex items-baseline gap-1.5">
               <span class="font-display font-extrabold"
                 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing:-0.02em;
-                  background:linear-gradient(135deg,#818CF8,#22D3EE);
+                  background:linear-gradient(135deg,#6366F1,#06B6D4);
                   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
                 {{ stat.value }}{{ stat.suffix }}
               </span>
               <span class="text-[11px] font-medium uppercase tracking-[0.07em] leading-tight"
-                style="color:rgba(148,163,184,0.6);">{{ stat.label }}</span>
+                style="color: var(--color-text-muted);">{{ stat.label }}</span>
               <span v-if="i < STATS.length - 1" class="hidden sm:block w-px h-5 ml-4"
-                style="background:rgba(129,140,248,0.2);" />
+                style="background: var(--color-border-light);" />
             </div>
           </div>
 
@@ -184,7 +167,7 @@
                   <img v-for="s in speakerAvatars" :key="s.name"
                     :src="s.img" :alt="s.name"
                     class="w-8 h-8 rounded-full object-cover flex-shrink-0"
-                    style="border:2px solid #0F1135;"
+                    style="border:2px solid #1A1B3A;"
                     loading="lazy"
                   />
                 </div>
@@ -213,19 +196,19 @@
           <div class="flex flex-wrap items-center gap-2 mt-4 justify-end">
             <a :href="SITE.social.youtube" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-all hover:brightness-125"
-              style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(203,213,225,0.6);">
+              style="background: var(--card-bg); border:1px solid var(--card-border); color: var(--color-text-secondary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="#FF0000"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
               1K+ subscribers
             </a>
             <a :href="SITE.social.linkedin" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-all hover:brightness-125"
-              style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(203,213,225,0.6);">
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-all hover:opacity-80"
+              style="background: var(--card-bg); border:1px solid var(--card-border); color: var(--color-text-secondary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="#0A66C2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
               4K+ followers
             </a>
             <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-all hover:brightness-125"
-              style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(203,213,225,0.6);">
+              class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-all hover:opacity-80"
+              style="background: var(--card-bg); border:1px solid var(--card-border); color: var(--color-text-secondary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="#5865F2"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
               Discord community
             </a>
@@ -238,7 +221,7 @@
     <!-- Scroll indicator -->
     <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center">
       <div class="w-[1px] h-8 animate-scroll-line"
-        style="background:linear-gradient(to bottom,rgba(129,140,248,0.5),transparent);" />
+        style="background:linear-gradient(to bottom,rgba(99,102,241,0.4),transparent);" />
     </div>
   </section>
 </template>
