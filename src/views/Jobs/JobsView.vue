@@ -16,7 +16,7 @@
             @click="locFilter = f.value"
             class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
             :style="locFilter === f.value
-              ? 'background:rgba(99,102,241,0.2); color:#818CF8; border:1px solid rgba(99,102,241,0.45);'
+              ? 'background:rgba(99,102,241,0.2); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.45);'
               : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
           >{{ f.label }}</button>
         </div>
@@ -52,11 +52,11 @@
                   style="background:rgba(52,211,153,0.1); color:#34D399; border:1px solid rgba(52,211,153,0.25);">{{ job.level }}</span>
               </div>
               <h3 class="font-display font-bold text-base mb-0.5" style="color:var(--color-text);">{{ job.role }}</h3>
-              <p class="text-sm font-semibold" style="color:#818CF8;">{{ job.company }}</p>
+              <p class="text-sm font-semibold" style="color:var(--color-primary-soft);">{{ job.company }}</p>
             </div>
             <a :href="job.url" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white flex-shrink-0 transition-all duration-200"
-              style="background: linear-gradient(135deg, #6366F1, #818CF8);">Apply Now</a>
+              style="background: var(--gradient-btn);">Apply Now</a>
           </div>
 
           <p class="text-sm mb-4" style="color:var(--color-text-secondary);">{{ job.description }}</p>
@@ -73,7 +73,7 @@
             <div class="flex flex-wrap gap-1.5 ml-auto">
               <span v-for="tag in job.tags" :key="tag"
                 class="text-[10px] font-semibold px-2 py-[2px] rounded"
-                style="background:rgba(99,102,241,0.1); color:#818CF8;">{{ tag }}</span>
+                style="background:rgba(99,102,241,0.1); color:var(--color-primary-soft);">{{ tag }}</span>
             </div>
           </div>
         </article>
@@ -135,6 +135,6 @@ function formatDate(d) {
 function locationTypeStyle(t) {
   if (t === 'remote') return 'background:rgba(52,211,153,0.12); color:#34D399; border:1px solid rgba(52,211,153,0.3);'
   if (t === 'hybrid') return 'background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.25);'
-  return 'background:rgba(99,102,241,0.12); color:#818CF8; border:1px solid rgba(99,102,241,0.25);'
+  return 'background:rgba(99,102,241,0.12); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.25);'
 }
 </script>

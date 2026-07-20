@@ -115,7 +115,7 @@
         <p class="font-semibold mb-1" style="color: var(--card-text);">Want to be featured here?</p>
         <p class="text-sm mb-5" style="color: var(--card-text-muted);">Give a talk at CppIndia — tech talk or CppIndiaCon — and join the hall of fame.</p>
         <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-          style="background: linear-gradient(135deg,#6366F1,#818CF8);">Join the Community</a>
+          style="background: var(--gradient-btn);">Join the Community</a>
       </div>
 
     </div>
@@ -185,7 +185,7 @@
                 </div>
                 <svg v-if="talk.video" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   class="flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                  style="color:#818CF8;"
+                  style="color:var(--color-primary-soft);"
                 ><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
             </template>
@@ -207,9 +207,9 @@ import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'
 
 const badgeMap = {
-  founder:   { bg: 'rgba(99,102,241,0.15)',  color: '#818CF8', border: 'rgba(99,102,241,0.4)',  avatarBg: 'rgba(99,102,241,0.2)'  },
+  founder:   { bg: 'rgba(99,102,241,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(99,102,241,0.4)',  avatarBg: 'rgba(99,102,241,0.2)'  },
   speaker:   { bg: 'rgba(34,211,238,0.12)',  color: '#22D3EE', border: 'rgba(34,211,238,0.35)', avatarBg: 'rgba(34,211,238,0.15)' },
-  moderator: { bg: 'rgba(167,139,250,0.12)', color: '#A78BFA', border: 'rgba(167,139,250,0.35)',avatarBg: 'rgba(167,139,250,0.15)' },
+  moderator: { bg: 'rgba(167,139,250,0.12)', color: 'var(--color-secondary-mid)', border: 'rgba(167,139,250,0.35)',avatarBg: 'rgba(167,139,250,0.15)' },
 }
 
 const query = ref('')

@@ -55,7 +55,7 @@
                 <a v-for="res in step.resources" :key="res.name"
                   :href="res.url" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md transition-all duration-150"
-                  style="background:rgba(99,102,241,0.1); color:#818CF8; border:1px solid rgba(99,102,241,0.2);"
+                  style="background:rgba(99,102,241,0.1); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.2);"
                   onmouseover="this.style.background='rgba(99,102,241,0.2)'"
                   onmouseout="this.style.background='rgba(99,102,241,0.1)'"
                 >
@@ -89,7 +89,7 @@ import PageHero from '@/components/common/PageHero.vue'
 const levels = [
   { id: 'beginner',     label: '🌱 Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#34D399', border: 'rgba(52,211,153,0.4)' },
   { id: 'intermediate', label: '⚡ Intermediate',  bg: 'rgba(34,211,238,0.12)', color: '#22D3EE', border: 'rgba(34,211,238,0.4)' },
-  { id: 'advanced',     label: '🚀 Advanced',      bg: 'rgba(99,102,241,0.2)',  color: '#818CF8', border: 'rgba(99,102,241,0.45)' },
+  { id: 'advanced',     label: '🚀 Advanced',      bg: 'rgba(99,102,241,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(99,102,241,0.45)' },
 ]
 
 const activeLevel = ref('beginner')

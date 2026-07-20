@@ -187,6 +187,21 @@
     background-clip: text;
   }
 
+  // Primary heading gradient used across all section titles
+  .text-gradient-heading {
+    background: var(--gradient-heading);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  // Badge pill — indigo tint bg + soft text
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+  }
+
   .text-gradient-accent {
     background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
     -webkit-background-clip: text;

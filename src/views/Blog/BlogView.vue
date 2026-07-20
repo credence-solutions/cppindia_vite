@@ -14,7 +14,7 @@
           @click="activeTag = tag"
           class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
           :style="activeTag === tag
-            ? 'background:rgba(99,102,241,0.2); color:#818CF8; border:1px solid rgba(99,102,241,0.45);'
+            ? 'background:rgba(99,102,241,0.2); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.45);'
             : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ tag }}</button>
       </div>
@@ -42,7 +42,7 @@
               <div class="flex flex-wrap gap-1">
                 <span v-for="tag in post.tags.slice(0,2)" :key="tag"
                   class="text-[10px] font-semibold px-2 py-[2px] rounded-full"
-                  style="background:rgba(99,102,241,0.12); color:#818CF8; border:1px solid rgba(99,102,241,0.25);">{{ tag }}</span>
+                  style="background:rgba(99,102,241,0.12); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.25);">{{ tag }}</span>
               </div>
             </div>
             <h3 class="font-display font-bold text-base leading-snug flex-1" style="color:var(--color-text);">{{ post.title }}</h3>
@@ -52,7 +52,7 @@
                 <span class="font-medium" style="color: var(--color-text-secondary);">{{ post.author }}</span>
                 &middot; {{ post.readingTime }} min read
               </div>
-              <RouterLink :to="`/blog/${post.slug}`" class="text-xs font-semibold" style="color:#818CF8;">Read →</RouterLink>
+              <RouterLink :to="`/blog/${post.slug}`" class="text-xs font-semibold" style="color:var(--color-primary-soft);">Read →</RouterLink>
             </div>
           </div>
         </article>
@@ -64,7 +64,7 @@
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Share a tutorial, trip report, or C++ insight with 1,000+ readers. We welcome all levels.</p>
         <a href="mailto:info@cppindia.co.in"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-          style="background: linear-gradient(135deg, #6366F1, #818CF8);">Submit an Article</a>
+          style="background: var(--gradient-btn);">Submit an Article</a>
       </div>
 
     </div>

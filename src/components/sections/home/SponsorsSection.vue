@@ -52,7 +52,7 @@
             rel="noopener noreferrer"
             class="group inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
             style="border: 1px solid var(--color-border); color: var(--color-text-secondary);"
-            onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='#818CF8'; this.style.background='rgba(99,102,241,0.07)'"
+            onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='var(--color-primary-soft)'; this.style.background='rgba(99,102,241,0.07)'"
             onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-text-secondary)'; this.style.background='transparent'"
             :title="sponsor.name"
           >
@@ -66,9 +66,9 @@
         Want to support India's C++ community?
         <RouterLink to="/contact"
           class="underline transition-colors duration-fast ml-1"
-          style="color: #A78BFA;"
-          onmouseover="this.style.color='#818CF8'"
-          onmouseout="this.style.color='#A78BFA'"
+          style="color: var(--color-secondary-mid);"
+          onmouseover="this.style.color='var(--color-primary-soft)'"
+          onmouseout="this.style.color='var(--color-secondary-mid)'"
         >
           Become a sponsor
         </RouterLink>

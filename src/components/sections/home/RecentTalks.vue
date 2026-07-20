@@ -8,9 +8,9 @@
       <!-- Header -->
       <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
         <div>
-          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: #A78BFA;">Community</p>
-          <h2 class="font-display font-bold" style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
-            <span style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Recent Tech Talks</span>
+          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: var(--color-secondary-mid);">Community</p>
+          <h2 class="font-display font-bold text-gradient-heading" style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
+            Recent Tech Talks
           </h2>
           <p class="text-sm mt-2" style="color: var(--color-text-muted);">
             {{ totalTalks }} sessions recorded &amp; available for free
@@ -19,7 +19,7 @@
         <RouterLink
           to="/tech-talks"
           class="inline-flex items-center gap-1 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 flex-shrink-0"
-          style="border: 1px solid rgba(99,102,241,0.3); color: #818CF8; background: transparent;"
+          style="border: 1px solid rgba(99,102,241,0.3); color: var(--color-primary-soft); background: transparent;"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.background='rgba(99,102,241,0.08)'"
           onmouseout="this.style.borderColor='rgba(99,102,241,0.3)'; this.style.background='transparent'"
         >
@@ -75,7 +75,7 @@
                   v-for="tag in talk.tags.slice(0, 2)"
                   :key="tag"
                   class="px-2 py-[2px] rounded-full text-[10px] font-semibold"
-                  style="background: rgba(99,102,241,0.12); color: #818CF8; border: 1px solid rgba(99,102,241,0.25);"
+                  style="background: rgba(99,102,241,0.12); color: var(--color-primary-soft); border: 1px solid rgba(99,102,241,0.25);"
                 >{{ tag }}</span>
               </div>
             </div>
@@ -103,7 +103,7 @@
                 :href="talk.slides"
                 class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-semibold transition-all duration-200"
                 style="border: 1px solid var(--card-border); color: var(--color-text-secondary);"
-                onmouseover="this.style.borderColor='rgba(139,92,246,0.45)'; this.style.color='#A78BFA'"
+                onmouseover="this.style.borderColor='rgba(139,92,246,0.45)'; this.style.color='var(--color-secondary-mid)'"
                 onmouseout="this.style.borderColor='var(--card-border)'; this.style.color='var(--color-text-secondary)'"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -121,7 +121,7 @@
         <RouterLink
           to="/tech-talks"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
-          style="border: 1px solid rgba(99,102,241,0.3); color: #818CF8; background: transparent;"
+          style="border: 1px solid rgba(99,102,241,0.3); color: var(--color-primary-soft); background: transparent;"
           onmouseover="this.style.borderColor='rgba(99,102,241,0.55)'; this.style.background='rgba(99,102,241,0.08)'"
           onmouseout="this.style.borderColor='rgba(99,102,241,0.3)'; this.style.background='transparent'"
         >

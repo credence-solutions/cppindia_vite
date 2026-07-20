@@ -8,10 +8,10 @@
 
         <!-- Left: info -->
         <div class="gsap-reveal">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: #A78BFA;">Annual Conference</p>
-          <h2 class="font-display font-extrabold leading-none mb-1"
-            style="font-size: clamp(1.875rem, 4vw, 3.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CppIndiaCon</h2>
-          <p class="font-display text-lg font-medium mb-5" style="color: #A78BFA;">The C++ Festival of India</p>
+          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: var(--color-secondary-mid);">Annual Conference</p>
+          <h2 class="font-display font-extrabold leading-none mb-1 text-gradient-heading"
+            style="font-size: clamp(1.875rem, 4vw, 3.5rem);">CppIndiaCon</h2>
+          <p class="font-display text-lg font-medium mb-5" style="color: var(--color-secondary-mid);">The C++ Festival of India</p>
           <p class="text-base leading-relaxed mb-7" style="color: var(--color-text-secondary);">
             Every year, CppIndia brings together C++ experts from India and around the world
             for two days of inspiring talks, hands-on sessions, and community networking.
@@ -27,7 +27,7 @@
               :to="`/conference?year=${year}`"
               class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
               :style="year === 2024
-                ? 'background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.4); color: #A78BFA;'
+                ? 'background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.4); color: var(--color-secondary-mid);'
                 : 'border: 1px solid var(--color-border); color: var(--color-text-secondary);'"
             >
               <span class="font-bold">{{ year }}</span>
@@ -56,8 +56,8 @@
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
               style="border: 1px solid rgba(139,92,246,0.4); background: rgba(139,92,246,0.1);">
-              <span class="w-2 h-2 rounded-full animate-pulse" style="background: #A78BFA;" />
-              <span class="text-xs font-bold uppercase tracking-widest" style="color: #A78BFA;">4th Edition</span>
+              <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--color-secondary-mid);" />
+              <span class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-secondary-mid);">4th Edition</span>
             </div>
             <h3 class="font-display font-extrabold text-xl mb-1" style="color: var(--color-text);">CppIndiaCon 2024</h3>
             <p class="text-sm mb-1" style="color: var(--color-text-secondary);">
@@ -81,7 +81,7 @@
               >
                 <div
                   class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
-                  style="background: linear-gradient(135deg, #6366F1, #A78BFA)"
+                  style="background: var(--gradient-btn)"
                 >
                   {{ speaker.name.charAt(0) }}
                 </div>

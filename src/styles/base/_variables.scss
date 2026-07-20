@@ -103,6 +103,19 @@ $bp-2xl: 1440px;
   --color-dark:            #{$color-dark};
   --color-dark-surface:    #{$color-dark-surface};
 
+  // --- Palette soft tones (used for badge text, labels, arrows) ---
+  --color-primary-soft:   #818CF8;   // indigo-400 — badge text, tag links
+  --color-secondary-mid:  #A78BFA;   // violet-400 — section labels, arrows
+
+  // --- Semantic badge backgrounds ---
+  --badge-bg:        rgba(99, 102, 241, 0.10);
+  --badge-bg-strong: rgba(99, 102, 241, 0.15);
+  --badge-text:      var(--color-primary-soft);
+
+  // --- Reusable gradients ---
+  --gradient-heading: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%);
+  --gradient-btn:     linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+
   // --- Glow effects ---
   --glow-primary:   0 0 24px rgba(79, 142, 247, 0.25);
   --glow-secondary: 0 0 24px rgba(155, 116, 245, 0.25);

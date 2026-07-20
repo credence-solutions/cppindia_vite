@@ -47,7 +47,7 @@
                   <div class="flex flex-wrap gap-1 mt-1">
                     <span v-for="tag in cfp.tags" :key="tag"
                       class="text-[10px] font-semibold px-1.5 py-[1px] rounded"
-                      style="background:rgba(99,102,241,0.12); color:#818CF8;">{{ tag }}</span>
+                      style="background:rgba(99,102,241,0.12); color:var(--color-primary-soft);">{{ tag }}</span>
                   </div>
                 </td>
                 <td class="px-5 py-4 font-mono text-xs" :style="`color:${isUrgent(cfp.cfpDeadline) ? '#DC2626' : 'var(--color-text-muted)'};`">
@@ -69,7 +69,7 @@
                 <td class="px-5 py-4">
                   <a :href="cfp.url" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-1 text-xs font-semibold transition-colors duration-150"
-                    style="color:#818CF8;">
+                    style="color:var(--color-primary-soft);">
                     Submit
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                   </a>
@@ -89,7 +89,7 @@
         </div>
         <RouterLink to="/call-for-speakers"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex-shrink-0"
-          style="background: linear-gradient(135deg, #6366F1, #818CF8);">Submit a Talk Proposal</RouterLink>
+          style="background: var(--gradient-btn);">Submit a Talk Proposal</RouterLink>
       </div>
 
     </div>
@@ -103,7 +103,7 @@ import PageHero from '@/components/common/PageHero.vue'
 import cfpData from '@/data/cfp.json'
 
 const statuses = [
-  { value: 'all',       label: 'All',      bg: 'rgba(99,102,241,0.2)',  color: '#818CF8', border: 'rgba(99,102,241,0.45)' },
+  { value: 'all',       label: 'All',      bg: 'rgba(99,102,241,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(99,102,241,0.45)' },
   { value: 'open',      label: 'Open',     bg: 'rgba(52,211,153,0.15)', color: '#34D399', border: 'rgba(52,211,153,0.4)'  },
   { value: 'closed',    label: 'Closed',   bg: 'rgba(148,163,184,0.1)', color: '#94A3B8', border: 'rgba(148,163,184,0.3)' },
 ]

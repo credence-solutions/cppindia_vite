@@ -2,9 +2,9 @@
   <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
       <div class="text-center mb-10">
-        <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: #A78BFA;">Community Voices</p>
-        <h2 class="font-display font-bold" style="font-size: clamp(1.5rem, 3vw, 2.25rem);">
-          <span style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 60%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">What Members Say</span>
+        <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: var(--color-secondary-mid);">Community Voices</p>
+        <h2 class="font-display font-bold text-gradient-heading" style="font-size: clamp(1.5rem, 3vw, 2.25rem);">
+          What Members Say
         </h2>
       </div>
 
@@ -46,7 +46,7 @@
       <div class="text-center mt-10">
         <RouterLink to="/join"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
-          style="border: 1px solid rgba(99,102,241,0.3); color: #818CF8;"
+          style="border: 1px solid rgba(99,102,241,0.3); color: var(--color-primary-soft);"
           onmouseover="this.style.background='rgba(99,102,241,0.08)'; this.style.borderColor='rgba(99,102,241,0.55)'"
           onmouseout="this.style.background='transparent'; this.style.borderColor='rgba(99,102,241,0.3)'"
         >Join the Community</RouterLink>
@@ -62,11 +62,11 @@ const testimonials = testimonialsData.slice(0, 6)
 
 function sourceStyle(source) {
   const map = {
-    discord:  'background:rgba(88,101,242,0.15); color:#818CF8; border:1px solid rgba(88,101,242,0.3);',
+    discord:  'background:rgba(88,101,242,0.15); color:var(--color-primary-soft); border:1px solid rgba(88,101,242,0.3);',
     linkedin: 'background:rgba(10,102,194,0.12); color:#60A5FA; border:1px solid rgba(10,102,194,0.3);',
     twitter:  'background:rgba(29,161,242,0.1);  color:#38BDF8; border:1px solid rgba(29,161,242,0.25);',
     youtube:  'background:rgba(255,0,0,0.1);      color:#F87171; border:1px solid rgba(255,0,0,0.25);',
   }
-  return map[source] || 'background:rgba(99,102,241,0.12); color:#818CF8;'
+  return map[source] || 'background:rgba(99,102,241,0.12); color:var(--color-primary-soft);'
 }
 </script>

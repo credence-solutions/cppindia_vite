@@ -15,7 +15,7 @@
           @click="activeTag = tag"
           class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
           :style="activeTag === tag
-            ? 'background:rgba(99,102,241,0.2); color:#818CF8; border:1px solid rgba(99,102,241,0.45);'
+            ? 'background:rgba(99,102,241,0.2); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.45);'
             : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ tag }}</button>
       </div>
@@ -34,8 +34,8 @@
           <div class="flex items-start justify-between gap-2">
             <div>
               <div class="flex items-center gap-2 mb-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#818CF8;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                <span v-if="proj.featured" class="text-[9px] font-bold uppercase px-1.5 py-[1px] rounded" style="background:rgba(99,102,241,0.2); color:#818CF8;">Featured</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-primary-soft);"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                <span v-if="proj.featured" class="text-[9px] font-bold uppercase px-1.5 py-[1px] rounded" style="background:rgba(99,102,241,0.2); color:var(--color-primary-soft);">Featured</span>
               </div>
               <h3 class="font-display font-bold text-base" style="color:var(--color-text);">{{ proj.name }}</h3>
               <p class="text-xs mt-0.5" style="color:var(--color-text-muted);">by {{ proj.owner }}</p>
@@ -54,7 +54,7 @@
             <span class="text-[10px] font-bold px-2 py-[2px] rounded" style="background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.2);">{{ proj.language }}</span>
             <span v-for="tag in proj.tags" :key="tag"
               class="text-[10px] font-semibold px-2 py-[2px] rounded"
-              style="background:rgba(99,102,241,0.1); color:#818CF8;">{{ tag }}</span>
+              style="background:rgba(99,102,241,0.1); color:var(--color-primary-soft);">{{ tag }}</span>
           </div>
 
           <!-- Footer -->
@@ -62,7 +62,7 @@
             <span class="text-xs" style="color:var(--color-text-muted);">Updated {{ formatDate(proj.lastUpdated) }}</span>
             <a :href="proj.repoUrl" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 text-xs font-semibold transition-colors duration-150"
-              style="color:#818CF8;">
+              style="color:var(--color-primary-soft);">
               View on GitHub
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </a>

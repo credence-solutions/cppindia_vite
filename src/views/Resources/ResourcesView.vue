@@ -22,7 +22,7 @@
         <!-- References -->
         <div v-if="!query || filteredReferences.length" id="references" class="mb-14">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
+            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
             C++ Language &amp; References
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -45,7 +45,7 @@
               </div>
               <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
               <p class="text-sm leading-relaxed flex-1" style="color: var(--card-text-muted);">{{ r.description }}</p>
-              <span class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color: #A78BFA;">
+              <span class="flex items-center gap-1 text-xs font-semibold mt-auto" style="color: var(--color-secondary-mid);">
                 Open resource
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
               </span>
@@ -56,7 +56,7 @@
         <!-- Articles -->
         <div v-if="!query || filteredArticles.length" id="articles" class="mb-14">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
+            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
             Articles &amp; Blogs
           </h2>
           <div v-if="filteredArticles.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -85,10 +85,10 @@
             style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--card-text-muted);">
             <p>Community-curated articles coming soon. Check out the
               <a :href="SITE.social.github" target="_blank" rel="noopener noreferrer"
-                style="color: #A78BFA;"
+                style="color: var(--color-secondary-mid);"
                 class="underline transition-colors"
-                onmouseover="this.style.color='#818CF8'"
-                onmouseout="this.style.color='#A78BFA'"
+                onmouseover="this.style.color='var(--color-primary-soft)'"
+                onmouseout="this.style.color='var(--color-secondary-mid)'"
               >GitHub repo</a>
               for session materials from past talks.
             </p>
@@ -98,7 +98,7 @@
         <!-- Newsletter Archive -->
         <div v-if="!query || filteredNewsletters.length" id="newsletter" class="mb-14">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
+            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
             Newsletter Archive
           </h2>
           <!-- Subscribe CTA -->
@@ -110,7 +110,7 @@
             </div>
             <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm text-white flex-shrink-0"
-              style="background: linear-gradient(135deg, #6366F1, #818CF8);">
+              style="background: var(--gradient-btn);">
               Join Discord to Subscribe
             </a>
           </div>
@@ -127,7 +127,7 @@
               rel="noopener noreferrer"
             >
               <div class="flex items-center justify-between">
-                <span class="text-xs font-mono px-2 py-0.5 rounded" style="background:rgba(99,102,241,0.12); color:#818CF8;">#{{ nl.issueNumber }}</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded" style="background:rgba(99,102,241,0.12); color:var(--color-primary-soft);">#{{ nl.issueNumber }}</span>
                 <time class="text-xs font-mono" style="color: var(--card-text-muted);">{{ formatDate(nl.date) }}</time>
               </div>
               <h3 class="font-display font-bold text-sm leading-snug" style="color: var(--card-text);">{{ nl.title }}</h3>
@@ -139,7 +139,7 @@
                   {{ h }}
                 </span>
               </div>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold mt-auto" style="color:#818CF8;">
+              <span class="inline-flex items-center gap-1.5 text-xs font-semibold mt-auto" style="color:var(--color-primary-soft);">
                 Read Issue
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
               </span>
@@ -150,24 +150,24 @@
         <!-- Monthly picks -->
         <div id="monthly">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4"
-            style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; border-bottom: 2px solid rgba(99,102,241,0.2);">
+            class="text-gradient-heading pb-2 border-b-2 border-wire-light">
             Book / Blog / Video of the Month
           </h2>
           <div class="p-8 rounded-xl text-base leading-relaxed"
             style="background: var(--card-bg); border: 1px solid var(--card-border); color: var(--card-text-muted);">
             <p>Monthly community picks are shared on our
               <a :href="SITE.social.discord" target="_blank" rel="noopener noreferrer"
-                style="color: #A78BFA;"
+                style="color: var(--color-secondary-mid);"
                 class="underline transition-colors"
-                onmouseover="this.style.color='#818CF8'"
-                onmouseout="this.style.color='#A78BFA'"
+                onmouseover="this.style.color='var(--color-primary-soft)'"
+                onmouseout="this.style.color='var(--color-secondary-mid)'"
               >Discord server</a>
               and
               <a :href="SITE.social.linkedin" target="_blank" rel="noopener noreferrer"
-                style="color: #A78BFA;"
+                style="color: var(--color-secondary-mid);"
                 class="underline transition-colors"
-                onmouseover="this.style.color='#818CF8'"
-                onmouseout="this.style.color='#A78BFA'"
+                onmouseover="this.style.color='var(--color-primary-soft)'"
+                onmouseout="this.style.color='var(--color-secondary-mid)'"
               >LinkedIn</a>.
               Join us to stay updated!
             </p>

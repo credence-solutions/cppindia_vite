@@ -8,9 +8,9 @@
 
         <!-- Left: text -->
         <div class="gsap-reveal">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-3" style="color: #A78BFA;">About CppIndia</p>
-          <h2 class="font-display font-bold leading-[1.2] mb-5"
-            style="font-size: clamp(1.5rem, 3vw, 2.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] mb-3" style="color: var(--color-secondary-mid);">About CppIndia</p>
+          <h2 class="font-display font-bold leading-[1.2] mb-5 text-gradient-heading"
+            style="font-size: clamp(1.5rem, 3vw, 2.5rem);">
             A community for C++ developers — at every stage of their journey
           </h2>
           <p class="text-base leading-relaxed mb-7" style="color: var(--color-text-secondary);">
@@ -32,7 +32,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
-              style="border: 1px solid rgba(99,102,241,0.35); color: #818CF8; background: transparent;"
+              style="border: 1px solid rgba(99,102,241,0.35); color: var(--color-primary-soft); background: transparent;"
               onmouseover="this.style.borderColor='rgba(99,102,241,0.6)'; this.style.background='rgba(99,102,241,0.08)'"
               onmouseout="this.style.borderColor='rgba(99,102,241,0.35)'; this.style.background='transparent'"
             >Join the Community</a>
@@ -50,7 +50,7 @@
             onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
           >
             <div class="w-[52px] h-[52px] flex items-center justify-center rounded-lg mb-4"
-              style="background: rgba(99,102,241,0.12); color: #818CF8;"
+              style="background: rgba(99,102,241,0.12); color: var(--color-primary-soft);"
               v-html="pillar.icon"
             />
             <h3 class="font-display font-bold text-base mb-2" style="color: var(--color-text);">{{ pillar.title }}</h3>

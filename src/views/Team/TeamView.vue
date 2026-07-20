@@ -35,7 +35,7 @@
             </div>
 
             <div class="p-6">
-              <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: #A78BFA;">{{ member.role }}</p>
+              <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-secondary-mid);">{{ member.role }}</p>
               <h2 class="font-display text-xl font-bold mb-3" style="color: var(--color-text);">{{ member.name }}</h2>
               <p class="text-sm leading-relaxed mb-4" style="color: var(--card-text-muted);">{{ member.bio }}</p>
 
@@ -74,8 +74,7 @@
         <!-- Volunteer CTA -->
         <div class="text-center p-12 rounded-2xl max-w-[600px] mx-auto"
           style="background: var(--card-bg); border: 1px solid var(--card-border);">
-          <h2 class="font-display text-2xl font-bold mb-3"
-            style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          <h2 class="font-display text-2xl font-bold mb-3 text-gradient-heading">
             Want to help run CppIndia?
           </h2>
           <p class="text-base leading-relaxed mb-6" style="color: var(--card-text-muted);">

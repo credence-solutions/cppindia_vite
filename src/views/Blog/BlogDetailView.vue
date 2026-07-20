@@ -13,7 +13,7 @@
         <div class="flex flex-wrap gap-2 mb-8">
           <span v-for="tag in post.tags" :key="tag"
             class="text-xs font-semibold px-3 py-1 rounded-full"
-            style="background:rgba(99,102,241,0.12); color:#818CF8; border:1px solid rgba(99,102,241,0.25);">
+            style="background:rgba(99,102,241,0.12); color:var(--color-primary-soft); border:1px solid rgba(99,102,241,0.25);">
             {{ tag }}
           </span>
         </div>
@@ -25,7 +25,7 @@
         <div class="mt-12 pt-6 flex items-center justify-between flex-wrap gap-4" style="border-top:1px solid rgba(99,102,241,0.18);">
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-              style="background:rgba(99,102,241,0.2); color:#818CF8;">
+              style="background:rgba(99,102,241,0.2); color:var(--color-primary-soft);">
               {{ post.author.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>
@@ -35,7 +35,7 @@
           </div>
           <RouterLink to="/blog"
             class="inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-150"
-            style="color:#818CF8;">
+            style="color:var(--color-primary-soft);">
             ← Back to Blog
           </RouterLink>
         </div>
@@ -48,7 +48,7 @@
   <div v-else class="section text-center" style="background: var(--emphasis-bg);">
     <div class="container">
       <p class="text-lg font-semibold mb-4" style="color:var(--color-text);">Post not found.</p>
-      <RouterLink to="/blog" class="text-sm font-semibold" style="color:#818CF8;">← Back to Blog</RouterLink>
+      <RouterLink to="/blog" class="text-sm font-semibold" style="color:var(--color-primary-soft);">← Back to Blog</RouterLink>
     </div>
   </div>
 </template>
@@ -160,7 +160,7 @@ const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body)
   text-align: left;
   padding: 0.6rem 1rem;
   font-weight: 600;
-  color: #818CF8;
+  color: var(--color-primary-soft);
   background: rgba(99,102,241,0.1);
   border-bottom: 1px solid rgba(99,102,241,0.25);
 }
@@ -170,5 +170,5 @@ const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body)
   color: var(--color-text-secondary);
 }
 .prose-cpp hr { border: none; border-top: 1px solid rgba(99,102,241,0.18); margin: 2rem 0; }
-.prose-cpp a  { color: #818CF8; text-decoration: underline; }
+.prose-cpp a  { color: var(--color-primary-soft); text-decoration: underline; }
 </style>

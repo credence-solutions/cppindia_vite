@@ -10,15 +10,15 @@
   <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
       <div class="text-center mb-12">
-        <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: #A78BFA;">Why It Matters</p>
-        <h2 class="font-display font-bold mb-3" style="font-size: clamp(1.4rem,3vw,2rem); background: linear-gradient(100deg,#818CF8,#22D3EE); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Reach India's Top C++ Talent</h2>
+        <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: var(--color-secondary-mid);">Why It Matters</p>
+        <h2 class="font-display font-bold mb-3" class="text-gradient-heading" style="font-size: clamp(1.4rem,3vw,2rem);">Reach India's Top C++ Talent</h2>
         <p class="text-sm mx-auto" style="max-width:600px; color:var(--color-text-secondary);">CppIndia connects you with senior engineers, students, and decision-makers who live and breathe C++. Your sponsorship keeps the community free for everyone.</p>
       </div>
 
       <div class="grid grid-cols-1 gap-5 sm:grid-cols-3 mb-16">
         <div v-for="stat in stats" :key="stat.label" class="text-center rounded-2xl p-6"
           style="background: var(--card-bg); border: 1px solid var(--card-border);">
-          <div class="text-3xl font-bold font-display mb-1" style="color:#818CF8;">{{ stat.value }}</div>
+          <div class="text-3xl font-bold font-display mb-1" style="color:var(--color-primary-soft);">{{ stat.value }}</div>
           <div class="text-sm" style="color:var(--color-text-secondary);">{{ stat.label }}</div>
         </div>
       </div>
@@ -56,7 +56,7 @@
 
       <!-- Current Sponsors -->
       <div class="mt-16 text-center">
-        <p class="text-xs font-bold uppercase tracking-[0.14em] mb-6" style="color: #A78BFA;">Our Current Sponsors</p>
+        <p class="text-xs font-bold uppercase tracking-[0.14em] mb-6" style="color: var(--color-secondary-mid);">Our Current Sponsors</p>
         <div class="flex flex-wrap items-center justify-center gap-8">
           <div class="flex items-center justify-center rounded-xl px-6 py-4" style="background: var(--card-bg); border:1px solid rgba(234,179,8,0.35);">
             <span class="font-bold text-lg" style="color:#B45309;">Meeting C++</span>
@@ -76,7 +76,7 @@
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">We'll customise a package for your budget and goals. Get in touch.</p>
         <a href="mailto:info@cppindia.co.in"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-          style="background: linear-gradient(135deg, #6366F1, #818CF8);">
+          style="background: var(--gradient-btn);">
           Email Us at info@cppindia.co.in
         </a>
       </div>

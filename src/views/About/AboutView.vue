@@ -13,8 +13,8 @@
 
           <!-- Story -->
           <div>
-            <h2 class="font-display text-2xl font-bold mt-0 mb-5"
-              style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            <h2 class="font-display text-2xl font-bold mt-0 mb-5 text-gradient-heading"
+             >
               Our Story
             </h2>
             <p class="text-base leading-relaxed mb-5" style="color: var(--color-text-secondary);">
@@ -28,8 +28,8 @@
               united by their love for C++.
             </p>
 
-            <h2 class="font-display text-2xl font-bold mt-10 mb-5"
-              style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            <h2 class="font-display text-2xl font-bold mt-10 mb-5 text-gradient-heading"
+             >
               What We Do
             </h2>
             <ul class="flex flex-col gap-4 pl-6 list-disc">
@@ -56,8 +56,8 @@
               </li>
             </ul>
 
-            <h2 class="font-display text-2xl font-bold mt-10 mb-5"
-              style="background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            <h2 class="font-display text-2xl font-bold mt-10 mb-5 text-gradient-heading"
+             >
               Our Values
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -69,7 +69,7 @@
                 onmouseover="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.boxShadow='0 0 16px rgba(99,102,241,0.15)'"
                 onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
               >
-                <h3 class="font-display text-base font-bold mb-2" style="color: #A78BFA;">{{ value.title }}</h3>
+                <h3 class="font-display text-base font-bold mb-2" style="color: var(--color-secondary-mid);">{{ value.title }}</h3>
                 <p class="text-sm leading-relaxed" style="color: var(--color-text-secondary);">{{ value.body }}</p>
               </div>
             </div>
@@ -85,10 +85,10 @@
                     to="/team"
                     class="text-sm transition-colors flex items-center gap-2 group"
                     style="color: var(--color-text-secondary);"
-                    onmouseover="this.style.color='#A78BFA'"
+                    onmouseover="this.style.color='var(--color-secondary-mid)'"
                     onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
-                    <span style="color: #A78BFA;">→</span> Meet the Team
+                    <span style="color: var(--color-secondary-mid);">→</span> Meet the Team
                   </RouterLink>
                 </li>
                 <li>
@@ -98,10 +98,10 @@
                     rel="noopener noreferrer"
                     class="text-sm transition-colors flex items-center gap-2"
                     style="color: var(--color-text-secondary);"
-                    onmouseover="this.style.color='#A78BFA'"
+                    onmouseover="this.style.color='var(--color-secondary-mid)'"
                     onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
-                    <span style="color: #A78BFA;">→</span> Join CppIndia
+                    <span style="color: var(--color-secondary-mid);">→</span> Join CppIndia
                   </a>
                 </li>
                 <li>
@@ -109,10 +109,10 @@
                     to="/code-of-conduct"
                     class="text-sm transition-colors flex items-center gap-2"
                     style="color: var(--color-text-secondary);"
-                    onmouseover="this.style.color='#A78BFA'"
+                    onmouseover="this.style.color='var(--color-secondary-mid)'"
                     onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
-                    <span style="color: #A78BFA;">→</span> Code of Conduct
+                    <span style="color: var(--color-secondary-mid);">→</span> Code of Conduct
                   </RouterLink>
                 </li>
                 <li>
@@ -120,10 +120,10 @@
                     to="/call-for-speakers"
                     class="text-sm transition-colors flex items-center gap-2"
                     style="color: var(--color-text-secondary);"
-                    onmouseover="this.style.color='#A78BFA'"
+                    onmouseover="this.style.color='var(--color-secondary-mid)'"
                     onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
-                    <span style="color: #A78BFA;">→</span> Call for Speakers
+                    <span style="color: var(--color-secondary-mid);">→</span> Call for Speakers
                   </RouterLink>
                 </li>
                 <li>
@@ -131,10 +131,10 @@
                     to="/contact"
                     class="text-sm transition-colors flex items-center gap-2"
                     style="color: var(--color-text-secondary);"
-                    onmouseover="this.style.color='#A78BFA'"
+                    onmouseover="this.style.color='var(--color-secondary-mid)'"
                     onmouseout="this.style.color='var(--color-text-secondary)'"
                   >
-                    <span style="color: #A78BFA;">→</span> Contact Us
+                    <span style="color: var(--color-secondary-mid);">→</span> Contact Us
                   </RouterLink>
                 </li>
               </ul>

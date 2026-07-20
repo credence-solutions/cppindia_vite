@@ -317,7 +317,7 @@
                     rel="noopener noreferrer"
                     class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
                     style="border: 1px solid var(--card-border); color: var(--card-text-muted);"
-                    onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='#818CF8'; this.style.background='rgba(99,102,241,0.07)'"
+                    onmouseover="this.style.borderColor='rgba(99,102,241,0.45)'; this.style.color='var(--color-primary-soft)'; this.style.background='rgba(99,102,241,0.07)'"
                     onmouseout="this.style.borderColor='var(--card-border)'; this.style.color='var(--card-text-muted)'; this.style.background='transparent'"
                   >{{ s.name }}</a>
                 </div>
@@ -330,9 +330,9 @@
               <RouterLink
                 to="/contact"
                 class="underline ml-1 transition-colors duration-150"
-                style="color: #A78BFA;"
-                onmouseover="this.style.color='#818CF8'"
-                onmouseout="this.style.color='#A78BFA'"
+                style="color: var(--color-secondary-mid);"
+                onmouseover="this.style.color='var(--color-primary-soft)'"
+                onmouseout="this.style.color='var(--color-secondary-mid)'"
               >Become a sponsor</RouterLink>
             </p>
           </div>

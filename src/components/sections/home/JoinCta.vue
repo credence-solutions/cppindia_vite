@@ -12,7 +12,7 @@
 
     <div class="container relative z-[1]">
       <div class="gsap-reveal text-center max-w-[720px] mx-auto">
-        <h2 class="font-display font-bold mb-4" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        <h2 class="font-display font-bold mb-4 text-gradient-heading" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem);">
           Ready to level up your C++?
         </h2>
         <p class="text-lg leading-relaxed mb-8" style="color: rgba(226,232,245,0.75);">
@@ -37,7 +37,7 @@
           <RouterLink
             to="/about"
             class="btn btn--lg inline-flex items-center gap-2 font-semibold transition-all duration-200"
-            style="border: 1px solid rgba(99,102,241,0.4); color: #818CF8; background: transparent;"
+            style="border: 1px solid rgba(99,102,241,0.4); color: var(--color-primary-soft); background: transparent;"
             onmouseover="this.style.borderColor='rgba(99,102,241,0.65)'; this.style.background='rgba(99,102,241,0.08)'"
             onmouseout="this.style.borderColor='rgba(99,102,241,0.4)'; this.style.background='transparent'"
           >Learn More</RouterLink>

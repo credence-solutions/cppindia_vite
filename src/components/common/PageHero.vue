@@ -39,11 +39,11 @@
       <div>
         <p v-if="overline"
           class="text-xs font-bold uppercase tracking-widest mb-3"
-          style="color: #A78BFA; letter-spacing: 0.14em;"
+          style="color: var(--color-secondary-mid); letter-spacing: 0.14em;"
         >{{ overline }}</p>
         <h1
-          class="font-display font-extrabold leading-tight tracking-tight mb-4"
-          style="font-size: clamp(2rem, 4vw, 3.5rem); background: linear-gradient(100deg, #818CF8 0%, #22D3EE 50%, #34D399 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
+          class="font-display font-extrabold leading-tight tracking-tight mb-4 text-gradient-heading"
+          style="font-size: clamp(2rem, 4vw, 3.5rem);"
         >{{ title }}</h1>
         <p v-if="subtitle" class="text-lg leading-relaxed" style="color: var(--hero-subtitle);">{{ subtitle }}</p>
         <slot />

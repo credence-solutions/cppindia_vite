@@ -30,6 +30,9 @@ export default {
         // Borders
         wire:             'var(--color-border)',
         'wire-light':     'var(--color-border-light)',
+        // Soft tones (badges, labels)
+        'primary-soft':   'var(--color-primary-soft)',
+        'secondary-mid':  'var(--color-secondary-mid)',
       },
       fontFamily: {
         sans:    ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
@@ -111,6 +114,8 @@ export default {
         'gradient-primary': 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
         'gradient-cta':     'linear-gradient(135deg, #0D1A35 0%, #0A1228 50%, #0C1630 100%)',
         'grid-pattern':     'linear-gradient(rgba(79,142,247,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(79,142,247,0.05) 1px, transparent 1px)',
+        'gradient-btn':     'var(--gradient-btn)',
+        'gradient-heading': 'var(--gradient-heading)',
       },
     },
   },

@@ -16,7 +16,7 @@
           @click="activeTab = tab"
           class="px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200"
           :style="activeTab === tab
-            ? 'background: rgba(99,102,241,0.25); color: #818CF8;'
+            ? 'background: rgba(99,102,241,0.25); color: var(--color-primary-soft);'
             : 'background: transparent; color: var(--color-text-muted);'"
         >{{ tab }}</button>
       </div>
@@ -35,7 +35,7 @@
           <div class="flex-shrink-0 flex flex-col items-center justify-center rounded-xl p-4 w-20 text-center"
             style="background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.25);">
             <span class="text-xs font-mono uppercase" style="color:var(--color-text-muted);">{{ monthStr(event.date) }}</span>
-            <span class="text-3xl font-display font-bold" style="color:#818CF8;">{{ dayStr(event.date) }}</span>
+            <span class="text-3xl font-display font-bold" style="color:var(--color-primary-soft);">{{ dayStr(event.date) }}</span>
             <span class="text-xs font-mono" style="color:var(--color-text-muted);">{{ yearStr(event.date) }}</span>
           </div>
 
@@ -44,14 +44,14 @@
             <div class="flex items-center gap-2 flex-wrap">
               <span class="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
                 :style="event.type === 'conference'
-                  ? 'background:rgba(167,139,250,0.12); color:#A78BFA; border:1px solid rgba(167,139,250,0.3);'
+                  ? 'background:rgba(167,139,250,0.12); color:var(--color-secondary-mid); border:1px solid rgba(167,139,250,0.3);'
                   : 'background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.25);'">
                 {{ event.type }}
               </span>
               <span v-if="event.time" class="text-xs font-mono" style="color:var(--color-text-muted);">{{ event.time }}</span>
             </div>
             <h3 class="font-display font-bold text-base" style="color:var(--color-text);">{{ event.title }}</h3>
-            <p v-if="event.speaker" class="text-sm font-medium" style="color:#818CF8;">{{ event.speaker }} — {{ event.topic }}</p>
+            <p v-if="event.speaker" class="text-sm font-medium" style="color:var(--color-primary-soft);">{{ event.speaker }} — {{ event.topic }}</p>
             <p class="text-sm" style="color:var(--color-text-secondary);">{{ event.description }}</p>
             <div class="flex items-center gap-1.5 text-xs mt-1" style="color:var(--color-text-muted);">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -63,7 +63,7 @@
           <div class="flex flex-col gap-2 justify-center flex-shrink-0">
             <a v-if="event.registrationUrl" :href="event.registrationUrl" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all duration-200 whitespace-nowrap"
-              style="background: linear-gradient(135deg, #6366F1, #818CF8);">Register Free</a>
+              style="background: var(--gradient-btn);">Register Free</a>
             <a v-if="event.recordingUrl" :href="event.recordingUrl" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 whitespace-nowrap"
               style="background:#FF0000; color:white;">Watch Recording</a>
