@@ -257,16 +257,33 @@
 
 // =============================================================================
 // GLOBAL CARD / BOX HOVER — Butter Light theme border highlight
-// Targets any element that has var(--card-border) in its inline style,
-// plus elements using the Tailwind border-wire / border-wire-light classes.
+// Two cases:
+//   1. Inline style uses var(--card-border) (Members, Team, Sponsors…)
+//   2. Tailwind rounded elements that use border-wire / border-wire-light
+//      (Conference schedule, session videos, speaker cards, etc.)
 // =============================================================================
 
+// Case 1 — inline var(--card-border)
 [style*="var(--card-border)"] {
   transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
 }
 [style*="var(--card-border)"]:hover {
   border-color: var(--card-border-hover) !important;
   box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+}
+
+// Case 2 — Tailwind border-wire-light / border-wire on rounded card elements
+// Uses :is() to match rounded divs, articles and links that are cards, not dividers
+article.rounded-xl,  article.rounded-2xl,  article.rounded-lg,
+div.rounded-xl,      div.rounded-2xl,      div.rounded-lg,
+a.rounded-xl,        a.rounded-2xl,        a.rounded-lg {
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+article.rounded-xl:hover,  article.rounded-2xl:hover,  article.rounded-lg:hover,
+div.rounded-xl:hover,      div.rounded-2xl:hover,      div.rounded-lg:hover,
+a.rounded-xl:hover,        a.rounded-2xl:hover,        a.rounded-lg:hover {
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.10);
 }
 
 // Vue accordion transition (used in MobileMenu)

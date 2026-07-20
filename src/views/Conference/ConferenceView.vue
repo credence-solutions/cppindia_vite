@@ -20,10 +20,10 @@
             v-for="yr in years"
             :key="yr"
             role="tab"
-            class="flex items-center gap-2 px-5 py-2 rounded-md text-sm font-medium border border-transparent cursor-pointer transition-all duration-150"
+            class="flex items-center gap-2 px-5 py-2 rounded-md text-sm font-medium cursor-pointer transition-all duration-150"
             :class="activeYear === yr
-              ? 'bg-secondary text-white border-secondary'
-              : 'text-ink-2 hover:text-secondary hover:bg-secondary/[0.08]'"
+              ? 'bg-secondary text-white border border-secondary'
+              : 'text-ink-2 border border-[rgba(99,102,241,0.22)] hover:border-[rgba(99,102,241,0.55)] hover:text-secondary hover:bg-secondary/[0.06]'"
             :aria-selected="activeYear === yr"
             @click="setYear(yr)"
           >
