@@ -179,9 +179,9 @@ $bp-2xl: 1440px;
   --nav-bg-scrolled:     rgba(245, 246, 250, 0.97);
   --nav-shadow:          0 1px 0 rgba(60, 65, 90, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
 
-  // Hero section — ends at page-bg so no seam between hero and content
-  --hero-bg:             linear-gradient(160deg, #EDEDFF 0%, #EEF3FF 50%, #F5F6FA 100%);
-  --hero-fade:           #F5F6FA;
+  // Hero section — plain page background, no tint
+  --hero-bg:             var(--color-bg);
+  --hero-fade:           var(--color-bg);
   --hero-subtitle:       rgba(61, 66, 85, 0.85);
 
   // Emphasis / "dark section" backgrounds — ResourcesView, MembersView, ConferenceView

@@ -4,21 +4,9 @@
     :style="bgStyle"
     :aria-label="`${title} page hero`"
   >
-    <!-- Radial glow blob top-left -->
-    <div class="absolute -top-24 -left-24 w-[480px] h-[480px] rounded-full pointer-events-none"
-      style="background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(6,182,212,0.1) 50%, transparent 70%); filter: blur(48px);" />
-
-    <!-- Secondary glow bottom-right -->
-    <div class="absolute bottom-0 right-0 w-[320px] h-[320px] rounded-full pointer-events-none"
-      style="background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%); filter: blur(40px);" />
-
-    <!-- Dot grid with indigo dots -->
-    <div class="absolute inset-0 pointer-events-none opacity-[0.12]"
-      style="background-image: radial-gradient(circle, rgba(99,102,241,0.35) 1px, transparent 1px); background-size: 32px 32px;" />
-
-    <!-- Bottom gradient fade — full page-bg colour so no seam with the next section -->
-    <div class="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
-      style="background: linear-gradient(to bottom, transparent, var(--hero-fade));" />
+    <!-- Subtle dot grid -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.08]"
+      style="background-image: radial-gradient(circle, rgba(99,102,241,0.4) 1px, transparent 1px); background-size: 32px 32px;" />
 
     <div class="container relative z-[1]">
       <!-- Breadcrumb -->
