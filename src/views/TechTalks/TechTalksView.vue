@@ -24,7 +24,7 @@
               class="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 cursor-pointer"
               :class="activeYear === yr
                 ? 'bg-secondary text-white hover:bg-secondary-dark'
-                : 'text-ink-2 hover:text-secondary hover:bg-[rgba(79,142,247,0.06)]'"
+                : 'text-ink-2 hover:text-secondary hover:bg-[rgba(99,102,241,0.06)] border border-[rgba(99,102,241,0.2)] hover:border-[rgba(99,102,241,0.5)]'"
               :aria-selected="activeYear === yr"
               @click="setYear(yr)"
             >
@@ -61,7 +61,10 @@
           <article
             v-for="talk in displayTalks"
             :key="talk.id"
-            class="flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
+            class="flex flex-col bg-surface rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+            style="border: 1px solid rgba(99,102,241,0.25);"
+            onmouseover="this.style.borderColor='rgba(99,102,241,0.6)'; this.style.boxShadow='0 4px 20px rgba(99,102,241,0.12)'"
+            onmouseout="this.style.borderColor='rgba(99,102,241,0.25)'; this.style.boxShadow='none'"
           >
             <!-- YouTube thumbnail -->
             <a

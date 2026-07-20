@@ -255,6 +255,20 @@
 }
 
 
+// =============================================================================
+// GLOBAL CARD / BOX HOVER — Butter Light theme border highlight
+// Targets any element that has var(--card-border) in its inline style,
+// plus elements using the Tailwind border-wire / border-wire-light classes.
+// =============================================================================
+
+[style*="var(--card-border)"] {
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+[style*="var(--card-border)"]:hover {
+  border-color: var(--card-border-hover) !important;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+}
+
 // Vue accordion transition (used in MobileMenu)
 .accordion-enter-active, .accordion-leave-active {
   transition: max-height 0.3s ease, opacity 0.2s ease;
