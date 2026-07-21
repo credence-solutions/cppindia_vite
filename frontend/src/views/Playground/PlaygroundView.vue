@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Try it Live"
     title="C++ Playground"
@@ -110,6 +111,7 @@
       </div>
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

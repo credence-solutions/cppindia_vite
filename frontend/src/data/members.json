@@ -22,7 +22,7 @@
     "github": null,
     "linkedin": null,
     "website": "https://ankursatle.wordpress.com",
-    "talks": 10,
+    "talks": 9,
     "joinedYear": 2020,
     "badge": "founder",
     "city": "India"
@@ -36,7 +36,7 @@
     "github": null,
     "linkedin": "https://www.linkedin.com/in/garodimahendra",
     "website": null,
-    "talks": 6,
+    "talks": 5,
     "joinedYear": 2020,
     "badge": "founder",
     "city": "India"
@@ -499,7 +499,7 @@
     "github": null,
     "linkedin": null,
     "website": null,
-    "talks": 1,
+    "talks": 0,
     "joinedYear": 2022,
     "badge": "speaker",
     "city": "Germany"
@@ -509,11 +509,11 @@
     "name": "Ratnesh Tiwari",
     "role": "Speaker — Tech Talk 2022",
     "bio": "Compiler internals enthusiast. Co-presented 'C++, A Compiler's Perspective' alongside Darshan Bhat in November 2022.",
-    "avatar": "https://img.youtube.com/vi/qyfRb_4My7w/mqdefault.jpg",
+    "avatar": null,
     "github": null,
     "linkedin": null,
     "website": null,
-    "talks": 1,
+    "talks": 0,
     "joinedYear": 2022,
     "badge": "speaker",
     "city": "India"

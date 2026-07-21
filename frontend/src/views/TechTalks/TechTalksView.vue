@@ -168,14 +168,14 @@ import { fetchTalks } from '@/services/api/talks'
 
 useHead({
   title: 'Community Tech Talks | CppIndia',
-  description: 'Watch recorded CppIndia tech talks from 2020–2024 on modern C++, concurrency, performance, debugging, and more.',
+  description: 'Watch recorded CppIndia tech talks from 2020–2025 on modern C++, concurrency, performance, debugging, and more.',
 })
 
 const route  = useRoute()
 const router = useRouter()
 
-const years       = [2024, 2023, 2022, 2021, 2020]
-const activeYear  = ref(Number(route.query.year) || 2024)
+const years       = [2025, 2024, 2023, 2022, 2021, 2020]
+const activeYear  = ref(Number(route.query.year) || 2025)
 const talksByYear = ref({})
 const loading     = ref(true)
 const query       = ref('')

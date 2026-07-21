@@ -148,9 +148,9 @@
                       {{ session.time }}
                     </div>
                     <div class="flex-1 min-w-0">
-                      <div class="flex items-start justify-between gap-2">
-                        <p class="text-sm font-semibold text-ink leading-snug flex-1">{{ session.title }}</p>
-                        <div class="flex items-center gap-1 flex-shrink-0">
+                      <div class="flex flex-wrap items-start gap-x-2 gap-y-1">
+                        <p class="text-sm font-semibold text-ink leading-snug flex-1 min-w-0">{{ session.title }}</p>
+                        <div class="flex items-center gap-1">
                           <a
                             v-if="session.videoUrl"
                             :href="session.videoUrl"

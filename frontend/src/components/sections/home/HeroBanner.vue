@@ -104,7 +104,7 @@
         </div>
 
         <!-- ── Right: IDE card ── -->
-        <div class="gsap-reveal-right">
+        <div class="gsap-reveal-right w-full overflow-hidden">
           <div class="rounded-2xl overflow-hidden" style="
             background: rgba(15,17,45,0.9);
             border:1px solid rgba(8,145,178,0.25);

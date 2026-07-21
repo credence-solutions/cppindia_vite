@@ -27,6 +27,7 @@ export const NAV_LINKS = [
     label: 'Tech Talks',
     path: '/tech-talks',
     children: [
+      { label: '2025 Talks', path: '/tech-talks?year=2025' },
       { label: '2024 Talks', path: '/tech-talks?year=2024' },
       { label: '2023 Talks', path: '/tech-talks?year=2023' },
       { label: '2022 Talks', path: '/tech-talks?year=2022' },
