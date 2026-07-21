@@ -8,7 +8,7 @@
           <!-- Brand column -->
           <div class="flex flex-col">
             <RouterLink to="/" class="flex items-center gap-3 no-underline mb-4" aria-label="CppIndia">
-              <img src="/assets/images/logo.png" alt="CppIndia" class="site-logo-img" />
+              <img :src="assetPath('/assets/images/logo.png')" alt="CppIndia" class="site-logo-img" />
               <div class="flex flex-col">
                 <span class="font-display font-bold text-lg text-white leading-tight">CppIndia</span>
                 <span class="text-[10px] font-medium text-white/50 tracking-[0.06em] uppercase">India's C++ Community</span>
@@ -96,8 +96,10 @@
 <script setup>
 import { computed } from 'vue'
 import { SITE } from '@/constants'
+import { useAssetPath } from '@/composables/useAssetPath'
 
 const currentYear = computed(() => new Date().getFullYear())
+const { assetPath } = useAssetPath()
 </script>
 
 <style scoped>
