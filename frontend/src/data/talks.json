@@ -34,7 +34,7 @@
       "date": "2023-09-02",
       "speaker": "Mahendra Garodi",
       "title": "Beyond Union: Exploring Practical Applications of std::variant and std::any",
-      "video": null,
+      "video": "https://www.youtube.com/watch?v=cN6Yy_IuhV8",
       "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
       "tags": ["Modern C++", "C++17", "std::variant"]
     },
@@ -99,7 +99,7 @@
       "date": "2022-11-26",
       "speaker": "Mahendra Garodi",
       "title": "Spaceship Operator",
-      "video": null,
+      "video": "https://www.youtube.com/watch?v=d5gBjV36qog",
       "slides": null,
       "tags": ["C++20", "Comparisons", "Modern C++"]
     },
