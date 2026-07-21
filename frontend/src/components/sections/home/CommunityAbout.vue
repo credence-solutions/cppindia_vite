@@ -44,7 +44,7 @@
           <div
             v-for="pillar in pillars"
             :key="pillar.title"
-            class="pillar-card group p-6 rounded-xl transition-all duration-200 cursor-default"
+            class="pillar-card group p-4 sm:p-6 rounded-xl transition-all duration-200 cursor-default"
             style="background: var(--card-bg); border: 1px solid var(--card-border);"
             onmouseover="this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 24px rgba(8,145,178,0.2)'; this.style.transform='translateY(-2px)'"
             onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"

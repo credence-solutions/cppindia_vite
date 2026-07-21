@@ -8,7 +8,7 @@
     />
 
     <section class="section--sm">
-      <div class="container grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-10 items-start">
+      <div class="container grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-6 lg:gap-10 items-start">
 
         <!-- Left: what to expect -->
         <div>
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Right: submit form -->
-        <div class="bg-surface border border-wire-light rounded-2xl p-8 lg:p-10 sticky top-[calc(var(--navbar-height,64px)+1.5rem)]">
+        <div class="bg-surface border border-wire-light rounded-2xl p-5 sm:p-8 lg:p-10 sticky top-[calc(var(--navbar-height,64px)+1.5rem)]">
           <h2 class="font-display text-2xl font-bold text-ink mb-2">Submit a Talk Proposal</h2>
           <p class="text-sm text-ink-3 mb-6">Fill out this form and we'll get back to you within a week.</p>
 

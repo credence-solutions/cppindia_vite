@@ -193,7 +193,7 @@
           </div>
 
           <!-- Social proof chips -->
-          <div class="flex flex-wrap items-center gap-2 mt-4 justify-end">
+          <div class="flex flex-wrap items-center gap-2 mt-4 justify-center lg:justify-end">
             <a :href="SITE.social.youtube" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium transition-all hover:brightness-125"
               style="background: var(--card-bg); border:1px solid var(--card-border); color: var(--color-text-secondary);">

@@ -51,11 +51,11 @@
       </div>
 
       <!-- Bottom CTA -->
-      <div class="mt-14 text-center rounded-2xl p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+      <div class="mt-10 sm:mt-14 text-center rounded-2xl p-5 sm:p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
         <p class="font-semibold mb-1" style="color: var(--color-text);">Still have questions?</p>
         <p class="text-sm mb-5" style="color: var(--color-text-secondary);">Ask the community on Discord or reach out to us directly.</p>
         <div class="flex flex-wrap gap-3 justify-center">
-          <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer"
+          <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white transition-all duration-200"
             style="background: #5865F2;">Join Discord</a>
           <RouterLink to="/contact"
@@ -73,6 +73,7 @@
 import { ref, computed } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
 import faqData from '@/data/faq.json'
+import { SITE } from '@/constants'
 
 const categories = ['All', ...new Set(faqData.map(f => f.category))]
 const activeCategory = ref('All')

@@ -69,10 +69,10 @@
       </div>
 
       <!-- Community CTA -->
-      <div class="mt-14 text-center rounded-2xl p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+      <div class="mt-10 sm:mt-14 text-center rounded-2xl p-5 sm:p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
         <p class="font-semibold mb-1" style="color:var(--color-text);">Stuck anywhere on the roadmap?</p>
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Ask in our Discord — the community is here to help, from absolute beginners to experts.</p>
-        <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer"
+        <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
           style="background:#5865F2;">Get Help on Discord</a>
       </div>
@@ -85,6 +85,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
+import { SITE } from '@/constants'
 
 const levels = [
   { id: 'beginner',     label: '🌱 Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#059669', border: 'rgba(52,211,153,0.4)' },

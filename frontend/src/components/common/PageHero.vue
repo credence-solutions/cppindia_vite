@@ -1,6 +1,6 @@
 <template>
   <section
-    class="relative pt-14 pb-10 overflow-hidden"
+    class="relative pt-8 pb-6 md:pt-14 md:pb-10 overflow-hidden"
     :style="bgStyle"
     :aria-label="`${title} page hero`"
   >

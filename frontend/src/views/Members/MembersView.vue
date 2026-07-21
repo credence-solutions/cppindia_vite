@@ -111,10 +111,10 @@
       </div>
 
       <!-- Join CTA -->
-      <div class="mt-14 text-center rounded-2xl p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+      <div class="mt-10 sm:mt-14 text-center rounded-2xl p-5 sm:p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
         <p class="font-semibold mb-1" style="color: var(--card-text);">Want to be featured here?</p>
         <p class="text-sm mb-5" style="color: var(--card-text-muted);">Give a talk at CppIndia — tech talk or CppIndiaCon — and join the hall of fame.</p>
-        <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
+        <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
           style="background: var(--gradient-btn);">Join the Community</a>
       </div>
 
@@ -206,6 +206,7 @@ import SearchBar from '@/components/common/SearchBar.vue'
 import membersData from '@/data/members.json'
 import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'
+import { SITE } from '@/constants'
 
 const { assetPath } = useAssetPath()
 

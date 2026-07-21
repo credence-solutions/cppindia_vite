@@ -215,6 +215,16 @@ const routes = [
           breadcrumb: [{ label: 'Sponsors', path: '/sponsors' }],
         },
       },
+      {
+        path: 'cfp',
+        name: 'CFP',
+        component: () => import('@/views/CFP/CFPView.vue'),
+        meta: {
+          title: 'CFP Tracker | CppIndia',
+          description: 'Open Calls for Proposals at C++ conferences worldwide — deadlines, links, and everything you need to submit.',
+          breadcrumb: [{ label: 'CFP Tracker', path: '/cfp' }],
+        },
+      },
     ],
   },
   {

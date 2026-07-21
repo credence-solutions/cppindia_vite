@@ -9,7 +9,7 @@
 
     <section class="section--sm">
       <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 items-start">
 
           <!-- Left: platform links -->
           <div class="lg:col-span-1 flex flex-col gap-6">

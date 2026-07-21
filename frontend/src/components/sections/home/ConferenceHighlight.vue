@@ -49,7 +49,7 @@
         </div>
 
         <!-- Right: conference highlight card -->
-        <div class="gsap-reveal-right p-8 rounded-2xl flex flex-col gap-6"
+        <div class="gsap-reveal-right p-5 sm:p-8 rounded-2xl flex flex-col gap-6"
           style="background: var(--card-bg); border: 1px solid var(--card-border);">
 
           <!-- Edition + dates -->

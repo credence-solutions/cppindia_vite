@@ -71,10 +71,10 @@
       </div>
 
       <!-- Submit CTA -->
-      <div class="mt-12 text-center rounded-2xl p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+      <div class="mt-8 sm:mt-12 text-center rounded-2xl p-5 sm:p-8" style="background: var(--card-bg); border: 1px solid var(--card-border);">
         <p class="font-semibold mb-1" style="color:var(--color-text);">Have a C++ project to showcase?</p>
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Share it on our Discord and we'll feature it here for the community.</p>
-        <a href="https://discord.gg/Wz42tX5" target="_blank" rel="noopener noreferrer"
+        <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
           style="background:#5865F2;">Share on Discord</a>
       </div>
@@ -87,6 +87,7 @@
 import { ref, computed } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
 import projectsData from '@/data/projects.json'
+import { SITE } from '@/constants'
 
 const allTags = ['All', ...new Set(projectsData.flatMap(p => p.tags))]
 const activeTag = ref('All')

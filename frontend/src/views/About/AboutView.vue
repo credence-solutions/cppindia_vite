@@ -9,7 +9,7 @@
 
     <section class="section--sm" style="background: var(--emphasis-bg);">
       <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 lg:gap-12 items-start">
 
           <!-- Story -->
           <div>

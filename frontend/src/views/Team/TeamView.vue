@@ -10,7 +10,7 @@
     <section class="section--sm" style="background: var(--emphasis-bg);">
       <div class="container">
         <!-- Team grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 sm:mb-16">
           <div
             v-for="member in team"
             :key="member.id"
@@ -34,7 +34,7 @@
               >{{ member.emoji || member.name.charAt(0) }}</span>
             </div>
 
-            <div class="p-6">
+            <div class="p-4 sm:p-6">
               <p class="text-xs font-semibold uppercase tracking-widest mb-1" style="color: var(--color-secondary-mid);">{{ member.role }}</p>
               <h2 class="font-display text-xl font-bold mb-3" style="color: var(--color-text);">{{ member.name }}</h2>
               <p class="text-sm leading-relaxed mb-4" style="color: var(--card-text-muted);">{{ member.bio }}</p>
@@ -72,7 +72,7 @@
         </div>
 
         <!-- Volunteer CTA -->
-        <div class="text-center p-12 rounded-2xl max-w-[600px] mx-auto"
+        <div class="text-center p-6 sm:p-12 rounded-2xl max-w-[600px] mx-auto"
           style="background: var(--card-bg); border: 1px solid var(--card-border);">
           <h2 class="font-display text-2xl font-bold mb-3 text-gradient-heading">
             Want to help run CppIndia?

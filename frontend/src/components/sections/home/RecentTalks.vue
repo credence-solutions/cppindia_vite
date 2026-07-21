@@ -6,7 +6,7 @@
     <div class="container">
 
       <!-- Header -->
-      <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-6 md:mb-10">
         <div>
           <p class="text-xs font-bold uppercase tracking-[0.14em] mb-2" style="color: var(--color-secondary-mid);">Community</p>
           <h2 class="font-display font-bold text-gradient-heading" style="font-size: clamp(1.5rem, 3vw, 2.5rem);">

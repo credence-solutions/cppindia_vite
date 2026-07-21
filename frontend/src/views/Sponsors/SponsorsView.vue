@@ -71,7 +71,7 @@
       </div>
 
       <!-- Contact CTA -->
-      <div class="mt-14 text-center rounded-2xl p-8" style="background: linear-gradient(135deg, rgba(8,145,178,0.1) 0%, rgba(34,211,238,0.06) 100%); border: 1px solid rgba(8,145,178,0.25);">
+      <div class="mt-10 sm:mt-14 text-center rounded-2xl p-5 sm:p-8" style="background: linear-gradient(135deg, rgba(8,145,178,0.1) 0%, rgba(34,211,238,0.06) 100%); border: 1px solid rgba(8,145,178,0.25);">
         <h3 class="font-display font-bold text-lg mb-2" style="color:var(--color-text);">Ready to partner with CppIndia?</h3>
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">We'll customise a package for your budget and goals. Get in touch.</p>
         <a href="mailto:info@cppindia.co.in"

@@ -8,14 +8,14 @@
     aria-label="Community statistics"
   >
     <div class="container">
-      <p class="text-center text-xs font-semibold uppercase tracking-[0.12em] mb-10" style="color: var(--color-text-muted);">
+      <p class="text-center text-xs font-semibold uppercase tracking-[0.12em] mb-6 md:mb-10" style="color: var(--color-text-muted);">
         Trusted by developers across India
       </p>
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-y divide-wire lg:divide-y-0 lg:divide-x lg:divide-wire">
         <div
           v-for="stat in displayStats"
           :key="stat.label"
-          class="flex flex-col items-center text-center px-6 py-8"
+          class="flex flex-col items-center text-center px-3 py-6 sm:px-6 sm:py-8"
         >
           <div
             class="font-display font-extrabold leading-none mb-3"

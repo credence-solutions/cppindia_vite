@@ -59,7 +59,7 @@
       </div>
 
       <!-- Write CTA -->
-      <div class="mt-14 rounded-2xl p-8 text-center" style="background: linear-gradient(135deg, rgba(8,145,178,0.1), rgba(52,211,153,0.05)); border:1px solid rgba(8,145,178,0.25);">
+      <div class="mt-10 sm:mt-14 rounded-2xl p-5 sm:p-8 text-center" style="background: linear-gradient(135deg, rgba(8,145,178,0.1), rgba(52,211,153,0.05)); border:1px solid rgba(8,145,178,0.25);">
         <p class="font-display font-bold text-lg mb-2" style="color:var(--color-text);">Want to write for CppIndia?</p>
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Share a tutorial, trip report, or C++ insight with 1,000+ readers. We welcome all levels.</p>
         <a href="mailto:info@cppindia.co.in"

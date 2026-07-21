@@ -18,17 +18,17 @@
 @layer components {
   // Container
   .container {
-    @apply w-full mx-auto px-6;
+    @apply w-full mx-auto px-4 sm:px-6;
     max-width: var(--container-max);
   }
 
   .container--wide   { max-width: var(--container-wide); }
   .container--narrow { max-width: var(--container-narrow); }
 
-  // Sections
-  .section    { @apply py-20; }
-  .section--sm { @apply py-12; }
-  .section--lg { @apply py-32; }
+  // Sections — responsive vertical padding
+  .section    { @apply py-12 md:py-16 lg:py-20; }
+  .section--sm { @apply py-8 md:py-12; }
+  .section--lg { @apply py-16 md:py-24 lg:py-32; }
 
   // Buttons
   .btn {

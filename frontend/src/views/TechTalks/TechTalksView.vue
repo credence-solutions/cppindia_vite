@@ -147,7 +147,7 @@
 
     <!-- CTA strip -->
     <section class="section--sm bg-surface-alt border-t border-wire-light">
-      <div class="container flex items-center justify-between gap-8 flex-wrap">
+      <div class="container flex items-center justify-between gap-4 sm:gap-8 flex-wrap">
         <div>
           <h3 class="font-display text-2xl font-bold text-ink mb-2">Want to give a talk?</h3>
           <p class="text-base text-ink-2">Share your C++ knowledge with the community. All experience levels welcome.</p>

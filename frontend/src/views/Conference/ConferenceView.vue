@@ -46,7 +46,7 @@
         <template v-else-if="conf">
 
           <!-- Header -->
-          <div class="flex items-start justify-between gap-8 flex-wrap mb-5">
+          <div class="flex items-start justify-between gap-4 sm:gap-8 flex-wrap mb-5">
             <div>
               <h2 class="font-display text-3xl lg:text-5xl font-extrabold text-ink mb-2">{{ conf.name }}</h2>
               <p class="font-mono text-sm text-ink-3 mb-3">
@@ -265,7 +265,7 @@
           <!-- Sponsors -->
           <div
             v-if="conf.sponsors.gold.length || conf.sponsors.community.length"
-            class="mb-12 rounded-2xl py-10 px-6"
+            class="mb-12 rounded-2xl py-8 px-4 sm:py-10 sm:px-6"
             style="background: var(--card-bg); border: 1px solid var(--card-border);"
           >
             <!-- Label -->
@@ -338,7 +338,7 @@
           </div>
 
           <!-- Watch CTA -->
-          <div class="flex flex-col items-center gap-4 p-10 bg-surface-alt border border-wire-light rounded-2xl text-center">
+          <div class="flex flex-col items-center gap-4 p-6 sm:p-10 bg-surface-alt border border-wire-light rounded-2xl text-center">
             <p class="text-sm text-ink-3">All sessions recorded and available on YouTube</p>
             <a
               :href="conf.videosUrl"
