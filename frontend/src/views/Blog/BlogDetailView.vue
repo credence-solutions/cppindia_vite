@@ -5,6 +5,7 @@
       :overline="post.tags[0]"
       :title="post.title"
       :subtitle="`By ${post.author} · ${formatDate(post.date)} · ${post.readingTime} min read`"
+      :breadcrumb="[{ label: 'Blog', path: '/blog' }, { label: post.title }]"
     />
 
     <section class="section--sm" style="background: var(--emphasis-bg);">

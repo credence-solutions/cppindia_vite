@@ -3,7 +3,7 @@
     <PageHero
       overline="Community Tech Talks"
       title="Learn. Share. Grow."
-      subtitle="Recorded sessions from CppIndia's bi-monthly tech talks — covering modern C++, concurrency, performance, tooling, and more."
+      subtitle="Recorded sessions from CppIndia's tech talks — covering modern C++, concurrency, performance, tooling, and more."
       :breadcrumb="[{ label: 'Tech Talks', path: '/tech-talks' }]"
     />
 

@@ -4,7 +4,7 @@
 <template>
   <section class="section" style="background: var(--emphasis-bg);">
     <div class="container">
-      <div class="grid grid-cols-1 gap-10 items-center lg:grid-cols-2 lg:gap-16">
+      <div class="grid grid-cols-1 gap-10 items-start lg:grid-cols-2 lg:gap-16">
 
         <!-- Left: info -->
         <div class="gsap-reveal">

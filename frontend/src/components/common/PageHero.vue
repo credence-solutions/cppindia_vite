@@ -14,23 +14,23 @@
         <ol class="flex flex-wrap items-center gap-2 text-xs" role="list">
           <li>
             <RouterLink to="/"
-              class="transition-colors duration-fast"
-              style="color: rgba(129,140,248,0.65);"
-              onmouseover="this.style.color='rgba(129,140,248,1)'"
-              onmouseout="this.style.color='rgba(129,140,248,0.65)'"
+              class="transition-colors duration-fast font-medium"
+              style="color: var(--color-secondary-mid);"
+              onmouseover="this.style.color='var(--color-primary-soft)'"
+              onmouseout="this.style.color='var(--color-secondary-mid)'"
             >Home</RouterLink>
           </li>
           <li v-for="crumb in breadcrumb" :key="crumb.path" class="flex items-center gap-2">
-            <span style="color: rgba(8,145,178,0.3);" aria-hidden="true">/</span>
+            <span style="color: var(--color-text-muted);" aria-hidden="true">/</span>
             <RouterLink
               v-if="crumb.path"
               :to="crumb.path"
-              class="transition-colors duration-fast"
-              style="color: rgba(129,140,248,0.65);"
-              onmouseover="this.style.color='rgba(129,140,248,1)'"
-              onmouseout="this.style.color='rgba(129,140,248,0.65)'"
+              class="transition-colors duration-fast font-medium"
+              style="color: var(--color-secondary-mid);"
+              onmouseover="this.style.color='var(--color-primary-soft)'"
+              onmouseout="this.style.color='var(--color-secondary-mid)'"
             >{{ crumb.label }}</RouterLink>
-            <span v-else style="color: rgba(226,232,245,0.8);">{{ crumb.label }}</span>
+            <span v-else class="font-semibold" style="color: var(--color-text);">{{ crumb.label }}</span>
           </li>
         </ol>
       </nav>

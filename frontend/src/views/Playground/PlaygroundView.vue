@@ -72,7 +72,7 @@
                 <span class="ml-3 text-xs font-mono" style="color:var(--color-text-muted);">{{ active.id }}.cpp</span>
                 <span class="ml-auto text-[10px] font-bold px-2 py-[1px] rounded" :style="stdColor(active.standard)">{{ active.standard }}</span>
               </div>
-              <pre class="p-5 overflow-x-auto text-sm font-mono leading-relaxed" style="color:#E2E8F5; margin:0;">{{ active.code }}</pre>
+              <div class="code-block text-sm font-mono leading-relaxed" v-html="highlightedCode" />
             </div>
 
             <!-- Run in Godbolt CTA -->
@@ -115,7 +115,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
+import { createHighlighterCore } from 'shiki/core'
+import { createJavaScriptRegexEngine } from 'shiki/engine/javascript'
+import cpp from 'shiki/langs/cpp.mjs'
+import githubDark from 'shiki/themes/github-dark.mjs'
 import PageHero from '@/components/common/PageHero.vue'
 import snippetsData from '@/data/snippets.json'
 
@@ -129,9 +133,41 @@ const filteredSnippets = computed(() =>
     : snippetsData.filter(s => s.standard === activeStd.value)
 )
 
+// Shared highlighter instance — created once, reused for every snippet.
+// Fine-grained core bundle (only cpp + github-dark) so the build doesn't
+// pull in Shiki's full 200+ language/theme registry.
+let highlighterPromise = null
+function getHighlighter() {
+  if (!highlighterPromise) {
+    highlighterPromise = createHighlighterCore({
+      themes: [githubDark],
+      langs: [cpp],
+      engine: createJavaScriptRegexEngine(),
+    })
+  }
+  return highlighterPromise
+}
+
+const highlightedCode = ref('')
+watchEffect(async () => {
+  const snippet = active.value
+  if (!snippet) return
+  const highlighter = await getHighlighter()
+  highlightedCode.value = highlighter.codeToHtml(snippet.code, { lang: 'cpp', theme: 'github-dark' })
+})
+
 function stdColor(std) {
   if (std === 'C++23') return 'background:rgba(8,145,178,0.15); color:var(--color-secondary-mid); border:1px solid rgba(8,145,178,0.3);'
   if (std === 'C++20') return 'background:rgba(34,211,238,0.12); color:#22D3EE; border:1px solid rgba(34,211,238,0.3);'
   return 'background:rgba(52,211,153,0.12); color:#059669; border:1px solid rgba(52,211,153,0.3);'
 }
 </script>
+
+<style scoped>
+.code-block :deep(pre.shiki) {
+  margin: 0;
+  padding: 1.25rem;
+  overflow-x: auto;
+  background: transparent !important;
+}
+</style>

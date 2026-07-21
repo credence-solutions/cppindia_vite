@@ -6,7 +6,7 @@
     <ConferenceHighlight />
     <!-- <SponsorsSection /> -->
     <!-- <TestimonialsSection /> -->
-    <JoinCta />
+    <!-- <JoinCta /> -->
   </div>
 </template>
 

@@ -4,6 +4,7 @@
     overline="Knowledge Base"
     title="Blog & Articles"
     subtitle="Tutorials, trip reports, and C++ insights from community members."
+    :breadcrumb="[{ label: 'Blog', path: '/blog' }]"
   />
 
   <section class="section--sm" style="background: var(--emphasis-bg);">

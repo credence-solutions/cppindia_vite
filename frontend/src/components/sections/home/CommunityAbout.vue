@@ -41,10 +41,11 @@
 
         <!-- Right: pillars grid -->
         <div class="gsap-reveal grid grid-cols-2 gap-5">
-          <div
+          <RouterLink
             v-for="pillar in pillars"
             :key="pillar.title"
-            class="pillar-card group p-4 sm:p-6 rounded-xl transition-all duration-200 cursor-default"
+            :to="pillar.to"
+            class="pillar-card group block no-underline p-4 sm:p-6 rounded-xl transition-all duration-200"
             style="background: var(--card-bg); border: 1px solid var(--card-border);"
             onmouseover="this.style.borderColor='rgba(8,145,178,0.45)'; this.style.boxShadow='0 0 24px rgba(8,145,178,0.2)'; this.style.transform='translateY(-2px)'"
             onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
@@ -55,7 +56,7 @@
             />
             <h3 class="font-display font-bold text-base mb-2" style="color: var(--color-text);">{{ pillar.title }}</h3>
             <p class="text-sm leading-relaxed" style="color: var(--color-text-secondary);">{{ pillar.body }}</p>
-          </div>
+          </RouterLink>
         </div>
 
       </div>
@@ -76,21 +77,25 @@ const pillars = [
     title: 'Tech Talks',
     body: 'Regular sessions every alternate Saturday — 60-minute talks on modern C++, tooling, and best practices.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>`,
+    to: '/tech-talks',
   },
   {
     title: 'CppIndiaCon',
     body: 'Our annual C++ conference featuring international speakers, hands-on workshops, and networking.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    to: '/conference',
   },
   {
     title: 'Mentorship',
     body: 'Connecting junior developers with experienced engineers for career guidance and code reviews.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
+    to: '/about',
   },
   {
     title: 'Resources',
     body: 'Curated C++ standards, references, articles, and community-recommended learning materials.',
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>`,
+    to: '/resources',
   },
 ]
 </script>

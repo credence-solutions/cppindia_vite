@@ -239,9 +239,16 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, _from, savedPosition) {
-    if (savedPosition) return savedPosition
-    if (to.hash)       return { el: to.hash, behavior: 'smooth', top: 80 }
-    return { top: 0, behavior: 'smooth' }
+    // Delayed to let the <Transition mode="out-in"> page transition in
+    // DefaultLayout finish mounting the new route before we scroll —
+    // otherwise this runs against the outgoing page's stale layout.
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (savedPosition) return resolve(savedPosition)
+        if (to.hash)       return resolve({ el: to.hash, behavior: 'smooth', top: 80 })
+        resolve({ top: 0, behavior: 'smooth' })
+      }, 300)
+    })
   },
 })
 
