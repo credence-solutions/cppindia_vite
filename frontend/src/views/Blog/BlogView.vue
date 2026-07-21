@@ -1,4 +1,5 @@
 <template>
+  <div>
   <PageHero
     overline="Knowledge Base"
     title="Blog & Articles"
@@ -33,7 +34,7 @@
           <!-- Cover placeholder -->
           <div class="aspect-video flex items-center justify-center"
             :style="`background: ${coverGradient(post.slug)};`">
-            <span class="font-display font-bold text-2xl opacity-20 select-none" style="color:white;">{{ post.tags[0] }}</span>
+            <span class="font-display font-bold text-2xl opacity-40 select-none" style="color:var(--color-primary-soft);">{{ post.tags[0] }}</span>
           </div>
 
           <div class="flex flex-col flex-1 gap-3 p-5">
@@ -69,6 +70,7 @@
 
     </div>
   </section>
+  </div>
 </template>
 
 <script setup>

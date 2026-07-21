@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div v-if="post">
     <PageHero
       :overline="post.tags[0]"
@@ -50,6 +51,7 @@
       <p class="text-lg font-semibold mb-4" style="color:var(--color-text);">Post not found.</p>
       <RouterLink to="/blog" class="text-sm font-semibold" style="color:var(--color-primary-soft);">← Back to Blog</RouterLink>
     </div>
+  </div>
   </div>
 </template>
 

@@ -61,10 +61,15 @@
           <div class="flex items-center gap-4 text-xs" style="color: var(--card-text-muted);">
             <button
               v-if="member.talks > 0"
-              class="underline underline-offset-2 cursor-pointer transition-colors duration-150 hover:text-[#22D3EE]"
-              style="color: var(--card-text-muted);"
+              class="w-7 h-7 flex items-center justify-center rounded-md cursor-pointer transition-all duration-150 flex-shrink-0"
+              style="background: rgba(255,0,0,0.12); color: #FF0000;"
+              onmouseover="this.style.background='#FF0000'; this.style.color='white'"
+              onmouseout="this.style.background='rgba(255,0,0,0.12)'; this.style.color='#FF0000'"
+              title="View talks"
               @click="openPopup(member)"
-            >{{ member.talks }} talk{{ member.talks !== 1 ? 's' : '' }}</button>
+            >
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
             <span>Since {{ member.joinedYear }}</span>
           </div>
 

@@ -90,7 +90,7 @@
                 </div>
                 <div>
                   <p class="text-sm font-semibold" style="color: var(--color-text);">Run in Compiler Explorer</p>
-                  <p class="text-xs mt-0.5" style="color:var(--color-text-secondary);">Opens godbolt.org — compile and run live with GCC, Clang, or MSVC</p>
+                  <p class="text-xs mt-0.5" style="color:var(--color-text-secondary);">Opens cppindia.godbolt.org — compile and run live with GCC, Clang, or MSVC</p>
                 </div>
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-soft)" stroke-width="2" style="flex-shrink:0;opacity:0.7;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>

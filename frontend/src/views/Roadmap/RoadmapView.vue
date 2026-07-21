@@ -103,7 +103,7 @@ const roadmap = {
       timeframe: 'Week 1',
       description: 'Install a modern C++ compiler (GCC/Clang) and IDE. Get a Hello World compiling. Learn what compilation means.',
       resources: [
-        { name: 'Compiler Explorer (Godbolt)', url: 'https://godbolt.org' },
+        { name: 'Compiler Explorer (Godbolt)', url: 'https://cppindia.godbolt.org' },
         { name: 'CLion IDE', url: 'https://www.jetbrains.com/clion/' },
         { name: 'VS Code + clangd', url: 'https://clangd.llvm.org/installation' },
       ],

@@ -6,7 +6,7 @@
     "tags": ["Ranges", "Modern C++"],
     "description": "Chain views::filter and views::transform without any explicit loops.",
     "code": "#include <ranges>\n#include <vector>\n#include <iostream>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};\n\n    auto result = nums\n        | std::views::filter([](int n) { return n % 2 == 0; })\n        | std::views::transform([](int n) { return n * n; });\n\n    for (int x : result)\n        std::cout << x << ' '; // 4 16 36 64 100\n}",
-    "godboltUrl": "https://godbolt.org/z/YsWPxMMq8",
+    "godboltUrl": "https://cppindia.godbolt.org/z/dj34G34PP",
     "author": "CppIndia Team"
   },
   {
@@ -16,7 +16,7 @@
     "tags": ["C++17", "Modern C++"],
     "description": "Destructure pairs, tuples, and structs cleanly.",
     "code": "#include <map>\n#include <string>\n#include <iostream>\n\nint main() {\n    std::map<std::string, int> scores = {{\"Alice\", 95}, {\"Bob\", 87}};\n\n    for (const auto& [name, score] : scores)\n        std::cout << name << \": \" << score << '\\n';\n\n    // Also works with structs\n    struct Point { int x, y; };\n    auto [px, py] = Point{3, 4};\n    std::cout << px << ',' << py; // 3,4\n}",
-    "godboltUrl": "https://godbolt.org/z/s13b5v7c5",
+    "godboltUrl": "https://cppindia.godbolt.org/z/facrzGxaM",
     "author": "CppIndia Team"
   },
   {
@@ -26,7 +26,7 @@
     "tags": ["C++20", "Concepts", "Templates"],
     "description": "Constrain templates cleanly without SFINAE.",
     "code": "#include <concepts>\n#include <iostream>\n\ntemplate<typename T>\nconcept Numeric = std::integral<T> || std::floating_point<T>;\n\ntemplate<Numeric T>\nT square(T val) { return val * val; }\n\nint main() {\n    std::cout << square(5) << '\\n';    // 25\n    std::cout << square(3.14) << '\\n'; // 9.8596\n    // square(\"hello\"); // compile error!\n}",
-    "godboltUrl": "https://godbolt.org/z/4c3bco1c9",
+    "godboltUrl": "https://cppindia.godbolt.org/z/xqKesjKbx",
     "author": "CppIndia Team"
   },
   {
@@ -36,7 +36,7 @@
     "tags": ["C++23", "optional", "Functional"],
     "description": "Chain optional operations without manual null checks using C++23's and_then, transform, and or_else.",
     "code": "#include <optional>\n#include <string>\n#include <iostream>\n\nstd::optional<int> parse(const std::string& s) {\n    try { return std::stoi(s); }\n    catch (...) { return std::nullopt; }\n}\n\nint main() {\n    auto result = parse(\"42\")\n        .transform([](int n) { return n * 2; })\n        .and_then([](int n) -> std::optional<int> {\n            if (n > 50) return n;\n            return std::nullopt;\n        })\n        .value_or(-1);\n\n    std::cout << result; // 84\n}",
-    "godboltUrl": "https://godbolt.org/z/dMK1bfqh1",
+    "godboltUrl": "https://cppindia.godbolt.org/z/nqs8q79Ed",
     "author": "CppIndia Team"
   },
   {
@@ -46,7 +46,7 @@
     "tags": ["C++20", "Concurrency", "Threads"],
     "description": "Cancellable threads without manual flags using jthread and stop_token.",
     "code": "#include <thread>\n#include <iostream>\n#include <chrono>\n\nint main() {\n    std::jthread worker([](std::stop_token st) {\n        while (!st.stop_requested()) {\n            std::cout << \"Working...\\n\";\n            std::this_thread::sleep_for(std::chrono::milliseconds(200));\n        }\n        std::cout << \"Stopped cleanly.\\n\";\n    });\n\n    std::this_thread::sleep_for(std::chrono::milliseconds(600));\n    worker.request_stop(); // jthread destructor also does this\n}",
-    "godboltUrl": "https://godbolt.org/z/cszrKs6nf",
+    "godboltUrl": "https://cppindia.godbolt.org/z/j668K9cTc",
     "author": "CppIndia Team"
   },
   {
@@ -56,7 +56,7 @@
     "tags": ["C++20", "span", "Memory"],
     "description": "Pass array-like data without copying or knowing the container type.",
     "code": "#include <span>\n#include <vector>\n#include <array>\n#include <iostream>\n\nvoid print(std::span<const int> data) {\n    for (int x : data) std::cout << x << ' ';\n    std::cout << '\\n';\n}\n\nint main() {\n    int arr[] = {1, 2, 3};\n    std::vector<int> vec = {4, 5, 6};\n    std::array<int, 3> arr2 = {7, 8, 9};\n\n    print(arr);  // works\n    print(vec);  // works\n    print(arr2); // works — all without templates!\n}",
-    "godboltUrl": "https://godbolt.org/z/G33hfjGYj",
+    "godboltUrl": "https://cppindia.godbolt.org/z/E4bWYa98W",
     "author": "CppIndia Team"
   }
 ]

@@ -68,7 +68,7 @@
       "id": "godbolt",
       "title": "Compiler Explorer (Godbolt)",
       "description": "Interactive tool to explore compiler assembly output for any C++ snippet across multiple compilers and flags.",
-      "url": "https://godbolt.org",
+      "url": "https://cppindia.godbolt.org",
       "type": "Tool",
       "free": true
     },
