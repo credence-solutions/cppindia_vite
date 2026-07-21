@@ -30,7 +30,7 @@
         >
           <!-- Avatar -->
           <div class="flex items-center gap-4">
-            <img v-if="member.avatar" :src="member.avatar" :alt="member.name"
+            <img v-if="member.avatar" :src="assetPath(member.avatar)" :alt="member.name"
               class="w-14 h-14 rounded-full object-cover flex-shrink-0"
               :style="`border: 2px solid ${badgeMap[member.badge].border};`"
               @error="e => e.target.style.display='none'"
@@ -200,11 +200,14 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useAssetPath } from '@/composables/useAssetPath'
 import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
 import membersData from '@/data/members.json'
 import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'
+
+const { assetPath } = useAssetPath()
 
 const badgeMap = {
   founder:   { bg: 'rgba(8,145,178,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.4)',  avatarBg: 'rgba(8,145,178,0.2)'  },
