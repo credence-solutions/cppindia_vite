@@ -24,7 +24,7 @@
       <!-- Header -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-wire-light flex-shrink-0">
         <RouterLink to="/" class="flex items-center gap-2 no-underline" @click="$emit('close')">
-          <img src="/assets/images/logo.png" alt="CppIndia" class="site-logo-img site-logo-img--sm" />
+          <img :src="assetPath('/assets/images/logo.png')" alt="CppIndia" class="site-logo-img site-logo-img--sm" />
           <span class="font-display text-xl font-bold text-ink">CppIndia</span>
         </RouterLink>
         <button
@@ -102,11 +102,13 @@
 import { ref, watch } from 'vue'
 import { useScrollLock } from '@/composables/useScrollLock'
 import { NAV_LINKS, SITE } from '@/constants'
+import { useAssetPath } from '@/composables/useAssetPath'
 
 const props = defineProps({ open: { type: Boolean, required: true } })
 defineEmits(['close'])
 
 const { lock, unlock } = useScrollLock()
+const { assetPath } = useAssetPath()
 const expanded = ref(null)
 
 watch(() => props.open, (val) => {

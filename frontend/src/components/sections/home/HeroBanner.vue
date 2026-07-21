@@ -165,7 +165,7 @@
               <div class="flex items-center gap-2.5 mb-4">
                 <div class="flex -space-x-2">
                   <img v-for="s in speakerAvatars" :key="s.name"
-                    :src="s.img" :alt="s.name"
+                    :src="assetPath(s.img)" :alt="s.name"
                     class="w-8 h-8 rounded-full object-cover flex-shrink-0"
                     style="border:2px solid #1A1B3A;"
                     loading="lazy"
@@ -230,6 +230,9 @@
 import { onMounted } from 'vue'
 import { SITE, STATS } from '@/constants'
 import { useGsap } from '@/composables/useGsap'
+import { useAssetPath } from '@/composables/useAssetPath'
+
+const { assetPath } = useAssetPath()
 
 const speakerAvatars = [
   { name: 'Alex Dathskovsky',  img: '/assets/images/speakers/2024/alex.jpg' },

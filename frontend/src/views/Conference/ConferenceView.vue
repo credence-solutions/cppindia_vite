@@ -227,7 +227,7 @@
               >
                 <div class="speaker-photo-wrap">
                   <span class="speaker-photo-wrap__initial">{{ s.name.charAt(0) }}</span>
-                  <img v-if="s.image" :src="s.image" :alt="s.name" class="speaker-photo" />
+                  <img v-if="s.image" :src="assetPath(s.image)" :alt="s.name" class="speaker-photo" />
                 </div>
                 <div class="p-4 flex-1">
                   <div class="flex items-start justify-between gap-2 flex-wrap mb-1">
@@ -366,10 +366,12 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useHead } from '@/composables/useHead'
+import { useAssetPath } from '@/composables/useAssetPath'
 import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
 import { fetchConferenceByYear } from '@/services/api/conferences'
 
+const { assetPath } = useAssetPath()
 
 useHead({
   title: "CppIndiaCon | India's Annual C++ Conference",

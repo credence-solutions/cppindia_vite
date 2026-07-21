@@ -17,7 +17,7 @@
 
         <!-- Logo -->
         <RouterLink to="/" class="flex items-center gap-3 no-underline flex-shrink-0" aria-label="CppIndia — Home">
-          <img src="/assets/images/logo.png" alt="CppIndia" class="site-logo-img" />
+          <img :src="assetPath('/assets/images/logo.png')" alt="CppIndia" class="site-logo-img" />
           <div class="flex flex-col">
             <span class="font-display font-bold text-lg text-ink leading-tight tracking-[-0.01em]">CppIndia</span>
             <span class="text-[10px] font-medium text-ink-2 tracking-[0.08em] uppercase">India's C++ Community</span>
@@ -109,11 +109,13 @@ import MegaMenu from '@/components/navigation/MegaMenu.vue'
 import SimpleDropdown from '@/components/navigation/SimpleDropdown.vue'
 import MobileMenu from '@/components/navigation/MobileMenu.vue'
 import { useBannerState } from '@/composables/useBannerState'
+import { useAssetPath } from '@/composables/useAssetPath'
 
 const route  = useRoute()
 const nav    = useNavigationStore()
 const navRef = ref(null)
 const { visible: bannerVisible } = useBannerState()
+const { assetPath } = useAssetPath()
 
 function isActive(path) {
   if (path === '/') return route.path === '/'

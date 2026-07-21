@@ -22,7 +22,7 @@
             <div class="team-photo-wrap">
               <img
                 v-if="member.photo"
-                :src="member.photo"
+                :src="assetPath(member.photo)"
                 :alt="member.name"
                 class="team-photo-img"
                 loading="lazy"
@@ -96,8 +96,11 @@
 
 <script setup>
 import { useHead } from '@/composables/useHead'
+import { useAssetPath } from '@/composables/useAssetPath'
 import PageHero from '@/components/common/PageHero.vue'
 import teamData from '@/data/team.json'
+
+const { assetPath } = useAssetPath()
 
 useHead({
   title: 'Our Team | CppIndia',
