@@ -113,11 +113,11 @@
           </div>
 
           <!-- Speakers -->
-          <div v-if="conf.speakers.length" class="mb-12">
+          <div v-if="filteredSpeakers.length" class="mb-12">
             <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Speakers</h3>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
               <div
-                v-for="s in conf.speakers"
+                v-for="s in filteredSpeakers"
                 :key="s.name"
                 class="flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md cursor-pointer"
                 :class="{ 'border-secondary/35': s.role === 'Keynote' }"
@@ -150,7 +150,7 @@
             <div class="flex items-center justify-between gap-4 mb-6 pb-3 border-b-2 border-wire-light flex-wrap">
               <h3 class="font-display text-xl font-bold text-ink">Conference Schedule</h3>
               <p v-if="scheduleQuery" class="text-xs text-ink-3">
-                {{ filteredSessionCount }} session{{ filteredSessionCount !== 1 ? 's' : '' }} match
+                {{ filteredSessionCount }} session{{ filteredSessionCount !== 1 ? 's' : '' }}, {{ filteredSpeakers.length }} speaker{{ filteredSpeakers.length !== 1 ? 's' : '' }} match
                 "<span class="text-ink font-medium">{{ scheduleQuery }}</span>"
               </p>
             </div>
@@ -215,11 +215,11 @@
           </div>
 
           <!-- Session Videos -->
-          <div v-if="sessionVideos.length" class="mb-12">
+          <div v-if="filteredVideos.length" class="mb-12">
             <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Session Videos</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               <a
-                v-for="sv in sessionVideos"
+                v-for="sv in filteredVideos"
                 :key="sv.videoUrl"
                 :href="sv.videoUrl"
                 target="_blank"
@@ -583,11 +583,31 @@ const filteredSessionCount = computed(() =>
   ).length, 0)
 )
 
+const filteredSpeakers = computed(() => {
+  if (!conf.value?.speakers) return []
+  const q = scheduleQuery.value.trim().toLowerCase()
+  if (!q) return conf.value.speakers
+  return conf.value.speakers.filter(s =>
+    s.name?.toLowerCase().includes(q) ||
+    s.topic?.toLowerCase().includes(q) ||
+    s.role?.toLowerCase().includes(q)
+  )
+})
+
 const sessionVideos = computed(() => {
   if (!conf.value?.schedule) return []
   return conf.value.schedule
     .flatMap(day => day.sessions)
     .filter(s => s.videoUrl && ytId(s.videoUrl))
+})
+
+const filteredVideos = computed(() => {
+  const q = scheduleQuery.value.trim().toLowerCase()
+  if (!q) return sessionVideos.value
+  return sessionVideos.value.filter(s =>
+    s.title?.toLowerCase().includes(q) ||
+    s.speaker?.toLowerCase().includes(q)
+  )
 })
 
 function ytId(url) {

@@ -200,7 +200,8 @@ function matches(item) {
     item.description?.toLowerCase().includes(q) ||
     item.summary?.toLowerCase().includes(q) ||
     item.type?.toLowerCase().includes(q) ||
-    item.highlights?.some(h => h.toLowerCase().includes(q))
+    item.highlights?.some(h => h.toLowerCase().includes(q)) ||
+    (item.free && 'free'.includes(q))
   )
 }
 
