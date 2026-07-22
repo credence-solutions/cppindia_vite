@@ -58,19 +58,34 @@
 
           <p class="text-sm flex-1" style="color: var(--card-text-muted);">{{ member.bio }}</p>
 
-          <!-- Stats + talks button -->
-          <div class="flex items-center gap-4 text-xs" style="color: var(--card-text-muted);">
-            <button
-              v-if="member.talks > 0"
-              class="w-7 h-7 flex items-center justify-center rounded-md cursor-pointer transition-all duration-150 flex-shrink-0"
-              style="background: rgba(255,0,0,0.12); color: #FF0000;"
-              onmouseover="this.style.background='#FF0000'; this.style.color='white'"
-              onmouseout="this.style.background='rgba(255,0,0,0.12)'; this.style.color='#FF0000'"
-              title="View talks"
-              @click.stop="openPopup(member)"
+          <!-- Inline recent talks -->
+          <div v-if="member.talks > 0" class="flex flex-col gap-1.5">
+            <a
+              v-for="talk in recentTalks(member)"
+              :key="talk.id"
+              :href="talk.video || undefined"
+              :target="talk.video ? '_blank' : undefined"
+              :rel="talk.video ? 'noopener noreferrer' : undefined"
+              class="flex items-center gap-2 text-xs rounded-lg px-2.5 py-1.5 transition-all duration-150"
+              :class="talk.video ? 'cursor-pointer' : 'cursor-default'"
+              style="background:rgba(255,0,0,0.06); border:1px solid rgba(255,0,0,0.12);"
+              :onmouseover="talk.video ? 'this.style.background=\'rgba(255,0,0,0.12)\'; this.style.borderColor=\'rgba(255,0,0,0.3)\'' : ''"
+              :onmouseout="talk.video ? 'this.style.background=\'rgba(255,0,0,0.06)\'; this.style.borderColor=\'rgba(255,0,0,0.12)\'' : ''"
+              @click.stop
             >
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </button>
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="#FF0000" class="flex-shrink-0"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span class="truncate" style="color:var(--card-text-muted);">{{ talk.title }}</span>
+            </a>
+            <button
+              v-if="member.talks > 2"
+              class="text-left text-[10px] font-semibold px-2.5 transition-colors duration-150"
+              style="color:var(--color-primary-soft);"
+              @click.stop="openPopup(member)"
+            >View all {{ member.talks }} talks →</button>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex items-center gap-4 text-xs" style="color: var(--card-text-muted);">
             <span>Since {{ member.joinedYear }}</span>
           </div>
 
@@ -396,6 +411,10 @@ const allTalks = computed(() => {
 
 function getTalksForMember(member) {
   return allTalks.value.filter(t => namesMatch(member.name, t.speaker))
+}
+
+function recentTalks(member) {
+  return getTalksForMember(member).slice(0, 2)
 }
 
 // ─── Popup state ──────────────────────────────────────────────────────────────

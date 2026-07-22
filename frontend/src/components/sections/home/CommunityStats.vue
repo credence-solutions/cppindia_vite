@@ -35,8 +35,9 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { STATS } from '@/constants'
+import { useCommunityStats } from '@/composables/useCommunityStats'
 
+const STATS = useCommunityStats()
 const displayStats = ref(STATS.map(s => ({ ...s, displayed: 0 })))
 
 onMounted(() => {

@@ -67,9 +67,24 @@
             <a v-if="event.recordingUrl" :href="event.recordingUrl" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 whitespace-nowrap"
               style="background:#FF0000; color:white;">Watch Recording</a>
-            <a v-if="event.registrationUrl" :href="calendarUrl(event)" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 whitespace-nowrap"
-              style="border:1px solid rgba(8,145,178,0.25); color:var(--color-text-secondary);">+ Add to Calendar</a>
+            <div v-if="event.status === 'upcoming'" class="flex items-center gap-2">
+              <a :href="calendarUrl(event)" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 whitespace-nowrap"
+                style="border:1px solid rgba(8,145,178,0.25); color:var(--color-text-secondary);"
+                onmouseover="this.style.borderColor='rgba(8,145,178,0.55)'; this.style.color='var(--color-primary-soft)'"
+                onmouseout="this.style.borderColor='rgba(8,145,178,0.25)'; this.style.color='var(--color-text-secondary)'">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                Google
+              </a>
+              <a :href="icalUrl(event)" :download="`${event.id}.ics`"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 whitespace-nowrap"
+                style="border:1px solid rgba(8,145,178,0.25); color:var(--color-text-secondary);"
+                onmouseover="this.style.borderColor='rgba(8,145,178,0.55)'; this.style.color='var(--color-primary-soft)'"
+                onmouseout="this.style.borderColor='rgba(8,145,178,0.25)'; this.style.color='var(--color-text-secondary)'">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                iCal
+              </a>
+            </div>
           </div>
         </article>
 
@@ -99,17 +114,49 @@ function monthStr(d) { return new Date(d).toLocaleDateString('en-IN', { month: '
 function dayStr(d)   { return new Date(d).getDate() }
 function yearStr(d)  { return new Date(d).getFullYear() }
 
+function parseTime(timeStr) {
+  return (timeStr || '09:00').replace(/\s.*/, '').replace(':', '')
+}
+
+function addOneHour(hhmm) {
+  const h = parseInt(hhmm.slice(0, 2))
+  const m = hhmm.slice(2)
+  return String(h + 1).padStart(2, '0') + m
+}
+
 function calendarUrl(event) {
   const dateStr = event.date.replace(/-/g, '')
-  const time = (event.time || '09:00').replace(':', '')
-  const start = `${dateStr}T${time}00`
+  const startTime = parseTime(event.time)
+  const endTime   = event.endTime ? event.endTime.replace(':', '') : addOneHour(startTime)
   const params = new URLSearchParams({
     action: 'TEMPLATE',
     text: event.title,
-    dates: `${start}/${start}`,
+    dates: `${dateStr}T${startTime}00/${dateStr}T${endTime}00`,
     details: event.description || '',
     location: event.location || 'Online',
   })
   return `https://calendar.google.com/calendar/render?${params}`
+}
+
+function icalUrl(event) {
+  const dateStr   = event.date.replace(/-/g, '')
+  const startTime = parseTime(event.time)
+  const endTime   = event.endTime ? event.endTime.replace(':', '') : addOneHour(startTime)
+  const uid       = `${event.id}@cppindia.co.in`
+  const ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//CppIndia//CppIndia Events//EN',
+    'BEGIN:VEVENT',
+    `UID:${uid}`,
+    `DTSTART:${dateStr}T${startTime}00`,
+    `DTEND:${dateStr}T${endTime}00`,
+    `SUMMARY:${event.title}`,
+    `DESCRIPTION:${(event.description || '').replace(/\n/g, '\\n')}`,
+    `LOCATION:${event.location || 'Online'}`,
+    'END:VEVENT',
+    'END:VCALENDAR',
+  ].join('\r\n')
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`
 }
 </script>

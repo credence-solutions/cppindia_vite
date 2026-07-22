@@ -206,7 +206,10 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import { SITE, STATS } from '@/constants'
+import { SITE } from '@/constants'
+import { useCommunityStats } from '@/composables/useCommunityStats'
+
+const STATS = useCommunityStats()
 import { useGsap } from '@/composables/useGsap'
 import { useAssetPath } from '@/composables/useAssetPath'
 

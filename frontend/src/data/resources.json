@@ -6,6 +6,7 @@
       "description": "The latest ISO C++23 Working Draft on GitHub — always up to date with approved changes.",
       "url": "https://github.com/cplusplus/draft",
       "type": "Standard",
+      "level": "advanced",
       "free": true
     },
     {
@@ -14,6 +15,7 @@
       "description": "The official ISO C++20 Standard document (paid). The definitive specification of the language.",
       "url": "https://www.iso.org/standard/79358.html",
       "type": "Standard",
+      "level": "advanced",
       "free": false
     },
     {
@@ -22,6 +24,7 @@
       "description": "Collaborative guidelines led by Bjarne Stroustrup and Herb Sutter for writing safe, modern C++.",
       "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines",
       "type": "Guidelines",
+      "level": "intermediate",
       "free": true
     },
     {
@@ -30,6 +33,7 @@
       "description": "The de-facto community reference for C++ — standard library API, language features, and examples.",
       "url": "https://en.cppreference.com",
       "type": "Reference",
+      "level": "beginner",
       "free": true
     },
     {
@@ -38,6 +42,7 @@
       "description": "The official hub for C++ news, FAQ, and the ISO C++ committee — superb beginner and expert resources.",
       "url": "https://isocpp.org",
       "type": "Reference",
+      "level": "beginner",
       "free": true
     },
     {
@@ -46,6 +51,7 @@
       "description": "Cross-compiler C++ feature support matrix — quickly check which features are available in GCC, Clang, MSVC.",
       "url": "https://en.cppreference.com/w/cpp/compiler_support",
       "type": "Reference",
+      "level": "intermediate",
       "free": true
     },
     {
@@ -54,6 +60,7 @@
       "description": "Official GCC project page tracking C++ standard implementation status for every GCC release.",
       "url": "https://gcc.gnu.org/projects/cxx-status.html",
       "type": "Reference",
+      "level": "advanced",
       "free": true
     },
     {
@@ -62,6 +69,7 @@
       "description": "Official Clang project tracking C++ standard implementation — including C++17, 20, and 23 features.",
       "url": "https://clang.llvm.org/cxx_status.html",
       "type": "Reference",
+      "level": "advanced",
       "free": true
     },
     {
@@ -70,6 +78,7 @@
       "description": "Interactive tool to explore compiler assembly output for any C++ snippet across multiple compilers and flags.",
       "url": "https://cppindia.godbolt.org",
       "type": "Tool",
+      "level": "beginner",
       "free": true
     },
     {
@@ -78,6 +87,7 @@
       "description": "Quick online C++ micro-benchmarking tool powered by Google Benchmark — compare snippets instantly.",
       "url": "https://quick-bench.com",
       "type": "Tool",
+      "level": "intermediate",
       "free": true
     },
     {
@@ -86,6 +96,7 @@
       "description": "Official CppIndia GitHub repository — slides, code samples, and session materials from all our tech talks and conferences.",
       "url": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments",
       "type": "Community",
+      "level": "beginner",
       "free": true
     }
   ],
@@ -96,6 +107,7 @@
       "description": "Annual developer survey from isocpp.org — insights on compiler usage, libraries, language features, and community priorities.",
       "url": "https://isocpp.org/files/papers/CppDevSurvey-2022-summary.pdf",
       "type": "Survey",
+      "level": "intermediate",
       "free": true
     },
     {
@@ -104,6 +116,7 @@
       "description": "A long-running YouTube series with short weekly videos on C++ features, tools, best practices, and gotchas.",
       "url": "https://www.youtube.com/@cppweekly",
       "type": "Video Series",
+      "level": "beginner",
       "free": true
     },
     {
@@ -112,6 +125,7 @@
       "description": "Deep-dive articles on modern C++ features — concurrency, templates, ranges, coroutines — by Rainer Grimm.",
       "url": "https://www.modernescpp.com",
       "type": "Blog",
+      "level": "advanced",
       "free": true
     },
     {
@@ -120,6 +134,7 @@
       "description": "Full talk recordings from CppCon — the world's largest annual C++ conference — going back to 2014.",
       "url": "https://www.youtube.com/@CppCon",
       "type": "Video Series",
+      "level": "intermediate",
       "free": true
     },
     {
@@ -128,6 +143,7 @@
       "description": "Practical C++ articles from CppIndia co-founder Ankur Satle — covering design patterns, value semantics, and modern C++.",
       "url": "https://ankursatle.wordpress.com",
       "type": "Blog",
+      "level": "intermediate",
       "free": true
     },
     {
@@ -136,6 +152,7 @@
       "description": "Bite-sized, practical C++ tips from Google engineers — covering style, performance, and correctness.",
       "url": "https://abseil.io/tips/",
       "type": "Blog",
+      "level": "intermediate",
       "free": true
     }
   ],

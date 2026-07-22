@@ -9,6 +9,13 @@
     "description": "The fourth annual international C++ festival celebration brought together 8 global C++ experts for two days of inspiring talks, hands-on sessions, and community networking. Previous iterations featured speakers like Bjarne Stroustrup — father of C++ — and CppCon chair Jon Kalb.",
     "registrationUrl": null,
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "stats": {
+      "registrations": null,
+      "day1Attendees": null,
+      "day2Attendees": null,
+      "talkProposals": null,
+      "volunteers": null
+    },
     "speakers": [
       { "name": "Alex Dathskovsky",       "role": "Keynote",  "topic": "C++ ♥ Python",                                       "image": "/assets/images/speakers/2024/alex.jpg" },
       { "name": "Ankur Satle",            "role": "Keynote",  "topic": "Declarative C++",                                    "image": "/assets/images/speakers/2024/ankur.png" },
@@ -163,6 +170,13 @@
     "tagline": "Growing India's C++ Ecosystem",
     "description": "The 2nd edition of CppIndiaCon was a one-day virtual conference featuring five expert talks on customization methods, comparisons, concurrency patterns, debugging, and memory management. The event included networking breaks via Discord and a C++ trivia competition.",
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "stats": {
+      "registrations": null,
+      "day1Attendees": null,
+      "day2Attendees": null,
+      "talkProposals": null,
+      "volunteers": null
+    },
     "speakers": [
       { "name": "Inbal Levi",         "role": "Speaker", "topic": "Customization Methods: Connecting User And Library Code", "image": "/assets/images/speakers/2022/inbal.png" },
       { "name": "Hemil Ruparel",      "role": "Speaker", "topic": "Default Generated Comparison for Your Data Types",        "image": "/assets/images/speakers/2022/hemil.png" },
@@ -212,6 +226,13 @@
     "tagline": "The Inaugural C++ Conference of India",
     "description": "The inaugural CppIndiaCon kicked off in grand style — a single-day virtual conference featuring C++ creator Bjarne Stroustrup, CppCon chair Jon Kalb, and four more distinguished speakers. Six inspiring talks covered C++ today, standard library design, ranges, concepts, contracts, and an unforgettable AMA with Bjarne.",
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
+    "stats": {
+      "registrations": null,
+      "day1Attendees": null,
+      "day2Attendees": null,
+      "talkProposals": null,
+      "volunteers": null
+    },
     "speakers": [
       { "name": "Jon Kalb",                   "role": "Keynote", "topic": "C++ Today: The Beast is Back",                             "image": "/assets/images/speakers/2021/jonkalb.jpg" },
       { "name": "Bryce Adelstein Lelbach",    "role": "Speaker", "topic": "What Belongs in the C++ Standard Library",                 "image": "/assets/images/speakers/2021/bryce.jpg" },

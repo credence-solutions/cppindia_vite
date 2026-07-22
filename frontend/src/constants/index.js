@@ -81,14 +81,6 @@ export const NAV_LINKS = [
   { label: 'Contact', path: '/contact' },
 ]
 
-// Community statistics for homepage
-export const STATS = [
-  { value: 50,   suffix: '+', label: 'Tech Talks',           icon: 'mic'      },
-  { value: 4,    suffix: '',  label: 'Annual Conferences',   icon: 'calendar'  },
-  { value: 5,    suffix: '+', label: 'Years Active',         icon: 'clock'    },
-  { value: 1000, suffix: '+', label: 'Community Members',    icon: 'people'   },
-]
-
 // Talk topic tags used across the site
 export const TALK_TAGS = [
   'Concurrency', 'Templates', 'Metaprogramming', 'Performance', 'Debugging',

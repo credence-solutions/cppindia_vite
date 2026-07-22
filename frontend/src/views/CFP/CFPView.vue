@@ -50,9 +50,13 @@
                       style="background:rgba(8,145,178,0.12); color:var(--color-primary-soft);">{{ tag }}</span>
                   </div>
                 </td>
-                <td class="px-5 py-4 font-mono text-xs" :style="`color:${isUrgent(cfp.cfpDeadline) ? '#DC2626' : 'var(--color-text-muted)'};`">
+                <td class="px-5 py-4 font-mono text-xs" style="color:var(--color-text-muted);">
                   {{ formatDate(cfp.cfpDeadline) }}
-                  <span v-if="isUrgent(cfp.cfpDeadline) && cfp.status === 'open'" class="ml-1 text-[10px] font-bold" style="color:#F87171;">Soon!</span>
+                  <span
+                    v-if="cfp.status === 'open' && daysUntil(cfp.cfpDeadline) >= 0"
+                    class="ml-2 inline-block text-[10px] font-bold px-1.5 py-[1px] rounded-full"
+                    :style="countdownStyle(daysUntil(cfp.cfpDeadline))"
+                  >{{ daysUntil(cfp.cfpDeadline) === 0 ? 'Today!' : `${daysUntil(cfp.cfpDeadline)}d left` }}</span>
                 </td>
                 <td class="px-5 py-4 font-mono text-xs hidden md:table-cell" style="color:var(--color-text-secondary);">{{ formatDate(cfp.eventDates) }}</td>
                 <td class="px-5 py-4 text-xs hidden sm:table-cell" style="color:var(--color-text-secondary);">
@@ -120,9 +124,16 @@ function formatDate(d) {
   return new Date(d).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
-function isUrgent(deadline) {
-  const diff = new Date(deadline) - new Date()
-  return diff > 0 && diff < 1000 * 60 * 60 * 24 * 30
+function daysUntil(deadline) {
+  const diff = new Date(deadline).setHours(0,0,0,0) - new Date().setHours(0,0,0,0)
+  return Math.ceil(diff / (1000 * 60 * 60 * 24))
+}
+
+function countdownStyle(days) {
+  if (days === 0)  return 'background:rgba(220,38,38,0.15); color:#DC2626; border:1px solid rgba(220,38,38,0.35);'
+  if (days <= 15)  return 'background:rgba(220,38,38,0.12); color:#EF4444; border:1px solid rgba(220,38,38,0.3);'
+  if (days <= 30)  return 'background:rgba(251,191,36,0.12); color:#D97706; border:1px solid rgba(251,191,36,0.35);'
+  return 'background:rgba(52,211,153,0.10); color:#059669; border:1px solid rgba(52,211,153,0.3);'
 }
 
 function statusStyle(status) {

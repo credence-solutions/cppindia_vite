@@ -44,7 +44,7 @@
       </div>
 
       <div class="text-center mt-10">
-        <RouterLink to="/join"
+        <RouterLink to="/join-us"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
           style="border: 1px solid rgba(8,145,178,0.3); color: var(--color-primary-soft);"
           onmouseover="this.style.background='rgba(8,145,178,0.08)'; this.style.borderColor='rgba(8,145,178,0.55)'"

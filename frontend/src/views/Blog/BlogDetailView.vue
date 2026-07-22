@@ -23,23 +23,49 @@
         <!-- Body -->
         <article class="prose-cpp" v-html="renderedBody"></article>
 
-        <!-- Footer -->
-        <div class="mt-12 pt-6 flex items-center justify-between flex-wrap gap-4" style="border-top:1px solid rgba(8,145,178,0.18);">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-              style="background:rgba(8,145,178,0.2); color:var(--color-primary-soft);">
-              {{ post.author.split(' ').map(n => n[0]).join('') }}
+        <!-- Footer: author card -->
+        <div class="mt-12 pt-6" style="border-top:1px solid rgba(8,145,178,0.18);">
+          <div class="flex items-start justify-between flex-wrap gap-4 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+                style="background:rgba(8,145,178,0.2); color:var(--color-primary-soft);">
+                {{ post.author.split(' ').map(n => n[0]).join('') }}
+              </div>
+              <div>
+                <p class="text-sm font-semibold mb-0.5" style="color:var(--color-text);">{{ post.author }}</p>
+                <p class="text-xs leading-relaxed" style="color:var(--color-text-muted);">{{ authorBio || 'CppIndia Community contributor.' }}</p>
+              </div>
             </div>
-            <div>
-              <p class="text-sm font-semibold" style="color:var(--color-text);">{{ post.author }}</p>
-              <p class="text-xs" style="color:var(--color-text-muted);">CppIndia Community</p>
+            <RouterLink to="/blog"
+              class="inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-150 flex-shrink-0"
+              style="color:var(--color-primary-soft);">
+              ← Back to Blog
+            </RouterLink>
+          </div>
+
+          <!-- Related posts -->
+          <div v-if="relatedPosts.length">
+            <p class="text-xs font-bold uppercase tracking-[0.1em] mb-4" style="color:var(--color-text-muted);">Related Articles</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <RouterLink
+                v-for="rp in relatedPosts"
+                :key="rp.slug"
+                :to="`/blog/${rp.slug}`"
+                class="flex flex-col gap-2 p-4 rounded-xl transition-all duration-150"
+                style="background:var(--card-bg); border:1px solid var(--card-border);"
+                onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.transform='translateY(-2px)'"
+                onmouseout="this.style.borderColor='var(--card-border)'; this.style.transform='translateY(0)'"
+              >
+                <div class="flex flex-wrap gap-1">
+                  <span v-for="tag in rp.tags.slice(0,2)" :key="tag"
+                    class="text-[10px] font-semibold px-2 py-[1px] rounded-full"
+                    style="background:rgba(8,145,178,0.1); color:var(--color-primary-soft); border:1px solid rgba(8,145,178,0.2);">{{ tag }}</span>
+                </div>
+                <p class="text-sm font-semibold leading-snug" style="color:var(--color-text);">{{ rp.title }}</p>
+                <p class="text-xs" style="color:var(--color-text-muted);">{{ rp.author }} · {{ rp.readingTime }} min</p>
+              </RouterLink>
             </div>
           </div>
-          <RouterLink to="/blog"
-            class="inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-150"
-            style="color:var(--color-primary-soft);">
-            ← Back to Blog
-          </RouterLink>
         </div>
 
       </div>
@@ -61,9 +87,28 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import PageHero from '@/components/common/PageHero.vue'
 import blogData from '@/data/blog.json'
+import membersData from '@/data/members.json'
 
 const route = useRoute()
 const post  = computed(() => blogData.find(p => p.slug === route.params.slug))
+
+const authorBio = computed(() => {
+  if (!post.value) return null
+  const name = post.value.author.toLowerCase()
+  const member = membersData.find(m => m.name.toLowerCase() === name)
+  return member?.bio ?? null
+})
+
+const relatedPosts = computed(() => {
+  if (!post.value) return []
+  const tags = new Set(post.value.tags)
+  return blogData
+    .filter(p => p.slug !== post.value.slug)
+    .map(p => ({ ...p, overlap: p.tags.filter(t => tags.has(t)).length }))
+    .filter(p => p.overlap > 0)
+    .sort((a, b) => b.overlap - a.overlap)
+    .slice(0, 3)
+})
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })

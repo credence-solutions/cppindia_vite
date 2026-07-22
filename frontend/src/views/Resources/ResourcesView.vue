@@ -10,12 +10,22 @@
     <section class="section--sm" style="background: var(--emphasis-bg);">
       <div class="container">
 
-        <!-- Search -->
-        <div class="mb-10">
+        <!-- Search + level filter -->
+        <div class="mb-10 flex flex-col gap-4">
           <SearchBar v-model="query" placeholder="Search resources, articles, newsletters…" />
-          <p v-if="query" class="text-xs mt-2" style="color: var(--card-text-muted);">
-            <span v-if="totalResults > 0">{{ totalResults }} result{{ totalResults !== 1 ? 's' : '' }} for "<span style="color: var(--card-text);">{{ query }}</span>"</span>
-            <span v-else>No results for "<span style="color: var(--card-text);">{{ query }}</span>"</span>
+          <div class="flex items-center gap-2 flex-wrap">
+            <button
+              v-for="lvl in levels" :key="lvl.value"
+              @click="activeLevel = lvl.value"
+              class="px-3 py-1 rounded-full text-xs font-semibold transition-all duration-150"
+              :style="activeLevel === lvl.value
+                ? `background:${lvl.bg}; color:${lvl.color}; border:1px solid ${lvl.border};`
+                : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
+            >{{ lvl.label }}</button>
+          </div>
+          <p v-if="query || activeLevel !== 'all'" class="text-xs" style="color: var(--card-text-muted);">
+            <span v-if="totalResults > 0">{{ totalResults }} result{{ totalResults !== 1 ? 's' : '' }}</span>
+            <span v-else>No results match your filters.</span>
           </p>
         </div>
 
@@ -36,11 +46,14 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
                   style="background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
-                <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
-                  style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
+                <div class="flex items-center gap-1.5">
+                  <span v-if="r.level" class="px-2 py-0.5 rounded text-[10px] font-bold" :style="levelStyle(r.level)">{{ r.level }}</span>
+                  <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
+                    style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
+                </div>
               </div>
               <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
               <p class="text-sm leading-relaxed flex-1" style="color: var(--card-text-muted);">{{ r.description }}</p>
@@ -69,11 +82,14 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center justify-between gap-2 flex-wrap">
                 <span class="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-[0.04em]"
                   style="background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.2); color: var(--color-text-muted);">{{ r.type }}</span>
-                <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
-                  style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
+                <div class="flex items-center gap-1.5">
+                  <span v-if="r.level" class="px-2 py-0.5 rounded text-[10px] font-bold" :style="levelStyle(r.level)">{{ r.level }}</span>
+                  <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
+                    style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
+                </div>
               </div>
               <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
               <p class="text-sm leading-relaxed flex-1" style="color: var(--card-text-muted);">{{ r.description }}</p>
@@ -190,10 +206,20 @@ useHead({
 })
 
 const resources = resourcesData
-const query     = ref('')
+const query      = ref('')
+const activeLevel = ref('all')
+
+const levels = [
+  { value: 'all',          label: 'All Levels',   bg: 'rgba(8,145,178,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.4)'  },
+  { value: 'beginner',     label: 'Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#059669',                   border: 'rgba(52,211,153,0.4)' },
+  { value: 'intermediate', label: 'Intermediate', bg: 'rgba(251,191,36,0.15)', color: '#D97706',                   border: 'rgba(251,191,36,0.4)' },
+  { value: 'advanced',     label: 'Advanced',     bg: 'rgba(239,68,68,0.12)',  color: '#DC2626',                   border: 'rgba(239,68,68,0.35)' },
+]
 
 function matches(item) {
   const q = query.value.trim().toLowerCase()
+  const levelOk = activeLevel.value === 'all' || item.level === activeLevel.value
+  if (!levelOk) return false
   if (!q) return true
   return (
     item.title?.toLowerCase().includes(q) ||
@@ -211,6 +237,13 @@ const filteredNewsletters = computed(() => newsletters.filter(matches))
 const totalResults        = computed(() =>
   filteredReferences.value.length + filteredArticles.value.length + filteredNewsletters.value.length
 )
+
+function levelStyle(level) {
+  if (level === 'beginner')     return 'background:rgba(52,211,153,0.1); color:#059669; border:1px solid rgba(52,211,153,0.3);'
+  if (level === 'intermediate') return 'background:rgba(251,191,36,0.1); color:#D97706; border:1px solid rgba(251,191,36,0.3);'
+  if (level === 'advanced')     return 'background:rgba(239,68,68,0.1); color:#DC2626; border:1px solid rgba(239,68,68,0.3);'
+  return ''
+}
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString('en-IN', { year: 'numeric', month: 'long' })
