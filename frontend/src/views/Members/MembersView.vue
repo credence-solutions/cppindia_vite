@@ -318,9 +318,15 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useHead } from '@/composables/useHead'
 import { useAssetPath } from '@/composables/useAssetPath'
 import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
+
+useHead({
+  title: 'Hall of Fame | CppIndia',
+  description: 'Meet the founders, moderators, and speakers who make CppIndia what it is — India\'s C++ community.',
+})
 import membersData from '@/data/members.json'
 import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'

@@ -84,8 +84,14 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import { SITE } from '@/constants'
+
+useHead({
+  title: 'C++ Learning Roadmap | CppIndia',
+  description: 'A curated path from C++ beginner to expert — resources, milestones, and community guidance.',
+})
 
 const levels = [
   { id: 'beginner',     label: '🌱 Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#059669', border: 'rgba(52,211,153,0.4)' },

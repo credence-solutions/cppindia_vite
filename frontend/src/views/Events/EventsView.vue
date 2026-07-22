@@ -101,8 +101,14 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import eventsData from '@/data/events.json'
+
+useHead({
+  title: 'Events | CppIndia',
+  description: 'Upcoming and past CppIndia meetups, tech talks, and conferences. Add events to your calendar.',
+})
 
 const activeTab = ref('Upcoming')
 

@@ -151,12 +151,18 @@
 
 <script setup>
 import { ref, computed, watchEffect } from 'vue'
+import { useHead } from '@/composables/useHead'
 import { createHighlighterCore } from 'shiki/core'
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript'
 import cpp from 'shiki/langs/cpp.mjs'
 import githubDark from 'shiki/themes/github-dark.mjs'
 import PageHero from '@/components/common/PageHero.vue'
 import snippetsData from '@/data/snippets.json'
+
+useHead({
+  title: 'C++ Playground | CppIndia',
+  description: 'Curated C++17/20/23 code snippets with live Compiler Explorer integration — click, explore, experiment.',
+})
 
 const standards = ['All', 'C++17', 'C++20', 'C++23']
 const activeStd   = ref('All')

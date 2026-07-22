@@ -85,9 +85,15 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import NewsletterSignup from '@/components/common/NewsletterSignup.vue'
 import blogData from '@/data/blog.json'
+
+useHead({
+  title: 'Blog & Articles | CppIndia',
+  description: 'C++ tutorials, trip reports, conference recaps, and community articles from CppIndia members.',
+})
 
 const allTags = ['All', ...new Set(blogData.flatMap(p => p.tags))]
 const activeTag = ref('All')

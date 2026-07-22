@@ -177,8 +177,9 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import speakersData from '@/data/speakers.json'
 import talksData from '@/data/talks.json'
@@ -201,6 +202,15 @@ const appearances = computed(() =>
 
 // Use the most recent entry as the primary (for photo, bio, social links)
 const primaryEntry = computed(() => appearances.value[0] ?? null)
+
+watchEffect(() => {
+  if (primaryEntry.value) {
+    useHead({
+      title: `${primaryEntry.value.name} | CppIndia Speaker`,
+      description: `${primaryEntry.value.name} — ${primaryEntry.value.role} at CppIndiaCon. ${primaryEntry.value.bio?.slice(0, 120) ?? ''}`,
+    })
+  }
+})
 
 // Merge expertise tags across all appearances, deduplicated
 const allExpertise = computed(() => {

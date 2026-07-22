@@ -83,14 +83,24 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import blogData from '@/data/blog.json'
 import membersData from '@/data/members.json'
 
 const route = useRoute()
 const post  = computed(() => blogData.find(p => p.slug === route.params.slug))
+
+watchEffect(() => {
+  if (post.value) {
+    useHead({
+      title: `${post.value.title} | CppIndia Blog`,
+      description: post.value.summary || `${post.value.title} — CppIndia community article by ${post.value.author}.`,
+    })
+  }
+})
 
 const authorBio = computed(() => {
   if (!post.value) return null

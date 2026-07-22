@@ -216,6 +216,16 @@ const routes = [
         },
       },
       {
+        path: 'press',
+        name: 'Press',
+        component: () => import('@/views/Press/PressView.vue'),
+        meta: {
+          title: 'Press & Media Kit | CppIndia',
+          description: 'Brand assets, key facts, and press resources for CppIndia.',
+          breadcrumb: [{ label: 'Press Kit', path: '/press' }],
+        },
+      },
+      {
         path: 'speakers/:slug',
         name: 'SpeakerDetail',
         component: () => import('@/views/Speakers/SpeakerDetailView.vue'),

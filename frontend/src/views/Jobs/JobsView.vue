@@ -111,9 +111,15 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
 import jobsData from '@/data/jobs.json'
+
+useHead({
+  title: 'C++ Jobs Board | CppIndia',
+  description: 'Curated C++ job listings for Indian developers — remote, hybrid, and onsite roles from top companies.',
+})
 
 const locationFilters = [
   { value: 'all',    label: 'All Locations' },

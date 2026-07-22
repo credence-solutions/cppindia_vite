@@ -103,8 +103,14 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import cfpData from '@/data/cfp.json'
+
+useHead({
+  title: 'CFP Tracker | CppIndia',
+  description: 'Open Calls for Proposals at C++ conferences worldwide — deadlines, links, and tips to submit your talk.',
+})
 
 const statuses = [
   { value: 'all',       label: 'All',      bg: 'rgba(8,145,178,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.45)' },

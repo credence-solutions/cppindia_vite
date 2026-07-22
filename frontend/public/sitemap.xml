@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://www.cppindia.co.in/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.cppindia.co.in/tech-talks</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.cppindia.co.in/conference</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.cppindia.co.in/resources</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.cppindia.co.in/playground</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/members</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/events</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/jobs</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/cfp</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/roadmap</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/projects</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/sponsors</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/press</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.cppindia.co.in/about</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.cppindia.co.in/team</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.cppindia.co.in/join-us</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.cppindia.co.in/faq</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.cppindia.co.in/call-for-speakers</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.cppindia.co.in/contact</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cppindia.co.in/code-of-conduct</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+
+  <!-- Conference year views -->
+  <url><loc>https://www.cppindia.co.in/conference?year=2024</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.cppindia.co.in/conference?year=2023</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/conference?year=2022</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/conference?year=2021</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Blog posts -->
+  <url><loc>https://www.cppindia.co.in/blog/optional-monadic-cpp23</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/pmr-polymorphic-memory-resources</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/cpp-attributes-hidden-power</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/if-consteval-compile-time-branching</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/structured-bindings-deep-dive</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/small-string-optimization</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/cpp23-deducing-this</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/modern-cpp-ranges</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/trip-report-cppcon-2024</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cppindia.co.in/blog/cpp-safety-2025</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+
+  <!-- Speaker profiles -->
+  <url><loc>https://www.cppindia.co.in/speakers/alex-dathskovsky</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/ankur-satle</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/john-stratton</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/jonathan-muller</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/mahendra-garodi</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/mike-shah</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/pavithra-ashok-kumar</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/simon-toth</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/bryce-lelbach</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/kiran-kannappan</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/venkata-bulusu</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/andreas-fertig</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/kushashwa-ravi-shrimali</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/selvakumar-jawahar</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/prince-gupta</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/emmanuel-danso-nyarko</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/inbal-levi</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/hemil-ruparel</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/greg-law</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/bjarne-stroustrup</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/jon-kalb</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/harishankar-singh</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cppindia.co.in/speakers/saurabh-joshi</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+</urlset>

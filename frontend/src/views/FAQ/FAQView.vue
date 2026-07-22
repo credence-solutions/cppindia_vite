@@ -71,9 +71,15 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import faqData from '@/data/faq.json'
 import { SITE } from '@/constants'
+
+useHead({
+  title: 'FAQ | CppIndia',
+  description: 'Frequently asked questions about CppIndia — joining, speaking, attending CppIndiaCon, and sponsoring.',
+})
 
 const categories = ['All', ...new Set(faqData.map(f => f.category))]
 const activeCategory = ref('All')

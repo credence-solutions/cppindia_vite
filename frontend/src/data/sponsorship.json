@@ -1,0 +1,67 @@
+{
+  "stats": [
+    { "value": "1,000+", "label": "Community Members" },
+    { "value": "80+",    "label": "Tech Talks Recorded" },
+    { "value": "5+",     "label": "Years of Community" },
+    { "value": "4",      "label": "Annual Conferences" }
+  ],
+  "tiers": [
+    {
+      "id": "bronze",
+      "name": "Bronze",
+      "price": "₹25,000",
+      "period": "per year",
+      "tagline": "Support the community, get noticed",
+      "description": "Ideal for startups and small companies wanting to support India's C++ scene.",
+      "featured": false,
+      "benefits": [
+        { "text": "Logo on website footer",       "included": true  },
+        { "text": "Logo on website header",       "included": false },
+        { "text": "Newsletter mentions",          "included": true,  "detail": "2 per year"    },
+        { "text": "Job listings",                 "included": true,  "detail": "1 per quarter" },
+        { "text": "Conference banner",            "included": false },
+        { "text": "Social media feature",         "included": true,  "detail": "1× shoutout"  },
+        { "text": "Speaking slot at CppIndiaCon", "included": false },
+        { "text": "Quarterly community call",     "included": false }
+      ]
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "price": "₹60,000",
+      "period": "per year",
+      "tagline": "Great visibility for growing teams",
+      "description": "For mid-sized companies actively hiring C++ engineers in India.",
+      "featured": false,
+      "benefits": [
+        { "text": "Logo on website footer",       "included": true  },
+        { "text": "Logo on website header",       "included": true  },
+        { "text": "Newsletter mentions",          "included": true,  "detail": "All issues"    },
+        { "text": "Job listings",                 "included": true,  "detail": "3 per quarter" },
+        { "text": "Conference banner",            "included": true  },
+        { "text": "Social media feature",         "included": true,  "detail": "2× per year"  },
+        { "text": "Speaking slot at CppIndiaCon", "included": false },
+        { "text": "Quarterly community call",     "included": false }
+      ]
+    },
+    {
+      "id": "gold",
+      "name": "Gold",
+      "price": "₹1,20,000",
+      "period": "per year",
+      "tagline": "Core community partner",
+      "description": "Maximum brand presence. Be a founding pillar of India's C++ ecosystem.",
+      "featured": true,
+      "benefits": [
+        { "text": "Logo on website footer",       "included": true  },
+        { "text": "Logo on website header",       "included": true,  "detail": "Prominent"         },
+        { "text": "Newsletter mentions",          "included": true,  "detail": "Dedicated section"  },
+        { "text": "Job listings",                 "included": true,  "detail": "Unlimited"          },
+        { "text": "Conference banner",            "included": true,  "detail": "Title option"       },
+        { "text": "Social media feature",         "included": true,  "detail": "Monthly"            },
+        { "text": "Speaking slot at CppIndiaCon", "included": true  },
+        { "text": "Quarterly community call",     "included": true  }
+      ]
+    }
+  ]
+}

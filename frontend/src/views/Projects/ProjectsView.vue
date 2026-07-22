@@ -85,9 +85,15 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import projectsData from '@/data/projects.json'
 import { SITE } from '@/constants'
+
+useHead({
+  title: 'Community Projects | CppIndia',
+  description: 'Open-source C++ projects built and maintained by CppIndia community members.',
+})
 
 const allTags = ['All', ...new Set(projectsData.flatMap(p => p.tags))]
 const activeTag = ref('All')
