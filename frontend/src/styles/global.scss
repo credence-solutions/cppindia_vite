@@ -106,7 +106,7 @@
   // Speaker / Team photo wrappers
   .speaker-photo-wrap {
     @apply relative overflow-hidden;
-    height: 200px;
+    aspect-ratio: 1 / 1;
     background: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(155,116,245,0.08) 100%);
     &__initial {
       @apply absolute inset-0 flex items-center justify-center font-display font-extrabold;

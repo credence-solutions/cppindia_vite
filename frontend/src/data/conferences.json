@@ -88,15 +88,15 @@
       "volunteers": 22
     },
     "speakers": [
-      { "name": "Mike Shah",                    "role": "Speaker", "topic": "Optimization Design Patterns",                          "rating": 4.62 },
-      { "name": "Kiran Kannappan",              "role": "Speaker", "topic": "Introduction to Intel oneAPI",                          "rating": 4.17 },
-      { "name": "Jonathan Müller",              "role": "Speaker", "topic": "C++ Features You Might Not Know",                       "rating": 4.14 },
-      { "name": "Venkata Naga Ravikiran Bulusu","role": "Speaker", "topic": "Understanding Common Concurrency Patterns",             "rating": 4.22 },
-      { "name": "Bryce Adelstein Lelbach",      "role": "Keynote", "topic": "AI-Assisted Programming (ChatGPT, etc)",               "rating": 4.36 },
-      { "name": "Ankur Satle",                  "role": "Speaker", "topic": "Value-Oriented Design — by example",                   "rating": 4.43 },
-      { "name": "Andreas Fertig",               "role": "Speaker", "topic": "C++ Coroutines from Scratch",                          "rating": 4.42 },
-      { "name": "Kushashwa Ravi Shrimali",      "role": "Speaker", "topic": "Using C++ for Your Artificial Intelligence Solution",   "rating": 4.52 },
-      { "name": "Selvakumar Jawahar",           "role": "Speaker", "topic": "Why 5G is Fast? and C++ in 5G Open Source",            "rating": 4.15 }
+      { "name": "Mike Shah",                    "role": "Speaker", "topic": "Optimization Design Patterns",                          "rating": 4.62, "image": "/assets/images/speakers/2023/mike.png" },
+      { "name": "Kiran Kannappan",              "role": "Speaker", "topic": "Introduction to Intel oneAPI",                          "rating": 4.17, "image": "/assets/images/speakers/2023/kiran.png" },
+      { "name": "Jonathan Müller",              "role": "Speaker", "topic": "C++ Features You Might Not Know",                       "rating": 4.14, "image": "/assets/images/speakers/2023/jonathan.png" },
+      { "name": "Venkata Naga Ravikiran Bulusu","role": "Speaker", "topic": "Understanding Common Concurrency Patterns",             "rating": 4.22, "image": "/assets/images/speakers/2023/ravikiran.png" },
+      { "name": "Bryce Adelstein Lelbach",      "role": "Keynote", "topic": "AI-Assisted Programming (ChatGPT, etc)",               "rating": 4.36, "image": "/assets/images/speakers/2023/bryce.png" },
+      { "name": "Ankur Satle",                  "role": "Speaker", "topic": "Value-Oriented Design — by example",                   "rating": 4.43, "image": "/assets/images/speakers/2023/ankur.png" },
+      { "name": "Andreas Fertig",               "role": "Speaker", "topic": "C++ Coroutines from Scratch",                          "rating": 4.42, "image": "/assets/images/speakers/2023/andreas.png" },
+      { "name": "Kushashwa Ravi Shrimali",      "role": "Speaker", "topic": "Using C++ for Your Artificial Intelligence Solution",   "rating": 4.52, "image": "/assets/images/speakers/2023/ravi.png" },
+      { "name": "Selvakumar Jawahar",           "role": "Speaker", "topic": "Why 5G is Fast? and C++ in 5G Open Source",            "rating": 4.15, "image": "/assets/images/speakers/2023/selvakumar.png" }
     ],
     "lightningTalks": [
       { "speaker": "Prince Gupta",             "topic": "Taking Advantage of Auto Vectorization" },
@@ -164,11 +164,11 @@
     "description": "The 2nd edition of CppIndiaCon was a one-day virtual conference featuring five expert talks on customization methods, comparisons, concurrency patterns, debugging, and memory management. The event included networking breaks via Discord and a C++ trivia competition.",
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
     "speakers": [
-      { "name": "Inbal Levi",         "role": "Speaker", "topic": "Customization Methods: Connecting User And Library Code" },
-      { "name": "Hemil Ruparel",      "role": "Speaker", "topic": "Default Generated Comparison for Your Data Types" },
-      { "name": "Selvakumar Jawahar", "role": "Speaker", "topic": "Concurrency with Reactor Pattern" },
-      { "name": "Dr. Greg Law",       "role": "Speaker", "topic": "Getting the Most Out of GDB" },
-      { "name": "Ankur M Satle",      "role": "Speaker", "topic": "How C++ Eliminated Memory Issues" }
+      { "name": "Inbal Levi",         "role": "Speaker", "topic": "Customization Methods: Connecting User And Library Code", "image": "/assets/images/speakers/2022/inbal.png" },
+      { "name": "Hemil Ruparel",      "role": "Speaker", "topic": "Default Generated Comparison for Your Data Types",        "image": "/assets/images/speakers/2022/hemil.png" },
+      { "name": "Selvakumar Jawahar", "role": "Speaker", "topic": "Concurrency with Reactor Pattern",                        "image": "/assets/images/speakers/2022/selvakumar.png" },
+      { "name": "Dr. Greg Law",       "role": "Speaker", "topic": "Getting the Most Out of GDB",                            "image": "/assets/images/speakers/2022/greg.png" },
+      { "name": "Ankur M Satle",      "role": "Speaker", "topic": "How C++ Eliminated Memory Issues",                       "image": "/assets/images/speakers/2022/ankur.png" }
     ],
     "sponsors": {
       "gold": [
@@ -213,12 +213,12 @@
     "description": "The inaugural CppIndiaCon kicked off in grand style — a single-day virtual conference featuring C++ creator Bjarne Stroustrup, CppCon chair Jon Kalb, and four more distinguished speakers. Six inspiring talks covered C++ today, standard library design, ranges, concepts, contracts, and an unforgettable AMA with Bjarne.",
     "videosUrl": "https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw",
     "speakers": [
-      { "name": "Jon Kalb",                   "role": "Keynote", "topic": "C++ Today: The Beast is Back" },
-      { "name": "Bryce Adelstein Lelbach",    "role": "Speaker", "topic": "What Belongs in the C++ Standard Library" },
-      { "name": "Harishankar Singh",          "role": "Speaker", "topic": "C++20 Ranges: Code Expressively with Ranges" },
-      { "name": "Ankur M Satle",              "role": "Speaker", "topic": "C++20 Concepts — The Base Classes of Generic Programming?" },
-      { "name": "Saurabh Joshi",             "role": "Speaker", "topic": "Contract Programming: What, Why, and How?" },
-      { "name": "Bjarne Stroustrup",          "role": "Special", "topic": "AMA with Bjarne Stroustrup" }
+      { "name": "Jon Kalb",                   "role": "Keynote", "topic": "C++ Today: The Beast is Back",                             "image": "/assets/images/speakers/2021/jonkalb.jpg" },
+      { "name": "Bryce Adelstein Lelbach",    "role": "Speaker", "topic": "What Belongs in the C++ Standard Library",                 "image": "/assets/images/speakers/2021/bryce.jpg" },
+      { "name": "Harishankar Singh",          "role": "Speaker", "topic": "C++20 Ranges: Code Expressively with Ranges",              "image": "/assets/images/speakers/2021/hari.jpg" },
+      { "name": "Ankur M Satle",              "role": "Speaker", "topic": "C++20 Concepts — The Base Classes of Generic Programming?", "image": "/assets/images/speakers/2021/ankur.jpg" },
+      { "name": "Saurabh Joshi",             "role": "Speaker", "topic": "Contract Programming: What, Why, and How?",                "image": "/assets/images/speakers/2021/saurabhjoshi.jpg" },
+      { "name": "Bjarne Stroustrup",          "role": "Special", "topic": "AMA with Bjarne Stroustrup",                               "image": "/assets/images/speakers/2021/bjarne.jpg" }
     ],
     "sponsors": {
       "gold": [

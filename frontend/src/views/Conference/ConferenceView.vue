@@ -112,6 +112,39 @@
             </div>
           </div>
 
+          <!-- Speakers -->
+          <div v-if="conf.speakers.length" class="mb-12">
+            <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Speakers</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+              <div
+                v-for="s in conf.speakers"
+                :key="s.name"
+                class="flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md cursor-pointer"
+                :class="{ 'border-secondary/35': s.role === 'Keynote' }"
+                @click="openSpeaker(s)"
+              >
+                <div class="speaker-photo-wrap">
+                  <span class="speaker-photo-wrap__initial">{{ s.name.charAt(0) }}</span>
+                  <img v-if="s.image || fullSpeaker(s)?.image" :src="assetPath(s.image || fullSpeaker(s)?.image)" :alt="s.name" class="speaker-photo" />
+                </div>
+                <div class="p-4 flex-1">
+                  <div class="flex items-start justify-between gap-2 flex-wrap mb-1">
+                    <p class="font-bold text-sm text-ink leading-snug">{{ s.name }}</p>
+                    <span
+                      v-if="s.role === 'Keynote'"
+                      class="px-[7px] py-px bg-secondary text-white rounded-full text-[9px] font-bold uppercase tracking-[0.04em] flex-shrink-0 mt-0.5 self-start"
+                    >Keynote</span>
+                  </div>
+                  <p v-if="s.topic" class="text-xs text-ink-2 leading-[1.5] italic">"{{ s.topic }}"</p>
+                  <div v-if="s.rating" class="flex items-center gap-[3px] mt-2 text-xs text-yellow-400 font-semibold">
+                    <span class="text-[12px]">★</span>
+                    <span>{{ s.rating.toFixed(2) }} / 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Schedule -->
           <div v-if="conf.schedule?.length" class="mb-12">
             <div class="flex items-center justify-between gap-4 mb-6 pb-3 border-b-2 border-wire-light flex-wrap">
@@ -212,39 +245,6 @@
                   <p class="text-xs text-ink-3">{{ sv.speaker }}</p>
                 </div>
               </a>
-            </div>
-          </div>
-
-          <!-- Speakers -->
-          <div v-if="conf.speakers.length" class="mb-12">
-            <h3 class="font-display text-xl font-bold text-ink mb-6 pb-3 border-b-2 border-wire-light">Speakers</h3>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
-              <div
-                v-for="s in conf.speakers"
-                :key="s.name"
-                class="flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md cursor-pointer"
-                :class="{ 'border-secondary/35': s.role === 'Keynote' }"
-                @click="openSpeaker(s)"
-              >
-                <div class="speaker-photo-wrap">
-                  <span class="speaker-photo-wrap__initial">{{ s.name.charAt(0) }}</span>
-                  <img v-if="s.image" :src="assetPath(s.image)" :alt="s.name" class="speaker-photo" />
-                </div>
-                <div class="p-4 flex-1">
-                  <div class="flex items-start justify-between gap-2 flex-wrap mb-1">
-                    <p class="font-bold text-sm text-ink leading-snug">{{ s.name }}</p>
-                    <span
-                      v-if="s.role === 'Keynote'"
-                      class="px-[7px] py-px bg-secondary text-white rounded-full text-[9px] font-bold uppercase tracking-[0.04em] flex-shrink-0 mt-0.5 self-start"
-                    >Keynote</span>
-                  </div>
-                  <p v-if="s.topic" class="text-xs text-ink-2 leading-[1.5] italic">"{{ s.topic }}"</p>
-                  <div v-if="s.rating" class="flex items-center gap-[3px] mt-2 text-xs text-yellow-400 font-semibold">
-                    <span class="text-[12px]">★</span>
-                    <span>{{ s.rating.toFixed(2) }} / 5</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -418,9 +418,9 @@
             <template v-if="conf.sponsors.gold.length">
               <div class="mb-6">
                 <div class="flex items-center justify-center gap-2 mb-6">
-                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(234,179,8,0.2);" />
-                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: rgba(234,179,8,0.65);">Gold Sponsors {{ activeYear }}</span>
-                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(234,179,8,0.2);" />
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(180,135,0,0.4);" />
+                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: rgba(140,100,0,0.85);">Gold Sponsors {{ activeYear }}</span>
+                  <span class="h-px flex-1 max-w-[60px]" style="background: rgba(180,135,0,0.4);" />
                 </div>
                 <div class="flex flex-wrap justify-center items-stretch gap-4">
                   <a
@@ -430,9 +430,9 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="group flex flex-col items-center justify-center gap-1 px-6 py-4 rounded-xl transition-all duration-200 min-w-[160px]"
-                    style="border: 1px solid rgba(234,179,8,0.25); background: rgba(234,179,8,0.05);"
-                    onmouseover="this.style.borderColor='rgba(234,179,8,0.55)'; this.style.background='rgba(234,179,8,0.1)'"
-                    onmouseout="this.style.borderColor='rgba(234,179,8,0.25)'; this.style.background='rgba(234,179,8,0.05)'"
+                    style="border: 1px solid rgba(180,135,0,0.45); background: rgba(234,179,8,0.07);"
+                    onmouseover="this.style.borderColor='rgba(180,135,0,0.75)'; this.style.background='rgba(234,179,8,0.13)'"
+                    onmouseout="this.style.borderColor='rgba(180,135,0,0.45)'; this.style.background='rgba(234,179,8,0.07)'"
                   >
                     <span class="font-display font-bold text-base" style="color: var(--card-text);">{{ s.name }}</span>
                     <span v-if="s.description" class="text-[10px] text-center leading-snug" style="color: var(--card-text-muted);">{{ s.description }}</span>
