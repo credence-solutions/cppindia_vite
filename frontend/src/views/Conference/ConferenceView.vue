@@ -355,6 +355,17 @@
                       >{{ tag }}</span>
                     </div>
 
+                    <!-- Profile link -->
+                    <RouterLink
+                      v-if="speakerSlug(selectedSpeaker)"
+                      :to="`/speakers/${speakerSlug(selectedSpeaker)}`"
+                      class="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-150"
+                      style="color:var(--color-primary-soft);"
+                      @click="closeSpeaker"
+                    >
+                      View full profile →
+                    </RouterLink>
+
                     <!-- Social links -->
                     <div v-if="fullSpeaker(selectedSpeaker)" class="flex items-center gap-2 flex-wrap pt-1">
                       <a
@@ -566,6 +577,16 @@ const conf            = ref(null)
 const loading         = ref(true)
 const scheduleQuery   = ref('')
 const selectedSpeaker = ref(null)
+
+function speakerSlug(confSpeaker) {
+  if (!confSpeaker) return null
+  const entry = speakersData.find(s =>
+    s.name.toLowerCase() === confSpeaker.name.toLowerCase() &&
+    s.conference === activeYear.value
+  ) ?? speakersData.find(s => s.name.toLowerCase() === confSpeaker.name.toLowerCase())
+  if (!entry) return null
+  return entry.id.replace(/-\d{4}$/, '')
+}
 
 function fullSpeaker(confSpeaker) {
   if (!confSpeaker) return null

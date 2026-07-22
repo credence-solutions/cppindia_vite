@@ -9,6 +9,15 @@
   <section class="section--sm" style="background: var(--emphasis-bg);">
     <div class="container">
 
+      <!-- Search -->
+      <div class="mb-6">
+        <SearchBar v-model="query" placeholder="Search by role, company, or technology…" />
+        <p v-if="query" class="text-xs mt-2" style="color:var(--color-text-muted);">
+          <span v-if="filtered.length">{{ filtered.length }} result{{ filtered.length !== 1 ? 's' : '' }}</span>
+          <span v-else>No jobs match "<span style="color:var(--color-text);">{{ query }}</span>"</span>
+        </p>
+      </div>
+
       <!-- Filters -->
       <div class="flex flex-wrap gap-3 mb-8">
         <div class="flex flex-wrap gap-2">
@@ -103,6 +112,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
+import SearchBar from '@/components/common/SearchBar.vue'
 import jobsData from '@/data/jobs.json'
 
 const locationFilters = [
@@ -118,15 +128,26 @@ const levelFilters = [
   { value: 'senior', label: 'Senior' },
 ]
 
+const query       = ref('')
 const locFilter   = ref('all')
 const levelFilter = ref('all')
 
-const filtered = computed(() =>
-  jobsData.filter(j =>
-    (locFilter.value   === 'all' || j.locationType === locFilter.value) &&
-    (levelFilter.value === 'all' || j.level         === levelFilter.value)
-  )
-)
+const filtered = computed(() => {
+  const q = query.value.trim().toLowerCase()
+  return jobsData.filter(j => {
+    const locOk   = locFilter.value   === 'all' || j.locationType === locFilter.value
+    const levelOk = levelFilter.value === 'all' || j.level         === levelFilter.value
+    if (!locOk || !levelOk) return false
+    if (!q) return true
+    return (
+      j.role?.toLowerCase().includes(q) ||
+      j.company?.toLowerCase().includes(q) ||
+      j.description?.toLowerCase().includes(q) ||
+      j.location?.toLowerCase().includes(q) ||
+      j.tags?.some(t => t.toLowerCase().includes(q))
+    )
+  })
+})
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })

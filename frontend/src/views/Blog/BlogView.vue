@@ -60,6 +60,15 @@
         </article>
       </div>
 
+      <!-- Newsletter signup -->
+      <div class="mt-10">
+        <NewsletterSignup
+          title="Get the CppIndia Newsletter"
+          description="Monthly digest of talks, resources, and community highlights. Delivered to your inbox via Discord."
+          :showArchive="true"
+        />
+      </div>
+
       <!-- Write CTA -->
       <div class="mt-10 sm:mt-14 rounded-2xl p-5 sm:p-8 text-center" style="background: linear-gradient(135deg, rgba(8,145,178,0.1), rgba(52,211,153,0.05)); border:1px solid rgba(8,145,178,0.25);">
         <p class="font-display font-bold text-lg mb-2" style="color:var(--color-text);">Want to write for CppIndia?</p>
@@ -77,6 +86,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
+import NewsletterSignup from '@/components/common/NewsletterSignup.vue'
 import blogData from '@/data/blog.json'
 
 const allTags = ['All', ...new Set(blogData.flatMap(p => p.tags))]

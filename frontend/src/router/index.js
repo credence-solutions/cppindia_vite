@@ -216,6 +216,15 @@ const routes = [
         },
       },
       {
+        path: 'speakers/:slug',
+        name: 'SpeakerDetail',
+        component: () => import('@/views/Speakers/SpeakerDetailView.vue'),
+        meta: {
+          title: 'Speaker | CppIndia',
+          breadcrumb: [{ label: 'Conference', path: '/conference' }],
+        },
+      },
+      {
         path: 'cfp',
         name: 'CFP',
         component: () => import('@/views/CFP/CFPView.vue'),

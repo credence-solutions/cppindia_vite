@@ -160,6 +160,11 @@
           </div>
         </div>
 
+        <!-- Newsletter signup -->
+        <div class="mb-14">
+          <NewsletterSignup :showArchive="false" />
+        </div>
+
         <!-- Monthly picks -->
         <div id="monthly">
           <h2 class="font-display text-xl lg:text-3xl font-bold mb-6 pb-4 text-gradient-heading border-b-2 border-wire-light">
@@ -196,6 +201,7 @@ import { ref, computed } from 'vue'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
+import NewsletterSignup from '@/components/common/NewsletterSignup.vue'
 import resourcesData from '@/data/resources.json'
 import newsletters from '@/data/newsletters.json'
 import { SITE } from '@/constants'
