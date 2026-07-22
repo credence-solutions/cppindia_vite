@@ -23,10 +23,11 @@
         <article
           v-for="member in displayMembers"
           :key="member.id"
-          class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200"
+          class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200 cursor-pointer"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
           onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.boxShadow='0 0 24px rgba(8,145,178,0.12)'; this.style.transform='translateY(-3px)'"
           onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
+          @click="openBioPopup(member)"
         >
           <!-- Avatar -->
           <div class="flex items-center gap-4">
@@ -66,7 +67,7 @@
               onmouseover="this.style.background='#FF0000'; this.style.color='white'"
               onmouseout="this.style.background='rgba(255,0,0,0.12)'; this.style.color='#FF0000'"
               title="View talks"
-              @click="openPopup(member)"
+              @click.stop="openPopup(member)"
             >
               <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </button>
@@ -84,6 +85,7 @@
               style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
               onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
               onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
+              @click.stop
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
             </a>
@@ -96,6 +98,7 @@
               style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
               onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
               onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
+              @click.stop
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
@@ -108,6 +111,7 @@
               style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
               onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
               onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
+              @click.stop
             >
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
@@ -200,17 +204,112 @@
       </div>
     </Transition>
   </Teleport>
+
+  <!-- Bio popup -->
+  <Teleport to="body">
+    <Transition name="bio-popup">
+      <div
+        v-if="selectedMember"
+        class="fixed inset-0 z-[300] flex items-center justify-center p-4"
+        style="background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);"
+        @click.self="closeBioPopup"
+      >
+        <div
+          class="relative w-full max-w-lg rounded-2xl overflow-hidden flex flex-col"
+          style="background: var(--color-surface); border: 1px solid rgba(8,145,178,0.25); box-shadow: 0 24px 80px rgba(0,0,0,0.3); max-height: 85vh;"
+        >
+          <!-- Close button -->
+          <button
+            class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full transition-colors z-10"
+            style="color: var(--card-text-muted);"
+            onmouseover="this.style.background='rgba(8,145,178,0.10)'; this.style.color='var(--color-text)'"
+            onmouseout="this.style.background='transparent'; this.style.color='var(--card-text-muted)'"
+            @click="closeBioPopup"
+            aria-label="Close"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+
+          <!-- Header: avatar + name + badges -->
+          <div class="flex items-center gap-5 p-6 pb-4 border-b" style="border-color: var(--color-border);">
+            <img v-if="selectedMember.avatar" :src="assetPath(selectedMember.avatar)" :alt="selectedMember.name"
+              class="w-20 h-20 rounded-xl object-cover flex-shrink-0"
+              :style="`border: 2px solid ${badgeMap[selectedMember.badge].border};`"
+              @error="e => e.target.style.display='none'"
+            />
+            <div v-else class="w-20 h-20 rounded-xl flex items-center justify-center flex-shrink-0 font-display font-bold text-2xl"
+              :style="`background: ${badgeMap[selectedMember.badge].avatarBg}; color: ${badgeMap[selectedMember.badge].color};`">
+              {{ selectedMember.emoji || selectedMember.name.split(' ').map(n => n[0]).join('') }}
+            </div>
+            <div class="min-w-0">
+              <h2 class="font-display font-bold text-xl mb-1" style="color: var(--card-text);">{{ selectedMember.name }}</h2>
+              <p class="text-sm mb-2" style="color: var(--card-text-muted);">{{ selectedMember.role }} · {{ selectedMember.city }}</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span
+                  v-for="b in getBadges(selectedMember)"
+                  :key="b"
+                  class="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
+                  :style="`background:${badgeMap[b].bg}; color:${badgeMap[b].color}; border:1px solid ${badgeMap[b].border};`"
+                >{{ b }}</span>
+                <span class="text-xs" style="color: var(--card-text-muted);">Since {{ selectedMember.joinedYear }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Body: scrollable -->
+          <div class="overflow-y-auto p-6 space-y-5">
+            <!-- Speaker intro from website (if available) -->
+            <p v-if="speakerIntro(selectedMember)" class="text-sm leading-relaxed" style="color: var(--card-text);">{{ speakerIntro(selectedMember) }}</p>
+            <!-- Fallback to member bio -->
+            <p v-else class="text-sm leading-relaxed" style="color: var(--card-text-muted);">{{ selectedMember.bio }}</p>
+
+            <!-- Social links -->
+            <div class="flex items-center gap-2 flex-wrap pt-1">
+              <a v-if="selectedMember.website" :href="selectedMember.website" target="_blank" rel="noopener noreferrer"
+                aria-label="Website"
+                class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
+                style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
+                onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+              </a>
+              <a v-if="selectedMember.linkedin" :href="selectedMember.linkedin" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
+                style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
+                onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a v-if="selectedMember.github" :href="selectedMember.github" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
+                style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
+                onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Transition>
+  </Teleport>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useAssetPath } from '@/composables/useAssetPath'
 import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
 import membersData from '@/data/members.json'
 import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'
+import speakersData from '@/data/speakers.json'
 import { SITE } from '@/constants'
 
 const { assetPath } = useAssetPath()
@@ -310,9 +409,64 @@ function openPopup(member) {
 function closePopup() {
   popup.value = { member: null, talks: [] }
 }
+
+// ─── Bio popup state ──────────────────────────────────────────────────────────
+
+const selectedMember = ref(null)
+
+function openBioPopup(member) {
+  selectedMember.value = member
+  document.body.style.overflow = 'hidden'
+}
+
+function closeBioPopup() {
+  selectedMember.value = null
+  document.body.style.overflow = ''
+}
+
+function speakerIntro(member) {
+  const normName = s => s.toLowerCase().replace(/[^a-z\s]/g, '').replace(/\s+/g, ' ').trim()
+  const memberName = normName(member.name)
+
+  // Try to match by name and prefer entries with an intro field
+  const matches = speakersData.filter(s => {
+    const speakerName = normName(s.name)
+    if (speakerName === memberName) return true
+    const wordsA = memberName.split(' ').filter(w => w.length > 1)
+    const wordsB = speakerName.split(' ').filter(w => w.length > 1)
+    const [shorter, longer] = wordsA.length <= wordsB.length ? [wordsA, wordsB] : [wordsB, wordsA]
+    return shorter.every(w => longer.includes(w))
+  })
+
+  if (!matches.length) return null
+
+  // Prefer entries with intro; among those prefer matching conference year
+  const withIntro = matches.filter(s => s.intro)
+  if (!withIntro.length) return null
+
+  // Try to match by conference year first
+  if (member.joinedYear) {
+    const yearMatch = withIntro.find(s => String(s.conference) === String(member.joinedYear))
+    if (yearMatch) return yearMatch.intro
+  }
+
+  return withIntro[0].intro
+}
+
+function onEsc(e) {
+  if (e.key === 'Escape') closeBioPopup()
+}
+
+onMounted(() => window.addEventListener('keydown', onEsc))
+onUnmounted(() => {
+  window.removeEventListener('keydown', onEsc)
+  document.body.style.overflow = ''
+})
 </script>
 
 <style scoped>
 .popup-enter-active, .popup-leave-active { transition: opacity 0.2s ease, transform 0.2s ease; }
 .popup-enter-from, .popup-leave-to { opacity: 0; transform: scale(0.96); }
+.bio-popup-enter-active, .bio-popup-leave-active { transition: opacity 0.2s ease, transform 0.2s ease; }
+.bio-popup-enter-from, .bio-popup-leave-to { opacity: 0; transform: scale(0.96); }
 </style>
