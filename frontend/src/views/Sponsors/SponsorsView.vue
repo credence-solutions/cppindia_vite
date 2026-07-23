@@ -109,8 +109,9 @@
               onmouseover="this.style.borderColor='rgba(234,179,8,0.7)'; this.style.boxShadow='0 0 16px rgba(234,179,8,0.12)'"
               onmouseout="this.style.borderColor='rgba(234,179,8,0.35)'; this.style.boxShadow='none'"
             >
-              <img v-if="s.logo" :src="s.logo" :alt="s.name" class="h-6 w-auto object-contain" @error="e => e.target.style.display='none'" />
-              <span v-else class="font-bold text-sm" style="color:#B45309;">{{ s.name }}</span>
+              <img v-if="s.logo" :src="s.logo" :alt="s.name" class="h-6 w-auto object-contain"
+                @error="e => { e.target.style.display='none'; e.target.nextElementSibling.style.display='block'; }" />
+              <span :style="s.logo ? 'display:none; color:#B45309;' : 'color:#B45309;'" class="font-bold text-sm">{{ s.name }}</span>
             </a>
             <!-- Community -->
             <a v-for="s in sponsorsByYear(year, 'community')" :key="s.id"
@@ -120,8 +121,9 @@
               onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.boxShadow='0 0 12px rgba(8,145,178,0.08)'"
               onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
             >
-              <img v-if="s.logo" :src="s.logo" :alt="s.name" class="h-5 w-auto object-contain" @error="e => e.target.style.display='none'" />
-              <span v-else class="font-medium text-sm" style="color:var(--color-text-secondary);">{{ s.name }}</span>
+              <img v-if="s.logo" :src="s.logo" :alt="s.name" class="h-5 w-auto object-contain"
+                @error="e => { e.target.style.display='none'; e.target.nextElementSibling.style.display='block'; }" />
+              <span :style="s.logo ? 'display:none; color:var(--color-text-secondary);' : 'color:var(--color-text-secondary);'" class="font-medium text-sm">{{ s.name }}</span>
             </a>
           </div>
         </div>

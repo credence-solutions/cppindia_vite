@@ -8,7 +8,7 @@
     />
 
     <section class="section--sm" style="background: var(--emphasis-bg);">
-      <div class="container">
+      <div class="container" style="max-width: 1000px;">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <component
             :is="item.external ? 'a' : 'RouterLink'"

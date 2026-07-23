@@ -144,14 +144,14 @@
                     v-for="session in day.sessions"
                     :key="session.time + session.title"
                     v-show="!scheduleQuery || sessionMatchesQuery(session)"
-                    class="flex items-start gap-4 px-3 py-3 rounded-lg mb-1 transition-colors"
+                    class="flex items-start gap-2 sm:gap-4 px-2 py-2 sm:px-3 sm:py-3 rounded-lg mb-1 transition-colors"
                     :class="{
                       'opacity-55': ['break','intro','outro','activity'].includes(session.type),
                       'bg-surface-alt hover:bg-surface-raised': ['talk','keynote','lightning'].includes(session.type),
                       'border-l-[3px] border-secondary bg-secondary/[0.06]': session.type === 'keynote',
                     }"
                   >
-                    <div class="font-mono text-[10px] text-ink-3 whitespace-nowrap min-w-[92px] pt-0.5 flex-shrink-0">
+                    <div class="font-mono text-[10px] text-ink-3 whitespace-nowrap min-w-[68px] sm:min-w-[92px] pt-0.5 flex-shrink-0">
                       {{ session.time }}
                     </div>
                     <div class="flex-1 min-w-0">
