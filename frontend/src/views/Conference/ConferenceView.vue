@@ -31,42 +31,6 @@
           </button>
         </div>
 
-        <!-- Growth strip -->
-        <div class="mb-8 overflow-x-auto">
-          <div class="flex gap-3 min-w-max sm:min-w-0 sm:grid sm:grid-cols-4">
-            <button
-              v-for="c in allConferencesData"
-              :key="c.year"
-              class="flex flex-col items-center text-center px-4 py-3 rounded-xl border transition-all duration-150 cursor-pointer min-w-[120px] sm:min-w-0"
-              :style="activeYear === c.year
-                ? 'border-color:rgba(8,145,178,0.6); background:rgba(8,145,178,0.10);'
-                : 'border-color:var(--color-border); background:var(--card-bg);'"
-              @click="setYear(c.year)"
-            >
-              <span class="font-display font-extrabold text-lg leading-none mb-0.5"
-                :style="activeYear === c.year ? 'color:var(--color-primary-soft);' : 'color:var(--color-text);'">
-                {{ c.year }}
-              </span>
-              <span class="text-[10px] font-semibold uppercase tracking-[0.06em] mb-2"
-                style="color:var(--color-text-muted);">Edition {{ c.edition }}</span>
-              <div class="flex items-center gap-3 text-xs" style="color:var(--color-text-secondary);">
-                <span class="flex flex-col items-center gap-0.5">
-                  <span class="font-bold text-sm" :style="activeYear === c.year ? 'color:var(--color-primary-soft);' : ''">
-                    {{ c.speakers.length }}
-                  </span>
-                  <span class="text-[9px] uppercase tracking-wide" style="color:var(--color-text-muted);">Speakers</span>
-                </span>
-                <span class="flex flex-col items-center gap-0.5">
-                  <span class="font-bold text-sm" :style="activeYear === c.year ? 'color:var(--color-primary-soft);' : ''">
-                    {{ c.stats?.registrations ?? '–' }}
-                  </span>
-                  <span class="text-[9px] uppercase tracking-wide" style="color:var(--color-text-muted);">Registered</span>
-                </span>
-              </div>
-            </button>
-          </div>
-        </div>
-
         <!-- Loading -->
         <div v-if="loading" class="skeleton h-[500px] rounded-xl" />
 
@@ -114,7 +78,8 @@
           <p class="text-base text-ink-2 leading-relaxed mb-10">{{ conf.description }}</p>
 
           <!-- Search -->
-          <div class="mb-6">
+          <div class="mb-8 p-4 rounded-xl" style="background: var(--card-bg); border: 1px solid var(--card-border);">
+            <p class="text-xs font-semibold uppercase tracking-widest mb-3" style="color: var(--color-text-muted);">Search Speakers & Sessions</p>
             <SearchBar v-model="scheduleQuery" placeholder="Search sessions, speakers…" />
             <p v-if="scheduleQuery" class="text-xs mt-2" style="color: var(--color-text-muted);">
               <span v-if="filteredSpeakers.length || filteredSessionCount">
@@ -532,7 +497,6 @@ import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
 import { fetchConferenceByYear } from '@/services/api/conferences'
 import speakersData from '@/data/speakers.json'
-import allConferencesData from '@/data/conferences.json'
 
 const { assetPath } = useAssetPath()
 
