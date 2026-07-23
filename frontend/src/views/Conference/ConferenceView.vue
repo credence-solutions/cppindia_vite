@@ -11,7 +11,7 @@
       <div class="container">
 
         <!-- Year tabs -->
-        <div class="flex items-center flex-wrap gap-2 mb-10 pb-4 border-b border-wire-light" role="tablist">
+        <div class="flex items-center gap-2 mb-10 pb-4 border-b border-wire-light overflow-x-auto" role="tablist" style="scrollbar-width:none;-ms-overflow-style:none;flex-shrink:0;">
           <button
             v-for="yr in years"
             :key="yr"
@@ -293,16 +293,6 @@
                       >{{ tag }}</span>
                     </div>
 
-                    <!-- Profile link -->
-                    <RouterLink
-                      v-if="speakerSlug(selectedSpeaker)"
-                      :to="`/speakers/${speakerSlug(selectedSpeaker)}`"
-                      class="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-150"
-                      style="color:var(--color-primary-soft);"
-                      @click="closeSpeaker"
-                    >
-                      View full profile →
-                    </RouterLink>
 
                     <!-- Social links -->
                     <div v-if="fullSpeaker(selectedSpeaker)" class="flex items-center gap-2 flex-wrap pt-1">
