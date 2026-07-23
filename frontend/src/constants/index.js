@@ -49,10 +49,11 @@ export const NAV_LINKS = [
     label: 'Learn',
     path: '/resources',
     children: [
-      { label: 'C++ Resources',      path: '/resources' },
-      { label: 'Blog & Articles',    path: '/blog' },
-      { label: 'Learning Roadmap',   path: '/roadmap' },
-      { label: 'Code Playground',    path: '/playground' },
+      { label: 'C++ Resources',        path: '/resources' },
+      { label: 'Blog & Articles',      path: '/blog' },
+      { label: 'Learning Roadmap',     path: '/roadmap' },
+      { label: 'Code Playground',      path: '/playground' },
+      { label: 'Conference Reports',   path: '/conference-reports' },
     ],
   },
   {

@@ -23,7 +23,7 @@
       <!-- Table -->
       <div class="rounded-2xl overflow-hidden" style="border: 1px solid var(--card-border);">
         <div class="overflow-x-auto">
-          <table class="w-full text-sm">
+          <table class="w-full text-sm" style="min-width:600px;">
             <thead>
               <tr style="background: var(--color-surface-alt); border-bottom: 1px solid var(--color-border);">
                 <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:var(--color-text-muted);">Conference</th>

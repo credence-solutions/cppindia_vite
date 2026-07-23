@@ -175,7 +175,7 @@ const route  = useRoute()
 const router = useRouter()
 
 const years       = [2025, 2024, 2023, 2022, 2021, 2020]
-const activeYear  = ref(Number(route.query.year) || 2025)
+const activeYear  = ref(Number(route.query.year) || 2022)
 const talksByYear = ref({})
 const loading     = ref(true)
 const query       = ref('')

@@ -244,6 +244,36 @@ const routes = [
           breadcrumb: [{ label: 'CFP Tracker', path: '/cfp' }],
         },
       },
+      {
+        path: 'conference-reports',
+        name: 'ConferenceReports',
+        component: () => import('@/views/ConferenceReports/ConferenceReportsView.vue'),
+        meta: {
+          title: 'Conference Reports | CppIndia',
+          description: 'Trip reports, guides, and coverage from CppIndiaCon — India\'s annual C++ conference.',
+          breadcrumb: [{ label: 'Conference Reports', path: '/conference-reports' }],
+        },
+      },
+      {
+        path: 'conference/2024/tech-help',
+        name: 'TechHelp2024',
+        component: () => import('@/views/Conference/TechHelpView.vue'),
+        meta: {
+          title: 'Tech Help — CppIndiaCon 2024 | CppIndia',
+          description: 'Self-help guide for CppIndiaCon 2024 attendees and speakers.',
+          breadcrumb: [{ label: 'CppIndiaCon', path: '/conference' }, { label: 'Tech Help' }],
+        },
+      },
+      {
+        path: 'conference/2024/networking',
+        name: 'Networking2024',
+        component: () => import('@/views/Conference/NetworkingView.vue'),
+        meta: {
+          title: 'Networking Guide — CppIndiaCon 2024 | CppIndia',
+          description: 'How to network at CppIndiaCon 2024 via Discord — channels, Q&A stage, and networking tables.',
+          breadcrumb: [{ label: 'CppIndiaCon', path: '/conference' }, { label: 'Networking' }],
+        },
+      },
     ],
   },
   {
