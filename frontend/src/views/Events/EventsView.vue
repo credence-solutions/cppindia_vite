@@ -66,7 +66,7 @@
               style="background: var(--gradient-btn);">Register Free</a>
             <a v-if="event.recordingUrl" :href="event.recordingUrl" target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 whitespace-nowrap"
-              style="background:#FF0000; color:white;">Watch Recording</a>
+              style="background:var(--color-youtube); color:white;">Watch Recording</a>
             <div v-if="event.status === 'upcoming'" class="flex items-center gap-2">
               <a :href="calendarUrl(event)" target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 whitespace-nowrap"
@@ -104,6 +104,7 @@ import { ref, computed } from 'vue'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import eventsData from '@/data/events.json'
+import { SITE } from '@/constants'
 
 useHead({
   title: 'Events | CppIndia',
@@ -148,7 +149,7 @@ function icalUrl(event) {
   const dateStr   = event.date.replace(/-/g, '')
   const startTime = parseTime(event.time)
   const endTime   = event.endTime ? event.endTime.replace(':', '') : addOneHour(startTime)
-  const uid       = `${event.id}@cppindia.co.in`
+  const uid       = `${event.id}@${SITE.url.replace(/^https?:\/\/(www\.)?/, '')}`
   const ics = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',

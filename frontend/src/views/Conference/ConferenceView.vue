@@ -225,7 +225,7 @@
                             :href="session.videoUrl"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="flex items-center gap-1 px-2 py-px rounded text-[10px] font-bold bg-[#FF0000] text-white hover:bg-[#cc0000] transition-colors"
+                            class="flex items-center gap-1 px-2 py-px rounded text-[10px] font-bold bg-[var(--color-youtube)] text-white hover:bg-[var(--color-youtube-hover)] transition-colors"
                             :aria-label="`Watch: ${session.title}`"
                           >
                             <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -270,7 +270,7 @@
                     loading="lazy"
                   />
                   <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30">
-                    <div class="w-11 h-11 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
+                    <div class="w-11 h-11 rounded-full bg-[var(--color-youtube)] flex items-center justify-center shadow-lg">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     </div>
                   </div>
@@ -375,7 +375,7 @@
                         aria-label="Website"
                         class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
                         style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
-                        onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                        onmouseover="this.style.background='var(--gradient-btn)'; this.style.color='white'"
                         onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
                       >
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
@@ -387,7 +387,7 @@
                         aria-label="LinkedIn"
                         class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
                         style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
-                        onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                        onmouseover="this.style.background='var(--gradient-btn)'; this.style.color='white'"
                         onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
                       >
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -399,7 +399,7 @@
                         aria-label="Twitter"
                         class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
                         style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
-                        onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                        onmouseover="this.style.background='var(--gradient-btn)'; this.style.color='white'"
                         onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
                       >
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.5 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
@@ -411,7 +411,7 @@
                         aria-label="GitHub"
                         class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
                         style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
-                        onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                        onmouseover="this.style.background='var(--gradient-btn)'; this.style.color='white'"
                         onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
                       >
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -423,7 +423,7 @@
                         aria-label="YouTube"
                         class="w-8 h-8 flex items-center justify-center rounded-md transition-all duration-150"
                         style="background: rgba(8,145,178,0.08); color: var(--color-text-muted);"
-                        onmouseover="this.style.background='linear-gradient(135deg,#2563EB,#0891B2)'; this.style.color='white'"
+                        onmouseover="this.style.background='var(--gradient-btn)'; this.style.color='white'"
                         onmouseout="this.style.background='rgba(8,145,178,0.08)'; this.style.color='var(--color-text-muted)'"
                       >
                         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>

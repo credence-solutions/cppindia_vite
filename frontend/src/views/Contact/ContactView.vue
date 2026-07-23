@@ -27,11 +27,11 @@
                 </div>
               </a>
               <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
-                class="flex items-center gap-4 px-5 py-4 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-[#5865F2]/40 hover:shadow-sm group">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[#5865F2] shadow-sm" v-html="IconDiscordSvg" />
+                class="flex items-center gap-4 px-5 py-4 bg-surface border border-wire-light rounded-xl transition-all duration-150 hover:border-[var(--color-discord)]/40 hover:shadow-sm group">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-white bg-[var(--color-discord)] shadow-sm" v-html="IconDiscordSvg" />
                 <div>
                   <p class="text-xs font-semibold uppercase tracking-wide text-ink-3 mb-0.5">Discord Community</p>
-                  <p class="text-sm font-semibold text-ink group-hover:text-[#5865F2] transition-colors">Join our server</p>
+                  <p class="text-sm font-semibold text-ink group-hover:text-[var(--color-discord)] transition-colors">Join our server</p>
                   <p class="text-xs text-ink-3 mt-0.5">Chat with the community in real time</p>
                 </div>
               </a>
@@ -216,11 +216,11 @@ const form   = reactive({ name: '', email: '', subject: '', message: '' })
 const status = ref(null)
 
 function handleSubmit() {
-  const subject = encodeURIComponent(`[CppIndia Contact] ${form.subject}`)
+  const subject = encodeURIComponent(`[${SITE.name} Contact] ${form.subject}`)
   const body    = encodeURIComponent(
     `Name: ${form.name}\nEmail: ${form.email}\nSubject: ${form.subject}\n\nMessage:\n${form.message}`
   )
-  window.location.href = `mailto:info@cppindia.co.in?subject=${subject}&body=${body}`
+  window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`
   status.value = 'success'
   Object.keys(form).forEach((k) => { form[k] = '' })
 }

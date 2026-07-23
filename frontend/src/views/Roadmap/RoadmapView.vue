@@ -74,7 +74,7 @@
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Ask in our Discord — the community is here to help, from absolute beginners to experts.</p>
         <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-          style="background:#5865F2;">Get Help on Discord</a>
+          style="background:var(--color-discord);">Get Help on Discord</a>
       </div>
 
     </div>
@@ -121,7 +121,7 @@ const roadmap = {
       resources: [
         { name: 'A Tour of C++ (Stroustrup)', url: 'https://www.stroustrup.com/tour3.html' },
         { name: 'learncpp.com', url: 'https://www.learncpp.com' },
-        { name: 'CppIndia YouTube', url: 'https://www.youtube.com/channel/UCwB-WjSJI2D97YZcACFxJDw' },
+        { name: 'CppIndia YouTube', url: SITE.social.youtube },
       ],
     },
     {

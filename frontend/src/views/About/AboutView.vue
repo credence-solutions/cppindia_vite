@@ -140,7 +140,7 @@
               </ul>
             </div>
 
-            <div class="rounded-xl p-6" style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 24px rgba(8,145,178,0.3);">
+            <div class="rounded-xl p-6" style="background: var(--gradient-btn); box-shadow: 0 0 24px rgba(8,145,178,0.3);">
               <h3 class="font-display text-base font-bold text-white mb-4">Join the Community</h3>
               <p class="text-sm leading-relaxed mb-4" style="color: rgba(255,255,255,0.75);">Chat with fellow C++ developers on Discord.</p>
               <a

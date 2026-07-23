@@ -65,7 +65,7 @@
 
           <!-- Submit CTA -->
           <a
-            href="https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/issues"
+            :href="`${SITE.social.github}/issues`"
             target="_blank" rel="noopener noreferrer"
             class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-150"
             style="background:rgba(8,145,178,0.07); border:1px solid rgba(8,145,178,0.2);"
@@ -158,6 +158,7 @@ import cpp from 'shiki/langs/cpp.mjs'
 import githubDark from 'shiki/themes/github-dark.mjs'
 import PageHero from '@/components/common/PageHero.vue'
 import snippetsData from '@/data/snippets.json'
+import { SITE } from '@/constants'
 
 useHead({
   title: 'C++ Playground | CppIndia',

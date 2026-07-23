@@ -138,7 +138,7 @@
             >
               <div
                 class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                :style="talk.video ? 'background:#FF0000;' : 'background:rgba(148,163,184,0.1);'"
+                :style="talk.video ? 'background:var(--color-youtube);' : 'background:rgba(148,163,184,0.1);'"
               >
                 <svg v-if="talk.video" width="11" height="11" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <svg v-else width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(148,163,184,0.5)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>

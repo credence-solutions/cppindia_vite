@@ -99,7 +99,7 @@
           <p class="font-semibold" style="color:var(--color-text);">Hiring C++ engineers?</p>
           <p class="text-sm mt-0.5" style="color:var(--color-text-secondary);">Reach 1,000+ C++ developers in India. Post a job or become a sponsor.</p>
         </div>
-        <a href="mailto:info@cppindia.co.in"
+        <a :href="`mailto:${SITE.email}`"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm flex-shrink-0"
           style="background:rgba(234,179,8,0.12); color:#EAB308; border:1px solid rgba(234,179,8,0.3);">Post a Job Listing</a>
       </div>
@@ -115,6 +115,7 @@ import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import SearchBar from '@/components/common/SearchBar.vue'
 import jobsData from '@/data/jobs.json'
+import { SITE } from '@/constants'
 
 useHead({
   title: 'C++ Jobs Board | CppIndia',

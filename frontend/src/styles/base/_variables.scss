@@ -116,6 +116,12 @@ $bp-2xl: 1440px;
   --gradient-heading: linear-gradient(100deg, #1D4ED8 0%, #0891B2 50%, #059669 100%);
   --gradient-btn:     linear-gradient(135deg, #2563EB 0%, #0891B2 100%);
 
+  // --- Brand partner colors ---
+  --color-discord:        #5865F2;
+  --color-discord-hover:  #4752C4;
+  --color-youtube:        #FF0000;
+  --color-youtube-hover:  #cc0000;
+
   // --- Glow effects ---
   --glow-primary:   0 0 24px rgba(79, 142, 247, 0.25);
   --glow-secondary: 0 0 24px rgba(8, 145, 178, 0.25);

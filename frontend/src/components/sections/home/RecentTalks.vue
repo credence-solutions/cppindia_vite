@@ -55,7 +55,7 @@
               loading="lazy"
             />
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200" style="background: rgba(7,9,28,0.45);">
-              <div class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 rounded-full bg-[var(--color-youtube)] flex items-center justify-center shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
             </div>
@@ -89,9 +89,9 @@
                 v-if="ytId(talk.video)"
                 :href="talk.video"
                 class="inline-flex items-center gap-2 px-3 py-2 rounded-md text-white text-xs font-semibold transition-all duration-200"
-                style="background: #FF0000;"
-                onmouseover="this.style.background='#cc0000'; this.style.boxShadow='0 0 12px rgba(255,0,0,0.4)'"
-                onmouseout="this.style.background='#FF0000'; this.style.boxShadow='none'"
+                style="background: var(--color-youtube);"
+                onmouseover="this.style.background='var(--color-youtube-hover)'; this.style.boxShadow='0 0 12px rgba(255,0,0,0.4)'"
+                onmouseout="this.style.background='var(--color-youtube)'; this.style.boxShadow='none'"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -57,7 +57,7 @@
         <div class="flex flex-wrap gap-3 justify-center">
           <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-            style="background: #5865F2;">Join Discord</a>
+            style="background: var(--color-discord);">Join Discord</a>
           <RouterLink to="/contact"
             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200"
             style="border: 1px solid rgba(8,145,178,0.3); color: var(--color-primary-soft);">Contact Us</RouterLink>

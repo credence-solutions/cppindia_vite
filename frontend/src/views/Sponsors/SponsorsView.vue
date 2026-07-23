@@ -73,7 +73,7 @@
             </li>
           </ul>
 
-          <a href="mailto:info@cppindia.co.in?subject=Sponsorship%20Enquiry%20—%20{{ tier.name }}%20Tier"
+          <a :href="`mailto:${SITE.email}?subject=Sponsorship%20Enquiry%20—%20${encodeURIComponent(tier.name)}%20Tier`"
             class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200"
             :style="tier.featured
               ? `background:${tierStyle(tier.id).badge}; color:${tierStyle(tier.id).text}; border:1px solid ${tierStyle(tier.id).border};`
@@ -87,7 +87,7 @@
       <!-- Comparison note -->
       <p class="text-center text-xs mb-16" style="color:var(--color-text-muted);">
         Custom packages available for unique goals and budgets.
-        <a href="mailto:info@cppindia.co.in" class="underline ml-1" style="color:var(--color-primary-soft);">Contact us to discuss.</a>
+        <a :href="`mailto:${SITE.email}`" class="underline ml-1" style="color:var(--color-primary-soft);">Contact us to discuss.</a>
       </p>
 
       <!-- Past sponsors by year -->
@@ -133,11 +133,11 @@
         <h3 class="font-display font-bold text-xl mb-2" style="color:var(--color-text);">Ready to partner with CppIndia?</h3>
         <p class="text-sm mb-6 mx-auto" style="color:var(--color-text-secondary); max-width:500px;">We'll customise a package for your budget and goals. Get in touch and we'll respond within 2 business days.</p>
         <div class="flex flex-wrap items-center justify-center gap-3">
-          <a href="mailto:info@cppindia.co.in"
+          <a :href="`mailto:${SITE.email}`"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
             style="background: var(--gradient-btn);">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email info@cppindia.co.in
+            Email {{ SITE.email }}
           </a>
           <RouterLink to="/press"
             class="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-semibold text-sm transition-all duration-200"
@@ -160,6 +160,7 @@ import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import sponsorsData from '@/data/sponsors.json'
 import sponsorship from '@/data/sponsorship.json'
+import { SITE } from '@/constants'
 
 useHead({
   title: 'Become a Sponsor | CppIndia',

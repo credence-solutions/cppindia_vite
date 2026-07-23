@@ -83,7 +83,7 @@
               />
               <!-- Play overlay -->
               <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/30">
-                <div class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center shadow-lg">
+                <div class="w-12 h-12 rounded-full bg-[var(--color-youtube)] flex items-center justify-center shadow-lg">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 </div>
               </div>
@@ -120,7 +120,7 @@
                 <a
                   v-if="talk.video && ytId(talk.video)"
                   :href="talk.video"
-                  class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-[#FF0000] text-white hover:bg-[#cc0000] transition-colors"
+                  class="flex items-center gap-1 px-3 py-2 rounded-md text-xs font-semibold bg-[var(--color-youtube)] text-white hover:bg-[var(--color-youtube-hover)] transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

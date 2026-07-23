@@ -25,7 +25,7 @@
           <a
             :href="SITE.discordInvite"
             class="btn btn--lg inline-flex items-center gap-2 font-semibold text-white transition-all duration-200"
-            style="background: #5865F2; border-color: #5865F2; box-shadow: 0 0 20px rgba(88,101,242,0.4);"
+            style="background: var(--color-discord); border-color: var(--color-discord); box-shadow: 0 0 20px rgba(88,101,242,0.4);"
             onmouseover="this.style.boxShadow='0 0 30px rgba(88,101,242,0.65)'"
             onmouseout="this.style.boxShadow='0 0 20px rgba(88,101,242,0.4)'"
             target="_blank"

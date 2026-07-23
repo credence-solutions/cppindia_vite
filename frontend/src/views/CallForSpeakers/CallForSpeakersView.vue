@@ -154,11 +154,11 @@ const form      = reactive({ name: '', email: '', title: '', abstract: '', bio: 
 const submitted = ref(false)
 
 function submit() {
-  const subject = encodeURIComponent(`[CppIndia CFP] ${form.title}`)
+  const subject = encodeURIComponent(`[${SITE.name} CFP] ${form.title}`)
   const body    = encodeURIComponent(
     `Talk Proposal\n${'─'.repeat(40)}\nName:     ${form.name}\nEmail:    ${form.email}\nTitle:    ${form.title}\n\nAbstract:\n${form.abstract}${form.bio ? `\n\nBio:\n${form.bio}` : ''}`
   )
-  window.location.href = `mailto:info@cppindia.co.in?subject=${subject}&body=${body}`
+  window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`
   submitted.value = true
   Object.keys(form).forEach((k) => { form[k] = '' })
 }

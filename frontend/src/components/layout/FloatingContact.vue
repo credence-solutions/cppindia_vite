@@ -28,7 +28,7 @@
           <a
             :href="SITE.discordInvite"
             class="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium transition-all duration-fast"
-            style="background:rgba(88,101,242,0.1);color:#5865F2;"
+            style="background:rgba(88,101,242,0.1);color:var(--color-discord);"
             target="_blank"
             rel="noopener noreferrer"
             @click="open = false"
@@ -69,7 +69,7 @@
         </svg>
       </Transition>
       <span v-if="!open"
-        class="absolute -top-1 -right-1 px-[5px] py-[2px] rounded-full bg-[#5865F2] text-white text-[9px] font-bold tracking-[0.04em]"
+        class="absolute -top-1 -right-1 px-[5px] py-[2px] rounded-full bg-[var(--color-discord)] text-white text-[9px] font-bold tracking-[0.04em]"
         aria-hidden="true">
         Join
       </span>

@@ -23,7 +23,7 @@
             <RouterLink
               to="/about"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-              style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
+              style="background: var(--gradient-btn); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
               onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
               onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
             >Learn More</RouterLink>

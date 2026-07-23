@@ -73,7 +73,7 @@
       <div class="mt-10 sm:mt-14 rounded-2xl p-5 sm:p-8 text-center" style="background: linear-gradient(135deg, rgba(8,145,178,0.1), rgba(52,211,153,0.05)); border:1px solid rgba(8,145,178,0.25);">
         <p class="font-display font-bold text-lg mb-2" style="color:var(--color-text);">Want to write for CppIndia?</p>
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Share a tutorial, trip report, or C++ insight with 1,000+ readers. We welcome all levels.</p>
-        <a href="mailto:info@cppindia.co.in"
+        <a :href="`mailto:${SITE.email}`"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
           style="background: var(--gradient-btn);">Submit an Article</a>
       </div>
@@ -89,6 +89,7 @@ import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import NewsletterSignup from '@/components/common/NewsletterSignup.vue'
 import blogData from '@/data/blog.json'
+import { SITE } from '@/constants'
 
 useHead({
   title: 'Blog & Articles | CppIndia',

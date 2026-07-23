@@ -33,7 +33,7 @@
               <span class="font-bold">{{ year }}</span>
               <span v-if="year === 2024"
                 class="px-1.5 py-[1px] rounded-full text-white text-[10px] font-bold"
-                style="background: linear-gradient(135deg, #2563EB, #0891B2);">
+                style="background: var(--gradient-btn);">
                 Latest
               </span>
             </RouterLink>
@@ -42,7 +42,7 @@
           <RouterLink
             to="/conference?year=2024"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-            style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
+            style="background: var(--gradient-btn); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
             onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
             onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
           >View CppIndiaCon 2024</RouterLink>
@@ -112,7 +112,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="w-full text-center justify-center inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
-            style="background: linear-gradient(135deg, #2563EB 0%, #0891B2 100%); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
+            style="background: var(--gradient-btn); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
             onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
             onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
           >

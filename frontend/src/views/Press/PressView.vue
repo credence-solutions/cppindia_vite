@@ -137,11 +137,11 @@
           <p class="font-display font-bold text-base mb-1" style="color:var(--color-text);">Press & Media Enquiries</p>
           <p class="text-sm" style="color:var(--color-text-secondary);">
             For interviews, press coverage, or partnership questions, reach us at
-            <a href="mailto:info@cppindia.co.in" class="underline" style="color:var(--color-primary-soft);">info@cppindia.co.in</a>.
+            <a :href="`mailto:${SITE.email}`" class="underline" style="color:var(--color-primary-soft);">{{ SITE.email }}</a>.
             We typically respond within 2 business days.
           </p>
         </div>
-        <a href="mailto:info@cppindia.co.in?subject=Press%20Enquiry%20—%20CppIndia"
+        <a :href="`mailto:${SITE.email}?subject=Press%20Enquiry%20—%20${encodeURIComponent(SITE.name)}`"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white flex-shrink-0"
           style="background: var(--gradient-btn);">
           Contact Press Team

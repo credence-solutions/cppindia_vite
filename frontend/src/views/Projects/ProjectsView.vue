@@ -76,7 +76,7 @@
         <p class="text-sm mb-5" style="color:var(--color-text-secondary);">Share it on our Discord and we'll feature it here for the community.</p>
         <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white"
-          style="background:#5865F2;">Share on Discord</a>
+          style="background:var(--color-discord);">Share on Discord</a>
       </div>
     </div>
   </section>
