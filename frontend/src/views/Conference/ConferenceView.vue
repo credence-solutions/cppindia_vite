@@ -10,12 +10,8 @@
     <section class="section--sm">
       <div class="container">
 
-        <!-- Year tabs + search -->
-        <div class="flex items-start justify-between gap-4 flex-wrap mb-10 pb-4 border-b border-wire-light">
-        <div
-          class="flex items-center flex-wrap gap-2"
-          role="tablist"
-        >
+        <!-- Year tabs -->
+        <div class="flex items-center flex-wrap gap-2 mb-10 pb-4 border-b border-wire-light" role="tablist">
           <button
             v-for="yr in years"
             :key="yr"
@@ -33,10 +29,6 @@
               class="px-1.5 py-px bg-white/20 rounded-full text-[10px] font-bold"
             >Latest</span>
           </button>
-        </div>
-          <div class="w-full sm:w-72">
-            <SearchBar v-model="scheduleQuery" placeholder="Search sessions, speakers…" />
-          </div>
         </div>
 
         <!-- Growth strip -->
@@ -121,31 +113,16 @@
 
           <p class="text-base text-ink-2 leading-relaxed mb-10">{{ conf.description }}</p>
 
-          <!-- Stats strip -->
-          <div
-            v-if="conf.stats"
-            class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-12 p-6 bg-surface border border-wire-light rounded-2xl"
-          >
-            <div class="text-center p-4 rounded-lg bg-surface-alt">
-              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.registrations }}</span>
-              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Registrations</span>
-            </div>
-            <div class="text-center p-4 rounded-lg bg-surface-alt">
-              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.day1Attendees }}</span>
-              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Day 1 Attendees</span>
-            </div>
-            <div class="text-center p-4 rounded-lg bg-surface-alt">
-              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.day2Attendees }}</span>
-              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Day 2 Attendees</span>
-            </div>
-            <div class="text-center p-4 rounded-lg bg-surface-alt">
-              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.talkProposals }}+</span>
-              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Talk Proposals</span>
-            </div>
-            <div class="text-center p-4 rounded-lg bg-surface-alt">
-              <span class="block font-display text-3xl font-extrabold text-primary leading-none mb-2">{{ conf.stats.volunteers }}</span>
-              <span class="text-xs text-ink-3 uppercase tracking-[0.06em]">Volunteers</span>
-            </div>
+          <!-- Search -->
+          <div class="mb-6">
+            <SearchBar v-model="scheduleQuery" placeholder="Search sessions, speakers…" />
+            <p v-if="scheduleQuery" class="text-xs mt-2" style="color: var(--color-text-muted);">
+              <span v-if="filteredSpeakers.length || filteredSessionCount">
+                {{ filteredSpeakers.length }} speaker{{ filteredSpeakers.length !== 1 ? 's' : '' }},
+                {{ filteredSessionCount }} session{{ filteredSessionCount !== 1 ? 's' : '' }}
+              </span>
+              <span v-else>No results for "<span style="color: var(--color-text);">{{ scheduleQuery }}</span>"</span>
+            </p>
           </div>
 
           <!-- Speakers -->
@@ -183,12 +160,8 @@
 
           <!-- Schedule -->
           <div v-if="conf.schedule?.length" class="mb-12">
-            <div class="flex items-center justify-between gap-4 mb-6 pb-3 border-b-2 border-wire-light flex-wrap">
+            <div class="mb-6 pb-3 border-b-2 border-wire-light">
               <h3 class="font-display text-xl font-bold text-ink">Conference Schedule</h3>
-              <p v-if="scheduleQuery" class="text-xs text-ink-3">
-                {{ filteredSessionCount }} session{{ filteredSessionCount !== 1 ? 's' : '' }}, {{ filteredSpeakers.length }} speaker{{ filteredSpeakers.length !== 1 ? 's' : '' }} match
-                "<span class="text-ink font-medium">{{ scheduleQuery }}</span>"
-              </p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div
