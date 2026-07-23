@@ -70,7 +70,7 @@
             <a
               v-if="ytId(talk.video)"
               :href="talk.video"
-              class="block relative aspect-video overflow-hidden bg-black group"
+              class="block relative aspect-video overflow-hidden group" style="background: linear-gradient(135deg,#0D1B2A,#0F2336);"
               target="_blank"
               rel="noopener noreferrer"
               :aria-label="`Watch: ${talk.title}`"

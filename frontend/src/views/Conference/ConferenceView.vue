@@ -200,7 +200,7 @@
                 rel="noopener noreferrer"
                 class="group flex flex-col bg-surface border border-wire-light rounded-xl overflow-hidden hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
               >
-                <div class="relative aspect-video overflow-hidden bg-black">
+                <div class="relative aspect-video overflow-hidden" style="background: linear-gradient(135deg,#0D1B2A,#0F2336);">
                   <img
                     :src="`https://img.youtube.com/vi/${ytId(sv.videoUrl)}/mqdefault.jpg`"
                     :alt="sv.title"

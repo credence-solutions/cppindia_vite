@@ -23,14 +23,14 @@
       <!-- Table -->
       <div class="rounded-2xl overflow-hidden" style="border: 1px solid var(--card-border);">
         <div class="overflow-x-auto">
-          <table class="w-full text-sm" style="min-width:600px;">
+          <table class="w-full text-sm">
             <thead>
               <tr style="background: var(--color-surface-alt); border-bottom: 1px solid var(--color-border);">
                 <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:var(--color-text-muted);">Conference</th>
                 <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:var(--color-text-muted);">CFP Deadline</th>
                 <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider hidden md:table-cell" style="color:var(--color-text-muted);">Event Date</th>
                 <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider hidden sm:table-cell" style="color:var(--color-text-muted);">Location</th>
-                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider" style="color:var(--color-text-muted);">Status</th>
+                <th class="text-left px-5 py-3 font-semibold text-xs uppercase tracking-wider hidden sm:table-cell" style="color:var(--color-text-muted);">Status</th>
                 <th class="px-5 py-3"></th>
               </tr>
             </thead>
@@ -66,7 +66,7 @@
                   </span>
                   <span v-else>{{ cfp.location }}</span>
                 </td>
-                <td class="px-5 py-4">
+                <td class="px-5 py-4 hidden sm:table-cell">
                   <span class="text-[11px] font-bold px-2 py-0.5 rounded-full"
                     :style="statusStyle(cfp.status)">{{ cfp.status }}</span>
                 </td>

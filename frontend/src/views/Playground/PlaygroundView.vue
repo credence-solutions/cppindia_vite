@@ -8,10 +8,10 @@
 
   <section class="section--sm" style="background: var(--emphasis-bg); min-height: 70vh;">
     <div class="container">
-      <div class="flex flex-col lg:flex-row gap-6" style="min-height: 600px;">
+      <div class="flex flex-col md:flex-row gap-6" style="min-height: 600px;">
 
         <!-- Snippet sidebar -->
-        <aside class="lg:w-72 flex-shrink-0 flex flex-col gap-3">
+        <aside class="md:w-64 flex-shrink-0 flex flex-col gap-3">
           <div class="rounded-2xl overflow-hidden" style="background: var(--card-bg); border: 1px solid var(--card-border);">
             <!-- Standard filter -->
             <div class="flex gap-1 p-2 flex-wrap" style="border-bottom: 1px solid var(--color-border);">

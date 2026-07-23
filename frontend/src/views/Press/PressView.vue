@@ -58,7 +58,7 @@
           <!-- Logo on dark -->
           <div class="flex flex-col gap-3 p-5 rounded-xl"
             style="background:var(--card-bg); border:1px solid var(--card-border);">
-            <div class="flex items-center justify-center h-24 rounded-lg" style="background:#0B1929;">
+            <div class="flex items-center justify-center h-24 rounded-lg" style="background:#0B1929; border: 1px solid rgba(255,255,255,0.1);">
               <img src="/assets/images/logo.png" alt="CppIndia Logo on Dark" class="h-14 w-auto object-contain" />
             </div>
             <p class="text-xs font-semibold text-center" style="color:var(--color-text);">Logo on Dark</p>
