@@ -19,29 +19,29 @@
       </div>
 
       <!-- Grid -->
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <article
           v-for="member in displayMembers"
           :key="member.id"
-          class="rounded-2xl p-6 flex flex-col gap-4 transition-all duration-200 cursor-pointer"
+          class="rounded-xl p-4 flex flex-col gap-3 transition-all duration-200 cursor-pointer"
           style="background: var(--card-bg); border: 1px solid var(--card-border);"
           onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.boxShadow='0 0 24px rgba(8,145,178,0.12)'; this.style.transform='translateY(-3px)'"
           onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'; this.style.transform='translateY(0)'"
           @click="openBioPopup(member)"
         >
           <!-- Avatar -->
-          <div class="flex items-center gap-4">
+          <div class="flex items-center gap-3">
             <img v-if="member.avatar" :src="assetPath(member.avatar)" :alt="member.name"
-              class="w-14 h-14 rounded-full object-cover flex-shrink-0"
+              class="w-11 h-11 rounded-full object-cover flex-shrink-0"
               :style="`border: 2px solid ${badgeMap[member.badge].border};`"
               @error="e => e.target.style.display='none'"
             />
-            <div v-else class="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 font-display font-bold text-lg"
+            <div v-else class="w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 font-display font-bold text-base"
               :style="`background: ${badgeMap[member.badge].avatarBg}; color: ${badgeMap[member.badge].color};`">
               {{ member.emoji || member.name.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>
-              <h3 class="font-display font-bold text-base" style="color: var(--card-text);">{{ member.name }}</h3>
+              <h3 class="font-display font-bold text-sm" style="color: var(--card-text);">{{ member.name }}</h3>
               <p class="text-xs" style="color: var(--card-text-muted);">{{ member.city }}</p>
             </div>
           </div>
@@ -56,7 +56,7 @@
             >{{ b }}</span>
           </div>
 
-          <p class="text-sm flex-1" style="color: var(--card-text-muted);">{{ member.bio }}</p>
+          <p class="text-xs flex-1" style="color: var(--card-text-muted);">{{ member.bio }}</p>
 
           <!-- Inline recent talks -->
           <div v-if="member.talks > 0" class="flex flex-col gap-1.5">
