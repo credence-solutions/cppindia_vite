@@ -158,23 +158,6 @@
 
 .focus-visible:focus-visible { @include focus-ring; }
 
-// Skip to main content link
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: 1rem;
-  z-index: var(--z-toast);
-  padding: var(--space-3) var(--space-6);
-  background: var(--color-primary);
-  color: white;
-  border-radius: var(--radius-md);
-  font-weight: var(--weight-semibold);
-  transition: top var(--transition-fast);
-
-  &:focus {
-    top: 1rem;
-  }
-}
 
 // -----------------------------------------------------------------------------
 // TRUNCATION
