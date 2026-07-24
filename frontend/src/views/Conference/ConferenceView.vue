@@ -234,7 +234,7 @@
                 <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="closeSpeaker" />
 
                 <!-- Panel -->
-                <div class="relative bg-surface rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto z-10"
+                <div class="relative bg-surface rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col z-10"
                   style="border: 1px solid rgba(8,145,178,0.25);">
 
                   <!-- Close -->
@@ -247,7 +247,7 @@
                   </button>
 
                   <!-- Header -->
-                  <div class="flex items-center gap-5 p-6 pb-4 border-b border-wire-light">
+                  <div class="flex items-center gap-5 p-6 pb-4 border-b border-wire-light flex-shrink-0">
                     <div class="speaker-photo-wrap flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden" style="width:80px;height:80px;">
                       <span class="speaker-photo-wrap__initial text-2xl">{{ selectedSpeaker.name.charAt(0) }}</span>
                       <img
@@ -274,7 +274,7 @@
                   </div>
 
                   <!-- Body -->
-                  <div class="p-6 space-y-5">
+                  <div class="p-6 space-y-5 overflow-y-auto">
                     <!-- Intro from website -->
                     <div v-if="fullSpeaker(selectedSpeaker)?.intro">
                       <p class="text-sm text-ink leading-relaxed">{{ fullSpeaker(selectedSpeaker).intro }}</p>
