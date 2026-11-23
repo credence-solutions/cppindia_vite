@@ -12,6 +12,15 @@
   ],
   "2024": [
     {
+      "id": "2024-05-11",
+      "date": "2024-05-11",
+      "speaker": "Ankur Satle",
+      "title": "Recursive Static Types for Expression Evaluation",
+      "video": "https://youtu.be/EnKzqizqsk4",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/05-11/",
+      "tags": ["Templates", "Metaprogramming", "Modern C++"]
+    },
+    {
       "id": "2024-02-03",
       "date": "2024-02-03",
       "speaker": "Karan Banthia",
@@ -48,6 +57,15 @@
       "video": "https://youtu.be/2dE-lYWac1I",
       "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/03-25/",
       "tags": ["Design Patterns", "Modern C++", "Best Practices"]
+    },
+    {
+      "id": "2023-03-11",
+      "date": "2023-03-11",
+      "speaker": "Mahendra Garodi",
+      "title": "C++ Constants: The ‘const’ly Evolving Story",
+      "video": null,
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/03-11",
+      "tags": ["const", "constexpr", "Modern C++"]
     },
     {
       "id": "2023-01-21",
@@ -88,6 +106,15 @@
       "tags": ["C++20", "Comparisons", "Modern C++"]
     },
     {
+      "id": "2022-11-12",
+      "date": "2022-11-12",
+      "speaker": "Ratnesh Tiwari",
+      "title": "Insight of Lambda",
+      "video": "https://youtu.be/qyfRb_4My7w",
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/11-12",
+      "tags": ["Lambdas", "Compilers", "Modern C++"]
+    },
+    {
       "id": "2022-10-15",
       "date": "2022-10-15",
       "speaker": "Darshan Bhat",
@@ -104,6 +131,15 @@
       "video": "https://youtu.be/6kfR4DDCMpg",
       "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/10-01",
       "tags": ["OOP", "Design Patterns", "Classes"]
+    },
+    {
+      "id": "2022-09-17",
+      "date": "2022-09-17",
+      "speaker": "Hemil Ruparel",
+      "title": "How to Create Your Own Programming Language",
+      "video": null,
+      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/09-17",
+      "tags": ["Compilers", "Language Design"]
     },
     {
       "id": "2022-06-18",
@@ -203,6 +239,15 @@
       "video": "https://youtu.be/TtGqJ20_cuw",
       "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/5474ba791af84ee2b5abcd955849cb01cc91c0fb/2022/02-26/Lets_have_a_SOLID_start_HoneySukesan_CppIndia_26Feb2022.pdf",
       "tags": ["Design Patterns", "SOLID", "Best Practices"]
+    },
+    {
+      "id": "2022-02-12",
+      "date": "2022-02-12",
+      "speaker": "Oliver Esser",
+      "title": "Async in C++",
+      "video": "https://youtu.be/MFpWGC7AAO0",
+      "slides": null,
+      "tags": ["Concurrency", "Async", "Modern C++"]
     },
     {
       "id": "2022-01-29",
