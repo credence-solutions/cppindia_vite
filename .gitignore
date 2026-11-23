@@ -13,3 +13,4 @@ dist/
 
 # Release artifacts
 release/output/
+.superpowers/
