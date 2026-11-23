@@ -72,7 +72,7 @@
 
           <!-- Conference banner -->
           <div v-if="conf.banner" class="conf-banner-wrap">
-            <img :src="conf.banner" :alt="conf.name + ' banner'" class="conf-banner-img" />
+            <img :src="assetPath(conf.banner)" :alt="conf.name + ' banner'" class="conf-banner-img" />
           </div>
 
           <p class="text-base text-ink-2 leading-relaxed mb-10">{{ conf.description }}</p>

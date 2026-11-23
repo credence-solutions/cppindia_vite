@@ -17,7 +17,7 @@
           <div class="flex-shrink-0">
             <img
               v-if="primaryEntry.image"
-              :src="primaryEntry.image"
+              :src="assetPath(primaryEntry.image)"
               :alt="primaryEntry.name"
               class="w-36 h-36 rounded-2xl object-cover"
               style="border: 2px solid rgba(8,145,178,0.3);"
@@ -182,6 +182,9 @@ import PageHero from '@/components/common/PageHero.vue'
 import speakersData from '@/data/speakers.json'
 import talksData from '@/data/talks.json'
 import conferencesData from '@/data/conferences.json'
+import { useAssetPath } from '@/composables/useAssetPath'
+
+const { assetPath } = useAssetPath()
 
 const route = useRoute()
 const slug  = computed(() => route.params.slug)

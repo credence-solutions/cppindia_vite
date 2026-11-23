@@ -42,7 +42,7 @@
             style="background:var(--card-bg); border:1px solid var(--card-border);">
             <div class="flex items-center justify-center h-24 rounded-lg"
               style="background:rgba(8,145,178,0.06); border:1px dashed rgba(8,145,178,0.2);">
-              <img src="/assets/images/logo.png" alt="CppIndia Logo" class="h-14 w-auto object-contain" />
+              <img :src="assetPath('/assets/images/logo.png')" alt="CppIndia Logo" class="h-14 w-auto object-contain" />
             </div>
             <p class="text-xs font-semibold text-center" style="color:var(--color-text);">Primary Logo</p>
             <a href="/assets/images/logo.png" download="cppindia-logo.png"
@@ -59,7 +59,7 @@
           <div class="flex flex-col gap-3 p-5 rounded-xl"
             style="background:var(--card-bg); border:1px solid var(--card-border);">
             <div class="flex items-center justify-center h-24 rounded-lg" style="background:#0B1929; border: 1px solid rgba(255,255,255,0.1);">
-              <img src="/assets/images/logo.png" alt="CppIndia Logo on Dark" class="h-14 w-auto object-contain" />
+              <img :src="assetPath('/assets/images/logo.png')" alt="CppIndia Logo on Dark" class="h-14 w-auto object-contain" />
             </div>
             <p class="text-xs font-semibold text-center" style="color:var(--color-text);">Logo on Dark</p>
             <a href="/assets/images/logo.png" download="cppindia-logo.png"
@@ -157,6 +157,9 @@
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import { SITE } from '@/constants'
+import { useAssetPath } from '@/composables/useAssetPath'
+
+const { assetPath } = useAssetPath()
 
 useHead({
   title: 'Press & Media Kit | CppIndia',

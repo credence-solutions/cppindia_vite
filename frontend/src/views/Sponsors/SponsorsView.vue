@@ -109,7 +109,7 @@
               onmouseover="this.style.borderColor='rgba(234,179,8,0.7)'; this.style.boxShadow='0 0 16px rgba(234,179,8,0.12)'"
               onmouseout="this.style.borderColor='rgba(234,179,8,0.35)'; this.style.boxShadow='none'"
             >
-              <img v-if="s.logo" :src="s.logo" :alt="s.name" class="h-6 w-auto object-contain"
+              <img v-if="s.logo" :src="assetPath(s.logo)" :alt="s.name" class="h-6 w-auto object-contain"
                 @error="e => { e.target.style.display='none'; e.target.nextElementSibling.style.display='block'; }" />
               <span :style="s.logo ? 'display:none; color:#B45309;' : 'color:#B45309;'" class="font-bold text-sm">{{ s.name }}</span>
             </a>
@@ -121,7 +121,7 @@
               onmouseover="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.boxShadow='0 0 12px rgba(8,145,178,0.08)'"
               onmouseout="this.style.borderColor='var(--card-border)'; this.style.boxShadow='none'"
             >
-              <img v-if="s.logo" :src="s.logo" :alt="s.name" class="h-5 w-auto object-contain"
+              <img v-if="s.logo" :src="assetPath(s.logo)" :alt="s.name" class="h-5 w-auto object-contain"
                 @error="e => { e.target.style.display='none'; e.target.nextElementSibling.style.display='block'; }" />
               <span :style="s.logo ? 'display:none; color:var(--color-text-secondary);' : 'color:var(--color-text-secondary);'" class="font-medium text-sm">{{ s.name }}</span>
             </a>
@@ -163,6 +163,9 @@ import PageHero from '@/components/common/PageHero.vue'
 import sponsorsData from '@/data/sponsors.json'
 import sponsorship from '@/data/sponsorship.json'
 import { SITE } from '@/constants'
+import { useAssetPath } from '@/composables/useAssetPath'
+
+const { assetPath } = useAssetPath()
 
 useHead({
   title: 'Become a Sponsor | CppIndia',
