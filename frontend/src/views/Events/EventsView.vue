@@ -111,10 +111,18 @@ useHead({
   description: 'Upcoming and past CppIndia meetups, tech talks, and conferences. Add events to your calendar.',
 })
 
-const activeTab = ref('Upcoming')
+// Status comes from the date, not the data file, so events move to "Past"
+// on their own once they're over.
+const today = new Date().toISOString().slice(0, 10)
+const events = eventsData.map(e => ({ ...e, status: e.date >= today ? 'upcoming' : 'past' }))
+
+// Open on "Past" when nothing is scheduled, rather than an empty tab.
+const activeTab = ref(events.some(e => e.status === 'upcoming') ? 'Upcoming' : 'Past')
 
 const filtered = computed(() =>
-  eventsData.filter(e => activeTab.value === 'Upcoming' ? e.status === 'upcoming' : e.status === 'past')
+  activeTab.value === 'Upcoming'
+    ? events.filter(e => e.status === 'upcoming').sort((a, b) => a.date.localeCompare(b.date))
+    : events.filter(e => e.status === 'past').sort((a, b) => b.date.localeCompare(a.date))
 )
 
 function monthStr(d) { return new Date(d).toLocaleDateString('en-IN', { month: 'short' }) }
