@@ -76,6 +76,27 @@ const icsText = (s) =>
     .replace(/,/g, '\\,')
     .replace(/\r?\n/g, '\\n')
 
+// RFC 5545 §3.1: lines are at most 75 octets; continuations start with a space.
+const encoder = new TextEncoder()
+function foldIcsLine(line) {
+  const parts = []
+  let current = ''
+  let size = 0
+  for (const ch of line) {
+    const n = encoder.encode(ch).length
+    const limit = parts.length ? 74 : 75 // continuation lines spend one octet on the space
+    if (size + n > limit) {
+      parts.push(current)
+      current = ''
+      size = 0
+    }
+    current += ch
+    size += n
+  }
+  parts.push(current)
+  return parts.join('\r\n ')
+}
+
 export function buildIcs(event, details) {
   const { allDay, start, end } = calendarRange(event)
   const when = allDay
@@ -96,6 +117,6 @@ export function buildIcs(event, details) {
     'END:VEVENT',
     'END:VCALENDAR',
   ]
-    .map((line) => `${line}\r\n`)
+    .map((line) => `${foldIcsLine(line)}\r\n`)
     .join('')
 }

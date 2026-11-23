@@ -124,6 +124,7 @@ function downloadIcs() {
   a.href = url
   a.download = `${props.talk.id}.ics`
   a.click()
-  URL.revokeObjectURL(url)
+  // Revoking in the same tick can cancel the download in Safari/Firefox.
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 </script>

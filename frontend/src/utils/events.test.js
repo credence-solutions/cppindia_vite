@@ -77,6 +77,16 @@ test('buildIcs produces a timed event with escaped text and CRLF lines', () => {
   assert.ok(!/[^\r]\n/.test(ics), 'every newline is CRLF')
 })
 
+test('buildIcs folds lines longer than 75 octets (RFC 5545)', () => {
+  const details = 'Long abstract — '.repeat(30)
+  const ics = buildIcs(talk, details)
+  for (const line of ics.split('\r\n')) {
+    assert.ok(Buffer.byteLength(line, 'utf8') <= 75, `line too long: ${line.length}`)
+  }
+  // Unfolding (drop CRLF + space) restores the original property value.
+  assert.ok(ics.replace(/\r\n /g, '').includes(`DESCRIPTION:${details}`))
+})
+
 test('buildIcs produces an all-day event when there is no time', () => {
   const ics = buildIcs({ ...talk, time: null, endTime: null }, 'd')
   assert.ok(ics.includes('DTSTART;VALUE=DATE:20270114\r\n'))
