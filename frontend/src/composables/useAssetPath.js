@@ -7,6 +7,7 @@
 export function useAssetPath() {
   function assetPath(path) {
     if (!path) return path
+    if (/^(https?:)?\/\/|^data:/.test(path)) return path // external URLs pass through
     const base = import.meta.env.BASE_URL // e.g. '/' or '/cppindia_vite/'
     const relative = path.startsWith('/') ? path.slice(1) : path
     return `${base}${relative}`
