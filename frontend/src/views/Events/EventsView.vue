@@ -105,6 +105,7 @@ import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import eventsData from '@/data/events.json'
 import { SITE } from '@/constants'
+import { isUpcoming } from '@/utils/events'
 
 useHead({
   title: 'Events | CppIndia',
@@ -112,9 +113,8 @@ useHead({
 })
 
 // Status comes from the date, not the data file, so events move to "Past"
-// on their own once they're over.
-const today = new Date().toISOString().slice(0, 10)
-const events = eventsData.map(e => ({ ...e, status: e.date >= today ? 'upcoming' : 'past' }))
+// on their own once they're over (judged in IST).
+const events = eventsData.map(e => ({ ...e, status: isUpcoming(e) ? 'upcoming' : 'past' }))
 
 // Open on "Past" when nothing is scheduled, rather than an empty tab.
 const activeTab = ref(events.some(e => e.status === 'upcoming') ? 'Upcoming' : 'Past')
