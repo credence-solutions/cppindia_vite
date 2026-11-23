@@ -125,18 +125,27 @@ function formatDate(d) {
 }
 
 // Lightweight markdown → HTML renderer (no external dependency)
+const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
 function renderMarkdown(md) {
+  // Stash code first so its contents (e.g. `<T>`, blank lines, `*ptr`) are
+  // escaped and never touched by the markdown rules below.
+  const stash = []
+  const hold = (html) => `\u0000${stash.push(html) - 1}\u0000`
+
   return md
+    // Code blocks
+    .replace(/```[\w]*\n([\s\S]*?)```/g, (_, code) => hold(`<pre><code>${escapeHtml(code)}</code></pre>`))
+    // Inline code
+    .replace(/`([^`\n]+)`/g, (_, code) => hold(`<code>${escapeHtml(code)}</code>`))
     // Headings
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^# (.+)$/gm, '<h1>$1</h1>')
     // Bold
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    // Inline code
-    .replace(/`([^`\n]+)`/g, '<code>$1</code>')
-    // Code blocks
-    .replace(/```[\w]*\n([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+    // Italic
+    .replace(/(^|[^*\w])\*([^*\n]+)\*(?!\*)/g, '$1<em>$2</em>')
     // Tables (simple)
     .replace(/^\|(.+)\|$/gm, (_, row) => {
       const cells = row.split('|').map(c => c.trim())
@@ -147,7 +156,7 @@ function renderMarkdown(md) {
       if (!rows.length) return m
       const [head, ...body] = rows
       const th = head.replace(/<td>/g, '<th>').replace(/<\/td>/g, '</th>')
-      return `<table><thead>${th}</thead><tbody>${body.join('')}</tbody></table>`
+      return `<div class="table-wrap"><table><thead>${th}</thead><tbody>${body.join('')}</tbody></table></div>`
     })
     // Horizontal rule
     .replace(/^---$/gm, '<hr>')
@@ -161,10 +170,12 @@ function renderMarkdown(md) {
     .map(block => {
       block = block.trim()
       if (!block) return ''
-      if (/^<[h1-6|ul|ol|li|pre|table|hr|blockquote]/.test(block)) return block
+      if (/^<[h1-6|ul|ol|li|pre|table|hr|blockquote]/.test(block) || block.startsWith('<div')) return block
+      if (/^\u0000\d+\u0000$/.test(block) && stash[block.slice(1, -1)].startsWith('<pre>')) return block
       return `<p>${block.replace(/\n/g, '<br>')}</p>`
     })
     .join('\n')
+    .replace(/\u0000(\d+)\u0000/g, (_, i) => stash[i])
 }
 
 const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body) : '')
@@ -208,10 +219,11 @@ const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body)
 }
 .prose-cpp ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
 .prose-cpp li { margin-bottom: 0.4rem; }
+.prose-cpp .table-wrap { overflow-x: auto; margin: 1.5rem 0; }
 .prose-cpp table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5rem 0;
+  margin: 0;
   font-size: 0.9rem;
 }
 .prose-cpp th {
