@@ -103,9 +103,10 @@
 
         </div>
 
-        <!-- ── Right: IDE card ── -->
+        <!-- ── Right: upcoming talk, else IDE card ── -->
         <div class="gsap-reveal-right w-full">
-          <div class="rounded-2xl overflow-hidden" style="
+          <UpcomingTalkCard v-if="upcomingTalk" :talk="upcomingTalk" />
+          <div v-else class="rounded-2xl overflow-hidden" style="
             background: rgba(15,17,45,0.9);
             border:1px solid rgba(8,145,178,0.25);
             backdrop-filter:blur(24px);
@@ -212,8 +213,12 @@ import { useCommunityStats } from '@/composables/useCommunityStats'
 const STATS = useCommunityStats()
 import { useGsap } from '@/composables/useGsap'
 import { useAssetPath } from '@/composables/useAssetPath'
+import { nextUpcomingTalk } from '@/utils/events'
+import eventsData from '@/data/events.json'
+import UpcomingTalkCard from './UpcomingTalkCard.vue'
 
 const { assetPath } = useAssetPath()
+const upcomingTalk = nextUpcomingTalk(eventsData)
 
 const speakerAvatars = [
   { name: 'Alex Dathskovsky',  img: '/assets/images/speakers/2024/alex.jpg' },
