@@ -252,7 +252,7 @@
     "expertise": ["5G", "Telecommunications", "C++", "Embedded Systems", "Cloud Networking"],
     "website": null,
     "linkedin": "https://www.linkedin.com/in/selvakumarjawahar/",
-    "twitter": "https://twitter.com/selvakumarjawa1",
+    "twitter": null,
     "github": "https://github.com/selvakumarjawahar",
     "image": "/assets/images/speakers/2023/selvakumar.png"
   },
@@ -339,7 +339,7 @@
     "expertise": ["Concurrency", "Design Patterns", "Reactor Pattern", "C++", "Embedded Systems"],
     "website": null,
     "linkedin": "https://www.linkedin.com/in/selvakumarjawahar/",
-    "twitter": "https://twitter.com/selvakumarjawa1",
+    "twitter": null,
     "github": "https://github.com/selvakumarjawahar",
     "image": "/assets/images/speakers/2022/selvakumar.png"
   },
@@ -428,7 +428,7 @@
     "expertise": ["C++20 Ranges", "Algorithms", "Modern C++", "STL", "Training"],
     "website": null,
     "linkedin": "https://www.linkedin.com/in/harishankarsinghyadav/",
-    "twitter": "https://twitter.com/HarishankarSY",
+    "twitter": null,
     "github": null,
     "image": "/assets/images/speakers/2021/hari.jpg",
     "intro": "Harishankar has 15 years of experience in software industry. He had worked in various roles across domains like Avionics, Media, AI, Speech Recognition, and ML.\n\nSince April 2020, he is an independent Trainer and Mentor for C++. He is using his C++ experience to train and coach Professionals and Students. Encouraging people to write sustainable and clean code using C++."

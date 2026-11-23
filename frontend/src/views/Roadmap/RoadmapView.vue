@@ -138,7 +138,7 @@ const roadmap = {
       timeframe: 'Month 3',
       description: 'Stack vs heap, raw pointers, smart pointers (unique_ptr, shared_ptr). Learn RAII as the foundation of safe C++.',
       resources: [
-        { name: 'Herb Sutter: Back to Basics — RAII', url: 'https://www.youtube.com/watch?v=Uxl6UHxGlJQ' },
+        { name: 'cppreference: RAII', url: 'https://en.cppreference.com/w/cpp/language/raii' },
         { name: 'cppreference: Smart pointers', url: 'https://en.cppreference.com/w/cpp/memory' },
       ],
     },
@@ -167,7 +167,7 @@ const roadmap = {
       timeframe: 'Month 1–2',
       description: 'Structured bindings, if constexpr, std::optional, std::variant, std::filesystem, fold expressions.',
       resources: [
-        { name: 'Bartłomiej Filipek: C++17', url: 'https://www.cppstories.com/p/cppbook/' },
+        { name: 'Bartłomiej Filipek: C++17 in Detail', url: 'https://leanpub.com/cpp17indetail' },
         { name: 'CppIndia Playground', url: '/playground' },
       ],
     },
@@ -208,7 +208,7 @@ const roadmap = {
       description: 'SFINAE, tag dispatch, type traits, variadic templates, CRTP. Then replace most of this with C++20 Concepts.',
       resources: [
         { name: 'C++ Templates: The Complete Guide', url: 'https://www.amazon.com/C-Templates-Complete-Guide-2nd/dp/0321714121' },
-        { name: 'Arthur O\'Dwyer: Concepts', url: 'https://www.youtube.com/watch?v=UpeV2uJ7oyM' },
+        { name: 'cppreference: Constraints and concepts', url: 'https://en.cppreference.com/w/cpp/language/constraints' },
       ],
     },
     {

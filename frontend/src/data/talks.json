@@ -17,7 +17,7 @@
       "speaker": "Ankur Satle",
       "title": "Recursive Static Types for Expression Evaluation",
       "video": "https://youtu.be/EnKzqizqsk4",
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/05-11/",
+      "slides": null,
       "tags": ["Templates", "Metaprogramming", "Modern C++"]
     },
     {
@@ -26,7 +26,7 @@
       "speaker": "Karan Banthia",
       "title": "Modern C++ Design Patterns for Embedded Firmware",
       "video": "https://youtu.be/zJ5qAE3t_DM",
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/02-05/",
+      "slides": null,
       "tags": ["Embedded", "Design Patterns", "Modern C++"]
     },
     {
@@ -35,7 +35,7 @@
       "speaker": "Dheeraj Jha",
       "title": "Beyond Breakpoints: Navigating the Depths of GDB",
       "video": "https://www.youtube.com/watch?v=zvvJi5yY0IU",
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2024/01-06/",
+      "slides": null,
       "tags": ["Debugging", "Tools", "GDB"]
     }
   ],
@@ -64,7 +64,7 @@
       "speaker": "Mahendra Garodi",
       "title": "C++ Constants: The ‘const’ly Evolving Story",
       "video": null,
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/blob/master/2023/03-11",
+      "slides": null,
       "tags": ["const", "constexpr", "Modern C++"]
     },
     {
@@ -138,7 +138,7 @@
       "speaker": "Hemil Ruparel",
       "title": "How to Create Your Own Programming Language",
       "video": null,
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/09-17",
+      "slides": null,
       "tags": ["Compilers", "Language Design"]
     },
     {
@@ -165,7 +165,7 @@
       "speaker": "Hemil Ruparel",
       "title": "N-Lighting Talk: TDD — The Bad Parts",
       "video": "https://www.youtube.com/watch?v=C0cViWm4Wjs",
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-21",
+      "slides": null,
       "tags": ["Testing", "TDD"]
     },
     {
@@ -174,7 +174,7 @@
       "speaker": "Kashish Nagpal",
       "title": "N-Lighting Talk: Exploring the Compiler Explorer",
       "video": "https://www.youtube.com/watch?v=b49WNBwaDas",
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-21",
+      "slides": null,
       "tags": ["Tools", "Compiler Explorer", "Godbolt"]
     },
     {
@@ -183,7 +183,7 @@
       "speaker": "Shivam Prasad",
       "title": "N-Lighting Talk: Tips for C++ Development",
       "video": "https://www.youtube.com/watch?v=8q42RTzL48k",
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-21",
+      "slides": null,
       "tags": ["Best Practices", "Tips", "Modern C++"]
     },
     {
@@ -192,7 +192,7 @@
       "speaker": "Hemil Ruparel",
       "title": "The Tragedy of Testing",
       "video": "https://www.youtube.com/watch?v=0cLLkP_MC0Q",
-      "slides": "https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments/tree/master/2022/05-07",
+      "slides": null,
       "tags": ["Testing", "Best Practices"]
     },
     {
@@ -284,7 +284,7 @@
       "speaker": "Sebastian Theophil",
       "title": "Windows, MacOS and the Web: Lessons from Cross-Platform Development",
       "video": "https://youtu.be/DyQcX5UmTFo",
-      "slides": "https://www.think-cell.com/en/career/talks/cross-platform/#1",
+      "slides": null,
       "tags": ["Cross-Platform", "Best Practices"]
     },
     {

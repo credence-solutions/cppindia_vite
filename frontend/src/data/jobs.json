@@ -58,20 +58,5 @@
     "description": "Develop firmware for next-generation networking hardware. Experience with bare-metal C++, RTOS, and network protocols required.",
     "companyLogo": "",
     "featured": false
-  },
-  {
-    "id": "games-studio-cpp-2025",
-    "company": "nCore Games",
-    "role": "Gameplay C++ Engineer",
-    "location": "Bengaluru, India",
-    "locationType": "onsite",
-    "level": "junior",
-    "tags": ["C++", "Unreal Engine", "Game Dev", "Gameplay"],
-    "posted": "2025-07-05",
-    "expires": "2025-10-15",
-    "url": "https://ncoregames.com/careers",
-    "description": "Join India's fastest-growing game studio. Implement gameplay systems in Unreal Engine C++. Portfolio of shipped games or significant personal projects preferred.",
-    "companyLogo": "",
-    "featured": false
   }
 ]
