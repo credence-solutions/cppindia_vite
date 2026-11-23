@@ -44,9 +44,7 @@
             </div>
 
             <!-- Bio -->
-            <p class="text-sm leading-relaxed" style="color:var(--color-text-secondary);">
-              {{ primaryEntry.intro || primaryEntry.bio }}
-            </p>
+            <p class="text-sm leading-relaxed whitespace-pre-line" style="color:var(--color-text-secondary);">{{ primaryEntry.intro || primaryEntry.bio }}</p>
 
             <!-- Social links -->
             <div class="flex items-center gap-2 flex-wrap">

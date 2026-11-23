@@ -181,6 +181,13 @@
                       </div>
                       <p v-if="session.speaker" class="text-xs text-primary font-medium mt-1">{{ session.speaker }}</p>
                       <p v-if="session.abstract" class="text-xs text-ink-3 leading-relaxed mt-2">{{ session.abstract }}</p>
+                      <details v-if="session.abstractFull" class="mt-1.5 group">
+                        <summary class="text-xs font-semibold text-primary cursor-pointer select-none list-none">
+                          <span class="group-open:hidden">Read full abstract</span>
+                          <span class="hidden group-open:inline">Show less</span>
+                        </summary>
+                        <p class="text-xs text-ink-2 leading-relaxed mt-2 whitespace-pre-line">{{ session.abstractFull }}</p>
+                      </details>
                     </div>
                   </div>
                 </div>
@@ -277,7 +284,7 @@
                   <div class="p-6 space-y-5 overflow-y-auto">
                     <!-- Intro from website -->
                     <div v-if="fullSpeaker(selectedSpeaker)?.intro">
-                      <p class="text-sm text-ink leading-relaxed">{{ fullSpeaker(selectedSpeaker).intro }}</p>
+                      <p class="text-sm text-ink leading-relaxed whitespace-pre-line">{{ fullSpeaker(selectedSpeaker).intro }}</p>
                     </div>
                     <!-- Fallback to bio -->
                     <div v-else-if="fullSpeaker(selectedSpeaker)?.bio">
@@ -549,7 +556,8 @@ function sessionMatchesQuery(session) {
   return (
     session.title?.toLowerCase().includes(q) ||
     session.speaker?.toLowerCase().includes(q) ||
-    session.abstract?.toLowerCase().includes(q)
+    session.abstract?.toLowerCase().includes(q) ||
+    session.abstractFull?.toLowerCase().includes(q)
   )
 }
 

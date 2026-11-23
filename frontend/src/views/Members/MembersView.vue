@@ -274,7 +274,7 @@
           <!-- Body: scrollable -->
           <div class="overflow-y-auto p-6 space-y-5">
             <!-- Speaker intro from website (if available) -->
-            <p v-if="speakerIntro(selectedMember)" class="text-sm leading-relaxed" style="color: var(--card-text);">{{ speakerIntro(selectedMember) }}</p>
+            <p v-if="speakerIntro(selectedMember)" class="text-sm leading-relaxed whitespace-pre-line" style="color: var(--card-text);">{{ speakerIntro(selectedMember) }}</p>
             <!-- Fallback to member bio -->
             <p v-else class="text-sm leading-relaxed" style="color: var(--card-text-muted);">{{ selectedMember.bio }}</p>
 
