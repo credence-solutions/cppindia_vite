@@ -4,7 +4,57 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from '@/components/layout/DefaultLayout.vue'
 
+// -----------------------------------------------------------------------------
+// Legacy URLs from the old Jekyll site (cppindia.co.in). GitHub Pages serves
+// index.html for unknown paths (404.html fallback), so these redirects keep
+// old links from search engines, YouTube descriptions and social posts alive.
+// -----------------------------------------------------------------------------
+const LEGACY_SPEAKERS = {
+  2021: { ankur: 'ankur-satle-2021', bjarne: 'bjarne-stroustrup', bryce: 'bryce-lelbach-2021', harishankar: 'harishankar-singh', jonkalb: 'jon-kalb', saurabhjoshi: 'saurabh-joshi' },
+  2022: { Hemil: 'hemil-ruparel', ankur: 'ankur-satle-2022', greg: 'greg-law', inbal: 'inbal-levi', mahendra: 'mahendra-garodi', selvakumar: 'selvakumar-jawahar-2022' },
+  2023: { andreas: 'andreas-fertig', ankur: 'ankur-satle-2023', bryce: 'bryce-lelbach-2023', jonathan: 'jonathan-muller-2023', kiran: 'kiran-kannappan', mike: 'mike-shah-2023', ravi: 'kushashwa-ravi-shrimali', ravikiran: 'venkata-bulusu', selvakumar: 'selvakumar-jawahar-2023' },
+  2024: { alex: 'alex-dathskovsky', ankur: 'ankur-satle', john: 'john-stratton', jonathan: 'jonathan-muller', mahendra: 'mahendra-garodi', mike: 'mike-shah', pavithra: 'pavithra-ashok-kumar', simon: 'simon-toth' },
+}
+
+const conferenceYear = (to) => ({ path: '/conference', query: { year: to.params.year } })
+
+const legacyRoutes = [
+  { path: '/about_us', redirect: '/about' },
+  { path: '/join_us', redirect: '/join-us' },
+  { path: '/call_for_speakers', redirect: '/call-for-speakers' },
+  { path: '/CodeOfConduct/codeofconduct', redirect: '/code-of-conduct' },
+  { path: '/Sponsors/Sponsor', redirect: '/sponsors' },
+  { path: '/resources/resources', redirect: '/resources' },
+  { path: '/resources/resource_of_month', redirect: { path: '/resources', hash: '#monthly' } },
+  { path: '/resources/articles_blogs.md', redirect: { path: '/resources', hash: '#articles' } },
+  { path: '/tech_talk/schedule', redirect: '/events' },
+  { path: '/tech_talk/:year(\\d{4})', redirect: (to) => ({ path: '/tech-talks', query: { year: to.params.year } }) },
+  { path: '/hackthon/:page(.*)', redirect: '/events' },
+  { path: '/logocontest', redirect: '/events' },
+  { path: '/help.html', redirect: '/' },
+  { path: '/2020/07/04/welcome-to-jekyll.html', redirect: '/blog' },
+  { path: '/_posts/:page(.*)', redirect: '/blog' },
+  { path: '/conference/2023/conference_report', redirect: '/blog/cppindiaacon-2023-conference-report' },
+  { path: '/conference/:year(202[123])/tech-help', redirect: '/conference/2024/tech-help' },
+  { path: '/conference/:year(\\d{4})/speakers/tech-help', redirect: '/conference/2024/tech-help' },
+  { path: '/conference/:year(\\d{4})/attendee_zoom_setting', redirect: '/conference/2024/tech-help' },
+  { path: '/conference/:year(\\d{4})/speakers/attendee_zoom_setting', redirect: '/conference/2024/tech-help' },
+  { path: '/conference/:year(\\d{4})/speakers/zoom_settings', redirect: '/conference/2024/tech-help' },
+  { path: '/conference/:year(202[123])/networking', redirect: '/conference/2024/networking' },
+  {
+    path: '/conference/:year(\\d{4})/speakers/:name',
+    redirect: (to) => {
+      const slug = LEGACY_SPEAKERS[to.params.year]?.[to.params.name]
+      return slug ? `/speakers/${slug}` : conferenceYear(to)
+    },
+  },
+  // conference_home, schedule, Sponsor, sponsors/*, CppIndiaCon20xxVideo,
+  // call-for-speakers, call-for-volunteer, CppIndiaCon-reg-form, survey
+  { path: '/conference/:year(\\d{4})/:rest(.*)', redirect: conferenceYear },
+]
+
 const routes = [
+  ...legacyRoutes,
   {
     path: '/',
     component: DefaultLayout,
