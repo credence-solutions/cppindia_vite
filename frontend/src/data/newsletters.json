@@ -4,9 +4,9 @@
     "title": "CppIndia Newsletter — June 2025",
     "date": "2025-06-30",
     "issueNumber": 18,
-    "summary": "This month: C++26 reflection proposal update, new job listings from think-cell, recap of June's talk on deducing this, and upcoming CppIndiaCon 2025 announcements.",
+    "summary": "This month: C++26 reflection proposal update, new job listings from think-cell and a recap of June's talk on deducing this.",
     "url": "https://discord.gg/Wz42tX5",
-    "highlights": ["C++26 Reflection Update", "think-cell Job Listings", "Talk Recap: Deducing this", "CppIndiaCon 2025 Preview"]
+    "highlights": ["C++26 Reflection Update", "think-cell Job Listings", "Talk Recap: Deducing this"]
   },
   {
     "id": "nl-2025-05",

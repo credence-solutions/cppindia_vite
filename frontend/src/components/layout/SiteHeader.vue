@@ -3,9 +3,6 @@
     class="fixed top-0 left-0 right-0 z-sticky transition-[box-shadow,background] duration-base"
     role="banner"
   >
-    <!-- Announcement banner -->
-    <AnnouncementBanner />
-
     <!-- Nav bar -->
     <div
       class="transition-all duration-base backdrop-glass"
@@ -95,26 +92,23 @@
     <MobileMenu :open="nav.mobileMenuOpen" @close="nav.closeMobileMenu" />
   </header>
 
-  <!-- Spacer — accounts for banner (when visible) + navbar height -->
-  <div :style="{ height: bannerVisible ? 'calc(var(--navbar-height) + 42px)' : 'var(--navbar-height)' }" aria-hidden="true" />
+  <!-- Spacer — accounts for navbar height -->
+  <div style="height: var(--navbar-height)" aria-hidden="true" />
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import AnnouncementBanner from './AnnouncementBanner.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { NAV_LINKS, SITE } from '@/constants'
 import MegaMenu from '@/components/navigation/MegaMenu.vue'
 import SimpleDropdown from '@/components/navigation/SimpleDropdown.vue'
 import MobileMenu from '@/components/navigation/MobileMenu.vue'
-import { useBannerState } from '@/composables/useBannerState'
 import { useAssetPath } from '@/composables/useAssetPath'
 
 const route  = useRoute()
 const nav    = useNavigationStore()
 const navRef = ref(null)
-const { visible: bannerVisible } = useBannerState()
 const { assetPath } = useAssetPath()
 
 function isActive(path) {

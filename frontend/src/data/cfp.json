@@ -33,17 +33,6 @@
     "tags": ["International", "In-Person"]
   },
   {
-    "id": "cppindiacon-2025",
-    "conference": "CppIndiaCon 2025",
-    "location": "Online",
-    "cfpDeadline": "2025-09-30",
-    "eventDates": "2025-11-15",
-    "url": "/call-for-speakers",
-    "status": "open",
-    "remote": true,
-    "tags": ["India", "Online", "CppIndia"]
-  },
-  {
     "id": "itcpp-2025",
     "conference": "Italian C++ Conference 2025",
     "location": "Milan, Italy",
