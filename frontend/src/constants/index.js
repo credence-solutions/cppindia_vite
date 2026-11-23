@@ -17,6 +17,9 @@ export const SITE = {
     github:    'https://github.com/CppIndia-UserGroup/CppIndia-SessionDocuments',
   },
   discordInvite: 'https://discord.gg/Wz42tX5',
+  // Shown as "1400+ Discord Members". Update now and then from Discord's
+  // server settings (1,485 members as of Nov 2026).
+  discordMembers: 1400,
   founded: 2020,
 }
 
