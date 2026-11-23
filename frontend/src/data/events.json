@@ -1,5 +1,21 @@
 [
   {
+    "id": "talk-2027-01-14-mahendra-garodi",
+    "title": "CppIndia Tech Talk — January 2027",
+    "type": "talk",
+    "status": "upcoming",
+    "date": "2027-01-14",
+    "time": "19:00 IST",
+    "endTime": "20:00",
+    "speaker": "Mahendra Bhagwan Garodi",
+    "speakerId": "mahendra-garodi",
+    "topic": "SIMD in Modern C++: From Intrinsics to std::simd",
+    "registrationUrl": "https://www.linkedin.com/company/cppindia",
+    "recordingUrl": null,
+    "location": "Online",
+    "description": "Mahendra Bhagwan Garodi has 10+ years of experience building virtual platforms in the semiconductor industry, modelling CPUs, memories and SoC peripherals. In this session he walks through vectorising C++ code, from hand-written intrinsics to the portable std::simd API, and how to measure whether it actually got faster."
+  },
+  {
     "id": "cppindiacon-2024",
     "title": "CppIndiaCon 2024",
     "type": "conference",

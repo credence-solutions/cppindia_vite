@@ -104,8 +104,7 @@ import { ref, computed } from 'vue'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import eventsData from '@/data/events.json'
-import { SITE } from '@/constants'
-import { isUpcoming } from '@/utils/events'
+import { isUpcoming, googleCalendarUrl, buildIcs } from '@/utils/events'
 
 useHead({
   title: 'Events | CppIndia',
@@ -129,49 +128,16 @@ function monthStr(d) { return new Date(d).toLocaleDateString('en-IN', { month: '
 function dayStr(d)   { return new Date(d).getDate() }
 function yearStr(d)  { return new Date(d).getFullYear() }
 
-function parseTime(timeStr) {
-  return (timeStr || '09:00').replace(/\s.*/, '').replace(':', '')
-}
-
-function addOneHour(hhmm) {
-  const h = parseInt(hhmm.slice(0, 2))
-  const m = hhmm.slice(2)
-  return String(h + 1).padStart(2, '0') + m
+function eventDetails(event) {
+  return [event.description, event.registrationUrl && `Register: ${event.registrationUrl}`]
+    .filter(Boolean).join('\n')
 }
 
 function calendarUrl(event) {
-  const dateStr = event.date.replace(/-/g, '')
-  const startTime = parseTime(event.time)
-  const endTime   = event.endTime ? event.endTime.replace(':', '') : addOneHour(startTime)
-  const params = new URLSearchParams({
-    action: 'TEMPLATE',
-    text: event.title,
-    dates: `${dateStr}T${startTime}00/${dateStr}T${endTime}00`,
-    details: event.description || '',
-    location: event.location || 'Online',
-  })
-  return `https://calendar.google.com/calendar/render?${params}`
+  return googleCalendarUrl(event, eventDetails(event))
 }
 
 function icalUrl(event) {
-  const dateStr   = event.date.replace(/-/g, '')
-  const startTime = parseTime(event.time)
-  const endTime   = event.endTime ? event.endTime.replace(':', '') : addOneHour(startTime)
-  const uid       = `${event.id}@${SITE.url.replace(/^https?:\/\/(www\.)?/, '')}`
-  const ics = [
-    'BEGIN:VCALENDAR',
-    'VERSION:2.0',
-    'PRODID:-//CppIndia//CppIndia Events//EN',
-    'BEGIN:VEVENT',
-    `UID:${uid}`,
-    `DTSTART:${dateStr}T${startTime}00`,
-    `DTEND:${dateStr}T${endTime}00`,
-    `SUMMARY:${event.title}`,
-    `DESCRIPTION:${(event.description || '').replace(/\n/g, '\\n')}`,
-    `LOCATION:${event.location || 'Online'}`,
-    'END:VEVENT',
-    'END:VCALENDAR',
-  ].join('\r\n')
-  return `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`
+  return `data:text/calendar;charset=utf-8,${encodeURIComponent(buildIcs(event, eventDetails(event)))}`
 }
 </script>
