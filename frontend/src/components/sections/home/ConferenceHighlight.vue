@@ -22,16 +22,16 @@
           <!-- Edition pills -->
           <div class="flex flex-wrap items-center gap-3 mb-7">
             <RouterLink
-              v-for="year in [2024, 2023, 2022, 2021]"
+              v-for="year in years"
               :key="year"
               :to="`/conference?year=${year}`"
               class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200"
-              :style="year === 2024
+              :style="year === latest.year
                 ? 'background: rgba(8,145,178,0.12); border: 1px solid rgba(8,145,178,0.4); color: var(--color-secondary-mid);'
                 : 'border: 1px solid var(--color-border); color: var(--color-text-secondary);'"
             >
               <span class="font-bold">{{ year }}</span>
-              <span v-if="year === 2024"
+              <span v-if="year === latest.year"
                 class="px-1.5 py-[1px] rounded-full text-white text-[10px] font-bold"
                 style="background: var(--gradient-btn);">
                 Latest
@@ -40,12 +40,12 @@
           </div>
 
           <RouterLink
-            to="/conference?year=2024"
+            :to="`/conference?year=${latest.year}`"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
             style="background: var(--gradient-btn); box-shadow: 0 0 20px rgba(8,145,178,0.35);"
             onmouseover="this.style.boxShadow='0 0 30px rgba(8,145,178,0.55)'"
             onmouseout="this.style.boxShadow='0 0 20px rgba(8,145,178,0.35)'"
-          >View CppIndiaCon 2024</RouterLink>
+          >View {{ latest.name }}</RouterLink>
         </div>
 
         <!-- Right: conference highlight card -->
@@ -57,16 +57,16 @@
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4"
               style="border: 1px solid rgba(8,145,178,0.4); background: rgba(8,145,178,0.1);">
               <span class="w-2 h-2 rounded-full animate-pulse" style="background: var(--color-secondary-mid);" />
-              <span class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-secondary-mid);">4th Edition</span>
+              <span class="text-xs font-bold uppercase tracking-widest" style="color: var(--color-secondary-mid);">{{ ordinal(latest.edition) }} Edition</span>
             </div>
-            <h3 class="font-display font-extrabold text-xl mb-1" style="color: var(--color-text);">CppIndiaCon 2024</h3>
+            <h3 class="font-display font-extrabold text-xl mb-1" style="color: var(--color-text);">{{ latest.name }}</h3>
             <p class="text-sm mb-1" style="color: var(--color-text-secondary);">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1 -mt-px"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              August 23–24, 2024
+              {{ latest.dates }}
             </p>
             <p class="text-sm" style="color: var(--color-text-muted);">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline mr-1 -mt-px"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              Online · Free to Attend
+              {{ latest.format }} · Free to Attend
             </p>
           </div>
 
@@ -79,7 +79,9 @@
                 :key="speaker.name"
                 class="flex items-center gap-3"
               >
-                <div
+                <img v-if="speaker.image" :src="assetPath(speaker.image)" :alt="speaker.name"
+                  class="w-9 h-9 rounded-full object-cover flex-shrink-0" loading="lazy" />
+                <div v-else
                   class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
                   style="background: var(--gradient-btn)"
                 >
@@ -94,7 +96,7 @@
           </div>
 
           <!-- Sponsors row -->
-          <div>
+          <div v-if="conferenceSponsors.length">
             <p class="text-[10px] font-bold uppercase tracking-[0.12em] mb-2" style="color: var(--color-text-muted);">Gold Sponsors</p>
             <div class="flex flex-wrap gap-2">
               <span
@@ -108,7 +110,7 @@
 
           <!-- CTA -->
           <a
-            href="https://www.youtube.com/@CppIndiaUG"
+            :href="latest.videosUrl || SITE.social.youtube"
             target="_blank"
             rel="noopener noreferrer"
             class="w-full text-center justify-center inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200"
@@ -130,6 +132,10 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useGsap } from '@/composables/useGsap'
+import { useAssetPath } from '@/composables/useAssetPath'
+import { SITE } from '@/constants'
+import { latestConference, conferenceYears, ordinal } from '@/utils/conferences'
+import conferencesData from '@/data/conferences.json'
 
 const { staggerReveal, slideRight } = useGsap()
 onMounted(() => {
@@ -137,12 +143,11 @@ onMounted(() => {
   slideRight('.gsap-reveal-right')
 })
 
-const featuredSpeakers = [
-  { name: 'Alex Dathskovsky', topic: 'Modern C++ Performance Patterns' },
-  { name: 'Ankur Satle',      topic: 'Recursive Static Types' },
-  { name: 'Mike Shah',        topic: 'C++ Tooling & Debugging' },
-  { name: 'Jonathan Müller',  topic: 'C++ Library Design' },
-]
+const { assetPath } = useAssetPath()
 
-const conferenceSponsors = ['MulticoreWare', 'think-cell', 'Bloomberg LP']
+// Everything below follows the newest edition in conferences.json.
+const latest = latestConference(conferencesData)
+const years = conferenceYears(conferencesData)
+const featuredSpeakers = latest.speakers.slice(0, 4)
+const conferenceSponsors = (latest.sponsors?.gold ?? []).map(s => s.name)
 </script>

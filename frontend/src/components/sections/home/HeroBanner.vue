@@ -153,9 +153,9 @@
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold"
                   style="background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);color:#D8B4FE;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                  CppIndiaCon 2024
+                  {{ latestConf.name }}
                 </span>
-                <RouterLink to="/conference?year=2024"
+                <RouterLink :to="`/conference?year=${latestConf.year}`"
                   class="text-[11px] font-semibold transition-colors hover:opacity-100"
                   style="color:rgba(165,180,252,0.5);">
                   View details →
@@ -166,18 +166,18 @@
               <div class="flex items-center gap-2.5 mb-4">
                 <div class="flex -space-x-2">
                   <img v-for="s in speakerAvatars" :key="s.name"
-                    :src="assetPath(s.img)" :alt="s.name"
+                    :src="assetPath(s.image)" :alt="s.name"
                     class="w-8 h-8 rounded-full object-cover flex-shrink-0"
                     style="border:2px solid #1A1B3A;"
                     loading="lazy"
                   />
                 </div>
-                <span class="text-xs" style="color:rgba(148,163,184,0.55);">8 international speakers</span>
+                <span class="text-xs" style="color:rgba(148,163,184,0.55);">{{ latestConf.speakers.length }} speakers</span>
               </div>
 
               <!-- Actions -->
               <div class="flex items-center gap-2">
-                <RouterLink to="/conference?year=2024"
+                <RouterLink :to="`/conference?year=${latestConf.year}`"
                   class="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg text-xs font-bold text-white transition-all duration-200 hover:brightness-110 hover:-translate-y-px"
                   style="background:var(--gradient-btn);box-shadow:0 4px 16px rgba(8,145,178,0.4);">
                   Conference Highlights
@@ -214,18 +214,16 @@ const STATS = useCommunityStats()
 import { useGsap } from '@/composables/useGsap'
 import { useAssetPath } from '@/composables/useAssetPath'
 import { nextUpcomingTalk } from '@/utils/events'
+import { latestConference } from '@/utils/conferences'
+import conferencesData from '@/data/conferences.json'
 import eventsData from '@/data/events.json'
 import UpcomingTalkCard from './UpcomingTalkCard.vue'
 
 const { assetPath } = useAssetPath()
 const upcomingTalk = nextUpcomingTalk(eventsData)
 
-const speakerAvatars = [
-  { name: 'Alex Dathskovsky',  img: '/assets/images/speakers/2024/alex.jpg' },
-  { name: 'Ankur Satle',       img: '/assets/images/speakers/2024/ankur.png' },
-  { name: 'Jonathan Müller',   img: '/assets/images/speakers/2024/jonathan.png' },
-  { name: 'Mike Shah',         img: '/assets/images/speakers/2024/mike.jpg' },
-]
+const latestConf = latestConference(conferencesData)
+const speakerAvatars = latestConf.speakers.filter(s => s.image).slice(0, 4)
 
 const { staggerReveal, slideRight } = useGsap()
 onMounted(() => {
