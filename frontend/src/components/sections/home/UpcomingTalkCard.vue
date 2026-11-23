@@ -31,7 +31,7 @@
           style="border:2px solid rgba(8,145,178,0.4);" />
         <div class="min-w-0">
           <RouterLink v-if="speaker" :to="`/speakers/${talk.speakerId}`"
-            class="text-sm font-semibold hover:underline" style="color:#E2E8F0;">
+            class="inline-flex items-center min-h-[24px] text-sm font-semibold hover:underline" style="color:#E2E8F0;">
             {{ speakerName }}
           </RouterLink>
           <span v-else class="text-sm font-semibold" style="color:#E2E8F0;">{{ speakerName }}</span>

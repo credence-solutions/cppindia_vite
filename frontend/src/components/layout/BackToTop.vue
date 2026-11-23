@@ -1,8 +1,8 @@
 <template>
   <Transition name="btt">
     <button
-      v-if="visible"
-      class="fixed bottom-8 right-8 w-11 h-11 flex items-center justify-center rounded-full bg-primary text-white shadow-card-lg z-dropdown cursor-pointer transition-all duration-base hover:bg-primary-dark hover:-translate-y-[3px] hover:shadow-brand"
+      v-if="visible && !nav.mobileMenuOpen"
+      class="fixed bottom-6 left-6 w-11 h-11 flex items-center justify-center rounded-full bg-primary text-white shadow-card-lg z-dropdown cursor-pointer transition-all duration-base hover:bg-primary-dark hover:-translate-y-[3px] hover:shadow-brand"
       aria-label="Back to top"
       @click="scrollToTop"
     >
@@ -15,6 +15,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useNavigationStore } from '@/stores/navigation'
+
+// Bottom-left: the Join widget and theme picker own the bottom-right corner.
+const nav = useNavigationStore()
 
 const visible = ref(false)
 

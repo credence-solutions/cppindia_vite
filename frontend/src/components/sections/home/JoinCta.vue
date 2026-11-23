@@ -49,7 +49,7 @@
             v-for="platform in platforms"
             :key="platform.label"
             :href="platform.url"
-            class="flex items-center gap-2 text-xs transition-colors duration-fast"
+            class="flex items-center gap-2 min-h-[24px] text-xs transition-colors duration-fast"
             style="color: rgba(148,163,184,0.55);"
             onmouseover="this.style.color='rgba(226,232,245,0.9)'"
             onmouseout="this.style.color='rgba(148,163,184,0.55)'"
