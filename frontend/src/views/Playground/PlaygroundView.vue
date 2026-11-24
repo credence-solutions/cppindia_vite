@@ -14,10 +14,10 @@
         <aside class="lg:w-64 flex-shrink-0 flex flex-col gap-3 lg:gap-4">
           <div class="rounded-2xl overflow-hidden flex flex-col lg:flex-1 lg:min-h-0" style="background: var(--card-bg); border: 1px solid var(--card-border);">
             <!-- Standard filter -->
-            <div class="flex gap-1 p-2 flex-wrap" style="border-bottom: 1px solid var(--color-border);">
+            <div class="flex gap-1.5 lg:gap-1 p-2 flex-wrap" style="border-bottom: 1px solid var(--color-border);">
               <button v-for="std in standards" :key="std"
                 @click="activeStd = std"
-                class="px-2.5 py-1 rounded-md text-xs font-bold transition-all duration-150"
+                class="px-3 py-2 lg:px-2.5 lg:py-1 rounded-md text-xs font-bold transition-all duration-150"
                 :style="activeStd === std
                   ? 'background:rgba(8,145,178,0.25); color:var(--color-primary-soft);'
                   : 'background:transparent; color:var(--color-text-muted);'"
@@ -25,10 +25,10 @@
             </div>
 
             <!-- Topic filter -->
-            <div class="flex gap-1 p-2 flex-wrap" style="border-bottom: 1px solid var(--color-border);">
+            <div class="flex gap-1.5 lg:gap-1 p-2 flex-wrap" style="border-bottom: 1px solid var(--color-border);">
               <button v-for="topic in topics" :key="topic"
                 @click="activeTopic = topic"
-                class="px-2 py-0.5 rounded-md text-[10px] font-bold transition-all duration-150"
+                class="px-2.5 py-1.5 lg:px-2 lg:py-0.5 rounded-md text-[11px] lg:text-[10px] font-bold transition-all duration-150"
                 :style="activeTopic === topic
                   ? 'background:rgba(34,211,238,0.2); color:#22D3EE;'
                   : 'background:transparent; color:var(--color-text-muted);'"
@@ -42,7 +42,7 @@
                 <li
                   v-for="s in filteredSnippets"
                   :key="s.id"
-                  @click="active = s"
+                  @click="selectSnippet(s)"
                   class="flex flex-col gap-1 px-4 py-3 cursor-pointer transition-all duration-150"
                   :style="active?.id === s.id
                     ? 'background:var(--badge-bg-strong); border-left:2px solid var(--color-primary-soft);'
@@ -85,7 +85,7 @@
 
         <!-- Main panel -->
         <div class="flex-1 flex flex-col gap-4 min-w-0">
-          <div v-if="active" class="flex flex-col gap-4 flex-1">
+          <div v-if="active" ref="panelEl" class="flex flex-col gap-4 flex-1">
             <!-- Snippet header -->
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
               <div class="min-w-0 sm:flex-1">
@@ -205,6 +205,22 @@ function fitList() {
   listFitHeight.value = next
     ? next.getBoundingClientRect().top - ul.getBoundingClientRect().top + ul.scrollTop
     : null
+}
+
+// When the list sits above the code (below lg), picking a snippet would
+// otherwise change content off-screen — bring the code panel into view.
+const panelEl = ref(null)
+function selectSnippet(snippet) {
+  active.value = snippet
+  if (lgQuery?.matches) return
+  nextTick(() => {
+    const panel = panelEl.value
+    if (!panel) return
+    const headerBottom = document.querySelector('header')?.getBoundingClientRect().bottom ?? 0
+    const top = panel.getBoundingClientRect().top + window.scrollY - Math.max(headerBottom, 0) - 12
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' })
+  })
 }
 
 let resizeObserver = null
