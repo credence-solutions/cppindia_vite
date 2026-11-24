@@ -58,5 +58,113 @@
     "code": "#include <span>\n#include <vector>\n#include <array>\n#include <iostream>\n\nvoid print(std::span<const int> data) {\n    for (int x : data) std::cout << x << ' ';\n    std::cout << '\\n';\n}\n\nint main() {\n    int arr[] = {1, 2, 3};\n    std::vector<int> vec = {4, 5, 6};\n    std::array<int, 3> arr2 = {7, 8, 9};\n\n    print(arr);  // works\n    print(vec);  // works\n    print(arr2); // works — all without templates!\n}",
     "godboltUrl": "https://cppindia.godbolt.org/z/E4bWYa98W",
     "author": "CppIndia Team"
+  },
+  {
+    "id": "if-constexpr",
+    "title": "if constexpr",
+    "standard": "C++17",
+    "tags": ["C++17", "Templates"],
+    "description": "Pick a branch at compile time. The branch that isn't taken is thrown away, so it never has to compile.",
+    "code": "#include <iostream>\n#include <string>\n#include <type_traits>\n\ntemplate<typename T>\nstd::string describe(const T& value) {\n    if constexpr (std::is_integral_v<T>)\n        return \"integer: \" + std::to_string(value);\n    else if constexpr (std::is_floating_point_v<T>)\n        return \"float: \" + std::to_string(value);\n    else\n        return \"other: \" + std::string(value);\n}\n\nint main() {\n    std::cout << describe(42) << '\\n';     // integer: 42\n    std::cout << describe(2.5) << '\\n';    // float: 2.500000\n    std::cout << describe(\"hi\") << '\\n';   // other: hi\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "variant-visit",
+    "title": "std::variant + overloaded visitor",
+    "standard": "C++17",
+    "tags": ["C++17", "Modern C++", "Functional"],
+    "description": "A type-safe union. std::visit and the 'overloaded' lambda trick handle each alternative in one place.",
+    "code": "#include <variant>\n#include <string>\n#include <vector>\n#include <iostream>\n\ntemplate<class... Ts> struct overloaded : Ts... { using Ts::operator()...; };\ntemplate<class... Ts> overloaded(Ts...) -> overloaded<Ts...>;\n\nusing Shape = std::variant<int, double, std::string>;\n\nint main() {\n    std::vector<Shape> items = {7, 3.14, std::string(\"hello\")};\n\n    for (const auto& item : items) {\n        std::visit(overloaded{\n            [](int i)                { std::cout << \"int \" << i << '\\n'; },\n            [](double d)             { std::cout << \"double \" << d << '\\n'; },\n            [](const std::string& s) { std::cout << \"string \" << s << '\\n'; },\n        }, item);\n    }\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "string-view",
+    "title": "std::string_view",
+    "standard": "C++17",
+    "tags": ["C++17", "Strings", "Memory"],
+    "description": "Read-only views into strings. Splitting text this way allocates nothing.",
+    "code": "#include <string_view>\n#include <vector>\n#include <iostream>\n\nstd::vector<std::string_view> split(std::string_view text, char sep) {\n    std::vector<std::string_view> parts;\n    while (!text.empty()) {\n        auto pos = text.find(sep);\n        parts.push_back(text.substr(0, pos));\n        if (pos == std::string_view::npos) break;\n        text.remove_prefix(pos + 1);\n    }\n    return parts;\n}\n\nint main() {\n    for (auto word : split(\"Pune,Bengaluru,Hyderabad,Delhi\", ','))\n        std::cout << word << '\\n'; // no copies, just views\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "fold-expressions",
+    "title": "Fold expressions",
+    "standard": "C++17",
+    "tags": ["C++17", "Templates"],
+    "description": "Expand a parameter pack over an operator. Variadic templates no longer need recursion.",
+    "code": "#include <iostream>\n\ntemplate<typename... Args>\nauto sum(Args... args) {\n    return (args + ...);           // unary right fold\n}\n\ntemplate<typename... Args>\nvoid print_all(const Args&... args) {\n    ((std::cout << args << ' '), ...); // comma fold\n    std::cout << '\\n';\n}\n\ntemplate<typename T, typename... Ts>\nbool any_of(const T& value, const Ts&... options) {\n    return ((value == options) || ...);\n}\n\nint main() {\n    std::cout << sum(1, 2, 3, 4.5) << '\\n';     // 10.5\n    print_all(\"C++\", 17, \"folds\", '!');          // C++ 17 folds !\n    std::cout << std::boolalpha << any_of(3, 1, 2, 3); // true\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "spaceship-operator",
+    "title": "Three-way comparison (<=>)",
+    "standard": "C++20",
+    "tags": ["C++20", "Modern C++"],
+    "description": "Default operator<=> once and the compiler writes ==, !=, <, <=, > and >= for you.",
+    "code": "#include <compare>\n#include <string>\n#include <vector>\n#include <algorithm>\n#include <iostream>\n\nstruct Version {\n    int major, minor, patch;\n    auto operator<=>(const Version&) const = default;\n};\n\nint main() {\n    std::vector<Version> v = {{1, 4, 0}, {1, 2, 9}, {2, 0, 0}, {1, 2, 10}};\n    std::sort(v.begin(), v.end());\n\n    for (auto [ma, mi, pa] : v)\n        std::cout << ma << '.' << mi << '.' << pa << '\\n';\n\n    std::cout << std::boolalpha << (Version{1, 2, 3} < Version{1, 3, 0}); // true\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "std-format",
+    "title": "std::format",
+    "standard": "C++20",
+    "tags": ["C++20", "Strings"],
+    "description": "Type-safe string formatting with Python-style placeholders, minus the iostream manipulators.",
+    "code": "#include <format>\n#include <iostream>\n#include <string>\n\nint main() {\n    std::string name = \"CppIndia\";\n    int members = 5000;\n    double pi = 3.14159265;\n\n    std::cout << std::format(\"Hello, {}! We have {} members.\\n\", name, members);\n    std::cout << std::format(\"pi = {:.3f}\\n\", pi);          // pi = 3.142\n    std::cout << std::format(\"[{:>8}] [{:<8}] [{:^8}]\\n\", \"r\", \"l\", \"c\");\n    std::cout << std::format(\"hex: {:#x}, bin: {:#b}\\n\", 255, 5); // 0xff, 0b101\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "designated-initializers",
+    "title": "Designated initializers",
+    "standard": "C++20",
+    "tags": ["C++20", "Modern C++"],
+    "description": "Initialize struct members by name, so call sites read like named arguments.",
+    "code": "#include <iostream>\n#include <string>\n\nstruct ServerConfig {\n    std::string host = \"localhost\";\n    int port = 8080;\n    bool tls = false;\n    int max_connections = 100;\n};\n\nvoid start(const ServerConfig& cfg) {\n    std::cout << cfg.host << ':' << cfg.port\n              << (cfg.tls ? \" (tls)\" : \"\") << \" max=\" << cfg.max_connections << '\\n';\n}\n\nint main() {\n    start({});                                       // all defaults\n    start({.port = 443, .tls = true});               // localhost:443 (tls)\n    start({.host = \"cppindia.co.in\", .max_connections = 500});\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "consteval",
+    "title": "consteval & constexpr",
+    "standard": "C++20",
+    "tags": ["C++20", "Compile-time"],
+    "description": "consteval functions only run at compile time, so the work shows up in the binary as a constant.",
+    "code": "#include <array>\n#include <iostream>\n\nconsteval unsigned long long factorial(int n) {\n    return n <= 1 ? 1 : n * factorial(n - 1);\n}\n\nconstexpr auto make_squares() {\n    std::array<int, 10> a{};\n    for (int i = 0; i < 10; ++i) a[i] = i * i;\n    return a;\n}\n\nint main() {\n    constexpr auto f20 = factorial(20);   // computed by the compiler\n    constexpr auto squares = make_squares();\n    static_assert(squares[9] == 81);\n\n    std::cout << f20 << '\\n';             // 2432902008176640000\n    for (int s : squares) std::cout << s << ' ';\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "expected",
+    "title": "std::expected for error handling",
+    "standard": "C++23",
+    "tags": ["C++23", "Error Handling", "Functional"],
+    "description": "Return either a value or an error without exceptions, then chain steps with and_then.",
+    "code": "#include <expected>\n#include <string>\n#include <charconv>\n#include <iostream>\n\nenum class ParseError { Empty, NotANumber, Negative };\n\nstd::expected<int, ParseError> parse_age(std::string_view s) {\n    if (s.empty()) return std::unexpected(ParseError::Empty);\n    int value{};\n    auto [ptr, ec] = std::from_chars(s.data(), s.data() + s.size(), value);\n    if (ec != std::errc{} || ptr != s.data() + s.size())\n        return std::unexpected(ParseError::NotANumber);\n    if (value < 0) return std::unexpected(ParseError::Negative);\n    return value;\n}\n\nint main() {\n    for (std::string_view input : {\"29\", \"\", \"abc\", \"-4\"}) {\n        auto age = parse_age(input);\n        if (age) std::cout << \"age = \" << *age << '\\n';\n        else     std::cout << \"error code \" << static_cast<int>(age.error()) << '\\n';\n    }\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "std-print",
+    "title": "std::print and std::println",
+    "standard": "C++23",
+    "tags": ["C++23", "Strings"],
+    "description": "Formatted output in one call, built on std::format.",
+    "code": "#include <print>\n#include <map>\n#include <string>\n\nint main() {\n    std::println(\"Hello, {}!\", \"CppIndia\");\n    std::println(\"{:<10}|{:>6}\", \"city\", \"talks\");\n\n    std::map<std::string, int> talks = {{\"Pune\", 12}, {\"Bengaluru\", 18}};\n    for (const auto& [city, n] : talks)\n        std::println(\"{:<10}|{:>6}\", city, n);\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "ranges-to-enumerate",
+    "title": "views::enumerate + ranges::to",
+    "standard": "C++23",
+    "tags": ["C++23", "Ranges"],
+    "description": "Index-aware loops without a counter variable, then collect a view straight into a container.",
+    "code": "#include <ranges>\n#include <vector>\n#include <string>\n#include <iostream>\n\nint main() {\n    std::vector<std::string> langs = {\"C\", \"C++\", \"Rust\", \"Zig\"};\n\n    for (auto [i, name] : std::views::enumerate(langs))\n        std::cout << i << \": \" << name << '\\n';\n\n    auto lengths = langs\n        | std::views::transform([](const std::string& s) { return s.size(); })\n        | std::ranges::to<std::vector>();\n\n    for (auto n : lengths) std::cout << n << ' '; // 1 3 4 3\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "deducing-this",
+    "title": "Deducing this",
+    "standard": "C++23",
+    "tags": ["C++23", "Templates", "Modern C++"],
+    "description": "An explicit object parameter collapses const and non-const overloads into one function and allows recursive lambdas.",
+    "code": "#include <iostream>\n#include <vector>\n\nclass Buffer {\n    std::vector<int> data_{1, 2, 3};\npublic:\n    // One function replaces the const and non-const overloads\n    template<typename Self>\n    auto&& at(this Self&& self, std::size_t i) {\n        return std::forward<Self>(self).data_[i];\n    }\n};\n\nint main() {\n    Buffer b;\n    b.at(0) = 42;\n    const Buffer& cb = b;\n    std::cout << cb.at(0) << '\\n'; // 42\n\n    // Recursive lambda: no std::function needed\n    auto fib = [](this auto self, int n) -> int {\n        return n < 2 ? n : self(n - 1) + self(n - 2);\n    };\n    std::cout << fib(10); // 55\n}",
+    "author": "CppIndia Team"
   }
 ]
