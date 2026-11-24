@@ -166,5 +166,122 @@
     "description": "An explicit object parameter collapses const and non-const overloads into one function and allows recursive lambdas.",
     "code": "#include <iostream>\n#include <vector>\n\nclass Buffer {\n    std::vector<int> data_{1, 2, 3};\npublic:\n    // One function replaces the const and non-const overloads\n    template<typename Self>\n    auto&& at(this Self&& self, std::size_t i) {\n        return std::forward<Self>(self).data_[i];\n    }\n};\n\nint main() {\n    Buffer b;\n    b.at(0) = 42;\n    const Buffer& cb = b;\n    std::cout << cb.at(0) << '\\n'; // 42\n\n    // Recursive lambda: no std::function needed\n    auto fib = [](this auto self, int n) -> int {\n        return n < 2 ? n : self(n - 1) + self(n - 2);\n    };\n    std::cout << fib(10); // 55\n}",
     "author": "CppIndia Team"
+  },
+  {
+    "id": "ctad",
+    "title": "Class template argument deduction",
+    "standard": "C++17",
+    "tags": ["C++17", "Templates"],
+    "description": "Let the compiler work out template arguments from the constructor, so you can skip the angle brackets.",
+    "code": "#include <vector>\n#include <map>\n#include <mutex>\n#include <tuple>\n#include <iostream>\n\ntemplate<typename T>\nstruct Box {\n    T value;\n    Box(T v) : value(v) {}\n};\n\nint main() {\n    std::vector v = {1, 2, 3};             // std::vector<int>\n    std::pair p = {\"pi\", 3.14};            // std::pair<const char*, double>\n    std::tuple t = {1, 'x', 2.5f};         // std::tuple<int, char, float>\n    Box b = 42;                            // Box<int>\n\n    std::mutex m;\n    std::lock_guard lock(m);               // no <std::mutex> needed\n\n    std::cout << v.size() << ' ' << p.second << ' '\n              << std::get<1>(t) << ' ' << b.value; // 3 3.14 x 42\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "filesystem",
+    "title": "std::filesystem basics",
+    "standard": "C++17",
+    "tags": ["C++17", "Utilities"],
+    "description": "Create, list and inspect files and directories with portable paths, no OS-specific APIs needed.",
+    "code": "#include <filesystem>\n#include <fstream>\n#include <iostream>\n\nnamespace fs = std::filesystem;\n\nint main() {\n    fs::path dir = fs::temp_directory_path() / \"cppindia_demo\";\n    fs::create_directories(dir / \"src\");\n\n    std::ofstream(dir / \"src\" / \"main.cpp\") << \"int main() {}\\n\";\n    std::ofstream(dir / \"README.md\") << \"# Demo\\n\";\n\n    for (const auto& entry : fs::recursive_directory_iterator(dir)) {\n        auto rel = fs::relative(entry.path(), dir);\n        if (entry.is_directory()) std::cout << \"[dir]  \" << rel.string() << '\\n';\n        else std::cout << \"[file] \" << rel.string() << \" (\" << entry.file_size() << \" bytes)\\n\";\n    }\n\n    std::cout << \"extension: \" << fs::path(\"src/main.cpp\").extension() << '\\n';\n    fs::remove_all(dir);\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "apply-invoke",
+    "title": "std::apply and std::invoke",
+    "standard": "C++17",
+    "tags": ["C++17", "Templates", "Functional"],
+    "description": "Call anything callable with one syntax, and unpack a tuple straight into a function's arguments.",
+    "code": "#include <functional>\n#include <tuple>\n#include <string>\n#include <iostream>\n\nstruct Greeter {\n    std::string name;\n    void hello(const std::string& who) const {\n        std::cout << name << \" says hi to \" << who << '\\n';\n    }\n};\n\nint add(int a, int b, int c) { return a + b + c; }\n\nint main() {\n    // std::invoke: free functions, lambdas and member functions alike\n    Greeter g{\"CppIndia\"};\n    std::invoke(&Greeter::hello, g, \"Pune\");\n    std::cout << std::invoke(add, 1, 2, 3) << '\\n';                  // 6\n\n    // std::apply: tuple elements become the arguments\n    auto args = std::make_tuple(10, 20, 30);\n    std::cout << std::apply(add, args) << '\\n';                       // 60\n\n    auto print_all = [](const auto&... xs) { ((std::cout << xs << ' '), ...); };\n    std::apply(print_all, std::tuple{\"C++\", 17, '!'});                // C++ 17 !\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "std-any",
+    "title": "std::any",
+    "standard": "C++17",
+    "tags": ["C++17", "Modern C++"],
+    "description": "A type-safe container for a single value of any type, checked when you read it back.",
+    "code": "#include <any>\n#include <string>\n#include <vector>\n#include <iostream>\n\nvoid describe(const std::any& a) {\n    if (auto i = std::any_cast<int>(&a))              std::cout << \"int: \" << *i << '\\n';\n    else if (auto s = std::any_cast<std::string>(&a)) std::cout << \"string: \" << *s << '\\n';\n    else if (auto d = std::any_cast<double>(&a))      std::cout << \"double: \" << *d << '\\n';\n    else if (!a.has_value())                           std::cout << \"empty\\n\";\n    else                                               std::cout << \"some other type\\n\";\n}\n\nint main() {\n    std::vector<std::any> bag = {42, std::string(\"hello\"), 3.5, std::any{}};\n    for (const auto& item : bag) describe(item);\n\n    try {\n        std::any_cast<int>(bag[1]); // wrong type\n    } catch (const std::bad_any_cast& e) {\n        std::cout << \"caught: \" << e.what() << '\\n';\n    }\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "latch-barrier",
+    "title": "std::latch and std::barrier",
+    "standard": "C++20",
+    "tags": ["C++20", "Concurrency", "Threads"],
+    "description": "Simple thread coordination: a latch waits for N tasks once, a barrier syncs threads at each phase.",
+    "code": "#include <latch>\n#include <barrier>\n#include <thread>\n#include <vector>\n#include <iostream>\n#include <syncstream>\n\nint main() {\n    constexpr int workers = 3;\n\n    {   // latch: one-shot countdown\n        std::latch ready(workers);\n        std::vector<std::jthread> threads;\n        for (int i = 0; i < workers; ++i)\n            threads.emplace_back([&ready, i] {\n                std::osyncstream(std::cout) << \"worker \" << i << \" ready\\n\";\n                ready.count_down();\n            });\n        ready.wait();\n        std::cout << \"all workers ready\\n\";\n    }   // threads join here, before the latch goes away\n\n    {   // barrier: reusable, runs a completion step after each phase\n        int phase = 0;\n        std::barrier sync(workers, [&phase]() noexcept {\n            std::cout << \"-- phase \" << phase++ << \" done --\\n\";\n        });\n        std::vector<std::jthread> threads;\n        for (int i = 0; i < workers; ++i)\n            threads.emplace_back([&sync] {\n                for (int step = 0; step < 2; ++step) sync.arrive_and_wait();\n            });\n    }\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "source-location",
+    "title": "std::source_location",
+    "standard": "C++20",
+    "tags": ["C++20", "Utilities"],
+    "description": "Capture the caller's file, line and function name without __FILE__ / __LINE__ macros.",
+    "code": "#include <source_location>\n#include <string_view>\n#include <iostream>\n\nvoid log(std::string_view msg,\n         std::source_location loc = std::source_location::current()) {\n    std::cout << loc.file_name() << ':' << loc.line()\n              << \" [\" << loc.function_name() << \"] \" << msg << '\\n';\n}\n\nvoid connect() {\n    log(\"connecting to server\");\n}\n\nint main() {\n    log(\"starting up\");\n    connect();\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "erase-if-starts-with",
+    "title": "std::erase_if and starts_with",
+    "standard": "C++20",
+    "tags": ["C++20", "Containers", "Strings"],
+    "description": "Remove matching elements in one call instead of the erase-remove idiom, and check prefixes and suffixes directly.",
+    "code": "#include <vector>\n#include <map>\n#include <string>\n#include <iostream>\n\nint main() {\n    std::vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8};\n    auto removed = std::erase_if(nums, [](int n) { return n % 2 == 0; });\n    std::cout << \"removed \" << removed << \", left:\";\n    for (int n : nums) std::cout << ' ' << n;                    // 1 3 5 7\n    std::cout << '\\n';\n\n    std::map<std::string, int> talks = {{\"cpp-pune\", 3}, {\"rust-blr\", 2}, {\"cpp-delhi\", 5}};\n    std::erase_if(talks, [](const auto& kv) { return !kv.first.starts_with(\"cpp-\"); });\n    for (const auto& [name, n] : talks) std::cout << name << ' ' << n << '\\n';\n\n    std::string file = \"slides.pdf\";\n    std::cout << std::boolalpha << file.ends_with(\".pdf\") << '\\n'; // true\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "chrono-calendar",
+    "title": "std::chrono calendar dates",
+    "standard": "C++20",
+    "tags": ["C++20", "Utilities"],
+    "description": "Type-safe calendar dates with literal syntax, plus date arithmetic and weekday lookup.",
+    "code": "#include <chrono>\n#include <iostream>\n\nint main() {\n    using namespace std::chrono;\n\n    year_month_day conf = 2026y / November / 28d;\n    std::cout << \"date: \" << conf << '\\n';                         // 2026-11-28\n    std::cout << \"weekday: \" << weekday{sys_days{conf}} << '\\n';   // Sat\n\n    auto next_month = conf + months{1};\n    std::cout << \"a month later: \" << next_month << '\\n';          // 2026-12-28\n\n    // Last day of February, leap years handled for you\n    year_month_day_last feb_end = 2028y / February / last;\n    std::cout << \"Feb 2028 ends on \" << feb_end.day() << '\\n';     // 29\n\n    auto days_left = sys_days{2026y / December / 31d} - sys_days{conf};\n    std::cout << days_left.count() << \" days until year end\\n\";    // 33\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "bit-utilities",
+    "title": "<bit>: bit_cast, popcount and friends",
+    "standard": "C++20",
+    "tags": ["C++20", "Memory", "Compile-time"],
+    "description": "Reinterpret bits safely with std::bit_cast, and use portable bit tricks that compile to single instructions.",
+    "code": "#include <bit>\n#include <cstdint>\n#include <iostream>\n\nint main() {\n    // Inspect a float's bits without undefined behaviour\n    float f = 1.0f;\n    auto bits = std::bit_cast<std::uint32_t>(f);\n    std::cout << std::hex << \"1.0f bits: 0x\" << bits << std::dec << '\\n'; // 0x3f800000\n\n    std::uint32_t x = 0b1011'0000;\n    std::cout << \"popcount: \"      << std::popcount(x)      << '\\n'; // 3\n    std::cout << \"countr_zero: \"   << std::countr_zero(x)   << '\\n'; // 4\n    std::cout << \"bit_width: \"     << std::bit_width(x)     << '\\n'; // 8\n    std::cout << \"bit_ceil(100): \" << std::bit_ceil(100u)   << '\\n'; // 128\n    std::cout << std::boolalpha << \"has_single_bit(64): \" << std::has_single_bit(64u) << '\\n';\n\n    static_assert(std::popcount(0xFFu) == 8); // all constexpr\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "std-generator",
+    "title": "std::generator coroutines",
+    "standard": "C++23",
+    "tags": ["C++23", "Coroutines", "Ranges"],
+    "description": "Write lazy sequences with co_yield. std::generator is a range, so it works with views and range-for.",
+    "code": "#include <generator>\n#include <ranges>\n#include <utility>\n#include <iostream>\n\nstd::generator<long long> fibonacci() {\n    long long a = 0, b = 1;\n    while (true) {\n        co_yield a;\n        a = std::exchange(b, a + b);\n    }\n}\n\nstd::generator<int> range(int from, int to) {\n    for (int i = from; i < to; ++i) co_yield i;\n}\n\nint main() {\n    for (auto n : fibonacci() | std::views::take(10))\n        std::cout << n << ' ';             // 0 1 1 2 3 5 8 13 21 34\n    std::cout << '\\n';\n\n    for (int n : range(1, 20) | std::views::filter([](int n) { return n % 5 == 0; }))\n        std::cout << n << ' ';             // 5 10 15\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "zip-chunk-slide",
+    "title": "views::zip, chunk and slide",
+    "standard": "C++23",
+    "tags": ["C++23", "Ranges"],
+    "description": "Walk several ranges in step, split a range into fixed-size groups, or look at a sliding window.",
+    "code": "#include <ranges>\n#include <vector>\n#include <string>\n#include <iostream>\n\nint main() {\n    std::vector<std::string> cities = {\"Pune\", \"Delhi\", \"Chennai\"};\n    std::vector<int> members = {420, 380, 310};\n\n    for (auto [city, n] : std::views::zip(cities, members))\n        std::cout << city << \": \" << n << '\\n';\n\n    std::vector<int> v = {1, 2, 3, 4, 5, 6, 7};\n\n    std::cout << \"chunk(3):\";\n    for (auto group : v | std::views::chunk(3)) {\n        std::cout << \" [\";\n        for (int x : group) std::cout << x;\n        std::cout << ']';                  // [123] [456] [7]\n    }\n\n    std::cout << \"\\nslide(3) sums:\";\n    for (auto window : v | std::views::slide(3)) {\n        int sum = 0;\n        for (int x : window) sum += x;\n        std::cout << ' ' << sum;           // 6 9 12 15 18\n    }\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "multidim-subscript",
+    "title": "Multidimensional subscript operator",
+    "standard": "C++23",
+    "tags": ["C++23", "Containers"],
+    "description": "operator[] can now take several arguments, so a matrix class reads m[i, j] instead of m(i, j).",
+    "code": "#include <vector>\n#include <iostream>\n\ntemplate<typename T>\nclass Matrix {\n    std::size_t rows_, cols_;\n    std::vector<T> data_;\npublic:\n    Matrix(std::size_t r, std::size_t c) : rows_(r), cols_(c), data_(r * c) {}\n\n    T& operator[](std::size_t i, std::size_t j) { return data_[i * cols_ + j]; }\n    const T& operator[](std::size_t i, std::size_t j) const { return data_[i * cols_ + j]; }\n\n    std::size_t rows() const { return rows_; }\n    std::size_t cols() const { return cols_; }\n};\n\nint main() {\n    Matrix<int> m(3, 3);\n    for (std::size_t i = 0; i < m.rows(); ++i)\n        for (std::size_t j = 0; j < m.cols(); ++j)\n            m[i, j] = static_cast<int>(i * 3 + j);\n\n    for (std::size_t i = 0; i < m.rows(); ++i) {\n        for (std::size_t j = 0; j < m.cols(); ++j) std::cout << m[i, j] << ' ';\n        std::cout << '\\n';\n    }\n}",
+    "author": "CppIndia Team"
+  },
+  {
+    "id": "to-underlying",
+    "title": "std::to_underlying and string::contains",
+    "standard": "C++23",
+    "tags": ["C++23", "Modern C++", "Strings"],
+    "description": "Small C++23 conveniences: get an enum's integer value without a cast, and test for a substring in one call.",
+    "code": "#include <utility>\n#include <string>\n#include <cstdint>\n#include <iostream>\n\nenum class Level : std::uint8_t { Debug = 10, Info = 20, Warn = 30, Error = 40 };\n\nint main() {\n    Level lvl = Level::Warn;\n    auto value = std::to_underlying(lvl);     // std::uint8_t, no static_cast\n    std::cout << \"Warn = \" << +value << '\\n';  // 30\n\n    std::string talk = \"Modern C++ ranges in practice\";\n    std::cout << std::boolalpha\n              << talk.contains(\"ranges\") << ' '  // true\n              << talk.contains('#') << '\\n';     // false\n}",
+    "author": "CppIndia Team"
   }
 ]
