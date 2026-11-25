@@ -34,7 +34,7 @@
                 class="rounded-xl p-4 text-center"
                 style="background: var(--card-bg); border: 1px solid var(--card-border);">
                 <p class="font-display font-extrabold text-2xl mb-0.5"
-                  style="background: linear-gradient(135deg,#2563EB,#06B6D4); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
+                  style="background: var(--gradient-heading); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">
                   {{ stat.value }}
                 </p>
                 <p class="text-xs font-medium" style="color: var(--color-text-muted);">{{ stat.label }}</p>
@@ -48,7 +48,7 @@
               <div>
                 <p class="text-sm font-semibold" style="color: var(--color-text);">Already a member?</p>
                 <a :href="SITE.discordInvite" target="_blank" rel="noopener noreferrer"
-                  class="text-xs font-semibold hover:underline" style="color: var(--color-discord);">
+                  class="text-xs font-semibold hover:underline" style="color: var(--color-discord-text);">
                   Join us on Discord →
                 </a>
               </div>

@@ -17,7 +17,7 @@
           @click="activeCategory = cat"
           class="px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
           :style="activeCategory === cat
-            ? 'background: var(--color-primary); color: #fff; border: 1px solid var(--color-primary);'
+            ? 'background: var(--color-primary-btn); color: #fff; border: 1px solid var(--color-primary-btn);'
             : 'background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border);'"
         >{{ cat }}</button>
       </div>

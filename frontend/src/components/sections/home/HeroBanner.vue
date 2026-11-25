@@ -42,7 +42,7 @@
             <span class="w-2 h-2 rounded-full animate-pulse-dot flex-shrink-0"
               style="background:#16A34A;" />
             <span class="text-xs font-semibold tracking-[0.05em]"
-              style="color:#2563EB;">
+              style="color:var(--color-primary-soft);">
               India's C++ User Group &nbsp;·&nbsp; Est. {{ SITE.founded }}
             </span>
           </div>
@@ -77,7 +77,7 @@
             </a>
             <RouterLink to="/tech-talks"
               class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold transition-all duration-200 hover:-translate-y-px"
-              style="background:rgba(8,145,178,0.08);border:1px solid rgba(8,145,178,0.35);color:#2563EB;"
+              style="background:rgba(8,145,178,0.08);border:1px solid rgba(8,145,178,0.35);color:var(--color-primary-soft);"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               Watch Tech Talks

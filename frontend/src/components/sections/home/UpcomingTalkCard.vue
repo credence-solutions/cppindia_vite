@@ -35,7 +35,7 @@
             {{ speakerName }}
           </RouterLink>
           <span v-else class="text-sm font-semibold" style="color:#E2E8F0;">{{ speakerName }}</span>
-          <p class="text-xs mt-0.5" style="color:rgba(148,163,184,0.75);">{{ whenLine }}</p>
+          <p class="text-xs mt-0.5" style="color:rgba(148,163,184,0.95);">{{ whenLine }}</p>
         </div>
       </div>
 

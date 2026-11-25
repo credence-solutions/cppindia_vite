@@ -23,7 +23,7 @@
               role="tab"
               class="flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-150 cursor-pointer"
               :class="activeYear === yr
-                ? 'bg-secondary text-white hover:bg-secondary-dark'
+                ? 'bg-secondary-btn text-white hover:brightness-90'
                 : 'text-ink-2 hover:text-secondary hover:bg-[rgba(8,145,178,0.06)] border border-[rgba(8,145,178,0.2)] hover:border-[rgba(8,145,178,0.5)]'"
               :aria-selected="activeYear === yr"
               @click="setYear(yr)"
@@ -31,7 +31,7 @@
               {{ yr }}
               <span
                 class="px-1.5 py-px rounded-full text-[10px] font-bold"
-                :class="activeYear === yr ? 'bg-white/20 text-white' : 'bg-surface-alt text-ink-3'"
+                :class="activeYear === yr ? 'bg-black/20 text-white' : 'bg-surface-alt text-ink-3'"
               >{{ talksByYear[yr]?.length ?? 0 }}</span>
             </button>
           </div>

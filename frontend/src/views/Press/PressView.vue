@@ -123,7 +123,7 @@
               <svg v-else width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </div>
             <div>
-              <p class="text-xs font-semibold mb-0.5" :style="g.ok ? 'color:var(--tag-green);' : 'color:#DC2626;'">{{ g.title }}</p>
+              <p class="text-xs font-semibold mb-0.5" :style="g.ok ? 'color:var(--tag-green);' : 'color:var(--tag-red);'">{{ g.title }}</p>
               <p class="text-xs" style="color:var(--color-text-secondary);">{{ g.body }}</p>
             </div>
           </div>

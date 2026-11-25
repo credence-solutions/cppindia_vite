@@ -2,7 +2,7 @@
   <Transition name="btt">
     <button
       v-if="visible && !nav.mobileMenuOpen"
-      class="fixed bottom-6 left-6 w-11 h-11 flex items-center justify-center rounded-full bg-primary text-white shadow-card-lg z-dropdown cursor-pointer transition-all duration-base hover:bg-primary-dark hover:-translate-y-[3px] hover:shadow-brand"
+      class="fixed bottom-6 left-6 w-11 h-11 flex items-center justify-center rounded-full bg-primary-btn text-white shadow-card-lg z-dropdown cursor-pointer transition-all duration-base hover:bg-primary-btn-hover hover:-translate-y-[3px] hover:shadow-brand"
       aria-label="Back to top"
       @click="scrollToTop"
     >

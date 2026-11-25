@@ -11,6 +11,10 @@ export default {
         primary:          'var(--color-primary)',
         'primary-dark':   'var(--color-primary-dark)',
         'primary-light':  'var(--color-primary-light)',
+        // Fills behind white text (deeper than the brand colour in bright themes)
+        'primary-btn':       'var(--color-primary-btn)',
+        'primary-btn-hover': 'var(--color-primary-btn-hover)',
+        'secondary-btn':     'var(--color-secondary-btn)',
         secondary:        'var(--color-secondary)',
         'secondary-dark': 'var(--color-secondary-dark)',
         accent:           'var(--color-accent)',

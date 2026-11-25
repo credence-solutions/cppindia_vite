@@ -55,7 +55,7 @@
 
     <!-- Toggle button -->
     <button
-      class="w-[52px] h-[52px] rounded-full flex items-center justify-center bg-secondary text-white cursor-pointer shadow-glow-secondary transition-all duration-base relative hover:scale-[1.08]"
+      class="w-[52px] h-[52px] rounded-full flex items-center justify-center bg-secondary-btn text-white cursor-pointer shadow-glow-secondary transition-all duration-base relative hover:scale-[1.08]"
       :aria-label="open ? 'Close community menu' : 'Join CppIndia'"
       :aria-expanded="open"
       @click="open = !open"

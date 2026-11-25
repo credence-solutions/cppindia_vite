@@ -115,21 +115,31 @@ $bp-2xl: 1440px;
   // --- Reusable gradients ---
   --gradient-heading: linear-gradient(100deg, #1D4ED8 0%, #0E7490 100%);
   // Solid primary, written as a gradient so it works for both background and background-image
-  --gradient-btn:     linear-gradient(var(--color-primary), var(--color-primary));
+  --gradient-btn:     linear-gradient(var(--color-primary-btn), var(--color-primary-btn));
 
   // --- Tag / badge text tones — readable (WCAG AA) on light surfaces ---
-  --tag-cyan:   #0E7490;   // cyan-700
-  --tag-amber:  #A16207;   // yellow-700
-  --tag-slate:  #64748B;   // slate-500
+  --tag-cyan:   #155E75;   // cyan-800
+  --tag-amber:  #854D0E;   // yellow-800
+  --tag-slate:  #475569;   // slate-600
   --tag-violet: #7E22CE;   // purple-700
   --tag-green:  #047857;   // emerald-700
-  --tag-orange: #B45309;   // amber-700
+  --tag-orange: #9A3412;   // orange-800
+  --tag-red:    #B91C1C;   // red-700
+  --tag-silver: #475569;   // slate-600
+  --tag-gold:   #92400E;   // amber-800
+
+  // --- Fills behind white text — themes whose brand colours are too bright
+  //     for white text override these with deeper shades ---
+  --color-primary-btn:       var(--color-primary);
+  --color-primary-btn-hover: var(--color-primary-dark);
+  --color-secondary-btn:     var(--color-secondary);
 
   // --- Brand partner colors ---
   --color-discord:        #5865F2;
   --color-discord-hover:  #4752C4;
-  --color-youtube:        #FF0000;
-  --color-youtube-hover:  #cc0000;
+  --color-discord-text:   #4752C4;   // Discord blurple dark enough for text
+  --color-youtube:        #CC0000;   // deeper than brand #FF0000 so white text reaches AA
+  --color-youtube-hover:  #A30000;
 
   // --- Glow effects ---
   --glow-primary:   0 0 24px rgba(79, 142, 247, 0.25);

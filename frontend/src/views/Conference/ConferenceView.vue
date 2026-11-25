@@ -18,7 +18,7 @@
             role="tab"
             class="flex items-center gap-2 px-5 py-2 rounded-md text-sm font-medium cursor-pointer transition-all duration-150"
             :class="activeYear === yr
-              ? 'bg-secondary text-white border border-secondary'
+              ? 'bg-secondary-btn text-white border border-secondary-btn'
               : 'text-ink-2 border border-[rgba(8,145,178,0.22)] hover:border-[rgba(8,145,178,0.55)] hover:text-secondary hover:bg-secondary/[0.06]'"
             :aria-selected="activeYear === yr"
             @click="setYear(yr)"
@@ -26,7 +26,7 @@
             {{ yr }}
             <span
               v-if="yr === latestYear"
-              class="px-1.5 py-px bg-white/20 rounded-full text-[10px] font-bold"
+              class="px-1.5 py-px bg-black/20 rounded-full text-[10px] font-bold"
             >Latest</span>
           </button>
         </div>
@@ -110,7 +110,7 @@
                     <p class="font-bold text-sm text-ink leading-snug">{{ s.name }}</p>
                     <span
                       v-if="s.role === 'Keynote'"
-                      class="px-[7px] py-px bg-secondary text-white rounded-full text-[9px] font-bold uppercase tracking-[0.04em] flex-shrink-0 mt-0.5 self-start"
+                      class="px-[7px] py-px bg-secondary-btn text-white rounded-full text-[9px] font-bold uppercase tracking-[0.04em] flex-shrink-0 mt-0.5 self-start"
                     >Keynote</span>
                   </div>
                   <p v-if="s.topic" class="text-xs text-ink-2 leading-[1.5] italic">"{{ s.topic }}"</p>
@@ -146,7 +146,7 @@
                     v-show="!scheduleQuery || sessionMatchesQuery(session)"
                     class="flex items-start gap-2 sm:gap-4 px-2 py-2 sm:px-3 sm:py-3 rounded-lg mb-1 transition-colors"
                     :class="{
-                      'opacity-75': ['break','intro','outro','activity'].includes(session.type),
+                      'opacity-90': ['break','intro','outro','activity'].includes(session.type),
                       'bg-surface-alt hover:bg-surface-raised': ['talk','keynote','lightning'].includes(session.type),
                       'border-l-[3px] border-secondary bg-secondary/[0.06]': session.type === 'keynote',
                     }"
@@ -171,7 +171,7 @@
                           </a>
                           <span
                             v-if="session.type === 'keynote'"
-                            class="px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-secondary text-white"
+                            class="px-[7px] py-px rounded-full text-[9px] font-bold uppercase tracking-[0.05em] bg-secondary-btn text-white"
                           >Keynote</span>
                           <span
                             v-else-if="session.type === 'lightning'"
@@ -219,7 +219,7 @@
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     </div>
                   </div>
-                  <span v-if="sv.type === 'keynote'" class="absolute top-2 left-2 px-2 py-0.5 bg-secondary text-white text-[10px] font-bold rounded uppercase">Keynote</span>
+                  <span v-if="sv.type === 'keynote'" class="absolute top-2 left-2 px-2 py-0.5 bg-secondary-btn text-white text-[10px] font-bold rounded uppercase">Keynote</span>
                 </div>
                 <div class="p-4">
                   <p class="text-sm font-semibold text-ink leading-snug mb-1">{{ sv.title }}</p>
@@ -269,7 +269,7 @@
                         <h2 class="font-display text-xl font-bold text-ink leading-tight">{{ selectedSpeaker.name }}</h2>
                         <span
                           v-if="selectedSpeaker.role === 'Keynote'"
-                          class="px-2 py-0.5 bg-secondary text-white rounded-full text-[10px] font-bold uppercase tracking-wide flex-shrink-0"
+                          class="px-2 py-0.5 bg-secondary-btn text-white rounded-full text-[10px] font-bold uppercase tracking-wide flex-shrink-0"
                         >Keynote</span>
                       </div>
                       <p v-if="selectedSpeaker.topic" class="text-sm text-secondary font-medium italic">"{{ selectedSpeaker.topic }}"</p>
@@ -401,7 +401,7 @@
               <div class="mb-6">
                 <div class="flex items-center justify-center gap-2 mb-6">
                   <span class="h-px flex-1 max-w-[60px]" style="background: rgba(180,135,0,0.4);" />
-                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: rgba(140,100,0,0.85);">Gold Sponsors {{ activeYear }}</span>
+                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" style="color: var(--tag-gold);">Gold Sponsors {{ activeYear }}</span>
                   <span class="h-px flex-1 max-w-[60px]" style="background: rgba(180,135,0,0.4);" />
                 </div>
                 <div class="flex flex-wrap justify-center items-stretch gap-4">

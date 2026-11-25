@@ -28,7 +28,7 @@
           <div class="flex items-center gap-3 mt-auto pt-2" style="border-top: 1px solid var(--color-border);">
             <!-- Avatar initials -->
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-xs"
-              style="background:rgba(8,145,178,0.15); color:#2563EB;">
+              style="background:rgba(8,145,178,0.15); color:var(--color-primary-soft);">
               {{ t.name.split(' ').map(n => n[0]).join('') }}
             </div>
             <div>

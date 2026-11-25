@@ -81,7 +81,7 @@ const reports = [
   {
     year: 'CppIndiaCon 2024',
     tag: 'Networking',
-    tagStyle: 'background: rgba(88,101,242,0.1); border: 1px solid rgba(88,101,242,0.25); color: #5865F2;',
+    tagStyle: 'background: rgba(88,101,242,0.1); border: 1px solid rgba(88,101,242,0.25); color: var(--color-discord-text);',
     title: 'Networking Guide — Discord Channels & Tables',
     desc: 'How to connect with speakers and attendees during CppIndiaCon 2024 via Discord — Q&A stages, networking tables, and key channels.',
     author: 'CppIndia Team',

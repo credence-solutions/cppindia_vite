@@ -191,7 +191,7 @@ const renderedBody = computed(() => post.value ? renderMarkdown(post.value.body)
   margin-bottom: 0.75rem;
 }
 .prose-cpp h2 { font-size: 1.35rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--color-border); }
-.prose-cpp h3 { font-size: 1.1rem; color: #2563EB; }
+.prose-cpp h3 { font-size: 1.1rem; color: var(--color-primary-soft); }
 .prose-cpp p  { margin-bottom: 1.25rem; }
 .prose-cpp strong { color: var(--color-text); }
 .prose-cpp code {

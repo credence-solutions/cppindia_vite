@@ -78,7 +78,7 @@
     <!-- Bottom bar -->
     <div class="border-t border-white/[0.08] py-5">
       <div class="container flex flex-wrap items-center justify-between gap-4">
-        <p class="text-xs text-white/45">
+        <p class="text-xs text-white/60">
           &copy; {{ currentYear }} CppIndia User Group. All rights reserved.
         </p>
         <p class="text-xs text-white/60">

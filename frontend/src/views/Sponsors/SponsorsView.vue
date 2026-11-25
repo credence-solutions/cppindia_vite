@@ -182,19 +182,19 @@ const tierStyles = {
   bronze: {
     border: 'rgba(180,83,9,0.45)',
     badge:  'rgba(180,83,9,0.15)',
-    text:   '#B45309',
+    text:   'var(--tag-orange)',
     glow:   'rgba(180,83,9,0.08)',
   },
   silver: {
     border: 'rgba(148,163,184,0.4)',
     badge:  'rgba(148,163,184,0.12)',
-    text:   '#475569',
+    text:   'var(--tag-silver)',
     glow:   'rgba(148,163,184,0.06)',
   },
   gold: {
     border: 'rgba(234,179,8,0.55)',
     badge:  'rgba(234,179,8,0.15)',
-    text:   '#92400E',
+    text:   'var(--tag-gold)',
     glow:   'rgba(234,179,8,0.18)',
   },
 }

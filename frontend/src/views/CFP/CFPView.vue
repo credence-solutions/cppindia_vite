@@ -15,7 +15,7 @@
           @click="activeStatus = s.value"
           class="px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
           :style="activeStatus === s.value
-            ? 'background:var(--color-primary); color:#fff; border:1px solid var(--color-primary);'
+            ? 'background:var(--color-primary-btn); color:#fff; border:1px solid var(--color-primary-btn);'
             : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ s.label }}</button>
       </div>
@@ -144,8 +144,8 @@ function formatDate(d) {
 }
 
 function countdownStyle(days) {
-  if (days === 0)  return 'background:rgba(220,38,38,0.15); color:#DC2626; border:1px solid rgba(220,38,38,0.35);'
-  if (days <= 15)  return 'background:rgba(220,38,38,0.12); color:#EF4444; border:1px solid rgba(220,38,38,0.3);'
+  if (days === 0)  return 'background:rgba(220,38,38,0.15); color:var(--tag-red); border:1px solid rgba(220,38,38,0.35);'
+  if (days <= 15)  return 'background:rgba(220,38,38,0.12); color:var(--tag-red); border:1px solid rgba(220,38,38,0.3);'
   if (days <= 30)  return 'background:rgba(251,191,36,0.12); color:var(--tag-orange); border:1px solid rgba(251,191,36,0.35);'
   return 'background:rgba(52,211,153,0.10); color:var(--tag-green); border:1px solid rgba(52,211,153,0.3);'
 }

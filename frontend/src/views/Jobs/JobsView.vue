@@ -25,7 +25,7 @@
             @click="locFilter = f.value"
             class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
             :style="locFilter === f.value
-              ? 'background:var(--color-primary); color:#fff; border:1px solid var(--color-primary);'
+              ? 'background:var(--color-primary-btn); color:#fff; border:1px solid var(--color-primary-btn);'
               : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
           >{{ f.label }}</button>
         </div>
@@ -34,7 +34,7 @@
             @click="levelFilter = f.value"
             class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
             :style="levelFilter === f.value
-              ? 'background:var(--color-primary); color:#fff; border:1px solid var(--color-primary);'
+              ? 'background:var(--color-primary-btn); color:#fff; border:1px solid var(--color-primary-btn);'
               : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
           >{{ f.label }}</button>
         </div>

@@ -39,26 +39,25 @@
   }
 
   .btn--primary {
-    @apply bg-primary text-white border-primary;
+    @apply bg-primary-btn text-white border-primary-btn;
     &:hover {
-      background: var(--color-primary-dark);
-      border-color: var(--color-primary-dark);
+      background: var(--color-primary-btn-hover);
+      border-color: var(--color-primary-btn-hover);
       @apply -translate-y-px shadow-brand;
     }
   }
 
   .btn--secondary {
-    @apply bg-secondary text-white border-secondary;
+    @apply bg-secondary-btn text-white border-secondary-btn;
     &:hover {
-      background: var(--color-secondary-dark);
-      border-color: var(--color-secondary-dark);
+      filter: brightness(0.9);
       @apply -translate-y-px;
     }
   }
 
   .btn--outline {
     @apply bg-transparent text-primary border-primary;
-    &:hover { @apply bg-primary text-white; }
+    &:hover { @apply bg-primary-btn border-primary-btn text-white; }
   }
 
   .btn--outline-white {

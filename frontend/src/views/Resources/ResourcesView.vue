@@ -219,7 +219,7 @@ const levels = [
   { value: 'all',          label: 'All Levels',   bg: 'rgba(8,145,178,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.4)'  },
   { value: 'beginner',     label: 'Beginner',     bg: 'rgba(52,211,153,0.15)', color: 'var(--tag-green)',                   border: 'rgba(52,211,153,0.4)' },
   { value: 'intermediate', label: 'Intermediate', bg: 'rgba(251,191,36,0.15)', color: 'var(--tag-orange)',                   border: 'rgba(251,191,36,0.4)' },
-  { value: 'advanced',     label: 'Advanced',     bg: 'rgba(239,68,68,0.12)',  color: '#DC2626',                   border: 'rgba(239,68,68,0.35)' },
+  { value: 'advanced',     label: 'Advanced',     bg: 'rgba(239,68,68,0.12)',  color: 'var(--tag-red)',                   border: 'rgba(239,68,68,0.35)' },
 ]
 
 function matches(item) {
@@ -247,7 +247,7 @@ const totalResults        = computed(() =>
 function levelStyle(level) {
   if (level === 'beginner')     return 'background:rgba(52,211,153,0.1); color:var(--tag-green); border:1px solid rgba(52,211,153,0.3);'
   if (level === 'intermediate') return 'background:rgba(251,191,36,0.1); color:var(--tag-orange); border:1px solid rgba(251,191,36,0.3);'
-  if (level === 'advanced')     return 'background:rgba(239,68,68,0.1); color:#DC2626; border:1px solid rgba(239,68,68,0.3);'
+  if (level === 'advanced')     return 'background:rgba(239,68,68,0.1); color:var(--tag-red); border:1px solid rgba(239,68,68,0.3);'
   return ''
 }
 
