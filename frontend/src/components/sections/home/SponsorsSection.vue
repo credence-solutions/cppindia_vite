@@ -66,7 +66,7 @@ function merge(type) {
 const firstYear = Math.min(...sponsorsData.map(s => s.conference))
 
 const groups = [
-  { label: 'Gold Sponsors',      sponsors: merge('gold'),      line: 'rgba(234,179,8,0.2)', text: 'rgba(202,138,4,0.85)' },
+  { label: 'Gold Sponsors',      sponsors: merge('gold'),      line: 'rgba(234,179,8,0.2)', text: 'var(--tag-amber)' },
   { label: 'Community Partners', sponsors: merge('community'), line: 'rgba(8,145,178,0.2)', text: 'var(--color-text-muted)' },
 ].filter(g => g.sponsors.length)
 </script>

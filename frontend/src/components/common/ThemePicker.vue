@@ -1,5 +1,5 @@
 <template>
-  <div v-show="!nav.mobileMenuOpen" class="fixed z-floating" style="bottom: calc(1.5rem + 72px); right: 1.5rem;">
+  <div v-show="floatingVisible && !nav.mobileMenuOpen" class="fixed z-floating" style="bottom: calc(1.5rem + 72px); right: 1.5rem;">
     <!-- Toggle -->
     <button
       class="w-11 h-11 rounded-full flex items-center justify-center bg-surface-raised border border-wire text-ink-2 shadow-card cursor-pointer transition-all duration-fast"
@@ -67,8 +67,10 @@
 import { ref } from 'vue'
 import { useThemeStore, THEMES } from '@/stores/theme'
 import { useNavigationStore } from '@/stores/navigation'
+import { useFloatingVisibility } from '@/composables/useFloatingVisibility'
 
 const theme = useThemeStore()
+const { visible: floatingVisible } = useFloatingVisibility()
 const nav   = useNavigationStore()
 const open  = ref(false)
 

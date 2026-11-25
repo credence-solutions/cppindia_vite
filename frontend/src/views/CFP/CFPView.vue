@@ -15,7 +15,7 @@
           @click="activeStatus = s.value"
           class="px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200"
           :style="activeStatus === s.value
-            ? `background:${s.bg}; color:${s.color}; border:1px solid ${s.border};`
+            ? 'background:var(--color-primary); color:#fff; border:1px solid var(--color-primary);'
             : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ s.label }}</button>
       </div>
@@ -74,9 +74,14 @@
                   <a :href="cfp.url" target="_blank" rel="noopener noreferrer"
                     class="inline-flex items-center gap-1 text-xs font-semibold transition-colors duration-150"
                     style="color:var(--color-primary-soft);">
-                    Submit
+                    {{ cfp.status === 'open' ? 'Submit' : 'Website' }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                   </a>
+                </td>
+              </tr>
+              <tr v-if="!filtered.length">
+                <td colspan="6" class="px-5 py-10 text-center text-sm" style="color:var(--color-text-muted);">
+                  No {{ activeStatus === 'all' ? '' : activeStatus }} calls for proposals listed right now — check back soon.
                 </td>
               </tr>
             </tbody>
@@ -106,6 +111,7 @@ import { ref, computed } from 'vue'
 import { useHead } from '@/composables/useHead'
 import PageHero from '@/components/common/PageHero.vue'
 import cfpData from '@/data/cfp.json'
+import { daysUntil, cfpStatus } from '@/utils/cfp.js'
 
 useHead({
   title: 'CFP Tracker | CppIndia',
@@ -113,38 +119,40 @@ useHead({
 })
 
 const statuses = [
-  { value: 'all',       label: 'All',      bg: 'rgba(8,145,178,0.2)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.45)' },
-  { value: 'open',      label: 'Open',     bg: 'rgba(52,211,153,0.15)', color: '#059669', border: 'rgba(52,211,153,0.4)'  },
-  { value: 'closed',    label: 'Closed',   bg: 'rgba(148,163,184,0.1)', color: '#94A3B8', border: 'rgba(148,163,184,0.3)' },
+  { value: 'all',    label: 'All' },
+  { value: 'open',   label: 'Open' },
+  { value: 'closed', label: 'Closed' },
 ]
 
 const activeStatus = ref('all')
 
+// Status follows the deadline; open calls first, soonest deadline on top
+const cfps = cfpData
+  .map(c => ({ ...c, status: cfpStatus(c) }))
+  .sort((a, b) => (a.status === b.status
+    ? (a.status === 'open' ? 1 : -1) * (new Date(a.cfpDeadline) - new Date(b.cfpDeadline))
+    : a.status === 'open' ? -1 : 1))
+
 const filtered = computed(() =>
   activeStatus.value === 'all'
-    ? cfpData
-    : cfpData.filter(c => c.status === activeStatus.value)
+    ? cfps
+    : cfps.filter(c => c.status === activeStatus.value)
 )
 
 function formatDate(d) {
   return new Date(d).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })
 }
 
-function daysUntil(deadline) {
-  const diff = new Date(deadline).setHours(0,0,0,0) - new Date().setHours(0,0,0,0)
-  return Math.ceil(diff / (1000 * 60 * 60 * 24))
-}
-
 function countdownStyle(days) {
   if (days === 0)  return 'background:rgba(220,38,38,0.15); color:#DC2626; border:1px solid rgba(220,38,38,0.35);'
   if (days <= 15)  return 'background:rgba(220,38,38,0.12); color:#EF4444; border:1px solid rgba(220,38,38,0.3);'
-  if (days <= 30)  return 'background:rgba(251,191,36,0.12); color:#D97706; border:1px solid rgba(251,191,36,0.35);'
-  return 'background:rgba(52,211,153,0.10); color:#059669; border:1px solid rgba(52,211,153,0.3);'
+  if (days <= 30)  return 'background:rgba(251,191,36,0.12); color:var(--tag-orange); border:1px solid rgba(251,191,36,0.35);'
+  return 'background:rgba(52,211,153,0.10); color:var(--tag-green); border:1px solid rgba(52,211,153,0.3);'
 }
 
 function statusStyle(status) {
-  if (status === 'open')   return 'background:rgba(52,211,153,0.15); color:#059669; border:1px solid rgba(52,211,153,0.35);'
-  if (status === 'closed') return 'background:rgba(148,163,184,0.1); color:#94A3B8; border:1px solid rgba(148,163,184,0.25);'
+  if (status === 'open')   return 'background:rgba(52,211,153,0.15); color:var(--tag-green); border:1px solid rgba(52,211,153,0.35);'
+  if (status === 'closed') return 'background:rgba(148,163,184,0.1); color:var(--tag-slate); border:1px solid rgba(148,163,184,0.25);'
   return 'background:rgba(251,191,36,0.12); color:#FBBF24; border:1px solid rgba(251,191,36,0.3);'
 }
 </script>

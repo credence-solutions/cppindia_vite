@@ -57,7 +57,7 @@
               {{ tier.price }}
               <span class="text-sm font-normal" style="color:var(--color-text-muted);">/yr</span>
             </div>
-            <p class="text-xs mt-1 font-medium" :style="`color:${tierStyle(tier.id).text}; opacity:0.8;`">{{ tier.tagline }}</p>
+            <p class="text-xs mt-1 font-medium" :style="`color:${tierStyle(tier.id).text};`">{{ tier.tagline }}</p>
           </div>
 
           <p class="text-sm" style="color:var(--color-text-secondary);">{{ tier.description }}</p>
@@ -66,7 +66,7 @@
           <ul class="flex flex-col gap-2 flex-1">
             <li v-for="b in tier.benefits" :key="b.text"
               class="flex items-start gap-2 text-sm"
-              :style="b.included ? 'color:var(--color-text-secondary);' : 'color:var(--color-text-muted); opacity:0.5;'">
+              :style="b.included ? 'color:var(--color-text-secondary);' : 'color:var(--color-text-muted); text-decoration:line-through;'">
               <svg v-if="b.included" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="flex-shrink-0 mt-0.5" :style="`color:${tierStyle(tier.id).text};`"><polyline points="20 6 9 17 4 12"/></svg>
               <svg v-else xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="flex-shrink-0 mt-0.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
               <span>{{ b.text }}<span v-if="b.included && b.detail" class="ml-1 text-[10px] font-semibold px-1.5 py-0.5 rounded" :style="`background:${tierStyle(tier.id).badge}; color:${tierStyle(tier.id).text};`">{{ b.detail }}</span></span>
@@ -111,7 +111,7 @@
             >
               <img v-if="s.logo" :src="assetPath(s.logo)" :alt="s.name" class="h-6 w-auto object-contain"
                 @error="e => { e.target.style.display='none'; e.target.nextElementSibling.style.display='block'; }" />
-              <span :style="s.logo ? 'display:none; color:#B45309;' : 'color:#B45309;'" class="font-bold text-sm">{{ s.name }}</span>
+              <span :style="s.logo ? 'display:none; color:var(--tag-orange);' : 'color:var(--tag-orange);'" class="font-bold text-sm">{{ s.name }}</span>
             </a>
             <!-- Community -->
             <a v-for="s in sponsorsByYear(year, 'community')" :key="s.id"

@@ -52,7 +52,7 @@
                 <div class="flex items-center gap-1.5">
                   <span v-if="r.level" class="px-2 py-0.5 rounded text-[10px] font-bold" :style="levelStyle(r.level)">{{ r.level }}</span>
                   <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
-                    style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
+                    style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: var(--tag-green);">Free</span>
                 </div>
               </div>
               <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
@@ -88,7 +88,7 @@
                 <div class="flex items-center gap-1.5">
                   <span v-if="r.level" class="px-2 py-0.5 rounded text-[10px] font-bold" :style="levelStyle(r.level)">{{ r.level }}</span>
                   <span v-if="r.free" class="px-2 py-0.5 rounded text-[10px] font-bold"
-                    style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: #059669;">Free</span>
+                    style="background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.3); color: var(--tag-green);">Free</span>
                 </div>
               </div>
               <h3 class="font-display text-base font-bold leading-snug" style="color: var(--card-text);">{{ r.title }}</h3>
@@ -148,7 +148,7 @@
               <div class="flex flex-wrap gap-1.5">
                 <span v-for="h in nl.highlights" :key="h"
                   class="text-[10px] font-semibold px-2 py-[2px] rounded-full"
-                  style="background:rgba(34,211,238,0.08); color:#22D3EE; border:1px solid rgba(34,211,238,0.2);">
+                  style="background:rgba(34,211,238,0.08); color:var(--tag-cyan); border:1px solid rgba(34,211,238,0.2);">
                   {{ h }}
                 </span>
               </div>
@@ -217,8 +217,8 @@ const activeLevel = ref('all')
 
 const levels = [
   { value: 'all',          label: 'All Levels',   bg: 'rgba(8,145,178,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.4)'  },
-  { value: 'beginner',     label: 'Beginner',     bg: 'rgba(52,211,153,0.15)', color: '#059669',                   border: 'rgba(52,211,153,0.4)' },
-  { value: 'intermediate', label: 'Intermediate', bg: 'rgba(251,191,36,0.15)', color: '#D97706',                   border: 'rgba(251,191,36,0.4)' },
+  { value: 'beginner',     label: 'Beginner',     bg: 'rgba(52,211,153,0.15)', color: 'var(--tag-green)',                   border: 'rgba(52,211,153,0.4)' },
+  { value: 'intermediate', label: 'Intermediate', bg: 'rgba(251,191,36,0.15)', color: 'var(--tag-orange)',                   border: 'rgba(251,191,36,0.4)' },
   { value: 'advanced',     label: 'Advanced',     bg: 'rgba(239,68,68,0.12)',  color: '#DC2626',                   border: 'rgba(239,68,68,0.35)' },
 ]
 
@@ -245,8 +245,8 @@ const totalResults        = computed(() =>
 )
 
 function levelStyle(level) {
-  if (level === 'beginner')     return 'background:rgba(52,211,153,0.1); color:#059669; border:1px solid rgba(52,211,153,0.3);'
-  if (level === 'intermediate') return 'background:rgba(251,191,36,0.1); color:#D97706; border:1px solid rgba(251,191,36,0.3);'
+  if (level === 'beginner')     return 'background:rgba(52,211,153,0.1); color:var(--tag-green); border:1px solid rgba(52,211,153,0.3);'
+  if (level === 'intermediate') return 'background:rgba(251,191,36,0.1); color:var(--tag-orange); border:1px solid rgba(251,191,36,0.3);'
   if (level === 'advanced')     return 'background:rgba(239,68,68,0.1); color:#DC2626; border:1px solid rgba(239,68,68,0.3);'
   return ''
 }

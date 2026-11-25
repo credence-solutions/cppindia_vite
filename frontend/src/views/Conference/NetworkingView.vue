@@ -116,15 +116,15 @@ const howTo = [
 
 const channels = [
   { name: 'welcome-rules-and-coc', tag: 'rules',   tagBg: 'rgba(220,38,38,0.1)',   tagColor: '#EF4444', desc: 'Start here — read the rules and Code of Conduct before participating.' },
-  { name: 'announcement',          tag: 'info',    tagBg: 'rgba(8,145,178,0.1)',   tagColor: '#06B6D4', desc: 'Read-only channel for schedule updates and important announcements throughout the day.' },
+  { name: 'announcement',          tag: 'info',    tagBg: 'rgba(8,145,178,0.1)',   tagColor: 'var(--tag-cyan)', desc: 'Read-only channel for schedule updates and important announcements throughout the day.' },
   { name: 'conference-help',       tag: 'support', tagBg: 'rgba(251,191,36,0.1)', tagColor: '#D97706', desc: 'Technical issues with Zoom or audio? Ask here for immediate help.' },
   { name: 'cpp-discussion',        tag: 'chat',    tagBg: 'rgba(52,211,153,0.1)',  tagColor: '#059669', desc: 'Open C++ discussions — questions, opinions, and talk follow-ups welcome.' },
-  { name: 'contest-cpp-trivia',    tag: 'fun',     tagBg: 'rgba(168,85,247,0.1)',  tagColor: '#A855F7', desc: 'Daily C++ trivia contests, puzzles, and MCQs with prizes.' },
+  { name: 'contest-cpp-trivia',    tag: 'fun',     tagBg: 'rgba(168,85,247,0.1)',  tagColor: 'var(--tag-violet)', desc: 'Daily C++ trivia contests, puzzles, and MCQs with prizes.' },
   { name: 'show-and-tell',         tag: 'share',   tagBg: 'rgba(52,211,153,0.1)',  tagColor: '#059669', desc: 'Share your projects, blog posts, and anything you\'ve built in C++.' },
-  { name: 'recently-i-learned',    tag: 'learn',   tagBg: 'rgba(8,145,178,0.1)',   tagColor: '#06B6D4', desc: 'Share a C++ tip or insight you recently discovered with the community.' },
+  { name: 'recently-i-learned',    tag: 'learn',   tagBg: 'rgba(8,145,178,0.1)',   tagColor: 'var(--tag-cyan)', desc: 'Share a C++ tip or insight you recently discovered with the community.' },
   { name: 'find-a-buddy',          tag: 'connect', tagBg: 'rgba(251,191,36,0.1)', tagColor: '#D97706', desc: 'Looking for a mentor, collaborator, or pair-programming partner? Post here.' },
-  { name: 'compile_my_code',       tag: 'tool',    tagBg: 'rgba(148,163,184,0.1)', tagColor: '#94A3B8', desc: 'Test code snippets live using the compiler bot — powered by Compiler Explorer.' },
-  { name: 'new-member-introduction', tag: 'intro', tagBg: 'rgba(168,85,247,0.1)',  tagColor: '#A855F7', desc: 'Introduce yourself: location, profession, C++ interests, and portfolio.' },
+  { name: 'compile_my_code',       tag: 'tool',    tagBg: 'rgba(148,163,184,0.1)', tagColor: 'var(--tag-slate)', desc: 'Test code snippets live using the compiler bot — powered by Compiler Explorer.' },
+  { name: 'new-member-introduction', tag: 'intro', tagBg: 'rgba(168,85,247,0.1)',  tagColor: 'var(--tag-violet)', desc: 'Introduce yourself: location, profession, C++ interests, and portfolio.' },
 ]
 
 const sponsors = ['[Sponsor] Multicoreware', '[Sponsor] think-cell', '[Sponsor] Bloomberg']

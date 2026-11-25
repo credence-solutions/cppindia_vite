@@ -30,7 +30,7 @@
                 @click="activeTopic = topic"
                 class="px-2.5 py-1.5 lg:px-2 lg:py-0.5 rounded-md text-[11px] lg:text-[10px] font-bold transition-all duration-150"
                 :style="activeTopic === topic
-                  ? 'background:rgba(34,211,238,0.2); color:#22D3EE;'
+                  ? 'background:rgba(34,211,238,0.2); color:var(--tag-cyan);'
                   : 'background:transparent; color:var(--color-text-muted);'"
               >{{ topic }}</button>
             </div>
@@ -56,7 +56,7 @@
                       :style="stdColor(s.standard)">{{ s.standard }}</span>
                     <span v-for="tag in s.tags.filter(t => !t.startsWith('C++'))" :key="tag"
                       class="text-[10px] px-1.5 py-[1px] rounded"
-                      style="background:rgba(34,211,238,0.08); color:rgba(34,211,238,0.7);">{{ tag }}</span>
+                      style="background:rgba(34,211,238,0.08); color:var(--tag-cyan);">{{ tag }}</span>
                   </div>
                 </li>
                 <li v-if="!filteredSnippets.length" class="px-4 py-6 text-center text-xs" style="color:var(--color-text-muted);">
@@ -107,8 +107,8 @@
                 <span class="w-3 h-3 rounded-full" style="background:#FF5F56;"></span>
                 <span class="w-3 h-3 rounded-full" style="background:#FFBD2E;"></span>
                 <span class="w-3 h-3 rounded-full" style="background:#27C93F;"></span>
-                <span class="ml-3 text-xs font-mono" style="color:var(--color-text-muted);">{{ active.id }}.cpp</span>
-                <span class="ml-auto text-[10px] font-bold px-2 py-[1px] rounded" :style="stdColor(active.standard)">{{ active.standard }}</span>
+                <span class="ml-3 text-xs font-mono" style="color:#94A3B8;">{{ active.id }}.cpp</span>
+                <span class="ml-auto text-[10px] font-bold px-2 py-[1px] rounded" :style="stdColor(active.standard, true)">{{ active.standard }}</span>
               </div>
               <div class="code-block text-sm font-mono leading-relaxed" v-html="highlightedCode" />
             </div>
@@ -275,10 +275,11 @@ function godboltLink(snippet) {
   return `https://cppindia.godbolt.org/clientstate/${base64}`
 }
 
-function stdColor(std) {
-  if (std === 'C++23') return 'background:rgba(8,145,178,0.15); color:var(--color-secondary-mid); border:1px solid rgba(8,145,178,0.3);'
-  if (std === 'C++20') return 'background:rgba(34,211,238,0.12); color:#22D3EE; border:1px solid rgba(34,211,238,0.3);'
-  return 'background:rgba(52,211,153,0.12); color:#059669; border:1px solid rgba(52,211,153,0.3);'
+// onDark: the editor header is always dark, so it needs the bright tones
+function stdColor(std, onDark = false) {
+  if (std === 'C++23') return `background:rgba(8,145,178,0.15); color:${onDark ? '#67E8F9' : 'var(--color-secondary-mid)'}; border:1px solid rgba(8,145,178,0.3);`
+  if (std === 'C++20') return `background:rgba(34,211,238,0.12); color:${onDark ? '#22D3EE' : 'var(--tag-cyan)'}; border:1px solid rgba(34,211,238,0.3);`
+  return `background:rgba(52,211,153,0.12); color:${onDark ? '#34D399' : '#047857'}; border:1px solid rgba(52,211,153,0.3);`
 }
 </script>
 

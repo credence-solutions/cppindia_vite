@@ -52,7 +52,7 @@
             style="font-size: clamp(2.6rem, 5.5vw, 4.5rem); color: var(--color-text);">
             India's very own<br />
             <span style="
-              background: linear-gradient(100deg, #2563EB 0%, #06B6D4 50%, #10B981 100%);
+              background: var(--gradient-heading);
               -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
             ">C++ Community</span>
           </h1>
@@ -84,20 +84,16 @@
             </RouterLink>
           </div>
 
-          <!-- Stats row -->
-          <div class="gsap-reveal flex flex-wrap items-center gap-x-8 gap-y-4 pt-5"
+          <!-- Stats row — even grid: 2×2 on phones, 4 across from sm up -->
+          <div class="gsap-reveal grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5 pt-5"
             style="border-top:1px solid var(--color-border-light);">
-            <div v-for="(stat, i) in STATS" :key="stat.label" class="flex items-baseline gap-1.5">
-              <span class="font-display font-extrabold"
-                style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing:-0.02em;
-                  background:linear-gradient(135deg,#2563EB,#06B6D4);
-                  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
+            <div v-for="stat in STATS" :key="stat.label" class="flex flex-col gap-1">
+              <span class="font-display font-extrabold leading-none"
+                style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); letter-spacing:-0.02em; color: var(--color-primary);">
                 {{ stat.value }}{{ stat.suffix }}
               </span>
               <span class="text-[11px] font-medium uppercase tracking-[0.07em] leading-tight"
                 style="color: var(--color-text-muted);">{{ stat.label }}</span>
-              <span v-if="i < STATS.length - 1" class="hidden sm:block w-px h-5 ml-4"
-                style="background: var(--color-border-light);" />
             </div>
           </div>
 

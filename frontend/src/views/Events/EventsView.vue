@@ -45,7 +45,7 @@
               <span class="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
                 :style="event.type === 'conference'
                   ? 'background:rgba(8,145,178,0.12); color:var(--color-secondary-mid); border:1px solid rgba(8,145,178,0.3);'
-                  : 'background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.25);'">
+                  : 'background:rgba(34,211,238,0.1); color:var(--tag-cyan); border:1px solid rgba(34,211,238,0.25);'">
                 {{ event.type }}
               </span>
               <span v-if="event.time" class="text-xs font-mono" style="color:var(--color-text-muted);">{{ event.time }}</span>

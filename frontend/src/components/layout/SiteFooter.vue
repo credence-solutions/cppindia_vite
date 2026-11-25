@@ -81,10 +81,10 @@
         <p class="text-xs text-white/45">
           &copy; {{ currentYear }} CppIndia User Group. All rights reserved.
         </p>
-        <p class="text-xs text-white/40">
+        <p class="text-xs text-white/60">
           Designed &amp; built by
           <a href="https://credencesolutions.in" target="_blank" rel="noopener noreferrer"
-            class="text-white/60 hover:text-white transition-colors duration-[150ms] underline underline-offset-2">
+            class="text-white/80 hover:text-white transition-colors duration-[150ms] underline underline-offset-2">
             Credence Solutions
           </a>
         </p>

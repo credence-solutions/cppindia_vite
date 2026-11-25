@@ -8,12 +8,12 @@
 // -----------------------------------------------------------------------------
 
 // Brand primaries — vibrant on light backgrounds
-$color-primary:        #4F8EF7;   // Electric blue — trust, innovation
-$color-primary-dark:   #2563EB;   // Darker for hover
+$color-primary:        #2563EB;   // Blue-600 — single brand action colour (5.2:1 on white)
+$color-primary-dark:   #1D4ED8;   // Blue-700 for hover
 $color-primary-light:  #93C5FD;   // Light tint
 
-$color-secondary:      #0891B2;   // Cyan-600 — Ocean Blue + Teal palette
-$color-secondary-dark: #0E7490;   // Cyan-700
+$color-secondary:      #0E7490;   // Cyan-700 — Ocean Blue + Teal palette (5.4:1 on white)
+$color-secondary-dark: #155E75;   // Cyan-800
 $color-secondary-light:#A5F3FC;   // Cyan-200
 
 $color-accent:         #0D9488;   // Deeper teal for light bg
@@ -35,15 +35,15 @@ $color-surface-raised: #E4E6F0;   // Slightly elevated panels
 // Text
 $color-text:           #111218;   // Near-black
 $color-text-secondary: #3D4255;   // Dark grey-blue
-$color-text-muted:     #6B7280;   // Medium grey
+$color-text-muted:     #5B6472;   // Medium grey (AA on surface-alt too)
 
 // Borders — cyan-tinted for Ocean Blue + Teal palette
 $color-border:         rgba(8, 145, 178, 0.55);
 $color-border-light:   rgba(8, 145, 178, 0.35);
 
 // Dark section backgrounds (footer always stays dark)
-$color-dark:           #1A1714;
-$color-dark-surface:   #252019;
+$color-dark:           #0B1324;   // Navy — matches the dark CTA sections
+$color-dark-surface:   #131D33;
 
 // Glow variables — also exposed as CSS vars for theme overriding
 $glow-primary:         var(--glow-primary);
@@ -104,7 +104,7 @@ $bp-2xl: 1440px;
   --color-dark-surface:    #{$color-dark-surface};
 
   // --- Palette soft tones (used for badge text, labels, arrows) ---
-  --color-primary-soft:   #2563EB;   // blue-600 — badge text, tag links (WCAG AA)
+  --color-primary-soft:   #1D4ED8;   // blue-700 — badge text, tag links (AA on tinted chips)
   --color-secondary-mid:  #0E7490;   // cyan-700 — section labels, arrows (WCAG AA)
 
   // --- Semantic badge backgrounds ---
@@ -113,8 +113,17 @@ $bp-2xl: 1440px;
   --badge-text:      var(--color-secondary-mid);
 
   // --- Reusable gradients ---
-  --gradient-heading: linear-gradient(100deg, #1D4ED8 0%, #0891B2 50%, #059669 100%);
-  --gradient-btn:     linear-gradient(135deg, #2563EB 0%, #0891B2 100%);
+  --gradient-heading: linear-gradient(100deg, #1D4ED8 0%, #0E7490 100%);
+  // Solid primary, written as a gradient so it works for both background and background-image
+  --gradient-btn:     linear-gradient(var(--color-primary), var(--color-primary));
+
+  // --- Tag / badge text tones — readable (WCAG AA) on light surfaces ---
+  --tag-cyan:   #0E7490;   // cyan-700
+  --tag-amber:  #A16207;   // yellow-700
+  --tag-slate:  #64748B;   // slate-500
+  --tag-violet: #7E22CE;   // purple-700
+  --tag-green:  #047857;   // emerald-700
+  --tag-orange: #B45309;   // amber-700
 
   // --- Brand partner colors ---
   --color-discord:        #5865F2;

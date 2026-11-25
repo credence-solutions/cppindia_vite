@@ -12,7 +12,8 @@
 
     <div class="container relative z-[1]">
       <div class="gsap-reveal text-center max-w-[720px] mx-auto">
-        <h2 class="font-display font-bold mb-4 text-gradient-heading" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem);">
+        <!-- Section is always dark, so it uses the bright heading gradient in every theme -->
+        <h2 class="font-display font-bold mb-4 text-gradient-heading" style="font-size: clamp(1.5rem, 3.5vw, 2.5rem); --gradient-heading: linear-gradient(100deg, #60A5FA 0%, #22D3EE 100%);">
           Ready to level up your C++?
         </h2>
         <p class="text-lg leading-relaxed mb-8" style="color: rgba(226,232,245,0.75);">
@@ -37,9 +38,9 @@
           <RouterLink
             to="/about"
             class="btn btn--lg inline-flex items-center gap-2 font-semibold transition-all duration-200"
-            style="border: 1px solid rgba(8,145,178,0.4); color: var(--color-primary-soft); background: transparent;"
-            onmouseover="this.style.borderColor='rgba(8,145,178,0.65)'; this.style.background='rgba(8,145,178,0.08)'"
-            onmouseout="this.style.borderColor='rgba(8,145,178,0.4)'; this.style.background='transparent'"
+            style="border: 1px solid rgba(226,232,245,0.35); color: #E2E8F5; background: transparent;"
+            onmouseover="this.style.borderColor='rgba(226,232,245,0.6)'; this.style.background='rgba(226,232,245,0.08)'"
+            onmouseout="this.style.borderColor='rgba(226,232,245,0.35)'; this.style.background='transparent'"
           >Learn More</RouterLink>
         </div>
 
@@ -50,9 +51,9 @@
             :key="platform.label"
             :href="platform.url"
             class="flex items-center gap-2 min-h-[24px] text-xs transition-colors duration-fast"
-            style="color: rgba(148,163,184,0.55);"
-            onmouseover="this.style.color='rgba(226,232,245,0.9)'"
-            onmouseout="this.style.color='rgba(148,163,184,0.55)'"
+            style="color: rgba(148,163,184,0.85);"
+            onmouseover="this.style.color='rgba(226,232,245,0.95)'"
+            onmouseout="this.style.color='rgba(148,163,184,0.85)'"
             target="_blank"
             rel="noopener noreferrer"
             :aria-label="platform.label"

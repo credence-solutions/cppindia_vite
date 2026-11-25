@@ -15,7 +15,7 @@
           @click="activeTag = tag"
           class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
           :style="activeTag === tag
-            ? 'background:rgba(8,145,178,0.2); color:var(--color-primary-soft); border:1px solid rgba(8,145,178,0.45);'
+            ? 'background:var(--color-primary); color:#fff; border:1px solid var(--color-primary);'
             : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ tag }}</button>
       </div>
@@ -41,7 +41,7 @@
               <p class="text-xs mt-0.5" style="color:var(--color-text-muted);">by {{ proj.owner }}</p>
             </div>
             <!-- Stars -->
-            <div class="flex items-center gap-1 flex-shrink-0 text-xs font-semibold px-2 py-1 rounded-lg" style="background:rgba(234,179,8,0.1); color:#EAB308; border:1px solid rgba(234,179,8,0.2);">
+            <div class="flex items-center gap-1 flex-shrink-0 text-xs font-semibold px-2 py-1 rounded-lg" style="background:rgba(234,179,8,0.1); color:var(--tag-amber); border:1px solid rgba(234,179,8,0.2);">
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               {{ proj.starCount }}
             </div>
@@ -51,7 +51,7 @@
 
           <!-- Tags -->
           <div class="flex flex-wrap gap-1.5">
-            <span class="text-[10px] font-bold px-2 py-[2px] rounded" style="background:rgba(34,211,238,0.1); color:#22D3EE; border:1px solid rgba(34,211,238,0.2);">{{ proj.language }}</span>
+            <span class="text-[10px] font-bold px-2 py-[2px] rounded" style="background:rgba(34,211,238,0.1); color:var(--tag-cyan); border:1px solid rgba(34,211,238,0.2);">{{ proj.language }}</span>
             <span v-for="tag in proj.tags" :key="tag"
               class="text-[10px] font-semibold px-2 py-[2px] rounded"
               style="background:rgba(8,145,178,0.1); color:var(--color-primary-soft);">{{ tag }}</span>

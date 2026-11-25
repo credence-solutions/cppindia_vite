@@ -61,7 +61,7 @@ const reports = [
   {
     year: 'CppIndiaCon 2023',
     tag: 'Trip Report',
-    tagStyle: 'background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.25); color: #A855F7;',
+    tagStyle: 'background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.25); color: var(--tag-violet);',
     title: "A Reflection on CppIndiaCon 2023's Spectacular Journey",
     desc: 'Highlights, speaker ratings, volunteer stories, and the community moments that made CppIndiaCon 2023 special.',
     author: 'Dheeraj Jha',
@@ -71,7 +71,7 @@ const reports = [
   {
     year: 'CppIndiaCon 2024',
     tag: 'Attendee Guide',
-    tagStyle: 'background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.25); color: #059669;',
+    tagStyle: 'background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.25); color: var(--tag-green);',
     title: 'Conference Self-Help & Tech Setup Guide',
     desc: 'Everything attendees and speakers need — Zoom configuration, audio tips, and how to get help during the conference.',
     author: 'CppIndia Team',

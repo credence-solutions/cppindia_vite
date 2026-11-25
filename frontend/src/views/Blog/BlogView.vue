@@ -16,7 +16,7 @@
           @click="activeTag = tag"
           class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200"
           :style="activeTag === tag
-            ? 'background:rgba(8,145,178,0.2); color:var(--color-primary-soft); border:1px solid rgba(8,145,178,0.45);'
+            ? 'background:var(--color-primary); color:#fff; border:1px solid var(--color-primary);'
             : 'background:transparent; color:var(--color-text-secondary); border:1px solid var(--color-border);'"
         >{{ tag }}</button>
       </div>

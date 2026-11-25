@@ -337,7 +337,7 @@ const { assetPath } = useAssetPath()
 
 const badgeMap = {
   founder:   { bg: 'rgba(8,145,178,0.15)',  color: 'var(--color-primary-soft)', border: 'rgba(8,145,178,0.4)',  avatarBg: 'rgba(8,145,178,0.2)'  },
-  speaker:   { bg: 'rgba(34,211,238,0.12)',  color: '#22D3EE', border: 'rgba(34,211,238,0.35)', avatarBg: 'rgba(34,211,238,0.15)' },
+  speaker:   { bg: 'rgba(34,211,238,0.12)',  color: 'var(--tag-cyan)', border: 'rgba(34,211,238,0.35)', avatarBg: 'rgba(34,211,238,0.15)' },
   moderator: { bg: 'rgba(8,145,178,0.12)', color: 'var(--color-secondary-mid)', border: 'rgba(8,145,178,0.35)',avatarBg: 'rgba(8,145,178,0.15)' },
 }
 

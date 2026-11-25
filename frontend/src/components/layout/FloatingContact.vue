@@ -2,8 +2,8 @@
   FloatingJoin — Quick Discord/community join widget (fixed bottom-right)
 -->
 <template>
-  <!-- Hidden while the mobile menu is open: z-floating sits above the drawer -->
-  <div v-show="!nav.mobileMenuOpen" class="fixed bottom-6 right-6 z-floating sm:bottom-6 sm:right-6">
+  <!-- Hidden while the mobile menu is open (z-floating sits above the drawer), and on phones until scrolled past the hero -->
+  <div v-show="floatingVisible && !nav.mobileMenuOpen" class="fixed bottom-6 right-6 z-floating sm:bottom-6 sm:right-6">
     <!-- Popup -->
     <Transition name="float-popup">
       <div
@@ -82,7 +82,9 @@
 import { ref } from 'vue'
 import { SITE } from '@/constants'
 import { useNavigationStore } from '@/stores/navigation'
+import { useFloatingVisibility } from '@/composables/useFloatingVisibility'
 
+const { visible: floatingVisible } = useFloatingVisibility()
 const nav = useNavigationStore()
 const open = ref(false)
 </script>

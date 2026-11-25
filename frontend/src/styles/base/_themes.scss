@@ -4,10 +4,26 @@
 // Default (no attribute) = Butter Light
 // =============================================================================
 
+// Every theme except the default Butter Light is dark: use the bright tones there.
+// (main.js sets data-theme="butter" on <html> for the default, so exclude it.)
+[data-theme]:not([data-theme="butter"]) {
+  --tag-cyan:   #22D3EE;
+  --tag-amber:  #EAB308;
+  --tag-slate:  #94A3B8;
+  --tag-violet: #A855F7;
+  --tag-green:  #34D399;
+  --tag-orange: #FBBF24;
+  --gradient-heading: linear-gradient(100deg, #60A5FA 0%, #22D3EE 100%);
+  --color-primary-soft:  #93C5FD;
+  --color-secondary-mid: #67E8F9;
+}
+
 // -----------------------------------------------------------------------------
 // THEME 1: Nebula Dark — original dark theme (vibrant blue/violet on deep space)
 // -----------------------------------------------------------------------------
 [data-theme="nebula"] {
+  --color-primary:         #4F8EF7;
+  --color-primary-dark:    #2563EB;
   --color-secondary:       #9B74F5;
   --color-secondary-dark:  #7C3AED;
   --color-secondary-light: #C4B5FD;

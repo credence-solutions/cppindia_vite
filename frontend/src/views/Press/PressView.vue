@@ -123,7 +123,7 @@
               <svg v-else width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </div>
             <div>
-              <p class="text-xs font-semibold mb-0.5" :style="g.ok ? 'color:#059669;' : 'color:#DC2626;'">{{ g.title }}</p>
+              <p class="text-xs font-semibold mb-0.5" :style="g.ok ? 'color:var(--tag-green);' : 'color:#DC2626;'">{{ g.title }}</p>
               <p class="text-xs" style="color:var(--color-text-secondary);">{{ g.body }}</p>
             </div>
           </div>
@@ -176,12 +176,12 @@ const facts = [
 ]
 
 const colors = [
-  { name: 'Primary',    hex: '#0891B2' },
-  { name: 'Secondary',  hex: '#22D3EE' },
-  { name: 'Accent',     hex: '#34D399' },
-  { name: 'Dark BG',    hex: '#0B1929' },
-  { name: 'Surface',    hex: '#0F2336' },
-  { name: 'Text',       hex: '#E2E8F5' },
+  { name: 'Primary',    hex: '#2563EB' },
+  { name: 'Secondary',  hex: '#0E7490' },
+  { name: 'Accent',     hex: '#0D9488' },
+  { name: 'Dark BG',    hex: '#0B1324' },
+  { name: 'Surface',    hex: '#F5F6FA' },
+  { name: 'Text',       hex: '#111218' },
 ]
 
 const guidelines = [
